@@ -2203,11 +2203,6 @@ Object.keys(groupData).forEach(fieldId => {
       return;
     }
 
-    // Fix: exit early if field not found
-    if (!field) {
-      console.warn("validateField: field not found for ID", id);
-      return; 
-    }
     const required = field.required;
     const requiredCondition = field.requiredCondition;
 
