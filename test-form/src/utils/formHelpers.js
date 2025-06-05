@@ -223,6 +223,5 @@ export function validateStep(step, formData, children, formErrors = {}, touched 
     }
   });
 
-  formData["children"] = children;
   return { valid, errors: updatedErrors, touched: updatedTouched };
 }
