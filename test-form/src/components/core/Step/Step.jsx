@@ -33,6 +33,16 @@ export default function Step({
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
+  const groupFieldsByGroup = (fields = []) => {
+    const grouped = {};
+    fields.forEach((f) => {
+      const group = f.ui?.group || 'default';
+      if (!grouped[group]) grouped[group] = [];
+      grouped[group].push(f);
+    });
+    return grouped;
+  };
+
   const renderField = (field) => {
     const error = errors[field.id];
     switch (field.type) {
@@ -293,7 +303,23 @@ export default function Step({
                 ui={sec.ui}
               />
             ) : (
-              sec.fields && sec.fields.map((field) => renderField(field))
+              Object.entries(groupFieldsByGroup(sec.fields || [])).map(
+                ([groupKey, groupFields], idx) => (
+                  <div
+                    key={`${sec.id}-${groupKey}-${idx}`}
+                    className="form-group-wrapper"
+                  >
+                    {groupKey !== 'default' && (
+                      <div className="form-group-heading">
+                        {groupFields[0].ui?.groupLabel || groupKey}
+                      </div>
+                    )}
+                    <div className="form-subgroup-grid grid gap-4">
+                      {groupFields.map((field) => renderField(field))}
+                    </div>
+                  </div>
+                )
+              )
             )}
           </Section>
         );
