@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import TextInput from '../TextInput/TextInput';
 import SelectField from '../SelectField/SelectField';
 import RadioGroup from '../RadioGroup/RadioGroup';
+import FileInput from '../FileInput/FileInput';
+import MaskedInput from '../MaskedInput/MaskedInput';
 
 export default function GroupField({ field, value = [], onChange }) {
   const [entries, setEntries] = useState(value);
@@ -69,7 +71,42 @@ export default function GroupField({ field, value = [], onChange }) {
       case 'date':
       case 'time':
         return <TextInput key={subField.id} type={subField.type} {...commonProps} />;
+      case 'file':
+        return (
+          <FileInput
+            key={subField.id}
+            multiple={subField.metadata?.multiple}
+            {...commonProps}
+          />
+        );
       default:
+        if (
+          subField.id === 'ssn' ||
+          subField.label?.toLowerCase().includes('social security')
+        ) {
+          return (
+            <MaskedInput
+              key={subField.id}
+              mask="000-00-0000"
+              placeholder="123-45-6789"
+              {...commonProps}
+            />
+          );
+        }
+        if (
+          subField.type === 'tel' ||
+          subField.id.includes('telephone') ||
+          subField.label?.toLowerCase().includes('phone')
+        ) {
+          return (
+            <MaskedInput
+              key={subField.id}
+              mask="(000) 000-0000"
+              placeholder="(123) 456-7890"
+              {...commonProps}
+            />
+          );
+        }
         return <TextInput key={subField.id} {...commonProps} />;
     }
   };
