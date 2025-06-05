@@ -1,0 +1,878 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/mkanpa/ApplicationsService/1.0.0
+info:
+  version: "1.0.0"
+  title: MyCity Applications Service API
+  description: >-
+    Application Details JSON Response. The generic structure is represented by the schema  `ApplicationSubmission` and the data element *Forms.FormInputDocument* references the Childcare service specific schema `CFWB012`. <br/><br/>
+    
+    Notes:<br/>
+      1. Unlike the CFWB-012 PDF, in the JSON response, the FamilyMembers collection do not include record for Applicant/ Self.  Family Size should be calculated by summing up Applicant + ChildrenNeedingCare + FamilyMembers.
+    
+    Revision History:<br/><br/>
+
+     **09/04/24** <br/>    
+      1. Added data element `ExpectedDocumentCount` under node: $.ApplicationSubmission.Info. This is to support reconciliation/ cross-checking by downstream system. 
+      
+     **08/22/24** <br/>    
+      1. Added data element `UserConsentForRecommendations` under node: $.ApplicationSubmission.Info. This is to support Benefits Recommendation Engine capability. 
+      
+     **12/14/23** <br/>    
+      1. Added data elements `ServiceDeliverySystem` and `ServiceDeliverySystemCaseId` under node: $.ApplicationSubmission.Info. This is to support setting System-of-Record Case reference identifier for existing Clients (as opposed to new Applicants). 
+      
+     **12/20/22** <br/>    
+      1. Updated documentation and enum list for `Type` under node: $.ApplicationSubmission.DocumentList
+      
+     **12/16/22** <br/>
+      1. Added data element `Borough` (separate from City) under node: $.Forms.FormInputDocument.Applicant. Reason: ACS Agency requires this data, as discussed in Daily Standup - 12/16/22. <br/>
+      2. Also, added  data elements `Latitude` and `Longitude`, as optional data elements under node: $.Forms.FormInputDocument.Applicant.
+      
+     **12/09/22** <br/>
+      1. Defined enum values *["ApplicantWages", "SecondParentWages", "SelfEmployment", "ChildSupport", "Alimony", "Unemployment", "SocialSecurity", "Disability", "Rental", "Dividends", "Retirement", "CashAssistance",  "Other"]* to the data element `NameRef` under node: $.Forms.FormInputDocument.IncomeInformation.Sources. <br/>
+      2. Updated type of data element `GrossAmount` from string to number, under node: $.Forms.FormInputDocument.IncomeInformation.Sources and as well as `TotalIncome`. <br/>
+      3. Corrected 3 enum values to '15 min', 30 min' , '45 min', for data elements `DropOffTravelTime`, `PickupTravelTime`, under node: $.Forms.FormInputDocument.WorkActivityTravelTimeSchedule.TravelTimeSchedule.FirstParentTravelTime and SecondParentTravelTime. And also, configured them to be nullable.
+      4. Corrected enum value from Biweekly to Bi-weekly for data element `HowOften` under node: $.Forms.FormInputDocument.IncomeInformation.Sources <br/>
+      
+     **12/05/22** <br/>
+      1. Updated type of data element `AssistanceReason` from string to array of string, under node: $.Forms.FormInputDocument.ChildFamilyNeeds. Also, added constraint for the array size to be either 1 or 2. Reason: Daily Standup - 12/05/22. <br/>
+      2. Changed name for data element from "ImmigrationStatus" to `IsImmigrationStatusSatisfactory`, under node: $.Forms.FormInputDocument.ChildrenNeedingCare. Reason: Unlike CFWB-012 PDF, as implemented, the valid values are: Yes, No. 
+      3. Changed names for data elements from 2ndParent1stJob and 2ndParent2ndJob to `SecondParent1stJob` and `SecondParent2ndJob`, under node : $.Forms.FormInputDocument.Employment. Reason: A variable name cannot start with a number.<br/>        
+      4. Added new enum value *Prefer not to answer* to data element `Ethnicity`. Reason: Change based on the values returned in UAT environment. <br/>
+      5. Added new enum value *Not Applicable* to data element `DuplicateApp` under node: $.Forms.FormInputDocument.ChildFamilyNeeds. Reason: Change based on the values returned in UAT environment.<br/>
+      6. Added new enum value *Separated* to data element `MaritalStatus` under node: $.Forms.FormInputDocument.Applicant. Reason: Change based on the values returned in UAT environment.<br/>
+      7. Added new enum value *X* to data element `Sex` under node: $.Forms.FormInputDocument.ChildrenNeedingCare.  Reason: Change based on the values returned in UAT environment.<br/>
+      8. Added enum values *["Child", "Grandchild", "Foster Child", "Other"]* to data element `RelationshipToApplicant` under node: $.Forms.FormInputDocument.ChildrenNeedingCare. Reason: Change based on the values returned in UAT environment.<br/>
+      9. Added enum values *["Spouse", "Partner", "Foster Parent", "Child", "Other"]* to data element `RelationshipToApplicant` under node: $.Forms.FormInputDocument.FamilyMembers. Reason: Change based on the values returned in UAT environment.<br/>
+        
+      
+    **12/02/22** - Added data elements `LanguageCode` and `Language`, under node: $.Info.  Default value is specified as en_US, English respectively.<br/>
+    
+    
+    **11/30/22** - Updated type of `Race` from string to array of string and enum list to be abbreviations [AI, AS, BL, HP, WH]. Reason: Change based on the values returned in UAT environment.<br/><br/>
+    
+security:
+  - password:
+      - read
+      - write
+paths:
+  /appl/{applId}:
+    get:
+      summary: Get Application Data By ID
+      parameters: 
+        - in: path
+          name: applId
+          schema:
+            type: string
+          required: true
+          example: "IA-0000000010"          
+      description: >-
+        Get Application Data By ID 
+      responses:
+        '200':
+          description: OK  
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationSubmission' 
+                
+components:
+  schemas:
+    Employer: 
+      type: object
+      additionalProperties: false
+      properties:
+        Name: 
+          description: "Name of the employed parent, caretaker or stepparent in the household."
+          type: string
+          nullable: false
+          example: "Duke. co"
+        Telephone:
+          description: "Telephone number of the Employer."
+          type: string
+          nullable: false
+          example: "4262756545"
+        Street:
+          description: "Address of the employer."
+          type: string
+          nullable: false
+          example: "1450 Western Ave"
+        City:
+          description: "City/Borough of the Employer address."
+          type: string
+          nullable: false
+          example: "Albany"
+        State:
+          description: "State of the Employer address."
+          type: string
+          nullable: false
+          example: "New York"
+        ZipCode:
+          description: "Zip Code of the Employer address."
+          type: string
+          nullable: false
+          example: "12203"
+      required: ["Name", "Street", "City","State", "ZipCode","Telephone"]          
+    Job:
+      type: object
+      additionalProperties: false
+      properties:
+        Employer:
+          $ref: '#/components/schemas/Employer'
+        StartDate:
+          description: "Indicates the Start date of the Employment."
+          type: string
+          nullable: false
+          example: "2022-10-19"
+        DoesJobHaveRotatingShift:
+          description: "Indicates if the job has a rotating shift."
+          type: string
+          nullable: false
+          enum: ["Yes","No"]  
+          example: "Yes"
+        DoesJobRequireOvertime:
+          description: "Indicates if the job requires overtime(OT)."
+          type: string
+          nullable: false
+          enum: ["Yes","No"]                 
+          example: "Yes"    
+      required: ["StartDate", "DoesJobHaveRotatingShift", "DoesJobRequireOvertime"]  
+    ParentActivity: 
+      description: "Work/Activity/Travel Time Schedule of the applicant and second parent/Spouse"
+      type: object
+      additionalProperties: false
+      properties:
+        SundayFrom: 
+          description: "Indicates Start Time Work/Activity/Travel Time Schedule, in military time format."
+          type: string
+          example: null
+        SundayTo:
+          description: "Indicates End Time Work/Activity/Travel Time Schedule, in military time format."
+          type: string
+          example: null
+        MondayFrom:
+          description: "Indicates Start Time Work/Activity/Travel Time Schedule, in military time format."     
+          type: string
+          example: "09:00"          
+        MondayTo:
+          description: "Indicates End Time Work/Activity/Travel Time Schedule, in military time format."        
+          type: string
+          example: "18:00"    
+        TuesdayFrom:
+          description: "Indicates Start Time Work/Activity/Travel Time Schedule, in military time format."    
+          type: string
+          example: "09:00"          
+        TuesdayTo:
+          description: "Indicates End Time Work/Activity/Travel Time Schedule, in military time format."        
+          type: string
+          example: "18:00"       
+        WednesdayFrom: 
+          description: "Indicates Start Time Work/Activity/Travel Time Schedule, in military time format."        
+          type: string
+          example: "09:00"
+        WednesdayTo:
+          description: "Indicates End Time Work/Activity/Travel Time Schedule, in military time format."        
+          type: string
+          example: "18:00"      
+        ThursdayFrom: 
+          description: "Indicates Start Time Work/Activity/Travel Time Schedule, in military time format."        
+          type: string
+          example: "09:00"          
+        ThursdayTo:
+          description: "Indicates End Time Work/Activity/Travel Time Schedule, in military time format."        
+          type: string
+          example: "18:00"          
+        FridayFrom: 
+          description: "Indicates Start Time Work/Activity/Travel Time Schedule, in military time format."        
+          type: string
+          example: "09:00"            
+        FridayTo:
+          description: "Indicates End Time Work/Activity/Travel Time Schedule, in military time format."        
+          type: string
+          example: "18:00"          
+        SaturdayFrom: 
+          description: "Indicates Start Time Work/Activity/Travel Time Schedule, in military time format."        
+          type: string
+          example: null
+        SaturdayTo:
+          description: "Indicates End Time Work/Activity/Travel Time Schedule, in military time format."        
+          type: string 
+          example: null
+    ParentTravelTime: 
+      type: object
+      additionalProperties: false
+      properties:
+        DropOffTravelTime: 
+          description: "Indicates the time it takes for the Applicant to travel to work/activity from provider."
+          type: string
+          enum: ["15 min","30 min", "45 min", "1 hour", "More than 1 hour"]     
+          nullable: true
+          example: "30 min"
+        PickupTravelTime:
+          description: "Indicates the time it takes for the Applicant to travel from work/activity to provider."
+          type: string
+          enum: ["15 min","30 min", "45 min", "1 hour", "More than 1 hour"]
+          nullable: true
+          example: "45 min"
+        DropOffTravelTimeTextIfGT1Hr:
+          description: "Indicates the Drop-off time if it is greater than 1 hr. Format: HH:MM"
+          type: string
+          nullable: true
+          pattern: "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"          
+          example: null
+        PickupTravelTimeTextIfGT1Hr:
+          description: "Indicates the Pick-up time if it is greater than 1 hr.  Format: HH:MM"
+          type: string
+          nullable: true
+          pattern: "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+          example: null
+        IsUsingPublicTransportationForDropoff:
+          description: "Indicates if the Applicant uses public means of transport to travel to work/activity from provider. (for DropOff)"
+          type: string
+          enum: ["Yes", "No"]
+          nullable: true          
+          example: "No"
+        IsUsingPublicTransportationForPickup:
+          description: "Indicates if the Applicant uses public means of transport to travel from work/activity to provider.(for Pickup)"
+          type: string       
+          enum: ["Yes", "No"]
+          nullable: true          
+          example: "No"        
+      required: ["DropOffTravelTime", "PickupTravelTime", "IsUsingPublicTransportationForDropoff", "IsUsingPublicTransportationForPickup"]
+    FutureForm:    
+      type: object
+      properties:
+        TBD:
+          type: string
+    CFWB012:
+      type: object
+      additionalProperties: false
+      properties:
+        Applicant:
+          type: object
+          properties:
+            LastName:
+              description: "Last Name of the Applicant requesting care. (Please include any aliases or maiden names in parentheses)"
+              type: string
+              nullable: false
+              example: "Flinch"
+            FirstName:
+              description: "First name of the Applicant requesting care. NOTE: The applicant is the adult parent or caretaker requesting care."
+              type: string
+              nullable: false              
+              example: "Adam"
+            MI:
+              description: "Middle Initial of the Applicant requesting care."
+              type: string
+              example: "K"
+              nullable: true
+            MaritalStatus:
+              description: "Indicates the marital or relationship status of the Applicant."
+              type: string
+              enum: ["Single", "Married", "Divorced", "Widowed","Separated"]
+              nullable: false              
+              example: "Married"
+            Street:
+              description: "Street address of the Applicant requesting care."
+              type: string
+              nullable: false              
+              example: "1450 A 31st Avenue"
+            Apt:
+              description: "Apartment number of the Applicant's address."
+              type: string
+              nullable: true
+              example: "l"
+            City:
+              description: "City of the Applicant's address"
+              type: string
+              nullable: false              
+              example: "Astoria"
+            Borough:
+              description: "Borough of the Applicant's address"
+              type: string
+              nullable: false              
+              example: "Queens"              
+            State:
+              description: "State of the Applicant's address"
+              type: string
+              nullable: false              
+              example: "New York"
+            ZipCode:
+              description: "Zip Code of the Applicant's address"
+              type: string
+              nullable: false              
+              example: "11106"
+            Latitude:
+              description: "A geographical coordinate"
+              type: number
+              nullable: true
+              minimum: -90
+              maximum: 90
+              example: 40.76755
+            Longitude:
+              description: "A geographical coordinate"
+              type: number
+              nullable: true
+              minimum: -180
+              maximum: 180     
+              example: -73.93053
+            IsTemporaryAddress:
+              description: "Indicates whether the address of the Applicant requesting care is temporary."
+              type: string
+              enum: ["Yes","No"]
+              nullable: false              
+              example: "Yes"
+            CurrentlyLivingIn:
+              description: "Indicates a list of possible values to select where the family is currently living in."
+              type: string
+              enum: ["Homeless Shelter", "Doubled-up with another Family", "Hotel/Motel", "Car, Bus, Train", "Park", "Campsite", "Other"]
+              nullable: true
+              example: "Homeless Shelter"
+            TelephoneHome:
+              description: "The home telephone number,  including the area code used by the Applicant."
+              type: string
+              nullable: true
+              example: null
+            TelephoneWork:
+              description: "The work telephone number, including the area code used by the Applicant."
+              type: string
+              nullable: true
+              example: "2132312312"
+            TelephoneMobileOrOther:
+              description: "The cell or other telephone number,  including the area code used by the Applicant."
+              type: string
+              nullable: true
+              example: null
+            Email:
+              description: "A field that indicates the email address of the Applicant."
+              type: string
+              nullable: false              
+              example: "pranav.parakh@milkyway.com"
+            HasCashAssistance:
+              type: string
+              enum: ["Yes","No"]              
+              example: "No"
+            CANumber:
+              description: "The unique Cash Assistance number has to be entered if the applicant has a CA case that has been inactive over a year."
+              type: string
+              nullable: true              
+              example: null
+            PrimaryLanguage:
+              description: "Indicates the language primarily spoken by the applicant."
+              type: string
+              enum: ["English", "Spanish", "Other"]
+              nullable: false              
+              example: "English"
+            PreferredLanguage:
+              description: "Indicates the language the Applicant prefer to communicate in."
+              type: string
+              enum: ["English", "Spanish", "Other"]              
+              nullable: false              
+              example: "English"
+            OtherPrimaryLanguage:
+              description: "Free form text to indicate the applicant's primary language."
+              type: string
+              nullable: true              
+              example: null
+            OtherPreferredLanguage:
+              description: "Free form text to indicate the applicant's preferred language."
+              type: "string"
+              nullable: true              
+              example: null
+            DateOfBirth: 
+              description: "Indicates the Applicant's Date of Birth."
+              type: string
+              nullable: false              
+              example: "1995-05-01"
+            Sex:
+              description: "Indicates the Applicant's gender."
+              type: string
+              enum: ["Male","Female"]
+              nullable: false              
+              example: "Male"
+            Ethnicity:
+              description: "Indicates the Applicant's Ethnicity."
+              type: string
+              enum: ["Hispanic", "Latino", "No", "Prefer not to answer"]     
+              example: "Hispanic"
+            Race:
+              description: "Indicates the Applicant's Race.  AI - Native American or Alaskan Native; AS - Asian; BL - Black or African American; HP - Native Hawaiian or Pacific Islander; WH - White"
+              type: array
+              items: 
+                type: string
+                enum: ["AI","AS","BL","HP","WH"]
+              uniqueItems: true
+              nullable: true                     
+            SSN:
+              description: "Indicates the Applicant's Social Security Number."
+              type: string
+              nullable: true                    
+              example: "312134134"
+          required: ["FirstName", "LastName", "Street", "City", "Borough", "State","ZipCode",   "IsTemporaryAddress", "Email","PrimaryLanguage", "PreferredLanguage","DateOfBirth","Sex","MaritalStatus"]
+        ChildrenNeedingCare:
+          type: array
+          items:
+            type: object
+            properties:
+              LastName:
+                description: "Last Name of the Child(ren) in the household for whom Applicant is requesting Child Care assistance."
+                type: string
+                nullable: false
+                example: "Smith"
+              FirstName:
+                description: "First name of the Child(ren) in the household for whom Applicant is requesting Child Care assistance."
+                type: string
+                nullable: false                
+                example: "Walt"
+              MI:
+                description: "Middle Initial of the Child(ren) in the household for whom Applicant is requesting Child Care assistance."
+                type: string
+                nullable: true
+                example: null
+              RelationshipToApplicant:
+                description: "Indicates the relationship of Child(ren) to the Applicant."
+                type: string
+                enum: ["Child","Grandchild","Foster Child", "Other"]
+                nullable: false                
+                example: "Other"
+              DateOfBirth:
+                description: "Indicates the date of birth of Child(ren) in the household for whom Applicant is requesting Child Care assistance."
+                type: string
+                nullable: false                
+                example: "2019-10-17"
+              Sex:
+                description: "Indicates the gender of Child(ren) in the household for whom Applicant is requesting Child Care assistance."
+                type: string
+                enum: ["Male","Female","X"]
+                nullable: false                
+                example: "Male"
+              Ethnicity:
+                description: "Indicates whether the Child(ren) applying for care is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect the eligibility for Child Care Assistance or the amount of assistance that will be given by the agency."
+                type: string
+                enum: ["Hispanic", "Latino", "No", "Prefer not to answer"]
+                example: "Hispanic"
+                nullable: true
+              Race: 
+                description: "Indicates the Race of Child(ren) Needing Care. Providing race information is voluntary and will not affect the eligibility for Child Care Assistance or the amount of assistance that will be given by the agency. AI - Native American or Alaskan Native; AS - Asian; BL - Black or African American;HP - Native Hawaiian or Pacific Islander; WH - White"
+                type: array
+                items: 
+                  type: string
+                  enum: ["AI","AS","BL","HP","WH"]
+                uniqueItems: true
+                nullable: true
+              SSN:
+                description: "Indicates the Social Security Number of the Child(ren) Needing Care. The SSN may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting."
+                type: string
+                nullable: true
+                example: "123123123"
+              DoBothParentsResideInHome:
+                description: "Indicates whether both of the child(ren) parents live in the home."
+                type: string
+                enum: ["Yes","No"]     
+                nullable: false                
+                example: "Yes"
+              HasDisability:
+                description: "Indicate whether the child needing Child Care has a disability."
+                type: string
+                enum: ["Yes","No"]     
+                nullable: false                
+                example: "Yes"
+              IsImmigrationStatusSatisfactory:
+                description: "Indicates whether the child needing Child Care is a U.S. citizen, U.S. national or person with satisfactory immigration status."
+                type: string
+                enum: ["Yes","No"]
+                nullable: false                
+                example: "Yes"
+            required: ["FirstName", "LastName", "DateOfBirth","Sex", "RelationshipToApplicant", "DoBothParentsResideInHome", "HasDisability", "ImmigrationStatus"]
+        FamilyMembers:
+          type: array
+          items:
+            type: object
+            properties:
+              LastName: 
+                description: "The Last Name of the family member/child in the household who do not need Child Care."
+                type: string
+                nullable: false
+                example: "Smith"
+              FirstName:
+                description: "The First Name of the family member/child in the household who do not need Child Care."
+                type: string
+                nullable: false                
+                example: "Jake"
+              MI:
+                description: "The Middle Initial of the family member/child in the household who do not need Child Care."
+                type: string
+                nullable: true
+                example: null
+              RelationshipToApplicant:
+                description: "Indicates the Relationship between the Applicant and the family member/child in the household who do not need Child Care."
+                type: string
+                enum: ["Spouse","Partner", "Foster Parent", "Child","Other"]                
+                nullable: false                
+                example: "Other"
+              DateOfBirth:
+                description: "Indicates the DoB of the family member/child in the household who do not need Child Care."
+                type: string
+                nullable: false                
+                example: "2003-09-05"
+              Sex:
+                description: "Indicates the Gender of the family member/child in the household who do not need Child Care."
+                type: string
+                enum: ["Male","Female"]
+                nullable: false                
+                example: "Male"
+              Ethnicity:
+                description: "Indicates the Ethnicity of the family member/child in the household who do not need Child Care."
+                type: string
+                enum: ["Hispanic", "Latino", "No", "Prefer not to answer"]
+                example: "Hispanic"
+              Race: 
+                description: "Indicates the Race of the family member/child in the household who do not need Child Care. AI - Native American or Alaskan Native; AS - Asian; BL - Black or African American; HP - Native Hawaiian or Pacific Islander; WH - White"
+                type: array
+                items: 
+                  type: string
+                  enum: ["AI","AS","BL","HP","WH"]
+                uniqueItems: true
+                nullable: true                
+              SSN:
+                description: "Indicates the Social Security Number of the family member/child in the household who do not need Child Care. The SSN may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting."
+                type: string
+                nullable: true
+                example: null
+            required: ["FirstName", "LastName", "DateOfBirth","Sex", "RelationshipToApplicant"]
+        ChildFamilyNeeds:
+          type: object
+          properties:
+            AssistanceReason: 
+              description: "Indicates the reason(s) for requesting the Child Care assistance."
+              type: array
+              items: 
+                type: string
+                enum: ["Employment", "Looking for Work", "Vocational Training/Educational Activities", "Receiving Domestic Violence Services", "Homelessness"]
+              minItems: 1
+              maxItems: 2
+              uniqueItems: true
+              nullable: false
+            IsParentCurrentlyActiveInMilitary: 
+              description: "Indicates whether a parent is currently active full-time in the U.S. Military."
+              type: string
+              enum: ["Yes","No"]     
+              nullable: false
+            IsParentMemOfGuardOrMRU:
+              description: "Indicates whether a parent is currently a member of a National Guard or Military Reserve Unit."
+              type: string
+              enum: ["Yes","No"]     
+              nullable: false
+            IsNonCustodialParentAvailable:
+              description: "Indicates whether there is a non-custodial parent available to provide Child Care."
+              type: string
+              enum: ["Yes","No"]                   
+              nullable: false
+            DuplicateApp: 
+              description: "Indicates whether or not the Applicant is receiving and/or applying for Child Care through a different agency."
+              type: string
+              enum: ["Not Applicable","Department of Education (DOE)", "Human Resources Administration (HRA)", "Department of Youth and Community Development (DYCD)", "Department of Homeless Services (DHS)","Consortium for Worker Education (CWE)","Administration for Children's Services (ACS)"]
+          required: ["AssistanceReason", "IsParentCurrentlyActiveInMilitary", "IsNonCustodialParentAvailable", "IsParentMemOfGuardOrMRU"]
+        Employment:
+          type: object
+          properties:
+            Applicant1stJob: 
+                $ref: '#/components/schemas/Job'    
+            Applicant2ndJob:
+                $ref: '#/components/schemas/Job'    
+            SecondParent1stJob:
+                $ref: '#/components/schemas/Job'    
+            SecondParent2ndJob:
+                $ref: '#/components/schemas/Job'    
+        IncomeInformation:
+          type: object
+          properties:
+            Sources:
+              type: array
+              minItems: 13
+              items:
+                type: object
+                properties:
+                  NameRef:
+                    description: "Indicates source of income of the Applicant or anyone who is applying with the applicant receives money from the listed sources."
+                    type: string
+                    enum: ["ApplicantWages", "SecondParentWages","SelfEmployment","ChildSupport","Alimony","Unemployment","SocialSecurity","Disability","Rental","Dividends","Retirement","CashAssistance","Other"]
+                    nullable: false
+                    example: "ApplicantWages"
+                  OtherSourceText:
+                    description: "Free form text to indicate the source of any other income earned."
+                    type: string
+                    nullable: true
+                    example: null
+                  IsSourceApplicable:
+                    type: string
+                    enum: ["Yes","No"]    
+                    example: "Yes"
+                  GrossAmount:
+                    description: "Gross amount (in $) received from Wages/Salary, including overtime,  commissions, training programs, tips. Format: $##########.##"
+                    type: number
+                    pattern: "^\\$[0-9]{1,10}(\\.[0-9]{1,2}|[^\\.])$"                    
+                    nullable: true                    
+                    example: 1300
+                  HowOften:
+                    description: "Indicates the frequency of receiving income."
+                    type: string
+                    enum: ["Weekly", "Bi-weekly", "Monthly", "Other"]
+                    nullable: true                    
+                    example: "Weekly"
+                  Recipient:
+                    description: "Indicates the name of the person who is the recipient of the income."
+                    type: string
+                    nullable: true                    
+                    example: "Self"
+                  MonthlyAmount:
+                    description: "Calculated Gross amount (in $) normalized using Monthly interval. Format: $##########.##"
+                    type: number
+                    pattern: "^\\$[0-9]{1,10}(\\.[0-9]{1,2}|[^\\.])$"                    
+                    nullable: true                    
+                    example: 1300                    
+                required: ["NameRef","IsSourceApplicable", "GrossAmount","HowOften","Recipient","MonthlyAmount"]
+            TotalIncome:
+              description: "The total amount (in $) received from the sources."
+              type: number
+              example: 1300
+          required: ["TotalIncome"]
+        WorkActivityTravelTimeSchedule:
+          type: object
+          properties:
+            WorkActivitySchedule: 
+              type: object
+              properties:
+                FirstParent1stActivity: 
+                  $ref: '#/components/schemas/ParentActivity'    
+                FirstParent2ndActivity: 
+                  $ref: '#/components/schemas/ParentActivity'  
+                  
+                SecondParent1stActivity: 
+                  $ref: '#/components/schemas/ParentActivity'    
+                SecondParent2ndActivity: 
+                  $ref: '#/components/schemas/ParentActivity'    
+            TravelTimeSchedule: 
+              type: object
+              properties:
+                FirstParentTravelTime: 
+                  $ref: '#/components/schemas/ParentTravelTime'    
+                SecondParentTravelTime:
+                  $ref: '#/components/schemas/ParentTravelTime'    
+          additionalProperties: false
+        ProviderChoices:
+          type: array
+          items:
+            type: object
+            properties:
+              ProviderName: 
+                description: "Indicates the provider name selected by the Applicant."
+                type: string
+                nullable: false
+                example: "Provider. Org"
+              ProgramNumber: 
+                description: "If applicable, indicates the program # of the provider."
+                type: string
+                nullable: true
+                example: "13423"
+              ProviderAddress:
+                description: "Indicates the address of the provider where the Applicant would like to enroll the child(ren)."
+                type: object
+                nullable: false
+                properties: 
+                  Street: 
+                    type: string
+                    example: "1450 Western Ave"
+                  City:
+                    type: string
+                    example: "Albany"
+                  State:
+                    type: string
+                    example: "New York"
+                  ZipCode:
+                    type: string
+                    example: "12203"
+            required: ["ProviderName","ProviderAddress"]
+    ApplicationSubmission: 
+        type: object
+        additionalProperties: false
+        properties:
+          Info:
+            type: object
+            properties:
+              ServiceReferenceId:
+                type: string
+                description: "Identifier referencing provision of specific outputs, that satisfy the needs of clients and contribute to the achievement of public goals."
+                enum : ["Childcare"]
+                example: "Childcare"
+              ProgramReferenceId:
+                type: string
+                description: "Identifier referencing a mandate, to achieve goals expressed as outcomes and impacts, to address needs of a target group."
+                enum : ["Contracted Care", "Childcare Voucher","Cash Assistance"]
+                nullable: true
+                example: "Contracted Care"
+              ServiceOwnerAgencyCode:
+                type: string
+                description: "The agency responsible for providing service outputs to clients through the operation of a service."
+                enum: ["DOE", "ACS"]
+                example: "DOE"    
+              ServiceDeliverySystem: 
+                description: "The name of the system responsible for managing the client and delivery of service"
+                type: string
+                enum: ["ACCIS"]
+                example: "ACCIS"
+              ServiceDeliverySystemCaseId: 
+                description: "The Case reference number assigned to the Client, by System-of-Record , for delivering the service client has enrolled in.  Required, if ApplicationType is NOT New"
+                type: string
+                nullable: false
+                example: "123456789"                   
+              ApplicationNumber:
+                type: string
+                description: "A unique identifier of the application."
+                example: "IA-0000000010"
+                nullable: false
+              ApplicationType:
+                type: string
+                description: "Classifier signifying if the application is pertinent to a new or an existing service output, or client need."
+                enum: ["New", "Reopen","Recertification", "Change"]
+                example: "New"
+              NYCIDAssignedIdentifier:
+                type: string
+                description: "A unique profile identifier of the Applicant."
+              NYCIDEmail: 
+                type: string
+                description: "The email address of the Applicant."
+                example: "amit.nihala@mycity.com.devint"
+              ApplicationSubmissionDate:
+                type: string
+                description: "The date and time when the application was submitted by the Applicant."
+                example: "2022-10-20T06:28:06.585Z"
+              ApplicationStatus:
+                type: string
+                description: "Service access, or delivery process, status."
+                enum: ["In process", "Additional Information Required", "Eligible", "Ineligible", "Deactivated", "NOID"]
+                example: "In Process"
+              ExpectedDocumentCount: 
+                type: integer
+                description: "The expected number of documents attached to the application,  for reconciliation/ cross-checking purposes by downstream system"
+                example: 5                 
+              UserConsentForRecommendations:
+                type: string
+                description: "User Consent indicator, indicating either consent or denial for application data and existing agency records to be checked to determine what other benefits the user may qualify for and to be contacted with a personalized list of benefits that the user can apply for separately" 
+                nullable: true 
+                example: null  
+                default: null                
+                enum: 
+                  - Yes
+                  - No
+                  - null 
+              LanguageCode: 
+                type: string
+                description: "The Language Code. TBD: List to be reviewed/ corrected."
+                enum: ["ar","bn","zh_CN","en_US","fr","de","hi","it","ru","es"]
+                default: "en_US"
+              Language:
+                type: string
+                description: "The Language Name"
+                enum: ["Arabic","Bengali", "Chinese", "English", "French","German", "Hindi","Italian","Russian","Spanish"]
+                default: "English"
+            required: ["ServiceOwnerAgencyCode", "ApplicationNumber", "NYCIDEmail", "ApplicationSubmissionDate", "ApplicationStatus"]  
+          Forms:
+            type: array
+            items:
+              type: object
+              properties:
+                FormId:
+                  type: string
+                  enum: ["CFWB-012"]
+                  example: "CFWB-012"
+                FormName:
+                  type: string
+                  enum: ["Application for Child Care Assistance"]
+                  example: "Application for Child Care Assistance"
+                FormInputDocument:
+                  oneOf: [
+                      $ref: '#/components/schemas/CFWB012',                                      
+                      $ref: '#/components/schemas/FutureForm'  
+                  ]
+          DocumentList:
+            type: array
+            items:
+              type: object
+              properties:
+                Id:
+                  type: string
+                  description: "Unique identifier referencing the document."
+                  example: "0683S000000kQwqQAE"
+                Type:
+                  type: string
+                  description: "Type of the document, to classify Signed, Supplemental Forms and Supporting (Evidence/ Proof) documents. \n
+                  
+                  CFWB-012: Child Care Assistance Application \n
+
+                  * Residency Proof: IDNYC, UtilityBill, DriverLicense, RentReceipt, NYCHACert, CFWB027, CFWB067, Sec8AwardLetter, ResidencyOther \n
+                  * Applicant/ Child Relationship Proof: BirthCert, AdoptionRec, CourtOrderGuardian,  BaptismalRec,  Passport,  CFWB058 \n
+                  * Applicant Employment Income Proof:  CFWB015, CFWB031, SelfEmpIncomeProof, PayStubs,  WeeklyPayStubsSame, WeeklyPayStubsVaries, BiWeeklyPayStubsSame, BiweeklyPayStubsVaries \n
+                  * Child(ren) Age Proof: BirthCert,  AdoptionRec, AlienRegCard, BaptismalRec,  Passport, ChildOther \n
+                  * Child(ren) Needing Care Immigration Status Proof: BirthCert,  Passport, NatCert, AlienRegCard,  FS240 \n
+                  * Child/Family Needs Proof: HotelReferral, ApprovedSearchPlan,  ProofUnEmpIns, Letter, DomViolenceProof, CFWB005, CFWB026 \n
+                  * Income Sources Proof: CorpIncomeProof, PartnerIncomeProof, SolePropIncomeProof, RentalIncomeProof,  OtherIncomeProof"
+
+
+                  enum: ["AdoptionRec", "AlienRegCard", "ApprovedSearchPlan", "Audit", "BaptismalRec", "BirthCert", "BiWeeklyPayStubsSame", "BiweeklyPayStubsVaries", "CFWB005", "CFWB015", "CFWB026", "CFWB027", "CFWB031", "CFWB058", "CFWB067", "ChildOther", "CourtOrderGuardian", "CorpIncomeProof", "DomViolenceProof", "DriverLicense", "FS240", "HotelReferral", "IDNYC", "Letter", "NatCert", "NYCHACert", "OtherIncomeProof", "Package", "PartnerIncomeProof", "Passport", "PayStubs", "ProofUnEmpIns", "RentalIncomeProof", "RentReceipt", "ResidencyOther","Sec8AwardLetter", "SelfEmpIncomeProof", "Signed", "SolePropIncomeProof", "Supplemental", "Supporting", "UtilityBill", "WeeklyPayStubsSame", "WeeklyPayStubsVaries"]
+                  example: "Signed"
+                Name:
+                  type: string
+                  description: "Name of the document."
+                  example: "IA-0000000005-SubmissionPDF"
+                FileContentType:
+                  type: string
+                  description: "File format, describing the data contained in the file."
+                  enum: ["PDF", "JPEG", "JPG", "PNG", "GIF", "TIFF", "BMP", "JFIF", "JSON"]
+                  example: "PDF"
+                FileCreatedOn:
+                  type: string
+                  description: "The date and time when the file was created in the system."
+                  example: "2022-10-25T04:17:25Z"
+                FileSHA256Checksum:
+                  type: string
+                  description: "File checksum, SHA256 hash function value, to verify copy of file is identical to the original."
+                  example: "2deaf0b5e8d8c0ca97e055b03781332f2f159254e4a66bcf80a6ab218d133b86"
+              required: ["Id", "Name", "FileContentType", "FileCreatedOn", "FileSHA256Checksum"]                    
+          StatusEvents:
+            type: array
+            items:
+              type: object
+              properties:
+                StatusEventId:
+                  type: string
+                ProcessingAgencyCode:
+                  type: string
+                AgencyCaseID:
+                  type: string
+                ApplicationStatus:
+                  type: string
+                StatusReason:
+                  type: string
+                AgencyComments:
+                  type: string
+                StatusTime:
+                  type: string
+                SuppressApplicantNotification:
+                  type: string
+                  description: "--- Backlog for future consideration --- An optional flag for processing agency to specify if the status update notification is strictly meant for use by internal system/ process communication only.  Unless explicitly suppressed by the processing agency by setting this indicator to 'Yes', by default, status update is considered to be applicant facing for MyCity to appropriately inform (via Portal Dashboard) / notify (via email) the Applicant."                  
+                  enum: ["Yes","No", "True", "False"]    
+                  default: "No"                  
+                  example: "Yes"                  
+              required: ["ProcessingAgencyCode", "ApplicationStatus", "StatusTime"]  
+  securitySchemes:
+    password:
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: 'http://example.com/oauth/token'
+          scopes:
+            write: allows modifying resources
+            read: allows reading resources
