@@ -134,8 +134,13 @@ export function validateStep(step, formData, children, formErrors = {}, touched 
                 if (!emailRegex.test(subValue)) {
                   error = `${label} must be a valid email address.`;
                 }
-              } else if (constraints.pattern && subValue && !new RegExp(constraints.pattern).test(subValue)) {
-                error = `${label} is invalid format.`;
+              } else if (constraints.pattern && subValue) {
+                const raw = constraints.pattern;
+                const safePattern = raw.replace(/\\\\/g, "\\");
+                const pattern = new RegExp(safePattern);
+                if (!pattern.test(subValue)) {
+                  error = `${label} is invalid format.`;
+                }
               } else if (constraints.minLength && subValue.length < constraints.minLength) {
                 error = `${label} must be at least ${constraints.minLength} characters.`;
               } else if (constraints.maxLength && subValue.length > constraints.maxLength) {
@@ -174,7 +179,9 @@ export function validateStep(step, formData, children, formErrors = {}, touched 
           ) {
             error = `${label} is required.`;
           } else if (constraints.pattern && typeof val === "string" && val.trim() !== "") {
-            const pattern = new RegExp(constraints.pattern);
+            const raw = constraints.pattern;
+            const safePattern = raw.replace(/\\\\/g, "\\");
+            const pattern = new RegExp(safePattern);
             if (val.includes("_") || !pattern.test(val.trim())) {
               error = `${label} is invalid format.`;
             }
@@ -184,8 +191,17 @@ export function validateStep(step, formData, children, formErrors = {}, touched 
               error = `${label} must be a valid email address.`;
             }
           } else if (typeof val === "string") {
-            if (constraints.pattern && !new RegExp(constraints.pattern).test(val)) {
-              error = `${label} is invalid format.`;
+            if (constraints.pattern) {
+              const raw = constraints.pattern;
+              const safePattern = raw.replace(/\\\\/g, "\\");
+              const pattern = new RegExp(safePattern);
+              if (!pattern.test(val)) {
+                error = `${label} is invalid format.`;
+              } else if (constraints.minLength && val.length < constraints.minLength) {
+                error = `${label} must be at least ${constraints.minLength} characters.`;
+              } else if (constraints.maxLength && val.length > constraints.maxLength) {
+                error = `${label} must be no more than ${constraints.maxLength} characters.`;
+              }
             } else if (constraints.minLength && val.length < constraints.minLength) {
               error = `${label} must be at least ${constraints.minLength} characters.`;
             } else if (constraints.maxLength && val.length > constraints.maxLength) {
