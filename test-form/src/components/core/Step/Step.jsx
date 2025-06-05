@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { validateStep } from '../../../utils/formHelpers';
+import { validateStep, evaluateCondition } from '../../../utils/formHelpers';
 import Section from '../Section/Section';
 import InfoSection from '../InfoSection/InfoSection';
 import TextInput from '../../shared/TextInput/TextInput';
@@ -153,9 +153,32 @@ export default function Step({
 
   const sectionHasMissing = (section) => {
     if (!Array.isArray(section.fields)) return false;
-    return section.fields.some(
-      (f) => f.required && !formData[f.id]
-    );
+    return section.fields.some((f) => {
+      const value = formData[f.id];
+      const { required, requiredCondition } = f;
+
+      let isRequired = false;
+      if (
+        requiredCondition &&
+        (requiredCondition.condition ||
+          (requiredCondition.field && requiredCondition.operator))
+      ) {
+        isRequired = evaluateCondition(
+          requiredCondition.condition || requiredCondition,
+          formData
+        );
+      } else if (typeof required === "boolean") {
+        isRequired = required;
+      }
+
+      return (
+        isRequired &&
+        (value === undefined ||
+          value === null ||
+          (typeof value === "string" && value === "") ||
+          (Array.isArray(value) && value.length === 0))
+      );
+    });
   };
 
   const handleNextClick = () => {
