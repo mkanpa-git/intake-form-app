@@ -6,6 +6,8 @@ import SelectField from '../../shared/SelectField/SelectField';
 import RadioGroup from '../../shared/RadioGroup/RadioGroup';
 import GroupField from '../../shared/GroupField/GroupField';
 import TableLayout from '../../shared/TableLayout/TableLayout';
+import MaskedInput from '../../shared/MaskedInput/MaskedInput';
+import FileInput from '../../shared/FileInput/FileInput';
 import ReactMarkdown from 'react-markdown';
 import styles from './Step.module.css';
 
@@ -31,14 +33,31 @@ export default function Step({
   const renderField = (field) => {
     switch (field.type) {
       case 'text':
+      case 'email':
+      case 'number':
+      case 'time':
         return (
           <TextInput
             key={field.id}
             id={field.id}
             label={field.label}
+            type={field.type}
             required={field.required}
             value={formData[field.id] || ''}
             onChange={(e) => handleChange(field.id, e.target.value)}
+          />
+        );
+      case 'tel':
+        return (
+          <MaskedInput
+            key={field.id}
+            id={field.id}
+            label={field.label}
+            mask="(000) 000-0000"
+            placeholder={field.ui?.placeholder || '(123) 456-7890'}
+            required={field.required}
+            value={formData[field.id] || ''}
+            onChange={(val) => handleChange(field.id, val)}
           />
         );
       case 'select':
@@ -77,6 +96,17 @@ export default function Step({
             onChange={(e) => handleChange(field.id, e.target.value)}
           />
         );
+      case 'file':
+        return (
+          <FileInput
+            key={field.id}
+            id={field.id}
+            label={field.label}
+            multiple={field.metadata?.multiple}
+            required={field.required}
+            onChange={(val) => handleChange(field.id, val)}
+          />
+        );
       case 'group':
         return (
           <GroupField
@@ -87,7 +117,17 @@ export default function Step({
           />
         );
       default:
-        return null;
+        return (
+          <TextInput
+            key={field.id}
+            id={field.id}
+            label={field.label}
+            type={field.type}
+            required={field.required}
+            value={formData[field.id] || ''}
+            onChange={(e) => handleChange(field.id, e.target.value)}
+          />
+        );
     }
   };
 
