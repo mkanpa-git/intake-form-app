@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { validateStep } from '../../../utils/formHelpers';
 import Section from '../Section/Section';
 import InfoSection from '../InfoSection/InfoSection';
 import TextInput from '../../shared/TextInput/TextInput';
@@ -21,6 +22,7 @@ export default function Step({
 }) {
   const [collapsedSections, setCollapsedSections] = useState({});
   const [formData, setFormData] = useState({});
+  const [errors, setErrors] = useState({});
 
   const handleToggle = (id) => {
     setCollapsedSections((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -31,21 +33,25 @@ export default function Step({
   };
 
   const renderField = (field) => {
+    const error = errors[field.id];
     switch (field.type) {
       case 'text':
       case 'email':
       case 'number':
       case 'time':
         return (
-          <TextInput
-            key={field.id}
-            id={field.id}
-            label={field.label}
-            type={field.type}
-            required={field.required}
-            value={formData[field.id] || ''}
-            onChange={(e) => handleChange(field.id, e.target.value)}
-          />
+          <>
+            <TextInput
+              key={field.id}
+              id={field.id}
+              label={field.label}
+              type={field.type}
+              required={field.required}
+              value={formData[field.id] || ''}
+              onChange={(e) => handleChange(field.id, e.target.value)}
+            />
+            {error && <div className="form-error-alert">{error}</div>}
+          </>
         );
       case 'tel':
         return (
@@ -58,43 +64,53 @@ export default function Step({
             required={field.required}
             value={formData[field.id] || ''}
             onChange={(val) => handleChange(field.id, val)}
+            error={error}
           />
         );
       case 'select':
         return (
-          <SelectField
-            key={field.id}
-            id={field.id}
-            label={field.label}
-            options={field.ui?.options || []}
-            required={field.required}
-            value={formData[field.id] || ''}
-            onChange={(e) => handleChange(field.id, e.target.value)}
-          />
+          <>
+            <SelectField
+              key={field.id}
+              id={field.id}
+              label={field.label}
+              options={field.ui?.options || []}
+              required={field.required}
+              value={formData[field.id] || ''}
+              onChange={(e) => handleChange(field.id, e.target.value)}
+            />
+            {error && <div className="form-error-alert">{error}</div>}
+          </>
         );
       case 'radio':
         return (
-          <RadioGroup
-            key={field.id}
-            id={field.id}
-            label={field.label}
-            options={field.ui?.options || []}
-            required={field.required}
-            value={formData[field.id] || ''}
-            onChange={(e) => handleChange(field.id, e.target.value)}
-          />
+          <>
+            <RadioGroup
+              key={field.id}
+              id={field.id}
+              label={field.label}
+              options={field.ui?.options || []}
+              required={field.required}
+              value={formData[field.id] || ''}
+              onChange={(e) => handleChange(field.id, e.target.value)}
+            />
+            {error && <div className="form-error-alert">{error}</div>}
+          </>
         );
       case 'date':
         return (
-          <TextInput
-            key={field.id}
-            id={field.id}
-            label={field.label}
-            type="date"
-            required={field.required}
-            value={formData[field.id] || ''}
-            onChange={(e) => handleChange(field.id, e.target.value)}
-          />
+          <>
+            <TextInput
+              key={field.id}
+              id={field.id}
+              label={field.label}
+              type="date"
+              required={field.required}
+              value={formData[field.id] || ''}
+              onChange={(e) => handleChange(field.id, e.target.value)}
+            />
+            {error && <div className="form-error-alert">{error}</div>}
+          </>
         );
       case 'file':
         return (
@@ -105,6 +121,7 @@ export default function Step({
             multiple={field.metadata?.multiple}
             required={field.required}
             onChange={(val) => handleChange(field.id, val)}
+            error={error}
           />
         );
       case 'group':
@@ -118,15 +135,18 @@ export default function Step({
         );
       default:
         return (
-          <TextInput
-            key={field.id}
-            id={field.id}
-            label={field.label}
-            type={field.type}
-            required={field.required}
-            value={formData[field.id] || ''}
-            onChange={(e) => handleChange(field.id, e.target.value)}
-          />
+          <>
+            <TextInput
+              key={field.id}
+              id={field.id}
+              label={field.label}
+              type={field.type}
+              required={field.required}
+              value={formData[field.id] || ''}
+              onChange={(e) => handleChange(field.id, e.target.value)}
+            />
+            {error && <div className="form-error-alert">{error}</div>}
+          </>
         );
     }
   };
@@ -136,6 +156,18 @@ export default function Step({
     return section.fields.some(
       (f) => f.required && !formData[f.id]
     );
+  };
+
+  const handleNextClick = () => {
+    const result = validateStep(
+      { sections },
+      { ...formData },
+      [],
+      errors
+    );
+    setErrors(result.errors);
+    if (!result.valid) return;
+    onNext && onNext();
   };
 
   return (
@@ -165,6 +197,9 @@ export default function Step({
             showAlert={sectionHasMissing(sec)}
           >
             {sec.content && <ReactMarkdown>{sec.content}</ReactMarkdown>}
+            {errors[sec.id] && (
+              <div className="form-error-alert">{errors[sec.id]}</div>
+            )}
             {sec.type === 'group' ? (
               <GroupField
                 field={sec}
@@ -176,7 +211,7 @@ export default function Step({
                 fields={sec.fields || []}
                 formData={formData}
                 onChange={handleChange}
-                errors={{}}
+                errors={errors}
                 ui={sec.ui}
               />
             ) : (
@@ -192,7 +227,7 @@ export default function Step({
           </button>
         )}
         {!isLast && (
-          <button type="button" onClick={onNext}>
+          <button type="button" onClick={handleNextClick}>
             Next
           </button>
         )}
