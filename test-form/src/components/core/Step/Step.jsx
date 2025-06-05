@@ -69,6 +69,30 @@ export default function Step({
           />
         );
       case 'select':
+        if (field.metadata?.multiple) {
+          return (
+            <>
+              <SelectField
+                key={field.id}
+                id={field.id}
+                label={field.label}
+                options={field.ui?.options || []}
+                required={field.required}
+                multiple
+                minSelections={field.constraints?.minSelections}
+                maxSelections={field.constraints?.maxSelections}
+                value={formData[field.id] || []}
+                onChange={(e) =>
+                  handleChange(
+                    field.id,
+                    Array.from(e.target.selectedOptions).map((opt) => opt.value)
+                  )
+                }
+              />
+              {error && <div className="form-error-alert">{error}</div>}
+            </>
+          );
+        }
         return (
           <>
             <SelectField
