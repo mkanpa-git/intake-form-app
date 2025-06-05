@@ -5,6 +5,7 @@ import InfoSection from '../InfoSection/InfoSection';
 import TextInput from '../../shared/TextInput/TextInput';
 import SelectField from '../../shared/SelectField/SelectField';
 import RadioGroup from '../../shared/RadioGroup/RadioGroup';
+import CheckboxGroup from '../../shared/CheckboxGroup/CheckboxGroup';
 import GroupField from '../../shared/GroupField/GroupField';
 import TableLayout from '../../shared/TableLayout/TableLayout';
 import MaskedInput from '../../shared/MaskedInput/MaskedInput';
@@ -94,6 +95,36 @@ export default function Step({
               value={formData[field.id] || ''}
               onChange={(e) => handleChange(field.id, e.target.value)}
             />
+            {error && <div className="form-error-alert">{error}</div>}
+          </>
+        );
+      case 'checkbox':
+        if (field.metadata?.multiple) {
+          return (
+            <>
+              <CheckboxGroup
+                key={field.id}
+                id={field.id}
+                label={field.label}
+                options={field.ui?.options || []}
+                value={formData[field.id] || []}
+                onChange={(val) => handleChange(field.id, val)}
+                required={field.required}
+              />
+              {error && <div className="form-error-alert">{error}</div>}
+            </>
+          );
+        }
+        return (
+          <>
+            <input
+              key={field.id}
+              type="checkbox"
+              id={field.id}
+              checked={!!formData[field.id]}
+              onChange={(e) => handleChange(field.id, e.target.checked)}
+            />
+            {field.label && <label htmlFor={field.id}>{field.label}</label>}
             {error && <div className="form-error-alert">{error}</div>}
           </>
         );
