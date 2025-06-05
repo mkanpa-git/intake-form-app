@@ -4,6 +4,8 @@ import InfoSection from '../InfoSection/InfoSection';
 import TextInput from '../../shared/TextInput/TextInput';
 import SelectField from '../../shared/SelectField/SelectField';
 import RadioGroup from '../../shared/RadioGroup/RadioGroup';
+import GroupField from '../../shared/GroupField/GroupField';
+import TableLayout from '../../shared/TableLayout/TableLayout';
 import ReactMarkdown from 'react-markdown';
 import styles from './Step.module.css';
 
@@ -75,6 +77,15 @@ export default function Step({
             onChange={(e) => handleChange(field.id, e.target.value)}
           />
         );
+      case 'group':
+        return (
+          <GroupField
+            key={field.id}
+            field={field}
+            value={formData[field.id] || []}
+            onChange={(val) => handleChange(field.id, val)}
+          />
+        );
       default:
         return null;
     }
@@ -114,7 +125,23 @@ export default function Step({
             showAlert={sectionHasMissing(sec)}
           >
             {sec.content && <ReactMarkdown>{sec.content}</ReactMarkdown>}
-            {sec.fields && sec.fields.map((field) => renderField(field))}
+            {sec.type === 'group' ? (
+              <GroupField
+                field={sec}
+                value={formData[sec.id] || []}
+                onChange={(val) => handleChange(sec.id, val)}
+              />
+            ) : sec.ui?.layout === 'table' ? (
+              <TableLayout
+                fields={sec.fields || []}
+                formData={formData}
+                onChange={handleChange}
+                errors={{}}
+                ui={sec.ui}
+              />
+            ) : (
+              sec.fields && sec.fields.map((field) => renderField(field))
+            )}
           </Section>
         );
       })}
