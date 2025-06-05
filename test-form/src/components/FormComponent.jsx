@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { IMaskInput } from 'react-imask';
+import FileInput from './shared/FileInput/FileInput';
+import MaskedInput from './shared/MaskedInput/MaskedInput';
 import ReactMarkdown from "react-markdown";
 import { evaluateCondition, validateStep, cleanupHiddenFields } from "../utils/formHelpers";
 
@@ -1951,11 +1952,10 @@ Object.keys(groupData).forEach(fieldId => {
             })}
           </div>
         ) : f.id === "ssn" ? (
-            <IMaskInput
+            <MaskedInput
               mask="000-00-0000"
               value={value}
-              unmask={false}
-              onAccept={(val) => onChange(f.id, val)}
+              onChange={(val) => onChange(f.id, val)}
               className={"form-input" + (error ? " error" : "")}
               placeholder={f.ui?.placeholder || "123-45-6789"}
             />
@@ -2580,8 +2580,7 @@ Object.keys(groupData).forEach(fieldId => {
 
     const commonProps = {
       ...Object.fromEntries(Object.entries(attrs).filter(([_, v]) => v !== undefined)),
-      className: "form-input" + (error ? " error" : ""),
-      onChange: (e) => handleChange(id, e.target.files ? e.target.files[0] : e.target.value)
+      className: "form-input" + (error ? " error" : "")
     };
 
     const errorElement = error ? <div className="form-error-alert">{error}</div> : null;
@@ -2598,14 +2597,10 @@ Object.keys(groupData).forEach(fieldId => {
               Examples: {metadata.examples.join(", ")}
             </div>
           )}
-          <input
-            type="file"
+          <FileInput
             {...commonProps}
             multiple={metadata.multiple || false}
-            onChange={(e) => {
-              const files = e.target.files;
-              handleChange(id, metadata.multiple ? Array.from(files) : files[0]);
-            }}
+            onChange={(files) => handleChange(id, files)}
           />
           {errorElement}
         </label>
@@ -2732,7 +2727,7 @@ Object.keys(groupData).forEach(fieldId => {
           {(field.required === true || (field.requiredCondition && evaluateCondition(field.requiredCondition.condition, formData))) && (
             <span className="required-asterisk"> *</span>
           )}
-          <textarea {...commonProps}></textarea>
+          <textarea {...commonProps} onChange={(e) => handleChange(id, e.target.value)}></textarea>
           {errorElement}
         </label>
       );
@@ -2855,11 +2850,10 @@ Object.keys(groupData).forEach(fieldId => {
             {(field.required === true || (field.requiredCondition && evaluateCondition(field.requiredCondition.condition, formData))) && (
               <span className="required-asterisk"> *</span>
             )}
-            <IMaskInput
+            <MaskedInput
               mask="(000) 000-0000"
               value={value}
-              unmask={false}
-              onAccept={(val) => handleChange(id, val)}
+              onChange={(val) => handleChange(id, val)}
               className={"form-input" + (error ? " error" : "")}
               placeholder="(123) 456-7890"
             />
@@ -2875,11 +2869,10 @@ Object.keys(groupData).forEach(fieldId => {
               <span className="required-asterisk"> *</span>
             )}
             {label}
-              <IMaskInput
+              <MaskedInput
                 mask="000-00-0000"
                 value={value}
-                unmask={false}
-                onAccept={(val) => handleChange(id, val)}
+                onChange={(val) => handleChange(id, val)}
                 className={"form-input" + (error ? " error" : "")}
                 placeholder="123-45-6789"
               />
@@ -2894,7 +2887,12 @@ Object.keys(groupData).forEach(fieldId => {
         {(field.required === true || (field.requiredCondition && evaluateCondition(field.requiredCondition.condition, formData))) && (
           <span className="required-asterisk"> *</span>
         )}
-        <input type={type} value={value} {...commonProps} />
+        <input
+          type={type}
+          value={value}
+          {...commonProps}
+          onChange={(e) => handleChange(id, e.target.value)}
+        />
         {errorElement}
       </label>
     );
