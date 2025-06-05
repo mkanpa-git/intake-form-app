@@ -6,16 +6,29 @@ export default function Stepper({
   currentStep = 0,
   onStepChange,
   requiredDocs = [],
+  orientation = 'vertical',
+  canNavigate,
 }) {
+  const isHorizontal = orientation === 'horizontal';
+  const containerClass = isHorizontal ? styles.horizontalContainer : styles.sidebar;
+  const listClass = isHorizontal ? styles.horizontalList : styles.list;
+  const itemClass = isHorizontal ? styles.horizontalItem : styles.item;
+
+  const handleClick = (idx) => {
+    if (idx === currentStep) return;
+    if (canNavigate && !canNavigate(idx)) return;
+    onStepChange && onStepChange(idx);
+  };
+
   return (
-    <aside className={styles.sidebar}>
+    <aside className={containerClass}>
       <h4>Steps</h4>
-      <ul className={styles.list}>
+      <ul className={listClass}>
         {steps.map((step, index) => (
           <li
             key={step.id}
-            className={`${styles.item} ${index === currentStep ? styles.active : ''}`}
-            onClick={() => onStepChange && onStepChange(index)}
+            className={`${itemClass} ${index === currentStep ? styles.active : ''}`}
+            onClick={() => handleClick(index)}
           >
             {step.title}
           </li>
