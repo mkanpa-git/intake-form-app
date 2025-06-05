@@ -2064,6 +2064,7 @@ Object.keys(groupData).forEach(fieldId => {
     };
 
     const handleCancel = () => {
+      const entries = groupData[fieldId] || [];
       setShowGroupForm(prev => ({ ...prev, [fieldId]: false }));
       setCurrentGroupEntry(prev => ({ ...prev, [fieldId]: {} }));
       setEditingGroupIndex(prev => ({ ...prev, [fieldId]: null }));
@@ -2072,7 +2073,6 @@ Object.keys(groupData).forEach(fieldId => {
       setFormData(prev => ({ ...prev, [fieldId]: entries }));
 
       // ✅ Clear section-level error if entries exist
-      const entries = groupData[fieldId] || [];
       if (entries.length > 0) {
         setFormErrors(prev => {
           const updated = { ...prev };
