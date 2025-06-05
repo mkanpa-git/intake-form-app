@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Section from '../Section/Section';
 import InfoSection from '../InfoSection/InfoSection';
 import TextInput from '../../shared/TextInput/TextInput';
@@ -17,8 +17,26 @@ export default function Step({
   isFirst = false,
   isLast = false,
 }) {
-  const [collapsedSections, setCollapsedSections] = useState({});
+  const [collapsedSections, setCollapsedSections] = useState(() => {
+    const collapsed = {};
+    sections.forEach((s) => {
+      if (s.ui?.defaultCollapsed) {
+        collapsed[s.id] = true;
+      }
+    });
+    return collapsed;
+  });
   const [formData, setFormData] = useState({});
+
+  useEffect(() => {
+    const collapsed = {};
+    sections.forEach((s) => {
+      if (s.ui?.defaultCollapsed) {
+        collapsed[s.id] = true;
+      }
+    });
+    setCollapsedSections(collapsed);
+  }, [sections]);
 
   const handleToggle = (id) => {
     setCollapsedSections((prev) => ({ ...prev, [id]: !prev[id] }));
