@@ -33,7 +33,7 @@ info:
      **12/09/22** <br/>
       1. Defined enum values *["ApplicantWages", "SecondParentWages", "SelfEmployment", "ChildSupport", "Alimony", "Unemployment", "SocialSecurity", "Disability", "Rental", "Dividends", "Retirement", "CashAssistance",  "Other"]* to the data element `NameRef` under node: $.Forms.FormInputDocument.IncomeInformation.Sources. <br/>
       2. Updated type of data element `GrossAmount` from string to number, under node: $.Forms.FormInputDocument.IncomeInformation.Sources and as well as `TotalIncome`. <br/>
-      3. Corrected 3 enum values to '15 min', 30 min' , '45 min', for data elements `DropOffTravelTime`, `PickupTravelTime`, under node: $.Forms.FormInputDocument.WorkActivityTravelTimeSchedule.TravelTimeSchedule.FirstParentTravelTime and SecondParentTravelTime. And also, configured them to be nullable.
+      3. Corrected 3 enum values to '15 min', '30 min', '45 min', for data elements `DropOffTravelTime`, `PickupTravelTime`, under node: $.Forms.FormInputDocument.WorkActivityTravelTimeSchedule.TravelTimeSchedule.FirstParentTravelTime and SecondParentTravelTime. And also, configured them to be nullable.
       4. Corrected enum value from Biweekly to Bi-weekly for data element `HowOften` under node: $.Forms.FormInputDocument.IncomeInformation.Sources <br/>
       
      **12/05/22** <br/>
