@@ -45,26 +45,20 @@ export default function Step({
   };
 
   const handleChange = (id, value) => {
-    const updatedData = { ...formData, [id]: value };
-    setFormData(updatedData);
-
-    // Remove existing error for this field
-    let updatedErrors = { ...errors };
-    delete updatedErrors[id];
-
-    // Revalidate the single field using validateStep
-    const { errors: validationErrors } = validateStep(
-      { sections },
-      updatedData,
-      [],
-      {}
-    );
-
-    if (validationErrors[id]) {
-      updatedErrors[id] = validationErrors[id];
-    }
-
-    setErrors(updatedErrors);
+    setFormData((prev) => {
+      const next = { ...prev, [id]: value };
+      setErrors((prevErr) => {
+        const cleared = { ...prevErr };
+        delete cleared[id];
+        Object.keys(cleared).forEach((k) => {
+          if (k.startsWith(`${id}[`) || k.startsWith(`${id}.`)) delete cleared[k];
+        });
+        const { errors: ve } = validateStep({ sections }, next, [], {});
+        if (ve[id]) cleared[id] = ve[id];
+        return cleared;
+      });
+      return next;
+    });
   };
 
   const groupFieldsByGroup = (fields = []) => {
