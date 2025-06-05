@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Section from '../Section/Section';
+import InfoSection from '../InfoSection/InfoSection';
 import TextInput from '../../shared/TextInput/TextInput';
 import SelectField from '../../shared/SelectField/SelectField';
 import RadioGroup from '../../shared/RadioGroup/RadioGroup';
@@ -14,60 +15,109 @@ export default function Step({
   isFirst = false,
   isLast = false,
 }) {
+  const [collapsedSections, setCollapsedSections] = useState({});
+  const [formData, setFormData] = useState({});
+
+  const handleToggle = (id) => {
+    setCollapsedSections((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+
+  const handleChange = (id, value) => {
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const renderField = (field) => {
+    switch (field.type) {
+      case 'text':
+        return (
+          <TextInput
+            key={field.id}
+            id={field.id}
+            label={field.label}
+            required={field.required}
+            value={formData[field.id] || ''}
+            onChange={(e) => handleChange(field.id, e.target.value)}
+          />
+        );
+      case 'select':
+        return (
+          <SelectField
+            key={field.id}
+            id={field.id}
+            label={field.label}
+            options={field.ui?.options || []}
+            required={field.required}
+            value={formData[field.id] || ''}
+            onChange={(e) => handleChange(field.id, e.target.value)}
+          />
+        );
+      case 'radio':
+        return (
+          <RadioGroup
+            key={field.id}
+            id={field.id}
+            label={field.label}
+            options={field.ui?.options || []}
+            required={field.required}
+            value={formData[field.id] || ''}
+            onChange={(e) => handleChange(field.id, e.target.value)}
+          />
+        );
+      case 'date':
+        return (
+          <TextInput
+            key={field.id}
+            id={field.id}
+            label={field.label}
+            type="date"
+            required={field.required}
+            value={formData[field.id] || ''}
+            onChange={(e) => handleChange(field.id, e.target.value)}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
+  const sectionHasMissing = (section) => {
+    if (!Array.isArray(section.fields)) return false;
+    return section.fields.some(
+      (f) => f.required && !formData[f.id]
+    );
+  };
+
   return (
     <div className={styles.step}>
       <h2>{title}</h2>
-      {sections.map((sec) => (
-        <Section key={sec.id} title={sec.title}>
-          {sec.content && <ReactMarkdown>{sec.content}</ReactMarkdown>}
-          {sec.fields &&
-            sec.fields.map((field) => {
-              switch (field.type) {
-                case 'text':
-                  return (
-                    <TextInput
-                      key={field.id}
-                      id={field.id}
-                      label={field.label}
-                      required={field.required}
-                    />
-                  );
-                case 'select':
-                  return (
-                    <SelectField
-                      key={field.id}
-                      id={field.id}
-                      label={field.label}
-                      options={field.ui?.options || []}
-                      required={field.required}
-                    />
-                  );
-                case 'radio':
-                  return (
-                    <RadioGroup
-                      key={field.id}
-                      id={field.id}
-                      label={field.label}
-                      options={field.ui?.options || []}
-                      required={field.required}
-                    />
-                  );
-                case 'date':
-                  return (
-                    <TextInput
-                      key={field.id}
-                      id={field.id}
-                      label={field.label}
-                      type="date"
-                      required={field.required}
-                    />
-                  );
-                default:
-                  return null;
-              }
-            })}
-        </Section>
-      ))}
+      {sections.map((sec) => {
+        const collapsed = collapsedSections[sec.id] || false;
+        if (sec.type === 'info' || (!sec.fields && sec.content)) {
+          return (
+            <InfoSection
+              key={sec.id}
+              title={sec.title}
+              content={sec.content}
+              ui={sec.ui}
+              collapsed={collapsed}
+              onToggle={() => handleToggle(sec.id)}
+            />
+          );
+        }
+        return (
+          <Section
+            key={sec.id}
+            title={sec.title}
+            required={sec.required}
+            isCollapsed={collapsed}
+            onToggle={() => handleToggle(sec.id)}
+            showAlert={sectionHasMissing(sec)}
+          >
+            {sec.content && <ReactMarkdown>{sec.content}</ReactMarkdown>}
+            {sec.fields && sec.fields.map((field) => renderField(field))}
+          </Section>
+        );
+      })}
       <div className={styles.navigation}>
         {!isFirst && (
           <button type="button" onClick={onBack}>
