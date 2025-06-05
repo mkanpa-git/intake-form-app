@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./form.css";
-import FormComponent from "./components/FormComponent";
+import FormPage from "./pages/FormPage";
 import './App.css';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
       </header>
 
       <main className="form-body">
-        <FormComponent />
+        <FormPage />
       </main>
 
       <footer className="form-footer">
