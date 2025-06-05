@@ -346,11 +346,13 @@ export default function Step({
                 ui={sec.ui}
               />
             ) : (
-              Object.entries(groupFieldsByGroup(sec.fields || [])).map(
-                ([groupKey, groupFields], idx) => (
+              (() => {
+                const grouped = groupFieldsByGroup(sec.fields || []);
+                const entries = Object.entries(grouped);
+                const groups = entries.map(([groupKey, groupFields], idx) => (
                   <div
                     key={`${sec.id}-${groupKey}-${idx}`}
-                    className="form-group-wrapper"
+                    className="form-group-wrapper group-col"
                   >
                     {groupKey !== 'default' && (
                       <div className="form-group-heading">
@@ -361,8 +363,13 @@ export default function Step({
                       {groupFields.map((field) => renderField(field))}
                     </div>
                   </div>
-                )
-              )
+                ));
+                return entries.length > 1 ? (
+                  <div className="group-columns">{groups}</div>
+                ) : (
+                  groups
+                );
+              })()
             )}
           </Section>
         );

@@ -416,6 +416,16 @@ button:disabled {
   border: 1px solid #e5e7eb;
 }
 
+.group-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.group-col {
+  min-width: 0;
+}
+
 .form-group-heading {
   font-size: 1.1rem;
   font-weight: 600;
