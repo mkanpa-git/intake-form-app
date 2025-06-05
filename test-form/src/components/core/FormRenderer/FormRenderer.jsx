@@ -8,6 +8,13 @@ export default function FormRenderer() {
   const steps = form.steps || [];
   const [currentStep, setCurrentStep] = useState(0);
 
+  const requiredDocs =
+    steps[currentStep]?.sections?.flatMap((section) =>
+      (section.fields || [])
+        .filter((f) => f.type === 'file' && f.required)
+        .map((f) => f.label)
+    ) || [];
+
   const handleNext = () => {
     setCurrentStep((s) => Math.min(s + 1, steps.length - 1));
   };
@@ -22,6 +29,7 @@ export default function FormRenderer() {
         steps={steps}
         currentStep={currentStep}
         onStepChange={setCurrentStep}
+        requiredDocs={requiredDocs}
       />
       <div className="form-main">
         <h1>{form.title}</h1>
