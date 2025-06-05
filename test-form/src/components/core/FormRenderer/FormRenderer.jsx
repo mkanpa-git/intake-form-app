@@ -7,6 +7,8 @@ export default function FormRenderer() {
   const { form } = formSpec;
   const steps = form.steps || [];
   const [currentStep, setCurrentStep] = useState(0);
+  const stepperPosition = form.layout?.stepperPosition || 'right';
+  const orientation = stepperPosition === 'top' ? 'horizontal' : 'vertical';
 
   const requiredDocs =
     steps[currentStep]?.sections?.flatMap((section) =>
@@ -24,16 +26,28 @@ export default function FormRenderer() {
   };
 
   return (
-    <div className="wizard-layout-row">
-      <Stepper
-        steps={steps}
-        currentStep={currentStep}
-        onStepChange={setCurrentStep}
-        requiredDocs={requiredDocs}
-      />
+    <div className={stepperPosition === 'top' ? 'wizard-layout-column' : 'wizard-layout-row'}>
+      {stepperPosition !== 'top' && (
+        <Stepper
+          steps={steps}
+          currentStep={currentStep}
+          onStepChange={setCurrentStep}
+          requiredDocs={requiredDocs}
+          orientation={orientation}
+        />
+      )}
       <div className="form-main">
         <h1>{form.title}</h1>
         <p>{form.description}</p>
+        {stepperPosition === 'top' && (
+          <Stepper
+            steps={steps}
+            currentStep={currentStep}
+            onStepChange={setCurrentStep}
+            requiredDocs={requiredDocs}
+            orientation={orientation}
+          />
+        )}
         {steps.length > 0 && (
           <Step
             key={steps[currentStep].id}
