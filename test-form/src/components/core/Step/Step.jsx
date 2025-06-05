@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { validateStep, evaluateCondition } from '../../../utils/formHelpers';
 import Section from '../Section/Section';
 import InfoSection from '../InfoSection/InfoSection';
@@ -24,6 +24,17 @@ export default function Step({
   const [collapsedSections, setCollapsedSections] = useState({});
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
+
+  // Initialize collapsed sections based on defaultCollapsed when sections change
+  useEffect(() => {
+    const initial = {};
+    sections.forEach((sec) => {
+      if (sec.ui?.collapsible && sec.ui.defaultCollapsed) {
+        initial[sec.id] = true;
+      }
+    });
+    setCollapsedSections(initial);
+  }, [sections]);
 
   const handleToggle = (id) => {
     setCollapsedSections((prev) => ({ ...prev, [id]: !prev[id] }));
