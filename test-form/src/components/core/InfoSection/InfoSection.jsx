@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown';
 export default function InfoSection({ title, content, ui = {}, collapsed = false, onToggle }) {
   const isCollapsible = ui.collapsible;
 
+  const formattedContent = content?.replace(/\n/g, '\n\n');
+
   return (
     <div className="info-section">
       <div
@@ -11,24 +13,19 @@ export default function InfoSection({ title, content, ui = {}, collapsed = false
         onClick={isCollapsible ? onToggle : undefined}
         style={{
           cursor: isCollapsible ? 'pointer' : 'default',
-          fontWeight: 'bold',
           backgroundColor: '#f0f0f0',
           padding: '0.5rem',
           borderRadius: '4px',
         }}
       >
-        {title} {isCollapsible && (collapsed ? '▶' : '▼')}
+        <strong>{title}</strong> {isCollapsible && (collapsed ? '▶' : '▼')}
       </div>
-      {(!isCollapsible || !collapsed) && content && (
+      {(!isCollapsible || !collapsed) && formattedContent && (
         <div
           className="info-section-content"
-          style={{ marginTop: '0.5rem', paddingLeft: '1rem' }}
+          style={{ marginTop: '0.5rem', paddingLeft: '1rem', fontWeight: 'normal' }}
         >
-          {ui.markdown ? (
-            <ReactMarkdown>{content}</ReactMarkdown>
-          ) : (
-            content.split('\n').map((line, idx) => <p key={idx}>{line}</p>)
-          )}
+          <ReactMarkdown>{formattedContent}</ReactMarkdown>
         </div>
       )}
     </div>
