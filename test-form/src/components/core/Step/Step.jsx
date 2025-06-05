@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { validateStep, evaluateCondition } from '../../../utils/formHelpers';
+import {
+  validateStep,
+  evaluateCondition,
+  cleanupHiddenFields,
+} from '../../../utils/formHelpers';
 import Section from '../Section/Section';
 import InfoSection from '../InfoSection/InfoSection';
 import TextInput from '../../shared/TextInput/TextInput';
@@ -298,6 +302,8 @@ export default function Step({
     );
     setErrors(result.errors);
     if (!result.valid) return;
+    const cleaned = cleanupHiddenFields({ sections }, formData);
+    setFormData(cleaned);
     onNext && onNext();
   };
 
