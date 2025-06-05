@@ -101,7 +101,30 @@ export function validateStep(step, formData, children, formErrors = {}, touched 
           value.forEach((record, index) => {
             field.fields.forEach((subField) => {
               const subValue = record[subField.id] || "";
-              const { isRequired, constraints = {}, label = "", type } = subField;
+              const {
+                required,
+                requiredCondition,
+                isRequired: precomputedRequired,
+                constraints = {},
+                label = "",
+                type,
+              } = subField;
+
+              let isRequired = false;
+              if (
+                requiredCondition &&
+                (requiredCondition.condition ||
+                  (requiredCondition.field && requiredCondition.operator))
+              ) {
+                isRequired = evaluateCondition(
+                  requiredCondition.condition || requiredCondition,
+                  formData
+                );
+              } else if (typeof required === "boolean") {
+                isRequired = required;
+              } else if (typeof precomputedRequired === "boolean") {
+                isRequired = precomputedRequired;
+              }
               const fieldKey = `${field.id}[${index}].${subField.id}`;
               let error = "";
               if (isRequired && (!subValue || subValue.trim() === "")) {
