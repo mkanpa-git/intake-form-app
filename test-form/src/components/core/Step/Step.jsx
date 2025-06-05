@@ -24,10 +24,17 @@ export default function Step({
   onBack,
   isFirst = false,
   isLast = false,
+  formData: initialData = {},
+  onDataChange,
 }) {
   const [collapsedSections, setCollapsedSections] = useState({});
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState(initialData);
   const [errors, setErrors] = useState({});
+
+  // Update local form data when parent data changes (e.g., returning to a step)
+  useEffect(() => {
+    setFormData(initialData);
+  }, [initialData]);
 
   // Initialize collapsed sections based on defaultCollapsed when sections change
   useEffect(() => {
@@ -57,6 +64,7 @@ export default function Step({
         if (ve[id]) cleared[id] = ve[id];
         return cleared;
       });
+      onDataChange && onDataChange(next);
       return next;
     });
   };
@@ -298,7 +306,8 @@ export default function Step({
     if (!result.valid) return;
     const cleaned = cleanupHiddenFields({ sections }, formData);
     setFormData(cleaned);
-    onNext && onNext();
+    onDataChange && onDataChange(cleaned);
+    onNext && onNext(cleaned);
   };
 
   return (
@@ -376,7 +385,7 @@ export default function Step({
       })}
       <div className={styles.navigation}>
         {!isFirst && (
-          <button type="button" onClick={onBack}>
+          <button type="button" onClick={() => onBack && onBack(formData)}>
             Back
           </button>
         )}
