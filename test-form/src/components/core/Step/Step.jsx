@@ -44,6 +44,18 @@ export default function Step({
   };
 
   const renderField = (field) => {
+    const visible = field.visibilityCondition
+      ? evaluateCondition(field.visibilityCondition, formData)
+      : true;
+    const isRequired = field.requiredCondition
+      ? evaluateCondition(
+          field.requiredCondition.condition || field.requiredCondition,
+          formData
+        )
+      : field.required;
+
+    if (!visible) return null;
+
     const error = errors[field.id];
     switch (field.type) {
       case 'text':
@@ -57,7 +69,7 @@ export default function Step({
               id={field.id}
               label={field.label}
               type={field.type}
-              required={field.required}
+              required={isRequired}
               value={formData[field.id] || ''}
               onChange={(e) => handleChange(field.id, e.target.value)}
             />
@@ -72,7 +84,7 @@ export default function Step({
             label={field.label}
             mask="(000) 000-0000"
             placeholder={field.ui?.placeholder || '(123) 456-7890'}
-            required={field.required}
+            required={isRequired}
             value={formData[field.id] || ''}
             onChange={(val) => handleChange(field.id, val)}
             error={error}
@@ -87,7 +99,7 @@ export default function Step({
                 id={field.id}
                 label={field.label}
                 options={field.ui?.options || []}
-                required={field.required}
+                required={isRequired}
                 multiple
                 minSelections={field.constraints?.minSelections}
                 maxSelections={field.constraints?.maxSelections}
@@ -110,7 +122,7 @@ export default function Step({
               id={field.id}
               label={field.label}
               options={field.ui?.options || []}
-              required={field.required}
+              required={isRequired}
               value={formData[field.id] || ''}
               onChange={(e) => handleChange(field.id, e.target.value)}
             />
@@ -125,7 +137,7 @@ export default function Step({
               id={field.id}
               label={field.label}
               options={field.ui?.options || []}
-              required={field.required}
+              required={isRequired}
               value={formData[field.id] || ''}
               onChange={(e) => handleChange(field.id, e.target.value)}
             />
@@ -143,7 +155,7 @@ export default function Step({
                 options={field.ui?.options || []}
                 value={formData[field.id] || []}
                 onChange={(val) => handleChange(field.id, val)}
-                required={field.required}
+                required={isRequired}
               />
               {error && <div className="form-error-alert">{error}</div>}
             </>
@@ -157,6 +169,7 @@ export default function Step({
               id={field.id}
               checked={!!formData[field.id]}
               onChange={(e) => handleChange(field.id, e.target.checked)}
+              required={isRequired}
             />
             {field.label && <label htmlFor={field.id}>{field.label}</label>}
             {error && <div className="form-error-alert">{error}</div>}
@@ -170,7 +183,7 @@ export default function Step({
               id={field.id}
               label={field.label}
               type="date"
-              required={field.required}
+              required={isRequired}
               value={formData[field.id] || ''}
               onChange={(e) => handleChange(field.id, e.target.value)}
             />
@@ -184,7 +197,7 @@ export default function Step({
             id={field.id}
             label={field.label}
             multiple={field.metadata?.multiple}
-            required={field.required}
+            required={isRequired}
             onChange={(val) => handleChange(field.id, val)}
             error={error}
           />
@@ -206,7 +219,7 @@ export default function Step({
               id={field.id}
               label={field.label}
               type={field.type}
-              required={field.required}
+              required={isRequired}
               value={formData[field.id] || ''}
               onChange={(e) => handleChange(field.id, e.target.value)}
             />
