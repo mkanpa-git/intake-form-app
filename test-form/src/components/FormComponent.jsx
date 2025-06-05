@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IMaskInput } from 'react-imask';
-import ReactMarkdown from "react-markdown"; 
+import ReactMarkdown from "react-markdown";
+import { evaluateCondition, validateStep, cleanupHiddenFields } from "../utils/formHelpers";
 
 export default function FormComponent() {
   const form = JSON.parse(`{
@@ -1766,58 +1767,14 @@ Object.keys(groupData).forEach(fieldId => {
 
 
     const handleNext = () => {
-      const isValid = validateStep();
-      if (!isValid) return;
+      const step = steps[currentStep];
+      const result = validateStep(step, { ...formData }, children, formErrors, touched);
+      setFormErrors(result.errors);
+      setTouched(result.touched);
+      if (!result.valid) return;
 
-      const clearedData = { ...formData };
-
-      const currentStepDef = steps[currentStep];
-      if (currentStepDef) {
-        for (const section of currentStepDef.sections) {
-          if (Array.isArray(section.fields)) {
-
-            for (const field of section.fields) {
-              const isVisible =
-                (field.visibilityCondition
-                  ? evaluateCondition(field.visibilityCondition, formData)
-                  : true) &&
-                (field.requiredCondition
-                  ? evaluateCondition(
-                      field.requiredCondition.condition || field.requiredCondition,
-                      formData
-                    )
-                  : true);
-
-              if (!isVisible && clearedData[field.id] !== undefined) {
-                clearedData[field.id] = undefined;
-                console.log(`Cleared field ${field.id} due to invisibility`);
-              }
-
-              if (field.type === "group" && Array.isArray(field.fields)) {
-                for (const subField of field.fields) {
-                  const isSubVisible =
-                    (subField.visibilityCondition
-                      ? evaluateCondition(subField.visibilityCondition, formData)
-                      : true) &&
-                    (subField.requiredCondition
-                      ? evaluateCondition(
-                          subField.requiredCondition.condition || subField.requiredCondition,
-                          formData
-                        )
-                      : true);
-
-                  if (!isSubVisible && clearedData[subField.id] !== undefined) {
-                    clearedData[subField.id] = undefined;
-                    console.log(`Cleared subfield ${subField.id} due to invisibility`);
-                  }
-                }
-              }
-            } // for (const field of section.fields) 
-          }
-        }
-      }
-
-      setFormData(clearedData);
+      const cleaned = cleanupHiddenFields(step, formData);
+      setFormData(cleaned);
       setCurrentStep(currentStep + 1);
 
       // Scroll to top
@@ -1859,30 +1816,6 @@ Object.keys(groupData).forEach(fieldId => {
   };
 
 
-  function evaluateCondition(condition, data) {
-    if (!condition || !condition.field || !("value" in condition)) return true;
-
-    const actual = data[condition.field];
-    const expected = condition.value;
-    switch (condition.operator) {
-      case "equals":
-        return actual === expected;
-      case "notEquals":
-        return actual !== expected;
-      case "in":
-        return Array.isArray(expected) && expected.includes(actual);
-      case "notIn":
-        return Array.isArray(expected) && !expected.includes(actual);
-      case "exists":
-        return actual !== undefined && actual !== null;
-      case "notExists":
-        return actual === undefined || actual === null;
-      case "includes":
-        return Array.isArray(actual) && actual.includes(expected);
-      default:
-        return false;
-    }
-  }
 
   const groupFieldsByGroup = (fields) => {
     const grouped = {};
@@ -2374,168 +2307,6 @@ Object.keys(groupData).forEach(fieldId => {
     });
   };
 
-  const validateStep = () => {
-    const step = steps[currentStep];
-    let valid = true;
-    let updatedErrors = {
-        ...formErrors
-    };
-    let updatedTouched = {
-        ...touched
-    };
-
-    let clearedErrors = {
-        ...formErrors
-    };
-
-    step.sections.forEach(section => {
-      if (section.required) {
-          const hasGroupWithData = section.fields.some(f => {
-              return f.type === "group" && Array.isArray(formData[f.id]) && formData[f.id].length > 0;
-          });
-
-          if (hasGroupWithData && clearedErrors[section.id]) {
-              delete clearedErrors[section.id]; // ✅ clear stale section-level error
-          }
-
-          if (!hasGroupWithData) {
-              valid = false;
-              updatedErrors[section.id] = section.title + " is required. Please add at least one record.";
-          }
-      }
-
-      if (Array.isArray(section.fields)) {
-
-          section.fields.forEach(field => {
-
-              updatedTouched[field.id] = true;
-              const value = formData[field.id];
-
-              // Group-type field with multiple entries
-              if (field.type === "group" && field.metadata?.multiple && Array.isArray(value)) {
-                value.forEach((record, index) => {
-                    field.fields.forEach(subField => {
-                        const subValue = record[subField.id] || "";
-                        const {
-                            isRequired,
-                            constraints = {},
-                            label = "",
-                            type
-                        } = subField;
-                        const fieldKey = field.id + "[" + index + "]." + subField.id;
-
-                        let error = "";
-                        if (isRequired && (!subValue || subValue.trim() === "")) {
-                            error = label + " is required.";
-                        } else if (type === "email") {
-                            const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
-                            if (!emailRegex.test(subValue)) {
-                                error = label + " must be a valid email address.";
-                            }
-                        } else if (constraints.pattern && subValue && !new RegExp(constraints.pattern).test(subValue)) {
-                            error = label + " is invalid format.";
-                        } else if (constraints.minLength && subValue.length < constraints.minLength) {
-                            error = label + " must be at least " + constraints.minLength + " characters.";
-                        } else if (constraints.maxLength && subValue.length > constraints.maxLength) {
-                            error = label + " must be no more than " + constraints.maxLength + " characters.";
-                        }
-
-                        updatedErrors[fieldKey] = error;
-                        updatedTouched[fieldKey] = true;
-                        if (error) valid = false;
-                    });
-                });
-              }
-
-              // Regular field
-              else {
-                const required = field.required;
-                const requiredCondition = field.requiredCondition;
-
-                // const isRequired = evaluateCondition(requiredCondition?.condition || requiredCondition, formData) || required;
-
-                let isRequired = false;
-
-                if (
-                    requiredCondition &&
-                    (requiredCondition.condition || (requiredCondition.field && requiredCondition.operator))
-                ) {
-                    isRequired = evaluateCondition(requiredCondition.condition || requiredCondition, formData);
-                } else if (typeof required === "boolean") {
-                    isRequired = required;
-                }
-
-                const {
-                    id,
-                    constraints = {},
-                    label = "",
-                    type,
-                    metadata = {}
-                } = field;
-                const val = typeof value === "string" ? value.trim() : value;
-                let error = "";
-
-                // Handle required
-                if (isRequired && (
-                        val === undefined ||
-                        val === null ||
-                        (typeof val === "string" && val === "") ||
-                        (Array.isArray(val) && val.length === 0)
-                    )) {
-                    error = label + " is required.";
-                }
-
-                // Pattern check, if val exists (even if field is not required)
-                else if (constraints.pattern && typeof val === "string" && val.trim() !== "") {
-                    const pattern = new RegExp(constraints.pattern);
-
-                    // reject masked incomplete values (e.g., react-input-mask leaves _ in empty slots)
-                    if (val.includes("_") || !pattern.test(val.trim())) {
-                        error = label + " is invalid format.";
-                    }
-                }
-
-                // Email validation
-                else if (type === "email") {
-                    const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
-                    if (!emailRegex.test(val)) {
-                        error = label + " must be a valid email address.";
-                    }
-                }
-
-                // String constraints
-                else if (typeof val === "string") {
-                    if (constraints.pattern && !new RegExp(constraints.pattern).test(val)) {
-                        error = label + " is invalid format.";
-                    } else if (constraints.minLength && val.length < constraints.minLength) {
-                        error = label + " must be at least " + constraints.minLength + " characters.";
-                    } else if (constraints.maxLength && val.length > constraints.maxLength) {
-                        error = label + " must be no more than " + constraints.maxLength + " characters.";
-                    }
-                }
-
-                // Array constraints (e.g., multi-select)
-                else if (Array.isArray(val) && metadata.multiple) {
-                    if (constraints.minSelections && val.length < constraints.minSelections) {
-                        error = label + " requires at least " + constraints.minSelections + " selections.";
-                    } else if (constraints.maxSelections && val.length > constraints.maxSelections) {
-                        error = label + " allows at most " + constraints.maxSelections + " selections.";
-                    }
-                }
-
-                updatedErrors[field.id] = error;
-                updatedTouched[field.id] = true;
-                if (error) valid = false;
-              }
-          });
-      }
-    });
-
-    formData['children'] = children;
-    setFormErrors(updatedErrors);
-    setTouched(updatedTouched);
-    return valid;
-  };
 
   const [copySourceDayMap, setCopySourceDayMap] = useState("");
 
