@@ -4,6 +4,7 @@ import SelectField from '../SelectField/SelectField';
 import RadioGroup from '../RadioGroup/RadioGroup';
 import FileInput from '../FileInput/FileInput';
 import MaskedInput from '../MaskedInput/MaskedInput';
+import { evaluateCondition } from '../../../utils/formHelpers';
 
 export default function GroupField({ field, value = [], onChange }) {
   const [entries, setEntries] = useState(value);
@@ -52,10 +53,21 @@ export default function GroupField({ field, value = [], onChange }) {
   };
 
   const renderField = (subField) => {
+    const visible = subField.visibilityCondition
+      ? evaluateCondition(subField.visibilityCondition, currentEntry)
+      : true;
+    const required = subField.requiredCondition
+      ? evaluateCondition(
+          subField.requiredCondition.condition || subField.requiredCondition,
+          currentEntry
+        )
+      : subField.required;
+    if (!visible) return null;
+
     const commonProps = {
       id: subField.id,
       label: subField.label,
-      required: subField.required,
+      required,
       value: currentEntry[subField.id] || '',
       onChange: (e) => handleInputChange(subField.id, e.target ? e.target.value : e),
     };
