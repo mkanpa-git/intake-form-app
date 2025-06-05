@@ -1,2 +1,6 @@
 .group { margin-bottom: 1rem; }
-.option { margin-right: 0.5rem; }
+.option {
+  display: block;
+  margin-right: 0;
+  margin-bottom: 0.25rem;
+}
