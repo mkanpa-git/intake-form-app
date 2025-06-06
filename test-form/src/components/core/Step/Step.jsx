@@ -54,7 +54,7 @@ export default function Step({
   const handleChange = (id, value) => {
     setFormData((prev) => {
       const next = { ...prev, [id]: value };
-      const result = validateStep({ sections }, next, [], {});
+      const result = validateStep({ sections }, next, {});
       setErrors(result.errors);
       onDataChange && onDataChange(next);
       return next;
@@ -291,7 +291,6 @@ export default function Step({
     const result = validateStep(
       { sections },
       { ...formData },
-      [],
       errors
     );
     setErrors(result.errors);
