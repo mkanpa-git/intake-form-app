@@ -1769,7 +1769,7 @@ Object.keys(groupData).forEach(fieldId => {
 
     const handleNext = () => {
       const step = steps[currentStep];
-      const result = validateStep(step, { ...formData }, children, formErrors, touched);
+      const result = validateStep(step, { ...formData }, formErrors, touched);
       setFormErrors(result.errors);
       setTouched(result.touched);
       if (!result.valid) return;

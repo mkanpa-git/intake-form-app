@@ -70,7 +70,7 @@ export function cleanupHiddenFields(step, formData) {
   return cleaned;
 }
 
-export function validateStep(step, formData, children, formErrors = {}, touched = {}) {
+export function validateStep(step, formData, formErrors = {}, touched = {}) {
   let valid = true;
   let updatedErrors = { ...formErrors };
   let updatedTouched = { ...touched };
