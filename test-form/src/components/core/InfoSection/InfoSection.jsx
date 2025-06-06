@@ -4,7 +4,8 @@ import ReactMarkdown from 'react-markdown';
 export default function InfoSection({ title, content, ui = {}, collapsed = false, onToggle }) {
   const isCollapsible = ui.collapsible;
 
-  const formattedContent = content?.replace(/\n/g, '\n\n');
+  // Convert escaped newline sequences to actual line breaks for ReactMarkdown
+  const formattedContent = content?.replace(/\\n/g, '\n');
 
   return (
     <div className="info-section">
