@@ -118,7 +118,7 @@ export function validateStep(step, formData, children, formErrors = {}, touched 
               ) {
                 isRequired = evaluateCondition(
                   requiredCondition.condition || requiredCondition,
-                  formData
+                  record
                 );
               } else if (typeof required === "boolean") {
                 isRequired = required;
