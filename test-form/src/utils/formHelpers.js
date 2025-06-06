@@ -74,7 +74,6 @@ export function validateStep(step, formData, formErrors = {}, touched = {}) {
   let valid = true;
   let updatedErrors = { ...formErrors };
   let updatedTouched = { ...touched };
-  let clearedErrors = { ...formErrors };
 
   step.sections.forEach((section) => {
     if (section.required) {
@@ -82,8 +81,8 @@ export function validateStep(step, formData, formErrors = {}, touched = {}) {
         (f) => f.type === "group" && Array.isArray(formData[f.id]) && formData[f.id].length > 0
       );
 
-      if (hasGroupWithData && clearedErrors[section.id]) {
-        delete clearedErrors[section.id];
+      if (hasGroupWithData && updatedErrors[section.id]) {
+        delete updatedErrors[section.id];
       }
 
       if (!hasGroupWithData) {
