@@ -54,16 +54,8 @@ export default function Step({
   const handleChange = (id, value) => {
     setFormData((prev) => {
       const next = { ...prev, [id]: value };
-      setErrors((prevErr) => {
-        const cleared = { ...prevErr };
-        delete cleared[id];
-        Object.keys(cleared).forEach((k) => {
-          if (k.startsWith(`${id}[`) || k.startsWith(`${id}.`)) delete cleared[k];
-        });
-        const { errors: ve } = validateStep({ sections }, next, [], {});
-        if (ve[id]) cleared[id] = ve[id];
-        return cleared;
-      });
+      const result = validateStep({ sections }, next, [], {});
+      setErrors(result.errors);
       onDataChange && onDataChange(next);
       return next;
     });
