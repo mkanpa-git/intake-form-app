@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TextInput from '../TextInput/TextInput';
 import SelectField from '../SelectField/SelectField';
 import RadioGroup from '../RadioGroup/RadioGroup';
+import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import FileInput from '../FileInput/FileInput';
 import MaskedInput from '../MaskedInput/MaskedInput';
 import { evaluateCondition } from '../../../utils/formHelpers';
@@ -80,6 +81,15 @@ export default function GroupField({ field, value = [], onChange }) {
         return (
           <RadioGroup key={subField.id} options={subField.ui?.options || []} {...commonProps} />
         );
+      case 'checkbox':
+        return (
+          <CheckboxGroup
+            key={subField.id}
+            options={subField.ui?.options || []}
+            value={currentEntry[subField.id] || []}
+            onChange={(val) => handleInputChange(subField.id, val)}
+          />
+        );
       case 'date':
       case 'time':
         return <TextInput key={subField.id} type={subField.type} {...commonProps} />;
@@ -140,7 +150,9 @@ export default function GroupField({ field, value = [], onChange }) {
             {entries.map((item, idx) => (
               <tr key={idx}>
                 {field.fields.map((f) => (
-                  <td key={f.id}>{item[f.id]}</td>
+                  <td key={f.id}>
+                    {Array.isArray(item[f.id]) ? item[f.id].join(', ') : item[f.id]}
+                  </td>
                 ))}
                 <td>
                   <button onClick={() => handleEdit(idx)}>Edit</button>
