@@ -25,6 +25,7 @@ export default function Step({
   isFirst = false,
   isLast = false,
   formData: initialData = {},
+  fullData = {},
   onDataChange,
 }) {
   const [collapsedSections, setCollapsedSections] = useState({});
@@ -83,12 +84,12 @@ export default function Step({
       field.visibilityCondition ??
       (field.requiredCondition?.condition || field.requiredCondition);
     const visible = conditionToCheck
-      ? evaluateCondition(conditionToCheck, formData)
+      ? evaluateCondition(conditionToCheck, fullData)
       : true;
     const isRequired = field.requiredCondition
       ? evaluateCondition(
           field.requiredCondition.condition || field.requiredCondition,
-          formData
+          fullData
         )
       : field.required;
 
@@ -250,6 +251,7 @@ export default function Step({
             field={field}
             value={formData[field.id] || []}
             onChange={(val) => handleChange(field.id, val)}
+            fullData={fullData}
           />
         );
       default:
@@ -303,7 +305,7 @@ export default function Step({
       ) {
         isRequired = evaluateCondition(
           requiredCondition.condition || requiredCondition,
-          formData
+          fullData
         );
       } else if (typeof required === "boolean") {
         isRequired = required;
@@ -370,6 +372,7 @@ export default function Step({
                 field={sec}
                 value={formData[sec.id] || []}
                 onChange={(val) => handleChange(sec.id, val)}
+                fullData={fullData}
               />
             ) : sec.ui?.layout === 'table' ? (
               <TableLayout
