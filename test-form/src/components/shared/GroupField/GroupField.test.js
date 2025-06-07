@@ -34,4 +34,24 @@ describe('GroupField component', () => {
     expect(handleChange).toHaveBeenCalledWith([{ name: 'John', age: '4' }]);
     expect(screen.getByText('John')).toBeInTheDocument();
   });
+
+  test('shows errors and prevents save when required fields missing', async () => {
+    const user = userEvent.setup();
+    const requiredField = {
+      ...field,
+      fields: [
+        { id: 'name', label: 'Name', type: 'text', required: true },
+        { id: 'age', label: 'Age', type: 'text' },
+      ],
+    };
+
+    const handleChange = jest.fn();
+    render(<GroupField field={requiredField} value={[]} onChange={handleChange} />);
+
+    await user.click(screen.getByText(/Add Child/i));
+    await user.click(screen.getByText('Save'));
+
+    expect(handleChange).not.toHaveBeenCalled();
+    expect(screen.getByText('Name is required.')).toBeInTheDocument();
+  });
 });
