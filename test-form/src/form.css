@@ -7,14 +7,26 @@
   --border: #e5e7eb;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   --radius: 12px;
-  --font: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  --font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  --font-size: 16px;
+  --font-color: #111827;
 }
 
 body, html, #root {
   height: 100%;
   margin: 0;
-  font-family: var(--font);
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--font-color);
+  line-height: 1.5;
   background-color: var(--background);
+}
+
+form {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--font-color);
 }
 
 /* Layout */
@@ -437,27 +449,7 @@ button:disabled {
   border-left: 4px solid #3b82f6; /* Blue stripe */
 }
 
-:root {
-  --form-font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
-  --form-font-size: 16px;
-  --form-font-color: #111827; /* Dark gray for readability */
-}
 
-body, html {
-  font-family: var(--form-font-family);
-  font-size: var(--form-font-size);
-  color: var(--form-font-color);
-  line-height: 1.5;
-  background-color: #f9fafb; /* optional: light gray background */
-  margin: 0;
-  padding: 0;
-}
-
-form {
-  font-family: var(--form-font-family);
-  font-size: var(--form-font-size);
-  color: var(--form-font-color);
-}
 
 .info-toggle-header {
   display: flex;
