@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
 import formSpec from '../../data/childcare_form.json';
@@ -11,6 +11,10 @@ export default function FormRenderer() {
   const [stepData, setStepData] = useState({});
   const stepperPosition = form.layout?.stepperPosition || 'right';
   const orientation = stepperPosition === 'top' ? 'horizontal' : 'vertical';
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [currentStep]);
 
   const requiredDocs =
     steps[currentStep]?.sections?.flatMap((section) =>
