@@ -18,6 +18,19 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
     setEntries(Array.isArray(value) ? value : []);
   }, [value]);
 
+  useEffect(() => {
+    const hasValues = Object.values(currentEntry).some((val) =>
+      val !== undefined &&
+      val !== null &&
+      !(typeof val === 'string'
+        ? val.trim() === ''
+        : Array.isArray(val) && val.length === 0)
+    );
+    if (!hasValues) {
+      setEntryErrors({});
+    }
+  }, [currentEntry]);
+
   const handleInputChange = (id, val) => {
     setCurrentEntry((prev) => ({ ...prev, [id]: val }));
     setEntryErrors((prev) => ({ ...prev, [id]: undefined }));
