@@ -12,6 +12,7 @@ export default function GroupField({ field, value = [], onChange }) {
   const [currentEntry, setCurrentEntry] = useState({});
   const [editingIndex, setEditingIndex] = useState(null);
   const [showForm, setShowForm] = useState(false);
+  const [entryErrors, setEntryErrors] = useState({});
 
   useEffect(() => {
     setEntries(Array.isArray(value) ? value : []);
@@ -19,9 +20,37 @@ export default function GroupField({ field, value = [], onChange }) {
 
   const handleInputChange = (id, val) => {
     setCurrentEntry((prev) => ({ ...prev, [id]: val }));
+    setEntryErrors((prev) => ({ ...prev, [id]: undefined }));
+  };
+
+  const validateEntry = () => {
+    const errors = {};
+    (field.fields || []).forEach((subField) => {
+      const required = subField.requiredCondition
+        ? evaluateCondition(
+            subField.requiredCondition.condition || subField.requiredCondition,
+            currentEntry
+          )
+        : subField.required;
+      const val = currentEntry[subField.id];
+      if (
+        required &&
+        (val === undefined ||
+          val === null ||
+          (typeof val === 'string' && val.trim() === '') ||
+          (Array.isArray(val) && val.length === 0))
+      ) {
+        errors[subField.id] = `${subField.label} is required.`;
+      }
+    });
+    return errors;
   };
 
   const handleSave = () => {
+    const errs = validateEntry();
+    setEntryErrors(errs);
+    if (Object.keys(errs).length > 0) return;
+
     const updated = [...entries];
     if (editingIndex !== null) {
       updated[editingIndex] = currentEntry;
@@ -39,6 +68,7 @@ export default function GroupField({ field, value = [], onChange }) {
     setCurrentEntry(entries[idx]);
     setEditingIndex(idx);
     setShowForm(true);
+    setEntryErrors({});
   };
 
   const handleDelete = (idx) => {
@@ -51,6 +81,7 @@ export default function GroupField({ field, value = [], onChange }) {
     setShowForm(false);
     setCurrentEntry({});
     setEditingIndex(null);
+    setEntryErrors({});
   };
 
   const renderField = (subField) => {
@@ -72,33 +103,49 @@ export default function GroupField({ field, value = [], onChange }) {
       value: currentEntry[subField.id] || '',
       onChange: (e) => handleInputChange(subField.id, e.target ? e.target.value : e),
     };
+    const error = entryErrors[subField.id];
     switch (subField.type) {
       case 'select':
         return (
-          <SelectField key={subField.id} options={subField.ui?.options || []} {...commonProps} />
+          <>
+            <SelectField key={subField.id} options={subField.ui?.options || []} {...commonProps} />
+            {error && <div className="form-error-alert">{error}</div>}
+          </>
         );
       case 'radio':
         return (
-          <RadioGroup key={subField.id} options={subField.ui?.options || []} {...commonProps} />
+          <>
+            <RadioGroup key={subField.id} options={subField.ui?.options || []} {...commonProps} />
+            {error && <div className="form-error-alert">{error}</div>}
+          </>
         );
       case 'checkbox':
         return (
-          <CheckboxGroup
-            key={subField.id}
-            options={subField.ui?.options || []}
-            value={currentEntry[subField.id] || []}
-            onChange={(val) => handleInputChange(subField.id, val)}
-          />
+          <>
+            <CheckboxGroup
+              key={subField.id}
+              options={subField.ui?.options || []}
+              value={currentEntry[subField.id] || []}
+              onChange={(val) => handleInputChange(subField.id, val)}
+            />
+            {error && <div className="form-error-alert">{error}</div>}
+          </>
         );
       case 'date':
       case 'time':
-        return <TextInput key={subField.id} type={subField.type} {...commonProps} />;
+        return (
+          <>
+            <TextInput key={subField.id} type={subField.type} {...commonProps} />
+            {error && <div className="form-error-alert">{error}</div>}
+          </>
+        );
       case 'file':
         return (
           <FileInput
             key={subField.id}
             multiple={subField.metadata?.multiple}
             {...commonProps}
+            error={error}
           />
         );
       default:
@@ -112,6 +159,7 @@ export default function GroupField({ field, value = [], onChange }) {
               mask="000-00-0000"
               placeholder="123-45-6789"
               {...commonProps}
+              error={error}
             />
           );
         }
@@ -126,10 +174,16 @@ export default function GroupField({ field, value = [], onChange }) {
               mask="(000) 000-0000"
               placeholder="(123) 456-7890"
               {...commonProps}
+              error={error}
             />
           );
         }
-        return <TextInput key={subField.id} {...commonProps} />;
+        return (
+          <>
+            <TextInput key={subField.id} {...commonProps} />
+            {error && <div className="form-error-alert">{error}</div>}
+          </>
+        );
     }
   };
 
