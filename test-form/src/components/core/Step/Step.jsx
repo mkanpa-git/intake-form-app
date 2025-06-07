@@ -418,6 +418,9 @@ export default function Step({
                     {groupKey !== 'default' && (
                       <div className="form-group-heading">
                         {groupFields[0].ui?.groupLabel || groupKey}
+                        {groupFields[0].ui?.optionalGroup && (
+                          <span className="text-sm text-gray-500 ml-2">(Optional)</span>
+                        )}
                       </div>
                     )}
                     <div className="form-subgroup-grid grid gap-4">
