@@ -45,6 +45,8 @@ export default function FormRenderer() {
   };
 
   const canNavigate = (targetIndex) => {
+    // allow going to a previous step without checking validation
+    if (targetIndex < currentStep) return true;
     const { valid } = validateStep(
       steps[currentStep],
       stepData[steps[currentStep].id] || {}
