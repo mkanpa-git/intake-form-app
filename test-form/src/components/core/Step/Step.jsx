@@ -30,6 +30,7 @@ export default function Step({
   const [collapsedSections, setCollapsedSections] = useState({});
   const [formData, setFormData] = useState(initialData);
   const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
 
   // Update local form data when parent data changes (e.g., returning to a step)
   useEffect(() => {
@@ -54,8 +55,14 @@ export default function Step({
   const handleChange = (id, value) => {
     setFormData((prev) => {
       const next = { ...prev, [id]: value };
-      const result = validateStep({ sections }, next, [], {});
+      const result = validateStep(
+        { sections },
+        next,
+        errors,
+        { ...touched, [id]: true }
+      );
       setErrors(result.errors);
+      setTouched(result.touched);
       onDataChange && onDataChange(next);
       return next;
     });
@@ -84,7 +91,7 @@ export default function Step({
 
     if (!visible) return null;
 
-    const error = errors[field.id];
+    const error = touched[field.id] ? errors[field.id] : undefined;
     switch (field.type) {
       case 'text':
       case 'email':
@@ -313,9 +320,11 @@ export default function Step({
     const result = validateStep(
       { sections },
       { ...formData },
-      errors
+      errors,
+      touched
     );
     setErrors(result.errors);
+    setTouched(result.touched);
     if (!result.valid) return;
     const cleaned = cleanupHiddenFields({ sections }, formData);
     setFormData(cleaned);
