@@ -13,6 +13,7 @@ export default function AddressAutocomplete({
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const debounceRef = useRef();
+  const sessionTokenRef = useRef(crypto.randomUUID());
 
   useEffect(() => {
     if (!showSuggestions) return;
@@ -29,11 +30,11 @@ export default function AddressAutocomplete({
       const fetchSuggestions = async () => {
         try {
           const res = await fetch(
-            `/api/places/autocomplete?input=${encodeURIComponent(value)}`,
+            `/api/places/autocomplete?input=${encodeURIComponent(value)}&sessiontoken=${sessionTokenRef.current}`,
             { signal: controller.signal }
           );
           const data = await res.json();
-          setSuggestions(data.predictions || []);
+          setSuggestions(data.places || []);
         } catch (err) {
           if (err.name !== 'AbortError') console.error(err);
         }
@@ -49,15 +50,30 @@ export default function AddressAutocomplete({
   }, [value, showSuggestions]);
 
   const handleSelect = async (place) => {
-    onChange && onChange(place.description);
+    onChange &&
+      onChange(place.formattedAddress || place.displayName?.text || '');
     setSuggestions([]);
     setShowSuggestions(false);
     try {
-      const res = await fetch(`/api/places/details/${place.place_id}`);
+      const res = await fetch(
+        `/api/places/details/${place.placeId}?sessiontoken=${sessionTokenRef.current}`
+      );
       const data = await res.json();
-      onAddressSelect && onAddressSelect(data.result || {});
+      const mapped = {
+        formatted_address: data.formattedAddress,
+        place_id: data.id,
+        address_components: (data.addressComponents || []).map((c) => ({
+          long_name: c.longText,
+          short_name: c.shortText,
+          types: c.types,
+        })),
+        name: data.displayName?.text,
+      };
+      onAddressSelect && onAddressSelect(mapped);
     } catch (err) {
       console.error(err);
+    } finally {
+      sessionTokenRef.current = crypto.randomUUID();
     }
   };
 
@@ -79,11 +95,11 @@ export default function AddressAutocomplete({
         <ul className={styles.suggestions}>
           {suggestions.map((s) => (
             <li
-              key={s.place_id}
+              key={s.placeId}
               onMouseDown={() => handleSelect(s)}
               className={styles.suggestion}
             >
-              {s.description}
+              {s.formattedAddress || s.displayName?.text}
             </li>
           ))}
         </ul>
