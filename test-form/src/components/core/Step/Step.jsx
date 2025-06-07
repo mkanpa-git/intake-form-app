@@ -139,6 +139,25 @@ export default function Step({
       case 'email':
       case 'number':
       case 'time':
+        if (
+          field.id === 'ssn' ||
+          (typeof field.label === 'string' &&
+            field.label.toLowerCase().includes('social security'))
+        ) {
+          return (
+            <MaskedInput
+              key={field.id}
+              id={field.id}
+              label={field.label}
+              mask="000-00-0000"
+              placeholder="123-45-6789"
+              required={isRequired}
+              value={formData[field.id] || ''}
+              onChange={(val) => handleChange(field.id, val)}
+              error={error}
+            />
+          );
+        }
         return (
           <>
             <TextInput
