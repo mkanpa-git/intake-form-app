@@ -1,37 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './AddressAutocomplete.module.css';
 
-export default function AddressAutocomplete({ id, label, onAddressSelect, placeholder = '', ...props }) {
-  const [inputValue, setInputValue] = useState('');
+export default function AddressAutocomplete({
+  id,
+  label,
+  value = '',
+  onChange,
+  onAddressSelect,
+  placeholder = '',
+  ...props
+}) {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const debounceRef = useRef();
 
   useEffect(() => {
     if (!showSuggestions) return;
-    if (!inputValue) {
-      setSuggestions([]);
-      return;
-    }
 
-    const controller = new AbortController();
-    const fetchSuggestions = async () => {
-      try {
-        const res = await fetch(`/api/places/autocomplete?input=${encodeURIComponent(inputValue)}`, {
-          signal: controller.signal,
-        });
-        const data = await res.json();
-        setSuggestions(data.predictions || []);
-      } catch (err) {
-        if (err.name !== 'AbortError') console.error(err);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+
+    debounceRef.current = setTimeout(() => {
+      if (!value) {
+        setSuggestions([]);
+        return;
       }
-    };
 
-    fetchSuggestions();
-    return () => controller.abort();
-  }, [inputValue, showSuggestions]);
+      const controller = new AbortController();
+      const fetchSuggestions = async () => {
+        try {
+          const res = await fetch(
+            `/api/places/autocomplete?input=${encodeURIComponent(value)}`,
+            { signal: controller.signal }
+          );
+          const data = await res.json();
+          setSuggestions(data.predictions || []);
+        } catch (err) {
+          if (err.name !== 'AbortError') console.error(err);
+        }
+      };
+
+      fetchSuggestions();
+      return () => controller.abort();
+    }, 300);
+
+    return () => {
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
+  }, [value, showSuggestions]);
 
   const handleSelect = async (place) => {
-    setInputValue(place.description);
+    onChange && onChange(place.description);
     setSuggestions([]);
     setShowSuggestions(false);
     try {
@@ -49,8 +67,8 @@ export default function AddressAutocomplete({ id, label, onAddressSelect, placeh
       <input
         id={id}
         type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        value={value}
+        onChange={(e) => onChange && onChange(e.target.value)}
         onFocus={() => setShowSuggestions(true)}
         className={styles.input}
         placeholder={placeholder}

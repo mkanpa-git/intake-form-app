@@ -190,7 +190,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
               <AddressAutocomplete
                 key={subField.id}
                 {...commonProps}
-                onChange={(e) => handleInputChange(subField.id, e.target.value)}
+                onChange={(val) => handleInputChange(subField.id, val)}
                 onAddressSelect={(addr) => {
                   const comps = {};
                   (addr.address_components || []).forEach((c) => {

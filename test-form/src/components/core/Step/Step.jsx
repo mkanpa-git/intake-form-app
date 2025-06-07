@@ -205,7 +205,7 @@ export default function Step({
                 label={field.label}
                 required={isRequired}
                 value={formData[field.id] || ''}
-                onChange={(e) => handleChange(field.id, e.target.value)}
+                onChange={(val) => handleChange(field.id, val)}
                 onAddressSelect={(addr) => {
                   const comps = {};
                   (addr.address_components || []).forEach((c) => {
