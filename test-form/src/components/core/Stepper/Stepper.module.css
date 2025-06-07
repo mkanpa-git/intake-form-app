@@ -21,7 +21,7 @@
 .item {
   padding: 0.6rem 1rem;
   margin-bottom: 0.5rem;
-  background: #f3f4f6;
+  background: var(--secondary-color);
   border-radius: 20px;
   font-size: 0.95rem;
   cursor: pointer;
@@ -30,14 +30,14 @@
 .horizontalItem {
   padding: 0.6rem 1rem;
   margin-right: 0.5rem;
-  background: #f3f4f6;
+  background: var(--secondary-color);
   border-radius: 20px;
   font-size: 0.95rem;
   cursor: pointer;
   transition: background 0.2s;
 }
 .active {
-  background-color: var(--primary-color);
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   color: white;
   font-weight: 600;
 }

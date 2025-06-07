@@ -1,13 +1,16 @@
 
 :root {
-  --primary-color: #2563eb;
-  --primary-hover: #1e40af;
+  --primary-color: #7c3aed; /* purple */
+  --primary-hover: #06b6d4; /* teal */
+  --secondary-color: #f3e8ff;
+  --accent-color: #06b6d4;
   --background: #f9fafb;
   --surface: #ffffff;
   --border: #e5e7eb;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   --radius: 12px;
   --font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  --font-display: 'Inter', var(--font-family);
   --font-size: 16px;
   --font-color: #111827;
 }
@@ -27,6 +30,15 @@ form {
   font-family: var(--font-family);
   font-size: var(--font-size);
   color: var(--font-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-display), var(--font-family);
+  color: var(--primary-color);
 }
 
 /* Layout */
@@ -234,7 +246,7 @@ select.error {
 button {
   padding: 0.6rem 1.5rem;
   font-size: 1rem;
-  background-color: var(--primary-color);
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   color: white;
   border: none;
   border-radius: 6px;
@@ -244,7 +256,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--primary-hover);
+  background: linear-gradient(90deg, var(--primary-hover), var(--accent-color));
 }
 
 button:disabled {
