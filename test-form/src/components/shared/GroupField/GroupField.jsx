@@ -5,6 +5,7 @@ import RadioGroup from '../RadioGroup/RadioGroup';
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import FileInput from '../FileInput/FileInput';
 import MaskedInput from '../MaskedInput/MaskedInput';
+import AddressAutocomplete from '../AddressAutocomplete';
 import { evaluateCondition } from '../../../utils/formHelpers';
 
 export default function GroupField({ field, value = [], onChange, fullData = {} }) {
@@ -120,6 +121,10 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
       onChange: (e) => handleInputChange(subField.id, e.target ? e.target.value : e),
     };
     const error = entryErrors[subField.id];
+    const isStreet =
+      subField.id === 'street' ||
+      (typeof subField.label === 'string' &&
+        subField.label.toLowerCase().includes('street address'));
     switch (subField.type) {
       case 'select':
         return (
@@ -177,6 +182,39 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
               {...commonProps}
               error={error}
             />
+          );
+        }
+        if (isStreet) {
+          return (
+            <>
+              <AddressAutocomplete
+                key={subField.id}
+                {...commonProps}
+                onChange={(e) => handleInputChange(subField.id, e.target.value)}
+                onAddressSelect={(addr) => {
+                  const comps = {};
+                  (addr.address_components || []).forEach((c) => {
+                    c.types.forEach((t) => {
+                      comps[t] = { long_name: c.long_name, short_name: c.short_name };
+                    });
+                  });
+                  handleInputChange(subField.id, addr.formatted_address || '');
+                  if (field.fields.some((f) => f.id === 'city')) {
+                    handleInputChange('city', comps.locality?.long_name || '');
+                  }
+                  if (field.fields.some((f) => f.id === 'state')) {
+                    handleInputChange(
+                      'state',
+                      comps.administrative_area_level_1?.short_name || ''
+                    );
+                  }
+                  if (field.fields.some((f) => f.id === 'zip_code')) {
+                    handleInputChange('zip_code', comps.postal_code?.long_name || '');
+                  }
+                }}
+              />
+              {error && <div className="form-error-alert">{error}</div>}
+            </>
           );
         }
         if (
