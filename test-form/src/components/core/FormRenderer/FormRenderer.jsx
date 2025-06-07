@@ -9,6 +9,7 @@ export default function FormRenderer() {
   const steps = form.steps || [];
   const [currentStep, setCurrentStep] = useState(0);
   const [stepData, setStepData] = useState({});
+  const [allData, setAllData] = useState({});
   const stepperPosition = form.layout?.stepperPosition || 'right';
   const orientation = stepperPosition === 'top' ? 'horizontal' : 'vertical';
 
@@ -26,15 +27,18 @@ export default function FormRenderer() {
   const handleDataChange = (data) => {
     const stepId = steps[currentStep].id;
     setStepData((prev) => ({ ...prev, [stepId]: data }));
+    setAllData((prev) => ({ ...prev, ...data }));
   };
 
   const handleNext = (data) => {
     handleDataChange(data);
+    setAllData((prev) => ({ ...prev, ...data }));
     setCurrentStep((s) => Math.min(s + 1, steps.length - 1));
   };
 
   const handleBack = (data) => {
     handleDataChange(data);
+    setAllData((prev) => ({ ...prev, ...data }));
     setCurrentStep((s) => Math.max(s - 1, 0));
   };
 
@@ -84,6 +88,7 @@ export default function FormRenderer() {
             isFirst={currentStep === 0}
             isLast={currentStep === steps.length - 1}
             formData={stepData[steps[currentStep].id] || {}}
+            fullData={allData}
             onDataChange={handleDataChange}
           />
         )}

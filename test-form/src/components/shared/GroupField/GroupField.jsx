@@ -7,7 +7,7 @@ import FileInput from '../FileInput/FileInput';
 import MaskedInput from '../MaskedInput/MaskedInput';
 import { evaluateCondition } from '../../../utils/formHelpers';
 
-export default function GroupField({ field, value = [], onChange }) {
+export default function GroupField({ field, value = [], onChange, fullData = {} }) {
   const [entries, setEntries] = useState(value);
   const [currentEntry, setCurrentEntry] = useState({});
   const [editingIndex, setEditingIndex] = useState(null);
@@ -29,7 +29,7 @@ export default function GroupField({ field, value = [], onChange }) {
       const required = subField.requiredCondition
         ? evaluateCondition(
             subField.requiredCondition.condition || subField.requiredCondition,
-            currentEntry
+            fullData
           )
         : subField.required;
       const val = currentEntry[subField.id];
@@ -89,12 +89,12 @@ export default function GroupField({ field, value = [], onChange }) {
       subField.visibilityCondition ??
       (subField.requiredCondition?.condition || subField.requiredCondition);
     const visible = conditionToCheck
-      ? evaluateCondition(conditionToCheck, currentEntry)
+      ? evaluateCondition(conditionToCheck, fullData)
       : true;
     const required = subField.requiredCondition
       ? evaluateCondition(
           subField.requiredCondition.condition || subField.requiredCondition,
-          currentEntry
+          fullData
         )
       : subField.required;
     if (!visible) return null;
