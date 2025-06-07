@@ -15,6 +15,7 @@ import GroupField from '../../shared/GroupField/GroupField';
 import TableLayout from '../../shared/TableLayout/TableLayout';
 import MaskedInput from '../../shared/MaskedInput/MaskedInput';
 import FileInput from '../../shared/FileInput/FileInput';
+import AddressAutocomplete from '../../shared/AddressAutocomplete';
 import ReactMarkdown from 'react-markdown';
 import styles from './Step.module.css';
 
@@ -167,6 +168,10 @@ export default function Step({
       );
     }
 
+    const isStreet =
+      field.id === 'street' ||
+      (typeof field.label === 'string' && field.label.toLowerCase().includes('street address'));
+
     switch (field.type) {
       case 'text':
       case 'email':
@@ -189,6 +194,39 @@ export default function Step({
               onChange={(val) => handleChange(field.id, val)}
               error={error}
             />
+          );
+        }
+        if (isStreet) {
+          return (
+            <>
+              <AddressAutocomplete
+                key={field.id}
+                id={field.id}
+                label={field.label}
+                required={isRequired}
+                value={formData[field.id] || ''}
+                onChange={(e) => handleChange(field.id, e.target.value)}
+                onAddressSelect={(addr) => {
+                  const comps = {};
+                  (addr.address_components || []).forEach((c) => {
+                    c.types.forEach((t) => {
+                      comps[t] = { long_name: c.long_name, short_name: c.short_name };
+                    });
+                  });
+                  handleChange(field.id, addr.formatted_address || '');
+                  if (Object.prototype.hasOwnProperty.call(formData, 'city')) {
+                    handleChange('city', comps.locality?.long_name || '');
+                  }
+                  if (Object.prototype.hasOwnProperty.call(formData, 'state')) {
+                    handleChange('state', comps.administrative_area_level_1?.short_name || '');
+                  }
+                  if (Object.prototype.hasOwnProperty.call(formData, 'zip_code')) {
+                    handleChange('zip_code', comps.postal_code?.long_name || '');
+                  }
+                }}
+              />
+              {error && <div className="form-error-alert">{error}</div>}
+            </>
           );
         }
         return (
