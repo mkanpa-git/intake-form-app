@@ -34,12 +34,14 @@ export default function FormRenderer() {
     handleDataChange(data);
     setAllData((prev) => ({ ...prev, ...data }));
     setCurrentStep((s) => Math.min(s + 1, steps.length - 1));
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   const handleBack = (data) => {
     handleDataChange(data);
     setAllData((prev) => ({ ...prev, ...data }));
     setCurrentStep((s) => Math.max(s - 1, 0));
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   const canNavigate = (targetIndex) => {
