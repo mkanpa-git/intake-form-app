@@ -372,26 +372,26 @@ button:disabled {
   margin-top: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-.modern-table th, .modern-table td {
-  border: 1px solid #ccc;
+.modern-table th,
+.modern-table td {
+  border: 1px solid var(--border);
   padding: 10px 12px;
   text-align: left;
 }
 .modern-table thead {
-  background-color: #f5f5f5;
+  background-color: var(--background);
+}
+.modern-table tbody tr:nth-child(odd) {
+  background-color: var(--surface);
+}
+.modern-table tbody tr:nth-child(even) {
+  background-color: var(--background);
 }
 .modern-table tbody tr:hover {
-  background-color: #fafafa;
+  background-color: var(--secondary-color);
 }
 .modern-table button {
   margin-right: 8px;
-  color: #0066cc;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.modern-table button:hover {
-  text-decoration: underline;
 }
 
 .inline-radio {

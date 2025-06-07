@@ -2127,8 +2127,8 @@ Object.keys(groupData).forEach(fieldId => {
                     </td>
                   ))}
                   <td className="border px-4 py-2 space-x-2">
-                    <button className="text-blue-600 hover:underline" onClick={() => handleEdit(i)}>Edit</button>
-                    <button className="text-red-600 hover:underline" onClick={() => handleDelete(i)}>Delete</button>
+                    <button onClick={() => handleEdit(i)}>Edit</button>
+                    <button onClick={() => handleDelete(i)}>Delete</button>
                   </td>
                 </tr>
               ))}
