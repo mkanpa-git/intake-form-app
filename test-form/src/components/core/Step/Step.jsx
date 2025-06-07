@@ -113,6 +113,27 @@ export default function Step({
     if (!visible) return null;
 
     const error = touched[field.id] ? errors[field.id] : undefined;
+
+    if (
+      field.type === 'tel' ||
+      field.id.includes('telephone') ||
+      (typeof field.label === 'string' && field.label.toLowerCase().includes('phone'))
+    ) {
+      return (
+        <MaskedInput
+          key={field.id}
+          id={field.id}
+          label={field.label}
+          mask="(000) 000-0000"
+          placeholder={field.ui?.placeholder || '(123) 456-7890'}
+          required={isRequired}
+          value={formData[field.id] || ''}
+          onChange={(val) => handleChange(field.id, val)}
+          error={error}
+        />
+      );
+    }
+
     switch (field.type) {
       case 'text':
       case 'email':
@@ -131,20 +152,6 @@ export default function Step({
             />
             {error && <div className="form-error-alert">{error}</div>}
           </>
-        );
-      case 'tel':
-        return (
-          <MaskedInput
-            key={field.id}
-            id={field.id}
-            label={field.label}
-            mask="(000) 000-0000"
-            placeholder={field.ui?.placeholder || '(123) 456-7890'}
-            required={isRequired}
-            value={formData[field.id] || ''}
-            onChange={(val) => handleChange(field.id, val)}
-            error={error}
-          />
         );
       case 'select':
         if (field.metadata?.multiple) {
