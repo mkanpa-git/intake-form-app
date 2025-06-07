@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
 import formSpec from '../../data/childcare_form.json';
+import { validateStep } from '../../utils/formHelpers';
 
 export default function FormRenderer() {
   const { form } = formSpec;
@@ -33,6 +34,17 @@ export default function FormRenderer() {
     setCurrentStep((s) => Math.max(s - 1, 0));
   };
 
+  const canNavigate = () => {
+    const stepSpec = steps[currentStep];
+    const data = stepData[stepSpec.id] || {};
+    const { valid } = validateStep(stepSpec, data);
+    if (valid) {
+      handleDataChange(data);
+      window.scrollTo(0, 0);
+    }
+    return valid;
+  };
+
   return (
     <div className={stepperPosition === 'top' ? 'wizard-layout-column' : 'wizard-layout-row'}>
       {stepperPosition !== 'top' && (
@@ -42,6 +54,7 @@ export default function FormRenderer() {
           onStepChange={setCurrentStep}
           requiredDocs={requiredDocs}
           orientation={orientation}
+          canNavigate={canNavigate}
         />
       )}
       <div className="form-main">
@@ -54,6 +67,7 @@ export default function FormRenderer() {
             onStepChange={setCurrentStep}
             requiredDocs={requiredDocs}
             orientation={orientation}
+            canNavigate={canNavigate}
           />
         )}
         {steps.length > 0 && (
