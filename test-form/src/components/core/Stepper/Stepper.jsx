@@ -23,16 +23,28 @@ export default function Stepper({
   return (
     <aside className={containerClass}>
       <h4>Steps</h4>
+      <div className={styles.progress}>
+        Step {currentStep + 1} of {steps.length}
+      </div>
       <ul className={listClass}>
-        {steps.map((step, index) => (
-          <li
-            key={step.id}
-            className={`${itemClass} ${index === currentStep ? styles.active : ''}`}
-            onClick={() => handleClick(index)}
-          >
-            {step.title}
-          </li>
-        ))}
+        {steps.map((step, index) => {
+          const isActive = index === currentStep;
+          const isComplete = index < currentStep;
+          return (
+            <li
+              key={step.id}
+              className={`${itemClass} ${isActive ? styles.active : ''} ${
+                isComplete ? styles.complete : ''
+              }`}
+              onClick={() => handleClick(index)}
+            >
+              <span className={styles.icon}>
+                {isComplete ? '✓' : isActive ? '▶' : ''}
+              </span>
+              {step.title}
+            </li>
+          );
+        })}
       </ul>
       {requiredDocs.length > 0 && (
         <div className={styles.requiredDocs}>

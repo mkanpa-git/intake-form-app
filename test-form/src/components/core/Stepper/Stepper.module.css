@@ -51,6 +51,21 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
+.complete {
+  color: var(--font-color);
+}
+
+.progress {
+  font-size: var(--font-size-sm);
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  display: inline-block;
+  width: 1rem;
+  margin-right: 0.25rem;
+}
+
 .requiredDocs {
   margin-top: 2rem;
 }
