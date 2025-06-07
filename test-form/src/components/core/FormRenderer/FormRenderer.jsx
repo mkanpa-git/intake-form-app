@@ -42,14 +42,11 @@ export default function FormRenderer() {
     setCurrentStep((s) => Math.max(s - 1, 0));
   };
 
-  const canNavigate = () => {
-    const stepSpec = steps[currentStep];
-    const data = stepData[stepSpec.id] || {};
-    const { valid } = validateStep(stepSpec, data);
-    if (valid) {
-      handleDataChange(data);
-      window.scrollTo(0, 0);
-    }
+  const canNavigate = (targetIndex) => {
+    const { valid } = validateStep(
+      steps[currentStep],
+      stepData[steps[currentStep].id] || {}
+    );
     return valid;
   };
 
