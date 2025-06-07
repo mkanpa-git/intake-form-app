@@ -66,6 +66,20 @@ export default function Step({
     });
   }, [sections, fullData]);
 
+  // Re-run validation when returning to this step if fields were previously touched
+  useEffect(() => {
+    if (Object.keys(touched).length > 0) {
+      const result = validateStep(
+        { sections },
+        formData,
+        errors,
+        touched
+      );
+      setErrors(result.errors);
+      setTouched(result.touched);
+    }
+  }, [sections]);
+
   const handleToggle = (id) => {
     setCollapsedSections((prev) => ({ ...prev, [id]: !prev[id] }));
   };
@@ -73,17 +87,10 @@ export default function Step({
   const handleChange = (id, value) => {
     setFormData((prev) => {
       const next = { ...prev, [id]: value };
-      const result = validateStep(
-        { sections },
-        next,
-        errors,
-        { ...touched, [id]: true }
-      );
-      setErrors(result.errors);
-      setTouched(result.touched);
       onDataChange && onDataChange(next);
       return next;
     });
+    setTouched((prev) => ({ ...prev, [id]: true }));
   };
 
   const groupFieldsByGroup = (fields = []) => {
@@ -380,6 +387,18 @@ export default function Step({
     onNext && onNext(cleaned);
   };
 
+  const handleBackClick = () => {
+    const result = validateStep(
+      { sections },
+      { ...formData },
+      errors,
+      touched
+    );
+    setErrors(result.errors);
+    setTouched(result.touched);
+    onBack && onBack(formData);
+  };
+
   return (
     <div className={styles.step}>
       <h2>{title}</h2>
@@ -459,7 +478,7 @@ export default function Step({
       })}
       <div className={styles.navigation}>
         {!isFirst && (
-          <button type="button" onClick={() => onBack && onBack(formData)}>
+          <button type="button" onClick={handleBackClick}>
             Back
           </button>
         )}
