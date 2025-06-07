@@ -70,6 +70,80 @@ export function cleanupHiddenFields(step, formData) {
   return cleaned;
 }
 
+export function validateField(field, value, data = {}) {
+  if (!field) return "";
+
+  const required = field.required;
+  const requiredCondition = field.requiredCondition;
+
+  let isRequired = false;
+  if (
+    requiredCondition &&
+    (requiredCondition.condition ||
+      (requiredCondition.field && requiredCondition.operator))
+  ) {
+    isRequired = evaluateCondition(
+      requiredCondition.condition || requiredCondition,
+      data
+    );
+  } else if (typeof required === "boolean") {
+    isRequired = required;
+  } else if (typeof field.isRequired === "boolean") {
+    isRequired = field.isRequired;
+  }
+
+  const { constraints = {}, label = "", type, metadata = {} } = field;
+  const val = typeof value === "string" ? value.trim() : value;
+  let error = "";
+
+  if (
+    isRequired &&
+    (val === undefined ||
+      val === null ||
+      (typeof val === "string" && val === "") ||
+      (Array.isArray(val) && val.length === 0))
+  ) {
+    error = `${label} is required.`;
+  } else if (constraints.pattern && typeof val === "string" && val.trim() !== "") {
+    const raw = constraints.pattern;
+    const safePattern = raw.replace(/\\\\/g, "\\");
+    const pattern = new RegExp(safePattern);
+    if (val.includes("_") || !pattern.test(val.trim())) {
+      error = `${label} is invalid format.`;
+    }
+  } else if (type === "email") {
+    const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
+    if (!emailRegex.test(val)) {
+      error = `${label} must be a valid email address.`;
+    }
+  } else if (typeof val === "string") {
+    if (constraints.pattern) {
+      const raw = constraints.pattern;
+      const safePattern = raw.replace(/\\\\/g, "\\");
+      const pattern = new RegExp(safePattern);
+      if (!pattern.test(val)) {
+        error = `${label} is invalid format.`;
+      } else if (constraints.minLength && val.length < constraints.minLength) {
+        error = `${label} must be at least ${constraints.minLength} characters.`;
+      } else if (constraints.maxLength && val.length > constraints.maxLength) {
+        error = `${label} must be no more than ${constraints.maxLength} characters.`;
+      }
+    } else if (constraints.minLength && val.length < constraints.minLength) {
+      error = `${label} must be at least ${constraints.minLength} characters.`;
+    } else if (constraints.maxLength && val.length > constraints.maxLength) {
+      error = `${label} must be no more than ${constraints.maxLength} characters.`;
+    }
+  } else if (Array.isArray(val) && metadata.multiple) {
+    if (constraints.minSelections && val.length < constraints.minSelections) {
+      error = `${label} requires at least ${constraints.minSelections} selections.`;
+    } else if (constraints.maxSelections && val.length > constraints.maxSelections) {
+      error = `${label} allows at most ${constraints.maxSelections} selections.`;
+    }
+  }
+
+  return error;
+}
+
 export function validateStep(step, formData, formErrors = {}, touched = {}) {
   let valid = true;
   let updatedErrors = { ...formErrors };

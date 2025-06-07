@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   validateStep,
+  validateField,
   evaluateCondition,
   cleanupHiddenFields,
 } from '../../../utils/formHelpers';
@@ -84,13 +85,38 @@ export default function Step({
     setCollapsedSections((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
+  const findFieldById = (searchId) => {
+    for (const sec of sections) {
+      if (sec.id === searchId) return sec;
+      if (Array.isArray(sec.fields)) {
+        const stack = [...sec.fields];
+        while (stack.length) {
+          const f = stack.shift();
+          if (f.id === searchId) return f;
+          if (f.type === 'group' && Array.isArray(f.fields)) {
+            stack.push(...f.fields);
+          }
+        }
+      }
+    }
+    return null;
+  };
+
   const handleChange = (id, value) => {
-    setFormData((prev) => {
-      const next = { ...prev, [id]: value };
-      onDataChange && onDataChange(next);
-      return next;
-    });
+    const next = { ...formData, [id]: value };
+    setFormData(next);
+    onDataChange && onDataChange(next);
     setTouched((prev) => ({ ...prev, [id]: true }));
+
+    const field = findFieldById(id);
+    if (field) {
+      const err = validateField(field, value, { ...fullData, ...next });
+      setErrors((prev) => {
+        const updated = { ...prev, [id]: err };
+        if (!err) delete updated[id];
+        return updated;
+      });
+    }
   };
 
   const groupFieldsByGroup = (fields = []) => {
