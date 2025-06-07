@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Local API Server
+
+Create a `.env` file inside the `server` folder with your Google API key:
+
+```
+GOOGLE_API_KEY=<your-key>
+```
+
+Start the Express proxy and React app together with:
+
+```
+npm run dev
+```
