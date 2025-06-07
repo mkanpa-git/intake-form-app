@@ -22,24 +22,31 @@
   padding: 0.6rem 1rem;
   margin-bottom: 0.5rem;
   background: var(--secondary-color);
-  border-radius: 20px;
+  border-radius: 24px;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
 }
 .horizontalItem {
   padding: 0.6rem 1rem;
   margin-right: 0.5rem;
   background: var(--secondary-color);
-  border-radius: 20px;
+  border-radius: 24px;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.item:hover,
+.horizontalItem:hover,
+.item:focus,
+.horizontalItem:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .active {
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   color: white;
   font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .requiredDocs {
