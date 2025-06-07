@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
-import formSpec from '../../data/childcare_form.json';
-import { validateStep } from '../../utils/formHelpers';
+import formSpec from '../../../data/childcare_form.json';
+import { validateStep } from '../../../utils/formHelpers';
 
 export default function FormRenderer() {
   const { form } = formSpec;
