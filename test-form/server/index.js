@@ -33,7 +33,7 @@ app.get('/api/places/autocomplete', async (req, res) => {
     const headers = {
       'Content-Type': 'application/json',
       'X-Goog-Api-Key': GOOGLE_API_KEY,
-      'X-Goog-FieldMask': 'suggestions.placePrediction.text'
+      'X-Goog-FieldMask': 'suggestions.placePrediction.text,suggestions.placePrediction.placeId'
     };
     if (sessiontoken) headers['X-Goog-Session-Token'] = sessiontoken;
 
@@ -81,7 +81,7 @@ app.get('/api/places/details/:id', async (req, res) => {
 
     const headers = {
       'X-Goog-Api-Key': GOOGLE_API_KEY,
-      'X-Goog-FieldMask': 'id,displayName,formattedAddress,addressComponents',
+      'X-Goog-FieldMask': 'id,displayName,formattedAddress,addressComponents,location',
     };
     if (sessiontoken) headers['X-Goog-Session-Token'] = sessiontoken;
 

@@ -37,6 +37,7 @@ export default function AddressAutocomplete({
           setSuggestions(
             data.suggestions?.map((s) => ({
               displayName: s.placePrediction?.text?.text ?? '',
+              placeId: s.placePrediction?.placeId,
             })) || []
           );
         } catch (err) {
@@ -60,12 +61,22 @@ export default function AddressAutocomplete({
     setSuggestions([]);
     setShowSuggestions(false);
 
-    // Since placeId is not available, we cannot call /details/:id
-    // You may implement a /searchText fallback if needed
+    let details = null;
+    if (place.placeId) {
+      try {
+        const res = await fetch(
+          `/api/places/details/${place.placeId}?sessiontoken=${sessionTokenRef.current}`
+        );
+        details = await res.json();
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
     if (onAddressSelect) {
-      onAddressSelect({
+      onAddressSelect(details || {
         formatted_address: displayText,
-        place_id: null,
+        place_id: place.placeId || null,
         address_components: [],
         name: displayText,
       });

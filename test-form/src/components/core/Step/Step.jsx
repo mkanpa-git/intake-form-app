@@ -207,21 +207,40 @@ export default function Step({
                 value={formData[field.id] || ''}
                 onChange={(val) => handleChange(field.id, val)}
                 onAddressSelect={(addr) => {
+                  const components = addr.address_components || addr.addressComponents || [];
                   const comps = {};
-                  (addr.address_components || []).forEach((c) => {
+                  components.forEach((c) => {
                     c.types.forEach((t) => {
-                      comps[t] = { long_name: c.long_name, short_name: c.short_name };
+                      comps[t] = {
+                        long_name: c.long_name || c.longName,
+                        short_name: c.short_name || c.shortName,
+                      };
                     });
                   });
-                  handleChange(field.id, addr.formatted_address || '');
+                  handleChange(field.id, addr.formatted_address || addr.formattedAddress || '');
                   if (Object.prototype.hasOwnProperty.call(formData, 'city')) {
-                    handleChange('city', comps.locality?.long_name || '');
+                    handleChange('city', comps.locality?.long_name || comps.locality?.longName || '');
                   }
                   if (Object.prototype.hasOwnProperty.call(formData, 'state')) {
-                    handleChange('state', comps.administrative_area_level_1?.short_name || '');
+                    handleChange(
+                      'state',
+                      comps.administrative_area_level_1?.short_name || comps.administrativeAreaLevel1?.shortName || ''
+                    );
                   }
                   if (Object.prototype.hasOwnProperty.call(formData, 'zip_code')) {
-                    handleChange('zip_code', comps.postal_code?.long_name || '');
+                    handleChange('zip_code', comps.postal_code?.long_name || comps.postalCode?.longName || '');
+                  }
+                  if (
+                    Object.prototype.hasOwnProperty.call(formData, 'latitude') &&
+                    addr.location?.latitude !== undefined
+                  ) {
+                    handleChange('latitude', addr.location.latitude);
+                  }
+                  if (
+                    Object.prototype.hasOwnProperty.call(formData, 'longitude') &&
+                    addr.location?.longitude !== undefined
+                  ) {
+                    handleChange('longitude', addr.location.longitude);
                   }
                 }}
               />
