@@ -8,8 +8,10 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [page, setPage] = useState('dashboard');
   const [currentId, setCurrentId] = useState(null);
+  const [currentService, setCurrentService] = useState('childcare');
 
-  const startApplication = (id) => {
+  const startApplication = (serviceKey, id) => {
+    setCurrentService(serviceKey);
     setCurrentId(id);
     setPage('form');
   };
@@ -25,7 +27,7 @@ function App() {
           <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
             ☰
           </button>
-          <div className="brand">MyCity Childcare</div>
+          <div className="brand">MyCity Services</div>
         </div>
 
         <nav className={`right ${menuOpen ? "open" : ""}`}>
@@ -38,7 +40,11 @@ function App() {
         {page === 'dashboard' ? (
           <Dashboard onStart={startApplication} />
         ) : (
-          <FormPage applicationId={currentId} onExit={exitForm} />
+          <FormPage
+            applicationId={currentId}
+            service={currentService}
+            onExit={exitForm}
+          />
         )}
       </main>
 
