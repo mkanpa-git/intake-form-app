@@ -1,20 +1,22 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 :root {
-  --primary-color: #7c3aed; /* purple */
-  --primary-hover: #06b6d4; /* teal */
-  --secondary-color: #f3e8ff;
-  --accent-color: #06b6d4;
-  --background: #f9fafb;
+  --primary-color: #1e40af; /* indigo */
+  --primary-hover: #1d4ed8; /* indigo lighter */
+  --secondary-color: #e0e7ff;
+  --accent-color: #10b981; /* emerald */
+  --background: #f8fafc;
   --surface: #ffffff;
-  --border: #e5e7eb;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --radius: 12px;
-  --font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  --border: #d1d5db;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --radius: 8px;
+  --font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   --font-display: 'Inter', var(--font-family);
   --font-size: 16px;
-  --font-size-sm: 0.95rem;
-  --font-size-lg: 1.125rem;
-  --font-color: #111827;
+  --font-size-sm: 0.9rem;
+  --font-size-lg: 1.1rem;
+  --font-color: #1f2937;
 }
 
 body, html, #root {
@@ -75,10 +77,11 @@ h5 {
 }
 
 .stepper-vertical li {
-  padding: 0.6rem 1rem;
+  padding: 0.75rem 1rem;
   margin-bottom: 0.5rem;
-  background: #f3f4f6;
-  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
   font-size: var(--font-size-sm);
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s;
@@ -93,7 +96,7 @@ h5 {
 
 .stepper-vertical li.active {
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  color: var(--font-color);
+  color: #ffffff;
   font-weight: 600;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
@@ -110,9 +113,9 @@ h5 {
 .wizard-form {
   background: var(--surface);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: var(--shadow);
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -120,7 +123,7 @@ h5 {
 .form-header,
 .form-footer {
   padding: 1rem 2rem;
-  background-color: #f3f4f6;
+  background-color: var(--surface);
   border-bottom: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
@@ -132,7 +135,7 @@ h5 {
   border-top: 1px solid var(--border);
   bottom: 0;
   z-index: 20;
-  background: white;
+  background: var(--surface);
 }
 
 .form-header .right a,
@@ -176,15 +179,15 @@ h5 {
 
 /* Sections */
 .form-section {
-  background-color: #f9fafb;
+  background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .form-section-header {
   padding: 1rem 1.25rem;
-  background-color: #f1f5f9;
+  background-color: var(--background);
   border-bottom: 1px solid var(--border);
   font-weight: 600;
   display: flex;
@@ -206,8 +209,8 @@ h5 {
 /* Field Layout */
 .form-grid {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   padding: 1rem;
 }
 
@@ -260,7 +263,7 @@ button {
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   color: var(--font-color);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius);
   cursor: pointer;
   font-weight: 500;
   transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
