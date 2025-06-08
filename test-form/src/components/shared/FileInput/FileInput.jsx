@@ -7,13 +7,35 @@ export default function FileInput({
   multiple = false,
   error,
   hint,
+  applicationId,
   onChange,
   ...props
 }) {
-  const handleFileChange = (e) => {
-    const files = e.target.files;
-    if (!onChange) return;
-    onChange(multiple ? Array.from(files) : files[0]);
+  const handleFileChange = async (e) => {
+    const files = Array.from(e.target.files || []);
+    if (!onChange || files.length === 0) return;
+
+    if (applicationId) {
+      const form = new FormData();
+      files.forEach((f) => form.append('files', f));
+      try {
+        const res = await fetch(`/api/applications/${applicationId}/upload`, {
+          method: 'POST',
+          body: form,
+        });
+        const data = await res.json();
+        if (res.ok) {
+          const value = multiple ? data.paths : data.paths[0];
+          onChange(value);
+          return;
+        }
+        console.error('Upload failed', data);
+      } catch (err) {
+        console.error('Upload error', err);
+      }
+    }
+
+    onChange(multiple ? files : files[0]);
   };
 
   return (
