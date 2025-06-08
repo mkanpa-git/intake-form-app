@@ -25,3 +25,8 @@ export function upsertApplication(id, data) {
   }
   saveApplications(apps);
 }
+
+export function deleteApplication(id) {
+  const updated = loadApplications().filter((a) => a.id !== id);
+  saveApplications(updated);
+}

@@ -1,20 +1,36 @@
 import React from 'react';
 
-export default function ApplicationCard({ id, serviceName, interactionName, savedAt, onContinue }) {
+export default function ApplicationCard({
+  id,
+  serviceName,
+  interactionName,
+  savedAt,
+  onContinue,
+  onDelete,
+}) {
   const formatted = savedAt ? new Date(savedAt).toLocaleString() : '';
   return (
-    <a
-      href="#"
-      className="app-card"
-      onClick={(e) => {
-        e.preventDefault();
-        onContinue && onContinue(id);
-      }}
-    >
+    <div className="app-card">
       <h3 className="card-title">{serviceName}</h3>
       <p className="interaction-name">{interactionName}</p>
       <p className="app-id">ID: {id}</p>
       {formatted && <p className="saved-date">Saved: {formatted}</p>}
-    </a>
+      <div className="app-card-actions">
+        <button
+          onClick={() => {
+            onContinue && onContinue(id);
+          }}
+        >
+          Continue
+        </button>
+        <button
+          onClick={() => {
+            onDelete && onDelete(id);
+          }}
+        >
+          Delete
+        </button>
+      </div>
+    </div>
   );
 }
