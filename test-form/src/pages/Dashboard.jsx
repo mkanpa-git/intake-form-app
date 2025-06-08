@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { loadApplications, saveApplications } from '../utils/appStorage';
+import { loadApplications, saveApplications, deleteApplication } from '../utils/appStorage';
 import ServiceCard from '../components/ServiceCard';
 import ApplicationCard from '../components/ApplicationCard';
 
@@ -39,6 +39,11 @@ export default function Dashboard({ onStart }) {
     onStart && onStart(key, id);
   };
 
+  const handleDelete = (id) => {
+    deleteApplication(id);
+    setApps((prev) => prev.filter((a) => a.id !== id));
+  };
+
   return (
     <div className="dashboard-page">
       <h1>Service Catalog</h1>
@@ -69,6 +74,7 @@ export default function Dashboard({ onStart }) {
                 interactionName={app.interactionName || 'Child Care Assistance Application'}
                 savedAt={app.updatedAt}
                 onContinue={handleContinue}
+                onDelete={handleDelete}
               />
             ))}
           </div>
