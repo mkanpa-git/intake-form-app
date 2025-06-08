@@ -192,24 +192,34 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
                 {...commonProps}
                 onChange={(val) => handleInputChange(subField.id, val)}
                 onAddressSelect={(addr) => {
+                  const components = addr.address_components || addr.addressComponents || [];
                   const comps = {};
-                  (addr.address_components || []).forEach((c) => {
+                  components.forEach((c) => {
                     c.types.forEach((t) => {
-                      comps[t] = { long_name: c.long_name, short_name: c.short_name };
+                      comps[t] = {
+                        long_name: c.long_name || c.longName,
+                        short_name: c.short_name || c.shortName,
+                      };
                     });
                   });
-                  handleInputChange(subField.id, addr.formatted_address || '');
+                  handleInputChange(subField.id, addr.formatted_address || addr.formattedAddress || '');
                   if (field.fields.some((f) => f.id === 'city')) {
-                    handleInputChange('city', comps.locality?.long_name || '');
+                    handleInputChange('city', comps.locality?.long_name || comps.locality?.longName || '');
                   }
                   if (field.fields.some((f) => f.id === 'state')) {
                     handleInputChange(
                       'state',
-                      comps.administrative_area_level_1?.short_name || ''
+                      comps.administrative_area_level_1?.short_name || comps.administrativeAreaLevel1?.shortName || ''
                     );
                   }
                   if (field.fields.some((f) => f.id === 'zip_code')) {
-                    handleInputChange('zip_code', comps.postal_code?.long_name || '');
+                    handleInputChange('zip_code', comps.postal_code?.long_name || comps.postalCode?.longName || '');
+                  }
+                  if (field.fields.some((f) => f.id === 'latitude') && addr.location?.latitude !== undefined) {
+                    handleInputChange('latitude', addr.location.latitude);
+                  }
+                  if (field.fields.some((f) => f.id === 'longitude') && addr.location?.longitude !== undefined) {
+                    handleInputChange('longitude', addr.location.longitude);
                   }
                 }}
               />
