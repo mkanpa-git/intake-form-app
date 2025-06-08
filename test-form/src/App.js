@@ -1,10 +1,22 @@
 import { useState } from "react";
 import "./form.css";
 import FormPage from "./pages/FormPage";
+import Dashboard from "./pages/Dashboard";
 import './App.css';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [page, setPage] = useState('dashboard');
+  const [currentId, setCurrentId] = useState(null);
+
+  const startApplication = (id) => {
+    setCurrentId(id);
+    setPage('form');
+  };
+
+  const exitForm = () => {
+    setPage('dashboard');
+  };
 
   return (
     <div className="page-container">
@@ -17,13 +29,17 @@ function App() {
         </div>
 
         <nav className={`right ${menuOpen ? "open" : ""}`}>
-          <a href="#account">Dashboard</a>
+          <button onClick={() => setPage('dashboard')}>Dashboard</button>
           <a href="#settings">Profile</a>
         </nav>
       </header>
 
       <main className="form-body">
-        <FormPage />
+        {page === 'dashboard' ? (
+          <Dashboard onStart={startApplication} />
+        ) : (
+          <FormPage applicationId={currentId} onExit={exitForm} />
+        )}
       </main>
 
       <footer className="form-footer">
