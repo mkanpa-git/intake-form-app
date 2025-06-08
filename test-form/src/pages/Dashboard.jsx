@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { loadApplications, saveApplications } from '../utils/appStorage';
+import ServiceCard from '../components/ServiceCard';
+import ApplicationCard from '../components/ApplicationCard';
 
 export default function Dashboard({ onStart }) {
   const [apps, setApps] = useState([]);
@@ -10,7 +12,15 @@ export default function Dashboard({ onStart }) {
 
   const handleNew = () => {
     const id = Date.now().toString();
-    const newApp = { id, stepData: {}, allData: {}, currentStep: 0 };
+    const newApp = {
+      id,
+      stepData: {},
+      allData: {},
+      currentStep: 0,
+      serviceName: 'Child Care Assistance',
+      interactionName: 'Child Care Assistance Application',
+      updatedAt: new Date().toISOString(),
+    };
     const updated = [...apps, newApp];
     saveApplications(updated);
     setApps(updated);
@@ -24,19 +34,30 @@ export default function Dashboard({ onStart }) {
   return (
     <div className="dashboard-page">
       <h1>Service Catalog</h1>
-      <button onClick={handleNew}>Start Child Care Assistance Application</button>
+      <div className="catalog-grid">
+        <ServiceCard
+          name="Child Care Assistance"
+          interaction="Child Care Assistance Application"
+          description="Step-by-step form for applying for Childcare Assistance"
+          onStart={handleNew}
+        />
+      </div>
 
       {apps.length > 0 && (
         <div className="draft-list">
           <h2>Saved Applications</h2>
-          <ul>
+          <div className="saved-grid">
             {apps.map((app) => (
-              <li key={app.id}>
-                Application {app.id}
-                <button onClick={() => handleContinue(app.id)}>Continue</button>
-              </li>
+              <ApplicationCard
+                key={app.id}
+                id={app.id}
+                serviceName={app.serviceName || 'Child Care Assistance'}
+                interactionName={app.interactionName || 'Child Care Assistance Application'}
+                savedAt={app.updatedAt}
+                onContinue={handleContinue}
+              />
             ))}
-          </ul>
+          </div>
         </div>
       )}
     </div>

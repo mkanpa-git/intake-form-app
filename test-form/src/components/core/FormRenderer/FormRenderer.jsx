@@ -62,6 +62,7 @@ export default function FormRenderer({ applicationId, onExit }) {
       stepData: { ...stepData, [steps[currentStep].id]: data },
       allData: { ...allData, ...data },
       currentStep,
+      updatedAt: new Date().toISOString(),
     });
     onExit && onExit();
   };
