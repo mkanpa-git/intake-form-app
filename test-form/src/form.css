@@ -57,49 +57,7 @@ h5 {
   min-height: 100vh;
 }
 
-.form-stepper-sidebar {
-  width: 250px;
-  flex-shrink: 0;
-  background-color: var(--surface);
-  border-right: 1px solid var(--border);
-  padding: 1rem;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  overflow-y: auto;
-}
 
-/* Stepper */
-.stepper-vertical {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.stepper-vertical li {
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: var(--font-size-sm);
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-}
-
-.stepper-vertical li:hover,
-.stepper-vertical li:focus {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
-.stepper-vertical li.active {
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  color: #ffffff;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
 
 /* Main Form Area */
 .form-main {
@@ -109,15 +67,6 @@ h5 {
   background: var(--background);
 }
 
-/* Form Container */
-.wizard-form {
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 2.5rem;
-  box-shadow: var(--shadow);
-  max-width: 1000px;
-  margin: 0 auto;
-}
 
 /* Header & Footer */
 .form-header,
@@ -169,13 +118,6 @@ h5 {
   border-radius: 4px;
 }
 
-/* Step Title */
-.form-step legend {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  color: #111827;
-}
 
 /* Sections */
 .form-section {
@@ -206,44 +148,6 @@ h5 {
   display: inline-block;
 }
 
-/* Field Layout */
-.form-grid {
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  padding: 1rem;
-}
-
-.form-label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 0.25rem;
-  color: #374151;
-}
-
-.form-input,
-textarea,
-select {
-  width: 100%;
-  padding: 0.6rem 0.75rem;
-  font-size: 1rem;
-  font-family: inherit;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: white;
-  box-sizing: border-box;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.form-input.error,
-textarea.error,
-select.error {
-  border-color: #dc2626;
-  background-color: #fef2f2;
-}
 
 /* Validation */
 .form-error-alert {
@@ -284,51 +188,12 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Repeatable Groups */
-.form-group-multiple {
-  border: 1px solid #d1d5db;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  border-radius: 6px;
-}
-
-.form-subgroup {
-  border: 1px dashed #cbd5e1;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-}
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .wizard-layout-row {
     flex-direction: column;
   }
-
-  .form-stepper-sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    padding: 0.5rem 1rem;
-    justify-content: flex-start;
-  }
-
-  .stepper-vertical {
-    flex-direction: row;
-    gap: 0.5rem;
-  }
-
-  .stepper-vertical li {
-    flex-shrink: 0;
-    white-space: nowrap;
-    margin-right: 0.5rem;
-  }
-
   .form-main {
     padding: 1rem;
     height: auto;
@@ -404,51 +269,11 @@ button:disabled {
   margin-right: 8px;
 }
 
-.inline-radio {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 1rem;
-}
-
-.form-radio-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-}
-
-.radio-label {
-  font-size: 1.125rem; /* 18px */
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: background 0.2s ease;
-}
-
-.radio-label:hover {
-  background-color: #f0f4ff;
-}
-
-.radio-label input[type="radio"] {
-  transform: scale(1.25);
-}
-
-.inline-checkbox {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
 .copy-controls {
   margin: 1rem 0;
   display: flex;
   gap: 1rem;
   align-items: center;
-}
-.copy-button {
-  padding: 0.5rem 1rem;
 }
 
 
@@ -483,20 +308,3 @@ button:disabled {
 
 
 
-.info-toggle-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  background-color: #f3f4f6;
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
-}
-
-.toggle-btn {
-  font-size: 0.875rem;
-  background: none;
-  border: none;
-  color: #2563eb;
-  cursor: pointer;
-}
