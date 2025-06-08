@@ -112,6 +112,7 @@ export default function AddressAutocomplete({
         autoComplete="off"
         {...props}
       />
+      <span className={styles.icon}>🔍</span>
       {showSuggestions && suggestions.length > 0 && (
         <ul className={styles.suggestions}>
           {suggestions.map((s, i) => (

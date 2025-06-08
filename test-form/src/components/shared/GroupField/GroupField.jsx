@@ -14,6 +14,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
   const [editingIndex, setEditingIndex] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [entryErrors, setEntryErrors] = useState({});
+  const [placeholders, setPlaceholders] = useState({});
 
   useEffect(() => {
     setEntries(Array.isArray(value) ? value : []);
@@ -190,8 +191,12 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
               <AddressAutocomplete
                 key={subField.id}
                 {...commonProps}
+                placeholder={placeholders[subField.id] || subField.ui?.placeholder || ''}
                 onChange={(val) => handleInputChange(subField.id, val)}
                 onAddressSelect={(addr) => {
+                  const fullAddr = addr.formatted_address || addr.formattedAddress || '';
+                  setPlaceholders((p) => ({ ...p, [subField.id]: fullAddr }));
+
                   const components = addr.address_components || addr.addressComponents || [];
                   const comps = {};
                   components.forEach((c) => {
@@ -202,7 +207,6 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
                       };
                     });
                   });
-                  handleInputChange(subField.id, addr.formatted_address || addr.formattedAddress || '');
                   if (field.fields.some((f) => f.id === 'city')) {
                     const cityVal =
                       comps.locality?.long_name ||
@@ -256,6 +260,9 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
                   if (field.fields.some((f) => f.id === 'longitude') && addr.location?.longitude !== undefined) {
                     handleInputChange('longitude', addr.location.longitude);
                   }
+
+                  const streetOnly = fullAddr.split(',')[0];
+                  handleInputChange(subField.id, streetOnly);
                 }}
               />
               {error && <div className="form-error-alert">{error}</div>}

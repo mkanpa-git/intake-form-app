@@ -34,6 +34,7 @@ export default function Step({
   const [formData, setFormData] = useState(initialData);
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
+  const [placeholders, setPlaceholders] = useState({});
 
   // Update local form data when parent data changes (e.g., returning to a step)
   useEffect(() => {
@@ -207,8 +208,12 @@ export default function Step({
                 label={field.label}
                 required={isRequired}
                 value={formData[field.id] || ''}
+                placeholder={placeholders[field.id] || field.ui?.placeholder || ''}
                 onChange={(val) => handleChange(field.id, val)}
                 onAddressSelect={(addr) => {
+                  const fullAddr = addr.formatted_address || addr.formattedAddress || '';
+                  setPlaceholders((p) => ({ ...p, [field.id]: fullAddr }));
+
                   const components = addr.address_components || addr.addressComponents || [];
                   const comps = {};
                   components.forEach((c) => {
@@ -219,7 +224,6 @@ export default function Step({
                       };
                     });
                   });
-                  handleChange(field.id, addr.formatted_address || addr.formattedAddress || '');
                   if (findFieldById('city')) {
                     const cityVal =
                       comps.locality?.long_name ||
@@ -279,6 +283,9 @@ export default function Step({
                   ) {
                     handleChange('longitude', addr.location.longitude);
                   }
+
+                  const streetOnly = fullAddr.split(',')[0];
+                  handleChange(field.id, streetOnly);
                 }}
               />
               {error && <div className="form-error-alert">{error}</div>}
