@@ -310,13 +310,25 @@ button:disabled {
 
 
 /* Card layouts */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: var(--shadow);
+.card__primary-action {
+  display: block;
+  padding: 1.25rem;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  border-radius: 0.5rem;
+  transition: all 0.25s ease-in-out;
+  color: #1a202c;
   max-width: 320px;
+  text-align: left;
+}
+
+.card__primary-action:hover,
+.card__primary-action:focus {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  border-color: #2563eb;
+  text-decoration: none;
+  background-color: #f9fafb;
 }
 
 .catalog-grid,

@@ -3,12 +3,18 @@ import React from 'react';
 export default function ApplicationCard({ id, serviceName, interactionName, savedAt, onContinue }) {
   const formatted = savedAt ? new Date(savedAt).toLocaleString() : '';
   return (
-    <div className="card app-card">
+    <a
+      href="#"
+      className="card__primary-action app-card"
+      onClick={(e) => {
+        e.preventDefault();
+        onContinue && onContinue(id);
+      }}
+    >
       <h3 className="card-title">{serviceName}</h3>
       <p className="interaction-name">{interactionName}</p>
       <p className="app-id">ID: {id}</p>
       {formatted && <p className="saved-date">Saved: {formatted}</p>}
-      <button onClick={() => onContinue(id)}>Continue</button>
-    </div>
+    </a>
   );
 }
