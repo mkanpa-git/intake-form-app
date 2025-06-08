@@ -5,8 +5,17 @@
 .input {
   width: 100%;
   padding: 0.5rem;
+  padding-right: 2rem;
   font-family: inherit;
   font-size: 1rem;
+}
+.icon {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #555;
 }
 .suggestions {
   position: absolute;
