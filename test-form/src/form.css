@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 :root {
-  --primary-color: #1e40af; /* indigo */
-  --primary-hover: #1d4ed8; /* indigo lighter */
+  --primary-color: #3b82f6; 
+  --primary-hover: #60a5fa; 
   --secondary-color: #e0e7ff;
-  --accent-color: #10b981; /* emerald */
+  --accent-color: #93c5fd; 
   --background: #f8fafc;
   --surface: #ffffff;
   --border: #d1d5db;
