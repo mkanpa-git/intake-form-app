@@ -104,20 +104,22 @@ export default function Step({
   };
 
   const handleChange = (id, value) => {
-    const next = { ...formData, [id]: value };
-    setFormData(next);
-    onDataChange && onDataChange(next);
-    setTouched((prev) => ({ ...prev, [id]: true }));
+    setFormData(prev => {
+      const next = { ...prev, [id]: value };
+      onDataChange?.(next);
+      setTouched(tPrev => ({ ...tPrev, [id]: true }));
 
-    const field = findFieldById(id);
-    if (field) {
-      const err = validateField(field, value, { ...fullData, ...next });
-      setErrors((prev) => {
-        const updated = { ...prev, [id]: err };
-        if (!err) delete updated[id];
-        return updated;
-      });
-    }
+      const field = findFieldById(id);
+      if (field) {
+        const err = validateField(field, value, { ...fullData, ...next });
+        setErrors(ePrev => {
+          const updated = { ...ePrev, [id]: err };
+          if (!err) delete updated[id];
+          return updated;
+        });
+      }
+      return next;
+    });
   };
 
   const groupFieldsByGroup = (fields = []) => {
