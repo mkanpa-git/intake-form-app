@@ -24,6 +24,7 @@ export default function Step({
   sections = [],
   onNext,
   onBack,
+  onSaveDraft,
   isFirst = false,
   isLast = false,
   formData: initialData = {},
@@ -527,6 +528,10 @@ export default function Step({
     onBack && onBack(formData);
   };
 
+  const handleSaveDraftClick = () => {
+    onSaveDraft && onSaveDraft(formData);
+  };
+
   return (
     <div className={styles.step}>
       <h2>{title}</h2>
@@ -610,6 +615,9 @@ export default function Step({
             Back
           </button>
         )}
+        <button type="button" onClick={handleSaveDraftClick}>
+          Save Draft
+        </button>
         {!isLast && (
           <button type="button" onClick={handleNextClick}>
             Next

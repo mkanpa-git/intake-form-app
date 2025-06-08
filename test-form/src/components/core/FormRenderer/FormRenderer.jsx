@@ -3,8 +3,9 @@ import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
 import formSpec from '../../../data/childcare_form.json';
 import { validateStep } from '../../../utils/formHelpers';
+import { getApplication, upsertApplication } from '../../../utils/appStorage';
 
-export default function FormRenderer() {
+export default function FormRenderer({ applicationId, onExit }) {
   const { form } = formSpec;
   const steps = form.steps || [];
   const [currentStep, setCurrentStep] = useState(0);
@@ -12,6 +13,17 @@ export default function FormRenderer() {
   const [allData, setAllData] = useState({});
   const stepperPosition = form.layout?.stepperPosition || 'right';
   const orientation = stepperPosition === 'top' ? 'horizontal' : 'vertical';
+
+  useEffect(() => {
+    if (applicationId) {
+      const saved = getApplication(applicationId);
+      if (saved) {
+        setCurrentStep(saved.currentStep || 0);
+        setStepData(saved.stepData || {});
+        setAllData(saved.allData || {});
+      }
+    }
+  }, [applicationId]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -42,6 +54,16 @@ export default function FormRenderer() {
     setAllData((prev) => ({ ...prev, ...data }));
     setCurrentStep((s) => Math.max(s - 1, 0));
     window.scrollTo({ top: 0, behavior: 'auto' });
+  };
+
+  const handleSaveDraft = (data) => {
+    handleDataChange(data);
+    upsertApplication(applicationId, {
+      stepData: { ...stepData, [steps[currentStep].id]: data },
+      allData: { ...allData, ...data },
+      currentStep,
+    });
+    onExit && onExit();
   };
 
   const canNavigate = (targetIndex) => {
@@ -86,6 +108,7 @@ export default function FormRenderer() {
             sections={steps[currentStep].sections}
             onNext={handleNext}
             onBack={handleBack}
+            onSaveDraft={handleSaveDraft}
             isFirst={currentStep === 0}
             isLast={currentStep === steps.length - 1}
             formData={stepData[steps[currentStep].id] || {}}
