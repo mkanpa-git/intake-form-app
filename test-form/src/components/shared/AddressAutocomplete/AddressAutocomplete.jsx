@@ -67,20 +67,32 @@ export default function AddressAutocomplete({
         const res = await fetch(
           `/api/places/details/${place.placeId}?sessiontoken=${sessionTokenRef.current}`
         );
-        details = await res.json();
+        const data = await res.json();
+
+        details = {
+          formatted_address: data.formattedAddress,
+          place_id: data.id,
+          address_components: (data.addressComponents || []).map((c) => ({
+            long_name: c.longText,
+            short_name: c.shortText,
+            types: c.types,
+          })),
+          name: data.displayName?.text,
+          location: data.location,
+        };
       } catch (err) {
-        console.error(err);
+        console.error('Failed to fetch place details:', err);
       }
     }
 
-    if (onAddressSelect) {
-      onAddressSelect(details || {
+    onAddressSelect?.(
+      details || {
         formatted_address: displayText,
         place_id: place.placeId || null,
         address_components: [],
         name: displayText,
-      });
-    }
+      }
+    );
 
     sessionTokenRef.current = crypto.randomUUID();
   };

@@ -90,6 +90,9 @@ app.get('/api/places/details/:id', async (req, res) => {
 
     const response = await fetch(url, { headers });
     const data = await response.json();
+    // ✅ Log the response body
+    console.log(`✅ Place Details Response:`, JSON.stringify(data, null, 2));
+
     res.json(data);
   } catch (err) {
     console.error(err);
