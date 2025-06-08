@@ -1,6 +1,9 @@
 require('dotenv').config();
 const express = require('express');
 const fetch = require('node-fetch');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -8,6 +11,29 @@ const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, cb) => {
+      const dir = path.join(__dirname, 'uploads', req.params.appId);
+      fs.mkdirSync(dir, { recursive: true });
+      cb(null, dir);
+    },
+    filename: (req, file, cb) => {
+      cb(null, Date.now() + '-' + file.originalname);
+    },
+  }),
+});
+
+// --- File Upload ---
+app.post('/api/applications/:appId/upload', upload.array('files'), (req, res) => {
+  if (!req.files || req.files.length === 0) {
+    return res.status(400).json({ error: 'No files uploaded' });
+  }
+  const paths = req.files.map((f) => `/uploads/${req.params.appId}/${f.filename}`);
+  res.json({ paths });
+});
 
 // --- Autocomplete (Google Places API v1 expects POST with JSON body) ---
 app.get('/api/places/autocomplete', async (req, res) => {

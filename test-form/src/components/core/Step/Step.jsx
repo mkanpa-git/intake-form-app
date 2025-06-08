@@ -30,6 +30,7 @@ export default function Step({
   formData: initialData = {},
   fullData = {},
   onDataChange,
+  applicationId,
 }) {
   const [collapsedSections, setCollapsedSections] = useState({});
   const [formData, setFormData] = useState(initialData);
@@ -417,6 +418,7 @@ export default function Step({
             multiple={field.metadata?.multiple}
             required={isRequired}
             onChange={(val) => handleChange(field.id, val)}
+            applicationId={applicationId}
             hint={Array.isArray(field.metadata?.examples)
               ? `Examples: ${field.metadata.examples.join(', ')}`
               : field.metadata?.examples}

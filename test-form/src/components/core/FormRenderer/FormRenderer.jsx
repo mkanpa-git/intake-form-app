@@ -114,6 +114,7 @@ export default function FormRenderer({ applicationId, onExit }) {
             formData={stepData[steps[currentStep].id] || {}}
             fullData={allData}
             onDataChange={handleDataChange}
+            applicationId={applicationId}
           />
         )}
       </div>
