@@ -1,11 +1,17 @@
 import React from 'react';
 import styles from './SelectField.module.css';
 
+// SelectField renders a dropdown. When a `placeholder` prop is provided and the
+// select is not in multiple mode, an empty option will be displayed with that
+// text.
+
 export default function SelectField({
   id,
   label,
   options = [],
   multiple = false,
+  // placeholder text for a default empty option when not using multiple select
+  placeholder,
   minSelections,
   maxSelections,
   ...props
@@ -21,6 +27,9 @@ export default function SelectField({
         data-max={maxSelections}
         {...props}
       >
+        {placeholder && !multiple && (
+          <option value="">{placeholder}</option>
+        )}
         {options.map((opt) => {
           const value = typeof opt === 'string' ? opt : opt.value;
           const labelText = typeof opt === 'string' ? opt : opt.label;
