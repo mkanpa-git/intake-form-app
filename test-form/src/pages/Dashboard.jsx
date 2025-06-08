@@ -10,25 +10,33 @@ export default function Dashboard({ onStart }) {
     setApps(loadApplications());
   }, []);
 
-  const handleNew = () => {
+  const createNew = (serviceKey) => {
     const id = Date.now().toString();
+    const isDycd = serviceKey === 'dycd';
     const newApp = {
       id,
+      serviceKey,
       stepData: {},
       allData: {},
       currentStep: 0,
-      serviceName: 'Child Care Assistance',
-      interactionName: 'Child Care Assistance Application',
+      serviceName: isDycd
+        ? 'DYCD Youth Services Intake – Ages 13 and Younger'
+        : 'Child Care Assistance',
+      interactionName: isDycd
+        ? 'Youth Services Intake'
+        : 'Child Care Assistance Application',
       updatedAt: new Date().toISOString(),
     };
     const updated = [...apps, newApp];
     saveApplications(updated);
     setApps(updated);
-    onStart && onStart(id);
+    onStart && onStart(serviceKey, id);
   };
 
   const handleContinue = (id) => {
-    onStart && onStart(id);
+    const app = apps.find((a) => a.id === id);
+    const key = app?.serviceKey || 'childcare';
+    onStart && onStart(key, id);
   };
 
   return (
@@ -39,7 +47,13 @@ export default function Dashboard({ onStart }) {
           name="Child Care Assistance"
           interaction="Child Care Assistance Application"
           description="Step-by-step form for applying for Childcare Assistance"
-          onStart={handleNew}
+          onStart={() => createNew('childcare')}
+        />
+        <ServiceCard
+          name="DYCD Youth Services Intake – Ages 13 and Younger"
+          interaction="Youth Services Intake"
+          description="Form to collect youth and guardian information for DYCD programs"
+          onStart={() => createNew('dycd')}
         />
       </div>
 

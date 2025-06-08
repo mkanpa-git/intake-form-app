@@ -1,0 +1,38 @@
+{
+  "form": {
+    "title": "DYCD Youth Services Intake – Ages 13 and Younger",
+    "description": "Form to collect youth and guardian information for DYCD programs",
+    "layout": { "stepperPosition": "top" },
+    "steps": [
+      {
+        "id": "youth_info",
+        "title": "Youth Information",
+        "sections": [
+          {
+            "id": "basic_info",
+            "title": "Basic Information",
+            "fields": [
+              { "id": "first_name", "type": "text", "label": "First Name", "required": true },
+              { "id": "last_name", "type": "text", "label": "Last Name", "required": true },
+              { "id": "age", "type": "number", "label": "Age", "required": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "guardian_info",
+        "title": "Guardian Information",
+        "sections": [
+          {
+            "id": "guardian_basic",
+            "title": "Guardian",
+            "fields": [
+              { "id": "guardian_name", "type": "text", "label": "Guardian Name", "required": true },
+              { "id": "guardian_phone", "type": "text", "label": "Guardian Phone", "required": true }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
