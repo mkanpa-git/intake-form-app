@@ -218,26 +218,26 @@ export default function Step({
                     });
                   });
                   handleChange(field.id, addr.formatted_address || addr.formattedAddress || '');
-                  if (Object.prototype.hasOwnProperty.call(formData, 'city')) {
+                  if (findFieldById('city')) {
                     handleChange('city', comps.locality?.long_name || comps.locality?.longName || '');
                   }
-                  if (Object.prototype.hasOwnProperty.call(formData, 'state')) {
+                  if (findFieldById('state')) {
                     handleChange(
                       'state',
                       comps.administrative_area_level_1?.short_name || comps.administrativeAreaLevel1?.shortName || ''
                     );
                   }
-                  if (Object.prototype.hasOwnProperty.call(formData, 'zip_code')) {
+                  if (findFieldById('zip_code')) {
                     handleChange('zip_code', comps.postal_code?.long_name || comps.postalCode?.longName || '');
                   }
                   if (
-                    Object.prototype.hasOwnProperty.call(formData, 'latitude') &&
+                    findFieldById('latitude') &&
                     addr.location?.latitude !== undefined
                   ) {
                     handleChange('latitude', addr.location.latitude);
                   }
                   if (
-                    Object.prototype.hasOwnProperty.call(formData, 'longitude') &&
+                    findFieldById('longitude') &&
                     addr.location?.longitude !== undefined
                   ) {
                     handleChange('longitude', addr.location.longitude);
