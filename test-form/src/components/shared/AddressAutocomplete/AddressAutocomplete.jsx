@@ -34,7 +34,11 @@ export default function AddressAutocomplete({
             { signal: controller.signal }
           );
           const data = await res.json();
-          setSuggestions(data.places || []);
+          setSuggestions(
+            data.suggestions?.map((s) => ({
+              displayName: s.placePrediction?.text?.text ?? '',
+            })) || []
+          );
         } catch (err) {
           if (err.name !== 'AbortError') console.error(err);
         }
@@ -50,31 +54,24 @@ export default function AddressAutocomplete({
   }, [value, showSuggestions]);
 
   const handleSelect = async (place) => {
-    onChange &&
-      onChange(place.formattedAddress || place.displayName?.text || '');
+    const displayText = place.displayName;
+
+    onChange?.(displayText);
     setSuggestions([]);
     setShowSuggestions(false);
-    try {
-      const res = await fetch(
-        `/api/places/details/${place.placeId}?sessiontoken=${sessionTokenRef.current}`
-      );
-      const data = await res.json();
-      const mapped = {
-        formatted_address: data.formattedAddress,
-        place_id: data.id,
-        address_components: (data.addressComponents || []).map((c) => ({
-          long_name: c.longText,
-          short_name: c.shortText,
-          types: c.types,
-        })),
-        name: data.displayName?.text,
-      };
-      onAddressSelect && onAddressSelect(mapped);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      sessionTokenRef.current = crypto.randomUUID();
+
+    // Since placeId is not available, we cannot call /details/:id
+    // You may implement a /searchText fallback if needed
+    if (onAddressSelect) {
+      onAddressSelect({
+        formatted_address: displayText,
+        place_id: null,
+        address_components: [],
+        name: displayText,
+      });
     }
+
+    sessionTokenRef.current = crypto.randomUUID();
   };
 
   return (
@@ -84,8 +81,9 @@ export default function AddressAutocomplete({
         id={id}
         type="text"
         value={value}
-        onChange={(e) => onChange && onChange(e.target.value)}
+        onChange={(e) => onChange?.(e.target.value)}
         onFocus={() => setShowSuggestions(true)}
+        onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
         className={styles.input}
         placeholder={placeholder}
         autoComplete="off"
@@ -93,13 +91,13 @@ export default function AddressAutocomplete({
       />
       {showSuggestions && suggestions.length > 0 && (
         <ul className={styles.suggestions}>
-          {suggestions.map((s) => (
+          {suggestions.map((s, i) => (
             <li
-              key={s.placeId}
+              key={`${s.displayName}-${i}`}
               onMouseDown={() => handleSelect(s)}
               className={styles.suggestion}
             >
-              {s.formattedAddress || s.displayName?.text}
+              {s.displayName}
             </li>
           ))}
         </ul>
