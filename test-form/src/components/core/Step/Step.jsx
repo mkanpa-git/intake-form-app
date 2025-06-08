@@ -221,7 +221,42 @@ export default function Step({
                   });
                   handleChange(field.id, addr.formatted_address || addr.formattedAddress || '');
                   if (findFieldById('city')) {
-                    handleChange('city', comps.locality?.long_name || comps.locality?.longName || '');
+                    const cityVal =
+                      comps.locality?.long_name ||
+                      comps.locality?.longName ||
+                      comps.postal_town?.long_name ||
+                      comps.postalTown?.longName ||
+                      comps.sublocality_level_1?.long_name ||
+                      comps.sublocalityLevel1?.longName ||
+                      comps.administrative_area_level_2?.long_name ||
+                      comps.administrativeAreaLevel2?.longName ||
+                      '';
+                    handleChange('city', cityVal);
+                  }
+                  if (findFieldById('borough')) {
+                    const boroughSource =
+                      comps.sublocality_level_1?.long_name ||
+                      comps.sublocalityLevel1?.longName ||
+                      comps.administrative_area_level_2?.long_name ||
+                      comps.administrativeAreaLevel2?.longName ||
+                      '';
+                    const boroughMap = {
+                      bronx: 'Bronx',
+                      'bronx county': 'Bronx',
+                      brooklyn: 'Brooklyn',
+                      'kings county': 'Brooklyn',
+                      manhattan: 'Manhattan',
+                      'new york': 'Manhattan',
+                      'new york county': 'Manhattan',
+                      queens: 'Queens',
+                      'queens county': 'Queens',
+                      'staten island': 'Staten Island',
+                      'richmond county': 'Staten Island',
+                    };
+                    const bName = boroughMap[boroughSource.trim().toLowerCase()];
+                    if (bName) {
+                      handleChange('borough', bName);
+                    }
                   }
                   if (findFieldById('state')) {
                     handleChange(
