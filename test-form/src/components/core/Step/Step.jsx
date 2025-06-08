@@ -338,6 +338,7 @@ export default function Step({
               id={field.id}
               label={field.label}
               options={field.ui?.options || []}
+              placeholder={field.ui?.placeholder || `Select ${field.label}`}
               required={isRequired}
               value={formData[field.id] || ''}
               onChange={(e) => handleChange(field.id, e.target.value)}

@@ -130,7 +130,12 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
       case 'select':
         return (
           <>
-            <SelectField key={subField.id} options={subField.ui?.options || []} {...commonProps} />
+            <SelectField
+              key={subField.id}
+              options={subField.ui?.options || []}
+              placeholder={subField.ui?.placeholder || `Select ${subField.label}`}
+              {...commonProps}
+            />
             {error && <div className="form-error-alert">{error}</div>}
           </>
         );
