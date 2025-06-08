@@ -5,7 +5,7 @@ export default function ApplicationCard({ id, serviceName, interactionName, save
   return (
     <a
       href="#"
-      className="card__primary-action app-card"
+      className="app-card"
       onClick={(e) => {
         e.preventDefault();
         onContinue && onContinue(id);

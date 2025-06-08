@@ -310,26 +310,60 @@ button:disabled {
 
 
 /* Card layouts */
-.card__primary-action {
+
+.app-card{
+  text-decoration: none;
+  /* border-left: 4px solid #2563eb; */
+  border-left: 4px solid #10b981; 
   display: block;
   padding: 1.25rem;
-  border: 1px solid #d1d5db;
   background-color: white;
   border-radius: 0.5rem;
   transition: all 0.25s ease-in-out;
   color: #1a202c;
   max-width: 320px;
   text-align: left;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+
 }
 
-.card__primary-action:hover,
-.card__primary-action:focus {
+.app-card:hover,
+.app-card:focus {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   transform: translateY(-4px);
-  border-color: #2563eb;
+  /* border-color: #2563eb; */
+  border-color: #10b981;
   text-decoration: none;
   background-color: #f9fafb;
 }
+
+
+.service-card{
+  text-decoration: none;
+  border-left: 4px solid #2563eb; 
+  display: block;
+  padding: 1.25rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  transition: all 0.25s ease-in-out;
+  color: #1a202c;
+  max-width: 320px;
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+
+}
+
+.service-card:hover,
+.service-card:focus {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  border-color: #2563eb; 
+  text-decoration: none;
+  background-color: #f9fafb;
+}
+
 
 .catalog-grid,
 .saved-grid {

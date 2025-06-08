@@ -4,7 +4,7 @@ export default function ServiceCard({ name, interaction, description, onStart })
   return (
     <a
       href="#"
-      className="card__primary-action service-card"
+      className="service-card"
       onClick={(e) => {
         e.preventDefault();
         onStart && onStart();
