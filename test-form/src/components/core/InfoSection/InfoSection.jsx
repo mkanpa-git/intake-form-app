@@ -15,7 +15,7 @@ export default function InfoSection({ title, content, ui = {}, collapsed = false
   return (
     <div className={styles.infoSection}>
       <div className={headerClass} onClick={isCollapsible ? onToggle : undefined}>
-        <strong>{title}</strong> {isCollapsible && (collapsed ? '▶' : '▼')}
+        <strong>{title}</strong> {isCollapsible && (collapsed ? '    ▶' : '    ▼')}
       </div>
       {(!isCollapsible || !collapsed) && formattedContent && (
         <div className={styles.content}>

@@ -20,7 +20,7 @@ export default function Section({
           {required && <span className="required-asterisk"> *</span>}
         </span>
         {showAlert && <span className="form-section-alert">⚠ Input required</span>}
-        <span className="toggle-icon">{isCollapsed ? '▶' : '▼'}</span>
+        <span className="toggle-icon">{isCollapsed ? '    ▶' : '    ▼'}</span>
       </div>
       {!isCollapsed && children}
     </section>
