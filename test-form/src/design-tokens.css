@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #3b82f6;
+  --primary-hover: #60a5fa;
+  --secondary-color: #e0e7ff;
+  --accent-color: #93c5fd;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --border: #d1d5db;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --radius: 8px;
+  --radius-sm: 4px;
+
+  --font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --font-display: 'Inter', var(--font-family);
+  --font-size: 16px;
+  --font-size-sm: 0.9rem;
+  --font-size-lg: 1.1rem;
+  --font-color: #1f2937;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+}

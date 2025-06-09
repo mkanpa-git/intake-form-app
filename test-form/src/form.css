@@ -1,23 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
-:root {
-  --primary-color: #3b82f6; 
-  --primary-hover: #60a5fa; 
-  --secondary-color: #e0e7ff;
-  --accent-color: #93c5fd; 
-  --background: #f8fafc;
-  --surface: #ffffff;
-  --border: #d1d5db;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --radius: 8px;
-  --font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  --font-display: 'Inter', var(--font-family);
-  --font-size: 16px;
-  --font-size-sm: 0.9rem;
-  --font-size-lg: 1.1rem;
-  --font-color: #1f2937;
-}
+@import "./design-tokens.css";
 
 body, html, #root {
   height: 100%;
@@ -63,7 +45,7 @@ h5 {
 .form-main {
   flex: 1;
   overflow-y: auto;
-  padding: 2rem;
+  padding: var(--space-xl);
   background: var(--background);
 }
 
@@ -71,7 +53,7 @@ h5 {
 /* Header & Footer */
 .form-header,
 .form-footer {
-  padding: 1rem 2rem;
+  padding: var(--space-md) var(--space-xl);
   background-color: var(--surface);
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -89,7 +71,7 @@ h5 {
 
 .form-header .right a,
 .form-footer a {
-  margin-left: 1rem;
+  margin-left: var(--space-md);
   text-decoration: none;
   color: var(--primary-color);
   font-weight: 500;
@@ -99,7 +81,7 @@ h5 {
 .header-left {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--space-md);
 }
 
 .hamburger {
@@ -109,7 +91,7 @@ h5 {
   border: none;
   color: #111827;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  padding: var(--space-xs) var(--space-sm);
 }
 
 .hamburger:hover,
@@ -124,7 +106,7 @@ h5 {
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-xl);
 }
 
 .form-section-header {
@@ -155,7 +137,7 @@ h5 {
   background-color: #fef2f2;
   border-left: 4px solid #dc2626;
   padding: 0.5rem;
-  margin-top: 0.25rem;
+  margin-top: var(--space-xs);
   font-size: 0.875rem;
   border-radius: 6px;
 }
@@ -216,11 +198,11 @@ button:disabled {
     background: white;
     position: absolute;
     top: 3.5rem;
-    left: 1rem;
-    right: 1rem;
+    left: var(--space-md);
+    right: var(--space-md);
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 1rem;
+    padding: var(--space-md);
     z-index: 1000;
   }
 
@@ -229,13 +211,13 @@ button:disabled {
   }
 
   .form-header .right a {
-    margin: 0.5rem 0;
+    margin: var(--space-sm) 0;
   }
 }
 
 .required-asterisk {
   color: red;
-  margin-left: 4px;
+  margin-left: var(--space-xs);
   font-weight: bold;
 }
 
@@ -244,7 +226,7 @@ button:disabled {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
-  margin-top: 1rem;
+  margin-top: var(--space-md);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 .modern-table th,
@@ -266,20 +248,20 @@ button:disabled {
   background-color: var(--secondary-color);
 }
 .modern-table button {
-  margin-right: 8px;
+  margin-right: var(--space-sm);
 }
 
 .copy-controls {
-  margin: 1rem 0;
+  margin: var(--space-md) 0;
   display: flex;
-  gap: 1rem;
+  gap: var(--space-md);
   align-items: center;
 }
 
 
 .form-group-wrapper {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
   border-radius: 8px;
   background-color: #f9fafb;
   border: 1px solid #e5e7eb;
@@ -288,7 +270,7 @@ button:disabled {
 .group-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: var(--space-md);
 }
 
 .group-col {
@@ -299,9 +281,9 @@ button:disabled {
   font-size: 1.1rem;
   font-weight: 600;
   background-color: #f3f4f6;
-  padding: 0.5rem 1rem;
+  padding: var(--space-sm) var(--space-md);
   border-radius: 6px;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-md);
   color: #111827;
   border-left: 4px solid #3b82f6; /* Blue stripe */
 }
@@ -314,7 +296,7 @@ button:disabled {
 .app-card{
   text-decoration: none;
   /* border-left: 4px solid #2563eb; */
-  border-left: 4px solid #10b981; 
+  border-left: 4px solid #10b981;
   display: block;
   padding: 1.25rem;
   background-color: white;
@@ -324,7 +306,7 @@ button:disabled {
   max-width: 320px;
   text-align: left;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-md);
 
 }
 
@@ -341,7 +323,7 @@ button:disabled {
 
 .service-card{
   text-decoration: none;
-  border-left: 4px solid #2563eb; 
+  border-left: 4px solid #2563eb;
   display: block;
   padding: 1.25rem;
   background-color: white;
@@ -351,7 +333,7 @@ button:disabled {
   max-width: 320px;
   text-align: left;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-md);
 
 }
 
@@ -369,8 +351,8 @@ button:disabled {
 .saved-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
 }
 
 .card-title {
@@ -378,9 +360,9 @@ button:disabled {
 }
 
 .app-card-actions {
-  margin-top: 0.5rem;
+  margin-top: var(--space-sm);
   display: flex;
-  gap: 0.5rem;
+  gap: var(--space-sm);
 }
 
 .app-card-actions button {

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import styles from './InfoSection.module.css';
 
 export default function InfoSection({ title, content, ui = {}, collapsed = false, onToggle }) {
   const isCollapsible = ui.collapsible;
@@ -7,25 +8,17 @@ export default function InfoSection({ title, content, ui = {}, collapsed = false
   // Convert escaped newline sequences to actual line breaks for ReactMarkdown
   const formattedContent = content?.replace(/\\n/g, '\n');
 
+  const headerClass = isCollapsible
+    ? `${styles.header} ${styles.headerClickable}`
+    : styles.header;
+
   return (
-    <div className="info-section">
-      <div
-        className="info-section-header"
-        onClick={isCollapsible ? onToggle : undefined}
-        style={{
-          cursor: isCollapsible ? 'pointer' : 'default',
-          backgroundColor: '#f0f0f0',
-          padding: '0.5rem',
-          borderRadius: '4px',
-        }}
-      >
+    <div className={styles.infoSection}>
+      <div className={headerClass} onClick={isCollapsible ? onToggle : undefined}>
         <strong>{title}</strong> {isCollapsible && (collapsed ? '▶' : '▼')}
       </div>
       {(!isCollapsible || !collapsed) && formattedContent && (
-        <div
-          className="info-section-content"
-          style={{ marginTop: '0.5rem', paddingLeft: '1rem', fontWeight: 'normal' }}
-        >
+        <div className={styles.content}>
           <ReactMarkdown>{formattedContent}</ReactMarkdown>
         </div>
       )}
