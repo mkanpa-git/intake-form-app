@@ -2,13 +2,15 @@
 
 :root {
   /* Brand & Accent Colors */
-  --primary-color: #0A66C2;           /* Clean civic blue */
-  --primary-hover: #0056a3;
+  --primary-color: #cc4466;
+  --primary-hover: #b33a59;
+  --accent-color: #e65c7a; /* optional lighter tone */
+  --focus-ring: 0 0 0 3px rgba(204, 68, 102, 0.4);
   --secondary-color: #F2F4F7;         /* Light gray background for sections/cards */
-  --accent-color: #4B9DEA;            /* Subtle accent for links or highlights */
   --error-color: #D93025;
   --success-color: #34A853;
   --warning-color: #FBBC05;
+
 
   /* Background & Surface */
   --background: #ffffff;

@@ -1,10 +1,24 @@
 .infoSection {
   margin-bottom: var(--space-md);
+  background-color: #FDE0EA; 
+  border-left: 4px solid #E48AA4; /* Tailwind blue-500 */
+  padding: 1rem;
+  margin: var(--space-md) 0;
+  font-size: 0.95rem;
+  border-radius: 6px;
+}
+
+.infoSection strong {
+  font-weight: 600;
+}
+.infoSection em {
+  font-style: italic;
 }
 
 .header {
   background-color: var(--background);
   padding: var(--space-sm);
+  border-left: 4px solid #E48AA4; 
   border-radius: var(--radius-sm);
   font-weight: 600;
   display: flex;

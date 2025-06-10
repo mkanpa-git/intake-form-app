@@ -2,6 +2,10 @@
   margin-bottom: 3rem;
 }
 
+.step-title {
+  color: #3b3b3b !important;
+}
+
 .navigation {
   margin-top: 1.5rem;
   display: flex;
