@@ -1,4 +1,13 @@
-.field { margin-bottom: 1rem; }
+.field {
+  margin-bottom: 1rem;
+  border: 2px dashed transparent;
+  padding: 0.5rem;
+}
+
+.dragOver {
+  border-color: #3b82f6; /* blue-500 */
+  background-color: #eff6ff; /* blue-50 */
+}
 .input {
   width: 100%;
   padding: 0.5rem;
