@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './RadioGroup.module.css';
+import Tooltip from '../Tooltip/Tooltip';
 
 export default function RadioGroup({
   id,
   label,
+  tooltip,
   options = [],
   value,
   onChange,
@@ -11,7 +13,12 @@ export default function RadioGroup({
 }) {
   return (
     <fieldset className={styles.group}>
-      {label && <legend>{label}</legend>}
+      {label && (
+        <legend>
+          {label}
+          <Tooltip text={tooltip} />
+        </legend>
+      )}
       {options.map(opt => {
         const optValue = typeof opt === 'string' ? opt : opt.value;
         const optLabel = typeof opt === 'string' ? opt : opt.label;

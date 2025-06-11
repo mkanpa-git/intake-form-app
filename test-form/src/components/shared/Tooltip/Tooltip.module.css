@@ -1,0 +1,25 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.25rem;
+  cursor: help;
+}
+
+.icon {
+  font-size: 0.85rem;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  z-index: 10;
+  pointer-events: none;
+}

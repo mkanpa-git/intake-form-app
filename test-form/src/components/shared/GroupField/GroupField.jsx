@@ -6,6 +6,7 @@ import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import FileInput from '../FileInput/FileInput';
 import MaskedInput from '../MaskedInput/MaskedInput';
 import AddressAutocomplete from '../AddressAutocomplete';
+import Tooltip from '../Tooltip/Tooltip';
 import { evaluateCondition } from '../../../utils/formHelpers';
 
 export default function GroupField({ field, value = [], onChange, fullData = {} }) {
@@ -117,6 +118,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
     const commonProps = {
       id: subField.id,
       label: subField.label,
+      tooltip: subField.tooltip,
       required,
       value: currentEntry[subField.id] || '',
       onChange: (e) => handleInputChange(subField.id, e.target ? e.target.value : e),
@@ -154,6 +156,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
               options={subField.ui?.options || []}
               value={currentEntry[subField.id] || []}
               onChange={(val) => handleInputChange(subField.id, val)}
+              {...commonProps}
             />
             {error && <div className="form-error-alert">{error}</div>}
           </>

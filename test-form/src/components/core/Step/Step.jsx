@@ -16,6 +16,7 @@ import TableLayout from '../../shared/TableLayout/TableLayout';
 import MaskedInput from '../../shared/MaskedInput/MaskedInput';
 import FileInput from '../../shared/FileInput/FileInput';
 import AddressAutocomplete from '../../shared/AddressAutocomplete';
+import Tooltip from '../../shared/Tooltip/Tooltip';
 import ReactMarkdown from 'react-markdown';
 import styles from './Step.module.css';
 
@@ -307,6 +308,7 @@ export default function Step({
               key={field.id}
               id={field.id}
               label={field.label}
+              tooltip={field.tooltip}
               type={field.type}
               required={isRequired}
               value={formData[field.id] || ''}
@@ -323,6 +325,7 @@ export default function Step({
                 key={field.id}
                 id={field.id}
                 label={field.label}
+                tooltip={field.tooltip}
                 options={field.ui?.options || []}
                 required={isRequired}
                 multiple
@@ -346,6 +349,7 @@ export default function Step({
               key={field.id}
               id={field.id}
               label={field.label}
+              tooltip={field.tooltip}
               options={field.ui?.options || []}
               placeholder={field.ui?.placeholder || `Select ${field.label}`}
               required={isRequired}
@@ -362,6 +366,7 @@ export default function Step({
               key={field.id}
               id={field.id}
               label={field.label}
+              tooltip={field.tooltip}
               options={field.ui?.options || []}
               required={isRequired}
               value={formData[field.id] || ''}
@@ -378,6 +383,7 @@ export default function Step({
                 key={field.id}
                 id={field.id}
                 label={field.label}
+                tooltip={field.tooltip}
                 options={field.ui?.options || []}
                 value={formData[field.id] || []}
                 onChange={(val) => handleChange(field.id, val)}
@@ -397,7 +403,12 @@ export default function Step({
               onChange={(e) => handleChange(field.id, e.target.checked)}
               required={isRequired}
             />
-            {field.label && <label htmlFor={field.id}>{field.label}</label>}
+            {field.label && (
+              <label htmlFor={field.id}>
+                {field.label}
+                <Tooltip text={field.tooltip} />
+              </label>
+            )}
             {error && <div className="form-error-alert">{error}</div>}
           </>
         );
@@ -408,6 +419,7 @@ export default function Step({
               key={field.id}
               id={field.id}
               label={field.label}
+              tooltip={field.tooltip}
               type="date"
               required={isRequired}
               value={formData[field.id] || ''}
@@ -422,6 +434,7 @@ export default function Step({
             key={field.id}
             id={field.id}
             label={field.label}
+            tooltip={field.tooltip}
             description={field.description}
             multiple={field.metadata?.multiple}
             required={isRequired}
@@ -469,6 +482,7 @@ export default function Step({
               key={field.id}
               id={field.id}
               label={field.label}
+              tooltip={field.tooltip}
               type={field.type}
               required={isRequired}
               value={formData[field.id] || ''}
