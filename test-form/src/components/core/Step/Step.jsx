@@ -125,6 +125,13 @@ export default function Step({
     });
   };
 
+  const isSectionVisible = (section) => {
+    if (!section) return true;
+    return section.visibilityCondition
+      ? evaluateCondition(section.visibilityCondition, fullData)
+      : true;
+  };
+
   const groupFieldsByGroup = (fields = []) => {
     const grouped = {};
     fields.forEach((f) => {
@@ -473,7 +480,7 @@ export default function Step({
   };
 
   const sectionHasMissing = (section) => {
-    if (!Array.isArray(section.fields)) return false;
+    if (!isSectionVisible(section) || !Array.isArray(section.fields)) return false;
     return section.fields.some((f) => {
       const value = formData[f.id];
       const { required, requiredCondition } = f;
@@ -539,6 +546,10 @@ export default function Step({
       <h2>{title}</h2>
       {sections.map((sec) => {
         const collapsed = collapsedSections[sec.id] || false;
+        const visible = isSectionVisible(sec);
+        if (!visible) {
+          return null;
+        }
         if (sec.type === 'info' || (!sec.fields && sec.content)) {
           return (
             <InfoSection
@@ -559,6 +570,7 @@ export default function Step({
             isCollapsed={collapsed}
             onToggle={() => handleToggle(sec.id)}
             showAlert={sectionHasMissing(sec)}
+            visible={visible}
           >
             {sec.content && <ReactMarkdown>{sec.content}</ReactMarkdown>}
             {errors[sec.id] && (

@@ -27,8 +27,25 @@ export function cleanupHiddenFields(step, formData) {
   if (!step) return cleaned;
 
   step.sections.forEach((section) => {
+    const sectionVisible = section.visibilityCondition
+      ? evaluateCondition(section.visibilityCondition, formData)
+      : true;
+
     if (Array.isArray(section.fields)) {
       section.fields.forEach((field) => {
+        if (!sectionVisible) {
+          if (cleaned[field.id] !== undefined) {
+            cleaned[field.id] = undefined;
+          }
+          if (field.type === "group" && Array.isArray(field.fields)) {
+            field.fields.forEach((subField) => {
+              if (cleaned[subField.id] !== undefined) {
+                cleaned[subField.id] = undefined;
+              }
+            });
+          }
+          return;
+        }
         const isVisible =
           (field.visibilityCondition
             ? evaluateCondition(field.visibilityCondition, formData)
