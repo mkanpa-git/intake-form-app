@@ -1,9 +1,11 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import styles from './FileInput.module.css';
 
 export default function FileInput({
   id,
   label,
+  description,
   multiple = false,
   error,
   hint,
@@ -41,6 +43,11 @@ export default function FileInput({
   return (
     <div className={styles.field}>
       {label && <label htmlFor={id}>{label}</label>}
+      {description && (
+        <div className={styles.description}>
+          <ReactMarkdown>{description}</ReactMarkdown>
+        </div>
+      )}
       <input
         id={id}
         type="file"
