@@ -792,7 +792,7 @@
           "description": "Tell us about your employment",
           "fields" :[
             {
-              "id": "applicant_1st_job_start_date",
+              "id": "applicant_emp_income_indicator",
               "label": "Does applicant earn any inomce/ wages from employment? ",
               "type": "radio",
               "required": false,
@@ -806,6 +806,11 @@
           "id": "applicant_jobs",
           "title": "Applicant Employment Information",
           "description": "Enter details for up to two jobs held by the applicant.",
+          "visibilityCondition": {
+            "field": "applicant_emp_income_indicator",
+            "operator": "equals",
+            "value": "Yes"
+          },
           "fields": [
             {
               "id": "applicant_1st_job_start_date",
@@ -1692,7 +1697,192 @@
           ]
         }
       ]
+    },
+    {
+      "id": "document_upload_step",
+      "title": "Document Upload",
+      "description": "The Application for Child Care Assistance (CFWB-012) must include supporting documentation. Check to ensure that documentation is provided for each requirement of subsidy eligibility.",
+      "sections": [
+        {
+          "id": "nyc_residency",
+          "title": "New York City Residency",
+          "description": "These documents confirm that you live in New York City. Please upload one of the following documents.",
+          "fields": [
+            {
+              "id": "nyc_residency_type",
+              "label": "Select one of the following:",
+              "type": "radio",
+              "required": true,
+              "ui": {
+                "options": [
+                  "IDNYC",
+                  "Utility Bill",
+                  "Section 8 Award Letter",
+                  "Driver’s License",
+                  "Rent Receipt",
+                  "NYCHA Certificate",
+                  "CFWB-067 Residency Attestation",
+                  "CFWB-027 Housing Attestation with address listed",
+                  "Shelter Residency Letter with address listed",
+                  "Other"
+                ]
+              }
+            },
+            {
+              "id": "nyc_residency_file",
+              "label": "Upload Residency Proof Document",
+              "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
+              "type": "file",
+              "constraints": {
+                "maxFileSizeMB": 25,
+                "allowedTypes": [
+                  "application/pdf",
+                  "image/jpeg",
+                  "image/jpg",
+                  "image/png",
+                  "image/gif"
+                ]
+              },
+              "metadata": {
+                "proofCategory": "NYC Residency",
+                "multiple": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "citizenship_status",
+          "title": "Citizenship or Immigration Status",
+          "description": "These documents confirm the citizenship/immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for ONLY each child needing care.",
+          "fields": [
+            {
+              "id": "citizenship_doc_type",
+              "label": "Select one of the following:",
+              "type": "radio",
+              "required": true,
+              "ui": {
+                "options": [
+                  "US Birth Certificate",
+                  "Alien Registration Card including Permanent Resident or Green Card",
+                  "Passport",
+                  "FS-240 (Report of Birth Abroad of a U.S. Citizen)",
+                  "Naturalization Certificate",
+                  "Other"
+                ]
+              }
+            },
+            {
+              "id": "citizenship_doc_file",
+              "label":"Upload Citizenship/Immigration Document",
+              "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
+              "type": "file",
+              "constraints": {
+                "maxFileSizeMB": 25,
+                "allowedTypes": [
+                  "application/pdf",
+                  "image/jpeg",
+                  "image/jpg",
+                  "image/png",
+                  "image/gif"
+                ]
+              },
+              "metadata": {
+                "proofCategory": "Citizenship/Immigration Status",
+                "multiple": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "child_relationship",
+          "title": "Child’s Relationship to Parent/Applicant",
+          "description": "These documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them or not. If you are a legal guardian with financial responsibility, you must upload a Court order OR a letter of guardianship.",
+          "fields": [
+            {
+              "id": "relationship_doc_type",
+              "label": "Select one of the following:",
+              "type": "radio",
+              "required": true,
+              "ui": {
+                "options": [
+                  "Birth Certificate",
+                  "Adoption record",
+                  "Baptismal record",
+                  "Passport with parent's signature",
+                  "Court order for legal guardian with financial responsibility",
+                  "Letter of Guardianship",
+                  "Other - CFWB-058 Caretaker Attestation"
+                ]
+              }
+            },
+            {
+              "id": "relationship_doc_file",
+              "label" : "Upload Relationship Document",
+              "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
+              "type": "file",
+              "constraints": {
+                "maxFileSizeMB": 25,
+                "allowedTypes": [
+                  "application/pdf",
+                  "image/jpeg",
+                  "image/jpg",
+                  "image/png",
+                  "image/gif"
+                ]
+              },
+              "metadata": {
+                "proofCategory": "Child Relationship",
+                "multiple": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "age_proof",
+          "title": "Age",
+          "description": "These documents confirm the age of the children in your household. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:", 
+          "fields": [
+            {
+              "id": "age_doc_type",
+              "label": "Select one of the following:",
+              "type": "radio",
+              "required": true,
+              "ui": {
+                "options": [
+                  "Birth Certificate",
+                  "Adoption record",
+                  "Baptismal record",
+                  "Alien Registration Card",
+                  "Passport",
+                  "Official hospital documentation of the child’s birth"
+                ]
+              }
+            },
+            {
+              "id": "age_doc_file",
+              "label": "Upload Age Proof Document",
+              "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
+              "type": "file",
+              "constraints": {
+                "maxFileSizeMB": 25,
+                "allowedTypes": [
+                  "application/pdf",
+                  "image/jpeg",
+                  "image/jpg",
+                  "image/png",
+                  "image/gif"
+                ]
+              },
+              "metadata": {
+                "proofCategory": "Child Age",
+                "multiple": false
+              }
+            }
+          ]
+        }
+      ]
     }
+
   ]
 }
 }
