@@ -1,11 +1,17 @@
 import React from 'react';
 import { IMaskInput } from 'react-imask';
 import styles from './MaskedInput.module.css';
+import Tooltip from '../Tooltip/Tooltip';
 
-export default function MaskedInput({ id, label, mask, error, onChange, value, placeholder, ...props }) {
+export default function MaskedInput({ id, label, tooltip, mask, error, onChange, value, placeholder, ...props }) {
   return (
     <div className={styles.field}>
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && (
+        <label htmlFor={id}>
+          {label}
+          <Tooltip text={tooltip} />
+        </label>
+      )}
       <IMaskInput
         id={id}
         mask={mask}

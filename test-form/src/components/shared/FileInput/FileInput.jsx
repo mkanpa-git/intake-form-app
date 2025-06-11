@@ -1,10 +1,12 @@
 import React, { useState, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import styles from './FileInput.module.css';
+import Tooltip from '../Tooltip/Tooltip';
 
 export default function FileInput({
   id,
   label,
+  tooltip,
   description,
   multiple = false,
   error,
@@ -89,7 +91,12 @@ export default function FileInput({
 
   return (
     <div className={styles.container}>
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && (
+        <label htmlFor={id}>
+          {label}
+          <Tooltip text={tooltip} />
+        </label>
+      )}
       {description && (
         <div className={styles.description}>
           <ReactMarkdown>{description}</ReactMarkdown>

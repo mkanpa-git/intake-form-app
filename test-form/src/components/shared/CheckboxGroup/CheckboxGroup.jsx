@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './CheckboxGroup.module.css';
+import Tooltip from '../Tooltip/Tooltip';
 
-export default function CheckboxGroup({ id, label, options = [], value = [], onChange, ...props }) {
+export default function CheckboxGroup({ id, label, tooltip, options = [], value = [], onChange, ...props }) {
   const handleChange = (optionValue, checked) => {
     if (!onChange) return;
     const updated = checked
@@ -12,7 +13,12 @@ export default function CheckboxGroup({ id, label, options = [], value = [], onC
 
   return (
     <fieldset className={styles.group}>
-      {label && <legend>{label}</legend>}
+      {label && (
+        <legend>
+          {label}
+          <Tooltip text={tooltip} />
+        </legend>
+      )}
       {options.map(opt => {
         const optValue = typeof opt === 'string' ? opt : opt.value;
         const optLabel = typeof opt === 'string' ? opt : opt.label;
