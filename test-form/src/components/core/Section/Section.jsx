@@ -8,7 +8,9 @@ export default function Section({
   onToggle,
   showAlert = false,
   required = false,
+  visible = true,
 }) {
+  if (!visible) return null;
   return (
     <section className={styles.section}>
       <div
