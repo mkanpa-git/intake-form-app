@@ -14,14 +14,12 @@ export default function FileInput({
   ...props
 }) {
   const [dragOver, setDragOver] = useState(false);
-  const [hasFiles, setHasFiles] = useState(false);
   const [fileNames, setFileNames] = useState([]);
   const inputRef = useRef(null);
 
   const processFiles = async (files) => {
     if (!onChange || files.length === 0) return;
     if (files.length > 0) {
-      setHasFiles(true);
       setFileNames(files.map((f) => f.name));
     }
 
@@ -93,11 +91,9 @@ export default function FileInput({
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
       >
-        {!hasFiles && (
-          <div className={styles.dropHint} style={{ display: dragOver ? 'none' : 'block' }}>
-            Drop files here
-          </div>
-        )}
+        <div className={styles.dropHint} style={{ display: dragOver ? 'none' : 'block' }}>
+          Drop files here
+        </div>
         {fileNames.length > 0 && (
           <ul className={styles.fileList}>
             {fileNames.map((name) => (
