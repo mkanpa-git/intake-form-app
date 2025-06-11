@@ -573,6 +573,11 @@ export default function Step({
             visible={visible}
           >
             {sec.content && <ReactMarkdown>{sec.content}</ReactMarkdown>}
+            {sec.description && (
+              <div className="form-section-description">
+                <ReactMarkdown>{sec.description}</ReactMarkdown>
+              </div>
+            )}
             {errors[sec.id] && (
               <div className="form-error-alert">{errors[sec.id]}</div>
             )}

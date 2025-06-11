@@ -159,6 +159,12 @@ h5 {
   border-radius: 6px;
 }
 
+.form-section-description {
+  margin-top: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--font-muted, #6B7280);
+}
+
 /* Buttons */
 button {
   display: inline-flex;
