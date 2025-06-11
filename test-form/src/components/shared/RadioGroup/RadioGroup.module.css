@@ -1,2 +1,15 @@
-.group { margin-bottom: 1rem; }
+.group { 
+  margin-bottom: 1rem; 
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Optional spacing between items */
+}
+
 .option { margin-right: 0.5rem; }
+
+
+.group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
