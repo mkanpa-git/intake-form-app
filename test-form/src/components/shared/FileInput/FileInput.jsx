@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import styles from './FileInput.module.css';
 
@@ -16,6 +16,7 @@ export default function FileInput({
   const [dragOver, setDragOver] = useState(false);
   const [hasFiles, setHasFiles] = useState(false);
   const [fileNames, setFileNames] = useState([]);
+  const inputRef = useRef(null);
 
   const processFiles = async (files) => {
     if (!onChange || files.length === 0) return;
@@ -58,6 +59,11 @@ export default function FileInput({
     setDragOver(false);
     const files = Array.from(e.dataTransfer.files || []);
     processFiles(files);
+    const dt = new DataTransfer();
+    files.forEach((f) => dt.items.add(f));
+    if (inputRef.current) {
+      inputRef.current.files = dt.files;
+    }
   };
 
   const handleDragOver = (e) => {
@@ -100,6 +106,7 @@ export default function FileInput({
           </ul>
         )}
         <input
+          ref={inputRef}
           id={id}
           type="file"
           multiple={multiple}
