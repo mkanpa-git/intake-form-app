@@ -1,7 +1,7 @@
 .field {
   margin-bottom: 1rem;
-  border: 2px dashed transparent;
-  padding: 0.5rem;
+  border: 2px dashed var(--border);
+  padding: var(--space-md);
 }
 
 .dragOver {
@@ -13,6 +13,16 @@
   padding: 0.5rem;
   font-family: inherit;
   font-size: 1rem;
+}
+
+.input::file-selector-button,
+.input::-webkit-file-upload-button {
+  content: "Upload Files";
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background-color: var(--secondary-color);
+  cursor: pointer;
 }
 
 .description {
