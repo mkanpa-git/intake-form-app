@@ -15,6 +15,7 @@ export default function FileInput({
 }) {
   const [dragOver, setDragOver] = useState(false);
   const [fileNames, setFileNames] = useState([]);
+  const dragCounter = useRef(0);
   const inputRef = useRef(null);
 
   const processFiles = async (files) => {
@@ -54,6 +55,7 @@ export default function FileInput({
   const handleDrop = (e) => {
     e.preventDefault();
     e.stopPropagation();
+    dragCounter.current = 0;
     setDragOver(false);
     const files = Array.from(e.dataTransfer.files || []);
     processFiles(files);
@@ -64,16 +66,25 @@ export default function FileInput({
     }
   };
 
+  const handleDragEnter = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounter.current += 1;
+    setDragOver(true);
+  };
+
   const handleDragOver = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (!dragOver) setDragOver(true);
   };
 
   const handleDragLeave = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setDragOver(false);
+    dragCounter.current -= 1;
+    if (dragCounter.current === 0) {
+      setDragOver(false);
+    }
   };
 
   return (
@@ -86,7 +97,7 @@ export default function FileInput({
       )}
       <div
         className={`${styles.field}${dragOver ? ' ' + styles.dragOver : ''}`}
-        onDragEnter={handleDragOver}
+        onDragEnter={handleDragEnter}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
