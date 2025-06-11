@@ -15,10 +15,14 @@ export default function FileInput({
 }) {
   const [dragOver, setDragOver] = useState(false);
   const [hasFiles, setHasFiles] = useState(false);
+  const [fileNames, setFileNames] = useState([]);
 
   const processFiles = async (files) => {
     if (!onChange || files.length === 0) return;
-    if (files.length > 0) setHasFiles(true);
+    if (files.length > 0) {
+      setHasFiles(true);
+      setFileNames(files.map((f) => f.name));
+    }
 
     if (applicationId) {
       const form = new FormData();
@@ -45,7 +49,6 @@ export default function FileInput({
 
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files || []);
-    if (files.length > 0) setHasFiles(true);
     processFiles(files);
   };
 
@@ -54,7 +57,6 @@ export default function FileInput({
     e.stopPropagation();
     setDragOver(false);
     const files = Array.from(e.dataTransfer.files || []);
-    if (files.length > 0) setHasFiles(true);
     processFiles(files);
   };
 
@@ -71,32 +73,41 @@ export default function FileInput({
   };
 
   return (
-    <div
-      className={`${styles.field}${dragOver ? ' ' + styles.dragOver : ''}`}
-      onDragEnter={handleDragOver}
-      onDragOver={handleDragOver}
-      onDragLeave={handleDragLeave}
-      onDrop={handleDrop}
-    >
+    <div className={styles.container}>
       {label && <label htmlFor={id}>{label}</label>}
       {description && (
         <div className={styles.description}>
           <ReactMarkdown>{description}</ReactMarkdown>
         </div>
       )}
-      {!hasFiles && (
-        <div className={styles.dropHint} style={{ display: dragOver ? 'none' : 'block' }}>
-          Drop files here
-        </div>
-      )}
-      <input
-        id={id}
-        type="file"
-        multiple={multiple}
-        onChange={handleFileChange}
-        className={`${styles.input}${error ? ' error' : ''}`}
-        {...props}
-      />
+      <div
+        className={`${styles.field}${dragOver ? ' ' + styles.dragOver : ''}`}
+        onDragEnter={handleDragOver}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+      >
+        {!hasFiles && (
+          <div className={styles.dropHint} style={{ display: dragOver ? 'none' : 'block' }}>
+            Drop files here
+          </div>
+        )}
+        {fileNames.length > 0 && (
+          <ul className={styles.fileList}>
+            {fileNames.map((name) => (
+              <li key={name} className={styles.fileName}>{name}</li>
+            ))}
+          </ul>
+        )}
+        <input
+          id={id}
+          type="file"
+          multiple={multiple}
+          onChange={handleFileChange}
+          className={`${styles.input}${error ? ' error' : ''}`}
+          {...props}
+        />
+      </div>
       {hint && (
         <div className="form-hint text-sm text-gray-500 italic mt-1">{hint}</div>
       )}
