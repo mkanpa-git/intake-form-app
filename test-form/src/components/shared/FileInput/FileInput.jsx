@@ -14,9 +14,11 @@ export default function FileInput({
   ...props
 }) {
   const [dragOver, setDragOver] = useState(false);
+  const [hasFiles, setHasFiles] = useState(false);
 
   const processFiles = async (files) => {
     if (!onChange || files.length === 0) return;
+    if (files.length > 0) setHasFiles(true);
 
     if (applicationId) {
       const form = new FormData();
@@ -43,6 +45,7 @@ export default function FileInput({
 
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files || []);
+    if (files.length > 0) setHasFiles(true);
     processFiles(files);
   };
 
@@ -51,6 +54,7 @@ export default function FileInput({
     e.stopPropagation();
     setDragOver(false);
     const files = Array.from(e.dataTransfer.files || []);
+    if (files.length > 0) setHasFiles(true);
     processFiles(files);
   };
 
@@ -78,6 +82,11 @@ export default function FileInput({
       {description && (
         <div className={styles.description}>
           <ReactMarkdown>{description}</ReactMarkdown>
+        </div>
+      )}
+      {!hasFiles && (
+        <div className={styles.dropHint} style={{ display: dragOver ? 'none' : 'block' }}>
+          Drop files here
         </div>
       )}
       <input
