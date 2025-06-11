@@ -1,25 +1,51 @@
 .wrapper {
   position: relative;
-  display: inline-block;
-  margin-left: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  margin-left: var(--space-xs, 0.25rem);
   cursor: help;
 }
 
 .icon {
   font-size: 0.85rem;
+  color: var(--primary-color, #cc4466);
 }
 
 .tooltip {
   position: absolute;
-  bottom: 100%;
+  bottom: calc(100% + 0.25rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(0.25rem);
+  background: #111827;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm, 4px);
+  max-width: 18rem;
+  white-space: normal;
+  word-wrap: break-word;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  box-shadow: var(--shadow, 0 2px 6px rgba(0, 0, 0, 0.15));
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  z-index: 10;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  white-space: nowrap;
-  font-size: 0.75rem;
-  z-index: 10;
-  pointer-events: none;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #111827 transparent transparent transparent;
 }
