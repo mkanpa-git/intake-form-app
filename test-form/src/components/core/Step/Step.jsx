@@ -422,6 +422,7 @@ export default function Step({
             key={field.id}
             id={field.id}
             label={field.label}
+            description={field.description}
             multiple={field.metadata?.multiple}
             required={isRequired}
             onChange={(val) => handleChange(field.id, val)}

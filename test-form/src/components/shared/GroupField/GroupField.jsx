@@ -170,6 +170,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
         return (
           <FileInput
             key={subField.id}
+            description={subField.description}
             multiple={subField.metadata?.multiple}
             {...commonProps}
             error={error}
