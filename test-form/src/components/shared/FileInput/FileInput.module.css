@@ -5,3 +5,9 @@
   font-family: inherit;
   font-size: 1rem;
 }
+
+.description {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #6B7280; /* gray-600 */
+}
