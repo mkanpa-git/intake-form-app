@@ -613,11 +613,11 @@ export default function Step({
       })}
       <div className={styles.navigation}>
         {!isFirst && (
-          <button type="button" onClick={handleBackClick}>
+          <button type="button" className="button-secondary" onClick={handleBackClick}>
             Back
           </button>
         )}
-        <button type="button" onClick={handleSaveDraftClick}>
+        <button type="button" className="button-secondary" onClick={handleSaveDraftClick}>
           Save Draft
         </button>
         {!isLast && (

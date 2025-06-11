@@ -321,14 +321,14 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
                 ))}
                 <td>
                   <button onClick={() => handleEdit(idx)}>Edit</button>
-                  <button onClick={() => handleDelete(idx)}>Delete</button>
+                  <button className="button-secondary" onClick={() => handleDelete(idx)}>Delete</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
-      <button onClick={() => { setShowForm(true); setEditingIndex(null); setCurrentEntry({}); }}>
+      <button className="button-secondary" onClick={() => { setShowForm(true); setEditingIndex(null); setCurrentEntry({}); }}>
         Add {field.label}
       </button>
       {showForm && (
@@ -336,7 +336,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
           {field.fields.map(renderField)}
           <div className="form-actions">
             <button onClick={handleSave}>Save</button>
-            <button onClick={handleCancel}>Cancel</button>
+            <button className="button-secondary" onClick={handleCancel}>Cancel</button>
           </div>
         </div>
       )}

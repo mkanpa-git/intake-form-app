@@ -1,6 +1,6 @@
 {
   "form": {
-  "title": "Childcare Application Wizard",
+  "title": "Childcare Voucher Application",
   "description": "Step-by-step form for applying for Childcare Assistance",
   "layout": {
     "stepperPosition": "left"
@@ -559,6 +559,14 @@
       "title": "Family Members",
       "sections": [
         {
+          "id": "household_members_info",
+          "title": "Household Members Information",
+          "type": "info",  
+          "ui": { "markdown": true, "collapsible": false, "defaultCollapsed": false }, 
+          "content": 
+            "**List the household members who do _not_ need child care.**\\n\\nIf applicable, list:\\n\\n- Your **spouse**, your child’s **second parent**, **caretaker**, or **step-parent**\\n- Any other **adult with whom you share a child**, if they live in your home\\n\\nThen, if applicable, list:\\n\\n- Any **siblings under the age of 18** who live in your home\\n\\n> **Only list other household members** — such as **aunts, uncles, cousins, grandparents, or friends** — _if they have financial responsibility_ for the child.\\n\\nA household member with financial responsibility, other than a parent or step-parent, is one who has a **letter or order of guardianship**.\\n\\n**Otherwise, do not include them.**"
+        },
+        {
           "id": "family_member_details",
           "title": "Household Member Details",
           "description": "Include household members who do not need child care assistance (e.g., spouse, partner, other children).",
@@ -778,6 +786,22 @@
       "id": "employment",
       "title": "Employment",
       "sections": [
+        {
+          "id": "employment_precheck",
+          "title": "Tell us about your employment",
+          "description": "Tell us about your employment",
+          "fields" :[
+            {
+              "id": "applicant_1st_job_start_date",
+              "label": "Does applicant earn any inomce/ wages from employment? ",
+              "type": "radio",
+              "required": false,
+              "ui": {
+                "options": ["Yes", "No"]
+              }            
+            }
+          ]
+        },
         {
           "id": "applicant_jobs",
           "title": "Applicant Employment Information",
@@ -1096,6 +1120,13 @@
       "id": "schedule",
       "title": "Work/Activity/Travel Time Schedule",
       "sections": [
+        {
+          "id": "schedule_section_info",
+          "title": "Schedule Information",
+          "type": "info",  
+          "ui": { "markdown": true, "collapsible": false, "defaultCollapsed": false},
+          "content": "Please indicate what days and hours you will need child care for based on your reason for care.\\n\\n- **Employed**: Indicate the hours you attend work\\n- **Educational or Vocational Program**: Indicate the hours you attend school or your program\\n- **Looking for Work**: Indicate the hours you spend looking for work\\n- **Homeless**: Indicate the hours you spend looking for housing\\n- **Attending Services for Domestic Violence**: Indicate the hours you attend services.\\n- **Attending Services for Substance Abuse Treatment**: Indicate the hours you attend services."
+        },
         {
           "id": "first_parent_activity_schedule",
           "title": "First Parent Activity Schedule",
@@ -1435,6 +1466,14 @@
       "title": "Income Information",
       "sections": [
         {
+          "id": "income_step_info",
+          "title": "Instructions",
+          "type": "info",  
+          "ui": { "markdown": true, "collapsible": false, "defaultCollapsed": false }, 
+          "content": 
+            "Please include income/benefits information for yourself and, if applicable, your spouse, your child’s second caretaker, and/or any other adult with whom you share a child, if they live in your home.\\n\\nIndicate if you receive money from the following sources by selecting “Yes” or “No.” If you select “Yes,” you will be asked for additional information.\\n\\nIf the second caretaker in the household also receives the same income source, add a separate line for their income."
+        },
+        {
           "id": "income_sources",
           "title": "Income Sources",
           "description": "Provide details about all income sources applicable to the applicant or household.",
@@ -1591,6 +1630,14 @@
       "id": "provider",
       "title": "Provider",
       "sections": [
+        {
+          "id": "provider_step_info",
+          "title": "Instructions",
+          "type": "info",  
+          "ui": { "markdown": true, "collapsible": false, "defaultCollapsed": false }, 
+          "content": 
+            "If you are found eligible for child care assistance, you can choose center-based or home-based care from a licensed, registered, or legally exempt provider. If you choose a provider that is not licensed or registered, the provider must be enrolled as a legally exempt provider.\\n\\nIf you know which child care providers you would like your child to attend, provide the names and addresses of your choice of providers. You can leave this section blank if you do not know (it will not impact your eligibility and you will have an opportunity to select a provider if determined eligible)."
+        },
         {
           "id": "provider_choices",
           "title": "Provider Choices",

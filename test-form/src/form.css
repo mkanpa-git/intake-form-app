@@ -176,13 +176,15 @@ button {
   font-family: var(--font-family, 'Rubik', sans-serif);
   font-size: var(--font-size-lg, 16px);
   font-weight: 500;
-  text-transform: capitalize;
+  text-transform: uppercase;
   line-height: 1.4;
 
   /* Sizing & Spacing */
   min-width: 64px;
   padding: 0.75rem 1.5rem;
-  width: 100%;
+  width: fit-content;
+  margin-top: 1rem; /* adjust spacing as needed */
+
 
   /* Colors & Styling */
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
@@ -212,6 +214,30 @@ button:disabled {
 }
 
 
+.button-secondary {
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  background: #ffffff;
+  color: #CC4466;
+  outline: 3px solid #CC4466;
+  outline-offset: -3px;
+  border: none;
+  border-radius: 0;
+  margin-top: 1rem; /* adjust spacing as needed */
+  text-transform: uppercase;
+  font-family: var(--font-family, 'Rubik', sans-serif);
+  font-size: var(--font-size-lg, 16px);
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  background: #fef2f2;
+  transform: translateY(-1px);
+}
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {

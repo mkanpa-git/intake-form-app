@@ -31,7 +31,13 @@ function App() {
         </div>
 
         <nav className={`right ${menuOpen ? "open" : ""}`}>
-          <button onClick={() => setPage('dashboard')}>Dashboard</button>
+          <a
+            href="#dashboard"
+            onClick={() => setPage('dashboard')}
+          >
+            Dashboard
+          </a>
+
           <a href="#settings">Profile</a>
         </nav>
       </header>

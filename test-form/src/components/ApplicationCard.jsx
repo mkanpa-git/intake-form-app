@@ -23,7 +23,7 @@ export default function ApplicationCard({
         >
           Continue
         </button>
-        <button
+        <button className="button-secondary"
           onClick={() => {
             onDelete && onDelete(id);
           }}
