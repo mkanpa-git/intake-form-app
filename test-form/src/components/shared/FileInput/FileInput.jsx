@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import styles from './FileInput.module.css';
 
@@ -13,8 +13,9 @@ export default function FileInput({
   onChange,
   ...props
 }) {
-  const handleFileChange = async (e) => {
-    const files = Array.from(e.target.files || []);
+  const [dragOver, setDragOver] = useState(false);
+
+  const processFiles = async (files) => {
     if (!onChange || files.length === 0) return;
 
     if (applicationId) {
@@ -40,8 +41,39 @@ export default function FileInput({
     onChange(multiple ? files : files[0]);
   };
 
+  const handleFileChange = (e) => {
+    const files = Array.from(e.target.files || []);
+    processFiles(files);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragOver(false);
+    const files = Array.from(e.dataTransfer.files || []);
+    processFiles(files);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!dragOver) setDragOver(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragOver(false);
+  };
+
   return (
-    <div className={styles.field}>
+    <div
+      className={`${styles.field}${dragOver ? ' ' + styles.dragOver : ''}`}
+      onDragEnter={handleDragOver}
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    >
       {label && <label htmlFor={id}>{label}</label>}
       {description && (
         <div className={styles.description}>
