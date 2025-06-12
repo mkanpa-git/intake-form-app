@@ -12,6 +12,9 @@ console.log (GOOGLE_API_KEY ? 'Google API Key is set' : '❌ Google API Key is N
 // Middleware to parse JSON bodies
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(express.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 const upload = multer({
   storage: multer.diskStorage({
@@ -124,6 +127,58 @@ app.get('/api/places/details/:id', async (req, res) => {
     console.error(err);
     res.status(500).json({ error: 'Failed to fetch place details' });
   }
+});
+
+// ------- Application Storage Helpers -------
+function loadApplications() {
+  try {
+    const raw = fs.readFileSync(path.join(__dirname, 'data', 'applications.json'));
+    return JSON.parse(raw);
+  } catch {
+    return [];
+  }
+}
+
+function saveApplications(apps) {
+  const file = path.join(__dirname, 'data', 'applications.json');
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, JSON.stringify(apps, null, 2));
+}
+
+// --- Application API ---
+app.post('/api/applications/:appId', (req, res) => {
+  const apps = loadApplications();
+  const idx = apps.findIndex((a) => a.id === req.params.appId);
+  const record = { id: req.params.appId, ...req.body, updatedAt: new Date().toISOString() };
+  if (idx !== -1) {
+    apps[idx] = { ...apps[idx], ...record };
+  } else {
+    apps.push(record);
+  }
+  saveApplications(apps);
+  res.json({ status: 'ok' });
+});
+
+app.get('/api/applications', (req, res) => {
+  res.json(loadApplications());
+});
+
+app.get('/api/applications/:appId', (req, res) => {
+  const appData = loadApplications().find((a) => a.id === req.params.appId);
+  if (!appData) return res.status(404).json({ error: 'Not found' });
+  res.json(appData);
+});
+
+// --- Case Management UI ---
+app.get('/cases', (req, res) => {
+  const apps = loadApplications();
+  res.render('applications', { apps });
+});
+
+app.get('/cases/:appId', (req, res) => {
+  const appData = loadApplications().find((a) => a.id === req.params.appId);
+  if (!appData) return res.status(404).send('Application not found');
+  res.render('application', { app: appData });
 });
 
 app.listen(PORT, () => {
