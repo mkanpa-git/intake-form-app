@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Submitted Applications</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-4">
+  <h1>Submitted Applications</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr><th>ID</th><th>Updated At</th><th></th></tr>
+    </thead>
+    <tbody>
+      <% apps.forEach(function(a){ %>
+        <tr>
+          <td><%= a.id %></td>
+          <td><%= a.updatedAt || '' %></td>
+          <td><a class="btn btn-sm btn-primary" href="/cases/<%= a.id %>">View</a></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

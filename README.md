@@ -13,6 +13,12 @@ npm run dev
 
 The `dev` script runs both the Express API proxy and the React app so you can access the application at `http://localhost:3000`.
 
+## Case management UI
+
+The backend exposes a simple case management dashboard that lists submitted applications stored on the server. Start the server and visit `http://localhost:5000/cases` to review applications.
+
+Selecting an application opens a page with each step's data shown in its own tab for easy review.
+
 ## Environment requirements
 
 - **Node.js**: version 18 or later is recommended.
