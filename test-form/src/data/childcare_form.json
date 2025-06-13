@@ -3,7 +3,7 @@
   "title": "Childcare Voucher Application",
   "description": "Step-by-step form for applying for Childcare Assistance",
   "layout": {
-    "stepperPosition": "left"
+    "stepperPosition": "right"
   },
   "steps": [
     {
@@ -98,7 +98,8 @@
               "id": "date_of_birth",
               "label": "Date of Birth",
               "type": "date",
-              "required": true
+              "required": true,
+              "tooltip" : "To edit Date of Birth click on NYC MyCity in the top-left corner then click on Account Settings."
             },
             {
               "id": "sex",
@@ -117,6 +118,7 @@
               "label": "Marital Status",
               "type": "select",
               "required": true,
+              "tooltip" : "Indicate your marital status (single, married, divorced, separated or widowed).",
               "ui": {
                 "options": [
                   "Single",
@@ -162,6 +164,7 @@
               "label": "Mobile or Other Phone",
               "type": "tel",
               "required": false,
+              "tooltip" : "To edit Telephone (Cell or Other) click on NYC MyCity in the top-left corner then click on Account Settings and then click on Contact.",
               "constraints": {
                 "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
               },
@@ -173,19 +176,22 @@
               "id": "email",
               "label": "Email",
               "type": "email",
-              "required": true
+              "required": true,
+              "tooltip" : "To edit email, go to NYC ID Profile tab by clicking your name at the top right corner"
             }
           ]
         },
         {
           "id": "address_info",
           "title": "Address",
+          "tooltip": "To edit home address click on NYC MyCity in the top-left corner then click on Account Settings.",
           "fields": [
             {
               "id": "street",
               "label": "Street Address",
               "type": "text",
-              "required": true
+              "required": true,
+              "tooltip" : "To edit home address click on NYC MyCity in the top-left corner then click on Account Settings."
             },
             {
               "id": "apt",
@@ -243,6 +249,7 @@
               "label": "Is Temporary Address",
               "type": "radio",
               "required": true,
+              "tooltip" : "Check YES if you are currently living in a homeless shelter, doubled-up with another family, in a hotel/motel, in a car/ bus/ train, in a park/campsite, or other temporary accomodation.",
               "ui": {
                 "options": [
                   "Yes",
@@ -292,6 +299,7 @@
               "label": "Race",
               "type": "checkbox",
               "required": false,
+              "tooltip" : "You may choose multiple race categories. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
               "ui": {
                 "options": [
                   {
@@ -324,6 +332,7 @@
               "id": "ssn",
               "label": "Social Security Number",
               "type": "text",
+              "tooltip" : "To edit social security number click on NYC MyCity in the top-left corner then click on Account Settings.",
               "required": false,
               "constraints": {
                 "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
@@ -339,11 +348,13 @@
           "title": "Language Preferences",
           "fields": [
             { "id": "primary_language", "label": "Primary Language", "type": "radio", "required": true,
+              "tooltip": "Select the language that is spoken most often in your household. If “other”, provide the name of the language.",
               "ui": {
                 "options": ["English", "Spanish", "Other"]
               }
             },
             { "id": "preferred_language", "label": "Preferred Language", "type": "radio", "required": true,
+              "tooltip": "Select the language you prefer to communicate in. If “other”, provide the name of the language.",
               "ui": {
                 "options": ["English", "Spanish", "Other"]
               }
@@ -407,7 +418,8 @@
                   "id": "first_name",
                   "label": "First Name",
                   "type": "text",
-                  "required": true
+                  "required": true,
+                  "tooltip": "Provide the first name, last name, and middle initial of each child you are applying for child care assistance for."
                 },
                 {
                   "id": "last_name",
@@ -439,13 +451,15 @@
                   "id": "date_of_birth",
                   "label": "Date of Birth",
                   "type": "date",
-                  "required": true
+                  "required": true,
+                  "tooltip": "Provide the date of birth."
                 },
                 {
                   "id": "sex",
                   "label": "Sex",
                   "type": "radio",
                   "required": true,
+                  "tooltip": "Select to indicate the sex.",
                   "ui": {
                     "options": [
                       "Male",
@@ -455,13 +469,13 @@
                 },
                 {
                   "id": "ethnicity",
-                  "label": "Ethnicity",
+                  "label": "Ethnicity Hispanic or Latino",
                   "type": "select",
                   "required": false,
+                  "tooltip": "Check “YES” or “NO” to indicate if each child in need of child care is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for child care assistance or the amount of assistance that you will be given by this agency.",
                   "ui": {
                     "options": [
-                      "Hispanic",
-                      "Latino",
+                      "Yes",
                       "No",
                       "Prefer not to answer"
                     ]
@@ -472,6 +486,7 @@
                   "label": "Race",
                   "type": "checkbox",
                   "required": false,
+                  "tooltip" : "You may choose multiple race categories for a single child. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
                   "ui": {
                     "options": [
                       {
@@ -505,6 +520,7 @@
                   "label": "Social Security Number",
                   "type": "text",
                   "required": false,
+                  "tooltip" : "Provide each child’s Social Security Number (SSN). You are not required to provide SSNs. They may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
                   "constraints": {
                     "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                   },
@@ -517,6 +533,7 @@
                   "label": "Do both parents reside in the home?",
                   "type": "radio",
                   "required": true,
+                  "tooltip" : "Check “YES” or “NO” to indicate whether both of the child’s parents live in the home.",
                   "ui": {
                     "options": [
                       "Yes",
@@ -529,6 +546,7 @@
                   "label": "Does the child have a disability?",
                   "type": "radio",
                   "required": true,
+                  "tooltip" : "Check “YES” or “NO” to indicate whether the child needing child care has a disability.",
                   "ui": {
                     "options": [
                       "Yes",
@@ -538,9 +556,10 @@
                 },
                 {
                   "id": "is_immigration_status_satisfactory",
-                  "label": "Is immigration status satisfactory?",
+                  "label": "Is child U.S. Citizen, U.S. National, or person with satisfactory immigration status?",
                   "type": "radio",
                   "required": true,
+                  "tooltip" : "You will only be asked about the immigration status of the children in need of care. Other members of the family will not need to state or prove their immigration status. Your child will be eligible for care if they are a U.S. citizen, a legal permanent resident (green card holder), a refugee, or an asylee; have a T-visa; or hold another qualified immigration status. Please select “Yes” if your child holds one of these statuses.",
                   "ui": {
                     "options": [
                       "Yes",
@@ -583,7 +602,8 @@
                   "id": "first_name",
                   "label": "First Name",
                   "type": "text",
-                  "required": true
+                  "required": true,
+                  "tooltip" : "Provide last and first name, and middle initial if applicable."
                 },
                 {
                   "id": "last_name",
@@ -602,6 +622,7 @@
                   "label": "Relationship to Applicant",
                   "type": "select",
                   "required": true,
+                  "tooltip" : "Provide each person’s relationship to you (e.g. spouse, partner, child, foster parent, other).",
                   "ui": {
                     "options": [
                       "Spouse",
@@ -616,13 +637,15 @@
                   "id": "date_of_birth",
                   "label": "Date of Birth",
                   "type": "date",
-                  "required": true
+                  "required": true,
+                  "tooltip" : "Provide the family member's date of birth."
                 },
                 {
                   "id": "sex",
                   "label": "Sex",
                   "type": "radio",
                   "required": true,
+                  "tooltip" : "Indicate the sex for each family member listed.",
                   "ui": {
                     "options": [
                       "Male",
@@ -632,13 +655,13 @@
                 },
                 {
                   "id": "ethnicity",
-                  "label": "Ethnicity",
+                  "label": "Ethnicity Hispanic or Latino",
                   "type": "select",
                   "required": false,
+                  "tooltip" : "Check “YES” or “NO” to indicate if each member in the household is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
                   "ui": {
                     "options": [
-                      "Hispanic",
-                      "Latino",
+                      "Yes",
                       "No",
                       "Prefer not to answer"
                     ]
@@ -649,6 +672,7 @@
                   "label": "Race",
                   "type": "checkbox",
                   "required": false,
+                  "tooltip" :"You may choose multiple race categories for a single person. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
                   "ui": {
                     "options": [
                       { "value": "AI", "label": "American Indian or Alaska Native" },
@@ -667,6 +691,7 @@
                   "label": "Social Security Number",
                   "type": "text",
                   "required": false,
+                  "tooltip" : "Fill in the Social Security Number (SSN) for your family members. SSN is optional. SSN may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
                   "constraints": {
                     "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                   },
@@ -688,6 +713,7 @@
           "id": "assistance_reason",
           "title": "Reason for Child Care Assistance",
           "description": "Select one or two reasons you are requesting Child Care Assistance.",
+          "tooltip": "Select one reason. In a two-parent household, parents/caretakers can have the same or different reasons for needing child care. Both parents/caretakers will be required to submit documentation in support of their own reason. If you are living in temporary housing, please select Homelessness even if you have another reason that applies to you.",
           "fields": [
             {
               "id": "assistance_reason",
@@ -721,6 +747,7 @@
             {
               "id": "is_parent_currently_active_in_military",
               "label": "Is a Parent Currently Active Full-Time in the U.S. Military?",
+              "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently active full-time in the U.S. Military.",
               "type": "radio",
               "required": true,
               "ui": {
@@ -733,6 +760,7 @@
             {
               "id": "is_parent_mem_of_guard_or_mru",
               "label": "Is a Parent a Member of National Guard or Military Reserve Unit?",
+              "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently a member of a National Guard or Military Reserve Unit.",
               "type": "radio",
               "required": true,
               "ui": {
@@ -745,6 +773,7 @@
             {
               "id": "is_non_custodial_parent_available",
               "label": "Is the Non-Custodial Parent Available to Provide Care?",
+              "tooltip": "Check “YES” or “NO” to indicate whether there is a non-custodial parent available to provide child care.",
               "type": "radio",
               "required": true,
               "ui": {
@@ -760,6 +789,7 @@
           "id": "duplicate_application",
           "title": "Other Applications",
           "description": "Indicate if you are also applying for or receiving child care from other agencies.",
+          "tooltip": "Indicate whether you are currently receiving or have applied for child care assistance with one of the agencies or organizations listed below. Note: If you are receiving Cash Assistance and are interested in child care assistance, you must apply through the Human Resources Administration. Reach out to your Benefits Access Center or visit the Human Resources Administration webpage.",
           "fields": [
             {
               "id": "duplicate_app",
@@ -793,7 +823,16 @@
           "fields" :[
             {
               "id": "applicant_emp_income_indicator",
-              "label": "Does applicant earn any inomce/ wages from employment? ",
+              "label": "Does applicant earn any income/ wages from employment? ",
+              "type": "radio",
+              "required": false,
+              "ui": {
+                "options": ["Yes", "No"]
+              }            
+            },
+            {
+              "id": "coparent_emp_income_indicator",
+              "label": "Does Coparent/2nd Guardian earn any income/ wages from employment? ",
               "type": "radio",
               "required": false,
               "ui": {
@@ -984,6 +1023,11 @@
           "id": "second_parent_jobs",
           "title": "Second Parent Employment Information",
           "description": "Enter details for up to two jobs held by the second parent (if applicable).",
+          "visibilityCondition": {
+            "field": "coparent_emp_income_indicator",
+            "operator": "equals",
+            "value": "Yes"
+          },
           "fields": [
             {
               "id": "second_parent_1st_job_start_date",
@@ -1319,6 +1363,7 @@
               "id": "fp_dropoff_travel_time",
               "label": "Drop-off Travel Time",
               "type": "select",
+              "tooltip": "Select your typical travel time from work/activity to your child care provider",
               "ui": {
                 "options": [
                   "15 min",
@@ -1343,6 +1388,7 @@
               "id": "fp_pickup_travel_time",
               "label": "Pick-up Travel Time",
               "type": "select",
+              "tooltip": "Select your typical travel time from work/activity to your child care provider",
               "ui": {
                 "options": [
                   "15 min",
@@ -1367,6 +1413,7 @@
               "id": "fp_public_transport_dropoff",
               "label": "Public Transport for Drop-off?",
               "type": "radio",
+              "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
               "ui": {
                 "options": [
                   "Yes",
@@ -1377,6 +1424,7 @@
             {
               "id": "fp_public_transport_pickup",
               "label": "Public Transport for Pick-up?",
+              "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
               "type": "radio",
               "ui": {
                 "options": [
