@@ -1,6 +1,9 @@
+import ReactMarkdown from 'react-markdown';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import GroupField from './GroupField';
+
+jest.mock('react-markdown', () => ({ children }) => <div>{children}</div>);
 
 describe('GroupField component', () => {
   const field = {
