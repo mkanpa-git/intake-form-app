@@ -18,3 +18,14 @@ test('renders form title', () => {
     screen.getByRole('heading', { level: 1, name: /Childcare Voucher Application/i })
   ).toBeInTheDocument();
 });
+
+test('renders review step when currentStep is review', () => {
+  const spec = require('../../../data/childcare_form.json');
+  const reviewIndex = spec.form.steps.findIndex((s) => s.id === 'review');
+  localStorage.setItem(
+    'childcareApplications',
+    JSON.stringify([{ id: '1', currentStep: reviewIndex }])
+  );
+  render(<FormRenderer applicationId="1" />);
+  expect(screen.getByRole('heading', { name: /review & submit/i })).toBeInTheDocument();
+});

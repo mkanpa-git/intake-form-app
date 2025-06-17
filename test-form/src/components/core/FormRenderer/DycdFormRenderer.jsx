@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
+import ReviewStep from '../ReviewStep/ReviewStep';
 import formSpec from '../../../data/dycd_form.json';
 import { validateStep } from '../../../utils/formHelpers';
 import { getApplication, upsertApplication } from '../../../utils/appStorage';
@@ -67,9 +68,23 @@ export default function DycdFormRenderer({ applicationId, onExit }) {
     onExit && onExit();
   };
 
+  const handleEdit = (idx) => {
+    setCurrentStep(idx);
+  };
+
+  const handleSubmit = async () => {
+    await fetch(`/api/applications/${applicationId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ stepData, allData }),
+    });
+    onExit && onExit();
+  };
+
   const canNavigate = (targetIndex) => {
     // allow going to a previous step without checking validation
     if (targetIndex < currentStep) return true;
+    if (steps[currentStep]?.type === 'review') return true;
     const { valid } = validateStep(
       steps[currentStep],
       stepData[steps[currentStep].id] || {}
@@ -103,20 +118,29 @@ export default function DycdFormRenderer({ applicationId, onExit }) {
           />
         )}
         {steps.length > 0 && (
-          <Step
-            key={steps[currentStep].id}
-            title={steps[currentStep].title}
-            sections={steps[currentStep].sections}
-            onNext={handleNext}
-            onBack={handleBack}
-            onSaveDraft={handleSaveDraft}
-            isFirst={currentStep === 0}
-            isLast={currentStep === steps.length - 1}
-            formData={stepData[steps[currentStep].id] || {}}
-            fullData={allData}
-            onDataChange={handleDataChange}
-            applicationId={applicationId}
-          />
+          steps[currentStep].type === 'review' ? (
+            <ReviewStep
+              steps={steps}
+              stepData={stepData}
+              onEdit={handleEdit}
+              onSubmit={handleSubmit}
+            />
+          ) : (
+            <Step
+              key={steps[currentStep].id}
+              title={steps[currentStep].title}
+              sections={steps[currentStep].sections}
+              onNext={handleNext}
+              onBack={handleBack}
+              onSaveDraft={handleSaveDraft}
+              isFirst={currentStep === 0}
+              isLast={currentStep === steps.length - 1}
+              formData={stepData[steps[currentStep].id] || {}}
+              fullData={allData}
+              onDataChange={handleDataChange}
+              applicationId={applicationId}
+            />
+          )
         )}
       </div>
     </div>
