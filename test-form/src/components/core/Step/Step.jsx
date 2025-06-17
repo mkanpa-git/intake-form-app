@@ -32,6 +32,7 @@ export default function Step({
   fullData = {},
   onDataChange,
   applicationId,
+  onBackToReview,
 }) {
   const [collapsedSections, setCollapsedSections] = useState({});
   const [formData, setFormData] = useState(initialData);
@@ -552,13 +553,39 @@ export default function Step({
     onBack && onBack(formData);
   };
 
+  const handleBackToReviewClick = () => {
+    const result = validateStep(
+      { sections },
+      { ...formData },
+      errors,
+      touched
+    );
+    setErrors(result.errors);
+    setTouched(result.touched);
+    const cleaned = cleanupHiddenFields({ sections }, formData);
+    setFormData(cleaned);
+    onDataChange && onDataChange(cleaned);
+    onBackToReview && onBackToReview(cleaned);
+  };
+
   const handleSaveDraftClick = () => {
     onSaveDraft && onSaveDraft(formData);
   };
 
   return (
     <div className={styles.step}>
-      <h2>{title}</h2>
+      <div className={styles.header}>
+        <h2>{title}</h2>
+        {onBackToReview && (
+          <button
+            type="button"
+            className={styles.backToReview}
+            onClick={handleBackToReviewClick}
+          >
+            Back to Review step
+          </button>
+        )}
+      </div>
       {sections.map((sec) => {
         const collapsed = collapsedSections[sec.id] || false;
         const visible = isSectionVisible(sec);
