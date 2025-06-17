@@ -562,6 +562,8 @@ export default function Step({
     );
     setErrors(result.errors);
     setTouched(result.touched);
+    if (!result.valid) return;       // prevent navigation if step is invalid
+
     const cleaned = cleanupHiddenFields({ sections }, formData);
     setFormData(cleaned);
     onDataChange && onDataChange(cleaned);
