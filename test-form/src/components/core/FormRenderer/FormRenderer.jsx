@@ -12,6 +12,8 @@ export default function FormRenderer({ applicationId, onExit }) {
   const [currentStep, setCurrentStep] = useState(0);
   const [stepData, setStepData] = useState({});
   const [allData, setAllData] = useState({});
+  const reviewIndex = steps.findIndex((s) => s.type === 'review');
+  const [editingFromReview, setEditingFromReview] = useState(false);
   const stepperPosition = form.layout?.stepperPosition || 'right';
   const orientation = stepperPosition === 'top' ? 'horizontal' : 'vertical';
 
@@ -29,6 +31,12 @@ export default function FormRenderer({ applicationId, onExit }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, [currentStep]);
+
+  useEffect(() => {
+    if (currentStep === reviewIndex) {
+      setEditingFromReview(false);
+    }
+  }, [currentStep, reviewIndex]);
 
   const requiredDocs =
     steps[currentStep]?.sections?.flatMap((section) =>
@@ -70,6 +78,12 @@ export default function FormRenderer({ applicationId, onExit }) {
 
   const handleEdit = (idx) => {
     setCurrentStep(idx);
+    setEditingFromReview(true);
+  };
+
+  const handleBackToReview = () => {
+    setCurrentStep(reviewIndex);
+    setEditingFromReview(false);
   };
 
   const handleSubmit = async () => {
@@ -139,6 +153,9 @@ export default function FormRenderer({ applicationId, onExit }) {
               fullData={allData}
               onDataChange={handleDataChange}
               applicationId={applicationId}
+              onBackToReview={
+                editingFromReview ? handleBackToReview : undefined
+              }
             />
           )
         )}

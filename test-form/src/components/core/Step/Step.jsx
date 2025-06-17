@@ -32,6 +32,7 @@ export default function Step({
   fullData = {},
   onDataChange,
   applicationId,
+  onBackToReview,
 }) {
   const [collapsedSections, setCollapsedSections] = useState({});
   const [formData, setFormData] = useState(initialData);
@@ -558,7 +559,18 @@ export default function Step({
 
   return (
     <div className={styles.step}>
-      <h2>{title}</h2>
+      <div className={styles.header}>
+        <h2>{title}</h2>
+        {onBackToReview && (
+          <button
+            type="button"
+            className={styles.backToReview}
+            onClick={onBackToReview}
+          >
+            Back to Review step
+          </button>
+        )}
+      </div>
       {sections.map((sec) => {
         const collapsed = collapsedSections[sec.id] || false;
         const visible = isSectionVisible(sec);
