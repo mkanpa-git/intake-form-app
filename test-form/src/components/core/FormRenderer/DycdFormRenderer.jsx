@@ -81,9 +81,12 @@ export default function DycdFormRenderer({ applicationId, onExit }) {
     setEditingFromReview(true);
   };
 
-  const handleBackToReview = () => {
+  const handleBackToReview = (data) => {
+    handleDataChange(data);
+    setAllData((prev) => ({ ...prev, ...data }));
     setCurrentStep(reviewIndex);
     setEditingFromReview(false);
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   const handleSubmit = async () => {

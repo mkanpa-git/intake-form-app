@@ -553,6 +553,21 @@ export default function Step({
     onBack && onBack(formData);
   };
 
+  const handleBackToReviewClick = () => {
+    const result = validateStep(
+      { sections },
+      { ...formData },
+      errors,
+      touched
+    );
+    setErrors(result.errors);
+    setTouched(result.touched);
+    const cleaned = cleanupHiddenFields({ sections }, formData);
+    setFormData(cleaned);
+    onDataChange && onDataChange(cleaned);
+    onBackToReview && onBackToReview(cleaned);
+  };
+
   const handleSaveDraftClick = () => {
     onSaveDraft && onSaveDraft(formData);
   };
@@ -565,7 +580,7 @@ export default function Step({
           <button
             type="button"
             className={styles.backToReview}
-            onClick={onBackToReview}
+            onClick={handleBackToReviewClick}
           >
             Back to Review step
           </button>
