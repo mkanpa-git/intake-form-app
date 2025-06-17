@@ -33,6 +33,7 @@
 .backToReview:hover,
 .backToReview:focus-visible {
   background: #fef2f2;
+
 }
 
 @media (max-width: 768px) {

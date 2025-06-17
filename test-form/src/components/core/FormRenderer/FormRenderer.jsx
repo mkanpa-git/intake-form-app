@@ -87,6 +87,7 @@ export default function FormRenderer({ applicationId, onExit }) {
     setCurrentStep(reviewIndex);
     setEditingFromReview(false);
     window.scrollTo({ top: 0, behavior: 'auto' });
+
   };
 
   const handleSubmit = async () => {
