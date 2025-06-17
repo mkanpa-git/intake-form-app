@@ -27,6 +27,13 @@
   text-decoration: underline;
   cursor: pointer;
   font-size: var(--font-size-sm);
+  transition: background 0.2s ease;
+}
+
+.backToReview:hover,
+.backToReview:focus-visible {
+  background: #fef2f2;
+
 }
 
 @media (max-width: 768px) {

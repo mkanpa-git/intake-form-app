@@ -40,4 +40,10 @@
   cursor: pointer;
   text-decoration: underline;
   font-size: var(--font-size-sm, 0.9rem);
+  transition: background 0.2s ease;
+}
+
+.viewJson:hover,
+.viewJson:focus-visible {
+  background: #fef2f2;
 }
