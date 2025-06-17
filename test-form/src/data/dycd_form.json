@@ -11,11 +11,43 @@
             "id": "youth_info",
             "title": "Basic Information",
             "fields": [
-              { "id": "first_name", "label": "First Name", "type": "text", "required": true },
-              { "id": "last_name", "label": "Last Name", "type": "text", "required": true },
-              { "id": "dob", "label": "Date of Birth", "type": "date", "required": true },
-              { "id": "gender", "label": "Gender", "type": "select", "ui": { "options": ["Male", "Female", "Non-binary", "Other"] }, "required": true },
-              { "id": "ethnicity", "label": "Ethnicity", "type": "text" }
+              {
+                "id": "first_name",
+                "label": "First Name",
+                "type": "text",
+                "required": true
+              },
+              {
+                "id": "last_name",
+                "label": "Last Name",
+                "type": "text",
+                "required": true
+              },
+              {
+                "id": "dob",
+                "label": "Date of Birth",
+                "type": "date",
+                "required": true
+              },
+              {
+                "id": "gender",
+                "label": "Gender",
+                "type": "select",
+                "ui": {
+                  "options": [
+                    "Male",
+                    "Female",
+                    "Non-binary",
+                    "Other"
+                  ]
+                },
+                "required": true
+              },
+              {
+                "id": "ethnicity",
+                "label": "Ethnicity",
+                "type": "text"
+              }
             ]
           }
         ]
@@ -28,10 +60,29 @@
             "id": "guardian_contact",
             "title": "Contact Details",
             "fields": [
-              { "id": "guardian_name", "label": "Name of Parent/Guardian", "type": "text", "required": true },
-              { "id": "phone", "label": "Phone Number", "type": "tel", "required": true },
-              { "id": "email", "label": "Email Address", "type": "email" },
-              { "id": "relationship", "label": "Relationship to Youth", "type": "text", "required": true }
+              {
+                "id": "guardian_name",
+                "label": "Name of Parent/Guardian",
+                "type": "text",
+                "required": true
+              },
+              {
+                "id": "phone",
+                "label": "Phone Number",
+                "type": "tel",
+                "required": true
+              },
+              {
+                "id": "email",
+                "label": "Email Address",
+                "type": "email"
+              },
+              {
+                "id": "relationship",
+                "label": "Relationship to Youth",
+                "type": "text",
+                "required": true
+              }
             ]
           }
         ]
@@ -44,9 +95,29 @@
             "id": "school",
             "title": "Current School Details",
             "fields": [
-              { "id": "school_name", "label": "School Name", "type": "text" },
-              { "id": "grade", "label": "Current Grade", "type": "text" },
-              { "id": "school_type", "label": "School Type", "type": "select", "ui": { "options": ["Public", "Private", "Charter", "Home School"] } }
+              {
+                "id": "school_name",
+                "label": "School Name",
+                "type": "text"
+              },
+              {
+                "id": "grade",
+                "label": "Current Grade",
+                "type": "text"
+              },
+              {
+                "id": "school_type",
+                "label": "School Type",
+                "type": "select",
+                "ui": {
+                  "options": [
+                    "Public",
+                    "Private",
+                    "Charter",
+                    "Home School"
+                  ]
+                }
+              }
             ]
           }
         ]
@@ -98,7 +169,15 @@
                   "value": "Elementary School"
                 },
                 "ui": {
-                  "options": ["Pre-K", "K", "1st", "2nd", "3rd", "4th", "5th"]
+                  "options": [
+                    "Pre-K",
+                    "K",
+                    "1st",
+                    "2nd",
+                    "3rd",
+                    "4th",
+                    "5th"
+                  ]
                 }
               },
               {
@@ -111,7 +190,11 @@
                   "value": "Middle School"
                 },
                 "ui": {
-                  "options": ["6th", "7th", "8th"]
+                  "options": [
+                    "6th",
+                    "7th",
+                    "8th"
+                  ]
                 }
               },
               {
@@ -124,7 +207,14 @@
                   "value": "High School"
                 },
                 "ui": {
-                  "options": ["9th", "10th", "11th", "12th", "High School Diploma", "High School Equivalency"]
+                  "options": [
+                    "9th",
+                    "10th",
+                    "11th",
+                    "12th",
+                    "High School Diploma",
+                    "High School Equivalency"
+                  ]
                 }
               },
               {
@@ -137,7 +227,12 @@
                   "value": "Community College"
                 },
                 "ui": {
-                  "options": ["1st Year", "2nd Year", "3rd Year", "Associate’s Degree"]
+                  "options": [
+                    "1st Year",
+                    "2nd Year",
+                    "3rd Year",
+                    "Associate’s Degree"
+                  ]
                 }
               },
               {
@@ -150,7 +245,17 @@
                   "value": "College/University"
                 },
                 "ui": {
-                  "options": ["Freshman", "Sophomore", "Junior", "Senior", "Bachelor’s Degree", "Some Master’s", "Master’s Degree", "Some Doctorate", "Doctorate Degree"]
+                  "options": [
+                    "Freshman",
+                    "Sophomore",
+                    "Junior",
+                    "Senior",
+                    "Bachelor’s Degree",
+                    "Some Master’s",
+                    "Master’s Degree",
+                    "Some Doctorate",
+                    "Doctorate Degree"
+                  ]
                 }
               },
               {
@@ -163,10 +268,12 @@
                   "value": "Other"
                 },
                 "ui": {
-                  "options": ["Foreign Degree", "No Formal Schooling"]
+                  "options": [
+                    "Foreign Degree",
+                    "No Formal Schooling"
+                  ]
                 }
               }
-
             ]
           },
           {
@@ -217,7 +324,12 @@
                   "value": "Full-Time Student"
                 },
                 "ui": {
-                  "options": ["Public", "Charter", "Private", "Other"]
+                  "options": [
+                    "Public",
+                    "Charter",
+                    "Private",
+                    "Other"
+                  ]
                 }
               },
               {
@@ -298,7 +410,10 @@
                 "type": "radio",
                 "required": true,
                 "ui": {
-                  "options": ["Yes", "No"]
+                  "options": [
+                    "Yes",
+                    "No"
+                  ]
                 }
               },
               {
@@ -376,7 +491,6 @@
           }
         ]
       },
-
       {
         "id": "medical_info",
         "title": "Medical & Emergency",
@@ -385,17 +499,37 @@
             "id": "emergency",
             "title": "Emergency Contact",
             "fields": [
-              { "id": "emergency_name", "label": "Emergency Contact Name", "type": "text" },
-              { "id": "emergency_phone", "label": "Emergency Contact Phone", "type": "tel" }
+              {
+                "id": "emergency_name",
+                "label": "Emergency Contact Name",
+                "type": "text"
+              },
+              {
+                "id": "emergency_phone",
+                "label": "Emergency Contact Phone",
+                "type": "tel"
+              }
             ]
           },
           {
             "id": "medical",
             "title": "Medical Info",
             "fields": [
-              { "id": "medical_conditions", "label": "Medical Conditions", "type": "text" },
-              { "id": "medications", "label": "Medications", "type": "text" },
-              { "id": "allergies", "label": "Allergies", "type": "text" }
+              {
+                "id": "medical_conditions",
+                "label": "Medical Conditions",
+                "type": "text"
+              },
+              {
+                "id": "medications",
+                "label": "Medications",
+                "type": "text"
+              },
+              {
+                "id": "allergies",
+                "label": "Allergies",
+                "type": "text"
+              }
             ]
           }
         ]
@@ -408,12 +542,32 @@
             "id": "consent_info",
             "title": "Authorization",
             "fields": [
-              { "id": "media_consent", "label": "Media Release Consent", "type": "checkbox" },
-              { "id": "signature", "label": "Parent/Guardian Signature", "type": "text", "required": true },
-              { "id": "date_signed", "label": "Date Signed", "type": "date", "required": true }
+              {
+                "id": "media_consent",
+                "label": "Media Release Consent",
+                "type": "checkbox"
+              },
+              {
+                "id": "signature",
+                "label": "Parent/Guardian Signature",
+                "type": "text",
+                "required": true
+              },
+              {
+                "id": "date_signed",
+                "label": "Date Signed",
+                "type": "date",
+                "required": true
+              }
             ]
           }
         ]
+      },
+      {
+        "id": "review",
+        "title": "Review & Submit",
+        "type": "review",
+        "sections": []
       }
     ]
   }
