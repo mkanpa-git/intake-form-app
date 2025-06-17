@@ -6,6 +6,11 @@ export default function ReviewStep({ steps = [], stepData = {}, onEdit, onSubmit
       <h2>Review &amp; Submit</h2>
       {steps.map((step, idx) => {
         if (step.type === 'review') return null;
+        const isInfoOnly =
+          Array.isArray(step.sections) &&
+          step.sections.length > 0 &&
+          step.sections.every(sec => sec.type === 'info');
+        if (isInfoOnly) return null;
         const data = stepData[step.id] || {};
         return (
           <div key={step.id} className="review-section">
