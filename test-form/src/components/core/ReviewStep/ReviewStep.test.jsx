@@ -20,3 +20,18 @@ test('calls handlers on edit and submit', async () => {
   await user.click(screen.getByRole('button', { name: /submit application/i }));
   expect(onSubmit).toHaveBeenCalled();
 });
+
+test('skips steps that only contain info sections', () => {
+  const steps = [
+    {
+      id: 'info',
+      title: 'Info Only',
+      sections: [
+        { id: 's1', type: 'info', title: 'Info' }
+      ]
+    },
+    { id: 'review', title: 'Review & Submit', type: 'review' }
+  ];
+  render(<ReviewStep steps={steps} stepData={{}} onEdit={() => {}} onSubmit={() => {}} />);
+  expect(screen.queryByRole('heading', { level: 3, name: /info only/i })).not.toBeInTheDocument();
+});
