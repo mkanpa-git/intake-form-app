@@ -13,6 +13,12 @@ npm run dev
 
 The `dev` script runs both the Express API proxy and the React app so you can access the application at `http://localhost:3000`.
 
+## Form Generation and Rendering
+
+For details on how forms are dynamically generated and best practices for extending the form rendering capabilities, please refer to the [FORM_GENERATION_GUIDELINES.md](FORM_GENERATION_GUIDELINES.md) document.
+
+The primary form configuration, `childcare_form.json`, is dynamically loaded at runtime by the `FormRenderer` component and should be located in `test-form/public/data/childcare_form.json`.
+
 ## Case management UI
 
 The backend exposes a simple case management dashboard that lists submitted applications stored on the server. Start the server and visit `http://localhost:5000/cases` to review applications.
