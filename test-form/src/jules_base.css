@@ -1,0 +1,137 @@
+@import './jules_tokens.css';
+
+/* 1. Basic CSS Resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0; /* Basic reset for margin */
+  padding: 0; /* Basic reset for padding */
+}
+
+/* 2. HTML and Body styles */
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--jules-font-size-base); /* Set base font size for REM calculations */
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: var(--jules-font-family-sans);
+  line-height: var(--jules-line-height-base);
+  color: var(--jules-text-color-body);
+  background-color: var(--jules-neutral-gray-100); /* Page background */
+}
+
+/* 3. Base styles for Headings (h1-h6) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--jules-font-family-sans); /* Explicitly set, though inherited */
+  color: var(--jules-text-color-headings);
+  margin-top: var(--jules-space-lg);
+  margin-bottom: var(--jules-space-md);
+  line-height: var(--jules-line-height-sm); /* Tighter line height for headings */
+}
+
+h1 {
+  font-size: var(--jules-font-size-3xl);
+  font-weight: var(--jules-font-weight-bold);
+}
+
+h2 {
+  font-size: var(--jules-font-size-2xl);
+  font-weight: var(--jules-font-weight-bold);
+}
+
+h3 {
+  font-size: var(--jules-font-size-xl);
+  font-weight: var(--jules-font-weight-semibold);
+}
+
+h4 {
+  font-size: var(--jules-font-size-lg);
+  font-weight: var(--jules-font-weight-semibold);
+}
+
+h5 {
+  font-size: var(--jules-font-size-md);
+  font-weight: var(--jules-font-weight-semibold);
+}
+
+h6 {
+  font-size: var(--jules-font-size-base);
+  font-weight: var(--jules-font-weight-semibold);
+  text-transform: uppercase; /* Often useful for h6 as sub-descriptors */
+  letter-spacing: 0.05em;
+}
+
+/* 4. Base styles for Paragraphs (p) */
+p {
+  margin-bottom: var(--jules-space-md);
+}
+
+/* Ensure last element in a flow content container doesn't add extra margin */
+p:last-child,
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child {
+  margin-bottom: 0;
+}
+
+/* 5. Base styles for Links (a) */
+a {
+  color: var(--jules-text-color-link);
+  text-decoration: none; /* Common practice, ensure focus states are clear */
+  font-weight: var(--jules-font-weight-medium);
+  transition: color var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
+}
+
+a:hover,
+a:focus { /* Combined for visual consistency */
+  color: var(--jules-text-color-link-hover);
+  text-decoration: underline;
+}
+
+/* Accessibility: Ensure focus is visible on links and other interactive elements */
+a:focus-visible {
+  outline: var(--jules-focus-ring);
+  outline-offset: var(--jules-focus-ring-offset);
+  border-radius: var(--jules-border-radius-sm); /* Optional: to make outline match element shape */
+}
+
+/* Other base elements */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
+}
+
+hr {
+  border: 0;
+  border-top: var(--jules-border-width-sm) solid var(--jules-border-color);
+  margin-top: var(--jules-space-xl);
+  margin-bottom: var(--jules-space-xl);
+}
+
+fieldset {
+  border: 0; /* Reset fieldset borders by default, can be added back by components */
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  font-weight: var(--jules-font-weight-semibold);
+  margin-bottom: var(--jules-space-md);
+  color: var(--jules-text-color-headings);
+}

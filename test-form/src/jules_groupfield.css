@@ -1,0 +1,126 @@
+@import './jules_tokens.css';
+
+.jules-groupfield-container {
+  margin-bottom: var(--jules-space-lg);
+  padding: var(--jules-space-lg);
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-lg);
+  background-color: var(--jules-neutral-gray-50); /* Light background for the group container */
+}
+
+.jules-groupfield-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--jules-space-md);
+}
+
+.jules-groupfield-title {
+  font-size: var(--jules-font-size-lg);
+  font-weight: var(--jules-font-weight-semibold);
+  color: var(--jules-text-color-headings);
+}
+
+/* Table for displaying entries */
+.jules-groupfield-table {
+  width: 100%;
+  border-collapse: collapse; /* Clean borders */
+  margin-bottom: var(--jules-space-md);
+  background-color: var(--jules-neutral-white); /* Table itself on white */
+  box-shadow: var(--jules-shadow-sm);
+  border-radius: var(--jules-border-radius-md);
+  overflow: hidden; /* To respect border-radius on th/td */
+}
+
+.jules-groupfield-table th,
+.jules-groupfield-table td {
+  padding: var(--jules-space-sm) var(--jules-space-md);
+  text-align: left;
+  border-bottom: var(--jules-border-width-sm) solid var(--jules-border-color);
+  vertical-align: middle; /* Align content nicely in cells */
+}
+
+.jules-groupfield-table th {
+  background-color: var(--jules-neutral-gray-100); /* Header background */
+  color: var(--jules-text-color-headings);
+  font-weight: var(--jules-font-weight-semibold);
+  font-size: var(--jules-font-size-sm); /* Slightly smaller for table headers */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.jules-groupfield-table tr:last-child td {
+  border-bottom: none; /* No border for the last row */
+}
+
+.jules-groupfield-table tr:hover td {
+  background-color: var(--jules-neutral-gray-50); /* Hover effect for rows */
+}
+
+/* Alternating row colors (optional) */
+.jules-groupfield-table tr:nth-child(even) td {
+  /* background-color: var(--jules-neutral-gray-50); */ /* Subtle striping */
+}
+.jules-groupfield-table tr:nth-child(even):hover td {
+  /* background-color: var(--jules-neutral-gray-100); */
+}
+
+
+.jules-groupfield-actions { /* Container for Edit/Delete buttons in a cell */
+  display: flex;
+  gap: var(--jules-space-sm);
+}
+
+/* Buttons within the table (assuming .jules-button classes will be used) */
+.jules-groupfield-actions .jules-button-icon { /* For small icon-only buttons */
+  padding: var(--jules-space-xs); /* Smaller padding for icon buttons */
+  /* Define specific styles for icon buttons if not covered by jules_button.css */
+}
+.jules-groupfield-actions .jules-button-icon svg {
+  width: var(--jules-font-size-md);
+  height: var(--jules-font-size-md);
+}
+
+
+/* "Add New" button styling (assuming .jules-button-primary will be used) */
+.jules-groupfield-add-button {
+  /* This class might be applied to a <button> that uses .jules-button styles */
+  /* e.g., <button class="jules-button jules-button-primary jules-groupfield-add-button">Add</button> */
+}
+
+/* Form for adding/editing entries (often in a modal or inline) */
+.jules-groupfield-form {
+  background-color: var(--jules-neutral-white);
+  padding: var(--jules-space-lg);
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-md);
+  box-shadow: var(--jules-shadow-md);
+  margin-top: var(--jules-space-md); /* If shown inline after the table */
+}
+
+.jules-groupfield-form .jules-form-field {
+  /* Ensure form fields within this form use styles from jules_input.css */
+  /* Spacing might be adjusted if the form is compact */
+  margin-bottom: var(--jules-space-md);
+}
+
+.jules-groupfield-form-actions {
+  display: flex;
+  gap: var(--jules-space-md);
+  margin-top: var(--jules-space-lg);
+  justify-content: flex-end; /* Align Save/Cancel buttons to the right */
+}
+
+/* Empty state for the table */
+.jules-groupfield-empty {
+  padding: var(--jules-space-xl);
+  text-align: center;
+  color: var(--jules-text-color-muted);
+  background-color: var(--jules-neutral-white);
+  border-radius: var(--jules-border-radius-md);
+}
+
+.jules-groupfield-empty-text {
+  margin-bottom: var(--jules-space-md);
+  font-size: var(--jules-font-size-md);
+}

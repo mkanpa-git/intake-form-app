@@ -1,0 +1,162 @@
+@import './jules_tokens.css';
+
+/* Apply to the root element where React mounts, or a primary page container */
+#root, .page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure it takes at least full viewport height */
+  background-color: var(--jules-neutral-gray-100); /* Default page background */
+}
+
+.form-header {
+  background-color: var(--jules-neutral-white);
+  padding: var(--jules-space-md) var(--jules-space-lg);
+  border-bottom: var(--jules-border-width-sm) solid var(--jules-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky; /* Optional: make header sticky */
+  top: 0;
+  z-index: 100; /* Ensure it's above other content if sticky */
+}
+
+.form-header .brand { /* Assuming .brand is the class for the title/logo area */
+  font-size: var(--jules-font-size-xl);
+  font-weight: var(--jules-font-weight-semibold);
+  color: var(--jules-text-color-headings);
+  text-decoration: none;
+}
+
+.form-header nav a { /* Example: if there are nav links in the header */
+  color: var(--jules-text-color-link);
+  text-decoration: none;
+  margin-left: var(--jules-space-lg);
+  font-weight: var(--jules-font-weight-medium);
+}
+
+.form-header nav a:hover,
+.form-header nav a:focus {
+  color: var(--jules-text-color-link-hover);
+  text-decoration: underline;
+}
+
+/* Assuming .hamburger is for mobile navigation */
+.hamburger {
+  /* Basic styling, actual icon might be an SVG or font icon */
+  padding: var(--jules-space-sm);
+  display: none; /* Typically hidden on larger screens */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger .icon-bar { /* If using a common triple-bar icon pattern */
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--jules-text-color-headings); /* Use a prominent color */
+  margin: 4px 0;
+  transition: background-color var(--jules-transition-duration-fast);
+}
+
+.hamburger:hover .icon-bar {
+  background-color: var(--jules-primary-blue-500);
+}
+
+
+.form-main {
+  flex: 1; /* Allows this area to grow and take available space */
+  overflow-y: auto; /* Scroll content if it overflows */
+  padding: var(--jules-space-xl); /* Generous padding for content area */
+  background-color: var(--jules-neutral-white); /* If page background is gray, content on white */
+  /* In some layouts, form-main might be the gray area, and cards/sections inside are white */
+}
+
+.form-footer {
+  background-color: var(--jules-neutral-white);
+  padding: var(--jules-space-md) var(--jules-space-lg);
+  border-top: var(--jules-border-width-sm) solid var(--jules-border-color);
+  text-align: center;
+  font-size: var(--jules-font-size-sm);
+  color: var(--jules-text-color-muted);
+}
+
+.form-footer a {
+  color: var(--jules-text-color-link);
+  font-weight: var(--jules-font-weight-medium);
+}
+
+.form-footer a:hover,
+.form-footer a:focus {
+  color: var(--jules-text-color-link-hover);
+  text-decoration: underline;
+}
+
+/* Wizard Layouts - adjust as needed based on their specific structure */
+.wizard-layout-row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--jules-space-xl); /* Spacing between stepper and content */
+  /* background-color: var(--jules-neutral-gray-50); /* Optional: if form-main is white */
+}
+
+.wizard-layout-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jules-space-lg); /* Spacing between stepper (if on top) and content */
+}
+
+/* Example: If stepper has its own container within wizard layouts */
+.wizard-layout-row > .stepper-container { /* Assuming a class for stepper */
+  flex: 0 0 250px; /* Adjust width as needed */
+  /* Styling for the stepper container itself */
+}
+
+.wizard-layout-row > .form-content-area { /* Assuming a class for the main form part */
+  flex: 1;
+  /* Styling for the content area */
+}
+
+.wizard-layout-column > .stepper-container {
+  /* Styling for horizontal stepper container */
+}
+
+.wizard-layout-column > .form-content-area {
+  /* Styling for content area below horizontal stepper */
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .form-header {
+    padding: var(--jules-space-sm) var(--jules-space-md);
+  }
+
+  .form-header .brand {
+    font-size: var(--jules-font-size-lg); /* Slightly smaller on mobile */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger on smaller screens */
+  }
+
+  .form-header nav { /* Assuming nav is hidden by default and shown via JS with hamburger */
+    display: none;
+    /* Add styles for mobile menu if it's part of form-header */
+  }
+
+  .form-main {
+    padding: var(--jules-space-lg); /* Adjust padding for smaller screens */
+  }
+
+  .wizard-layout-row {
+    flex-direction: column; /* Stack elements vertically on mobile */
+    gap: var(--jules-space-lg);
+  }
+
+  .wizard-layout-row > .stepper-container {
+    flex-basis: auto; /* Reset basis */
+    width: 100%;
+    /* Adjust stepper for vertical stacking / mobile view */
+  }
+}

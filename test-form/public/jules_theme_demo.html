@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jules Theme Demo</title>
+    <link rel="stylesheet" href="../src/jules_tokens.css">
+    <link rel="stylesheet" href="../src/jules_base.css">
+    <link rel="stylesheet" href="../src/jules_layout.css">
+    <link rel="stylesheet" href="../src/jules_button.css">
+    <link rel="stylesheet" href="../src/jules_input.css">
+    <link rel="stylesheet" href="../src/jules_stepper.css">
+    <link rel="stylesheet" href="../src/jules_section.css">
+    <link rel="stylesheet" href="../src/jules_groupfield.css">
+    <link rel="stylesheet" href="../src/jules_tablelayout.css">
+    <link rel="stylesheet" href="../src/jules_misc.css">
+    <!-- Removed temporary style block -->
+</head>
+<body>
+    <header class="form-header">
+        <div class="header-left">
+            <button class="hamburger" aria-label="Open menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="brand">MyCity Services - Jules Theme Demo</div>
+        </div>
+        <nav class="right"> <!-- Assuming 'right' class or similar for nav container -->
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+        </nav>
+    </header>
+
+    <main class="form-main">
+        <h1>Jules Theme Component Showcase</h1>
+        <p>This page demonstrates the various UI components styled with the 'jules_' theme.</p>
+
+        <!-- Component sections will be added here -->
+
+    <div class="component-section" id="demo-typography">
+        <h2>Typography Showcase</h2>
+        <h1>Heading 1 Example (Jules Theme)</h1>
+        <h2>Heading 2 Example (Jules Theme)</h2>
+        <h3>Heading 3 Example (Jules Theme)</h3>
+        <h4>Heading 4 Example (Jules Theme)</h4>
+        <h5>Heading 5 Example (Jules Theme)</h5>
+        <h6>Heading 6 Example (Jules Theme)</h6>
+        <p>This is a paragraph of body text using <strong>strong emphasis</strong> and <em>italic emphasis</em>. It includes a <a href="#">standard link</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class="jules-text-muted">This is muted text, often used for less important information or hints.</p>
+    </div>
+
+    <div class="component-section" id="demo-buttons">
+        <h2>Buttons Showcase</h2>
+        <p>
+            <button class="jules-button jules-button-primary">Primary Button</button>
+            <button class="jules-button jules-button-secondary">Secondary Button</button>
+            <button class="jules-button jules-button-tertiary">Tertiary Button</button>
+            <button class="jules-button jules-button-destructive">Destructive</button>
+        </p>
+        <p>
+            <button class="jules-button jules-button-primary" disabled>Primary Disabled</button>
+            <button class="jules-button jules-button-secondary" disabled>Secondary Disabled</button>
+            <button class="jules-button jules-button-tertiary" disabled>Tertiary Disabled</button>
+            <button class="jules-button jules-button-destructive" disabled>Destructive Disabled</button>
+        </p>
+        <p>
+            <button class="jules-button jules-button-primary jules-button-small">Small Primary</button>
+            <button class="jules-button jules-button-secondary jules-button-large">Large Secondary</button>
+        </p>
+        <p>
+             <button class="jules-button jules-button-primary jules-button-full-width">Full Width Primary Button</button>
+        </p>
+    </div>
+
+    <div class="component-section" id="demo-inputs">
+        <h2>Form Inputs Showcase</h2>
+
+        <div>
+            <label for="demo-text-input" class="jules-label">Text Input <span class="jules-required-asterisk">*</span></label>
+            <input type="text" id="demo-text-input" class="jules-input" placeholder="Enter your name">
+            <p class="jules-input-hint">This is a hint for the text input.</p>
+        </div>
+        <br>
+        <div>
+            <label for="demo-text-input-error" class="jules-label">Text Input (Error)</label>
+            <input type="text" id="demo-text-input-error" class="jules-input jules-input-error" value="Invalid entry">
+            <div class="jules-alert jules-alert-error" style="margin-top: 4px;">This field has an error.</div>
+        </div>
+        <br>
+        <div>
+            <label for="demo-select" class="jules-label">Select Field</label>
+            <select id="demo-select" class="jules-input">
+                <option value="">Choose an option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+            </select>
+        </div>
+        <br>
+        <fieldset class="jules-fieldset">
+            <legend class="jules-legend">Radio Group</legend>
+            <div class="jules-radio-group">
+                <div class="jules-radio-option">
+                    <input type="radio" id="radio1" name="demo-radio" class="jules-radio-input" value="1" checked>
+                    <span class="jules-radio-custom"></span>
+                    <label for="radio1" class="jules-radio-label-text">Radio Option 1</label>
+                </div>
+                <div class="jules-radio-option">
+                    <input type="radio" id="radio2" name="demo-radio" class="jules-radio-input" value="2">
+                    <span class="jules-radio-custom"></span>
+                    <label for="radio2" class="jules-radio-label-text">Radio Option 2</label>
+                </div>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset class="jules-fieldset">
+            <legend class="jules-legend">Checkbox Group</legend>
+            <div class="jules-checkbox-group">
+                <div class="jules-checkbox-option">
+                    <input type="checkbox" id="check1" name="demo-check1" class="jules-checkbox-input" value="1" checked>
+                    <span class="jules-checkbox-custom"></span>
+                    <label for="check1" class="jules-checkbox-label-text">Checkbox Option 1</label>
+                </div>
+                <div class="jules-checkbox-option">
+                    <input type="checkbox" id="check2" name="demo-check2" class="jules-checkbox-input" value="2">
+                    <span class="jules-checkbox-custom"></span>
+                    <label for="check2" class="jules-checkbox-label-text">Checkbox Option 2</label>
+                </div>
+            </div>
+        </fieldset>
+        <br>
+        <div>
+            <label for="demo-file-input" class="jules-label">File Input</label>
+            <div class="jules-file-input-wrapper">
+                 <input type="file" id="demo-file-input" class="jules-file-input">
+                 <button class="jules-button jules-button-secondary jules-file-button">Choose File</button>
+                 <span class="jules-file-chosen-text">No file chosen</span>
+            </div>
+        </div>
+        <br>
+        <div>
+            <label for="demo-textarea" class="jules-label">Textarea</label>
+            <textarea id="demo-textarea" class="jules-input" rows="3" placeholder="Enter details here..."></textarea>
+        </div>
+    </div>
+
+    <div class="component-section" id="demo-sections">
+        <h2>Sections Showcase</h2>
+        <div class="jules-section">
+            <div class="jules-section-header">
+                <span>Collapsible Section Title</span>
+                <span class="jules-section-toggle-icon">▼</span>
+            </div>
+            <div class="jules-section-content">
+                <p>This is the content of a collapsible section. It can contain any type of information or further form fields.</p>
+            </div>
+        </div>
+        <br>
+        <div class="jules-section jules-info-section">
+            <div class="jules-section-header">
+                <span>Informational Section</span>
+            </div>
+            <div class="jules-section-content">
+                <p>This is an informational section. It might use markdown for rich text formatting if supported by the renderer.</p>
+                <ul><li>Point 1</li><li>Point 2</li></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="component-section" id="demo-stepper">
+        <h2>Stepper Showcase (Simplified)</h2>
+        <ul class="jules-stepper jules-stepper-horizontal">
+            <li class="jules-stepper-item jules-stepper-item-completed">
+                <div class="jules-stepper-item-content">
+                    <span class="jules-stepper-icon">✓</span>
+                    <span class="jules-stepper-label">Step 1: Completed</span>
+                </div>
+            </li>
+            <li class="jules-stepper-item jules-stepper-item-active">
+                <div class="jules-stepper-item-content">
+                    <span class="jules-stepper-icon">▶</span>
+                    <span class="jules-stepper-label">Step 2: Active Step</span>
+                </div>
+            </li>
+            <li class="jules-stepper-item jules-stepper-item-inactive">
+                <div class="jules-stepper-item-content">
+                    <span class="jules-stepper-number">3</span> <!-- Or an icon if preferred for inactive -->
+                    <span class="jules-stepper-label">Step 3: Future Step</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="component-section" id="demo-groupfield">
+        <h2>GroupField Showcase</h2>
+        <div class="jules-groupfield">
+            <h4>Children Details</h4>
+            <table class="jules-groupfield-table">
+                <thead>
+                    <tr><th>Name</th><th>Age</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Alice</td><td>5</td><td><button class="jules-button jules-button-tertiary jules-button-small">Edit</button> <button class="jules-button jules-button-destructive jules-button-small">Delete</button></td></tr>
+                    <tr><td>Bob</td><td>7</td><td><button class="jules-button jules-button-tertiary jules-button-small">Edit</button> <button class="jules-button jules-button-destructive jules-button-small">Delete</button></td></tr>
+                </tbody>
+            </table>
+            <button class="jules-button jules-button-secondary" style="margin-top: 10px;">Add Child</button>
+        </div>
+    </div>
+
+    <div class="component-section" id="demo-tablelayout">
+        <h2>TableLayout Showcase</h2>
+        <div class="jules-tablelayout">
+            <div class="jules-table-copy-controls" style="margin-bottom:10px;">
+                 <label class="jules-label" for="copy-day">Copy schedule from:</label>
+                 <select id="copy-day" class="jules-input" style="width: auto; display: inline-block; margin-right: 10px;">
+                     <option value="">Select day</option>
+                     <option value="mon">Monday</option>
+                 </select>
+                 <button class="jules-button jules-button-secondary jules-button-small">Apply to Weekdays</button>
+            </div>
+            <table class="jules-tablelayout-table">
+                <thead>
+                    <tr><th>Day</th><th>Start Time</th><th>End Time</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td><input type="time" class="jules-input" value="09:00"></td>
+                        <td><input type="time" class="jules-input" value="17:00"></td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td><input type="time" class="jules-input"></td>
+                        <td><input type="time" class="jules-input"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="component-section" id="demo-misc">
+        <h2>Miscellaneous Components Showcase</h2>
+        <p>
+            This text includes a
+            <span class="jules-tooltip-wrapper">
+                <span class="jules-tooltip-icon" tabindex="0">ℹ️</span>
+                <span class="jules-tooltip-text">This is a helpful tooltip!</span>
+            </span>
+             tooltip example. (Hover or focus the icon)
+        </p>
+        <br>
+        <button class="jules-button" id="openModalBtn">Open Modal</button>
+        <div class="jules-modal-backdrop" id="demoModalBackdrop" style="display: none;">
+            <div class="jules-modal-content">
+                <div class="jules-modal-header">
+                    <h3 class="jules-modal-title">Modal Title</h3>
+                    <button class="jules-modal-close-button" id="closeModalBtn">&times;</button>
+                </div>
+                <div class="jules-modal-body">
+                    <p>This is the content of the modal. It can contain forms, information, or actions.</p>
+                </div>
+                <div class="jules-modal-footer">
+                    <button class="jules-button jules-button-secondary" id="cancelModalBtn">Cancel</button>
+                    <button class="jules-button jules-button-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="jules-alert jules-alert-info">
+            <strong class="jules-alert-title">Info:</strong> This is an informational message.
+        </div>
+        <div class="jules-alert jules-alert-success">
+            <strong class="jules-alert-title">Success:</strong> Your action was successful.
+        </div>
+        <div class="jules-alert jules-alert-warning">
+            <strong class="jules-alert-title">Warning:</strong> Please check something.
+        </div>
+        <div class="jules-alert jules-alert-error">
+            <strong class="jules-alert-title">Error:</strong> An error occurred.
+        </div>
+    </div>
+
+    </main>
+
+    <footer class="form-footer">
+        <p>&copy; 2024 MyCity. All rights reserved. (Jules Theme Demo)</p>
+        <div class="footer-links"> <!-- Added a wrapper for footer links -->
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for basic interactivity will be added later -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal JS
+            const openModalBtn = document.getElementById('openModalBtn');
+            const demoModalBackdrop = document.getElementById('demoModalBackdrop');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const cancelModalBtn = document.getElementById('cancelModalBtn');
+
+            if (openModalBtn && demoModalBackdrop) {
+                openModalBtn.addEventListener('click', function() {
+                    demoModalBackdrop.classList.add('jules-modal-open');
+                });
+            }
+
+            function closeModal() {
+                if (demoModalBackdrop) {
+                    demoModalBackdrop.classList.remove('jules-modal-open');
+                }
+            }
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', closeModal);
+            }
+            if (cancelModalBtn) {
+                cancelModalBtn.addEventListener('click', closeModal);
+            }
+            if (demoModalBackdrop) {
+                demoModalBackdrop.addEventListener('click', function(event) {
+                    if (event.target === demoModalBackdrop) {
+                        closeModal();
+                    }
+                });
+            }
+
+            // Collapsible Section JS
+            const collapsibleSectionHeaders = document.querySelectorAll('.jules-section .jules-section-header');
+            collapsibleSectionHeaders.forEach(header => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.jules-section-toggle-icon');
+
+                // Ensure this header is for a collapsible section (e.g., it has an icon)
+                if (icon && content && content.classList.contains('jules-section-content')) {
+                    header.addEventListener('click', function() {
+                        content.classList.toggle('jules-section-content-collapsed');
+                        header.classList.toggle('jules-section-collapsed'); // For styling header if needed
+
+                        if (content.classList.contains('jules-section-content-collapsed')) {
+                            icon.textContent = '▶'; // Or update class for CSS-driven icon change
+                        } else {
+                            icon.textContent = '▼'; // Or update class
+                        }
+                    });
+
+                    // Initialize icon based on initial state (if jules-section-content-collapsed is present on load)
+                    if (content.classList.contains('jules-section-content-collapsed')) {
+                        icon.textContent = '▶';
+                         header.classList.add('jules-section-collapsed');
+                    } else {
+                        icon.textContent = '▼';
+                        header.classList.remove('jules-section-collapsed');
+                    }
+                }
+            });
+
+            // Tooltip JS (for focus/blur to toggle visibility class)
+            // CSS should primarily handle hover. This adds keyboard focus support.
+            const tooltipWrappers = document.querySelectorAll('.jules-tooltip-wrapper');
+            tooltipWrappers.forEach(wrapper => {
+                const icon = wrapper.querySelector('.jules-tooltip-icon');
+                const tooltipText = wrapper.querySelector('.jules-tooltip-text');
+
+                if (icon && tooltipText) {
+                    icon.addEventListener('focus', () => {
+                        tooltipText.classList.add('jules-tooltip-visible');
+                    });
+                    icon.addEventListener('blur', () => {
+                        tooltipText.classList.remove('jules-tooltip-visible');
+                    });
+                     // For mouse users, ensure hover on icon also shows it if not purely CSS
+                    icon.addEventListener('mouseenter', () => {
+                        tooltipText.classList.add('jules-tooltip-visible');
+                    });
+                    icon.addEventListener('mouseleave', () => {
+                         // Only hide if not focused, to avoid flicker when tabbing away then back
+                        if (document.activeElement !== icon) {
+                           tooltipText.classList.remove('jules-tooltip-visible');
+                        }
+                    });
+                }
+            });
+
+            // Hamburger Menu Toggle (Basic Example)
+            const hamburgerBtn = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('header .right'); // Assumes this is the nav menu
+            if (hamburgerBtn && navMenu) {
+                hamburgerBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('open'); // Add/remove 'open' class on nav menu
+                });
+            }
+        });
+    </script>
+</body>
+</html>

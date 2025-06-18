@@ -1,0 +1,235 @@
+@import './jules_tokens.css';
+
+/* Main stepper container */
+.jules-stepper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Stepper item general styles */
+.jules-stepper-item {
+  padding: var(--jules-space-md);
+  margin-bottom: var(--jules-space-xs); /* Vertical spacing between items */
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-md);
+  cursor: pointer;
+  transition: background-color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
+              border-color var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
+  display: flex;
+  align-items: center;
+}
+
+.jules-stepper-item:hover {
+  border-color: var(--jules-primary-blue-300);
+  background-color: var(--jules-neutral-gray-50);
+}
+
+/* Stepper item content (number/icon + text) */
+.jules-stepper-item-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.jules-stepper-number,
+.jules-stepper-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--jules-space-xl); /* 32px */
+  height: var(--jules-space-xl); /* 32px */
+  border-radius: var(--jules-border-radius-round);
+  margin-right: var(--jules-space-md);
+  font-weight: var(--jules-font-weight-semibold);
+  font-size: var(--jules-font-size-md);
+  transition: background-color var(--jules-transition-duration-fast), color var(--jules-transition-duration-fast);
+}
+
+.jules-stepper-label {
+  font-weight: var(--jules-font-weight-medium);
+  color: var(--jules-text-color-body);
+  flex-grow: 1;
+}
+
+/* Active step style */
+.jules-stepper-item.jules-stepper-item-active {
+  background-color: var(--jules-primary-blue-50);
+  border-color: var(--jules-primary-blue-500);
+  cursor: default;
+}
+
+.jules-stepper-item.jules-stepper-item-active .jules-stepper-number,
+.jules-stepper-item.jules-stepper-item-active .jules-stepper-icon {
+  background-color: var(--jules-primary-blue-500);
+  color: var(--jules-text-color-on-primary);
+}
+
+.jules-stepper-item.jules-stepper-item-active .jules-stepper-label {
+  color: var(--jules-primary-blue-700); /* Darker shade for active label */
+  font-weight: var(--jules-font-weight-bold);
+}
+
+/* Completed step style */
+.jules-stepper-item.jules-stepper-item-completed {
+  border-color: var(--jules-success-green-500); /* Subtle border indication */
+}
+
+.jules-stepper-item.jules-stepper-item-completed:hover {
+  background-color: var(--jules-neutral-gray-50); /* Keep hover consistent */
+  border-color: var(--jules-success-green-500);
+}
+
+.jules-stepper-item.jules-stepper-item-completed .jules-stepper-icon {
+  background-color: var(--jules-success-green-500);
+  color: var(--jules-text-color-on-primary);
+  /* Assuming an SVG or font icon for the checkmark */
+}
+
+.jules-stepper-item.jules-stepper-item-completed .jules-stepper-icon svg {
+  width: var(--jules-font-size-lg);
+  height: var(--jules-font-size-lg);
+}
+
+.jules-stepper-item.jules-stepper-item-completed .jules-stepper-label {
+  color: var(--jules-text-color-body); /* Standard text color for completed steps */
+}
+
+/* Inactive/future step style */
+.jules-stepper-item.jules-stepper-item-inactive {
+  background-color: var(--jules-neutral-white);
+  border-color: var(--jules-border-color);
+}
+
+.jules-stepper-item.jules-stepper-item-inactive .jules-stepper-number,
+.jules-stepper-item.jules-stepper-item-inactive .jules-stepper-icon {
+  background-color: var(--jules-neutral-gray-200);
+  color: var(--jules-text-color-muted);
+}
+
+.jules-stepper-item.jules-stepper-item-inactive .jules-stepper-label {
+  color: var(--jules-text-color-muted);
+}
+
+.jules-stepper-item.jules-stepper-item-disabled { /* For non-navigable steps */
+  background-color: var(--jules-neutral-gray-50);
+  border-color: var(--jules-neutral-gray-200);
+  cursor: not-allowed;
+}
+
+.jules-stepper-item.jules-stepper-item-disabled:hover {
+  background-color: var(--jules-neutral-gray-50);
+  border-color: var(--jules-neutral-gray-200);
+}
+
+.jules-stepper-item.jules-stepper-item-disabled .jules-stepper-number,
+.jules-stepper-item.jules-stepper-item-disabled .jules-stepper-icon {
+  background-color: var(--jules-neutral-gray-200);
+  color: var(--jules-neutral-gray-400); /* Even more muted */
+}
+
+.jules-stepper-item.jules-stepper-item-disabled .jules-stepper-label {
+  color: var(--jules-neutral-gray-400);
+}
+
+
+/* Horizontal Stepper Specifics */
+.jules-stepper-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /* Or space-between */
+  border-bottom: var(--jules-border-width-md) solid var(--jules-border-color);
+  padding-bottom: var(--jules-space-md);
+}
+
+.jules-stepper-horizontal .jules-stepper-item {
+  flex: 1;
+  margin-bottom: 0;
+  margin-right: var(--jules-space-sm); /* Spacing between horizontal items */
+  border: none; /* Remove individual borders for horizontal items usually */
+  border-bottom: var(--jules-border-width-lg) solid transparent; /* Active indicator line */
+  border-radius: 0; /* Horizontal items usually don't have border-radius */
+  padding: var(--jules-space-sm) var(--jules-space-xs); /* Adjust padding */
+  text-align: center;
+  position: relative; /* For the connector line */
+}
+
+.jules-stepper-horizontal .jules-stepper-item:last-child {
+  margin-right: 0;
+}
+
+.jules-stepper-horizontal .jules-stepper-item-content {
+  flex-direction: column; /* Stack icon/number and label vertically */
+  align-items: center;
+}
+
+.jules-stepper-horizontal .jules-stepper-number,
+.jules-stepper-horizontal .jules-stepper-icon {
+  margin-right: 0;
+  margin-bottom: var(--jules-space-xs);
+}
+
+.jules-stepper-horizontal .jules-stepper-item.jules-stepper-item-active {
+  background-color: transparent; /* No background fill for active horizontal items */
+  border-color: var(--jules-primary-blue-500); /* Active line color */
+}
+
+/* Connector line for horizontal stepper (pseudo-element on item or a separate div) */
+.jules-stepper-horizontal .jules-stepper-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--jules-space-xl) / 2); /* Align with center of icon/number */
+  left: calc(50% + var(--jules-space-lg)); /* Start after the item content */
+  width: calc(100% - var(--jules-space-xl) - var(--jules-space-sm)); /* Stretch to next item, adjust based on padding/margins */
+  height: 2px;
+  background-color: var(--jules-border-color);
+  z-index: -1; /* Behind the item content */
+}
+
+.jules-stepper-horizontal .jules-stepper-item.jules-stepper-item-completed::after {
+  background-color: var(--jules-success-green-500);
+}
+
+
+/* Required Documents Section (if part of stepper) */
+.jules-stepper-required-docs {
+  margin-top: var(--jules-space-lg);
+  padding: var(--jules-space-md);
+  background-color: var(--jules-neutral-gray-50);
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-md);
+}
+
+.jules-stepper-required-docs h4 { /* Assuming a heading for this section */
+  margin-top: 0;
+  margin-bottom: var(--jules-space-sm);
+  font-size: var(--jules-font-size-md);
+  color: var(--jules-text-color-headings);
+}
+
+.jules-stepper-required-docs ul {
+  list-style: disc;
+  margin-left: var(--jules-space-md);
+  padding-left: var(--jules-space-sm);
+  color: var(--jules-text-color-body);
+}
+
+.jules-stepper-required-docs ul li {
+  margin-bottom: var(--jules-space-xs);
+  font-size: var(--jules-font-size-sm);
+}
+
+/* Vertical stepper (default if no horizontal class) */
+.jules-stepper-vertical .jules-stepper-item {
+  /* Default styles are already for vertical */
+}
+
+/* Ensure original classes are also covered if they are still in use */
+.stepper-vertical { /* Existing class */
+  composes: jules-stepper jules-stepper-vertical; /* If CSS modules or similar preprocessor is used */
+  /* Otherwise, copy styles or use both classes in HTML */
+}
+
+.stepper-horizontal { /* Existing class */
+  composes: jules-stepper jules-stepper-horizontal;
+}

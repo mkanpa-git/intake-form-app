@@ -1,0 +1,117 @@
+@import './jules_tokens.css';
+
+.jules-tablelayout-container {
+  margin-bottom: var(--jules-space-lg);
+  /* No default border/background, table itself will have it */
+}
+
+.jules-tablelayout-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-lg); /* Rounded corners for the table */
+  overflow: hidden; /* Important for border-radius to apply to th/td */
+  background-color: var(--jules-neutral-white);
+  box-shadow: var(--jules-shadow-sm);
+}
+
+.jules-tablelayout-table th,
+.jules-tablelayout-table td {
+  padding: var(--jules-space-sm) var(--jules-space-md);
+  border-bottom: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-right: var(--jules-border-width-sm) solid var(--jules-border-color);
+  text-align: left;
+  vertical-align: middle; /* Default vertical alignment */
+  font-size: var(--jules-font-size-md);
+}
+
+.jules-tablelayout-table th:last-child,
+.jules-tablelayout-table td:last-child {
+  border-right: none; /* No right border for the last cell in a row */
+}
+
+.jules-tablelayout-table tr:last-child td {
+  border-bottom: none; /* No bottom border for the last row */
+}
+
+.jules-tablelayout-table thead th {
+  background-color: var(--jules-neutral-gray-100); /* Header row background */
+  color: var(--jules-text-color-headings);
+  font-weight: var(--jules-font-weight-semibold);
+  font-size: var(--jules-font-size-sm); /* Table headers can be slightly smaller */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  vertical-align: bottom; /* Align headers to the bottom for consistency */
+}
+
+/* Row hover effect */
+.jules-tablelayout-table tbody tr:hover td {
+  background-color: var(--jules-neutral-gray-50);
+}
+
+/* Input fields within table cells */
+.jules-tablelayout-table .jules-input,
+.jules-tablelayout-table .jules-select select,
+.jules-tablelayout-table .jules-textarea textarea {
+  /* Override some defaults from jules_input.css for table context if needed */
+  font-size: var(--jules-font-size-sm); /* Smaller font for inputs in tables */
+  padding: var(--jules-space-xs) var(--jules-space-sm); /* Tighter padding */
+  /* margin-bottom: 0; Remove bottom margin if .jules-form-field is used inside */
+  box-shadow: none; /* Remove default shadow for inputs in tables, looks cleaner */
+  border-radius: var(--jules-border-radius-sm); /* Smaller radius */
+}
+
+.jules-tablelayout-table .jules-form-field {
+  margin-bottom: 0; /* Remove margin from wrapper if used in cell */
+}
+
+/* Custom styling for cells that might contain specific types of data or controls */
+.jules-tablelayout-table td.jules-cell-center {
+  text-align: center;
+}
+
+.jules-tablelayout-table td.jules-cell-actions {
+  /* For cells that only contain action buttons */
+  text-align: right; /* Or center */
+}
+
+/* Row Group Headers (if applicable, e.g., "Monday", "Tuesday" as a th for a row) */
+.jules-tablelayout-table th.jules-row-group-header {
+  background-color: var(--jules-neutral-gray-200); /* Slightly different from column headers */
+  text-align: left;
+  font-weight: var(--jules-font-weight-semibold);
+  font-size: var(--jules-font-size-md);
+  text-transform: none; /* No uppercase for row group headers */
+  letter-spacing: normal;
+}
+
+/* Copy Controls Section */
+.jules-table-copy-controls {
+  margin-top: var(--jules-space-md);
+  padding: var(--jules-space-md);
+  background-color: var(--jules-neutral-gray-50);
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-md);
+  display: flex;
+  align-items: center;
+  gap: var(--jules-space-md);
+}
+
+.jules-table-copy-controls .jules-label {
+  margin-bottom: 0; /* Remove bottom margin for labels in this compact layout */
+  font-size: var(--jules-font-size-sm);
+}
+
+.jules-table-copy-controls .jules-select select {
+  /* Assuming .jules-select is used for the dropdown */
+  min-width: 150px; /* Give dropdown some width */
+  font-size: var(--jules-font-size-sm);
+  padding-top: var(--jules-space-xs);
+  padding-bottom: var(--jules-space-xs);
+}
+
+.jules-table-copy-controls .jules-button {
+  /* Assuming .jules-button is used */
+  padding: var(--jules-space-xs) var(--jules-space-sm); /* Smaller button for this context */
+  font-size: var(--jules-font-size-sm);
+}

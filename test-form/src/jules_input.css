@@ -1,0 +1,363 @@
+@import './jules_tokens.css';
+
+/* General container for a form field (label, input, hint, error) */
+.jules-form-field {
+  margin-bottom: var(--jules-space-lg); /* Space between form fields */
+}
+
+/* --- Labels --- */
+.jules-label {
+  display: block;
+  margin-bottom: var(--jules-space-xs);
+  color: var(--jules-text-color-body);
+  font-weight: var(--jules-font-weight-semibold); /* Slightly bolder for emphasis */
+  font-size: var(--jules-font-size-md); /* Standard label size */
+}
+
+.jules-required-asterisk {
+  color: var(--jules-error-red-500);
+  margin-left: var(--jules-space-xxs);
+  font-weight: var(--jules-font-weight-bold); /* Make asterisk more prominent */
+}
+
+/* --- General Input Styling (for text, email, number, date, select, textarea) --- */
+.jules-input,
+.jules-select select, /* Target the select element itself if wrapped */
+.jules-textarea textarea { /* Target the textarea element itself if wrapped */
+  display: block; /* Ensure it takes full width if parent is block */
+  width: 100%;
+  padding: var(--jules-space-sm) var(--jules-space-md); /* Comfortable padding */
+  font-family: var(--jules-font-family-sans);
+  font-size: var(--jules-font-size-md);
+  line-height: var(--jules-line-height-base);
+  color: var(--jules-text-color-body);
+  background-color: var(--jules-neutral-white);
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-md);
+  box-shadow: var(--jules-shadow-xs); /* Subtle shadow */
+  transition: border-color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
+              box-shadow var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
+}
+
+/* Specific height for select to match inputs, if needed */
+.jules-select select {
+  height: calc(var(--jules-font-size-md) * var(--jules-line-height-base) + (var(--jules-space-sm) * 2) + (var(--jules-border-width-sm) * 2));
+  appearance: none; /* Remove default system appearance */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23adb5bd'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E"); /* Custom chevron */
+  background-repeat: no-repeat;
+  background-position: right var(--jules-space-md) center;
+  background-size: var(--jules-font-size-xl);
+  padding-right: calc(var(--jules-space-md) + var(--jules-font-size-xl) + var(--jules-space-sm)); /* Make space for chevron */
+}
+
+.jules-textarea textarea {
+  min-height: 120px; /* Default height for textareas */
+  resize: vertical; /* Allow vertical resize */
+}
+
+/* --- States for .jules-input (and similar) --- */
+.jules-input:focus,
+.jules-select select:focus,
+.jules-textarea textarea:focus {
+  border-color: var(--jules-primary-blue-500);
+  box-shadow: var(--jules-focus-ring-input); /* Use pre-defined focus ring for inputs */
+  outline: none;
+}
+
+.jules-input:disabled,
+.jules-select select:disabled,
+.jules-textarea textarea:disabled {
+  background-color: var(--jules-neutral-gray-100);
+  color: var(--jules-text-color-muted);
+  cursor: not-allowed;
+  border-color: var(--jules-neutral-gray-200); /* Lighter border for disabled */
+  box-shadow: none;
+}
+
+.jules-input.jules-input-error,
+.jules-select select.jules-input-error, /* Assuming error class is applied to select */
+.jules-textarea textarea.jules-input-error {
+  border-color: var(--jules-error-red-500) !important; /* Important to override focus */
+  background-color: var(--jules-primary-blue-50); /* Error tint, using a primary light for less aggression, or --jules-error-red-50 if defined */
+}
+.jules-input.jules-input-error:focus,
+.jules-select select.jules-input-error:focus,
+.jules-textarea textarea.jules-input-error:focus {
+  box-shadow: 0 0 0 var(--jules-focus-ring-width) var(--jules-error-red-500); /* Error color focus ring */
+}
+
+
+/* Placeholder */
+.jules-input::placeholder,
+.jules-textarea textarea::placeholder {
+  color: var(--jules-text-color-muted);
+  opacity: 0.7; /* Make placeholder slightly less prominent */
+}
+
+/* --- Hints and Error Messages --- */
+.jules-input-hint,
+.jules-input-error-message {
+  display: block;
+  font-size: var(--jules-font-size-sm);
+  color: var(--jules-text-color-muted);
+  margin-top: var(--jules-space-xs);
+  line-height: var(--jules-line-height-sm);
+}
+
+.jules-input-error-message {
+  color: var(--jules-error-red-500);
+  font-weight: var(--jules-font-weight-medium);
+}
+
+/* --- Radio and Checkbox Groups --- */
+.jules-fieldset { /* Wrapper for radio/checkbox groups */
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: var(--jules-space-lg); /* Same as .jules-form-field */
+}
+
+.jules-legend { /* Legend for fieldset, styled like a label */
+  display: block;
+  margin-bottom: var(--jules-space-md); /* More space for group legend */
+  color: var(--jules-text-color-body);
+  font-weight: var(--jules-font-weight-semibold);
+  font-size: var(--jules-font-size-md);
+  padding: 0;
+}
+
+.jules-radio-group,
+.jules-checkbox-group {
+  display: flex;
+  flex-direction: column; /* Default stack: vertical */
+  gap: var(--jules-space-sm);
+}
+
+.jules-radio-group.jules-radio-group-horizontal,
+.jules-checkbox-group.jules-checkbox-group-horizontal {
+  flex-direction: row;
+  flex-wrap: wrap; /* Allow wrapping for horizontal groups */
+  gap: var(--jules-space-md);
+}
+
+.jules-radio-option,
+.jules-checkbox-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--jules-space-xs) 0; /* Padding for easier click */
+}
+
+.jules-radio-option input[type="radio"],
+.jules-checkbox-option input[type="checkbox"] {
+  /* Visually hide the default radio/checkbox */
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.jules-radio-custom,
+.jules-checkbox-custom {
+  display: inline-block;
+  width: var(--jules-font-size-xl); /* 20px or 24px based on base size */
+  height: var(--jules-font-size-xl);
+  border: var(--jules-border-width-md) solid var(--jules-border-color);
+  background-color: var(--jules-neutral-white);
+  margin-right: var(--jules-space-sm);
+  transition: border-color var(--jules-transition-duration-fast), background-color var(--jules-transition-duration-fast);
+  flex-shrink: 0; /* Prevent shrinking */
+  position: relative; /* For checkmark/dot */
+}
+
+.jules-radio-custom {
+  border-radius: var(--jules-border-radius-round); /* Circular for radio */
+}
+
+.jules-checkbox-custom {
+  border-radius: var(--jules-border-radius-sm); /* Square/rounded-square for checkbox */
+}
+
+/* Checked state */
+.jules-radio-option input[type="radio"]:checked + .jules-radio-custom,
+.jules-checkbox-option input[type="checkbox"]:checked + .jules-checkbox-custom {
+  border-color: var(--jules-primary-blue-500);
+  background-color: var(--jules-primary-blue-500);
+}
+
+/* Dot for Radio / Checkmark for Checkbox */
+.jules-radio-custom::after { /* Dot for radio */
+  content: '';
+  display: block;
+  width: calc(var(--jules-font-size-xl) * 0.5); /* Half the size of the custom control */
+  height: calc(var(--jules-font-size-xl) * 0.5);
+  border-radius: var(--jules-border-radius-round);
+  background-color: var(--jules-neutral-white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Hidden by default */
+  transition: transform var(--jules-transition-duration-fast);
+}
+
+.jules-checkbox-custom::after { /* Checkmark for checkbox */
+  content: '';
+  display: block;
+  width: calc(var(--jules-font-size-xl) * 0.35); /* Adjust size for checkmark */
+  height: calc(var(--jules-font-size-xl) * 0.6);
+  border: solid var(--jules-neutral-white);
+  border-width: 0 3px 3px 0; /* Checkmark shape */
+  position: absolute;
+  top: 45%; /* Adjust for visual centering */
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg) scale(0); /* Hidden & rotated */
+  transition: transform var(--jules-transition-duration-fast);
+}
+
+
+.jules-radio-option input[type="radio"]:checked + .jules-radio-custom::after,
+.jules-checkbox-option input[type="checkbox"]:checked + .jules-checkbox-custom::after {
+  transform: translate(-50%, -50%) scale(1); /* Show dot/checkmark */
+  /* For checkbox, if rotating: */
+  /* transform: translate(-50%, -50%) rotate(45deg) scale(1); */
+}
+.jules-checkbox-option input[type="checkbox"]:checked + .jules-checkbox-custom::after {
+   transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+
+
+/* Focus state for custom radio/checkbox */
+.jules-radio-option input[type="radio"]:focus-visible + .jules-radio-custom,
+.jules-checkbox-option input[type="checkbox"]:focus-visible + .jules-checkbox-custom {
+  outline: var(--jules-focus-ring-width) solid var(--jules-focus-ring-color);
+  outline-offset: var(--jules-focus-ring-offset);
+}
+
+.jules-radio-label-text,
+.jules-checkbox-label-text {
+  color: var(--jules-text-color-body);
+  font-size: var(--jules-font-size-md);
+  line-height: var(--jules-line-height-base);
+}
+
+/* Disabled state for radio/checkbox */
+.jules-radio-option input[type="radio"]:disabled + .jules-radio-custom,
+.jules-checkbox-option input[type="checkbox"]:disabled + .jules-checkbox-custom {
+  background-color: var(--jules-neutral-gray-200);
+  border-color: var(--jules-neutral-gray-300);
+  cursor: not-allowed;
+}
+.jules-radio-option input[type="radio"]:disabled:checked + .jules-radio-custom,
+.jules-checkbox-option input[type="checkbox"]:disabled:checked + .jules-checkbox-custom {
+  background-color: var(--jules-neutral-gray-400); /* Darker gray for checked disabled */
+  border-color: var(--jules-neutral-gray-400);
+}
+
+.jules-radio-option input[type="radio"]:disabled ~ .jules-radio-label-text,
+.jules-checkbox-option input[type="checkbox"]:disabled ~ .jules-checkbox-label-text {
+  color: var(--jules-text-color-muted);
+  cursor: not-allowed;
+}
+
+
+/* --- File Input --- */
+.jules-file-input-wrapper {
+  /* Container for the whole file input component */
+  margin-bottom: var(--jules-space-lg);
+}
+
+.jules-file-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--jules-space-xl);
+  border: var(--jules-border-width-md) dashed var(--jules-border-color);
+  border-radius: var(--jules-border-radius-lg);
+  background-color: var(--jules-neutral-gray-50);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--jules-transition-duration-fast), background-color var(--jules-transition-duration-fast);
+}
+
+.jules-file-dropzone:hover,
+.jules-file-dropzone.jules-dropzone-active { /* Active drag-over state */
+  border-color: var(--jules-primary-blue-500);
+  background-color: var(--jules-primary-blue-50);
+}
+
+.jules-file-dropzone-icon { /* e.g., an SVG upload icon */
+  font-size: var(--jules-font-size-4xl); /* Large icon */
+  color: var(--jules-primary-blue-500);
+  margin-bottom: var(--jules-space-md);
+}
+
+.jules-file-dropzone-text {
+  font-size: var(--jules-font-size-md);
+  color: var(--jules-text-color-body);
+  margin-bottom: var(--jules-space-xs);
+}
+
+.jules-file-dropzone-hint {
+  font-size: var(--jules-font-size-sm);
+  color: var(--jules-text-color-muted);
+}
+
+.jules-file-button { /* Fallback if dropzone is not the primary interaction, or a "Browse" button */
+  /* Use .jules-button styles, e.g., .jules-button-secondary */
+  margin-top: var(--jules-space-sm); /* If shown with text */
+}
+
+.jules-file-list {
+  margin-top: var(--jules-space-md);
+}
+
+.jules-file-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--jules-space-sm);
+  background-color: var(--jules-neutral-gray-100);
+  border-radius: var(--jules-border-radius-md);
+  margin-bottom: var(--jules-space-xs);
+  font-size: var(--jules-font-size-sm);
+}
+
+.jules-file-name {
+  color: var(--jules-text-color-body);
+}
+
+.jules-file-remove-button { /* A small button/icon to remove the file */
+  background: none;
+  border: none;
+  color: var(--jules-error-red-500);
+  cursor: pointer;
+  font-size: var(--jules-font-size-lg); /* For an icon */
+}
+.jules-file-remove-button:hover {
+  color: var(--jules-neutral-gray-900);
+}
+
+/* Ensure original input[type=file] is hidden if using a custom UI */
+.jules-file-input-wrapper input[type="file"] {
+  display: none;
+}
+
+/* Apply .jules-input styles to actual input elements if not using custom classes in HTML */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+select,
+textarea {
+  /* This is a fallback; prefer adding .jules-input class to elements */
+  /* composes: jules-input; */ /* if preprocessor allows */
+
+  /* If no preprocessor, you might need to duplicate some basic styles or ensure JS adds the class.
+     For now, this assumes .jules-input or .jules-select etc. are applied. */
+}
