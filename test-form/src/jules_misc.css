@@ -1,0 +1,276 @@
+@import './jules_tokens.css';
+
+/* --- Tooltips --- */
+.jules-tooltip {
+  position: absolute; /* Or fixed, depending on use case */
+  z-index: 1000; /* High z-index to appear above other elements */
+  background-color: var(--jules-neutral-gray-900);
+  color: var(--jules-neutral-white);
+  padding: var(--jules-space-xs) var(--jules-space-sm);
+  border-radius: var(--jules-border-radius-md);
+  font-size: var(--jules-font-size-sm);
+  font-weight: var(--jules-font-weight-medium);
+  line-height: var(--jules-line-height-sm);
+  box-shadow: var(--jules-shadow-md);
+  opacity: 0; /* Hidden by default, shown via JS or :hover/:focus on parent */
+  visibility: hidden;
+  transition: opacity var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
+              visibility var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
+  white-space: nowrap; /* Prevent multi-line tooltips unless intended */
+}
+
+.jules-tooltip.jules-tooltip-visible { /* Class to show tooltip */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Tooltip arrow (optional, requires more complex CSS or JS for positioning) */
+.jules-tooltip::after { /* Basic triangle arrow */
+  content: '';
+  position: absolute;
+  border-width: var(--jules-space-xs);
+  border-style: solid;
+  /* Example: bottom arrow */
+  /* top: 100%; left: 50%; margin-left: calc(-1 * var(--jules-space-xs)); */
+  /* border-color: var(--jules-neutral-gray-900) transparent transparent transparent; */
+}
+
+
+/* --- Modals --- */
+.jules-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+  z-index: 1040; /* Below modal content, above other page content */
+  display: flex; /* For centering modal content */
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--jules-transition-duration-base) var(--jules-transition-timing-function),
+              visibility var(--jules-transition-duration-base) var(--jules-transition-timing-function);
+}
+
+.jules-modal-backdrop.jules-modal-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.jules-modal-content {
+  background-color: var(--jules-neutral-white);
+  border-radius: var(--jules-border-radius-lg);
+  box-shadow: var(--jules-shadow-xl); /* Prominent shadow for modals */
+  padding: var(--jules-space-xl);
+  z-index: 1050; /* Above backdrop */
+  width: 90%; /* Default width, responsive */
+  max-width: 600px; /* Max width for larger modals */
+  max-height: 90vh; /* Max height to prevent overflow */
+  overflow-y: auto; /* Scroll if content exceeds max height */
+  transform: scale(0.95); /* Initial state for transition */
+  opacity: 0;
+  transition: transform var(--jules-transition-duration-base) var(--jules-transition-timing-function),
+              opacity var(--jules-transition-duration-base) var(--jules-transition-timing-function);
+}
+
+.jules-modal-backdrop.jules-modal-open .jules-modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.jules-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--jules-space-md);
+  margin-bottom: var(--jules-space-lg);
+  border-bottom: var(--jules-border-width-sm) solid var(--jules-border-color);
+}
+
+.jules-modal-title {
+  font-size: var(--jules-font-size-xl);
+  font-weight: var(--jules-font-weight-semibold);
+  color: var(--jules-text-color-headings);
+  margin: 0;
+}
+
+.jules-modal-close-button { /* Typically an icon button */
+  background: none;
+  border: none;
+  font-size: var(--jules-font-size-2xl); /* Large click target */
+  color: var(--jules-text-color-muted);
+  cursor: pointer;
+  padding: var(--jules-space-xs);
+}
+.jules-modal-close-button:hover {
+  color: var(--jules-text-color-headings);
+}
+
+.jules-modal-body {
+  margin-bottom: var(--jules-space-lg);
+  /* Content styles here or inherit from base */
+}
+
+.jules-modal-footer {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: var(--jules-space-md);
+  padding-top: var(--jules-space-md);
+  border-top: var(--jules-border-width-sm) solid var(--jules-border-color);
+}
+
+
+/* --- Alerts (Standalone Banners/Messages) --- */
+.jules-alert {
+  padding: var(--jules-space-md) var(--jules-space-lg);
+  margin-bottom: var(--jules-space-lg);
+  border: var(--jules-border-width-sm) solid transparent;
+  border-radius: var(--jules-border-radius-md);
+  font-size: var(--jules-font-size-md);
+  display: flex;
+  align-items: center;
+  gap: var(--jules-space-sm);
+  box-shadow: var(--jules-shadow-sm);
+}
+
+.jules-alert-icon { /* For an icon within the alert */
+  font-size: var(--jules-font-size-xl); /* Icon size */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.jules-alert-content {
+  flex-grow: 1;
+}
+.jules-alert-title {
+  font-weight: var(--jules-font-weight-bold);
+  display: block;
+  margin-bottom: var(--jules-space-xs);
+}
+
+/* Error Alert */
+.jules-alert-error {
+  background-color: var(--jules-primary-blue-50); /* --jules-error-red-50 if defined */
+  border-color: var(--jules-error-red-500);
+  color: var(--jules-error-red-500); /* Text color, or a darker shade for better contrast on light bg */
+}
+.jules-alert-error .jules-alert-icon {
+  color: var(--jules-error-red-500);
+}
+.jules-alert-error .jules-alert-title {
+ color: #c92a2a; /* Darker red for title */
+}
+
+/* Success Alert */
+.jules-alert-success {
+  background-color: var(--jules-primary-blue-50); /* --jules-success-green-50 if defined */
+  border-color: var(--jules-success-green-500);
+  color: var(--jules-success-green-500); /* Or darker shade */
+}
+.jules-alert-success .jules-alert-icon {
+  color: var(--jules-success-green-500);
+}
+.jules-alert-success .jules-alert-title {
+  color: #2b8a3e; /* Darker green for title */
+}
+
+/* Warning Alert */
+.jules-alert-warning {
+  background-color: var(--jules-primary-blue-50); /* --jules-warning-yellow-50 if defined */
+  border-color: var(--jules-warning-yellow-500);
+  color: #e69900; /* Darker yellow for text */
+}
+.jules-alert-warning .jules-alert-icon {
+  color: var(--jules-warning-yellow-500);
+}
+.jules-alert-warning .jules-alert-title {
+  color: #d98000; /* Darker yellow for title */
+}
+
+/* Info Alert */
+.jules-alert-info {
+  background-color: var(--jules-primary-blue-50);
+  border-color: var(--jules-info-blue-500);
+  color: var(--jules-info-blue-700); /* Darker blue for text */
+}
+.jules-alert-info .jules-alert-icon {
+  color: var(--jules-info-blue-500);
+}
+.jules-alert-info .jules-alert-title {
+  color: var(--jules-info-blue-900); /* Darker blue for title */
+}
+
+
+/* --- Review Step Specific Styles --- */
+.jules-review-step-section {
+  margin-bottom: var(--jules-space-xl);
+  padding: var(--jules-space-lg);
+  background-color: var(--jules-neutral-white);
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-lg);
+  box-shadow: var(--jules-shadow-sm);
+}
+
+.jules-review-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--jules-space-lg);
+  padding-bottom: var(--jules-space-md);
+  border-bottom: var(--jules-border-width-sm) solid var(--jules-neutral-gray-200);
+}
+
+.jules-review-section-title {
+  font-size: var(--jules-font-size-xl);
+  font-weight: var(--jules-font-weight-semibold);
+  color: var(--jules-text-color-headings);
+  margin: 0;
+}
+
+/* Edit button for review section - use .jules-button-secondary or .jules-button-tertiary */
+.jules-review-edit-button {
+  /* Example: composes: jules-button jules-button-tertiary jules-button-sm; */
+}
+
+.jules-review-data-grid { /* Using grid for key-value pairs */
+  display: grid;
+  grid-template-columns: auto 1fr; /* Label column, Value column */
+  gap: var(--jules-space-md) var(--jules-space-lg);
+}
+
+.jules-review-data-label {
+  font-weight: var(--jules-font-weight-semibold);
+  color: var(--jules-text-color-body);
+  text-align: right; /* Align labels to the right for neatness */
+}
+
+.jules-review-data-value {
+  color: var(--jules-text-color-muted);
+  word-break: break-word; /* Prevent long values from overflowing */
+}
+
+.jules-review-data-value ul,
+.jules-review-data-value ol {
+  list-style-position: inside;
+  padding-left: var(--jules-space-xs); /* Indent lists slightly */
+}
+.jules-review-data-value img {
+  max-width: 200px; /* Limit image size in review */
+  border-radius: var(--jules-border-radius-md);
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+}
+
+/* For file lists in review */
+.jules-review-file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.jules-review-file-item {
+  padding: var(--jules-space-xs) 0;
+  border-bottom: var(--jules-border-width-sm) dashed var(--jules-neutral-gray-200);
+}
+.jules-review-file-item:last-child {
+  border-bottom: none;
+}

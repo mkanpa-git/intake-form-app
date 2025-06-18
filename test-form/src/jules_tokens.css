@@ -1,0 +1,125 @@
+:root {
+  /* Colors - Primary (Brand) */
+  --jules-primary-blue-50: #eef7ff;
+  --jules-primary-blue-100: #d1e9ff;
+  --jules-primary-blue-300: #74c0fc;
+  --jules-primary-blue-500: #228be6; /* Main Primary */
+  --jules-primary-blue-700: #1c7ed6;
+  --jules-primary-blue-900: #1864ab;
+
+  /* Colors - Secondary (Accent) */
+  --jules-secondary-teal-50: #e6fcf5;
+  --jules-secondary-teal-100: #c3fae8;
+  --jules-secondary-teal-300: #66d9e8;
+  --jules-secondary-teal-500: #20c997; /* Main Secondary */
+  --jules-secondary-teal-700: #12b886;
+  --jules-secondary-teal-900: #08906c;
+
+  /* Colors - Neutral Grays */
+  --jules-neutral-white: #ffffff;
+  --jules-neutral-gray-50: #f8f9fa;   /* Lightest Gray */
+  --jules-neutral-gray-100: #f1f3f5; /* Light Gray for backgrounds */
+  --jules-neutral-gray-200: #e9ecef;
+  --jules-neutral-gray-300: #dee2e6; /* Borders */
+  --jules-neutral-gray-400: #ced4da;
+  --jules-neutral-gray-500: #adb5bd; /* Medium Gray for text/icons */
+  --jules-neutral-gray-600: #868e96;
+  --jules-neutral-gray-700: #495057; /* Dark Gray for text */
+  --jules-neutral-gray-800: #343a40;
+  --jules-neutral-gray-900: #212529;   /* Darkest Gray / Headings */
+
+  /* Colors - Feedback */
+  --jules-success-green-500: #2f9e44;
+  --jules-warning-yellow-500: #fcc419;
+  --jules-error-red-500: #e03131;
+  --jules-info-blue-500: var(--jules-primary-blue-500);
+
+  /* Colors - Text */
+  --jules-text-color-body: var(--jules-neutral-gray-700);
+  --jules-text-color-headings: var(--jules-neutral-gray-900);
+  --jules-text-color-muted: var(--jules-neutral-gray-500);
+  --jules-text-color-link: var(--jules-primary-blue-700);
+  --jules-text-color-link-hover: var(--jules-primary-blue-900);
+  --jules-text-color-on-primary: var(--jules-neutral-white);
+  --jules-text-color-on-secondary: var(--jules-neutral-white);
+  --jules-text-color-error: var(--jules-error-red-500);
+  --jules-text-color-success: var(--jules-success-green-500);
+
+  /* Typography - Font Families */
+  --jules-font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --jules-font-family-serif: 'Georgia', 'Times New Roman', Times, serif;
+  --jules-font-family-mono: 'SFMono-Regular', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Typography - Font Sizes (Modular Scale, e.g., 1.25 ratio) */
+  --jules-font-size-xs: 0.75rem;  /* 12px */
+  --jules-font-size-sm: 0.875rem; /* 14px */
+  --jules-font-size-base: 1rem;    /* 16px (Default) */
+  --jules-font-size-md: 1.125rem; /* 18px */
+  --jules-font-size-lg: 1.25rem;  /* 20px */
+  --jules-font-size-xl: 1.5rem;   /* 24px */
+  --jules-font-size-2xl: 1.875rem;/* 30px */
+  --jules-font-size-3xl: 2.25rem; /* 36px */
+  --jules-font-size-4xl: 3rem;    /* 48px */
+
+  /* Typography - Font Weights */
+  --jules-font-weight-light: 300;
+  --jules-font-weight-normal: 400;
+  --jules-font-weight-medium: 500;
+  --jules-font-weight-semibold: 600;
+  --jules-font-weight-bold: 700;
+  --jules-font-weight-extrabold: 800;
+
+  /* Typography - Line Heights */
+  --jules-line-height-xs: 1.2;
+  --jules-line-height-sm: 1.4;
+  --jules-line-height-base: 1.6; /* Default */
+  --jules-line-height-md: 1.7;
+  --jules-line-height-lg: 1.8;
+
+  /* Spacing (Based on 4px or 8px grid) */
+  --jules-space-xxs: 0.25rem; /* 4px */
+  --jules-space-xs: 0.5rem;   /* 8px */
+  --jules-space-sm: 0.75rem;  /* 12px */
+  --jules-space-md: 1rem;     /* 16px */
+  --jules-space-lg: 1.5rem;   /* 24px */
+  --jules-space-xl: 2rem;     /* 32px */
+  --jules-space-2xl: 2.5rem;  /* 40px */
+  --jules-space-3xl: 3rem;    /* 48px */
+  --jules-space-4xl: 4rem;    /* 64px */
+
+  /* Borders and Radii */
+  --jules-border-width-sm: 1px;
+  --jules-border-width-md: 2px;
+  --jules-border-width-lg: 3px;
+
+  --jules-border-radius-sm: 0.25rem; /* 4px */
+  --jules-border-radius-md: 0.375rem;/* 6px (Default for inputs, cards) */
+  --jules-border-radius-lg: 0.5rem;  /* 8px */
+  --jules-border-radius-xl: 1rem;    /* 16px */
+  --jules-border-radius-round: 50%;
+
+  --jules-border-color: var(--jules-neutral-gray-300);
+  --jules-border-color-focus: var(--jules-primary-blue-500);
+  --jules-border-color-error: var(--jules-error-red-500);
+
+  /* Focus States (Accessibility) */
+  --jules-focus-ring-color: var(--jules-primary-blue-300); /* Lighter, slightly transparent version of primary */
+  --jules-focus-ring-width: 3px;
+  --jules-focus-ring-offset: 2px; /* Optional: space between element and ring */
+  --jules-focus-ring: var(--jules-focus-ring-width) solid var(--jules-focus-ring-color);
+  --jules-focus-ring-input: 0 0 0 var(--jules-focus-ring-width) var(--jules-focus-ring-color); /* box-shadow based for inputs */
+
+
+  /* Shadows (Optional - can be extensive) */
+  --jules-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  --jules-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  --jules-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --jules-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --jules-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+
+  /* Transitions */
+  --jules-transition-duration-fast: 150ms;
+  --jules-transition-duration-base: 250ms;
+  --jules-transition-duration-slow: 400ms;
+  --jules-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

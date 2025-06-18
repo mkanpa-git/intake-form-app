@@ -1,0 +1,206 @@
+@import './jules_tokens.css';
+
+/* --- Base Button Style --- */
+.jules-button {
+  display: inline-flex; /* Allows icon and text alignment */
+  align-items: center;
+  justify-content: center;
+  padding: var(--jules-space-sm) var(--jules-space-lg); /* Generous padding */
+  font-family: var(--jules-font-family-sans);
+  font-size: var(--jules-font-size-md); /* Default button text size */
+  font-weight: var(--jules-font-weight-semibold);
+  line-height: var(--jules-line-height-base);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap; /* Prevent wrapping */
+  vertical-align: middle; /* Align with other inline elements */
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  border: var(--jules-border-width-sm) solid transparent; /* Default no border, added by types */
+  border-radius: var(--jules-border-radius-md);
+  box-shadow: var(--jules-shadow-sm); /* Subtle shadow for physicality */
+  transition: background-color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
+              border-color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
+              color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
+              box-shadow var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
+}
+
+.jules-button:focus-visible {
+  outline: var(--jules-focus-ring-width) solid var(--jules-focus-ring-color);
+  outline-offset: var(--jules-focus-ring-offset);
+  /* For buttons that might already have a border, this outline is preferred over box-shadow */
+}
+.jules-button:active {
+  transform: translateY(1px); /* Slight press effect */
+  box-shadow: none; /* Remove shadow on press */
+}
+
+
+/* --- Primary Button --- */
+.jules-button-primary {
+  background-color: var(--jules-primary-blue-500);
+  color: var(--jules-text-color-on-primary);
+  border-color: var(--jules-primary-blue-500); /* Ensure border matches background */
+}
+
+.jules-button-primary:hover {
+  background-color: var(--jules-primary-blue-700); /* Darken on hover */
+  border-color: var(--jules-primary-blue-700);
+  box-shadow: var(--jules-shadow-md);
+}
+
+.jules-button-primary:active {
+  background-color: var(--jules-primary-blue-900); /* Even darker on active */
+  border-color: var(--jules-primary-blue-900);
+}
+
+/* --- Secondary Button --- */
+.jules-button-secondary {
+  background-color: var(--jules-neutral-white);
+  color: var(--jules-primary-blue-700); /* Use a darker primary shade for text for contrast */
+  border: var(--jules-border-width-sm) solid var(--jules-primary-blue-500);
+}
+
+.jules-button-secondary:hover {
+  background-color: var(--jules-primary-blue-50); /* Light primary tint on hover */
+  border-color: var(--jules-primary-blue-700);
+  color: var(--jules-primary-blue-900);
+  box-shadow: var(--jules-shadow-md);
+}
+
+.jules-button-secondary:active {
+  background-color: var(--jules-primary-blue-100); /* Slightly more tint on active */
+  border-color: var(--jules-primary-blue-900);
+  color: var(--jules-primary-blue-900);
+}
+
+
+/* --- Tertiary / Link Button --- */
+.jules-button-tertiary {
+  background-color: transparent;
+  color: var(--jules-primary-blue-700);
+  border-color: transparent;
+  box-shadow: none;
+  padding-left: var(--jules-space-xs); /* Less horizontal padding for link-like buttons */
+  padding-right: var(--jules-space-xs);
+  text-decoration: none; /* No underline by default */
+}
+
+.jules-button-tertiary:hover {
+  background-color: var(--jules-primary-blue-50); /* Subtle background on hover */
+  color: var(--jules-primary-blue-900);
+  text-decoration: underline; /* Underline on hover for affordance */
+}
+
+.jules-button-tertiary:active {
+  background-color: var(--jules-primary-blue-100);
+  color: var(--jules-primary-blue-900);
+  text-decoration: underline;
+}
+
+
+/* --- Destructive / Danger Button (e.g., for Delete) --- */
+.jules-button-danger {
+  background-color: var(--jules-error-red-500);
+  color: var(--jules-text-color-on-primary); /* Assuming white text on error red */
+  border-color: var(--jules-error-red-500);
+}
+.jules-button-danger:hover {
+  background-color: #c92a2a; /* Darker red, if not in tokens, use a calculated value or add to tokens */
+  border-color: #c92a2a;
+  box-shadow: var(--jules-shadow-md);
+}
+.jules-button-danger:active {
+  background-color: #a61e1e; /* Even darker red */
+  border-color: #a61e1e;
+}
+
+/* Secondary Destructive Button */
+.jules-button-danger-secondary {
+  background-color: var(--jules-neutral-white);
+  color: var(--jules-error-red-500);
+  border: var(--jules-border-width-sm) solid var(--jules-error-red-500);
+}
+.jules-button-danger-secondary:hover {
+  background-color: var(--jules-primary-blue-50); /* error red light, e.g. --jules-error-red-50 */
+  border-color: #c92a2a;
+  color: #c92a2a;
+  box-shadow: var(--jules-shadow-md);
+}
+.jules-button-danger-secondary:active {
+  background-color: var(--jules-primary-blue-50); /* --jules-error-red-100 */
+  border-color: #a61e1e;
+  color: #a61e1e;
+}
+
+
+/* --- Disabled State (applies to all button types) --- */
+.jules-button:disabled,
+.jules-button.jules-button-disabled { /* Allow disabling via class as well */
+  background-color: var(--jules-neutral-gray-200);
+  color: var(--jules-neutral-gray-500);
+  border-color: var(--jules-neutral-gray-200); /* Use background color for border for flat look */
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none; /* No press effect */
+}
+
+/* For secondary/tertiary disabled, ensure border is also muted */
+.jules-button-secondary:disabled,
+.jules-button-secondary.jules-button-disabled,
+.jules-button-tertiary:disabled,
+.jules-button-tertiary.jules-button-disabled,
+.jules-button-danger-secondary:disabled,
+.jules-button-danger-secondary.jules-button-disabled {
+  border-color: var(--jules-neutral-gray-200); /* Explicitly set for bordered buttons */
+}
+.jules-button-tertiary:disabled,
+.jules-button-tertiary.jules-button-disabled {
+  text-decoration: none; /* Remove underline from disabled link buttons */
+}
+
+
+/* --- Button Sizes (Optional) --- */
+.jules-button-sm { /* Small button */
+  padding: var(--jules-space-xs) var(--jules-space-md);
+  font-size: var(--jules-font-size-sm);
+}
+
+.jules-button-lg { /* Large button */
+  padding: var(--jules-space-md) var(--jules-space-xl);
+  font-size: var(--jules-font-size-lg);
+}
+
+/* --- Button with Icon --- */
+.jules-button .jules-button-icon { /* Class for an icon element within a button */
+  display: inline-block;
+  vertical-align: middle; /* Or use flex align-items on button */
+  /* Size the icon using font-size if it's a font icon, or width/height for SVG */
+  font-size: inherit; /* Icon size matches button text size by default */
+  width: 1em; /* If SVG, ensure it scales with font-size */
+  height: 1em;
+}
+
+.jules-button .jules-button-icon-leading {
+  margin-right: var(--jules-space-sm); /* Space between icon and text */
+}
+
+.jules-button .jules-button-icon-trailing {
+  margin-left: var(--jules-space-sm);
+}
+
+/* Icon-only button (common for actions in tables etc.) */
+.jules-button-icon-only {
+  padding: var(--jules-space-sm); /* Square padding */
+}
+.jules-button-icon-only .jules-button-icon {
+  margin: 0; /* No margin if it's the only child */
+  font-size: var(--jules-font-size-lg); /* Make icon a bit larger for icon-only buttons */
+}
+
+/* Full width button */
+.jules-button-full-width {
+  display: block; /* Or flex if you need to center content within */
+  width: 100%;
+  text-align: center; /* Ensure text is centered if display:block */
+}

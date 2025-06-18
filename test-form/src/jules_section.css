@@ -1,0 +1,121 @@
+@import './jules_tokens.css';
+
+.jules-section {
+  background-color: var(--jules-neutral-white);
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-lg); /* Slightly larger radius for sections */
+  margin-bottom: var(--jules-space-xl);
+  box-shadow: var(--jules-shadow-sm);
+  transition: box-shadow var(--jules-transition-duration-base) var(--jules-transition-timing-function);
+}
+
+.jules-section:focus-within { /* Highlight section when a child element is focused */
+  border-color: var(--jules-primary-blue-300);
+  box-shadow: var(--jules-shadow-md), 0 0 0 1px var(--jules-primary-blue-300); /* Subtle outer glow */
+}
+
+.jules-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--jules-space-md) var(--jules-space-lg);
+  background-color: var(--jules-neutral-gray-50); /* Lighter than section content for contrast */
+  border-bottom: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-top-left-radius: var(--jules-border-radius-lg); /* Match parent */
+  border-top-right-radius: var(--jules-border-radius-lg); /* Match parent */
+  cursor: default; /* Default, unless it's a collapsible trigger */
+}
+
+.jules-section-header.jules-section-collapsible {
+  cursor: pointer;
+}
+
+.jules-section-title {
+  font-size: var(--jules-font-size-xl); /* Prominent title */
+  font-weight: var(--jules-font-weight-semibold);
+  color: var(--jules-text-color-headings);
+  margin: 0; /* Reset heading margin if h-tags are used directly */
+}
+
+.jules-section-description {
+  font-size: var(--jules-font-size-sm);
+  color: var(--jules-text-color-muted);
+  margin-top: var(--jules-space-xxs);
+}
+
+.jules-section-toggle-icon {
+  color: var(--jules-primary-blue-500);
+  font-size: var(--jules-font-size-xl); /* Ensure icon is adequately sized */
+  transition: transform var(--jules-transition-duration-base) var(--jules-transition-timing-function);
+  padding: var(--jules-space-xs); /* Make it easier to click */
+}
+
+.jules-section-header.jules-section-collapsed .jules-section-toggle-icon {
+  transform: rotate(-90deg); /* Or appropriate rotation for your icon, e.g., +90deg for a different chevron */
+}
+
+.jules-section-content {
+  padding: var(--jules-space-lg); /* Generous padding for content within the section */
+}
+
+.jules-section-content.jules-section-content-collapsed {
+  display: none;
+}
+
+/* Styling for InfoSection specific elements, if they use these classes */
+.jules-info-section .jules-section-content {
+  /* Specific padding or styles for info sections if needed */
+}
+
+/* Markdown content within InfoSection should inherit from jules_base.css */
+.jules-info-section .jules-section-content p,
+.jules-info-section .jules-section-content ul,
+.jules-info-section .jules-section-content ol,
+.jules-info-section .jules-section-content blockquote {
+  margin-bottom: var(--jules-space-md); /* Ensure spacing for markdown elements */
+  font-size: var(--jules-font-size-md); /* Standard content size */
+}
+
+.jules-info-section .jules-section-content ul,
+.jules-info-section .jules-section-content ol {
+  padding-left: var(--jules-space-lg); /* Indentation for lists */
+}
+
+.jules-info-section .jules-section-content li {
+  margin-bottom: var(--jules-space-xs);
+}
+
+.jules-info-section .jules-section-content code {
+  font-family: var(--jules-font-family-mono);
+  background-color: var(--jules-neutral-gray-100);
+  padding: var(--jules-space-xxs) var(--jules-space-xs);
+  border-radius: var(--jules-border-radius-sm);
+  font-size: var(--jules-font-size-sm);
+  color: var(--jules-neutral-gray-800);
+}
+
+.jules-info-section .jules-section-content pre {
+  background-color: var(--jules-neutral-gray-100);
+  padding: var(--jules-space-md);
+  border-radius: var(--jules-border-radius-md);
+  overflow-x: auto; /* Allow horizontal scrolling for long code blocks */
+  margin-bottom: var(--jules-space-md);
+}
+
+.jules-info-section .jules-section-content pre code {
+  background-color: transparent;
+  padding: 0;
+  font-size: var(--jules-font-size-sm);
+}
+
+
+/* Ensure original classes are also covered if they are still in use */
+.form-section { /* Existing class */
+  composes: jules-section; /* If CSS modules or similar preprocessor is used */
+}
+
+.form-section-header { /* Existing class */
+  composes: jules-section-header;
+}
+
+/* Add more composes rules if other specific sub-classes of form-section exist and need mapping */

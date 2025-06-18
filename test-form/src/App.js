@@ -1,8 +1,20 @@
 import { useState } from "react";
-import "./form.css";
+// import "./form.css"; // Old theme - commented out
 import FormPage from "./pages/FormPage";
 import Dashboard from "./pages/Dashboard";
-import './App.css';
+import './App.css'; // App specific styles, kept for now
+
+// Jules Theme CSS Files
+import "./jules_tokens.css";
+import "./jules_base.css";
+import "./jules_layout.css";
+import "./jules_button.css";
+import "./jules_input.css";
+import "./jules_stepper.css";
+import "./jules_section.css";
+import "./jules_groupfield.css";
+import "./jules_tablelayout.css";
+import "./jules_misc.css";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
