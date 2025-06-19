@@ -47,7 +47,7 @@ export default function Stepper({
           }
 
           // Add disabled class if navigation is not allowed
-          if (canNavigate && !canNavigate(index) && index !== currentStep) {
+          if (canNavigate && !canNavigate(index, true) && index !== currentStep) {
             itemClasses += ' jules-stepper-item-disabled';
           }
 

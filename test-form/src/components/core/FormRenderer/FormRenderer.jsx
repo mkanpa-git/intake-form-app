@@ -161,7 +161,7 @@ export default function FormRenderer({ applicationId, onExit }) {
     }
   };
 
-  const canNavigate = (targetIndex) => {
+  const canNavigate = (targetIndex, silent = false) => {
     if (steps.length === 0 || !steps[currentStep]) return false;
     // allow going to a previous step without checking validation
     if (targetIndex < currentStep) return true;
@@ -172,7 +172,7 @@ export default function FormRenderer({ applicationId, onExit }) {
       stepData[steps[currentStep].id] || {}
     );
 
-    if (!result.valid && targetIndex > currentStep) {
+    if (!silent && !result.valid && targetIndex > currentStep) {
       // If trying to move forward and validation fails, set errors and touched state to trigger display in Step component
       setCurrentStepValidation({ errors: result.errors, touched: result.touched, timestamp: Date.now() });
     }
