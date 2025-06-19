@@ -232,6 +232,8 @@ export default function Step({
           value={formData[field.id] || ''}
           onChange={(val) => handleChange(field.id, val)}
           error={error}
+          iconLeft={field.type === 'tel' ? "✆" : undefined} // Example: Phone icon for tel type
+          iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
         />
       );
     }
@@ -261,10 +263,13 @@ export default function Step({
               value={formData[field.id] || ''}
               onChange={(val) => handleChange(field.id, val)}
               error={error}
+              iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
             />
           );
         }
         if (isStreet) {
+          // AddressAutocomplete does not yet support iconLeft/iconRight props in this refactor.
+          // If it did, we could add them here. For now, just passing error.
           return (
             <>
               <AddressAutocomplete
@@ -369,11 +374,15 @@ export default function Step({
             required={isRequired}
             value={formData[field.id] || ''}
             onChange={(e) => handleChange(field.id, e.target.value)}
-            error={error} // Pass error prop
+            error={error}
+            iconLeft={field.type === 'email' ? "@" : undefined} // Example: Email icon
+            iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
             // Hint prop can be added if field.description exists
           />
         );
       case 'select':
+        // SelectField currently has its own dropdown arrow. Right icons might conflict.
+        // Left icons are generally safer for native selects.
         if (field.metadata?.multiple) {
           return (
             <SelectField
@@ -387,13 +396,15 @@ export default function Step({
               minSelections={field.constraints?.minSelections}
               maxSelections={field.constraints?.maxSelections}
               value={formData[field.id] || []}
-              onChange={(e) => // For multi-select, value is an array of selected option values
+              onChange={(e) =>
                 handleChange(
                   field.id,
                   Array.from(e.target.selectedOptions).map((opt) => opt.value)
                 )
               }
-              error={error} // Pass error prop
+              error={error}
+              // iconLeft can be added here if desired for multi-select
+              // iconRight for validation status might be complex with multi-select UX
             />
           );
         }
@@ -408,7 +419,10 @@ export default function Step({
             required={isRequired}
             value={formData[field.id] || ''}
             onChange={(e) => handleChange(field.id, e.target.value)}
-            error={error} // Pass error prop
+            error={error}
+            // iconLeft can be added here e.g. if options have associated icons.
+            // For validation, a right icon is tricky. The select's border will show error state.
+            // iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
           />
         );
       case 'radio':
@@ -481,7 +495,9 @@ export default function Step({
             required={isRequired}
             value={formData[field.id] || ''}
             onChange={(e) => handleChange(field.id, e.target.value)}
-            error={error} // Pass error prop
+            error={error}
+            iconLeft={"📅"} // Example: Calendar icon for date
+            iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
           />
         );
       case 'file':
@@ -529,24 +545,24 @@ export default function Step({
               value={formData[field.id] || ''}
               onChange={(val) => handleChange(field.id, val)}
               error={error}
+              // Icons for MaskedInput (like SSN) generally not needed unless for validation
+              iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
             />
           );
         }
         return (
-          <>
-            <TextInput
+            <TextInput // Default to TextInput
               key={field.id}
               id={field.id}
               label={field.label}
               tooltip={field.tooltip}
-              type={field.type} // Should be 'text' if not a specific input type
+              type={field.type}
               required={isRequired}
               value={formData[field.id] || ''}
               onChange={(e) => handleChange(field.id, e.target.value)}
-              error={error} // Pass error prop
+              error={error}
+              iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
             />
-          {/* Error display handled by TextInput internally */}
-          </>
         );
     }
   };
