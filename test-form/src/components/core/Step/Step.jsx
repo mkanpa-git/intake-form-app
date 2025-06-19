@@ -43,6 +43,19 @@ export default function Step({
   const [placeholders, setPlaceholders] = useState({});
   const [isSavingDraft, setIsSavingDraft] = useState(false); // New state for save draft loading
 
+  const sectionHasValidationErrors = (sectionId, currentErrors) => {
+    if (!sections || !currentErrors || Object.keys(currentErrors).length === 0) {
+        return false;
+    }
+    // Find the section by ID from the sections prop (which contains the definition)
+    const sectionDefinition = sections.find(s => s.id === sectionId);
+    if (!sectionDefinition || !Array.isArray(sectionDefinition.fields)) {
+        return false;
+    }
+    // Check if any field within that section has an error in currentErrors
+    return sectionDefinition.fields.some(field => currentErrors[field.id]);
+  };
+
   // Update local form data when parent data changes (e.g., returning to a step)
   useEffect(() => {
     setFormData(initialData);
@@ -695,7 +708,9 @@ export default function Step({
             required={sec.required}
             isCollapsed={collapsed}
             onToggle={() => handleToggle(sec.id)}
-            showAlert={sectionHasMissing(sec)}
+            // showAlert={sectionHasMissing(sec) && isCollapsed} // Old prop
+            showAlertIcon={sectionHasMissing(sec)} // New prop for missing required
+            showErrorIcon={sectionHasValidationErrors(sec.id, errors)} // New prop for validation errors
             visible={visible}
           >
             {sec.content && <ReactMarkdown>{sec.content}</ReactMarkdown>}

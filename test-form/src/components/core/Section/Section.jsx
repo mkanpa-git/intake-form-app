@@ -6,7 +6,8 @@ export default function Section({
   children,
   isCollapsed = false,
   onToggle,
-  showAlert = false, // This prop might need to be handled by rendering a jules-alert component
+  showAlertIcon = false, // Renamed from showAlert for clarity, indicates missing required fields
+  showErrorIcon = false, // New prop for validation errors
   required = false,
   visible = true,
 }) {
@@ -29,10 +30,19 @@ export default function Section({
           {title}
           {required && <span className="jules-required-asterisk"> *</span>}
         </span>
-        {/* showAlert prop should ideally render a proper jules-alert component if the message is complex */}
-        {/* For a simple icon, this could be a span, but its styling was not defined in jules_section.css directly */}
-        {showAlert && <span className="jules-section-alert-icon">⚠️</span>} {/* Changed text to icon, added class */}
-        {onToggle && <span className="jules-section-toggle-icon">{isCollapsed ? '▶' : '▼'}</span>}
+        <div> {/* Wrapper for icons to ensure they are grouped and to the right of title */}
+          {isCollapsed && showAlertIcon && !showErrorIcon && ( // Show general alert only if no validation error icon
+            <span className="jules-section-alert-icon" aria-label="Section has missing required inputs">
+              ⚠️
+            </span>
+          )}
+          {isCollapsed && showErrorIcon && (
+            <span className="jules-section-header-error-indicator" aria-label="Section contains errors">
+              ❗ {/* Using a different icon for validation errors */}
+            </span>
+          )}
+          {onToggle && <span className="jules-section-toggle-icon">{isCollapsed ? '▶' : '▼'}</span>}
+        </div>
       </div>
       <div className={contentClasses}>
         {children}
