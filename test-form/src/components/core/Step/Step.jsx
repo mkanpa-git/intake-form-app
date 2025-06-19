@@ -75,44 +75,23 @@ export default function Step({
     });
   }, [sections, fullData]);
 
-  // This effect validates the current formData when initialData (step data from parent) changes or sections change.
+  // Validate step data when the incoming data or sections change. Errors are stored
+  // but fields aren't automatically marked as touched so they won't show messages
+  // until the user interacts or attempts navigation.
   useEffect(() => {
-    // formData here is the version that has been synced with initialData by the effect above.
     const result = validateStep(
       { sections },
       formData,
-      {}, // Calculate errors fresh for this validation pass based on current formData
-      {}  // Start with a fresh perspective on what this validation pass considers "touched due to error"
+      {},
+      {}
     );
 
-    const newTouchedSetByErrors = {};
-    if (result.errors) {
-      for (const fieldId in result.errors) {
-        if (result.errors[fieldId]) { // If there's an error for this field
-          newTouchedSetByErrors[fieldId] = true; // Mark it as touched to display the error
-        }
-      }
-    }
-
-    // Set the errors found from this validation pass.
-    // Conditional update if errors are identical can be added later if performance tuning is needed.
     setErrors(result.errors || {});
-
-    // Merge newTouchedSetByErrors with the existing touched state.
-    // This ensures fields already touched by user interaction remain touched,
-    // and fields that now have errors also become marked as touched.
-    setTouched(prevTouched => {
-      const combinedTouched = { ...prevTouched, ...newTouchedSetByErrors };
-      // Avoid unnecessary state update if combinedTouched is effectively the same as prevTouched.
-      // A deep equals would be more robust than stringify for objects if key order can vary.
-      if (JSON.stringify(combinedTouched) !== JSON.stringify(prevTouched)) {
-        return combinedTouched;
-      }
-      return prevTouched;
-    });
+    // Intentionally do not update `touched` here. Error messages should appear
+    // only after a user interaction or a failed navigation attempt.
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialData, sections]); // DEPENDENCIES CHANGED HERE
+  }, [initialData, sections]);
 
   useEffect(() => {
     // Check timestamp to ensure it's a new validation attempt that failed
