@@ -1,10 +1,6 @@
 import React from 'react';
-import styles from './SelectField.module.css';
-import Tooltip from '../Tooltip/Tooltip';
-
-// SelectField renders a dropdown. When a `placeholder` prop is provided and the
-// select is not in multiple mode, an empty option will be displayed with that
-// text.
+// import styles from './SelectField.module.css'; // Removed CSS Module import - likely redundant
+import Tooltip from '../Tooltip/Tooltip'; // Assuming Tooltip is already refactored
 
 export default function SelectField({
   id,
@@ -12,26 +8,37 @@ export default function SelectField({
   tooltip,
   options = [],
   multiple = false,
-  // placeholder text for a default empty option when not using multiple select
   placeholder,
-  minSelections,
-  maxSelections,
+  minSelections, // Note: jules_input.css doesn't directly handle min/maxSelections visually by default
+  maxSelections, // These would typically be enforced by JS validation logic
+  required,
+  error,
+  hint,
+  className,
   ...props
 }) {
+  const selectClasses = [
+    'jules-input', // .jules-input is the base style for select as well
+    error ? 'jules-input-error' : '',
+    className || ''
+  ].join(' ').trim();
+
   return (
-    <div className={styles.field}>
+    <div className="jules-form-field"> {/* Changed from jules-input-group to jules-form-field */}
       {label && (
-        <label htmlFor={id}>
+        <label htmlFor={id} className="jules-label">
           {label}
-          <Tooltip text={tooltip} />
+          {required && <span className="jules-required-asterisk">*</span>}
+          {tooltip && <Tooltip text={tooltip} />}
         </label>
       )}
       <select
         id={id}
-        className={styles.select}
+        className={selectClasses}
         multiple={multiple}
-        data-min={minSelections}
+        data-min={minSelections} // Keep data attributes for potential JS use
         data-max={maxSelections}
+        required={required}
         {...props}
       >
         {placeholder && !multiple && (
@@ -47,6 +54,8 @@ export default function SelectField({
           );
         })}
       </select>
+      {hint && !error && <p className="jules-input-hint">{hint}</p>}
+      {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
     </div>
   );
 }

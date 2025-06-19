@@ -162,6 +162,13 @@
  color: #c92a2a; /* Darker red for title */
 }
 
+/* Also for input error messages specifically if needed */
+.jules-input-error-message {
+  font-size: var(--jules-font-size-sm);
+  /* margin-top: var(--jules-space-xs); Ensure it's styled as an alert but maybe with less margin if directly under input */
+}
+
+
 /* Success Alert */
 .jules-alert-success {
   background-color: var(--jules-primary-blue-50); /* --jules-success-green-50 if defined */
@@ -203,74 +210,199 @@
 
 
 /* --- Review Step Specific Styles --- */
-.jules-review-step-section {
+.jules-review-step {
+    /* Overall container for the review step page */
+}
+.jules-review-section {
+  /* Using jules-section as base, this is for overrides or additions */
   margin-bottom: var(--jules-space-xl);
-  padding: var(--jules-space-lg);
-  background-color: var(--jules-neutral-white);
-  border: var(--jules-border-width-sm) solid var(--jules-border-color);
-  border-radius: var(--jules-border-radius-lg);
-  box-shadow: var(--jules-shadow-sm);
 }
 
 .jules-review-section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--jules-space-lg);
-  padding-bottom: var(--jules-space-md);
-  border-bottom: var(--jules-border-width-sm) solid var(--jules-neutral-gray-200);
+  /* Styles for the header of each review section (title + edit button) */
+  /* display: flex; (already in jules-section-header) */
+  /* justify-content: space-between; (already in jules-section-header) */
+  /* align-items: center; (already in jules-section-header) */
+  /* padding-bottom: var(--jules-space-md); (already in jules-section-header) */
+  /* border-bottom: var(--jules-border-width-sm) solid var(--jules-neutral-gray-200); (already in jules-section-header) */
 }
 
-.jules-review-section-title {
-  font-size: var(--jules-font-size-xl);
-  font-weight: var(--jules-font-weight-semibold);
-  color: var(--jules-text-color-headings);
-  margin: 0;
+/* .jules-review-section-title is covered by .jules-section-title */
+
+.jules-review-data-table { /* This is now a div wrapper for key-value pairs */
+  /* padding: var(--jules-space-md); */ /* Content already padded by jules-section-content */
 }
 
-/* Edit button for review section - use .jules-button-secondary or .jules-button-tertiary */
-.jules-review-edit-button {
-  /* Example: composes: jules-button jules-button-tertiary jules-button-sm; */
+.jules-data-table-compact { /* For nested tables/key-value displays */
+  margin-top: var(--jules-space-sm);
+  border: 1px solid var(--jules-neutral-gray-200);
+  border-radius: var(--jules-border-radius-sm);
+  padding: var(--jules-space-sm);
+  background-color: var(--jules-neutral-gray-50);
 }
 
-.jules-review-data-grid { /* Using grid for key-value pairs */
+
+.jules-review-data-row {
   display: grid;
-  grid-template-columns: auto 1fr; /* Label column, Value column */
-  gap: var(--jules-space-md) var(--jules-space-lg);
+  grid-template-columns: minmax(150px, 1fr) 2fr; /* Adjust column widths as needed */
+  gap: var(--jules-space-md);
+  padding: var(--jules-space-sm) 0;
+  border-bottom: 1px dashed var(--jules-neutral-gray-200);
 }
+.jules-review-data-row:last-child {
+  border-bottom: none;
+}
+.jules-data-table-compact .jules-review-data-row {
+   grid-template-columns: minmax(100px, 1fr) 2fr; /* Compact labels */
+   padding: var(--jules-space-xs) 0;
+}
+
 
 .jules-review-data-label {
   font-weight: var(--jules-font-weight-semibold);
   color: var(--jules-text-color-body);
-  text-align: right; /* Align labels to the right for neatness */
+  text-align: left; /* Changed from right for grid layout */
+}
+.jules-data-table-compact .jules-review-data-label {
+  font-weight: var(--jules-font-weight-normal);
 }
 
 .jules-review-data-value {
-  color: var(--jules-text-color-muted);
-  word-break: break-word; /* Prevent long values from overflowing */
+  color: var(--jules-text-color-body); /* Changed from muted for better readability */
+  word-break: break-word;
+}
+.jules-data-table-compact .jules-review-data-value {
+  font-size: var(--jules-font-size-sm);
 }
 
 .jules-review-data-value ul,
 .jules-review-data-value ol {
   list-style-position: inside;
-  padding-left: var(--jules-space-xs); /* Indent lists slightly */
+  padding-left: var(--jules-space-xs);
+  margin: 0; /* Reset margin for lists inside values */
 }
 .jules-review-data-value img {
-  max-width: 200px; /* Limit image size in review */
+  max-width: 200px;
   border-radius: var(--jules-border-radius-md);
   border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  margin-top: var(--jules-space-xs);
 }
 
-/* For file lists in review */
-.jules-review-file-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* For file lists in review, if any specific styling needed beyond ul/li from base */
+.jules-list-styled { /* General styled list for review values or other places */
+    list-style: disc;
+    margin-left: var(--jules-space-md);
+    padding-left: var(--jules-space-sm);
 }
-.jules-review-file-item {
-  padding: var(--jules-space-xs) 0;
-  border-bottom: var(--jules-border-width-sm) dashed var(--jules-neutral-gray-200);
+.jules-list-styled li {
+    margin-bottom: var(--jules-space-xs);
 }
-.jules-review-file-item:last-child {
-  border-bottom: none;
+
+
+/* Card Styles */
+.jules-card {
+    background-color: var(--jules-neutral-white);
+    border: 1px solid var(--jules-border-color);
+    border-radius: var(--jules-border-radius-lg);
+    padding: var(--jules-space-lg);
+    box-shadow: var(--jules-shadow-sm);
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    text-decoration: none; /* For <a> cards */
+    color: inherit; /* For <a> cards */
+    display: block; /* For <a> cards to take full width if needed */
+}
+
+.jules-card:hover,
+.jules-card:focus,
+.jules-card:focus-within { /* focus-within for cards containing focusable elements */
+    box-shadow: var(--jules-shadow-md);
+    transform: translateY(-2px);
+    outline: none; /* Or a specific focus ring if desired */
+}
+
+.jules-application-card {
+    /* Specific styles for application cards, if any, beyond base .jules-card */
+    border-left: 4px solid var(--jules-success-green-500); /* Example accent */
+}
+
+.jules-service-card {
+    /* Specific styles for service cards, if any, beyond base .jules-card */
+    border-left: 4px solid var(--jules-primary-blue-500); /* Example accent */
+}
+
+.jules-card-title {
+    font-size: var(--jules-font-size-lg);
+    font-weight: var(--jules-font-weight-semibold);
+    color: var(--jules-text-color-headings);
+    margin-top: 0;
+    margin-bottom: var(--jules-space-sm);
+}
+
+.jules-card-interaction-name,
+.jules-card-text,
+.jules-card-status,
+.jules-card-date,
+.jules-card-app-id,
+.jules-card-saved-date,
+.jules-card-description { /* Added classes from JSX */
+    font-size: var(--jules-font-size-md);
+    color: var(--jules-text-color-body);
+    margin-bottom: var(--jules-space-xs);
+}
+
+.jules-card-status { /* This was a specific class in prompt, keeping if used */
+    font-style: italic;
+    color: var(--jules-text-color-muted);
+}
+.jules-card-app-id,
+.jules-card-saved-date {
+    font-size: var(--jules-font-size-sm);
+    color: var(--jules-text-color-muted);
+}
+
+
+.jules-card-actions {
+    margin-top: var(--jules-space-md);
+    display: flex;
+    gap: var(--jules-space-sm);
+}
+
+.jules-card-actions .jules-button {
+    flex-grow: 1; /* Example: make buttons in actions take equal space */
+}
+.jules-card-actions .jules-button + .jules-button {
+    flex-grow: 0; /* If you want first button to take space, and others to be content-width */
+}
+
+
+.jules-card-action-link { /* For the 'Start Application' text cue */
+    display: inline-block;
+    margin-top: var(--jules-space-lg); /* More space for primary action link */
+    color: var(--jules-primary-blue-700);
+    font-weight: var(--jules-font-weight-semibold);
+    text-decoration: none;
+}
+
+.jules-card-action-link:hover {
+    text-decoration: underline;
+    color: var(--jules-primary-blue-900);
+}
+
+/* Grid container for cards */
+.jules-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: var(--jules-space-lg);
+    padding-top: var(--jules-space-md); /* Space above the grid */
+    margin-bottom: var(--jules-space-xl); /* Space below the grid */
+}
+
+/* Dashboard Page specific heading adjustments if needed */
+.jules-dashboard-page h1,
+.jules-dashboard-page h2 {
+    margin-bottom: var(--jules-space-md); /* Consistent bottom margin for dashboard headings */
+}
+
+.jules-dashboard-page .jules-draft-list h2 {
+    margin-top: var(--jules-space-xl); /* More space before "Saved Applications" */
 }

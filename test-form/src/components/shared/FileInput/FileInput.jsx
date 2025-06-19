@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
-import styles from './FileInput.module.css';
-import Tooltip from '../Tooltip/Tooltip';
+// import styles from './FileInput.module.css'; // Removed CSS Module import - likely redundant
+import Tooltip from '../Tooltip/Tooltip'; // Assuming Tooltip is already refactored
 
 export default function FileInput({
   id,
@@ -9,10 +9,12 @@ export default function FileInput({
   tooltip,
   description,
   multiple = false,
+  required, // Added required prop
   error,
   hint,
   applicationId,
   onChange,
+  className,
   ...props
 }) {
   const [dragOver, setDragOver] = useState(false);
@@ -20,15 +22,18 @@ export default function FileInput({
   const dragCounter = useRef(0);
   const inputRef = useRef(null);
 
-  const processFiles = async (files) => {
-    if (!onChange || files.length === 0) return;
-    if (files.length > 0) {
-      setFileNames(files.map((f) => f.name));
-    }
+  const triggerFileInput = () => {
+    inputRef.current?.click();
+  };
+
+  const processFiles = async (filesArray) => {
+    if (!onChange || filesArray.length === 0) return;
+
+    setFileNames(filesArray.map((f) => f.name));
 
     if (applicationId) {
       const form = new FormData();
-      files.forEach((f) => form.append('files', f));
+      filesArray.forEach((f) => form.append('files', f));
       try {
         const res = await fetch(`/api/applications/${applicationId}/upload`, {
           method: 'POST',
@@ -41,12 +46,15 @@ export default function FileInput({
           return;
         }
         console.error('Upload failed', data);
+        // Potentially set an error state here to display to the user
       } catch (err) {
         console.error('Upload error', err);
+        // Potentially set an error state here
       }
+    } else {
+      // If no applicationId, pass the FileList/File object directly
+      onChange(multiple ? filesArray : filesArray[0]);
     }
-
-    onChange(multiple ? files : files[0]);
   };
 
   const handleFileChange = (e) => {
@@ -61,10 +69,11 @@ export default function FileInput({
     setDragOver(false);
     const files = Array.from(e.dataTransfer.files || []);
     processFiles(files);
-    const dt = new DataTransfer();
-    files.forEach((f) => dt.items.add(f));
+    // Assign to inputRef for consistency if needed, though processFiles already handles it
     if (inputRef.current) {
-      inputRef.current.files = dt.files;
+        const dataTransfer = new DataTransfer();
+        files.forEach(file => dataTransfer.items.add(file));
+        inputRef.current.files = dataTransfer.files;
     }
   };
 
@@ -72,7 +81,9 @@ export default function FileInput({
     e.preventDefault();
     e.stopPropagation();
     dragCounter.current += 1;
-    setDragOver(true);
+    if (e.dataTransfer.items && e.dataTransfer.items.length > 0) {
+      setDragOver(true);
+    }
   };
 
   const handleDragOver = (e) => {
@@ -89,50 +100,79 @@ export default function FileInput({
     }
   };
 
+  const wrapperClasses = [
+    'jules-form-field', // Changed from jules-input-group to jules-form-field
+    'jules-file-input-wrapper',
+    className || ''
+  ].join(' ').trim();
+
+  const dropzoneClasses = [
+    'jules-file-dropzone',
+    dragOver ? 'jules-dropzone-active' : '', // Class for active drag state
+    error ? 'jules-input-error' : '' // Apply error styling to dropzone
+  ].join(' ').trim();
+
   return (
-    <div className={styles.container}>
+    <div className={wrapperClasses}>
       {label && (
-        <label htmlFor={id}>
+        <label htmlFor={id} className="jules-label"> {/* htmlFor should point to the actual file input for accessibility */}
           {label}
-          <Tooltip text={tooltip} />
+          {required && <span className="jules-required-asterisk">*</span>}
+          {tooltip && <Tooltip text={tooltip} />}
         </label>
       )}
       {description && (
-        <div className={styles.description}>
+        <div className="jules-input-hint"> {/* Changed from styles.description */}
           <ReactMarkdown>{description}</ReactMarkdown>
         </div>
       )}
       <div
-        className={`${styles.field}${dragOver ? ' ' + styles.dragOver : ''}`}
+        className={dropzoneClasses}
         onDragEnter={handleDragEnter}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
+        onClick={triggerFileInput} // Make the dropzone clickable to open file dialog
+        tabIndex={0} // Make it focusable
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') triggerFileInput(); }} // Keyboard accessible
       >
-        <div className={styles.dropHint} style={{ display: dragOver ? 'none' : 'block' }}>
-          Drop files here
-        </div>
-        {fileNames.length > 0 && (
-          <ul className={styles.fileList}>
-            {fileNames.map((name) => (
-              <li key={name} className={styles.fileName}>{name}</li>
-            ))}
-          </ul>
-        )}
+        {/* Hidden actual file input */}
         <input
           ref={inputRef}
           id={id}
           type="file"
           multiple={multiple}
           onChange={handleFileChange}
-          className={`${styles.input}${error ? ' error' : ''}`}
+          className="jules-file-native-input" // Class to hide it visually but keep it accessible
+          required={required}
           {...props}
         />
+        {/* Visual content of the dropzone */}
+        <span className="jules-file-dropzone-icon">📤</span> {/* Example icon */}
+        <p className="jules-file-dropzone-text">
+          Drag & drop {multiple ? 'files' : 'a file'} here, or click to select.
+        </p>
+        {/* Fallback "Choose File" button can be styled within or outside this div if needed */}
+        {/* <button type="button" className="jules-button jules-button-secondary jules-file-choose-button" onClick={triggerFileInput}>Choose File(s)</button> */}
+
       </div>
-      {hint && (
-        <div className="form-hint text-sm text-gray-500 italic mt-1">{hint}</div>
+
+      {fileNames.length > 0 && (
+        <ul className="jules-file-list">
+          {fileNames.map((name, index) => (
+            <li key={`${name}-${index}`} className="jules-file-list-item">
+              <span>{name}</span>
+              {/* Basic remove button, functionality would require managing the files state */}
+              {/* <button type="button" className="jules-file-remove-button">&times;</button> */}
+            </li>
+          ))}
+        </ul>
       )}
-      {error && <div className="form-error-alert">{error}</div>}
+
+      {hint && !error && (
+        <p className="jules-input-hint">{hint}</p>
+      )}
+      {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
     </div>
   );
 }

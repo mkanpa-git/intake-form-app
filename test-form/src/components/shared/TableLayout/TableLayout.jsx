@@ -38,27 +38,38 @@ export default function TableLayout({ fields = [], formData = {}, onChange, erro
   const columnHeaders = ui.columns || [];
 
   return (
-    <div className="form-table-layout">
+    <div className="jules-tablelayout">
       {ui.rowCopy?.enableUserPickSource && (
-        <div className="copy-controls">
-          <label>
+        <div className="jules-table-copy-controls">
+          <label htmlFor="jules-copy-source-day" className="jules-label"> {/* Added htmlFor and class */}
             Copy schedule from:
-            <select value={copySourceDay} onChange={(e) => setCopySourceDay(e.target.value)}>
-              <option value="">Select row</option>
-              {ui.rowCopy.sourceOptions.map((day) => (
-                <option key={day} value={day}>{day}</option>
-              ))}
-            </select>
           </label>
-          <button type="button" onClick={handleCopySchedule} disabled={!copySourceDay}>
+          <select
+            id="jules-copy-source-day"
+            className="jules-input"  // Added class
+            value={copySourceDay}
+            onChange={(e) => setCopySourceDay(e.target.value)}
+            style={{ width: 'auto', display: 'inline-block', marginRight: 'var(--jules-space-sm)' }} // Retained some inline style for demo convenience
+          >
+            <option value="">Select row</option>
+            {ui.rowCopy.sourceOptions.map((day) => (
+              <option key={day} value={day}>{day}</option>
+            ))}
+          </select>
+          <button
+            type="button"
+            className="jules-button jules-button-secondary jules-button-small" // Added classes
+            onClick={handleCopySchedule}
+            disabled={!copySourceDay}
+          >
             {ui.rowCopy.copyControlLabel || 'Copy row'}
           </button>
         </div>
       )}
-      <table className="form-table">
+      <table className="jules-tablelayout-table">
         <thead>
           <tr>
-            <th>Day</th>
+            <th>{ui.rowHeaderLabel || 'Day'}</th> {/* Allow row header label to be configurable */}
             {columnHeaders.map((h, i) => (
               <th key={`th-${i}`}>{h}</th>
             ))}
@@ -82,9 +93,11 @@ export default function TableLayout({ fields = [], formData = {}, onChange, erro
                         placeholder={field.ui?.placeholder || ''}
                         value={val}
                         onChange={(e) => onChange && onChange(id, e.target.value)}
-                        className={err ? 'error' : ''}
+                        className={`jules-input ${err ? 'jules-input-error' : ''}`} // Added jules-input classes
                       />
-                      {err && <div className="form-error-alert">{err}</div>}
+                      {/* Assuming error display is desired directly in cell, could be noisy.
+                          Alternatively, errors could be summarized elsewhere or indicated by border only. */}
+                      {err && <div className="jules-alert jules-alert-error jules-input-error-message" style={{fontSize: 'var(--jules-font-size-xs)', padding: 'var(--jules-space-xxs)'}}>{err}</div>}
                     </td>
                   );
                 })}

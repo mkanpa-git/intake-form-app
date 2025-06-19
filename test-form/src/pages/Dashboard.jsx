@@ -45,9 +45,13 @@ export default function Dashboard({ onStart }) {
   };
 
   return (
-    <div className="dashboard-page">
+    // Assuming .jules-page-container or similar might be defined in jules_layout.css for page-level padding/margins
+    // For now, let's use a more specific class that can be styled.
+    <div className="jules-dashboard-page">
+      {/* h1 will be styled by jules_base.css */}
       <h1>Service Catalog</h1>
-      <div className="catalog-grid">
+      {/* A generic grid class, could be styled with CSS Grid or Flexbox in jules_layout.css or jules_misc.css */}
+      <div className="jules-grid-container jules-service-catalog-grid">
         <ServiceCard
           name="Child Care Assistance"
           interaction="Child Care Assistance Application"
@@ -63,9 +67,10 @@ export default function Dashboard({ onStart }) {
       </div>
 
       {apps.length > 0 && (
-        <div className="draft-list">
+        <div className="jules-draft-list">
+          {/* h2 will be styled by jules_base.css */}
           <h2>Saved Applications</h2>
-          <div className="saved-grid">
+          <div className="jules-grid-container jules-saved-applications-grid">
             {apps.map((app) => (
               <ApplicationCard
                 key={app.id}

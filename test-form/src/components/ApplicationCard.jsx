@@ -10,20 +10,25 @@ export default function ApplicationCard({
 }) {
   const formatted = savedAt ? new Date(savedAt).toLocaleString() : '';
   return (
-    <div className="app-card">
-      <h3 className="card-title">{serviceName}</h3>
-      <p className="interaction-name">{interactionName}</p>
-      <p className="app-id">ID: {id}</p>
-      {formatted && <p className="saved-date">Saved: {formatted}</p>}
-      <div className="app-card-actions">
+    <div className="jules-card jules-application-card">
+      {/* h3 and p tags will be styled by jules_base.css. Specific card content classes can be added if needed. */}
+      <h3 className="jules-card-title">{serviceName}</h3>
+      <p className="jules-card-interaction-name">{interactionName}</p>
+      <p className="jules-card-app-id">ID: {id}</p>
+      {formatted && <p className="jules-card-saved-date">Saved: {formatted}</p>}
+      <div className="jules-card-actions">
         <button
+          type="button"
+          className="jules-button jules-button-primary jules-button-small" // Applied Jules button classes
           onClick={() => {
             onContinue && onContinue(id);
           }}
         >
           Continue
         </button>
-        <button className="button-secondary"
+        <button
+          type="button"
+          className="jules-button jules-button-destructive jules-button-small" // Applied Jules button classes
           onClick={() => {
             onDelete && onDelete(id);
           }}
