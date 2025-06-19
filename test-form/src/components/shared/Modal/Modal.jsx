@@ -1,4 +1,3 @@
-import React from 'react';
 import React from 'react'; // Ensure React is imported
 import Button from '../Button/Button'; // Import the new Button component
 // import styles from './Modal.module.css'; // Removed CSS Module import - likely redundant

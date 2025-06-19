@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../shared/Button/Button'; // Import the new Button component
+import Button from './shared/Button/Button'; // Import the new Button component
 
 export default function ApplicationCard({
   id,

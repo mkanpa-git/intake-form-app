@@ -1,7 +1,6 @@
 import React from 'react';
 import { IMaskInput } from 'react-imask';
-import React, { useState, useEffect } from 'react'; // Added useState, useEffect
-import { IMaskInput } from 'react-imask';
+import { useState, useEffect } from 'react'; // Added useState, useEffect
 // import styles from './MaskedInput.module.css'; // Removed CSS Module import - likely redundant
 import Tooltip from '../Tooltip/Tooltip'; // Assuming Tooltip is already refactored
 
