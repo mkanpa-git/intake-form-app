@@ -3,7 +3,7 @@
   "title": "Childcare Application Wizard",
   "description": "Step-by-step form for applying for Childcare Assistance",
   "layout": {
-    "stepperPosition": "top"
+    "stepperPosition": "right"
   },
   "steps": [
     {
