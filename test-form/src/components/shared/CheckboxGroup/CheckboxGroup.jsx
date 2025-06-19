@@ -51,20 +51,25 @@ export default function CheckboxGroup({
           const inputId = `${id}-${optValue}`; // Create unique ID for each checkbox input
 
           return (
-            <label key={optValue} className="jules-checkbox-option">
+            <div key={optValue} className="jules-checkbox-option">
               <input
                 type="checkbox"
-                id={inputId}
-                name={`${id}-${optValue}`}
+                id={inputId} // Use unique id
+                name={`${id}-${optValue}`} // Unique name for each checkbox for better form handling, or share 'id' if backend expects array under one name
                 value={optValue}
                 checked={checked}
                 onChange={e => handleChange(optValue, e.target.checked)}
-                className="jules-checkbox-input"
+                className="jules-checkbox-input" // Class for the input itself
+                // HTML5 'required' on a group of checkboxes is tricky.
+                // Usually handled by JS. If one must be checked, one input can have 'required'.
+                // For simplicity, not adding 'required' on individual checkboxes here unless specifically needed.
                 {...props}
               />
               <span className="jules-checkbox-custom"></span>
-              <span className="jules-checkbox-label-text">{optLabel}</span>
-            </label>
+              <label htmlFor={inputId} className="jules-checkbox-label-text">
+                {optLabel}
+              </label>
+            </div>
           );
         })}
       </div>

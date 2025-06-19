@@ -22,7 +22,8 @@
   transition: background-color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
               border-color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
               color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
-              box-shadow var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
+              box-shadow var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
+              transform var(--jules-transition-duration-fast) var(--jules-transition-timing-function); /* Added transform */
 }
 
 .jules-button:focus-visible {
@@ -31,8 +32,8 @@
   /* For buttons that might already have a border, this outline is preferred over box-shadow */
 }
 .jules-button:active {
-  transform: translateY(1px); /* Slight press effect */
-  box-shadow: none; /* Remove shadow on press */
+  transform: scale(0.98); /* Changed to scale for press effect */
+  box-shadow: none; /* Remove shadow on press, keep if desired or adjust for pressed look */
 }
 
 

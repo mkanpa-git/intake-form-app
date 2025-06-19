@@ -427,3 +427,46 @@
 .jules-dashboard-page .jules-draft-list h2 {
     margin-top: var(--jules-space-xl); /* More space before "Saved Applications" */
 }
+
+/* Loading Spinner */
+.jules-spinner {
+    display: inline-block;
+    width: var(--jules-font-size-md); /* Default size, matches text */
+    height: var(--jules-font-size-md);
+    border: 2px solid var(--jules-primary-blue-50); /* Light track - using primary-blue-50 for a lighter shade of blue */
+    border-top-color: var(--jules-primary-blue-500); /* Active spinner color - using main primary blue */
+    border-radius: 50%;
+    animation: jules-spinner-spin 0.8s linear infinite;
+}
+
+.jules-spinner-small {
+    width: calc(var(--jules-font-size-sm) * 1.2);
+    height: calc(var(--jules-font-size-sm) * 1.2);
+    border-width: 2px;
+}
+
+.jules-spinner-large {
+    width: calc(var(--jules-font-size-lg) * 1.2);
+    height: calc(var(--jules-font-size-lg) * 1.2);
+    border-width: 3px;
+}
+
+@keyframes jules-spinner-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Used within buttons */
+.jules-button .jules-spinner {
+    /* margin-right is handled by the Button.jsx component dynamically */
+    /* vertical-align: middle; */ /* if not using flex on button */
+}
+.jules-button .jules-button-text-hidden { /* Class to hide text when spinner is shown and no icons are present */
+    visibility: hidden;
+    opacity: 0;
+    width: 0; /* Ensure it takes no space */
+    height: 0; /* Ensure it takes no space */
+    display: inline-block; /* To allow width/height to take effect if it was block/flex */
+    overflow: hidden;
+}

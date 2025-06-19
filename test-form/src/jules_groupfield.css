@@ -8,11 +8,6 @@
   background-color: var(--jules-neutral-gray-50); /* Light background for the group container */
 }
 
-/* Wrapper around the table to allow horizontal scrolling on small screens */
-.jules-groupfield {
-  overflow-x: auto;
-}
-
 .jules-groupfield-header {
   display: flex;
   justify-content: space-between;
@@ -35,8 +30,6 @@
   box-shadow: var(--jules-shadow-sm);
   border-radius: var(--jules-border-radius-md);
   overflow: hidden; /* To respect border-radius on th/td */
-  table-layout: fixed; /* Prevents overflow on small screens */
-  word-wrap: break-word;
 }
 
 .jules-groupfield-table th,
@@ -130,52 +123,4 @@
 .jules-groupfield-empty-text {
   margin-bottom: var(--jules-space-md);
   font-size: var(--jules-font-size-md);
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .jules-groupfield-table th,
-  .jules-groupfield-table td {
-    padding: var(--jules-space-xs);
-    font-size: var(--jules-font-size-sm);
-  }
-
-  .jules-groupfield-table {
-    display: none;
-  }
-
-  .jules-groupfield-card-list {
-    display: block;
-  }
-}
-
-@media (min-width: 769px) {
-  .jules-groupfield-card-list {
-    display: none;
-  }
-}
-
-.jules-groupfield-card {
-  margin-bottom: var(--jules-space-md);
-}
-
-.jules-groupfield-card-row {
-  display: flex;
-  justify-content: space-between;
-  padding: var(--jules-space-xs) 0;
-  border-bottom: var(--jules-border-width-sm) solid var(--jules-border-color);
-}
-
-.jules-groupfield-card-row:last-child {
-  border-bottom: none;
-}
-
-.jules-groupfield-card-label {
-  font-weight: var(--jules-font-weight-semibold);
-}
-
-.jules-groupfield-card-actions {
-  margin-top: var(--jules-space-sm);
-  display: flex;
-  gap: var(--jules-space-sm);
 }

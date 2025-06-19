@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../shared/Button/Button'; // Import the new Button component
 
 export default function ApplicationCard({
   id,
@@ -17,24 +18,22 @@ export default function ApplicationCard({
       <p className="jules-card-app-id">ID: {id}</p>
       {formatted && <p className="jules-card-saved-date">Saved: {formatted}</p>}
       <div className="jules-card-actions">
-        <button
-          type="button"
-          className="jules-button jules-button-primary jules-button-small" // Applied Jules button classes
-          onClick={() => {
-            onContinue && onContinue(id);
-          }}
+        <Button
+          variant="primary"
+          size="small"
+          onClick={() => onContinue && onContinue(id)}
+          iconRight="→"
         >
           Continue
-        </button>
-        <button
-          type="button"
-          className="jules-button jules-button-destructive jules-button-small" // Applied Jules button classes
-          onClick={() => {
-            onDelete && onDelete(id);
-          }}
+        </Button>
+        <Button
+          variant="destructive"
+          size="small"
+          onClick={() => onDelete && onDelete(id)}
+          iconLeft="🗑"
         >
           Delete
-        </button>
+        </Button>
       </div>
     </div>
   );
