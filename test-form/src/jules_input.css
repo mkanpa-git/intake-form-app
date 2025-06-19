@@ -3,16 +3,59 @@
 /* General container for a form field (label, input, hint, error) */
 .jules-form-field {
   margin-bottom: var(--jules-space-lg); /* Space between form fields */
+  position: relative;
+  padding-top: var(--jules-space-md); /* Make space for floated label */
 }
 
-/* --- Labels --- */
-.jules-label {
-  display: block;
-  margin-bottom: var(--jules-space-xs);
-  color: var(--jules-text-color-body);
-  font-weight: var(--jules-font-weight-semibold); /* Slightly bolder for emphasis */
-  font-size: var(--jules-font-size-md); /* Standard label size */
+/* Inner wrapper for input and icon(s) - this will be the direct parent for icon and label positioning */
+.jules-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
+
+
+/* --- Labels (Floating Label Specifics) --- */
+.jules-label {
+  position: absolute;
+  left: var(--jules-space-md); /* Initial horizontal position - align with input's padding */
+  /* Initial vertical position: centers it with input's normal text line.
+     Depends on input padding, line-height, and font-size.
+     calc((InputPaddingTop + InputPaddingBottom + InputLineHeight*InputFontSize) / 2 - LabelFontSize*LabelLineHeight / 2)
+     A simpler approach is to align it with where placeholder text would start.
+     Assuming input padding-top is var(--jules-space-md) for floating label version.
+  */
+  top: calc(var(--jules-space-md) + var(--jules-space-sm)); /* Initial top, should align with input text */
+  color: var(--jules-text-color-muted);
+  font-size: var(--jules-font-size-md); /* Initial size, same as input text */
+  line-height: var(--jules-line-height-base); /* Match input's line-height for centering */
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--jules-neutral-white); /* To mask input border when floated */
+  padding: 0 var(--jules-space-xxs);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - (var(--jules-space-md) * 2)); /* Prevent overflow */
+}
+
+/* Floating State Styles for Label */
+.jules-form-field.is-focused .jules-label,
+.jules-form-field.has-value .jules-label {
+  top: 0; /* Floats above the input */
+  left: var(--jules-space-sm); /* Adjust left position when floated */
+  font-size: var(--jules-font-size-sm); /* Smaller size */
+  color: var(--jules-primary-blue-500); /* Active color */
+  /* Optional: if the label has padding for background, adjust it */
+  /* padding: 0 var(--jules-space-xxs); */
+}
+
+/* Specific for select, as it doesn't use :placeholder-shown */
+.jules-form-field.has-value .jules-label,
+.jules-form-field .jules-select select:focus ~ .jules-label { /* If label is sibling after select */
+    /* Styles for select are same as above for now, but can be different */
+}
+
 
 .jules-required-asterisk {
   color: var(--jules-error-red-500);
@@ -22,11 +65,15 @@
 
 /* --- General Input Styling (for text, email, number, date, select, textarea) --- */
 .jules-input,
-.jules-select select, /* Target the select element itself if wrapped */
-.jules-textarea textarea { /* Target the textarea element itself if wrapped */
-  display: block; /* Ensure it takes full width if parent is block */
+.jules-select select,
+.jules-textarea textarea {
+  display: block;
   width: 100%;
-  padding: var(--jules-space-sm) var(--jules-space-md); /* Comfortable padding */
+  /* Adjusted padding for floating label: more top padding */
+  padding-top: var(--jules-space-md);
+  padding-bottom: var(--jules-space-xs);
+  padding-left: var(--jules-space-md);
+  padding-right: var(--jules-space-md);
   font-family: var(--jules-font-family-sans);
   font-size: var(--jules-font-size-md);
   line-height: var(--jules-line-height-base);
@@ -35,8 +82,7 @@
   border: var(--jules-border-width-sm) solid var(--jules-border-color);
   border-radius: var(--jules-border-radius-md);
   box-shadow: var(--jules-shadow-xs); /* Subtle shadow */
-  transition: border-color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
-              box-shadow var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
+  transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
 }
 
 /* Specific height for select to match inputs, if needed */
@@ -361,3 +407,72 @@ textarea {
   /* If no preprocessor, you might need to duplicate some basic styles or ensure JS adds the class.
      For now, this assumes .jules-input or .jules-select etc. are applied. */
 }
+
+/* --- Input Icons --- */
+.jules-input-icon {
+    position: absolute;
+    /* Top is relative to the input-wrapper. Input has more top padding now.
+       Icon should align with the text part of input, not its overall padded height.
+       This needs fine-tuning with the input's line-height and actual rendered height.
+       Let's assume input's line-height is roughly var(--jules-line-height-base) * var(--jules-font-size-md)
+       And its top padding is var(--jules-space-md).
+       So, icon's effective "top" should be around:
+       var(--jules-space-md) (input top padding) + (input text line height / 2) - (icon height / 2)
+    */
+    top: calc(var(--jules-space-md) + (var(--jules-line-height-base) * var(--jules-font-size-md) / 2));
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--jules-text-color-muted);
+    font-size: var(--jules-font-size-md);
+    z-index: 2;
+    line-height: 1;
+    /* Height of icon container can be 1em or specific if needed */
+}
+
+.jules-input-icon-left {
+    left: var(--jules-space-md); /* Align with input's left padding */
+}
+
+.jules-input-icon-right {
+    right: var(--jules-space-md); /* Align with input's right padding */
+}
+
+/* Adjust input padding if icons are present.
+   The base padding-left/right for .jules-input is var(--jules-space-md).
+   Icon itself is ~1em. Add some space between icon and text.
+*/
+.jules-input.jules-input-has-icon-left {
+    padding-left: calc(var(--jules-space-md) + 1em + var(--jules-space-sm));
+}
+
+.jules-input.jules-input-has-icon-right {
+    padding-right: calc(var(--jules-space-md) + 1em + var(--jules-space-sm));
+}
+
+/* For select elements, right padding needs to also account for the dropdown arrow */
+.jules-select select.jules-input-has-icon-right {
+    /* Original right padding for select: calc(var(--jules-space-md) + var(--jules-font-size-xl) + var(--jules-space-sm)) */
+    /* Add space for another icon: */
+    padding-right: calc(var(--jules-space-md) + 1em + var(--jules-space-sm) + var(--jules-font-size-xl) + var(--jules-space-sm));
+}
+.jules-select select.jules-input-has-icon-left {
+    padding-left: calc(var(--jules-space-md) + 1em + var(--jules-space-sm));
+}
+
+
+/* Specific styling for validation icons */
+.jules-input-icon.jules-validation-icon-success {
+    color: var(--jules-success-green-500);
+}
+
+.jules-input-icon.jules-validation-icon-error {
+    color: var(--jules-error-red-500);
+}
+
+/* Ensure icons inside the select wrapper are positioned relative to it */
+.jules-select {
+    position: relative; /* If .jules-select is a wrapper around the select element */
+}
+/* If .jules-select is not used as a wrapper, then the .jules-input-wrapper or .jules-form-field must be relative. */
