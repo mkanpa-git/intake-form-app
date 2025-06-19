@@ -57,22 +57,6 @@ export default function Step({
     setCollapsedSections(initial);
   }, [sections]);
 
-  // Clear section-level errors when required group sections gain data
-  useEffect(() => {
-    setErrors((prev) => {
-      const updated = { ...prev };
-      sections.forEach((sec) => {
-        if (!sec.required || !updated[sec.id]) return;
-        const hasGroupData = sec.fields?.some(
-          (f) => f.type === 'group' && Array.isArray(fullData[f.id]) && fullData[f.id].length > 0
-        );
-        if (hasGroupData) {
-          delete updated[sec.id];
-        }
-      });
-      return updated;
-    });
-  }, [sections, fullData]);
 
   // Clear section-level errors when required group sections gain data
   useEffect(() => {
