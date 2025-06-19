@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import TextInput from '../TextInput/TextInput';
 import SelectField from '../SelectField/SelectField';
 import RadioGroup from '../RadioGroup/RadioGroup';
@@ -16,6 +16,14 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
   const [showForm, setShowForm] = useState(false);
   const [entryErrors, setEntryErrors] = useState({});
   const [placeholders, setPlaceholders] = useState({});
+
+  const tableFields = useMemo(() => {
+    const cols = field.metadata?.tableColumns;
+    if (Array.isArray(cols) && cols.length > 0) {
+      return field.fields.filter((f) => cols.includes(f.id));
+    }
+    return field.fields;
+  }, [field]);
 
   // Remove values for fields that become hidden based on current entry state
   useEffect(() => {
@@ -338,7 +346,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
         <table className="jules-groupfield-table">
           <thead>
             <tr>
-              {field.fields.map((f) => (
+              {tableFields.map((f) => (
                 <th key={f.id}>{f.label}</th>
               ))}
               <th>Actions</th>
@@ -347,7 +355,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
           <tbody>
             {entries.map((item, idx) => (
               <tr key={idx}>
-                {field.fields.map((f) => (
+                {tableFields.map((f) => (
                   <td key={f.id}>
                     {Array.isArray(item[f.id]) ? item[f.id].join(', ') : item[f.id]}
                   </td>
