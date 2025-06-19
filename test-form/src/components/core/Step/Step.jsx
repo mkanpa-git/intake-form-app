@@ -511,6 +511,8 @@ export default function Step({
               error={error} // Pass error prop
             />
           {/* Error display handled by TextInput internally */}
+          </>
+
         );
     }
   };
