@@ -74,26 +74,61 @@ export default function Step({
     });
   }, [sections, fullData]);
 
-  // Re-run validation when returning to this step if fields were previously touched
+  // Clear section-level errors when required group sections gain data
   useEffect(() => {
-    if (Object.keys(touched).length > 0) {
-      const result = validateStep(
-        { sections },
-        formData,
-        errors, // Pass current errors
-        touched // Pass current touched
-      );
-      // Only update if there are new errors or errors were cleared for touched fields
-      // This prevents infinite loops if validateStep itself causes a re-render
-      if (JSON.stringify(result.errors) !== JSON.stringify(errors)) {
-        setErrors(result.errors);
-      }
-      if (JSON.stringify(result.touched) !== JSON.stringify(touched)) {
-        setTouched(result.touched);
+    setErrors((prev) => {
+      const updated = { ...prev };
+      sections.forEach((sec) => {
+        if (!sec.required || !updated[sec.id]) return;
+        const hasGroupData = sec.fields?.some(
+          (f) => f.type === 'group' && Array.isArray(fullData[f.id]) && fullData[f.id].length > 0
+        );
+        if (hasGroupData) {
+          delete updated[sec.id];
+        }
+      });
+      return updated;
+    });
+  }, [sections, fullData]);
+
+  // This effect validates the current formData when initialData (step data from parent) changes or sections change.
+  useEffect(() => {
+    // formData here is the version that has been synced with initialData by the effect above.
+    const result = validateStep(
+      { sections },
+      formData,
+      {}, // Calculate errors fresh for this validation pass based on current formData
+      {}  // Start with a fresh perspective on what this validation pass considers "touched due to error"
+    );
+
+    const newTouchedSetByErrors = {};
+    if (result.errors) {
+      for (const fieldId in result.errors) {
+        if (result.errors[fieldId]) { // If there's an error for this field
+          newTouchedSetByErrors[fieldId] = true; // Mark it as touched to display the error
+        }
       }
     }
+
+    // Set the errors found from this validation pass.
+    // Conditional update if errors are identical can be added later if performance tuning is needed.
+    setErrors(result.errors || {});
+
+    // Merge newTouchedSetByErrors with the existing touched state.
+    // This ensures fields already touched by user interaction remain touched,
+    // and fields that now have errors also become marked as touched.
+    setTouched(prevTouched => {
+      const combinedTouched = { ...prevTouched, ...newTouchedSetByErrors };
+      // Avoid unnecessary state update if combinedTouched is effectively the same as prevTouched.
+      // A deep equals would be more robust than stringify for objects if key order can vary.
+      if (JSON.stringify(combinedTouched) !== JSON.stringify(prevTouched)) {
+        return combinedTouched;
+      }
+      return prevTouched;
+    });
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sections, formData]); // Removed errors and touched from dependencies to prevent potential loops if validateStep is complex
+  }, [initialData, sections]); // DEPENDENCIES CHANGED HERE
 
   useEffect(() => {
     // Check timestamp to ensure it's a new validation attempt that failed
@@ -512,7 +547,6 @@ export default function Step({
             />
           {/* Error display handled by TextInput internally */}
           </>
-
         );
     }
   };
