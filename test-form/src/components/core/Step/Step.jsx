@@ -249,16 +249,15 @@ export default function Step({
           );
         }
         if (isStreet) {
-          return (
-            <>
-              <AddressAutocomplete
-                key={field.id}
-                id={field.id}
-                label={field.label}
-                required={isRequired}
-                value={formData[field.id] || ''}
-                placeholder={placeholders[field.id] || field.ui?.placeholder || ''}
-                onChange={(val) => handleChange(field.id, val)}
+            return (
+              <React.Fragment key={field.id}>
+                <AddressAutocomplete
+                  id={field.id}
+                  label={field.label}
+                  required={isRequired}
+                  value={formData[field.id] || ''}
+                  placeholder={placeholders[field.id] || field.ui?.placeholder || ''}
+                  onChange={(val) => handleChange(field.id, val)}
                 onAddressSelect={(addr) => {
                   const fullAddr = addr.formatted_address || addr.formattedAddress || '';
                   setPlaceholders((p) => ({ ...p, [field.id]: fullAddr }));
@@ -337,11 +336,11 @@ export default function Step({
                   handleChange(field.id, streetOnly);
                 }}
                 error={error} // Pass error to AddressAutocomplete
-              />
-              {/* AddressAutocomplete does not currently use the error prop to display jules-alert, so keep this if needed */}
-              {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
-            </>
-          );
+                />
+                {/* AddressAutocomplete does not currently use the error prop to display jules-alert, so keep this if needed */}
+                {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
+              </React.Fragment>
+            );
         }
         return (
           <TextInput
