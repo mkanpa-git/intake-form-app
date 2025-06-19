@@ -1,4 +1,6 @@
 import React from 'react';
+import React from 'react'; // Ensure React is imported
+import Button from '../Button/Button'; // Import the new Button component
 // import styles from './Modal.module.css'; // Removed CSS Module import - likely redundant
 
 export default function Modal({
@@ -44,10 +46,10 @@ export default function Modal({
         <div className="jules-modal-body">
           {children}
         </div>
-        {(footerContent || onClose) && ( // Render footer if custom content or a default close button is needed
+        {(footerContent || onClose) && (
           <div className="jules-modal-footer">
             {footerContent ? footerContent : (
-              onClose && <button type="button" className="jules-button jules-button-secondary" onClick={onClose}>Close</button>
+              onClose && <Button variant="secondary" onClick={onClose}>Close</Button>
             )}
           </div>
         )}

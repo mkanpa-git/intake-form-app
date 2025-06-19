@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../../shared/Modal/Modal'; // Assuming Modal is already refactored
+import Button from '../../shared/Button/Button'; // Import the new Button component
 // import styles from './ReviewStep.module.css'; // Removed CSS Module import - likely redundant
 
 function isObject(val) {
@@ -72,7 +73,7 @@ function RenderData({ data, isNestedTable }) {
   );
 }
 
-export default function ReviewStep({ steps = [], stepData = {}, onEdit, onSubmit }) {
+export default function ReviewStep({ steps = [], stepData = {}, onEdit, onSubmit, isSubmitting }) { // Added isSubmitting prop
   const [jsonIndex, setJsonIndex] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -105,37 +106,40 @@ export default function ReviewStep({ steps = [], stepData = {}, onEdit, onSubmit
             <div className="jules-section-header jules-review-section-header"> {/* Added header for title and edit button */}
               <h3 className="jules-section-title">{step.title}</h3>
               <div>
-                <button
-                  type="button"
-                  className="jules-button jules-button-tertiary jules-button-small"
+                <Button
+                  variant="tertiary"
+                  size="small"
                   onClick={() => onEdit(idx)}
-                  style={{marginRight: 'var(--jules-space-sm)'}} // Add some spacing
+                  iconLeft="✎"
+                  style={{marginRight: 'var(--jules-space-sm)'}}
                 >
                   Edit
-                </button>
-                <button
-                  type="button"
-                  className="jules-button jules-button-tertiary jules-button-small"
+                </Button>
+                <Button
+                  variant="tertiary"
+                  size="small"
                   onClick={() => handleOpenModal(idx)}
+                  iconLeft="📄"
                 >
                   View as JSON
-                </button>
+                </Button>
               </div>
             </div>
-            <div className="jules-section-content"> {/* Added content wrapper */}
+            <div className="jules-section-content">
               <RenderData data={data} />
             </div>
           </div>
         );
       })}
-      <div className="jules-step-navigation" style={{marginTop: 'var(--jules-space-xl)'}}> {/* Added navigation wrapper for submit */}
-        <button
-          type="button"
+      <div className="jules-step-navigation" style={{marginTop: 'var(--jules-space-xl)'}}>
+        <Button
+          variant="primary"
           onClick={onSubmit}
-          className="jules-button jules-button-primary"
+          iconRight="✓"
+          isLoading={isSubmitting} // Pass isSubmitting to isLoading prop
         >
           Submit Application
-        </button>
+        </Button>
       </div>
       {jsonIndex !== null && (
         <Modal
