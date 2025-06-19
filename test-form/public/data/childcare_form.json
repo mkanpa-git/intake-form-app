@@ -473,7 +473,13 @@
                 "label": "Children Needing Care",
                 "type": "group",
                 "metadata": {
-                  "multiple": true
+                  "multiple": true,
+                  "tableColumns": [
+                    "first_name",
+                    "last_name",
+                    "date_of_birth",
+                    "relationship_to_applicant"
+                  ]
                 },
                 "fields": [
                   {
@@ -574,13 +580,7 @@
                       ]
                     },
                     "metadata": {
-                      "multiple": true,
-                      "tableColumns": [
-                        "first_name",
-                        "last_name",
-                        "date_of_birth",
-                        "relationship_to_applicant"
-                      ]
+                      "multiple": true
                     }
                   },
                   {
@@ -666,7 +666,13 @@
                 "label": "Family Members",
                 "type": "group",
                 "metadata": {
-                  "multiple": true
+                  "multiple": true,
+                  "tableColumns": [
+                    "first_name",
+                    "last_name",
+                    "date_of_birth",
+                    "relationship_to_applicant"
+                  ]
                 },
                 "fields": [
                   {
@@ -769,13 +775,7 @@
                       ]
                     },
                     "metadata": {
-                      "multiple": true,
-                      "tableColumns": [
-                        "first_name",
-                        "last_name",
-                        "date_of_birth",
-                        "relationship_to_applicant"
-                      ]
+                      "multiple": true
                     }
                   },
                   {
