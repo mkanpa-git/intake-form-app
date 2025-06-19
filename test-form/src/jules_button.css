@@ -174,12 +174,14 @@
 
 /* --- Button with Icon --- */
 .jules-button .jules-button-icon { /* Class for an icon element within a button */
-  display: inline-block;
-  vertical-align: middle; /* Or use flex align-items on button */
+  display: inline-flex; /* Use flex for consistent centering */
+  align-items: center;  /* Center icon vertically */
+  justify-content: center;
   /* Size the icon using font-size if it's a font icon, or width/height for SVG */
   font-size: inherit; /* Icon size matches button text size by default */
   width: 1em; /* If SVG, ensure it scales with font-size */
   height: 1em;
+  line-height: 1; /* Remove extra baseline space */
 }
 
 .jules-button .jules-button-icon-leading {
