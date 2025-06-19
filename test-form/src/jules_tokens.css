@@ -122,4 +122,12 @@
   --jules-transition-duration-base: 250ms;
   --jules-transition-duration-slow: 400ms;
   --jules-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-index Scale (example) */
+  --jules-z-index-dropdown: 1000;
+  --jules-z-index-sticky: 1020;
+  --jules-z-index-modal-backdrop: 1040;
+  --jules-z-index-modal: 1050;
+  --jules-z-index-popover: 1060;
+  --jules-z-index-tooltip: 1070;
 }
