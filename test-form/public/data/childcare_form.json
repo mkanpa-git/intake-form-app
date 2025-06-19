@@ -574,7 +574,13 @@
                       ]
                     },
                     "metadata": {
-                      "multiple": true
+                      "multiple": true,
+                      "tableColumns": [
+                        "first_name",
+                        "last_name",
+                        "date_of_birth",
+                        "relationship_to_applicant"
+                      ]
                     }
                   },
                   {
@@ -763,7 +769,13 @@
                       ]
                     },
                     "metadata": {
-                      "multiple": true
+                      "multiple": true,
+                      "tableColumns": [
+                        "first_name",
+                        "last_name",
+                        "date_of_birth",
+                        "relationship_to_applicant"
+                      ]
                     }
                   },
                   {
@@ -1961,7 +1973,12 @@
                 "label": "List of Providers",
                 "type": "group",
                 "metadata": {
-                  "multiple": true
+                  "multiple": true,
+                  "tableColumns": [
+                    "provider_name",
+                    "program_number",
+                    "provider_zip_code"
+                  ]
                 },
                 "fields": [
                   {
