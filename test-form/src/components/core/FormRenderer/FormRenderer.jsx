@@ -15,6 +15,7 @@ export default function FormRenderer({ applicationId, onExit }) {
   const [stepData, setStepData] = useState({});
   const [allData, setAllData] = useState({});
   const [editingFromReview, setEditingFromReview] = useState(false);
+  const [currentStepValidation, setCurrentStepValidation] = useState({ errors: {}, touched: {}, timestamp: null });
 
   // Derived state, initialized after formSpec is loaded
   const [form, setForm] = useState(null);
@@ -154,11 +155,17 @@ export default function FormRenderer({ applicationId, onExit }) {
     // allow going to a previous step without checking validation
     if (targetIndex < currentStep) return true;
     if (steps[currentStep]?.type === 'review') return true;
-    const { valid } = validateStep(
+
+    const result = validateStep(
       steps[currentStep],
       stepData[steps[currentStep].id] || {}
     );
-    return valid;
+
+    if (!result.valid && targetIndex > currentStep) {
+      // If trying to move forward and validation fails, set errors and touched state to trigger display in Step component
+      setCurrentStepValidation({ errors: result.errors, touched: result.touched, timestamp: Date.now() });
+    }
+    return result.valid;
   };
 
   if (isLoading) {
@@ -223,6 +230,7 @@ export default function FormRenderer({ applicationId, onExit }) {
               onBackToReview={
                 editingFromReview ? handleBackToReview : undefined
               }
+              validationAttempt={currentStepValidation} // Pass validation attempt state
             />
           )
         )}

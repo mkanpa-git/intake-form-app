@@ -1,9 +1,27 @@
 @import './jules_tokens.css';
 
 /* --- Tooltips --- */
-.jules-tooltip {
-  position: absolute; /* Or fixed, depending on use case */
-  z-index: 1000; /* High z-index to appear above other elements */
+.jules-tooltip-wrapper {
+  display: inline-flex; /* Align icon with text nicely */
+  align-items: center;
+  position: relative; /* For positioning the tooltip text */
+  margin-left: var(--jules-space-xxs); /* Small space from preceding text */
+}
+
+.jules-tooltip-icon {
+  font-size: 0.8em; /* Smaller than surrounding text */
+  color: var(--jules-primary-blue-500); /* Use theme primary color */
+  cursor: help; /* Indicate it's a help icon */
+  /* vertical-align: middle; /* Ensure good alignment if not using flex on wrapper */
+  /* display: inline-block; */ /* If not using flex on wrapper */
+}
+
+.jules-tooltip-text {
+  position: absolute;
+  bottom: calc(100% + var(--jules-space-xs)); /* Position above the icon with a small gap */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--jules-z-index-tooltip); /* Use token for z-index */
   background-color: var(--jules-neutral-gray-900);
   color: var(--jules-neutral-white);
   padding: var(--jules-space-xs) var(--jules-space-sm);
@@ -12,27 +30,30 @@
   font-weight: var(--jules-font-weight-medium);
   line-height: var(--jules-line-height-sm);
   box-shadow: var(--jules-shadow-md);
-  opacity: 0; /* Hidden by default, shown via JS or :hover/:focus on parent */
+  opacity: 0;
   visibility: hidden;
   transition: opacity var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
               visibility var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
-  white-space: nowrap; /* Prevent multi-line tooltips unless intended */
+  white-space: nowrap;
+  pointer-events: none; /* Prevent tooltip from interfering with mouse events on icon */
 }
 
-.jules-tooltip.jules-tooltip-visible { /* Class to show tooltip */
+.jules-tooltip-text.jules-tooltip-visible {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto; /* Allow interaction if tooltip itself has links (not typical) */
 }
 
-/* Tooltip arrow (optional, requires more complex CSS or JS for positioning) */
-.jules-tooltip::after { /* Basic triangle arrow */
+/* Tooltip arrow */
+.jules-tooltip-text::after {
   content: '';
   position: absolute;
-  border-width: var(--jules-space-xs);
+  top: 100%; /* Arrow at the bottom of the tooltip bubble */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: var(--jules-space-xs); /* Arrow size */
   border-style: solid;
-  /* Example: bottom arrow */
-  /* top: 100%; left: 50%; margin-left: calc(-1 * var(--jules-space-xs)); */
-  /* border-color: var(--jules-neutral-gray-900) transparent transparent transparent; */
+  border-color: var(--jules-neutral-gray-900) transparent transparent transparent; /* Arrow pointing down */
 }
 
 

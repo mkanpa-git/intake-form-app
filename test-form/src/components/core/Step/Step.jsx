@@ -33,6 +33,7 @@ export default function Step({
   onDataChange,
   applicationId,
   onBackToReview,
+  validationAttempt, // Added new prop
 }) {
   const [collapsedSections, setCollapsedSections] = useState({});
   const [formData, setFormData] = useState(initialData);
@@ -79,13 +80,31 @@ export default function Step({
       const result = validateStep(
         { sections },
         formData,
-        errors,
-        touched
+        errors, // Pass current errors
+        touched // Pass current touched
       );
-      setErrors(result.errors);
-      setTouched(result.touched);
+      // Only update if there are new errors or errors were cleared for touched fields
+      // This prevents infinite loops if validateStep itself causes a re-render
+      if (JSON.stringify(result.errors) !== JSON.stringify(errors)) {
+        setErrors(result.errors);
+      }
+      if (JSON.stringify(result.touched) !== JSON.stringify(touched)) {
+        setTouched(result.touched);
+      }
     }
-  }, [sections]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sections, formData]); // Removed errors and touched from dependencies to prevent potential loops if validateStep is complex
+
+  useEffect(() => {
+    // Check timestamp to ensure it's a new validation attempt that failed
+    // And that the errors are for the current step being displayed (though this component doesn't know current step directly, FormRenderer does)
+    if (validationAttempt && validationAttempt.timestamp && Object.keys(validationAttempt.errors).length > 0) {
+      // Merge errors and touched from validationAttempt into local state
+      // We only update if there are actual errors from the attempt
+      setErrors(prevErrors => ({ ...prevErrors, ...validationAttempt.errors }));
+      setTouched(prevTouched => ({ ...prevTouched, ...validationAttempt.touched }));
+    }
+  }, [validationAttempt]); // Depend on the entire validationAttempt object
 
   const handleToggle = (id) => {
     setCollapsedSections((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -298,136 +317,137 @@ export default function Step({
                   const streetOnly = fullAddr.split(',')[0];
                   handleChange(field.id, streetOnly);
                 }}
+                error={error} // Pass error to AddressAutocomplete
               />
-              {error && <div className="form-error-alert">{error}</div>}
+              {/* AddressAutocomplete does not currently use the error prop to display jules-alert, so keep this if needed */}
+              {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
             </>
           );
         }
         return (
-          <>
-            <TextInput
-              key={field.id}
-              id={field.id}
-              label={field.label}
-              tooltip={field.tooltip}
-              type={field.type}
-              required={isRequired}
-              value={formData[field.id] || ''}
-              onChange={(e) => handleChange(field.id, e.target.value)}
-            />
-            {error && <div className="form-error-alert">{error}</div>}
-          </>
+          <TextInput
+            key={field.id}
+            id={field.id}
+            label={field.label}
+            tooltip={field.tooltip}
+            type={field.type}
+            required={isRequired}
+            value={formData[field.id] || ''}
+            onChange={(e) => handleChange(field.id, e.target.value)}
+            error={error} // Pass error prop
+            // Hint prop can be added if field.description exists
+          />
         );
       case 'select':
         if (field.metadata?.multiple) {
           return (
-            <>
-              <SelectField
-                key={field.id}
-                id={field.id}
-                label={field.label}
-                tooltip={field.tooltip}
-                options={field.ui?.options || []}
-                required={isRequired}
-                multiple
-                minSelections={field.constraints?.minSelections}
-                maxSelections={field.constraints?.maxSelections}
-                value={formData[field.id] || []}
-                onChange={(e) =>
-                  handleChange(
-                    field.id,
-                    Array.from(e.target.selectedOptions).map((opt) => opt.value)
-                  )
-                }
-              />
-              {error && <div className="form-error-alert">{error}</div>}
-            </>
-          );
-        }
-        return (
-          <>
             <SelectField
               key={field.id}
               id={field.id}
               label={field.label}
               tooltip={field.tooltip}
               options={field.ui?.options || []}
-              placeholder={field.ui?.placeholder || `Select ${field.label}`}
               required={isRequired}
-              value={formData[field.id] || ''}
-              onChange={(e) => handleChange(field.id, e.target.value)}
+              multiple
+              minSelections={field.constraints?.minSelections}
+              maxSelections={field.constraints?.maxSelections}
+              value={formData[field.id] || []}
+              onChange={(e) => // For multi-select, value is an array of selected option values
+                handleChange(
+                  field.id,
+                  Array.from(e.target.selectedOptions).map((opt) => opt.value)
+                )
+              }
+              error={error} // Pass error prop
             />
-            {error && <div className="form-error-alert">{error}</div>}
-          </>
-        );
-      case 'radio':
-        return (
-          <>
-            <RadioGroup
-              key={field.id}
-              id={field.id}
-              label={field.label}
-              tooltip={field.tooltip}
-              options={field.ui?.options || []}
-              required={isRequired}
-              value={formData[field.id] || ''}
-              onChange={(e) => handleChange(field.id, e.target.value)}
-            />
-            {error && <div className="form-error-alert">{error}</div>}
-          </>
-        );
-      case 'checkbox':
-        if (field.metadata?.multiple) {
-          return (
-            <>
-              <CheckboxGroup
-                key={field.id}
-                id={field.id}
-                label={field.label}
-                tooltip={field.tooltip}
-                options={field.ui?.options || []}
-                value={formData[field.id] || []}
-                onChange={(val) => handleChange(field.id, val)}
-                required={isRequired}
-              />
-              {error && <div className="form-error-alert">{error}</div>}
-            </>
           );
         }
         return (
-          <>
-            <input
+          <SelectField
+            key={field.id}
+            id={field.id}
+            label={field.label}
+            tooltip={field.tooltip}
+            options={field.ui?.options || []}
+            placeholder={field.ui?.placeholder || `Select ${field.label}`}
+            required={isRequired}
+            value={formData[field.id] || ''}
+            onChange={(e) => handleChange(field.id, e.target.value)}
+            error={error} // Pass error prop
+          />
+        );
+      case 'radio':
+        return (
+          <RadioGroup
+            key={field.id}
+            id={field.id} // This id will be used as 'name' for radio inputs in RadioGroup
+            label={field.label}
+            tooltip={field.tooltip}
+            options={field.ui?.options || []}
+            required={isRequired}
+            value={formData[field.id] || ''}
+            onChange={(e) => handleChange(field.id, e.target.value)} // Assuming RadioGroup's onChange gives the value directly
+            error={error} // Pass error prop
+            layout={field.ui?.layout} // Pass layout if specified (e.g., 'horizontal')
+          />
+        );
+      case 'checkbox':
+        if (field.metadata?.multiple) { // This implies a CheckboxGroup
+          return (
+            <CheckboxGroup
               key={field.id}
-              type="checkbox"
-              id={field.id}
-              checked={!!formData[field.id]}
-              onChange={(e) => handleChange(field.id, e.target.checked)}
+              id={field.id} // Base for checkbox names/ids in CheckboxGroup
+              label={field.label}
+              tooltip={field.tooltip}
+              options={field.ui?.options || []}
+              value={formData[field.id] || []}
+              onChange={(val) => handleChange(field.id, val)}
               required={isRequired}
+              error={error} // Pass error prop
+              layout={field.ui?.layout} // Pass layout
             />
-            {field.label && (
-              <label htmlFor={field.id}>
-                {field.label}
-                <Tooltip text={field.tooltip} />
-              </label>
-            )}
-            {error && <div className="form-error-alert">{error}</div>}
-          </>
+          );
+        }
+        // This is for a single checkbox, not a group
+        // Consider creating a dedicated SingleCheckbox component that uses jules styles
+        // For now, rendering a basic one that might not fully align with jules custom checkbox styles
+        return (
+          <div className="jules-form-field"> {/* Wrap single checkbox for consistent layout */}
+            <div className="jules-checkbox-option">
+              <input
+                key={field.id}
+                type="checkbox"
+                id={field.id}
+                className="jules-checkbox-input" // Basic class, custom styling might need more structure
+                checked={!!formData[field.id]}
+                onChange={(e) => handleChange(field.id, e.target.checked)}
+                required={isRequired}
+              />
+              <span className="jules-checkbox-custom"></span>
+              {field.label && (
+                <label htmlFor={field.id} className="jules-checkbox-label-text">
+                  {field.label}
+                  {/* Tooltip should ideally be part of the label text or handled by a wrapper */}
+                  {field.tooltip && <Tooltip text={field.tooltip} />}
+                </label>
+              )}
+            </div>
+            {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
+          </div>
         );
       case 'date':
         return (
-          <>
-            <TextInput
-              key={field.id}
-              id={field.id}
-              label={field.label}
-              tooltip={field.tooltip}
-              type="date"
-              required={isRequired}
-              value={formData[field.id] || ''}
-              onChange={(e) => handleChange(field.id, e.target.value)}
-            />
-            {error && <div className="form-error-alert">{error}</div>}
-          </>
+          <TextInput
+            key={field.id}
+            id={field.id}
+            label={field.label}
+            tooltip={field.tooltip}
+            type="date"
+            required={isRequired}
+            value={formData[field.id] || ''}
+            onChange={(e) => handleChange(field.id, e.target.value)}
+            error={error} // Pass error prop
+          />
         );
       case 'file':
         return (
@@ -484,13 +504,13 @@ export default function Step({
               id={field.id}
               label={field.label}
               tooltip={field.tooltip}
-              type={field.type}
+              type={field.type} // Should be 'text' if not a specific input type
               required={isRequired}
               value={formData[field.id] || ''}
               onChange={(e) => handleChange(field.id, e.target.value)}
+              error={error} // Pass error prop
             />
-            {error && <div className="form-error-alert">{error}</div>}
-          </>
+          // Error display handled by TextInput internally
         );
     }
   };
