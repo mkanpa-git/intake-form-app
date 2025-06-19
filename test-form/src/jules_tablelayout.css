@@ -1,5 +1,10 @@
 @import './jules_tokens.css';
 
+/* Wrapper around table layout to prevent page overflow on mobile */
+.jules-tablelayout {
+  overflow-x: auto;
+}
+
 .jules-tablelayout-container {
   margin-bottom: var(--jules-space-lg);
   /* No default border/background, table itself will have it */
@@ -13,6 +18,7 @@
   overflow: hidden; /* Important for border-radius to apply to th/td */
   background-color: var(--jules-neutral-white);
   box-shadow: var(--jules-shadow-sm);
+  table-layout: fixed; /* Helps keep table within container */
 }
 
 .jules-tablelayout-table th,
@@ -23,6 +29,7 @@
   text-align: left;
   vertical-align: middle; /* Default vertical alignment */
   font-size: var(--jules-font-size-md);
+  word-break: break-word;
 }
 
 .jules-tablelayout-table th:last-child,
@@ -114,4 +121,13 @@
   /* Assuming .jules-button is used */
   padding: var(--jules-space-xs) var(--jules-space-sm); /* Smaller button for this context */
   font-size: var(--jules-font-size-sm);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .jules-tablelayout-table th,
+  .jules-tablelayout-table td {
+    padding: var(--jules-space-xs);
+    font-size: var(--jules-font-size-sm);
+  }
 }
