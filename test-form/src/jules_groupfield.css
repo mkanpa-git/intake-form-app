@@ -139,4 +139,43 @@
     padding: var(--jules-space-xs);
     font-size: var(--jules-font-size-sm);
   }
+
+  .jules-groupfield-table {
+    display: none;
+  }
+
+  .jules-groupfield-card-list {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .jules-groupfield-card-list {
+    display: none;
+  }
+}
+
+.jules-groupfield-card {
+  margin-bottom: var(--jules-space-md);
+}
+
+.jules-groupfield-card-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--jules-space-xs) 0;
+  border-bottom: var(--jules-border-width-sm) solid var(--jules-border-color);
+}
+
+.jules-groupfield-card-row:last-child {
+  border-bottom: none;
+}
+
+.jules-groupfield-card-label {
+  font-weight: var(--jules-font-weight-semibold);
+}
+
+.jules-groupfield-card-actions {
+  margin-top: var(--jules-space-sm);
+  display: flex;
+  gap: var(--jules-space-sm);
 }
