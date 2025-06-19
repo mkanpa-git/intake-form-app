@@ -168,9 +168,14 @@ export function validateStep(step, formData, formErrors = {}, touched = {}) {
 
   step.sections.forEach((section) => {
     if (section.required) {
-      const hasGroupWithData = section.fields.some(
-        (f) => f.type === "group" && Array.isArray(formData[f.id]) && formData[f.id].length > 0
-      );
+      const hasGroupWithData =
+        Array.isArray(section.fields) &&
+        section.fields.some(
+          (f) =>
+            f.type === "group" &&
+            Array.isArray(formData[f.id]) &&
+            formData[f.id].length > 0
+        );
 
       if (hasGroupWithData && updatedErrors[section.id]) {
         delete updatedErrors[section.id];
