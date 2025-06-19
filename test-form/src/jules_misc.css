@@ -327,7 +327,9 @@
     border-radius: var(--jules-border-radius-lg);
     padding: var(--jules-space-lg);
     box-shadow: var(--jules-shadow-sm);
-    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition: box-shadow var(--jules-transition-duration-base) var(--jules-transition-timing-function),
+                transform var(--jules-transition-duration-base) var(--jules-transition-timing-function),
+                border-color var(--jules-transition-duration-base) var(--jules-transition-timing-function);
     text-decoration: none; /* For <a> cards */
     color: inherit; /* For <a> cards */
     display: block; /* For <a> cards to take full width if needed */
@@ -336,9 +338,10 @@
 .jules-card:hover,
 .jules-card:focus,
 .jules-card:focus-within { /* focus-within for cards containing focusable elements */
-    box-shadow: var(--jules-shadow-md);
-    transform: translateY(-2px);
-    outline: none; /* Or a specific focus ring if desired */
+    box-shadow: var(--jules-shadow-lg); /* Make shadow more prominent on hover */
+    transform: translateY(-4px) scale(1.01); /* Slightly more lift and subtle scale */
+    border-color: var(--jules-primary-blue-300); /* Accent border on hover */
+    outline: none;
 }
 
 .jules-application-card {
@@ -469,4 +472,36 @@
     height: 0; /* Ensure it takes no space */
     display: inline-block; /* To allow width/height to take effect if it was block/flex */
     overflow: hidden;
+}
+
+/* Card Header for Avatar/Icon and Title alignment */
+.jules-card-header {
+    display: flex;
+    align-items: center; /* Vertically align avatar and title block */
+    margin-bottom: var(--jules-space-md); /* Space between header and card body content */
+}
+
+.jules-card-avatar-icon-placeholder {
+    width: 48px;
+    height: 48px;
+    background-color: var(--jules-neutral-gray-200);
+    color: var(--jules-primary-blue-500); /* Changed from --jules-primary-blue to --jules-primary-blue-500 for specific shade */
+    border-radius: 50%; /* Circular avatar style */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--jules-font-size-lg);
+    font-weight: var(--jules-font-weight-semibold);
+    margin-right: var(--jules-space-md);
+    flex-shrink: 0; /* Prevent shrinking if title is long */
+}
+
+/* Optional: if the title itself needs specific alignment within its new div wrapper */
+.jules-card-header > div:not(.jules-card-avatar-icon-placeholder) {
+    flex-grow: 1; /* Allow title block to take remaining space */
+}
+
+/* Ensure card titles within headers don't have extra top margin if they are h3 etc. */
+.jules-card-header .jules-card-title {
+    margin-bottom: var(--jules-space-xxs); /* Reduce bottom margin if interaction name is below it */
 }
