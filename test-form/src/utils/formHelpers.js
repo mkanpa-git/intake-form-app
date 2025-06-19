@@ -90,6 +90,15 @@ export function cleanupHiddenFields(step, formData) {
 export function validateField(field, value, data = {}) {
   if (!field) return "";
 
+  // Determine if field should currently be visible. If the field has an explicit
+  // visibilityCondition we use that. Otherwise fall back to the requiredCondition
+  // (which some schemas use to also control visibility).
+  const visibilityCheck = field.visibilityCondition ??
+    (field.requiredCondition?.condition || field.requiredCondition);
+  if (visibilityCheck && !evaluateCondition(visibilityCheck, data)) {
+    return ""; // Skip validation when the field isn't visible
+  }
+
   const required = field.required;
   const requiredCondition = field.requiredCondition;
 
@@ -189,12 +198,32 @@ export function validateStep(step, formData, formErrors = {}, touched = {}) {
 
     if (Array.isArray(section.fields)) {
       section.fields.forEach((field) => {
+        const visibilityCheck = field.visibilityCondition ??
+          (field.requiredCondition?.condition || field.requiredCondition);
+        const isVisible = visibilityCheck ? evaluateCondition(visibilityCheck, formData) : true;
+
+        if (!isVisible) {
+          if (updatedErrors[field.id]) delete updatedErrors[field.id];
+          return;
+        }
+
         updatedTouched[field.id] = true;
         const value = formData[field.id];
 
         if (field.type === "group" && field.metadata?.multiple && Array.isArray(value)) {
           value.forEach((record, index) => {
             field.fields.forEach((subField) => {
+              const subData = { ...formData, ...record };
+              const visibilityCheck = subField.visibilityCondition ??
+                (subField.requiredCondition?.condition || subField.requiredCondition);
+              const subVisible = visibilityCheck ? evaluateCondition(visibilityCheck, subData) : true;
+
+              if (!subVisible) {
+                const fieldKey = `${field.id}[${index}].${subField.id}`;
+                if (updatedErrors[fieldKey]) delete updatedErrors[fieldKey];
+                return;
+              }
+
               const subValue = record[subField.id] || "";
               const {
                 required,

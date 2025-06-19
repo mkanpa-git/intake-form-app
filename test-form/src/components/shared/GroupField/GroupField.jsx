@@ -17,6 +17,28 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
   const [entryErrors, setEntryErrors] = useState({});
   const [placeholders, setPlaceholders] = useState({});
 
+  // Remove values for fields that become hidden based on current entry state
+  useEffect(() => {
+    const entryData = { ...fullData, ...currentEntry };
+    let updated = { ...currentEntry };
+    let changed = false;
+    (field.fields || []).forEach((subField) => {
+      const conditionToCheck =
+        subField.visibilityCondition ??
+        (subField.requiredCondition?.condition || subField.requiredCondition);
+      const visible = conditionToCheck
+        ? evaluateCondition(conditionToCheck, entryData)
+        : true;
+      if (!visible && updated[subField.id] !== undefined) {
+        delete updated[subField.id];
+        changed = true;
+      }
+    });
+    if (changed) {
+      setCurrentEntry(updated);
+    }
+  }, [currentEntry, field.fields, fullData]);
+
   useEffect(() => {
     setEntries(Array.isArray(value) ? value : []);
   }, [value]);
@@ -41,11 +63,12 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
 
   const validateEntry = () => {
     const errors = {};
+    const entryData = { ...fullData, ...currentEntry };
     (field.fields || []).forEach((subField) => {
       const required = subField.requiredCondition
         ? evaluateCondition(
             subField.requiredCondition.condition || subField.requiredCondition,
-            fullData
+            entryData
           )
         : subField.required;
       const val = currentEntry[subField.id];
@@ -101,16 +124,17 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
   };
 
   const renderField = (subField) => {
+    const entryData = { ...fullData, ...currentEntry };
     const conditionToCheck =
       subField.visibilityCondition ??
       (subField.requiredCondition?.condition || subField.requiredCondition);
     const visible = conditionToCheck
-      ? evaluateCondition(conditionToCheck, fullData)
+      ? evaluateCondition(conditionToCheck, entryData)
       : true;
     const required = subField.requiredCondition
       ? evaluateCondition(
           subField.requiredCondition.condition || subField.requiredCondition,
-          fullData
+          entryData
         )
       : subField.required;
     if (!visible) return null;
