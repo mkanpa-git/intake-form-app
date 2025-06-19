@@ -54,7 +54,7 @@ function App() {
         </nav>
       </header>
 
-      <main className="form-body">
+      <main className="form-main">
         {page === 'dashboard' ? (
           <Dashboard onStart={startApplication} />
         ) : (

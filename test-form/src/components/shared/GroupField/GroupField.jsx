@@ -137,15 +137,16 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
               options={subField.ui?.options || []}
               placeholder={subField.ui?.placeholder || `Select ${subField.label}`}
               {...commonProps}
+              error={error} // Pass error to SelectField
             />
-            {error && <div className="form-error-alert">{error}</div>}
+            {/* Error display handled by SelectField internally now */}
           </>
         );
       case 'radio':
         return (
           <>
-            <RadioGroup key={subField.id} options={subField.ui?.options || []} {...commonProps} />
-            {error && <div className="form-error-alert">{error}</div>}
+            <RadioGroup key={subField.id} options={subField.ui?.options || []} {...commonProps} error={error} />
+            {/* Error display handled by RadioGroup internally now */}
           </>
         );
       case 'checkbox':
@@ -157,16 +158,17 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
               value={currentEntry[subField.id] || []}
               onChange={(val) => handleInputChange(subField.id, val)}
               {...commonProps}
+              error={error} // Pass error to CheckboxGroup
             />
-            {error && <div className="form-error-alert">{error}</div>}
+            {/* Error display handled by CheckboxGroup internally now */}
           </>
         );
       case 'date':
       case 'time':
         return (
           <>
-            <TextInput key={subField.id} type={subField.type} {...commonProps} />
-            {error && <div className="form-error-alert">{error}</div>}
+            <TextInput key={subField.id} type={subField.type} {...commonProps} error={error} />
+            {/* Error display handled by TextInput internally now */}
           </>
         );
       case 'file':
@@ -273,8 +275,11 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
                   const streetOnly = fullAddr.split(',')[0];
                   handleInputChange(subField.id, streetOnly);
                 }}
+                error={error} // Pass error to AddressAutocomplete
               />
-              {error && <div className="form-error-alert">{error}</div>}
+              {/* Error display for AddressAutocomplete might need specific handling if not internal */}
+              {/* For now, assuming AddressAutocomplete might show its own error or this is for a general field error */}
+              {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
             </>
           );
         }
@@ -295,18 +300,18 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
         }
         return (
           <>
-            <TextInput key={subField.id} {...commonProps} />
-            {error && <div className="form-error-alert">{error}</div>}
+            <TextInput key={subField.id} {...commonProps} error={error} />
+            {/* Error display handled by TextInput internally now */}
           </>
         );
     }
   };
 
   return (
-    <div className="group-field">
-      <h4>{field.label}</h4>
+    <div className="jules-groupfield">
+      <h3 className="jules-groupfield-title">{field.label}</h3> {/* Changed h4 to h3 and added class */}
       {entries.length > 0 && (
-        <table className="modern-table">
+        <table className="jules-groupfield-table">
           <thead>
             <tr>
               {field.fields.map((f) => (
@@ -323,24 +328,32 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
                     {Array.isArray(item[f.id]) ? item[f.id].join(', ') : item[f.id]}
                   </td>
                 ))}
-                <td>
-                  <button onClick={() => handleEdit(idx)}>Edit</button>
-                  <button className="button-secondary" onClick={() => handleDelete(idx)}>Delete</button>
+                <td className="jules-groupfield-actions"> {/* Added class for styling action cell */}
+                  <button type="button" className="jules-button jules-button-tertiary jules-button-small" onClick={() => handleEdit(idx)}>Edit</button>
+                  <button type="button" className="jules-button jules-button-destructive jules-button-small" onClick={() => handleDelete(idx)}>Delete</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
-      <button className="button-secondary" onClick={() => { setShowForm(true); setEditingIndex(null); setCurrentEntry({}); }}>
-        Add {field.label}
-      </button>
+      {!showForm && ( // Only show "Add" button if form is not visible
+        <button
+          type="button"
+          className="jules-button jules-button-secondary"
+          onClick={() => { setShowForm(true); setEditingIndex(null); setCurrentEntry({}); }}
+          style={{marginTop: entries.length > 0 ? 'var(--jules-space-md)' : '0'}} // Add some space if table is present
+        >
+          Add {field.label}
+        </button>
+      )}
       {showForm && (
-        <div className="group-entry-form">
+        <div className="jules-groupfield-entry-form">
+          <h3>{editingIndex !== null ? `Edit ${field.label}` : `Add New ${field.label}`}</h3> {/* Form title */}
           {field.fields.map(renderField)}
-          <div className="form-actions">
-            <button onClick={handleSave}>Save</button>
-            <button className="button-secondary" onClick={handleCancel}>Cancel</button>
+          <div className="jules-form-actions"> {/* Standardized form actions class */}
+            <button type="button" className="jules-button jules-button-primary" onClick={handleSave}>Save</button>
+            <button type="button" className="jules-button jules-button-secondary" onClick={handleCancel}>Cancel</button>
           </div>
         </div>
       )}

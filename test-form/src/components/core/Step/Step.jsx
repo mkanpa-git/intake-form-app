@@ -18,7 +18,7 @@ import FileInput from '../../shared/FileInput/FileInput';
 import AddressAutocomplete from '../../shared/AddressAutocomplete';
 import Tooltip from '../../shared/Tooltip/Tooltip';
 import ReactMarkdown from 'react-markdown';
-import styles from './Step.module.css';
+// import styles from './Step.module.css'; // Removed CSS Module import
 
 export default function Step({
   title,
@@ -575,13 +575,13 @@ export default function Step({
   };
 
   return (
-    <div className={styles.step}>
-      <div className={styles.header}>
-        <h2>{title}</h2>
+    <div className="jules-step">
+      <div className="jules-step-header">
+        <h2>{title}</h2> {/* h2 will be styled by jules_base.css */}
         {onBackToReview && (
           <button
             type="button"
-            className={styles.backToReview}
+            className="jules-button jules-button-tertiary jules-button-small jules-step-back-to-review"
             onClick={handleBackToReviewClick}
           >
             Back to Review step
@@ -618,12 +618,15 @@ export default function Step({
           >
             {sec.content && <ReactMarkdown>{sec.content}</ReactMarkdown>}
             {sec.description && (
-              <div className="form-section-description">
+              // Assuming jules_section.css or jules_base.css might style .jules-section-description
+              // Or if it's more like an input hint, jules-input-hint might be appropriate.
+              // Let's use jules-section-description for now.
+              <div className="jules-section-description">
                 <ReactMarkdown>{sec.description}</ReactMarkdown>
               </div>
             )}
             {errors[sec.id] && (
-              <div className="form-error-alert">{errors[sec.id]}</div>
+              <div className="jules-alert jules-alert-error">{errors[sec.id]}</div>
             )}
             {sec.type === 'group' ? (
               <GroupField
@@ -657,12 +660,14 @@ export default function Step({
                         )}
                       </div>
                     )}
-                    <div className="form-subgroup-grid grid gap-4">
+                    {/* Assuming internal structure of form-group-wrapper etc. is handled by specific component styles or utility classes */}
+                    <div className="form-subgroup-grid grid gap-4"> {/* This grid class is from Tailwind, might need Jules equivalent or custom flex */}
                       {groupFields.map((field) => renderField(field))}
                     </div>
                   </div>
                 ));
                 return entries.length > 1 ? (
+                  // This group-columns class is also likely Tailwind or custom.
                   <div className="group-columns">{groups}</div>
                 ) : (
                   groups
@@ -672,21 +677,21 @@ export default function Step({
           </Section>
         );
       })}
-      <div className={styles.navigation}>
+      <div className="jules-step-navigation">
         {!isFirst && (
-          <button type="button" className="button-secondary" onClick={handleBackClick}>
+          <button type="button" className="jules-button jules-button-secondary" onClick={handleBackClick}>
             Back
           </button>
         )}
-        <button type="button" className="button-secondary" onClick={handleSaveDraftClick}>
+        <button type="button" className="jules-button jules-button-secondary" onClick={handleSaveDraftClick}>
           Save Draft
         </button>
         {!isLast && (
-          <button type="button" onClick={handleNextClick}>
+          <button type="button" className="jules-button jules-button-primary" onClick={handleNextClick}>
             Next
           </button>
         )}
-        {isLast && <button type="button">Submit</button>}
+        {isLast && <button type="button" className="jules-button jules-button-primary">Submit</button>}
       </div>
     </div>
   );
