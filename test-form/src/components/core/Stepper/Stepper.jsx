@@ -51,6 +51,13 @@ export default function Stepper({
             itemClasses += ' jules-stepper-item-disabled';
           }
 
+          // A connector leading to the current step (index) is filled if this step is active or completed,
+          // and it's not the first step.
+          const isConnectorFilled = (isActive || isComplete) && index > 0;
+          if (isConnectorFilled && isHorizontal) { // Only apply for horizontal stepper
+            itemClasses += ' is-connector-filled';
+          }
+
           return (
             <li
               key={step.id}

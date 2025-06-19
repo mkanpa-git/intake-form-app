@@ -15,15 +15,35 @@
   border-radius: var(--jules-border-radius-md);
   cursor: pointer;
   transition: background-color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
-              border-color var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
+              border-color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
+              box-shadow var(--jules-transition-duration-fast) var(--jules-transition-timing-function), /* Added box-shadow */
+              transform var(--jules-transition-duration-fast) var(--jules-transition-timing-function); /* Added transform */
   display: flex;
   align-items: center;
 }
 
-.jules-stepper-item:hover {
-  border-color: var(--jules-primary-blue-300);
-  background-color: var(--jules-neutral-gray-50);
+/* General hover for items that are not active and not disabled */
+.jules-stepper-item:not(.jules-stepper-item-active):not(.jules-stepper-item-disabled):hover {
+  border-color: var(--jules-primary-blue-300); /* Keep existing border highlight */
+  background-color: var(--jules-neutral-gray-100); /* Slightly more distinct than gray-50 */
+  box-shadow: var(--jules-shadow-xs); /* Subtle shadow on hover */
 }
+
+/* Specific hover for completed (but not active) items */
+/* This overrides the general hover if needed, or can be combined if styles are similar */
+.jules-stepper-item.jules-stepper-item-completed:not(.jules-stepper-item-active):not(.jules-stepper-item-disabled):hover {
+  background-color: var(--jules-neutral-gray-100); /* Consistent hover for completed */
+  border-color: var(--jules-success-green-500); /* Keep success border color on hover */
+  box-shadow: var(--jules-shadow-xs);
+}
+
+/* Active items generally don't need a hover effect, or it's very subtle */
+.jules-stepper-item.jules-stepper-item-active:hover {
+  /* Optional: if active items should have a subtle hover, e.g. slight brightness change */
+  /* filter: brightness(98%); */
+  /* For now, no specific hover for active, relying on its distinct active state styles */
+}
+
 
 /* Stepper item content (number/icon + text) */
 .jules-stepper-item-content {
@@ -50,6 +70,8 @@
   font-weight: var(--jules-font-weight-medium);
   color: var(--jules-text-color-body);
   flex-grow: 1;
+  transition: color var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
+              font-weight var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
 }
 
 /* Active step style */
@@ -75,10 +97,7 @@
   border-color: var(--jules-success-green-500); /* Subtle border indication */
 }
 
-.jules-stepper-item.jules-stepper-item-completed:hover {
-  background-color: var(--jules-neutral-gray-50); /* Keep hover consistent */
-  border-color: var(--jules-success-green-500);
-}
+/* .jules-stepper-item.jules-stepper-item-completed:hover was here, merged above for specificity */
 
 .jules-stepper-item.jules-stepper-item-completed .jules-stepper-icon {
   background-color: var(--jules-success-green-500);
@@ -135,11 +154,14 @@
 
 /* Horizontal Stepper Specifics */
 .jules-stepper-horizontal {
+  --jules-stepper-horizontal-gap: var(--jules-space-lg); /* Define gap variable */
   display: flex;
   flex-direction: row;
-  justify-content: space-around; /* Or space-between */
+  /* justify-content: space-around; /* Removed for explicit gap */
+  gap: var(--jules-stepper-horizontal-gap); /* Use explicit gap */
   border-bottom: var(--jules-border-width-md) solid var(--jules-border-color);
   padding-bottom: var(--jules-space-md);
+  align-items: flex-start; /* Align items to the start for consistent line height */
 }
 
 .jules-stepper-horizontal .jules-stepper-item {
@@ -171,23 +193,61 @@
 
 .jules-stepper-horizontal .jules-stepper-item.jules-stepper-item-active {
   background-color: transparent; /* No background fill for active horizontal items */
-  border-color: var(--jules-primary-blue-500); /* Active line color */
+  border-color: var(--jules-primary-blue-500); /* Active line color for the item's own bottom border */
+  z-index: 1; /* Ensure item content is above the connector line */
 }
 
-/* Connector line for horizontal stepper (pseudo-element on item or a separate div) */
+
+/* New Connector Line Styling using ::before */
+.jules-stepper-horizontal .jules-stepper-item:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    /* Vertical centering: The icon/number has height var(--jules-space-xl).
+       Its center is at (var(--jules-space-xl) / 2) from its own top.
+       The .jules-stepper-item has padding var(--jules-space-sm) at top and bottom.
+       The icon is margin-bottom: var(--jules-space-xs).
+       So, top of icon relative to item top = var(--jules-space-sm)
+       Center of icon relative to item top = var(--jules-space-sm) + (var(--jules-space-xl) / 2)
+       Line height is 2px, so subtract 1px for vertical centering of the line itself.
+    */
+    top: calc(var(--jules-space-sm) + (var(--jules-space-xl) / 2) - 1px);
+    height: 2px;
+    background-color: var(--jules-neutral-gray-300); /* Default line color */
+    transition: background-color var(--jules-transition-duration-base) var(--jules-transition-timing-function);
+    z-index: 0; /* Behind item content */
+
+    /* Horizontal positioning: line from right edge of previous item's space to left edge of this item's space */
+    right: calc(100% + (var(--jules-stepper-horizontal-gap) - var(--jules-space-xl)) / 2 ); /* Position to the right of the current item's content area, into the gap */
+    /* Simplified: position to the left of the item, spanning the gap */
+    /* 'right: 100%' makes its right edge align with the item's left edge. */
+    /* Then margin-right pushes it further left. Width is the gap. */
+    /* Let's try a more direct approach: */
+    left: calc(-1 * var(--jules-stepper-horizontal-gap) + (var(--jules-space-xl) / 2) - (var(--jules-space-xs) / 2)); /* This is getting too complex, need to simplify based on item's marker position */
+    /* Simpler: Position it to the left of the item's marker/icon center */
+    /* Icon center is roughly at `padding-left + icon_width/2`. Item padding is var(--jules-space-xs) horizontal. Icon width var(--jules-space-xl) */
+    /* Let's assume each item's content (icon/text block) is what flex item refers to. */
+    /* The line should be in the 'gap' space. */
+    /* The icon's horizontal center within an item: padding-left of item + icon_width/2.
+       Item's padding is var(--jules-space-xs) horizontally.
+       So, icon center = var(--jules-space-xs) + var(--jules-space-xl)/2.
+       The line should end at this point from the left.
+       And start from the (gap + icon_center_of_previous_item).
+    */
+    /* Revised simpler approach for ::before on item N, connecting to item N-1 */
+    /* Position from the left edge of the current item, extending backwards over the gap */
+    right: calc(50% + var(--jules-space-xl)/4 + var(--jules-space-xs)/2); /* Relative to item center, go right to extend leftwards */
+    width: var(--jules-stepper-horizontal-gap);
+}
+
+/* Filled state of the connector */
+.jules-stepper-horizontal .jules-stepper-item.is-connector-filled:not(:first-child)::before {
+    background-color: var(--jules-primary-blue-500);
+}
+
+/* Remove old ::after connector */
 .jules-stepper-horizontal .jules-stepper-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: calc(var(--jules-space-xl) / 2); /* Align with center of icon/number */
-  left: calc(50% + var(--jules-space-lg)); /* Start after the item content */
-  width: calc(100% - var(--jules-space-xl) - var(--jules-space-sm)); /* Stretch to next item, adjust based on padding/margins */
-  height: 2px;
-  background-color: var(--jules-border-color);
-  z-index: -1; /* Behind the item content */
-}
-
-.jules-stepper-horizontal .jules-stepper-item.jules-stepper-item-completed::after {
-  background-color: var(--jules-success-green-500);
+  display: none;
+  content: none;
 }
 
 

@@ -46,20 +46,45 @@
 .jules-section-toggle-icon {
   color: var(--jules-primary-blue-500);
   font-size: var(--jules-font-size-xl); /* Ensure icon is adequately sized */
-  transition: transform var(--jules-transition-duration-base) var(--jules-transition-timing-function);
+  transition: transform var(--jules-transition-duration-fast) var(--jules-transition-timing-function); /* Using fast for icon */
   padding: var(--jules-space-xs); /* Make it easier to click */
+  display: inline-block; /* Ensure transform works reliably */
 }
 
 .jules-section-header.jules-section-collapsed .jules-section-toggle-icon {
-  transform: rotate(-90deg); /* Or appropriate rotation for your icon, e.g., +90deg for a different chevron */
+  transform: rotate(-90deg);
 }
 
 .jules-section-content {
-  padding: var(--jules-space-lg); /* Generous padding for content within the section */
+  padding: var(--jules-space-lg);
+  overflow: hidden;
+  transition: max-height var(--jules-transition-duration-base) var(--jules-transition-timing-function), /* Using base duration */
+              opacity var(--jules-transition-duration-base) var(--jules-transition-timing-function),
+              padding-top var(--jules-transition-duration-base) var(--jules-transition-timing-function),
+              padding-bottom var(--jules-transition-duration-base) var(--jules-transition-timing-function),
+              margin-top var(--jules-transition-duration-base) var(--jules-transition-timing-function), /* Though margin usually not on content div itself */
+              margin-bottom var(--jules-transition-duration-base) var(--jules-transition-timing-function);
+  max-height: 1000px; /* A sufficiently large value for expanded state, adjust if very large content */
+  opacity: 1;
+  /* border-top: var(--jules-border-width-sm) solid var(--jules-border-color); /* Optional: if content area needs a top border visually separating from header */
 }
 
 .jules-section-content.jules-section-content-collapsed {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  /* If there was a border-top on .jules-section-content, hide it when collapsed */
+  /* border-top-width: 0; */
+  /* Adding a small delay to opacity to ensure it fades after height is mostly done */
+  transition: max-height var(--jules-transition-duration-base) var(--jules-transition-timing-function),
+              opacity var(--jules-transition-duration-fast) var(--jules-transition-timing-function) calc(var(--jules-transition-duration-base) * 0.5), /* Delay opacity */
+              padding-top var(--jules-transition-duration-base) var(--jules-transition-timing-function),
+              padding-bottom var(--jules-transition-duration-base) var(--jules-transition-timing-function),
+              margin-top var(--jules-transition-duration-base) var(--jules-transition-timing-function),
+              margin-bottom var(--jules-transition-duration-base) var(--jules-transition-timing-function);
 }
 
 /* Styling for InfoSection specific elements, if they use these classes */
@@ -119,3 +144,21 @@
 }
 
 /* Add more composes rules if other specific sub-classes of form-section exist and need mapping */
+
+/* Icon for general alerts within section header (e.g., "Input required") */
+.jules-section-alert-icon {
+    color: var(--jules-warning-yellow-500); /* Example: Use warning color for missing input */
+    font-size: var(--jules-font-size-md);
+    margin-left: var(--jules-space-xs);
+    display: inline-flex; /* Better alignment */
+    align-items: center;
+}
+
+/* Icon specifically for validation errors within section header */
+.jules-section-header-error-indicator {
+    color: var(--jules-error-red-500); /* Use a strong error color */
+    font-size: var(--jules-font-size-md);
+    margin-left: var(--jules-space-xs);
+    display: inline-flex; /* Better alignment */
+    align-items: center;
+}
