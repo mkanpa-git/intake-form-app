@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
 import ReviewStep from '../ReviewStep/ReviewStep';
@@ -23,6 +23,12 @@ export default function FormRenderer({ applicationId, onExit }) {
   const [reviewIndex, setReviewIndex] = useState(-1);
   const [stepperPosition, setStepperPosition] = useState('right');
   const [orientation, setOrientation] = useState('vertical');
+
+  const currentStepDataMemo = useMemo(
+    () =>
+      steps[currentStep] ? stepData[steps[currentStep].id] || {} : {},
+    [stepData, steps, currentStep]
+  );
 
 
   useEffect(() => {
@@ -223,7 +229,7 @@ export default function FormRenderer({ applicationId, onExit }) {
               onSaveDraft={handleSaveDraft}
               isFirst={currentStep === 0}
               isLast={currentStep === steps.length - 1}
-              formData={stepData[steps[currentStep].id] || {}}
+              formData={currentStepDataMemo}
               fullData={allData}
               onDataChange={handleDataChange}
               applicationId={applicationId}
