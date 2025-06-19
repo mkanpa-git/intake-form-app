@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import TextInput from '../TextInput/TextInput';
 import SelectField from '../SelectField/SelectField';
 import RadioGroup from '../RadioGroup/RadioGroup';
@@ -16,6 +16,36 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
   const [showForm, setShowForm] = useState(false);
   const [entryErrors, setEntryErrors] = useState({});
   const [placeholders, setPlaceholders] = useState({});
+
+  const tableFields = useMemo(() => {
+    const cols = field.metadata?.tableColumns;
+    if (Array.isArray(cols) && cols.length > 0) {
+      return field.fields.filter((f) => cols.includes(f.id));
+    }
+    return field.fields;
+  }, [field]);
+
+  // Remove values for fields that become hidden based on current entry state
+  useEffect(() => {
+    const entryData = { ...fullData, ...currentEntry };
+    let updated = { ...currentEntry };
+    let changed = false;
+    (field.fields || []).forEach((subField) => {
+      const conditionToCheck =
+        subField.visibilityCondition ??
+        (subField.requiredCondition?.condition || subField.requiredCondition);
+      const visible = conditionToCheck
+        ? evaluateCondition(conditionToCheck, entryData)
+        : true;
+      if (!visible && updated[subField.id] !== undefined) {
+        delete updated[subField.id];
+        changed = true;
+      }
+    });
+    if (changed) {
+      setCurrentEntry(updated);
+    }
+  }, [currentEntry, field.fields, fullData]);
 
   useEffect(() => {
     setEntries(Array.isArray(value) ? value : []);
@@ -41,11 +71,12 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
 
   const validateEntry = () => {
     const errors = {};
+    const entryData = { ...fullData, ...currentEntry };
     (field.fields || []).forEach((subField) => {
       const required = subField.requiredCondition
         ? evaluateCondition(
             subField.requiredCondition.condition || subField.requiredCondition,
-            fullData
+            entryData
           )
         : subField.required;
       const val = currentEntry[subField.id];
@@ -101,16 +132,17 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
   };
 
   const renderField = (subField) => {
+    const entryData = { ...fullData, ...currentEntry };
     const conditionToCheck =
       subField.visibilityCondition ??
       (subField.requiredCondition?.condition || subField.requiredCondition);
     const visible = conditionToCheck
-      ? evaluateCondition(conditionToCheck, fullData)
+      ? evaluateCondition(conditionToCheck, entryData)
       : true;
     const required = subField.requiredCondition
       ? evaluateCondition(
           subField.requiredCondition.condition || subField.requiredCondition,
-          fullData
+          entryData
         )
       : subField.required;
     if (!visible) return null;
@@ -311,31 +343,50 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
     <div className="jules-groupfield">
       <h3 className="jules-groupfield-title">{field.label}</h3> {/* Changed h4 to h3 and added class */}
       {entries.length > 0 && (
-        <table className="jules-groupfield-table">
-          <thead>
-            <tr>
-              {field.fields.map((f) => (
-                <th key={f.id}>{f.label}</th>
-              ))}
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {entries.map((item, idx) => (
-              <tr key={idx}>
-                {field.fields.map((f) => (
-                  <td key={f.id}>
-                    {Array.isArray(item[f.id]) ? item[f.id].join(', ') : item[f.id]}
-                  </td>
+        <>
+          <table className="jules-groupfield-table">
+            <thead>
+              <tr>
+                {tableFields.map((f) => (
+                  <th key={f.id}>{f.label}</th>
                 ))}
-                <td className="jules-groupfield-actions"> {/* Added class for styling action cell */}
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {entries.map((item, idx) => (
+                <tr key={idx}>
+                  {tableFields.map((f) => (
+                    <td key={f.id}>
+                      {Array.isArray(item[f.id]) ? item[f.id].join(', ') : item[f.id]}
+                    </td>
+                  ))}
+                  <td className="jules-groupfield-actions"> {/* Added class for styling action cell */}
+                    <button type="button" className="jules-button jules-button-tertiary jules-button-small" onClick={() => handleEdit(idx)}>Edit</button>
+                    <button type="button" className="jules-button jules-button-destructive jules-button-small" onClick={() => handleDelete(idx)}>Delete</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <div className="jules-groupfield-card-list">
+            {entries.map((item, idx) => (
+              <div key={idx} className="jules-card jules-groupfield-card">
+                {tableFields.map((f) => (
+                  <div key={f.id} className="jules-groupfield-card-row">
+                    <span className="jules-groupfield-card-label">{f.label}</span>
+                    <span className="jules-groupfield-card-value">{Array.isArray(item[f.id]) ? item[f.id].join(', ') : item[f.id]}</span>
+                  </div>
+                ))}
+                <div className="jules-groupfield-card-actions">
                   <button type="button" className="jules-button jules-button-tertiary jules-button-small" onClick={() => handleEdit(idx)}>Edit</button>
                   <button type="button" className="jules-button jules-button-destructive jules-button-small" onClick={() => handleDelete(idx)}>Delete</button>
-                </td>
-              </tr>
+                </div>
+              </div>
             ))}
-          </tbody>
-        </table>
+          </div>
+        </>
       )}
       {!showForm && ( // Only show "Add" button if form is not visible
         <button

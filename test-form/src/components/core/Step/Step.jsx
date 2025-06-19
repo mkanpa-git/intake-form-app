@@ -57,22 +57,6 @@ export default function Step({
     setCollapsedSections(initial);
   }, [sections]);
 
-  // Clear section-level errors when required group sections gain data
-  useEffect(() => {
-    setErrors((prev) => {
-      const updated = { ...prev };
-      sections.forEach((sec) => {
-        if (!sec.required || !updated[sec.id]) return;
-        const hasGroupData = sec.fields?.some(
-          (f) => f.type === 'group' && Array.isArray(fullData[f.id]) && fullData[f.id].length > 0
-        );
-        if (hasGroupData) {
-          delete updated[sec.id];
-        }
-      });
-      return updated;
-    });
-  }, [sections, fullData]);
 
   // Clear section-level errors when required group sections gain data
   useEffect(() => {
@@ -91,44 +75,23 @@ export default function Step({
     });
   }, [sections, fullData]);
 
-  // This effect validates the current formData when initialData (step data from parent) changes or sections change.
+  // Validate step data when the incoming data or sections change. Errors are stored
+  // but fields aren't automatically marked as touched so they won't show messages
+  // until the user interacts or attempts navigation.
   useEffect(() => {
-    // formData here is the version that has been synced with initialData by the effect above.
     const result = validateStep(
       { sections },
       formData,
-      {}, // Calculate errors fresh for this validation pass based on current formData
-      {}  // Start with a fresh perspective on what this validation pass considers "touched due to error"
+      {},
+      {}
     );
 
-    const newTouchedSetByErrors = {};
-    if (result.errors) {
-      for (const fieldId in result.errors) {
-        if (result.errors[fieldId]) { // If there's an error for this field
-          newTouchedSetByErrors[fieldId] = true; // Mark it as touched to display the error
-        }
-      }
-    }
-
-    // Set the errors found from this validation pass.
-    // Conditional update if errors are identical can be added later if performance tuning is needed.
     setErrors(result.errors || {});
-
-    // Merge newTouchedSetByErrors with the existing touched state.
-    // This ensures fields already touched by user interaction remain touched,
-    // and fields that now have errors also become marked as touched.
-    setTouched(prevTouched => {
-      const combinedTouched = { ...prevTouched, ...newTouchedSetByErrors };
-      // Avoid unnecessary state update if combinedTouched is effectively the same as prevTouched.
-      // A deep equals would be more robust than stringify for objects if key order can vary.
-      if (JSON.stringify(combinedTouched) !== JSON.stringify(prevTouched)) {
-        return combinedTouched;
-      }
-      return prevTouched;
-    });
+    // Intentionally do not update `touched` here. Error messages should appear
+    // only after a user interaction or a failed navigation attempt.
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialData, sections]); // DEPENDENCIES CHANGED HERE
+  }, [initialData, sections]);
 
   useEffect(() => {
     // Check timestamp to ensure it's a new validation attempt that failed
@@ -268,19 +231,17 @@ export default function Step({
           );
         }
         if (isStreet) {
-          // AddressAutocomplete does not yet support iconLeft/iconRight props in this refactor.
-          // If it did, we could add them here. For now, just passing error.
-          return (
-            <>
-              <AddressAutocomplete
-                key={field.id}
-                id={field.id}
-                label={field.label}
-                required={isRequired}
-                value={formData[field.id] || ''}
-                placeholder={placeholders[field.id] || field.ui?.placeholder || ''}
-                onChange={(val) => handleChange(field.id, val)}
-                onAddressSelect={(addr) => {
+
+            return (
+              <React.Fragment key={field.id}>
+                <AddressAutocomplete
+                  id={field.id}
+                  label={field.label}
+                  required={isRequired}
+                  value={formData[field.id] || ''}
+                  placeholder={placeholders[field.id] || field.ui?.placeholder || ''}
+                  onChange={(val) => handleChange(field.id, val)}
+                  onAddressSelect={(addr) => {
                   const fullAddr = addr.formatted_address || addr.formattedAddress || '';
                   setPlaceholders((p) => ({ ...p, [field.id]: fullAddr }));
 
@@ -358,11 +319,11 @@ export default function Step({
                   handleChange(field.id, streetOnly);
                 }}
                 error={error} // Pass error to AddressAutocomplete
-              />
-              {/* AddressAutocomplete does not currently use the error prop to display jules-alert, so keep this if needed */}
-              {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
-            </>
-          );
+                />
+                {/* AddressAutocomplete does not currently use the error prop to display jules-alert, so keep this if needed */}
+                {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
+              </React.Fragment>
+            );
         }
         return (
           <TextInput

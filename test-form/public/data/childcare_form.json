@@ -473,7 +473,13 @@
                 "label": "Children Needing Care",
                 "type": "group",
                 "metadata": {
-                  "multiple": true
+                  "multiple": true,
+                  "tableColumns": [
+                    "first_name",
+                    "last_name",
+                    "date_of_birth",
+                    "relationship_to_applicant"
+                  ]
                 },
                 "fields": [
                   {
@@ -660,7 +666,13 @@
                 "label": "Family Members",
                 "type": "group",
                 "metadata": {
-                  "multiple": true
+                  "multiple": true,
+                  "tableColumns": [
+                    "first_name",
+                    "last_name",
+                    "date_of_birth",
+                    "relationship_to_applicant"
+                  ]
                 },
                 "fields": [
                   {
@@ -1961,7 +1973,12 @@
                 "label": "List of Providers",
                 "type": "group",
                 "metadata": {
-                  "multiple": true
+                  "multiple": true,
+                  "tableColumns": [
+                    "provider_name",
+                    "program_number",
+                    "provider_zip_code"
+                  ]
                 },
                 "fields": [
                   {

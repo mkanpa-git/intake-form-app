@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
 import ReviewStep from '../ReviewStep/ReviewStep';
@@ -23,6 +23,12 @@ export default function FormRenderer({ applicationId, onExit }) {
   const [reviewIndex, setReviewIndex] = useState(-1);
   const [stepperPosition, setStepperPosition] = useState('right');
   const [orientation, setOrientation] = useState('vertical');
+
+  const currentStepDataMemo = useMemo(
+    () =>
+      steps[currentStep] ? stepData[steps[currentStep].id] || {} : {},
+    [stepData, steps, currentStep]
+  );
 
 
   useEffect(() => {
@@ -150,7 +156,7 @@ export default function FormRenderer({ applicationId, onExit }) {
     onExit && onExit();
   };
 
-  const canNavigate = (targetIndex) => {
+  const canNavigateStep = (targetIndex) => {
     if (steps.length === 0 || !steps[currentStep]) return false;
     // allow going to a previous step without checking validation
     if (targetIndex < currentStep) return true;
@@ -161,11 +167,20 @@ export default function FormRenderer({ applicationId, onExit }) {
       stepData[steps[currentStep].id] || {}
     );
 
-    if (!result.valid && targetIndex > currentStep) {
-      // If trying to move forward and validation fails, set errors and touched state to trigger display in Step component
+    return result.valid;
+  };
+
+  const handleStepChange = (targetIndex) => {
+    if (canNavigateStep(targetIndex)) {
+      setCurrentStep(targetIndex);
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    } else {
+      const result = validateStep(
+        steps[currentStep],
+        stepData[steps[currentStep].id] || {}
+      );
       setCurrentStepValidation({ errors: result.errors, touched: result.touched, timestamp: Date.now() });
     }
-    return result.valid;
   };
 
   if (isLoading) {
@@ -186,10 +201,10 @@ export default function FormRenderer({ applicationId, onExit }) {
         <Stepper
           steps={steps}
           currentStep={currentStep}
-          onStepChange={setCurrentStep}
+          onStepChange={handleStepChange}
           requiredDocs={requiredDocs}
           orientation={orientation}
-          canNavigate={canNavigate}
+          canNavigate={canNavigateStep}
         />
       )}
       <div className="form-main">
@@ -199,10 +214,10 @@ export default function FormRenderer({ applicationId, onExit }) {
           <Stepper
             steps={steps}
             currentStep={currentStep}
-            onStepChange={setCurrentStep}
+            onStepChange={handleStepChange}
             requiredDocs={requiredDocs}
             orientation={orientation}
-            canNavigate={canNavigate}
+            canNavigate={canNavigateStep}
           />
         )}
         {steps.length > 0 && steps[currentStep] && (
@@ -223,7 +238,7 @@ export default function FormRenderer({ applicationId, onExit }) {
               onSaveDraft={handleSaveDraft}
               isFirst={currentStep === 0}
               isLast={currentStep === steps.length - 1}
-              formData={stepData[steps[currentStep].id] || {}}
+              formData={currentStepDataMemo}
               fullData={allData}
               onDataChange={handleDataChange}
               applicationId={applicationId}
