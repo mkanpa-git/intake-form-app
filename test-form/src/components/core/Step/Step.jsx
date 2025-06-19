@@ -545,7 +545,7 @@ export default function Step({
               onChange={(e) => handleChange(field.id, e.target.value)}
               error={error} // Pass error prop
             />
-            {/* Error display handled by TextInput internally */}
+          {/* Error display handled by TextInput internally */}
           </>
         );
     }
