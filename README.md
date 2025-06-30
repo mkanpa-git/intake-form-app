@@ -28,10 +28,14 @@ Selecting an application opens a page with each step's data shown in its own tab
 ## Environment requirements
 
 - **Node.js**: version 18 or later is recommended.
-- **Environment variables**: create a `.env` file inside the `test-form/server` directory with your Google Places API key:
+- **Environment variables**: create a `.env` file inside the `test-form/server` directory with the following keys:
 
 ```
-GOOGLE_API_KEY=<your-key>
+GOOGLE_API_KEY=<your Places API key>
+SESSION_SECRET=<any random string>
+DATABASE_URL=<postgres connection url>
+GOOGLE_CLIENT_ID=<google oauth client id>
+GOOGLE_CLIENT_SECRET=<google oauth client secret>
 ```
 
-This key is required for the backend to make requests to the Google Places API.
+`GOOGLE_API_KEY` is required for the backend to make Google Places API requests. `SESSION_SECRET` secures Express sessions. `DATABASE_URL` points to your PostgreSQL database. The Google OAuth credentials are needed for authentication.
