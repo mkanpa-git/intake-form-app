@@ -113,9 +113,9 @@ export default function SelectField({
         <label htmlFor={id} className="jules-label">
           {label}
           {required && <span className="jules-required-asterisk">*</span>}
+          {tooltip && <Tooltip text={tooltip} />}
         </label>
       )}
-      {tooltip && <Tooltip text={tooltip} />}
       {hint && !error && <p className="jules-input-hint">{hint}</p>}
       {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
     </div>

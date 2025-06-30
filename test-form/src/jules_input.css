@@ -30,6 +30,8 @@
   font-size: var(--jules-font-size-md); /* Initial size, same as input text */
   line-height: var(--jules-line-height-base); /* Match input's line-height for centering */
   pointer-events: none;
+  display: inline-flex; /* Allow tooltip to sit beside text */
+  align-items: center;
   transition: all 0.2s ease-in-out;
   background-color: var(--jules-neutral-white); /* To mask input border when floated */
   padding: 0 var(--jules-space-xxs);
@@ -37,6 +39,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: calc(100% - (var(--jules-space-md) * 2)); /* Prevent overflow */
+}
+
+.jules-label .jules-tooltip-wrapper {
+  pointer-events: auto; /* Re-enable events for tooltip */
+  margin-left: var(--jules-space-xxs);
 }
 
 /* Floating State Styles for Label */
