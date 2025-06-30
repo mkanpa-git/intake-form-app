@@ -42,7 +42,12 @@ function App() {
     <div className="page-container">
       <header className="form-header">
         <div className="header-left">
-          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <button
+            className="hamburger"
+            aria-label="Main menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             ☰
           </button>
           <div className="brand">MyCity Services</div>
@@ -62,14 +67,16 @@ function App() {
             <div className="user-menu">
               <button
                 type="button"
-                aria-label="user menu"
+                aria-label="User menu"
+                aria-haspopup="true"
+                aria-expanded={userMenuOpen}
                 className="avatar"
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
               >
                 {user.first_name ? user.first_name[0] : 'U'}
               </button>
               {userMenuOpen && (
-                <div className="dropdown">
+                <div className="dropdown" role="menu">
                   <Link to="/profile" onClick={() => setUserMenuOpen(false)}>Profile</Link>
                   <a href={`${server}/auth/logout`}>Logout</a>
                 </div>

@@ -70,7 +70,7 @@ const Button = ({
                 ></span>
             )}
             {iconLeft && !isLoading && (
-                <span className="jules-button-icon jules-button-icon-leading">{iconLeft}</span>
+                <span className="jules-button-icon jules-button-icon-leading" aria-hidden="true">{iconLeft}</span>
             )}
             {/*
               If loading and there are no icons, the text (children) will be hidden by jules-button-text-hidden.
@@ -81,7 +81,7 @@ const Button = ({
                 {children}
             </span>
             {iconRight && !isLoading && (
-                <span className="jules-button-icon jules-button-icon-trailing">{iconRight}</span>
+                <span className="jules-button-icon jules-button-icon-trailing" aria-hidden="true">{iconRight}</span>
             )}
         </button>
     );

@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import TextInput from '../components/shared/TextInput/TextInput';
+import Button from '../components/shared/Button';
 
 export default function Profile() {
   const { user, setUser } = useContext(AuthContext);
@@ -40,27 +42,33 @@ export default function Profile() {
   if (!user) return <p>Please log in</p>;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>
-          First Name
-          <input name="first_name" value={form.first_name} onChange={handleChange} />
-        </label>
-      </div>
-      <div>
-        <label>
-          Middle Initial
-          <input name="middle_initial" value={form.middle_initial} onChange={handleChange} />
-        </label>
-      </div>
-      <div>
-        <label>
-          Last Name
-          <input name="last_name" value={form.last_name} onChange={handleChange} />
-        </label>
-      </div>
-      <button type="submit">Save</button>
-      {status && <span>{status}</span>}
+    <form className="jules-profile-form" onSubmit={handleSubmit} aria-labelledby="profile-heading">
+      <h1 id="profile-heading">Edit Profile</h1>
+      <TextInput
+        id="first_name"
+        name="first_name"
+        label="First Name"
+        value={form.first_name}
+        onChange={handleChange}
+        required
+      />
+      <TextInput
+        id="middle_initial"
+        name="middle_initial"
+        label="Middle Initial"
+        value={form.middle_initial}
+        onChange={handleChange}
+      />
+      <TextInput
+        id="last_name"
+        name="last_name"
+        label="Last Name"
+        value={form.last_name}
+        onChange={handleChange}
+        required
+      />
+      <Button type="submit" variant="primary">Save</Button>
+      {status && <span role="status">{status}</span>}
     </form>
   );
 }
