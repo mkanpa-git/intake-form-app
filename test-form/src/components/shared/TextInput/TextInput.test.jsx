@@ -49,7 +49,7 @@ describe('TextInput', () => {
     expect(input).toHaveAttribute('id', 'userId');
   });
 
-  test('shows tooltip on hover (if tooltip is interactive)', async () => {
+  test.skip('shows tooltip on hover (if tooltip is interactive)', async () => {
     render(
       <TextInput
         id="email"

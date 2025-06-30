@@ -27,7 +27,14 @@
   text-decoration: none;
 }
 
-.form-header nav a { /* Example: if there are nav links in the header */
+
+/* Navigation links */
+.form-header nav {
+  display: flex;
+  align-items: center;
+}
+
+.form-header nav a {
   color: var(--jules-text-color-link);
   text-decoration: none;
   margin-left: var(--jules-space-lg);
@@ -38,6 +45,50 @@
 .form-header nav a:focus {
   color: var(--jules-text-color-link-hover);
   text-decoration: underline;
+}
+
+/* User menu */
+.user-menu {
+  position: relative;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--jules-primary-blue-500);
+  color: var(--jules-neutral-white);
+  font-weight: var(--jules-font-weight-semibold);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + var(--jules-space-xs));
+  right: 0;
+  background-color: var(--jules-neutral-white);
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-md);
+  box-shadow: var(--jules-shadow-md);
+  padding: var(--jules-space-xs) 0;
+  z-index: var(--jules-z-index-dropdown);
+  min-width: 160px;
+}
+
+.dropdown a {
+  display: block;
+  padding: var(--jules-space-xs) var(--jules-space-md);
+  color: var(--jules-text-color-body);
+}
+
+.dropdown a:hover,
+.dropdown a:focus {
+  background-color: var(--jules-neutral-gray-100);
+  text-decoration: none;
 }
 
 /* Assuming .hamburger is for mobile navigation */
@@ -140,9 +191,27 @@
     display: block; /* Show hamburger on smaller screens */
   }
 
-  .form-header nav { /* Assuming nav is hidden by default and shown via JS with hamburger */
+  .form-header nav { /* Hidden by default and shown via JS with hamburger */
     display: none;
-    /* Add styles for mobile menu if it's part of form-header */
+    position: absolute;
+    top: calc(100% + var(--jules-space-xs));
+    left: var(--jules-space-md);
+    right: var(--jules-space-md);
+    flex-direction: column;
+    background: var(--jules-neutral-white);
+    border: var(--jules-border-width-sm) solid var(--jules-border-color);
+    border-radius: var(--jules-border-radius-md);
+    padding: var(--jules-space-md);
+    box-shadow: var(--jules-shadow-md);
+    z-index: var(--jules-z-index-dropdown);
+  }
+
+  .form-header nav.open {
+    display: flex;
+  }
+
+  .form-header nav a {
+    margin: var(--jules-space-sm) 0;
   }
 
   .form-main {
