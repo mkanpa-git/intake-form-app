@@ -48,12 +48,12 @@ function App() {
         </div>
 
         <nav className={`right ${menuOpen ? "open" : ""}`}>
-          <a
-            href="#dashboard"
+          <Link
+            to="/"
             onClick={() => setPage('dashboard')}
           >
             Dashboard
-          </a>
+          </Link>
           {!user && (
             <a href="/auth/google">Login</a>
           )}
