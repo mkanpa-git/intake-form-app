@@ -1,0 +1,420 @@
+{
+  "form": {
+    "title": "DYCD Youth Services Intake – Ages 13 and Younger",
+    "description": "Form to collect youth and guardian information for DYCD programs",
+    "steps": [
+      {
+        "id": "demographics",
+        "title": "Youth Information",
+        "sections": [
+          {
+            "id": "youth_info",
+            "title": "Basic Information",
+            "fields": [
+              { "id": "first_name", "label": "First Name", "type": "text", "required": true },
+              { "id": "last_name", "label": "Last Name", "type": "text", "required": true },
+              { "id": "dob", "label": "Date of Birth", "type": "date", "required": true },
+              { "id": "gender", "label": "Gender", "type": "select", "ui": { "options": ["Male", "Female", "Non-binary", "Other"] }, "required": true },
+              { "id": "ethnicity", "label": "Ethnicity", "type": "text" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "guardian_info",
+        "title": "Parent/Guardian Info",
+        "sections": [
+          {
+            "id": "guardian_contact",
+            "title": "Contact Details",
+            "fields": [
+              { "id": "guardian_name", "label": "Name of Parent/Guardian", "type": "text", "required": true },
+              { "id": "phone", "label": "Phone Number", "type": "tel", "required": true },
+              { "id": "email", "label": "Email Address", "type": "email" },
+              { "id": "relationship", "label": "Relationship to Youth", "type": "text", "required": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "school_info",
+        "title": "School Information",
+        "sections": [
+          {
+            "id": "school",
+            "title": "Current School Details",
+            "fields": [
+              { "id": "school_name", "label": "School Name", "type": "text" },
+              { "id": "grade", "label": "Current Grade", "type": "text" },
+              { "id": "school_type", "label": "School Type", "type": "select", "ui": { "options": ["Public", "Private", "Charter", "Home School"] } }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "education_work_status",
+        "title": "Part III: Applicant’s Education/Work Status",
+        "sections": [
+          {
+            "id": "education_status",
+            "title": "Education Status",
+            "fields": [
+              {
+                "id": "education_status",
+                "label": "Applicant’s Education Status",
+                "type": "select",
+                "required": true,
+                "ui": {
+                  "options": [
+                    "Full-Time Student",
+                    "Part-Time Student",
+                    "Not in School"
+                  ]
+                }
+              },
+              {
+                "id": "grade_level_category",
+                "label": "Select Grade Level Category",
+                "type": "radio",
+                "required": true,
+                "ui": {
+                  "options": [
+                    "Elementary School",
+                    "Middle School",
+                    "High School",
+                    "Community College",
+                    "College/University",
+                    "Other"
+                  ]
+                }
+              },
+              {
+                "id": "grade_elem",
+                "label": "Select Specific Grade (Elementary School)",
+                "type": "select",
+                "requiredCondition": {
+                  "field": "grade_level_category",
+                  "operator": "equals",
+                  "value": "Elementary School"
+                },
+                "ui": {
+                  "options": ["Pre-K", "K", "1st", "2nd", "3rd", "4th", "5th"]
+                }
+              },
+              {
+                "id": "grade_middle",
+                "label": "Select Specific Grade (Middle School)",
+                "type": "select",
+                "requiredCondition": {
+                  "field": "grade_level_category",
+                  "operator": "equals",
+                  "value": "Middle School"
+                },
+                "ui": {
+                  "options": ["6th", "7th", "8th"]
+                }
+              },
+              {
+                "id": "grade_high",
+                "label": "Select Specific Grade (High School)",
+                "type": "select",
+                "requiredCondition": {
+                  "field": "grade_level_category",
+                  "operator": "equals",
+                  "value": "High School"
+                },
+                "ui": {
+                  "options": ["9th", "10th", "11th", "12th", "High School Diploma", "High School Equivalency"]
+                }
+              },
+              {
+                "id": "grade_cc",
+                "label": "Select Specific Grade (Community College)",
+                "type": "select",
+                "requiredCondition": {
+                  "field": "grade_level_category",
+                  "operator": "equals",
+                  "value": "Community College"
+                },
+                "ui": {
+                  "options": ["1st Year", "2nd Year", "3rd Year", "Associate’s Degree"]
+                }
+              },
+              {
+                "id": "grade_university",
+                "label": "Select Specific Grade (College/University)",
+                "type": "select",
+                "requiredCondition": {
+                  "field": "grade_level_category",
+                  "operator": "equals",
+                  "value": "College/University"
+                },
+                "ui": {
+                  "options": ["Freshman", "Sophomore", "Junior", "Senior", "Bachelor’s Degree", "Some Master’s", "Master’s Degree", "Some Doctorate", "Doctorate Degree"]
+                }
+              },
+              {
+                "id": "grade_other",
+                "label": "Select Specific Grade (Other)",
+                "type": "select",
+                "requiredCondition": {
+                  "field": "grade_level_category",
+                  "operator": "equals",
+                  "value": "Other"
+                },
+                "ui": {
+                  "options": ["Foreign Degree", "No Formal Schooling"]
+                }
+              }
+
+            ]
+          },
+          {
+            "id": "work_status",
+            "title": "Work Status",
+            "fields": [
+              {
+                "id": "work_status",
+                "label": "Applicant’s Current Work Status",
+                "type": "select",
+                "required": true,
+                "ui": {
+                  "options": [
+                    "Employed Full-Time",
+                    "Employed Part-Time",
+                    "Retired",
+                    "Unemployed (Short-Term ≤ 6 mo)",
+                    "Unemployed (Long-Term > 6 mo)",
+                    "Unemployed (Not in labor force)",
+                    "Migrant Seasonal Farm Worker",
+                    "Not applicable (under 14)"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "ft_student_info",
+            "title": "Full-Time Student Info",
+            "fields": [
+              {
+                "id": "student_id",
+                "label": "Student ID / OSIS",
+                "type": "text",
+                "requiredCondition": {
+                  "field": "education_status",
+                  "operator": "equals",
+                  "value": "Full-Time Student"
+                }
+              },
+              {
+                "id": "student_school_type",
+                "label": "School Type",
+                "type": "select",
+                "requiredCondition": {
+                  "field": "education_status",
+                  "operator": "equals",
+                  "value": "Full-Time Student"
+                },
+                "ui": {
+                  "options": ["Public", "Charter", "Private", "Other"]
+                }
+              },
+              {
+                "id": "student_school_type_other",
+                "label": "If Other, please specify school type",
+                "type": "text",
+                "requiredCondition": {
+                  "field": "student_school_type",
+                  "operator": "equals",
+                  "value": "Other"
+                }
+              },
+              {
+                "id": "student_school_name",
+                "label": "School Name",
+                "type": "text",
+                "requiredCondition": {
+                  "field": "education_status",
+                  "operator": "equals",
+                  "value": "Full-Time Student"
+                }
+              },
+              {
+                "id": "student_school_address",
+                "label": "School Address",
+                "type": "text",
+                "requiredCondition": {
+                  "field": "education_status",
+                  "operator": "equals",
+                  "value": "Full-Time Student"
+                }
+              },
+              {
+                "id": "student_school_city",
+                "label": "School City",
+                "type": "text",
+                "requiredCondition": {
+                  "field": "education_status",
+                  "operator": "equals",
+                  "value": "Full-Time Student"
+                }
+              },
+              {
+                "id": "student_school_state",
+                "label": "School State",
+                "type": "text",
+                "requiredCondition": {
+                  "field": "education_status",
+                  "operator": "equals",
+                  "value": "Full-Time Student"
+                }
+              },
+              {
+                "id": "student_school_zip",
+                "label": "School Zip Code",
+                "type": "text",
+                "requiredCondition": {
+                  "field": "education_status",
+                  "operator": "equals",
+                  "value": "Full-Time Student"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "household_info",
+        "title": "Part VI: Household Information",
+        "sections": [
+          {
+            "id": "household_composition",
+            "title": "Household Composition",
+            "fields": [
+              {
+                "id": "head_of_household",
+                "label": "Is the parent/guardian the head of household?",
+                "type": "radio",
+                "required": true,
+                "ui": {
+                  "options": ["Yes", "No"]
+                }
+              },
+              {
+                "id": "household_income_source",
+                "label": "Primary Source of Household Income",
+                "type": "radio",
+                "required": true,
+                "ui": {
+                  "options": [
+                    "Employment",
+                    "Public Assistance",
+                    "Social Security",
+                    "Pension",
+                    "No Income",
+                    "Other"
+                  ]
+                }
+              },
+              {
+                "id": "household_income_source_other",
+                "label": "Specify Other Income Source",
+                "type": "text",
+                "requiredCondition": {
+                  "field": "household_income_source",
+                  "operator": "equals",
+                  "value": "Other"
+                },
+                "visibleCondition": {
+                  "field": "household_income_source",
+                  "operator": "equals",
+                  "value": "Other"
+                }
+              },
+              {
+                "id": "housing_type",
+                "label": "Type of Housing",
+                "type": "radio",
+                "required": true,
+                "ui": {
+                  "options": [
+                    "NYCHA",
+                    "Shelter",
+                    "Own Home",
+                    "Rental",
+                    "Supportive Housing",
+                    "Other"
+                  ]
+                }
+              },
+              {
+                "id": "housing_type_other",
+                "label": "Specify Other Housing Type",
+                "type": "text",
+                "requiredCondition": {
+                  "field": "housing_type",
+                  "operator": "equals",
+                  "value": "Other"
+                },
+                "visibleCondition": {
+                  "field": "housing_type",
+                  "operator": "equals",
+                  "value": "Other"
+                }
+              },
+              {
+                "id": "household_size",
+                "label": "Number of People in Household",
+                "type": "number",
+                "required": true,
+                "ui": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "medical_info",
+        "title": "Medical & Emergency",
+        "sections": [
+          {
+            "id": "emergency",
+            "title": "Emergency Contact",
+            "fields": [
+              { "id": "emergency_name", "label": "Emergency Contact Name", "type": "text" },
+              { "id": "emergency_phone", "label": "Emergency Contact Phone", "type": "tel" }
+            ]
+          },
+          {
+            "id": "medical",
+            "title": "Medical Info",
+            "fields": [
+              { "id": "medical_conditions", "label": "Medical Conditions", "type": "text" },
+              { "id": "medications", "label": "Medications", "type": "text" },
+              { "id": "allergies", "label": "Allergies", "type": "text" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "consent",
+        "title": "Consent & Signature",
+        "sections": [
+          {
+            "id": "consent_info",
+            "title": "Authorization",
+            "fields": [
+              { "id": "media_consent", "label": "Media Release Consent", "type": "checkbox" },
+              { "id": "signature", "label": "Parent/Guardian Signature", "type": "text", "required": true },
+              { "id": "date_signed", "label": "Date Signed", "type": "date", "required": true }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

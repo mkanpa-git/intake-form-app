@@ -3,8 +3,181 @@
     "id": "sample-1",
     "updatedAt": "2024-06-20T12:00:00Z",
     "stepData": {
-      "consent_step": { "agree": true },
-      "instructions_step": { "acknowledged": true }
+      "consent_step": {
+        "agree": true
+      },
+      "instructions_step": {
+        "acknowledged": true
+      }
     }
+  },
+  {
+    "id": "1750302586258",
+    "stepData": {
+      "consent_step": {},
+      "instructions_step": {},
+      "applicant": {
+        "first_name": "Murugan",
+        "last_name": "Kanpa",
+        "mi": "P",
+        "telephone_home": "(231) 232-1311",
+        "email": "fdfd@gmail.com",
+        "street": "184 Grove Terrace",
+        "city": "Livingston",
+        "state": "NJ",
+        "zip_code": "07039",
+        "date_of_birth": "2025-06-02",
+        "sex": "Female",
+        "marital_status": "Married",
+        "borough": "Brooklyn",
+        "is_temporary_address": "Yes",
+        "currently_living_in": "Homeless Shelter",
+        "race": [
+          "AI"
+        ],
+        "ethnicity": "Hispanic",
+        "primary_language": "English",
+        "preferred_language": "Spanish",
+        "has_cash_assistance": "No",
+        "telephone_work": "(767) 575-7857",
+        "telephone_mobile_or_other": "(676) 587-6587",
+        "latitude": 40.7800951,
+        "longitude": -74.3048864,
+        "ssn": "756-75-7587"
+      },
+      "children_needing_care": {
+        "children": [
+          {
+            "first_name": "Murugan",
+            "last_name": "Kanpa",
+            "mi": "P",
+            "sex": "Male",
+            "date_of_birth": "2025-06-09",
+            "race": [
+              "AI"
+            ],
+            "do_both_parents_reside_in_home": "Yes",
+            "has_disability": "Yes",
+            "is_immigration_status_satisfactory": "No",
+            "relationship_to_applicant": "Child"
+          }
+        ]
+      },
+      "child_family_needs": {
+        "assistance_reason": [
+          "Employment"
+        ],
+        "is_parent_currently_active_in_military": "No",
+        "is_parent_mem_of_guard_or_mru": "No",
+        "is_non_custodial_parent_available": "No"
+      },
+      "income": {
+        "total_income": "2"
+      },
+      "provider": {},
+      "family_members": {
+        "familymember": [
+          {
+            "first_name": "Murugan",
+            "last_name": "Kanpa",
+            "mi": "P",
+            "ethnicity": "Yes",
+            "relationship_to_applicant": "Spouse",
+            "date_of_birth": "2025-06-17",
+            "sex": "Female",
+            "race": [
+              "AI"
+            ]
+          }
+        ]
+      },
+      "employment": {
+        "applicant_emp_income_indicator": "No",
+        "coparent_emp_income_indicator": "No"
+      },
+      "schedule": {
+        "fp_public_transport_dropoff": "No"
+      },
+      "document_upload_step": {
+        "age_doc_type": "Official hospital documentation of the child’s birth",
+        "relationship_doc_type": "Letter of Guardianship",
+        "citizenship_doc_type": "FS-240 (Report of Birth Abroad of a U.S. Citizen)",
+        "nyc_residency_type": "CFWB-067 Residency Attestation"
+      }
+    },
+    "allData": {
+      "first_name": "Murugan",
+      "last_name": "Kanpa",
+      "mi": "P",
+      "telephone_home": "(231) 232-1311",
+      "email": "fdfd@gmail.com",
+      "street": "184 Grove Terrace",
+      "city": "Livingston",
+      "state": "NJ",
+      "zip_code": "07039",
+      "date_of_birth": "2025-06-02",
+      "sex": "Female",
+      "marital_status": "Married",
+      "borough": "Brooklyn",
+      "is_temporary_address": "Yes",
+      "currently_living_in": "Homeless Shelter",
+      "race": [
+        "AI"
+      ],
+      "ethnicity": "Hispanic",
+      "primary_language": "English",
+      "preferred_language": "Spanish",
+      "has_cash_assistance": "No",
+      "assistance_reason": [
+        "Employment"
+      ],
+      "is_parent_currently_active_in_military": "No",
+      "is_parent_mem_of_guard_or_mru": "No",
+      "is_non_custodial_parent_available": "No",
+      "total_income": "2",
+      "children": [
+        {
+          "first_name": "Murugan",
+          "last_name": "Kanpa",
+          "mi": "P",
+          "sex": "Male",
+          "date_of_birth": "2025-06-09",
+          "race": [
+            "AI"
+          ],
+          "do_both_parents_reside_in_home": "Yes",
+          "has_disability": "Yes",
+          "is_immigration_status_satisfactory": "No",
+          "relationship_to_applicant": "Child"
+        }
+      ],
+      "familymember": [
+        {
+          "first_name": "Murugan",
+          "last_name": "Kanpa",
+          "mi": "P",
+          "ethnicity": "Yes",
+          "relationship_to_applicant": "Spouse",
+          "date_of_birth": "2025-06-17",
+          "sex": "Female",
+          "race": [
+            "AI"
+          ]
+        }
+      ],
+      "telephone_work": "(767) 575-7857",
+      "telephone_mobile_or_other": "(676) 587-6587",
+      "latitude": 40.7800951,
+      "longitude": -74.3048864,
+      "ssn": "756-75-7587",
+      "applicant_emp_income_indicator": "No",
+      "coparent_emp_income_indicator": "No",
+      "fp_public_transport_dropoff": "No",
+      "age_doc_type": "Official hospital documentation of the child’s birth",
+      "relationship_doc_type": "Letter of Guardianship",
+      "citizenship_doc_type": "FS-240 (Report of Birth Abroad of a U.S. Citizen)",
+      "nyc_residency_type": "CFWB-067 Residency Attestation"
+    },
+    "updatedAt": "2025-06-19T08:23:17.993Z"
   }
 ]

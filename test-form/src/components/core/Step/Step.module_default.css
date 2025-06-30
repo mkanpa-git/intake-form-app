@@ -1,0 +1,9 @@
+.step {
+  margin-bottom: 3rem;
+}
+
+.navigation {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+}

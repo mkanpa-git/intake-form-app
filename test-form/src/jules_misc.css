@@ -17,24 +17,34 @@
 }
 
 .jules-tooltip-text {
-  position: absolute;
+  position: relative;
   bottom: calc(100% + var(--jules-space-xs)); /* Position above the icon with a small gap */
   left: 50%;
   transform: translateX(-50%);
   z-index: var(--jules-z-index-tooltip); /* Use token for z-index */
-  background-color: var(--jules-neutral-gray-900);
-  color: var(--jules-neutral-white);
+
+  /* Updated background and text colors for a softer, modern look */
+  background-color: rgba(60, 60, 67, 0.95); /* iOS-style dark tooltip */
+  color: #f5f5f5; /* Soft near-white */
+
   padding: var(--jules-space-xs) var(--jules-space-sm);
   border-radius: var(--jules-border-radius-md);
   font-size: var(--jules-font-size-sm);
   font-weight: var(--jules-font-weight-medium);
-  line-height: var(--jules-line-height-sm);
-  box-shadow: var(--jules-shadow-md);
+  line-height: var(--jules-line-height-base, 1.5); /* Ensure readability for wrapped text, using token or fallback */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow */
+
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
-              visibility var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
-  white-space: nowrap;
+              visibility var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
+              transform 0.2s ease;
+  white-space: normal; /* Allow text to wrap */
+  max-width: 250px;    /* Prevent tooltip from becoming too wide */
+  min-width: 160px; /* <-- Add this */
+
+  word-break: break-word; /* Break long words if necessary */
+  overflow-wrap: anywhere;
   pointer-events: none; /* Prevent tooltip from interfering with mouse events on icon */
 }
 
@@ -42,6 +52,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto; /* Allow interaction if tooltip itself has links (not typical) */
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Tooltip arrow */

@@ -1,0 +1,68 @@
+:root {
+  /* Colors */
+  --sf-color-primary: #0055FF;
+  --sf-color-primary-hover: #0041cc;
+  --sf-color-text: #1A1A1A;
+  --sf-color-bg: #F9FAFB;
+  --sf-color-border: #E0E0E0;
+
+  /* Typography */
+  --sf-font-family: 'Inter', sans-serif;
+  --sf-font-size-base: 16px;
+  --sf-line-height-base: 1.5;
+
+  /* Spacing */
+  --sf-spacing-xs: 4px;
+  --sf-spacing-sm: 8px;
+  --sf-spacing-md: 16px;
+  --sf-spacing-lg: 32px;
+  --sf-spacing-xl: 64px;
+
+  /* Border Radius */
+  --sf-radius-sm: 4px;
+  --sf-radius-md: 8px;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--sf-font-family);
+  font-size: var(--sf-font-size-base);
+  line-height: var(--sf-line-height-base);
+  color: var(--sf-color-text);
+  background-color: var(--sf-color-bg);
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--sf-color-text);
+  margin: 0 0 var(--sf-spacing-sm) 0;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--sf-color-primary);
+  color: #ffffff;
+  padding: var(--sf-spacing-sm) var(--sf-spacing-md);
+  border: none;
+  border-radius: var(--sf-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--sf-color-primary-hover);
+}
+
+/* Card Component */
+.card {
+  background-color: #ffffff;
+  border: 1px solid var(--sf-color-border);
+  border-radius: var(--sf-radius-md);
+  padding: var(--sf-spacing-md);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: var(--sf-spacing-md);
+}
