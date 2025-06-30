@@ -71,7 +71,7 @@ function App() {
               {userMenuOpen && (
                 <div className="dropdown">
                   <Link to="/profile" onClick={() => setUserMenuOpen(false)}>Profile</Link>
-                  <a href="/auth/logout">Logout</a>
+                  <a href={`${server}/auth/logout`}>Logout</a>
                 </div>
               )}
             </div>

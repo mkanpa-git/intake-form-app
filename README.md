@@ -48,8 +48,14 @@ GOOGLE_CLIENT_SECRET=<google oauth client secret>
 `GOOGLE_API_KEY` is required for the backend to make Google Places API requests. `SESSION_SECRET` secures Express sessions. `DATABASE_URL` points to your PostgreSQL database. The Google OAuth credentials are needed for authentication.
 
 The React app optionally reads `REACT_APP_SERVER_URL` to determine the Express
-server origin when building login links. It defaults to
-`http://localhost:5000` if not set.
+server origin when building login and logout links. Create a `.env` file in the
+`test-form` directory to override the default:
+
+```bash
+REACT_APP_SERVER_URL=http://localhost:5000
+```
+
+If not provided, the value defaults to `http://localhost:5000`.
 
 ## Database setup
 
