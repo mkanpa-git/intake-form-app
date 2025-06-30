@@ -2064,6 +2064,7 @@
                 "label": "Upload Residency Proof Document",
                 "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
                 "type": "file",
+                "required": true, 
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
@@ -2107,6 +2108,7 @@
                 "label": "Upload Citizenship/Immigration Document",
                 "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
                 "type": "file",
+                "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
@@ -2151,6 +2153,7 @@
                 "label": "Upload Relationship Document",
                 "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
                 "type": "file",
+                "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
@@ -2194,6 +2197,7 @@
                 "label": "Upload Age Proof Document",
                 "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
                 "type": "file",
+                "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
