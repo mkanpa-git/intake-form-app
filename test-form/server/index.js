@@ -45,12 +45,12 @@ passport.use(
         const middle = profile.name.middleName ? profile.name.middleName[0] : null;
         const last = profile.name.familyName || '';
 
-        let res = await pool.query('SELECT * FROM users WHERE google_id = $1', [profile.id]);
+        let res = await pool.query('SELECT * FROM users WHERE provider = $1 AND provider_id = $2', ['google', profile.id]);
         let user = res.rows[0];
         if (!user) {
           res = await pool.query(
-            'INSERT INTO users (google_id, email, first_name, middle_initial, last_name) VALUES ($1,$2,$3,$4,$5) RETURNING *',
-            [profile.id, email, first, middle, last]
+            'INSERT INTO users (provider, provider_id, email, first_name, middle_initial, last_name) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *',
+            ['google', profile.id, email, first, middle, last]
           );
           user = res.rows[0];
         }

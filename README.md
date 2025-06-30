@@ -9,6 +9,8 @@ Ensure PostgreSQL is running locally on port **5432** and the database schema ha
 ```bash
 # start postgres locally and create the database
 createdb intake_form
+# enable pgcrypto for gen_random_uuid()
+psql -d intake_form -c 'CREATE EXTENSION IF NOT EXISTS pgcrypto;'
 psql -d intake_form -f test-form/server/db/schema.sql
 
 # install dependencies and run the server/client together
@@ -51,6 +53,8 @@ Initialize Postgres and load the schema:
 
 ```bash
 createdb intake_form
+# enable pgcrypto for gen_random_uuid()
+psql -d intake_form -c 'CREATE EXTENSION IF NOT EXISTS pgcrypto;'
 psql -d intake_form -f test-form/server/db/schema.sql
 # connect-pg-simple requires a session table
 # you can also create it using:
@@ -70,3 +74,5 @@ DATABASE_URL=<postgres connection url>
 ```
 
 `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` must match your OAuth credentials on the Google Cloud console. `DATABASE_URL` should point to the PostgreSQL instance used by the server.
+
+The `users` table stores OAuth provider information using `provider` and `provider_id` columns. The server queries these fields to locate or create the authenticated user.
