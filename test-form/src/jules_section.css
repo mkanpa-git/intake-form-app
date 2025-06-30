@@ -57,7 +57,7 @@
 
 .jules-section-content {
   padding: var(--jules-space-lg);
-  overflow: hidden;
+  overflow: visible; /* Allow content like tooltips to extend outside */
   transition: max-height var(--jules-transition-duration-base) var(--jules-transition-timing-function), /* Using base duration */
               opacity var(--jules-transition-duration-base) var(--jules-transition-timing-function),
               padding-top var(--jules-transition-duration-base) var(--jules-transition-timing-function),
@@ -66,12 +66,13 @@
               margin-bottom var(--jules-transition-duration-base) var(--jules-transition-timing-function);
   max-height: 1000px; /* A sufficiently large value for expanded state, adjust if very large content */
   opacity: 1;
-  /* border-top: var(--jules-border-width-sm) solid var(--jules-border-color); /* Optional: if content area needs a top border visually separating from header */
+  /* border-top: var(--jules-border-width-sm) solid var(--jules-border-color); */ /* Optional: if content area needs a top border visually separating from header */
 }
 
 .jules-section-content.jules-section-content-collapsed {
   max-height: 0;
   opacity: 0;
+  overflow: hidden;
   padding-top: 0;
   padding-bottom: 0;
   margin-top: 0;
