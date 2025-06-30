@@ -96,6 +96,13 @@ export default function DycdFormRenderer({ applicationId, onExit }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ stepData, allData }),
     });
+    // Save submission locally so it appears in the dashboard
+    upsertApplication(applicationId, {
+      stepData,
+      allData,
+      currentStep,
+      updatedAt: new Date().toISOString(),
+    });
     onExit && onExit();
   };
 
