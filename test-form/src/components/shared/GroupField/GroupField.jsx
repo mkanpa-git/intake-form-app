@@ -136,7 +136,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
             <SelectField
               key={subField.id}
               options={subField.ui?.options || []}
-              placeholder={subField.ui?.placeholder || `Select ${subField.label}`}
+              placeholder={subField.ui?.placeholder}
               {...commonProps}
               error={error} // Pass error to SelectField
             />
