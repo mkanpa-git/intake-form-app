@@ -26,6 +26,7 @@ function App() {
   const [currentId, setCurrentId] = useState(null);
   const [currentService, setCurrentService] = useState('childcare');
   const { user } = useContext(AuthContext);
+  const server = process.env.REACT_APP_SERVER_URL || '';
 
   const startApplication = (serviceKey, id) => {
     setCurrentService(serviceKey);
@@ -55,7 +56,7 @@ function App() {
             Dashboard
           </Link>
           {!user && (
-            <a href="/auth/login">Login</a>
+            <a href={`${server}/auth/login`}>Login</a>
           )}
           {user && (
             <div className="user-menu">
