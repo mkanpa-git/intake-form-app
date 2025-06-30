@@ -150,6 +150,13 @@ export default function FormRenderer({ applicationId, onExit }) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ stepData, allData }),
         });
+        // Persist submitted application locally as well
+        upsertApplication(applicationId, {
+          stepData,
+          allData,
+          currentStep,
+          updatedAt: new Date().toISOString(),
+        });
         // Assuming onExit handles success navigation/feedback
         onExit && onExit();
     } catch (err) {
