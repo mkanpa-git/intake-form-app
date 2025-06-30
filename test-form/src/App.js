@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { Link, Routes, Route } from 'react-router-dom';
+import { AuthContext } from './context/AuthContext';
+import Profile from './pages/Profile';
 // import "./form.css"; // Old theme - commented out
 import FormPage from "./pages/FormPage";
 import Dashboard from "./pages/Dashboard";
@@ -18,9 +21,11 @@ import "./jules_misc.css";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [page, setPage] = useState('dashboard');
   const [currentId, setCurrentId] = useState(null);
   const [currentService, setCurrentService] = useState('childcare');
+  const { user } = useContext(AuthContext);
 
   const startApplication = (serviceKey, id) => {
     setCurrentService(serviceKey);
@@ -49,21 +54,48 @@ function App() {
           >
             Dashboard
           </a>
-
-          <a href="#settings">Profile</a>
+          {!user && (
+            <a href="/auth/google">Login</a>
+          )}
+          {user && (
+            <div className="user-menu">
+              <button
+                type="button"
+                aria-label="user menu"
+                className="avatar"
+                onClick={() => setUserMenuOpen(!userMenuOpen)}
+              >
+                {user.first_name ? user.first_name[0] : 'U'}
+              </button>
+              {userMenuOpen && (
+                <div className="dropdown">
+                  <Link to="/profile" onClick={() => setUserMenuOpen(false)}>Profile</Link>
+                  <a href="/auth/logout">Logout</a>
+                </div>
+              )}
+            </div>
+          )}
         </nav>
       </header>
 
       <main className="form-main">
-        {page === 'dashboard' ? (
-          <Dashboard onStart={startApplication} />
-        ) : (
-          <FormPage
-            applicationId={currentId}
-            service={currentService}
-            onExit={exitForm}
+        <Routes>
+          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="*"
+            element={
+              page === 'dashboard' ? (
+                <Dashboard onStart={startApplication} />
+              ) : (
+                <FormPage
+                  applicationId={currentId}
+                  service={currentService}
+                  onExit={exitForm}
+                />
+              )
+            }
           />
-        )}
+        </Routes>
       </main>
 
       <footer className="form-footer">
