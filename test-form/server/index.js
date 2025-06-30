@@ -8,7 +8,7 @@ const session = require('express-session');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const pgSession = require('connect-pg-simple')(session);
-const db = require('./db');
+const pool = require('./db');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -16,10 +16,10 @@ const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 console.log (GOOGLE_API_KEY ? 'Google API Key is set' : '❌ Google API Key is NOT set! Please set it in .env file');
 
 app.use(session({
-  store: new pgSession({ pool: db }),
+  store: new pgSession({ pool }),
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: false
 }));
 
 app.use(passport.initialize());
@@ -45,10 +45,10 @@ passport.use(
         const middle = profile.name.middleName ? profile.name.middleName[0] : null;
         const last = profile.name.familyName || '';
 
-        let res = await db.query('SELECT * FROM users WHERE google_id = $1', [profile.id]);
+        let res = await pool.query('SELECT * FROM users WHERE google_id = $1', [profile.id]);
         let user = res.rows[0];
         if (!user) {
-          res = await db.query(
+          res = await pool.query(
             'INSERT INTO users (google_id, email, first_name, middle_initial, last_name) VALUES ($1,$2,$3,$4,$5) RETURNING *',
             [profile.id, email, first, middle, last]
           );
@@ -65,7 +65,7 @@ passport.use(
 passport.serializeUser((user, done) => done(null, user.id));
 passport.deserializeUser(async (id, done) => {
   try {
-    const res = await db.query('SELECT * FROM users WHERE id = $1', [id]);
+    const res = await pool.query('SELECT * FROM users WHERE id = $1', [id]);
     done(null, res.rows[0]);
   } catch (err) {
     done(err);
@@ -101,7 +101,7 @@ app.put('/api/me', async (req, res) => {
   }
   const { first_name, middle_initial, last_name } = req.body;
   try {
-    const result = await db.query(
+    const result = await pool.query(
       'UPDATE users SET first_name=$1, middle_initial=$2, last_name=$3 WHERE id=$4 RETURNING *',
       [first_name, middle_initial, last_name, req.user.id]
     );

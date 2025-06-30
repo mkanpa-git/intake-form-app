@@ -52,6 +52,9 @@ Initialize Postgres and load the schema:
 ```bash
 createdb intake_form
 psql -d intake_form -f test-form/server/db/schema.sql
+# connect-pg-simple requires a session table
+# you can also create it using:
+# psql -d intake_form -f node_modules/connect-pg-simple/table.sql
 ```
 
 Set `DATABASE_URL` in your `.env` file (defaults to `postgres://localhost:5432/intake_form`).
