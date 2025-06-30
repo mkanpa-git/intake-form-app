@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
@@ -58,11 +58,15 @@ describe('TextInput', () => {
       />
     );
 
-    const label = screen.getByText('Email');
-    await userEvent.hover(label);
+    const tooltip = screen.getByRole('tooltip');
+    const wrapper = tooltip.parentElement;
+    await userEvent.hover(wrapper);
 
     expect(screen.getByText("We’ll never share your email.")).toBeVisible();
 
-    await userEvent.unhover(label);
+    await userEvent.unhover(wrapper);
+    await waitFor(() =>
+      expect(screen.getByText("We’ll never share your email.")).not.toBeVisible()
+    );
   });
 });

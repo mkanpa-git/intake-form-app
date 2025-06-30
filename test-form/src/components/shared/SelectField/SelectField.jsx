@@ -115,7 +115,7 @@ export default function SelectField({
           {required && <span className="jules-required-asterisk">*</span>}
         </label>
       )}
-      {tooltip && <div style={{marginLeft: 'var(--jules-space-sm)', marginTop: 'var(--jules-space-xxs)'}}><Tooltip text={tooltip}/></div>}
+      {tooltip && <Tooltip text={tooltip} />}
       {hint && !error && <p className="jules-input-hint">{hint}</p>}
       {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
     </div>

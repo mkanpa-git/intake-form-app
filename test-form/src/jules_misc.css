@@ -34,7 +34,9 @@
   visibility: hidden;
   transition: opacity var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
               visibility var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
-  white-space: nowrap;
+  white-space: normal; /* Allow long text to wrap */
+  max-width: 250px; /* Prevent overly wide tooltips */
+  word-wrap: break-word;
   pointer-events: none; /* Prevent tooltip from interfering with mouse events on icon */
 }
 
