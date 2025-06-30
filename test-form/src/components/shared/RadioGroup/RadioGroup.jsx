@@ -39,28 +39,23 @@ export default function RadioGroup({
         {options.map(opt => {
           const optValue = typeof opt === 'string' ? opt : opt.value;
           const optLabel = typeof opt === 'string' ? opt : opt.label;
-          const inputId = `${id}-${optValue}`; // Create unique ID for each radio input for the label's htmlFor
+          const inputId = `${id}-${optValue}`; // Unique ID for accessibility
           return (
-            // The prompt asked for label.jules-radio-option.
-            // My jules_input.css uses div.jules-radio-option > input + span.jules-radio-custom + label.jules-radio-label-text
-            // Let's adapt to the div wrapper structure.
-            <div key={optValue} className="jules-radio-option">
+            <label key={optValue} className="jules-radio-option" htmlFor={inputId}>
               <input
                 type="radio"
-                id={inputId} // Use unique id
-                name={id} // Group by name (original id prop)
+                id={inputId}
+                name={id}
                 value={optValue}
                 checked={value === optValue}
                 onChange={onChange}
-                className="jules-radio-input" // Class for the input itself
-                required={required && !value} // HTML5 required only works if no option is checked
+                className="jules-radio-input"
+                required={required && !value}
                 {...props}
               />
-              <span className="jules-radio-custom"></span>
-              <label htmlFor={inputId} className="jules-radio-label-text">
-                {optLabel}
-              </label>
-            </div>
+              <span className="jules-radio-custom" aria-hidden="true"></span>
+              <span className="jules-radio-label-text">{optLabel}</span>
+            </label>
           );
         })}
       </div>

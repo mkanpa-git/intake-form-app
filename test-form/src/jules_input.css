@@ -186,8 +186,8 @@
   gap: var(--jules-space-md);
 }
 
-.jules-radio-option,
-.jules-checkbox-option {
+label.jules-radio-option,
+label.jules-checkbox-option {
   display: flex;
   align-items: center;
   cursor: pointer;
