@@ -39,3 +39,14 @@ GOOGLE_CLIENT_SECRET=<google oauth client secret>
 ```
 
 `GOOGLE_API_KEY` is required for the backend to make Google Places API requests. `SESSION_SECRET` secures Express sessions. `DATABASE_URL` points to your PostgreSQL database. The Google OAuth credentials are needed for authentication.
+
+## Database setup
+
+Initialize Postgres and load the schema:
+
+```bash
+createdb intake_form
+psql -d intake_form -f test-form/server/db/schema.sql
+```
+
+Set `DATABASE_URL` in your `.env` file (defaults to `postgres://localhost:5432/intake_form`).
