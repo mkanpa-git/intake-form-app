@@ -74,6 +74,8 @@ passport.deserializeUser(async (id, done) => {
 
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
+app.get('/auth/login', (req, res) => res.redirect('/auth/google'));
+
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {

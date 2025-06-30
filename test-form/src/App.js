@@ -55,7 +55,7 @@ function App() {
             Dashboard
           </Link>
           {!user && (
-            <a href="/auth/google">Login</a>
+            <a href="/auth/login">Login</a>
           )}
           {user && (
             <div className="user-menu">
