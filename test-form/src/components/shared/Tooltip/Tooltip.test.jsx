@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import Tooltip from './Tooltip';
@@ -18,5 +18,5 @@ test('shows tooltip on hover', async () => {
   await user.hover(wrapper);
   expect(tooltip.className).toMatch(/visible/);
   await user.unhover(wrapper);
-  expect(tooltip.className).not.toMatch(/visible/);
+  await waitFor(() => expect(tooltip.className).not.toMatch(/visible/));
 });

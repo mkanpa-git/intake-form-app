@@ -92,8 +92,8 @@ export default function TextInput({
           {required && <span className="jules-required-asterisk">*</span>}
         </label>
       )}
-      {/* Render tooltip outside the label, but still associated with the field */}
-      {tooltip && <div style={{marginLeft: 'var(--jules-space-sm)', marginTop: 'var(--jules-space-xxs)'}}><Tooltip text={tooltip}/></div>}
+      {/* Render tooltip directly so it stays inline with label */}
+      {tooltip && <Tooltip text={tooltip} />}
 
       {hint && !error && <p className="jules-input-hint">{hint}</p>}
       {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
