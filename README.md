@@ -4,9 +4,14 @@ This repository contains a sample React and Express application located in the [
 
 ## Running the project
 
-Install dependencies and start the development server:
+Ensure PostgreSQL is running locally on port **5432** and the database schema has been initialized. Then install dependencies and launch the app:
 
 ```bash
+# start postgres locally and create the database
+createdb intake_form
+psql -d intake_form -f test-form/server/db/schema.sql
+
+# install dependencies and run the server/client together
 npm install
 npm run dev
 ```
@@ -50,3 +55,15 @@ psql -d intake_form -f test-form/server/db/schema.sql
 ```
 
 Set `DATABASE_URL` in your `.env` file (defaults to `postgres://localhost:5432/intake_form`).
+
+## Authentication
+
+User authentication is handled through Google OAuth 2.0. Set the following keys in `test-form/server/.env`:
+
+```bash
+GOOGLE_CLIENT_ID=<google oauth client id>
+GOOGLE_CLIENT_SECRET=<google oauth client secret>
+DATABASE_URL=<postgres connection url>
+```
+
+`GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` must match your OAuth credentials on the Google Cloud console. `DATABASE_URL` should point to the PostgreSQL instance used by the server.
