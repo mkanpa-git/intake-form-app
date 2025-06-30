@@ -36,7 +36,7 @@
   background-color: var(--jules-neutral-white); /* To mask input border when floated */
   padding: 0 var(--jules-space-xxs);
   white-space: nowrap;
-  overflow: hidden;
+  overflow: visible; /* Allow tooltip content to escape the label box */
   text-overflow: ellipsis;
   max-width: calc(100% - (var(--jules-space-md) * 2)); /* Prevent overflow */
 }
