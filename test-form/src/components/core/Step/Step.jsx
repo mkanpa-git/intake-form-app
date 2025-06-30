@@ -477,7 +477,7 @@ export default function Step({
         // For now, rendering a basic one that might not fully align with jules custom checkbox styles
         return (
           <div className="jules-form-field"> {/* Wrap single checkbox for consistent layout */}
-            <div className="jules-checkbox-option">
+            <label className="jules-checkbox-option" htmlFor={field.id}>
               <input
                 key={field.id}
                 type="checkbox"
@@ -487,15 +487,15 @@ export default function Step({
                 onChange={(e) => handleChange(field.id, e.target.checked)}
                 required={isRequired}
               />
-              <span className="jules-checkbox-custom"></span>
+              <span className="jules-checkbox-custom" aria-hidden="true"></span>
               {field.label && (
-                <label htmlFor={field.id} className="jules-checkbox-label-text">
+                <span className="jules-checkbox-label-text">
                   {field.label}
                   {/* Tooltip should ideally be part of the label text or handled by a wrapper */}
                   {field.tooltip && <Tooltip text={field.tooltip} />}
-                </label>
+                </span>
               )}
-            </div>
+            </label>
             {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
           </div>
         );

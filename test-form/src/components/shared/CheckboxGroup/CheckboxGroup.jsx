@@ -48,28 +48,23 @@ export default function CheckboxGroup({
           const optValue = typeof opt === 'string' ? opt : opt.value;
           const optLabel = typeof opt === 'string' ? opt : opt.label;
           const checked = Array.isArray(value) && value.includes(optValue);
-          const inputId = `${id}-${optValue}`; // Create unique ID for each checkbox input
+          const inputId = `${id}-${optValue}`; // Unique ID for accessibility
 
           return (
-            <div key={optValue} className="jules-checkbox-option">
+            <label key={optValue} className="jules-checkbox-option" htmlFor={inputId}>
               <input
                 type="checkbox"
-                id={inputId} // Use unique id
-                name={`${id}-${optValue}`} // Unique name for each checkbox for better form handling, or share 'id' if backend expects array under one name
+                id={inputId}
+                name={`${id}-${optValue}`}
                 value={optValue}
                 checked={checked}
                 onChange={e => handleChange(optValue, e.target.checked)}
-                className="jules-checkbox-input" // Class for the input itself
-                // HTML5 'required' on a group of checkboxes is tricky.
-                // Usually handled by JS. If one must be checked, one input can have 'required'.
-                // For simplicity, not adding 'required' on individual checkboxes here unless specifically needed.
+                className="jules-checkbox-input"
                 {...props}
               />
-              <span className="jules-checkbox-custom"></span>
-              <label htmlFor={inputId} className="jules-checkbox-label-text">
-                {optLabel}
-              </label>
-            </div>
+              <span className="jules-checkbox-custom" aria-hidden="true"></span>
+              <span className="jules-checkbox-label-text">{optLabel}</span>
+            </label>
           );
         })}
       </div>
