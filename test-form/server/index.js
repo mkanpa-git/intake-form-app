@@ -4,17 +4,114 @@ const fetch = require('node-fetch');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const session = require('express-session');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const pgSession = require('connect-pg-simple')(session);
+const db = require('./db');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 console.log (GOOGLE_API_KEY ? 'Google API Key is set' : '❌ Google API Key is NOT set! Please set it in .env file');
+
+app.use(session({
+  store: new pgSession({ pool: db }),
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 // Middleware to parse JSON bodies
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: '/auth/google/callback',
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      try {
+        const email = profile.emails && profile.emails[0].value;
+        const first = profile.name.givenName || '';
+        const middle = profile.name.middleName ? profile.name.middleName[0] : null;
+        const last = profile.name.familyName || '';
+
+        let res = await db.query('SELECT * FROM users WHERE google_id = $1', [profile.id]);
+        let user = res.rows[0];
+        if (!user) {
+          res = await db.query(
+            'INSERT INTO users (google_id, email, first_name, middle_initial, last_name) VALUES ($1,$2,$3,$4,$5) RETURNING *',
+            [profile.id, email, first, middle, last]
+          );
+          user = res.rows[0];
+        }
+        return done(null, user);
+      } catch (err) {
+        return done(err);
+      }
+    }
+  )
+);
+
+passport.serializeUser((user, done) => done(null, user.id));
+passport.deserializeUser(async (id, done) => {
+  try {
+    const res = await db.query('SELECT * FROM users WHERE id = $1', [id]);
+    done(null, res.rows[0]);
+  } catch (err) {
+    done(err);
+  }
+});
+
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+app.get('/auth/google/callback',
+  passport.authenticate('google', { failureRedirect: '/' }),
+  (req, res) => {
+    res.redirect('/');
+  }
+);
+
+app.get('/auth/logout', (req, res, next) => {
+  req.logout(err => {
+    if (err) return next(err);
+    req.session.destroy(() => res.redirect('/'));
+  });
+});
+
+app.get('/api/me', (req, res) => {
+  if (!req.isAuthenticated || !req.isAuthenticated()) {
+    return res.status(401).json({ error: 'Not authenticated' });
+  }
+  res.json(req.user);
+});
+
+app.put('/api/me', async (req, res) => {
+  if (!req.isAuthenticated || !req.isAuthenticated()) {
+    return res.status(401).json({ error: 'Not authenticated' });
+  }
+  const { first_name, middle_initial, last_name } = req.body;
+  try {
+    const result = await db.query(
+      'UPDATE users SET first_name=$1, middle_initial=$2, last_name=$3 WHERE id=$4 RETURNING *',
+      [first_name, middle_initial, last_name, req.user.id]
+    );
+    req.user = result.rows[0];
+    res.json(req.user);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to update profile' });
+  }
+});
 
 const upload = multer({
   storage: multer.diskStorage({
