@@ -80,3 +80,34 @@ Deployments require Node.js and PostgreSQL. The Express server listens on `PORT`
 Sessions are stored in PostgreSQL via `connect-pg-simple` ensuring stateless server instances are supported. File uploads are kept on disk so deployments should provide persistent storage or use an alternative provider.
 
 For authentication to work in production, the Google OAuth callback URL must match the deployed domain and the `.env` values must be configured appropriately.
+## Integration Viewpoint
+
+The React client communicates with the Express API in the `test-form/server` directory. The following endpoints are available for integrations.
+
+### Authentication
+- `GET /auth/google` &ndash; initiates Google OAuth sign in.
+- `GET /auth/login` &ndash; redirects to `/auth/google`.
+- `GET /auth/google/callback` &ndash; OAuth callback that redirects back to the client.
+- `GET /auth/logout` &ndash; destroys the session and redirects to the client.
+
+### User Profile
+- `GET /api/me` &ndash; returns the authenticated user or `401` when not logged in. 【F:test-form/server/index.js†L95-L100】
+- `PUT /api/me` &ndash; updates name fields for the current user. The request body accepts `first_name`, `middle_initial` and `last_name` and returns the updated record. 【F:test-form/server/index.js†L102-L118】
+
+### Applications
+- `POST /api/applications/:appId` &ndash; create or update an application. Responds with `{ "status": "ok" }`. 【F:test-form/server/index.js†L268-L277】
+- `GET /api/applications` &ndash; list all stored applications. 【F:test-form/server/index.js†L279-L285】
+- `GET /api/applications/:appId` &ndash; fetch a single application or `404` if it does not exist. 【F:test-form/server/index.js†L289-L297】
+- `DELETE /api/applications/:appId` &ndash; delete an application. Responds with `{ "status": "ok" }`. 【F:test-form/server/index.js†L300-L307】
+- `POST /api/applications/:appId/upload` &ndash; upload one or more files for an application using `multipart/form-data`. Returns the file paths. 【F:test-form/server/index.js†L133-L140】
+
+### Google Places Proxy
+- `GET /api/places/autocomplete?input=<text>&sessiontoken=<token>` &ndash; proxies to Google Places Autocomplete. 【F:test-form/server/index.js†L142-L197】
+- `GET /api/places/details/:id?sessiontoken=<token>` &ndash; proxies to Google Places Details. 【F:test-form/server/index.js†L199-L231】
+
+### Case Management UI
+- `GET /cases` &ndash; lists applications in an HTML dashboard. 【F:test-form/server/index.js†L310-L314】
+- `GET /cases/:appId` &ndash; shows a single application in the dashboard. 【F:test-form/server/index.js†L316-L319】
+
+### External API Definition
+An OpenAPI 3.0 specification (`openapi 3.0.0.txt`) describes the external MyCity Applications Service API. It defines a `GET /appl/{applId}` operation returning an `ApplicationSubmission` object. 【F:openapi 3.0.0.txt†L60-L79】
