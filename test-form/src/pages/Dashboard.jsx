@@ -11,7 +11,7 @@ export default function Dashboard({ onStart }) {
   }, []);
 
   const createNew = async (serviceKey) => {
-    const id = Date.now().toString();
+    const id = crypto.randomUUID();
     const isDycd = serviceKey === 'dycd';
     await upsertApplication(id, {
       serviceKey,
