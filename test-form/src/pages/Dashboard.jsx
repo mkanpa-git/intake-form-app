@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { loadApplications, saveApplications, deleteApplication } from '../utils/appStorage';
+import { loadApplications, upsertApplication, deleteApplication } from '../utils/appStorage';
 import ServiceCard from '../components/ServiceCard';
 import ApplicationCard from '../components/ApplicationCard';
 
@@ -7,14 +7,13 @@ export default function Dashboard({ onStart }) {
   const [apps, setApps] = useState([]);
 
   useEffect(() => {
-    setApps(loadApplications());
+    loadApplications().then(setApps);
   }, []);
 
-  const createNew = (serviceKey) => {
+  const createNew = async (serviceKey) => {
     const id = Date.now().toString();
     const isDycd = serviceKey === 'dycd';
-    const newApp = {
-      id,
+    await upsertApplication(id, {
       serviceKey,
       stepData: {},
       allData: {},
@@ -25,10 +24,9 @@ export default function Dashboard({ onStart }) {
       interactionName: isDycd
         ? 'Youth Services Intake'
         : 'Child Care Assistance Application',
-      updatedAt: new Date().toISOString(),
-    };
-    const updated = [...apps, newApp];
-    saveApplications(updated);
+      status: 'draft',
+    });
+    const updated = await loadApplications();
     setApps(updated);
     onStart && onStart(serviceKey, id);
   };
@@ -39,8 +37,8 @@ export default function Dashboard({ onStart }) {
     onStart && onStart(key, id);
   };
 
-  const handleDelete = (id) => {
-    deleteApplication(id);
+  const handleDelete = async (id) => {
+    await deleteApplication(id);
     setApps((prev) => prev.filter((a) => a.id !== id));
   };
 

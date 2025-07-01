@@ -624,14 +624,13 @@ export default function Step({
     onBackToReview && onBackToReview(cleaned);
   };
 
-  const handleSaveDraftClick = () => {
+  const handleSaveDraftClick = async () => {
     setIsSavingDraft(true);
-    // Current onSaveDraft is synchronous (localStorage).
-    // If it were async, it would be:
-    // try { await onSaveDraft(formData); } catch(e) { ... } finally { setIsSavingDraft(false); }
-    onSaveDraft && onSaveDraft(formData);
-    // For synchronous, reset immediately or after a very short timeout for visual feedback
-    setTimeout(() => setIsSavingDraft(false), 200); // Brief visual feedback
+    try {
+      await onSaveDraft?.(formData);
+    } finally {
+      setIsSavingDraft(false);
+    }
   };
 
   return (

@@ -231,53 +231,90 @@ app.get('/api/places/details/:id', async (req, res) => {
 });
 
 // ------- Application Storage Helpers -------
-function loadApplications() {
-  try {
-    const raw = fs.readFileSync(path.join(__dirname, 'data', 'applications.json'));
-    return JSON.parse(raw);
-  } catch {
-    return [];
-  }
+async function getApplications() {
+  const res = await pool.query('SELECT * FROM applications ORDER BY updated_at DESC');
+  return res.rows;
 }
 
-function saveApplications(apps) {
-  const file = path.join(__dirname, 'data', 'applications.json');
-  fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, JSON.stringify(apps, null, 2));
+async function getApplication(id) {
+  const res = await pool.query('SELECT * FROM applications WHERE id = $1', [id]);
+  return res.rows[0];
+}
+
+async function upsertApplication(id, data) {
+  const {
+    userId = null,
+    serviceKey = 'childcare',
+    status = 'draft',
+    currentStep = 0,
+    stepData = {},
+    allData = {},
+  } = data;
+  await pool.query(
+    `INSERT INTO applications (id, user_id, service_key, status, current_step, step_data, all_data)
+     VALUES ($1,$2,$3,$4,$5,$6,$7)
+     ON CONFLICT (id) DO UPDATE SET
+       user_id = EXCLUDED.user_id,
+       service_key = EXCLUDED.service_key,
+       status = EXCLUDED.status,
+       current_step = EXCLUDED.current_step,
+       step_data = EXCLUDED.step_data,
+       all_data = EXCLUDED.all_data,
+       updated_at = NOW()`,
+    [id, userId, serviceKey, status, currentStep, stepData, allData]
+  );
 }
 
 // --- Application API ---
-app.post('/api/applications/:appId', (req, res) => {
-  const apps = loadApplications();
-  const idx = apps.findIndex((a) => a.id === req.params.appId);
-  const record = { id: req.params.appId, ...req.body, updatedAt: new Date().toISOString() };
-  if (idx !== -1) {
-    apps[idx] = { ...apps[idx], ...record };
-  } else {
-    apps.push(record);
+app.post('/api/applications/:appId', async (req, res) => {
+  try {
+    await upsertApplication(req.params.appId, req.body);
+    res.json({ status: 'ok' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to save application' });
   }
-  saveApplications(apps);
-  res.json({ status: 'ok' });
 });
 
-app.get('/api/applications', (req, res) => {
-  res.json(loadApplications());
+app.get('/api/applications', async (req, res) => {
+  try {
+    const apps = await getApplications();
+    res.json(apps);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to load applications' });
+  }
 });
 
-app.get('/api/applications/:appId', (req, res) => {
-  const appData = loadApplications().find((a) => a.id === req.params.appId);
-  if (!appData) return res.status(404).json({ error: 'Not found' });
-  res.json(appData);
+app.get('/api/applications/:appId', async (req, res) => {
+  try {
+    const appData = await getApplication(req.params.appId);
+    if (!appData) return res.status(404).json({ error: 'Not found' });
+    res.json(appData);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to load application' });
+  }
+});
+
+app.delete('/api/applications/:appId', async (req, res) => {
+  try {
+    await pool.query('DELETE FROM applications WHERE id = $1', [req.params.appId]);
+    res.json({ status: 'ok' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to delete application' });
+  }
 });
 
 // --- Case Management UI ---
-app.get('/cases', (req, res) => {
-  const apps = loadApplications();
+app.get('/cases', async (req, res) => {
+  const apps = await getApplications();
   res.render('applications', { apps });
 });
 
-app.get('/cases/:appId', (req, res) => {
-  const appData = loadApplications().find((a) => a.id === req.params.appId);
+app.get('/cases/:appId', async (req, res) => {
+  const appData = await getApplication(req.params.appId);
   if (!appData) return res.status(404).send('Application not found');
   res.render('application', { app: appData });
 });

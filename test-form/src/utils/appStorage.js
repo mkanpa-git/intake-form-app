@@ -1,32 +1,31 @@
-export function loadApplications() {
+export async function loadApplications() {
   try {
-    const raw = localStorage.getItem('childcareApplications');
-    return raw ? JSON.parse(raw) : [];
+    const res = await fetch('/api/applications');
+    if (!res.ok) throw new Error('Failed to load applications');
+    return await res.json();
   } catch {
     return [];
   }
 }
 
-export function saveApplications(apps) {
-  localStorage.setItem('childcareApplications', JSON.stringify(apps));
-}
-
-export function getApplication(id) {
-  return loadApplications().find((a) => a.id === id);
-}
-
-export function upsertApplication(id, data) {
-  const apps = loadApplications();
-  const idx = apps.findIndex((a) => a.id === id);
-  if (idx !== -1) {
-    apps[idx] = { ...apps[idx], ...data, id };
-  } else {
-    apps.push({ id, ...data });
+export async function getApplication(id) {
+  try {
+    const res = await fetch(`/api/applications/${id}`);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
   }
-  saveApplications(apps);
 }
 
-export function deleteApplication(id) {
-  const updated = loadApplications().filter((a) => a.id !== id);
-  saveApplications(updated);
+export async function upsertApplication(id, data) {
+  await fetch(`/api/applications/${id}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+}
+
+export async function deleteApplication(id) {
+  await fetch(`/api/applications/${id}`, { method: 'DELETE' });
 }
