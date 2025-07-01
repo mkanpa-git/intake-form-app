@@ -19,12 +19,13 @@ export default function DycdFormRenderer({ applicationId, onExit }) {
 
   useEffect(() => {
     if (applicationId) {
-      const saved = getApplication(applicationId);
-      if (saved) {
-        setCurrentStep(saved.currentStep || 0);
-        setStepData(saved.stepData || {});
-        setAllData(saved.allData || {});
-      }
+      getApplication(applicationId).then((saved) => {
+        if (saved) {
+          setCurrentStep(saved.current_step || 0);
+          setStepData(saved.step_data || {});
+          setAllData(saved.all_data || {});
+        }
+      });
     }
   }, [applicationId]);
 
@@ -65,13 +66,13 @@ export default function DycdFormRenderer({ applicationId, onExit }) {
     window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
-  const handleSaveDraft = (data) => {
+  const handleSaveDraft = async (data) => {
     handleDataChange(data);
-    upsertApplication(applicationId, {
+    await upsertApplication(applicationId, {
       stepData: { ...stepData, [steps[currentStep].id]: data },
       allData: { ...allData, ...data },
       currentStep,
-      updatedAt: new Date().toISOString(),
+      status: 'draft',
     });
     onExit && onExit();
   };
@@ -91,17 +92,11 @@ export default function DycdFormRenderer({ applicationId, onExit }) {
   };
 
   const handleSubmit = async () => {
-    await fetch(`/api/applications/${applicationId}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ stepData, allData }),
-    });
-    // Save submission locally so it appears in the dashboard
-    upsertApplication(applicationId, {
+    await upsertApplication(applicationId, {
       stepData,
       allData,
       currentStep,
-      updatedAt: new Date().toISOString(),
+      status: 'submitted',
     });
     onExit && onExit();
   };

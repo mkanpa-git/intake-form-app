@@ -65,12 +65,13 @@ export default function FormRenderer({ applicationId, onExit }) {
       setOrientation( (loadedForm?.layout?.stepperPosition || 'right') === 'top' ? 'horizontal' : 'vertical');
 
       if (applicationId) {
-        const saved = getApplication(applicationId);
-        if (saved) {
-          setCurrentStep(saved.currentStep || 0);
-          setStepData(saved.stepData || {});
-          setAllData(saved.allData || {});
-        }
+        getApplication(applicationId).then((saved) => {
+          if (saved) {
+            setCurrentStep(saved.current_step || 0);
+            setStepData(saved.step_data || {});
+            setAllData(saved.all_data || {});
+          }
+        });
       }
     }
   }, [formSpec, applicationId]);
@@ -114,14 +115,14 @@ export default function FormRenderer({ applicationId, onExit }) {
     window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
-  const handleSaveDraft = (data) => {
+  const handleSaveDraft = async (data) => {
     handleDataChange(data);
     if (steps.length > 0 && steps[currentStep]) {
-      upsertApplication(applicationId, {
+      await upsertApplication(applicationId, {
         stepData: { ...stepData, [steps[currentStep].id]: data },
         allData: { ...allData, ...data },
         currentStep,
-        updatedAt: new Date().toISOString(),
+        status: 'draft',
       });
     }
     onExit && onExit();
@@ -143,28 +144,19 @@ export default function FormRenderer({ applicationId, onExit }) {
   };
 
   const handleSubmit = async () => {
-    setIsSubmitting(true); // Set loading true
+    setIsSubmitting(true);
     try {
-        await fetch(`/api/applications/${applicationId}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ stepData, allData }),
-        });
-        // Persist submitted application locally as well
-        upsertApplication(applicationId, {
-          stepData,
-          allData,
-          currentStep,
-          updatedAt: new Date().toISOString(),
-        });
-        // Assuming onExit handles success navigation/feedback
-        onExit && onExit();
+      await upsertApplication(applicationId, {
+        stepData,
+        allData,
+        currentStep,
+        status: 'submitted',
+      });
+      onExit && onExit();
     } catch (err) {
-        console.error("Submission failed:", err);
-        // TODO: Implement user-facing error feedback for submission failure
-        // Example: setError("Submission failed. Please try again.");
+      console.error('Submission failed:', err);
     } finally {
-        setIsSubmitting(false); // Set loading false
+      setIsSubmitting(false);
     }
   };
 
