@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { loadApplications, upsertApplication, deleteApplication } from '../utils/appStorage';
+import { AuthContext } from '../context/AuthContext';
 import ServiceCard from '../components/ServiceCard';
 import ApplicationCard from '../components/ApplicationCard';
 
 export default function Dashboard({ onStart }) {
+  const { user } = useContext(AuthContext);
   const [apps, setApps] = useState([]);
 
   useEffect(() => {
-    loadApplications().then(setApps);
-  }, []);
+    if (user) {
+      loadApplications().then(setApps);
+    } else {
+      setApps([]);
+    }
+  }, [user]);
 
   const createNew = async (serviceKey) => {
     const id = crypto.randomUUID();
@@ -64,7 +70,7 @@ export default function Dashboard({ onStart }) {
         />
       </div>
 
-      {apps.length > 0 && (
+      {user && apps.length > 0 && (
         <div className="jules-draft-list">
           {/* h2 will be styled by jules_base.css */}
           <h2>Saved Applications</h2>
