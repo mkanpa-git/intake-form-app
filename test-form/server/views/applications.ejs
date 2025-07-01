@@ -15,7 +15,7 @@
       <% apps.forEach(function(a){ %>
         <tr>
           <td><%= a.id %></td>
-          <td><%= a.updatedAt || '' %></td>
+          <td><%= a.updated_at || '' %></td>
           <td><a class="btn btn-sm btn-primary" href="/cases/<%= a.id %>">View</a></td>
         </tr>
       <% }); %>
