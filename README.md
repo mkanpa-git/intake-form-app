@@ -43,9 +43,11 @@ SESSION_SECRET=<any random string>
 DATABASE_URL=<postgres connection url>
 GOOGLE_CLIENT_ID=<google oauth client id>
 GOOGLE_CLIENT_SECRET=<google oauth client secret>
+FILE_STORAGE=local # or 'gcp'
+GCP_BUCKET=<gcs bucket name when using gcp>
 ```
 
-`GOOGLE_API_KEY` is required for the backend to make Google Places API requests. `SESSION_SECRET` secures Express sessions. `DATABASE_URL` points to your PostgreSQL database. The Google OAuth credentials are needed for authentication.
+`GOOGLE_API_KEY` is required for the backend to make Google Places API requests. `SESSION_SECRET` secures Express sessions. `DATABASE_URL` points to your PostgreSQL database. The Google OAuth credentials are needed for authentication. Set `FILE_STORAGE` to `gcp` to store uploads in the bucket specified by `GCP_BUCKET`; otherwise files are kept on disk under `server/uploads`.
 
 The React app optionally reads `REACT_APP_SERVER_URL` to determine the Express
 server origin when building login and logout links. Create a `.env` file in the

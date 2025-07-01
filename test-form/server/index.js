@@ -1,9 +1,8 @@
 require('dotenv').config({ path: __dirname + '/.env' });
 const express = require('express');
 const fetch = require('node-fetch');
-const multer = require('multer');
 const path = require('path');
-const fs = require('fs');
+const createStorageStrategy = require('./storage');
 const session = require('express-session');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -14,6 +13,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 console.log (GOOGLE_API_KEY ? 'Google API Key is set' : '❌ Google API Key is NOT set! Please set it in .env file');
+
+const storage = createStorageStrategy({ uploadsDir: path.join(__dirname, 'uploads') });
 
 app.use(session({
   store: new pgSession({ pool }),
@@ -26,7 +27,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 // Middleware to parse JSON bodies
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+if ((process.env.FILE_STORAGE || 'LOCAL').toUpperCase() !== 'GCP') {
+  app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+}
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -117,26 +120,20 @@ app.put('/api/me', async (req, res) => {
   }
 });
 
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: (req, file, cb) => {
-      const dir = path.join(__dirname, 'uploads', req.params.appId);
-      fs.mkdirSync(dir, { recursive: true });
-      cb(null, dir);
-    },
-    filename: (req, file, cb) => {
-      cb(null, Date.now() + '-' + file.originalname);
-    },
-  }),
-});
+const upload = storage.multerMiddleware();
 
 // --- File Upload ---
-app.post('/api/applications/:appId/upload', upload.array('files'), (req, res) => {
+app.post('/api/applications/:appId/upload', upload, async (req, res) => {
   if (!req.files || req.files.length === 0) {
     return res.status(400).json({ error: 'No files uploaded' });
   }
-  const paths = req.files.map((f) => `/uploads/${req.params.appId}/${f.filename}`);
-  res.json({ paths });
+  try {
+    const paths = await storage.saveFiles(req.params.appId, req.files);
+    res.json({ paths });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to store files' });
+  }
 });
 
 // --- Autocomplete (Google Places API v1 expects POST with JSON body) ---
