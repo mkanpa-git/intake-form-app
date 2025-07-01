@@ -3,7 +3,7 @@
     "title": "Childcare Voucher Application",
     "description": "Step-by-step form for applying for Childcare Assistance",
     "layout": {
-      "stepperPosition": "top"
+      "stepperPosition": "left"
     },
     "steps": [
       {

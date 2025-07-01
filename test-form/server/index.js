@@ -77,16 +77,18 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'em
 app.get('/auth/login', (req, res) => res.redirect('/auth/google'));
 
 app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/' }),
+  passport.authenticate('google', { failureRedirect: 'http://localhost:3000/' }), // Also update failure redirect for consistency
   (req, res) => {
-    res.redirect('/');
+    // Redirect to the frontend application
+    res.redirect('http://localhost:3000/');
   }
 );
 
 app.get('/auth/logout', (req, res, next) => {
   req.logout(err => {
     if (err) return next(err);
-    req.session.destroy(() => res.redirect('/'));
+    // Destroy session and redirect to the frontend application
+    req.session.destroy(() => res.redirect('http://localhost:3000/'));
   });
 });
 
