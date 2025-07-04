@@ -39,7 +39,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: '/auth/google/callback',
+      callbackURL: process.env.GOOGLE_CALLBACK_URL //'/auth/google/callback',
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
@@ -314,6 +314,12 @@ app.get('/cases/:appId', async (req, res) => {
   const appData = await getApplication(req.params.appId);
   if (!appData) return res.status(404).send('Application not found');
   res.render('application', { app: appData });
+});
+
+app.use((err, req, res, next) => {
+  console.error('OAuth error:', err?.message);
+  console.error('Google response:', err?.oauthError?.data || err);
+  res.status(500).send('OAuth callback failed');
 });
 
 app.listen(PORT, () => {
