@@ -132,6 +132,9 @@ app.post('/api/applications/:appId/upload', upload, async (req, res) => {
     res.json({ paths });
   } catch (err) {
     console.error(err);
+    if (err.code === 'VIRUS_DETECTED') {
+      return res.status(400).json({ error: 'Malicious file detected' });
+    }
     res.status(500).json({ error: 'Failed to store files' });
   }
 });

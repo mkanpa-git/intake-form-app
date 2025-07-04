@@ -19,6 +19,7 @@ export default function FileInput({
 }) {
   const [dragOver, setDragOver] = useState(false);
   const [fileNames, setFileNames] = useState([]);
+  const [uploadError, setUploadError] = useState('');
   const dragCounter = useRef(0);
   const inputRef = useRef(null);
 
@@ -30,6 +31,7 @@ export default function FileInput({
     if (!onChange || filesArray.length === 0) return;
 
     setFileNames(filesArray.map((f) => f.name));
+    setUploadError('');
 
     if (applicationId) {
       const form = new FormData();
@@ -46,10 +48,10 @@ export default function FileInput({
           return;
         }
         console.error('Upload failed', data);
-        // Potentially set an error state here to display to the user
+        setUploadError(data.error || 'Upload failed');
       } catch (err) {
         console.error('Upload error', err);
-        // Potentially set an error state here
+        setUploadError('Upload failed');
       }
     } else {
       // If no applicationId, pass the FileList/File object directly
@@ -173,6 +175,7 @@ export default function FileInput({
         <p className="jules-input-hint">{hint}</p>
       )}
       {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
+      {uploadError && <div className="jules-alert jules-alert-error">{uploadError}</div>}
     </div>
   );
 }
