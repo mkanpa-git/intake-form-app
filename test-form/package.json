@@ -30,7 +30,8 @@
     "dev": "concurrently \"npm run server\" \"npm start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test-server": "jest --config server/jest.config.js"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +57,8 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
     "concurrently": "^9.1.2",
-    "jest-axe": "^10.0.0"
+    "jest-axe": "^10.0.0",
+    "jest": "^27.5.1",
+    "supertest": "^6.3.3"
   }
 }
