@@ -4,18 +4,31 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import MaskedInput from './MaskedInput';
 
-jest.mock('react-imask', () => ({
-  IMaskInput: ({ onAccept, ...props }) => (
-    <input {...props} onChange={e => onAccept && onAccept(e.target.value)} />
-  )
-}));
+jest.mock('react-imask', () => {
+  const React = require('react');
+  return {
+    IMaskInput: ({ onAccept, ...props }) => {
+      const [val, setVal] = React.useState('');
+      return (
+        <input
+          {...props}
+          value={val}
+          onChange={e => {
+            setVal(e.target.value);
+            onAccept && onAccept(e.target.value);
+          }}
+        />
+      );
+    }
+  };
+});
 
-test.skip('renders input with placeholder', () => {
+test('renders input with placeholder', () => {
   render(<MaskedInput id="phone" label="Phone" mask="000" placeholder="123" />);
   expect(screen.getByPlaceholderText('123')).toBeInTheDocument();
 });
 
-test.skip('calls onChange when typing', async () => {
+test('calls onChange when typing', async () => {
   const user = userEvent.setup();
   const handleChange = jest.fn();
   render(<MaskedInput id="phone" onChange={handleChange} />);

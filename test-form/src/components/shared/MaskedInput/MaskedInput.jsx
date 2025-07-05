@@ -23,12 +23,12 @@ export default function MaskedInput({
   ...props
 }) {
   const [isFocused, setIsFocused] = useState(false);
-  const [hasValue, setHasValue] = useState(Boolean(value || defaultValue || (props.placeholder && props.placeholder !== " ")));
+  const [hasValue, setHasValue] = useState(Boolean(value || defaultValue || (placeholder && placeholder !== " ")));
 
   useEffect(() => {
     // Handles controlled component value changes and initial placeholder check
-    setHasValue(Boolean(value || (props.placeholder && props.placeholder !== " ")));
-  }, [value, props.placeholder]);
+    setHasValue(Boolean(value || (placeholder && placeholder !== " ")));
+  }, [value, placeholder]);
 
   const handleFocus = (e) => {
     setIsFocused(true);
@@ -84,7 +84,7 @@ export default function MaskedInput({
           onAccept={handleAccept} // Use onAccept for value changes
           onFocus={handleFocus}
           onBlur={handleBlur}
-          placeholder={props.placeholder || " "} // Use a space for :placeholder-shown if CSS relies on it
+          placeholder={placeholder || " "} // Use a space for :placeholder-shown if CSS relies on it
           className={currentInputClassName}
           required={required}
           {...props}
