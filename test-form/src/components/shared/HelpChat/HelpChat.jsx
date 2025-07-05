@@ -31,8 +31,18 @@ export default function HelpChat({
     }
   }, [messages]);
 
-  const sendMessage = async (override) => {
-    const trimmed = (override ?? input).trim();
+  const sendMessage = async (overrideOrEvent) => {
+    if (
+      overrideOrEvent &&
+      typeof overrideOrEvent.preventDefault === 'function'
+    ) {
+      overrideOrEvent.preventDefault();
+      overrideOrEvent = undefined;
+    }
+    const text =
+      typeof overrideOrEvent === 'string' ? overrideOrEvent : input;
+    const trimmed = text.trim();
+
     if (!trimmed) return;
     const userMsg = { role: 'user', content: trimmed };
     setMessages((prev) => [...prev, userMsg]);
