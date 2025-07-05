@@ -59,7 +59,7 @@ function App() {
           >
             ☰
           </button>
-          <div className="brand">MyCity Services</div>
+          <div className="brand">ModelCity Services</div>
         </div>
 
         <nav className={`right ${menuOpen ? "open" : ""}`}>
@@ -123,7 +123,7 @@ function App() {
       </main>
 
       <footer className="form-footer">
-        <span>© 2025 City of New York</span>
+        <span>© 2025 City of Service</span>
         <a href="#privacy">Privacy Policy</a>
       </footer>
     </div>

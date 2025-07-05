@@ -1,6 +1,6 @@
-# Jules Theme Guide for MyCity Services Forms
+# Jules Theme Guide for ModelCity Services Forms
 
-This document provides an overview of the `jules_` CSS theme created to enhance the MyCity Services form application with a world-class user experience. It focuses on clarity, accessibility, and a professional, modern aesthetic suitable for government applications.
+This document provides an overview of the `jules_` CSS theme created to enhance the ModelCity Services form application with a world-class user experience. It focuses on clarity, accessibility, and a professional, modern aesthetic suitable for government applications.
 
 ## 1. CSS File Structure
 
@@ -83,7 +83,7 @@ A consistent spacing scale (e.g., 4px/8px base increments) is used for padding a
     *   Active steps are highlighted (e.g., light blue background, primary blue text).
     *   Completed steps are marked (e.g., green checkmark).
 
-This theme aims to provide a highly usable, accessible, and visually appealing interface for users interacting with MyCity Services forms.
+This theme aims to provide a highly usable, accessible, and visually appealing interface for users interacting with ModelCity Services forms.
 
 ## Theme Switching
 

@@ -14,6 +14,6 @@ test('renders application header', () => {
       </AuthProvider>
     </BrowserRouter>
   );
-  const headerElement = screen.getByText(/MyCity Services/i);
+  const headerElement = screen.getByText(/ModelCity Services/i);
   expect(headerElement).toBeInTheDocument();
 });
