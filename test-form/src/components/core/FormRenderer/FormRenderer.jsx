@@ -146,6 +146,17 @@ export default function FormRenderer({ applicationId, onExit }) {
     window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
+  // Clear any validation summary when changing steps
+  useEffect(() => {
+    setErrorSummary([]);
+  }, [currentStep]);
+
+  const handleStepChange = (idx) => {
+    setCurrentStep(idx);
+    setErrorSummary([]);
+  };
+
+
   const handleValidationFail = (summary) => {
     setErrorSummary(summary);
     setTimeout(() => {
@@ -218,7 +229,7 @@ export default function FormRenderer({ applicationId, onExit }) {
         <Stepper
           steps={steps}
           currentStep={currentStep}
-          onStepChange={setCurrentStep}
+          onStepChange={handleStepChange}
           requiredDocs={requiredDocs}
           orientation={orientation}
           canNavigate={canNavigate}
@@ -238,20 +249,21 @@ export default function FormRenderer({ applicationId, onExit }) {
               {errorSummary.map((err) => (
                 <li key={err.id}>
                   <a
-                    href={`#${err.id}-error`}
+                    href={`#${err.id}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      const el = document.getElementById(`${err.id}-error`);
-                      if (el) {
-                        el.focus();
+                      const input = document.getElementById(err.id);
+                      if (input && typeof input.focus === 'function') {
+                        input.focus();
                       } else {
-                        document.getElementById(err.id)?.focus();
+                        const label = document.querySelector(`label[for="${err.id}"]`);
+                        label && label.focus();
+
                       }
                     }}
                   >
                     {err.msg}
                   </a>
-
                 </li>
               ))}
             </ul>
@@ -261,7 +273,7 @@ export default function FormRenderer({ applicationId, onExit }) {
           <Stepper
             steps={steps}
             currentStep={currentStep}
-            onStepChange={setCurrentStep}
+            onStepChange={handleStepChange}
             requiredDocs={requiredDocs}
             orientation={orientation}
             canNavigate={canNavigate}

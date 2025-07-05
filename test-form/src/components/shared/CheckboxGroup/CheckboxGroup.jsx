@@ -35,7 +35,7 @@ export default function CheckboxGroup({
   ].join(' ').trim();
 
   return (
-    <fieldset className={fieldsetClasses}>
+    <fieldset id={id} className={fieldsetClasses} tabIndex="-1">
       {label && (
         <legend className="jules-legend">
           {label}
