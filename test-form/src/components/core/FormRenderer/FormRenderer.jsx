@@ -6,6 +6,8 @@ import ReviewStep from '../ReviewStep/ReviewStep';
 // import formSpec from '../../../data/childcare_form.json'; // Form spec is now loaded via fetch from /data/childcare_form.json
 import { validateStep } from '../../../utils/formHelpers';
 import { getApplication, upsertApplication } from '../../../utils/appStorage';
+import Button from '../../shared/Button/Button';
+import HelpChat from '../../shared/HelpChat';
 
 export default function FormRenderer({ applicationId, onExit }) {
   const { showToast } = useToast();
@@ -28,6 +30,7 @@ export default function FormRenderer({ applicationId, onExit }) {
   const [orientation, setOrientation] = useState('vertical');
   const [errorSummary, setErrorSummary] = useState([]);
   const errorSummaryRef = useRef(null);
+  const [chatOpen, setChatOpen] = useState(false);
 
 
   useEffect(() => {
@@ -241,6 +244,11 @@ export default function FormRenderer({ applicationId, onExit }) {
       <div className="form-main">
         <h1>{form.title}</h1>
         <p>{form.description}</p>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 'var(--jules-space-md)' }}>
+          <Button variant="tertiary" size="small" onClick={() => setChatOpen(true)}>
+            Need Help?
+          </Button>
+        </div>
         {errorSummary.length > 0 && (
           <div
             className="jules-alert jules-alert-error"
@@ -313,6 +321,7 @@ export default function FormRenderer({ applicationId, onExit }) {
             />
           )
         )}
+        <HelpChat isOpen={chatOpen} onClose={() => setChatOpen(false)} />
       </div>
     </div>
   );
