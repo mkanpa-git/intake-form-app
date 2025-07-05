@@ -146,6 +146,13 @@ export default function FormRenderer({ applicationId, onExit }) {
     window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
+  const handleValidationFail = (summary) => {
+    setErrorSummary(summary);
+    setTimeout(() => {
+      errorSummaryRef.current && errorSummaryRef.current.focus();
+    }, 0);
+  };
+
   const handleSubmit = async () => {
     setIsSubmitting(true);
     setErrorSummary([]);
@@ -230,7 +237,21 @@ export default function FormRenderer({ applicationId, onExit }) {
             <ul>
               {errorSummary.map((err) => (
                 <li key={err.id}>
-                  <a href={`#${err.id}`}>{err.msg}</a>
+                  <a
+                    href={`#${err.id}-error`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById(`${err.id}-error`);
+                      if (el) {
+                        el.focus();
+                      } else {
+                        document.getElementById(err.id)?.focus();
+                      }
+                    }}
+                  >
+                    {err.msg}
+                  </a>
+
                 </li>
               ))}
             </ul>
@@ -273,6 +294,7 @@ export default function FormRenderer({ applicationId, onExit }) {
                 editingFromReview ? handleBackToReview : undefined
               }
               validationAttempt={currentStepValidation} // Pass validation attempt state
+              onValidationFail={handleValidationFail}
             />
           )
         )}
