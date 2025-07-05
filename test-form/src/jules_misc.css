@@ -27,7 +27,9 @@
 
 .jules-tooltip-text {
   position: absolute;
-  bottom: calc(100% + var(--jules-space-xs)); /* Position above the icon with a small gap */
+  bottom: calc(
+    100% + var(--jules-space-xs)
+  ); /* Position above the icon with a small gap */
   left: 50%;
   transform: translateX(-50%);
   z-index: var(--jules-z-index-tooltip); /* Use token for z-index */
@@ -41,8 +43,11 @@
   box-shadow: var(--jules-shadow-md);
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--jules-transition-duration-fast) var(--jules-transition-timing-function),
-              visibility var(--jules-transition-duration-fast) var(--jules-transition-timing-function);
+  transition:
+    opacity var(--jules-transition-duration-fast)
+      var(--jules-transition-timing-function),
+    visibility var(--jules-transition-duration-fast)
+      var(--jules-transition-timing-function);
   white-space: normal; /* Allow long text to wrap */
   max-width: 400px; /* Allow longer lines to reduce wrapping */
   word-wrap: break-word;
@@ -64,9 +69,9 @@
   transform: translateX(-50%);
   border-width: var(--jules-space-xs); /* Arrow size */
   border-style: solid;
-  border-color: var(--jules-neutral-gray-900) transparent transparent transparent; /* Arrow pointing down */
+  border-color: var(--jules-neutral-gray-900) transparent transparent
+    transparent; /* Arrow pointing down */
 }
-
 
 /* --- Modals --- */
 .jules-modal-backdrop {
@@ -82,8 +87,11 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--jules-transition-duration-base) var(--jules-transition-timing-function),
-              visibility var(--jules-transition-duration-base) var(--jules-transition-timing-function);
+  transition:
+    opacity var(--jules-transition-duration-base)
+      var(--jules-transition-timing-function),
+    visibility var(--jules-transition-duration-base)
+      var(--jules-transition-timing-function);
 }
 
 .jules-modal-backdrop.jules-modal-open {
@@ -103,8 +111,11 @@
   overflow-y: auto; /* Scroll if content exceeds max height */
   transform: scale(0.95); /* Initial state for transition */
   opacity: 0;
-  transition: transform var(--jules-transition-duration-base) var(--jules-transition-timing-function),
-              opacity var(--jules-transition-duration-base) var(--jules-transition-timing-function);
+  transition:
+    transform var(--jules-transition-duration-base)
+      var(--jules-transition-timing-function),
+    opacity var(--jules-transition-duration-base)
+      var(--jules-transition-timing-function);
 }
 
 .jules-modal-backdrop.jules-modal-open .jules-modal-content {
@@ -128,7 +139,8 @@
   margin: 0;
 }
 
-.jules-modal-close-button { /* Typically an icon button */
+.jules-modal-close-button {
+  /* Typically an icon button */
   background: none;
   border: none;
   font-size: var(--jules-font-size-2xl); /* Large click target */
@@ -153,7 +165,6 @@
   border-top: var(--jules-border-width-sm) solid var(--jules-border-color);
 }
 
-
 /* --- Alerts (Standalone Banners/Messages) --- */
 .jules-alert {
   padding: var(--jules-space-md) var(--jules-space-lg);
@@ -167,7 +178,8 @@
   box-shadow: var(--jules-shadow-sm);
 }
 
-.jules-alert-icon { /* For an icon within the alert */
+.jules-alert-icon {
+  /* For an icon within the alert */
   font-size: var(--jules-font-size-xl); /* Icon size */
   flex-shrink: 0; /* Prevent icon from shrinking */
 }
@@ -183,15 +195,19 @@
 
 /* Error Alert */
 .jules-alert-error {
-  background-color: var(--jules-primary-blue-50); /* --jules-error-red-50 if defined */
+  background-color: var(
+    --jules-primary-blue-50
+  ); /* --jules-error-red-50 if defined */
   border-color: var(--jules-error-red-500);
-  color: var(--jules-error-red-500); /* Text color, or a darker shade for better contrast on light bg */
+  color: var(
+    --jules-error-red-500
+  ); /* Text color, or a darker shade for better contrast on light bg */
 }
 .jules-alert-error .jules-alert-icon {
   color: var(--jules-error-red-500);
 }
 .jules-alert-error .jules-alert-title {
- color: #c92a2a; /* Darker red for title */
+  color: #c92a2a; /* Darker red for title */
 }
 
 /* Also for input error messages specifically if needed */
@@ -200,10 +216,11 @@
   /* margin-top: var(--jules-space-xs); Ensure it's styled as an alert but maybe with less margin if directly under input */
 }
 
-
 /* Success Alert */
 .jules-alert-success {
-  background-color: var(--jules-primary-blue-50); /* --jules-success-green-50 if defined */
+  background-color: var(
+    --jules-primary-blue-50
+  ); /* --jules-success-green-50 if defined */
   border-color: var(--jules-success-green-500);
   color: var(--jules-success-green-500); /* Or darker shade */
 }
@@ -216,7 +233,9 @@
 
 /* Warning Alert */
 .jules-alert-warning {
-  background-color: var(--jules-primary-blue-50); /* --jules-warning-yellow-50 if defined */
+  background-color: var(
+    --jules-primary-blue-50
+  ); /* --jules-warning-yellow-50 if defined */
   border-color: var(--jules-warning-yellow-500);
   color: #e69900; /* Darker yellow for text */
 }
@@ -240,10 +259,9 @@
   color: var(--jules-info-blue-900); /* Darker blue for title */
 }
 
-
 /* --- Review Step Specific Styles --- */
 .jules-review-step {
-    /* Overall container for the review step page */
+  /* Overall container for the review step page */
 }
 .jules-review-section {
   /* Using jules-section as base, this is for overrides or additions */
@@ -261,18 +279,19 @@
 
 /* .jules-review-section-title is covered by .jules-section-title */
 
-.jules-review-data-table { /* This is now a div wrapper for key-value pairs */
+.jules-review-data-table {
+  /* This is now a div wrapper for key-value pairs */
   /* padding: var(--jules-space-md); */ /* Content already padded by jules-section-content */
 }
 
-.jules-data-table-compact { /* For nested tables/key-value displays */
+.jules-data-table-compact {
+  /* For nested tables/key-value displays */
   margin-top: var(--jules-space-sm);
   border: 1px solid var(--jules-neutral-gray-200);
   border-radius: var(--jules-border-radius-sm);
   padding: var(--jules-space-sm);
   background-color: var(--jules-neutral-gray-50);
 }
-
 
 .jules-review-data-row {
   display: grid;
@@ -285,10 +304,9 @@
   border-bottom: none;
 }
 .jules-data-table-compact .jules-review-data-row {
-   grid-template-columns: minmax(100px, 1fr) 2fr; /* Compact labels */
-   padding: var(--jules-space-xs) 0;
+  grid-template-columns: minmax(100px, 1fr) 2fr; /* Compact labels */
+  padding: var(--jules-space-xs) 0;
 }
-
 
 .jules-review-data-label {
   font-weight: var(--jules-font-weight-semibold);
@@ -300,7 +318,9 @@
 }
 
 .jules-review-data-value {
-  color: var(--jules-text-color-body); /* Changed from muted for better readability */
+  color: var(
+    --jules-text-color-body
+  ); /* Changed from muted for better readability */
   word-break: break-word;
 }
 .jules-data-table-compact .jules-review-data-value {
@@ -321,56 +341,61 @@
 }
 
 /* For file lists in review, if any specific styling needed beyond ul/li from base */
-.jules-list-styled { /* General styled list for review values or other places */
-    list-style: disc;
-    margin-left: var(--jules-space-md);
-    padding-left: var(--jules-space-sm);
+.jules-list-styled {
+  /* General styled list for review values or other places */
+  list-style: disc;
+  margin-left: var(--jules-space-md);
+  padding-left: var(--jules-space-sm);
 }
 .jules-list-styled li {
-    margin-bottom: var(--jules-space-xs);
+  margin-bottom: var(--jules-space-xs);
 }
-
 
 /* Card Styles */
 .jules-card {
-    background-color: var(--jules-neutral-white);
-    border: 1px solid var(--jules-border-color);
-    border-radius: var(--jules-border-radius-lg);
-    padding: var(--jules-space-lg);
-    box-shadow: var(--jules-shadow-sm);
-    transition: box-shadow var(--jules-transition-duration-base) var(--jules-transition-timing-function),
-                transform var(--jules-transition-duration-base) var(--jules-transition-timing-function),
-                border-color var(--jules-transition-duration-base) var(--jules-transition-timing-function);
-    text-decoration: none; /* For <a> cards */
-    color: inherit; /* For <a> cards */
-    display: block; /* For <a> cards to take full width if needed */
+  background-color: var(--jules-neutral-white);
+  border: 1px solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-lg);
+  padding: var(--jules-space-lg);
+  box-shadow: var(--jules-shadow-sm);
+  transition:
+    box-shadow var(--jules-transition-duration-base)
+      var(--jules-transition-timing-function),
+    transform var(--jules-transition-duration-base)
+      var(--jules-transition-timing-function),
+    border-color var(--jules-transition-duration-base)
+      var(--jules-transition-timing-function);
+  text-decoration: none; /* For <a> cards */
+  color: inherit; /* For <a> cards */
+  display: block; /* For <a> cards to take full width if needed */
 }
 
 .jules-card:hover,
 .jules-card:focus,
-.jules-card:focus-within { /* focus-within for cards containing focusable elements */
-    box-shadow: var(--jules-shadow-lg); /* Make shadow more prominent on hover */
-    transform: translateY(-4px) scale(1.01); /* Slightly more lift and subtle scale */
-    border-color: var(--jules-primary-blue-300); /* Accent border on hover */
-    outline: none;
+.jules-card:focus-within {
+  /* focus-within for cards containing focusable elements */
+  box-shadow: var(--jules-shadow-lg); /* Make shadow more prominent on hover */
+  transform: translateY(-4px) scale(1.01); /* Slightly more lift and subtle scale */
+  border-color: var(--jules-primary-blue-300); /* Accent border on hover */
+  outline: none;
 }
 
 .jules-application-card {
-    /* Specific styles for application cards, if any, beyond base .jules-card */
-    border-left: 4px solid var(--jules-success-green-500); /* Example accent */
+  /* Specific styles for application cards, if any, beyond base .jules-card */
+  border-left: 4px solid var(--jules-success-green-500); /* Example accent */
 }
 
 .jules-service-card {
-    /* Specific styles for service cards, if any, beyond base .jules-card */
-    border-left: 4px solid var(--jules-primary-blue-500); /* Example accent */
+  /* Specific styles for service cards, if any, beyond base .jules-card */
+  border-left: 4px solid var(--jules-primary-blue-500); /* Example accent */
 }
 
 .jules-card-title {
-    font-size: var(--jules-font-size-lg);
-    font-weight: var(--jules-font-weight-semibold);
-    color: var(--jules-text-color-headings);
-    margin-top: 0;
-    margin-bottom: var(--jules-space-sm);
+  font-size: var(--jules-font-size-lg);
+  font-weight: var(--jules-font-weight-semibold);
+  color: var(--jules-text-color-headings);
+  margin-top: 0;
+  margin-bottom: var(--jules-space-sm);
 }
 
 .jules-card-interaction-name,
@@ -379,142 +404,159 @@
 .jules-card-date,
 .jules-card-app-id,
 .jules-card-saved-date,
-.jules-card-description { /* Added classes from JSX */
-    font-size: var(--jules-font-size-md);
-    color: var(--jules-text-color-body);
-    margin-bottom: var(--jules-space-xs);
+.jules-card-description {
+  /* Added classes from JSX */
+  font-size: var(--jules-font-size-md);
+  color: var(--jules-text-color-body);
+  margin-bottom: var(--jules-space-xs);
 }
 
-.jules-card-status { /* This was a specific class in prompt, keeping if used */
-    font-style: italic;
-    color: var(--jules-text-color-muted);
+.jules-card-status {
+  /* This was a specific class in prompt, keeping if used */
+  font-style: italic;
+  color: var(--jules-text-color-muted);
 }
 .jules-card-app-id,
 .jules-card-saved-date {
-    font-size: var(--jules-font-size-sm);
-    color: var(--jules-text-color-muted);
+  font-size: var(--jules-font-size-sm);
+  color: var(--jules-text-color-muted);
 }
 
-
 .jules-card-actions {
-    margin-top: var(--jules-space-md);
-    display: flex;
-    gap: var(--jules-space-sm);
+  margin-top: var(--jules-space-md);
+  display: flex;
+  gap: var(--jules-space-sm);
 }
 
 .jules-card-actions .jules-button {
-    flex-grow: 1; /* Example: make buttons in actions take equal space */
+  flex-grow: 1; /* Example: make buttons in actions take equal space */
 }
 .jules-card-actions .jules-button + .jules-button {
-    flex-grow: 0; /* If you want first button to take space, and others to be content-width */
+  flex-grow: 0; /* If you want first button to take space, and others to be content-width */
 }
 
-
-.jules-card-action-link { /* For the 'Start Application' text cue */
-    display: inline-block;
-    margin-top: var(--jules-space-lg); /* More space for primary action link */
-    color: var(--jules-primary-blue-700);
-    font-weight: var(--jules-font-weight-semibold);
-    text-decoration: none;
+.jules-card-action-link {
+  /* For the 'Start Application' text cue */
+  display: inline-block;
+  margin-top: var(--jules-space-lg); /* More space for primary action link */
+  color: var(--jules-primary-blue-700);
+  font-weight: var(--jules-font-weight-semibold);
+  text-decoration: none;
 }
 
 .jules-card-action-link:hover {
-    text-decoration: underline;
-    color: var(--jules-primary-blue-900);
+  text-decoration: underline;
+  color: var(--jules-primary-blue-900);
 }
 
 /* Grid container for cards */
 .jules-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
-    gap: var(--jules-space-lg);
-    padding-top: var(--jules-space-md); /* Space above the grid */
-    margin-bottom: var(--jules-space-xl); /* Space below the grid */
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Responsive grid */
+  gap: var(--jules-space-lg);
+  padding-top: var(--jules-space-md); /* Space above the grid */
+  margin-bottom: var(--jules-space-xl); /* Space below the grid */
 }
 
 /* Dashboard Page specific heading adjustments if needed */
 .jules-dashboard-page h1,
 .jules-dashboard-page h2 {
-    margin-bottom: var(--jules-space-md); /* Consistent bottom margin for dashboard headings */
+  margin-bottom: var(
+    --jules-space-md
+  ); /* Consistent bottom margin for dashboard headings */
 }
 
 .jules-dashboard-page .jules-draft-list h2 {
-    margin-top: var(--jules-space-xl); /* More space before "Saved Applications" */
+  margin-top: var(
+    --jules-space-xl
+  ); /* More space before "Saved Applications" */
 }
 
 /* Loading Spinner */
 .jules-spinner {
-    display: inline-block;
-    width: var(--jules-font-size-md); /* Default size, matches text */
-    height: var(--jules-font-size-md);
-    border: 2px solid var(--jules-primary-blue-50); /* Light track - using primary-blue-50 for a lighter shade of blue */
-    border-top-color: var(--jules-primary-blue-500); /* Active spinner color - using main primary blue */
-    border-radius: 50%;
-    animation: jules-spinner-spin 0.8s linear infinite;
+  display: inline-block;
+  width: var(--jules-font-size-md); /* Default size, matches text */
+  height: var(--jules-font-size-md);
+  border: 2px solid var(--jules-primary-blue-50); /* Light track - using primary-blue-50 for a lighter shade of blue */
+  border-top-color: var(
+    --jules-primary-blue-500
+  ); /* Active spinner color - using main primary blue */
+  border-radius: 50%;
+  animation: jules-spinner-spin 0.8s linear infinite;
 }
 
 .jules-spinner-small {
-    width: calc(var(--jules-font-size-sm) * 1.2);
-    height: calc(var(--jules-font-size-sm) * 1.2);
-    border-width: 2px;
+  width: calc(var(--jules-font-size-sm) * 1.2);
+  height: calc(var(--jules-font-size-sm) * 1.2);
+  border-width: 2px;
 }
 
 .jules-spinner-large {
-    width: calc(var(--jules-font-size-lg) * 1.2);
-    height: calc(var(--jules-font-size-lg) * 1.2);
-    border-width: 3px;
+  width: calc(var(--jules-font-size-lg) * 1.2);
+  height: calc(var(--jules-font-size-lg) * 1.2);
+  border-width: 3px;
 }
 
 @keyframes jules-spinner-spin {
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Used within buttons */
 .jules-button .jules-spinner {
-    /* margin-right is handled by the Button.jsx component dynamically */
-    /* vertical-align: middle; */ /* if not using flex on button */
+  /* margin-right is handled by the Button.jsx component dynamically */
+  /* vertical-align: middle; */ /* if not using flex on button */
 }
-.jules-button .jules-button-text-hidden { /* Class to hide text when spinner is shown and no icons are present */
-    visibility: hidden;
-    opacity: 0;
-    width: 0; /* Ensure it takes no space */
-    height: 0; /* Ensure it takes no space */
-    display: inline-block; /* To allow width/height to take effect if it was block/flex */
-    overflow: hidden;
+.jules-button .jules-button-text-hidden {
+  /* Class to hide text when spinner is shown and no icons are present */
+  visibility: hidden;
+  opacity: 0;
+  width: 0; /* Ensure it takes no space */
+  height: 0; /* Ensure it takes no space */
+  display: inline-block; /* To allow width/height to take effect if it was block/flex */
+  overflow: hidden;
 }
 
 /* Card Header for Avatar/Icon and Title alignment */
 .jules-card-header {
-    display: flex;
-    align-items: center; /* Vertically align avatar and title block */
-    margin-bottom: var(--jules-space-md); /* Space between header and card body content */
+  display: flex;
+  align-items: center; /* Vertically align avatar and title block */
+  margin-bottom: var(
+    --jules-space-md
+  ); /* Space between header and card body content */
 }
 
 .jules-card-avatar-icon-placeholder {
-    width: 48px;
-    height: 48px;
-    background-color: var(--jules-neutral-gray-200);
-    color: var(--jules-primary-blue-500); /* Changed from --jules-primary-blue to --jules-primary-blue-500 for specific shade */
-    border-radius: 50%; /* Circular avatar style */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--jules-font-size-lg);
-    font-weight: var(--jules-font-weight-semibold);
-    margin-right: var(--jules-space-md);
-    flex-shrink: 0; /* Prevent shrinking if title is long */
+  width: 48px;
+  height: 48px;
+  background-color: var(--jules-neutral-gray-200);
+  color: var(
+    --jules-primary-blue-500
+  ); /* Changed from --jules-primary-blue to --jules-primary-blue-500 for specific shade */
+  border-radius: 50%; /* Circular avatar style */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--jules-font-size-lg);
+  font-weight: var(--jules-font-weight-semibold);
+  margin-right: var(--jules-space-md);
+  flex-shrink: 0; /* Prevent shrinking if title is long */
 }
 
 /* Optional: if the title itself needs specific alignment within its new div wrapper */
 .jules-card-header > div:not(.jules-card-avatar-icon-placeholder) {
-    flex-grow: 1; /* Allow title block to take remaining space */
+  flex-grow: 1; /* Allow title block to take remaining space */
 }
 
 /* Ensure card titles within headers don't have extra top margin if they are h3 etc. */
 .jules-card-header .jules-card-title {
-    margin-bottom: var(--jules-space-xxs); /* Reduce bottom margin if interaction name is below it */
+  margin-bottom: var(
+    --jules-space-xxs
+  ); /* Reduce bottom margin if interaction name is below it */
 }
 
 /* --- Toasts --- */
@@ -594,4 +636,23 @@
   border: var(--jules-border-width-sm) solid var(--jules-border-color);
   border-radius: var(--jules-border-radius-md);
   font: inherit;
+}
+
+.jules-helpchat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--jules-space-xs);
+}
+
+.jules-helpchat-chip {
+  background-color: var(--jules-neutral-gray-100);
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-md);
+  padding: 2px 8px;
+  font-size: var(--jules-font-size-sm);
+  cursor: pointer;
+}
+
+.jules-helpchat-chip:hover {
+  background-color: var(--jules-neutral-gray-200);
 }
