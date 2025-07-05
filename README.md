@@ -90,3 +90,14 @@ DATABASE_URL=<postgres connection url>
 `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` must match your OAuth credentials on the Google Cloud console. `DATABASE_URL` should point to the PostgreSQL instance used by the server.
 
 The `users` table stores OAuth provider information using `provider` and `provider_id` columns. The server queries these fields to locate or create the authenticated user.
+
+## Docker build
+
+A `Dockerfile` is provided under `test-form` to build the React client for production.
+
+```bash
+docker build -t intake-form-client -f test-form/Dockerfile test-form
+docker run -p 3000:80 --env REACT_APP_SERVER_URL=http://localhost:5000 intake-form-client
+```
+
+The container serves the compiled React app via nginx on host port `3000`. Adjust `REACT_APP_SERVER_URL` if the server is hosted elsewhere.
