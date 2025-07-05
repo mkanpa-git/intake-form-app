@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useToast } from '../../../context/ToastContext';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
 import ReviewStep from '../ReviewStep/ReviewStep';
@@ -7,6 +8,7 @@ import { validateStep } from '../../../utils/formHelpers';
 import { getApplication, upsertApplication } from '../../../utils/appStorage';
 
 export default function DycdFormRenderer({ applicationId, onExit }) {
+  const { showToast } = useToast();
   const { form } = formSpec;
   const steps = form.steps || [];
   const [currentStep, setCurrentStep] = useState(0);
@@ -74,6 +76,7 @@ export default function DycdFormRenderer({ applicationId, onExit }) {
       currentStep,
       status: 'draft',
     });
+    showToast({ message: 'Draft saved', variant: 'success' });
     onExit && onExit();
   };
 
