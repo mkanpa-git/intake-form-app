@@ -6,7 +6,6 @@ import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import FileInput from '../FileInput/FileInput';
 import MaskedInput from '../MaskedInput/MaskedInput';
 import AddressAutocomplete from '../AddressAutocomplete';
-import Tooltip from '../Tooltip/Tooltip';
 import Button from '../Button/Button'; // Import the new Button component
 import { evaluateCondition } from '../../../utils/formHelpers';
 

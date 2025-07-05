@@ -35,7 +35,6 @@ export default function Stepper({
         {steps.map((step, index) => {
           const isActive = index === currentStep;
           const isComplete = index < currentStep;
-          const isInactive = !isActive && !isComplete;
 
           let itemClasses = 'jules-stepper-item';
           if (isActive) {
