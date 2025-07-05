@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useToast } from '../../../context/ToastContext';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
 import ReviewStep from '../ReviewStep/ReviewStep';
@@ -7,6 +8,7 @@ import { validateStep } from '../../../utils/formHelpers';
 import { getApplication, upsertApplication } from '../../../utils/appStorage';
 
 export default function FormRenderer({ applicationId, onExit }) {
+  const { showToast } = useToast();
   const [formSpec, setFormSpec] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -124,6 +126,7 @@ export default function FormRenderer({ applicationId, onExit }) {
         currentStep,
         status: 'draft',
       });
+      showToast({ message: 'Draft saved', variant: 'success' });
     }
     setErrorSummary([]);
     onExit && onExit();
