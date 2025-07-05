@@ -97,7 +97,16 @@ export default function TableLayout({ fields = [], formData = {}, onChange, erro
                       />
                       {/* Assuming error display is desired directly in cell, could be noisy.
                           Alternatively, errors could be summarized elsewhere or indicated by border only. */}
-                      {err && <div className="jules-alert jules-alert-error jules-input-error-message" style={{fontSize: 'var(--jules-font-size-xs)', padding: 'var(--jules-space-xxs)'}}>{err}</div>}
+                      {err && (
+                        <div
+                          id={`${id}-error`}
+                          className="jules-alert jules-alert-error jules-input-error-message"
+                          style={{ fontSize: 'var(--jules-font-size-xs)', padding: 'var(--jules-space-xxs)' }}
+                          tabIndex="-1"
+                        >
+                          {err}
+                        </div>
+                      )}
                     </td>
                   );
                 })}

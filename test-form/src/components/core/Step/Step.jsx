@@ -47,6 +47,7 @@ export default function Step({
   applicationId,
   onBackToReview,
   validationAttempt, // Added new prop
+  onValidationFail,
 }) {
   const [collapsedSections, setCollapsedSections] = useState({});
   const [formData, setFormData] = useState(initialData);
@@ -424,7 +425,13 @@ export default function Step({
     );
     setErrors(result.errors);
     setTouched(result.touched);
-    if (!result.valid) return;
+    if (!result.valid) {
+      const summary = Object.entries(result.errors)
+        .filter(([, msg]) => msg)
+        .map(([id, msg]) => ({ id, msg }));
+      onValidationFail?.(summary);
+      return;
+    }
     const cleaned = cleanupHiddenFields({ sections }, formData);
     setFormData(cleaned);
     onDataChange && onDataChange(cleaned);
@@ -452,7 +459,13 @@ export default function Step({
     );
     setErrors(result.errors);
     setTouched(result.touched);
-    if (!result.valid) return;       // prevent navigation if step is invalid
+    if (!result.valid) {
+      const summary = Object.entries(result.errors)
+        .filter(([, msg]) => msg)
+        .map(([id, msg]) => ({ id, msg }));
+      onValidationFail?.(summary);
+      return;       // prevent navigation if step is invalid
+    }
 
     const cleaned = cleanupHiddenFields({ sections }, formData);
     setFormData(cleaned);

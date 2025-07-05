@@ -94,7 +94,15 @@ export default function TextInput({
       )}
 
       {hint && !error && <p className="jules-input-hint">{hint}</p>}
-      {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
+      {error && (
+        <div
+          id={`${id}-error`}
+          className="jules-alert jules-alert-error jules-input-error-message"
+          tabIndex="-1"
+        >
+          {error}
+        </div>
+      )}
     </div>
   );
 }

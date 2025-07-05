@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
 import ReviewStep from '../ReviewStep/ReviewStep';
@@ -24,6 +24,8 @@ export default function FormRenderer({ applicationId, onExit }) {
   const [reviewIndex, setReviewIndex] = useState(-1);
   const [stepperPosition, setStepperPosition] = useState('right');
   const [orientation, setOrientation] = useState('vertical');
+  const [errorSummary, setErrorSummary] = useState([]);
+  const errorSummaryRef = useRef(null);
 
 
   useEffect(() => {
@@ -101,6 +103,7 @@ export default function FormRenderer({ applicationId, onExit }) {
     handleDataChange(data);
     setAllData((prev) => ({ ...prev, ...data }));
     setCurrentStep((s) => Math.min(s + 1, steps.length - 1));
+    setErrorSummary([]);
     window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
@@ -108,6 +111,7 @@ export default function FormRenderer({ applicationId, onExit }) {
     handleDataChange(data);
     setAllData((prev) => ({ ...prev, ...data }));
     setCurrentStep((s) => Math.max(s - 1, 0));
+    setErrorSummary([]);
     window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
@@ -121,12 +125,14 @@ export default function FormRenderer({ applicationId, onExit }) {
         status: 'draft',
       });
     }
+    setErrorSummary([]);
     onExit && onExit();
   };
 
   const handleEdit = (idx) => {
     setCurrentStep(idx);
     setEditingFromReview(true);
+    setErrorSummary([]);
   };
 
   const handleBackToReview = (data) => {
@@ -136,11 +142,20 @@ export default function FormRenderer({ applicationId, onExit }) {
       setCurrentStep(reviewIndex);
     }
     setEditingFromReview(false);
+    setErrorSummary([]);
     window.scrollTo({ top: 0, behavior: 'auto' });
+  };
+
+  const handleValidationFail = (summary) => {
+    setErrorSummary(summary);
+    setTimeout(() => {
+      errorSummaryRef.current && errorSummaryRef.current.focus();
+    }, 0);
   };
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
+    setErrorSummary([]);
     try {
       await upsertApplication(applicationId, {
         stepData,
@@ -167,9 +182,20 @@ export default function FormRenderer({ applicationId, onExit }) {
       stepData[steps[currentStep].id] || {}
     );
 
-    if (!silent && !result.valid && targetIndex > currentStep) {
-      // If trying to move forward and validation fails, set errors and touched state to trigger display in Step component
-      setCurrentStepValidation({ errors: result.errors, touched: result.touched, timestamp: Date.now() });
+    if (!silent && targetIndex > currentStep) {
+      if (!result.valid) {
+        // If trying to move forward and validation fails, set errors and touched state to trigger display in Step component
+        setCurrentStepValidation({ errors: result.errors, touched: result.touched, timestamp: Date.now() });
+        const summary = Object.entries(result.errors)
+          .filter(([, msg]) => msg)
+          .map(([id, msg]) => ({ id, msg }));
+        setErrorSummary(summary);
+        setTimeout(() => {
+          errorSummaryRef.current && errorSummaryRef.current.focus();
+        }, 0);
+      } else {
+        setErrorSummary([]);
+      }
     }
     return result.valid;
   };
@@ -201,6 +227,35 @@ export default function FormRenderer({ applicationId, onExit }) {
       <div className="form-main">
         <h1>{form.title}</h1>
         <p>{form.description}</p>
+        {errorSummary.length > 0 && (
+          <div
+            className="jules-alert jules-alert-error"
+            tabIndex="-1"
+            ref={errorSummaryRef}
+          >
+            <div className="jules-alert-title">Please correct the following errors:</div>
+            <ul>
+              {errorSummary.map((err) => (
+                <li key={err.id}>
+                  <a
+                    href={`#${err.id}-error`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById(`${err.id}-error`);
+                      if (el) {
+                        el.focus();
+                      } else {
+                        document.getElementById(err.id)?.focus();
+                      }
+                    }}
+                  >
+                    {err.msg}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         {stepperPosition === 'top' && (
           <Stepper
             steps={steps}
@@ -238,6 +293,7 @@ export default function FormRenderer({ applicationId, onExit }) {
                 editingFromReview ? handleBackToReview : undefined
               }
               validationAttempt={currentStepValidation} // Pass validation attempt state
+              onValidationFail={handleValidationFail}
             />
           )
         )}
