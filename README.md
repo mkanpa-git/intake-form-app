@@ -35,7 +35,7 @@ Selecting an application opens a page with each step's data shown in its own tab
 ## Environment requirements
 
 - **Node.js**: version 18 or later is recommended.
-- **Environment variables**: create a `.env` file inside the `test-form/server` directory with the following keys:
+- **Environment variables**: copy `test-form/.env.example` to `test-form/.env` and `test-form/server/.env`, then update the following keys:
 
 ```
 GOOGLE_API_KEY=<your Places API key>
@@ -53,9 +53,7 @@ CLAMAV_PORT=3310
 
 Uploads are scanned using [ClamAV](https://www.clamav.net/). Install and run `clamd` locally and adjust `CLAMAV_HOST` and `CLAMAV_PORT` if needed. Infected files are moved to `test-form/server/quarantine`.
 
-The React app optionally reads `REACT_APP_SERVER_URL` to determine the Express
-server origin when building login and logout links. Create a `.env` file in the
-`test-form` directory to override the default:
+The React app optionally reads `REACT_APP_SERVER_URL` to determine the Express server origin when building login and logout links. Copy `test-form/.env.example` to `test-form/.env` and edit it to override the default:
 
 ```bash
 REACT_APP_SERVER_URL=http://localhost:5000
