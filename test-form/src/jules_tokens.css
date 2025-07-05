@@ -32,6 +32,8 @@
   --jules-success-green-500: #2f9e44;
   --jules-warning-yellow-500: #fcc419;
   --jules-error-red-500: #e03131;
+  --jules-error-red-700: #c92a2a;
+  --jules-error-red-900: #a61e1e;
   --jules-info-blue-500: var(--jules-primary-blue-500);
 
   /* Colors - Text */

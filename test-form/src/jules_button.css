@@ -107,13 +107,13 @@
   border-color: var(--jules-error-red-500);
 }
 .jules-button-danger:hover {
-  background-color: #c92a2a; /* Darker red, if not in tokens, use a calculated value or add to tokens */
-  border-color: #c92a2a;
+  background-color: var(--jules-error-red-700); /* Darker red */
+  border-color: var(--jules-error-red-700);
   box-shadow: var(--jules-shadow-md);
 }
 .jules-button-danger:active {
-  background-color: #a61e1e; /* Even darker red */
-  border-color: #a61e1e;
+  background-color: var(--jules-error-red-900); /* Even darker red */
+  border-color: var(--jules-error-red-900);
 }
 
 /* Secondary Destructive Button */
@@ -124,14 +124,14 @@
 }
 .jules-button-danger-secondary:hover {
   background-color: var(--jules-primary-blue-50); /* error red light, e.g. --jules-error-red-50 */
-  border-color: #c92a2a;
-  color: #c92a2a;
+  border-color: var(--jules-error-red-700);
+  color: var(--jules-error-red-700);
   box-shadow: var(--jules-shadow-md);
 }
 .jules-button-danger-secondary:active {
   background-color: var(--jules-primary-blue-50); /* --jules-error-red-100 */
-  border-color: #a61e1e;
-  color: #a61e1e;
+  border-color: var(--jules-error-red-900);
+  color: var(--jules-error-red-900);
 }
 
 
