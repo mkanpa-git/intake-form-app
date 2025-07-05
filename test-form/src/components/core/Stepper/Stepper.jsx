@@ -12,11 +12,11 @@ export default function Stepper({
   const isHorizontal = orientation === 'horizontal';
 
   const containerClass = `jules-stepper ${isHorizontal ? 'jules-stepper-horizontal' : 'jules-stepper-vertical'}`;
-  // The <ul> itself might not need a specific class if .jules-stepper directly styles its child ul or if the items are direct children.
+  // The list itself might not need a specific class if .jules-stepper directly styles its child ol or if the items are direct children.
   // Assuming .jules-stepper is the ul, or it directly styles the ul.
-  // For now, let's assume the containerClass is applied to the <aside> and the <ul> is part of its structure.
-  // jules_stepper.css was designed with .jules-stepper as the main list (ul) container.
-  // So, the <aside> might be a wrapper, and the <ul> inside gets the .jules-stepper classes.
+  // For now, let's assume the containerClass is applied to the <aside> and the <ol> is part of its structure.
+  // jules_stepper.css was designed with .jules-stepper as the main list container.
+  // So, the <aside> might be a wrapper, and the <ol> inside gets the .jules-stepper classes.
 
   const handleClick = (idx) => {
     if (idx === currentStep) return;
@@ -24,8 +24,20 @@ export default function Stepper({
     onStepChange && onStepChange(idx);
   };
 
+  const handleKeyDown = (e, idx) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      const next = Math.min(idx + 1, steps.length - 1);
+      if (next !== idx) handleClick(next);
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      const prev = Math.max(idx - 1, 0);
+      if (prev !== idx) handleClick(prev);
+    }
+  };
+
   return (
-    // The <aside> can be a generic container; the <ul> inside will be the actual stepper component
+    // The <aside> can be a generic container; the <ol> inside will be the actual stepper component
     <aside
       className={
         isHorizontal
@@ -41,7 +53,8 @@ export default function Stepper({
       >
         Step {currentStep + 1} of {steps.length}
       </div>
-      <ul className={containerClass}> {/* Applied jules-stepper and orientation class to UL */}
+      <nav aria-label="Stepper Navigation">
+        <ol className={containerClass} aria-orientation={orientation}> {/* Applied jules-stepper and orientation class to OL */}
         {steps.map((step, index) => {
           const isActive = index === currentStep;
           const isComplete = index < currentStep;
@@ -75,6 +88,7 @@ export default function Stepper({
               key={step.id}
               className={itemClasses}
               onClick={() => handleClick(index)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
               aria-current={isActive ? 'step' : undefined}
               aria-disabled={isDisabled ? 'true' : undefined}
               role="button"
@@ -90,7 +104,8 @@ export default function Stepper({
             </li>
           );
         })}
-      </ul>
+        </ol>
+      </nav>
       {requiredDocs.length > 0 && (
         <div className="jules-stepper-required-docs">
           {/* The h5 should pick up styles from jules_base.css or could be jules-text-color-headings */}

@@ -44,3 +44,30 @@ test('step buttons expose correct aria attributes', () => {
   expect(buttons[1]).toHaveAttribute('aria-disabled', 'true');
   expect(buttons[1]).not.toHaveAttribute('aria-current');
 });
+
+test('sets aria-orientation on the list', () => {
+  const steps = [
+    { id: 'one', title: 'One' },
+    { id: 'two', title: 'Two' },
+  ];
+  render(<Stepper steps={steps} currentStep={0} orientation="horizontal" />);
+  const list = screen.getByRole('list');
+  expect(list).toHaveAttribute('aria-orientation', 'horizontal');
+});
+
+test('allows arrow key navigation', async () => {
+  const user = userEvent.setup();
+  const onStepChange = jest.fn();
+  const steps = [
+    { id: 'one', title: 'One' },
+    { id: 'two', title: 'Two' },
+    { id: 'three', title: 'Three' },
+  ];
+  render(
+    <Stepper steps={steps} currentStep={1} onStepChange={onStepChange} />
+  );
+  const buttons = screen.getAllByRole('button');
+  buttons[1].focus();
+  await user.keyboard('{ArrowRight}');
+  expect(onStepChange).toHaveBeenCalledWith(2);
+});
