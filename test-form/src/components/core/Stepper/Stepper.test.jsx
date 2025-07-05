@@ -18,3 +18,29 @@ test('calls onStepChange when step clicked', async () => {
   await user.click(screen.getByText('Two'));
   expect(onStepChange).toHaveBeenCalledWith(1);
 });
+
+test('renders accessible progress label', () => {
+  const steps = [
+    { id: 'one', title: 'One' },
+    { id: 'two', title: 'Two' },
+  ];
+  render(<Stepper steps={steps} currentStep={0} />);
+  const progress = screen.getByText('Step 1 of 2');
+  expect(progress).toHaveAttribute('aria-label', 'Step 1 of 2');
+});
+
+test('step buttons expose correct aria attributes', () => {
+  const steps = [
+    { id: 'one', title: 'One' },
+    { id: 'two', title: 'Two' },
+  ];
+  const canNavigate = (index) => index <= 0;
+  render(
+    <Stepper steps={steps} currentStep={0} canNavigate={canNavigate} />
+  );
+  const buttons = screen.getAllByRole('button');
+  expect(buttons[0]).toHaveAttribute('aria-current', 'step');
+  expect(buttons[0]).not.toHaveAttribute('aria-disabled');
+  expect(buttons[1]).toHaveAttribute('aria-disabled', 'true');
+  expect(buttons[1]).not.toHaveAttribute('aria-current');
+});

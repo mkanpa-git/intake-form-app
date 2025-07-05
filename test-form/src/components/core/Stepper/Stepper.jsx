@@ -26,15 +26,28 @@ export default function Stepper({
 
   return (
     // The <aside> can be a generic container; the <ul> inside will be the actual stepper component
-    <aside className={isHorizontal ? 'jules-stepper-container-horizontal' : 'jules-stepper-container-vertical'}>
-      <h4>Steps</h4> {/* This h4 might need jules styling or be removed if stepper design incorporates title */}
-      <div className="jules-stepper-progress">
+    <aside
+      className={
+        isHorizontal
+          ? 'jules-stepper-container-horizontal'
+          : 'jules-stepper-container-vertical'
+      }
+    >
+      <h4>Steps</h4>{' '}
+      {/* This h4 might need jules styling or be removed if stepper design incorporates title */}
+      <div
+        className="jules-stepper-progress"
+        aria-label={`Step ${currentStep + 1} of ${steps.length}`}
+      >
         Step {currentStep + 1} of {steps.length}
       </div>
       <ul className={containerClass}> {/* Applied jules-stepper and orientation class to UL */}
         {steps.map((step, index) => {
           const isActive = index === currentStep;
           const isComplete = index < currentStep;
+
+          const isDisabled =
+            canNavigate && !canNavigate(index, true) && index !== currentStep;
 
           let itemClasses = 'jules-stepper-item';
           if (isActive) {
@@ -63,10 +76,14 @@ export default function Stepper({
               className={itemClasses}
               onClick={() => handleClick(index)}
               aria-current={isActive ? 'step' : undefined}
+              aria-disabled={isDisabled ? 'true' : undefined}
+              role="button"
+              tabIndex={isDisabled ? -1 : 0}
             >
               <div className="jules-stepper-item-content">
                 <span className="jules-stepper-icon">
-                  {isComplete ? '✓' : isActive ? '▶' : (index + 1)} {/* Display number for inactive steps */}
+                  {isComplete ? '✓' : isActive ? '▶' : index + 1}{' '}
+                  {/* Display number for inactive steps */}
                 </span>
                 <span className="jules-stepper-label">{step.title}</span>
               </div>
