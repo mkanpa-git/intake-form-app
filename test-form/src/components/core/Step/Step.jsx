@@ -7,25 +7,25 @@ import {
 } from '../../../utils/formHelpers';
 import Section from '../Section/Section';
 import InfoSection from '../InfoSection/InfoSection';
-import TextInput from '../../shared/TextInput/TextInput';
-import SelectField from '../../shared/SelectField/SelectField';
-import RadioGroup from '../../shared/RadioGroup/RadioGroup';
-import CheckboxGroup from '../../shared/CheckboxGroup/CheckboxGroup';
-import GroupField from '../../shared/GroupField/GroupField';
 import TableLayout from '../../shared/TableLayout/TableLayout';
-import MaskedInput from '../../shared/MaskedInput/MaskedInput';
-import FileInput from '../../shared/FileInput/FileInput';
-import AddressAutocomplete from '../../shared/AddressAutocomplete';
 import Tooltip from '../../shared/Tooltip/Tooltip';
+import GroupField from '../../shared/GroupField/GroupField';
+import {
+  TextField,
+  SelectFieldWrapper,
+  RadioField,
+  CheckboxField,
+  DateField,
+  FileField,
+  TelField,
+  SsnField,
+  AddressField,
+  GroupFieldWrapper,
+} from '../../shared/fields';
 import ReactMarkdown from 'react-markdown';
 import Button from '../../shared/Button/Button'; // Import the new Button component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faPhone,
-  faEnvelope,
-  faCalendarDays,
-  faCircleXmark,
-  faCircleCheck,
   faArrowLeft,
   faArrowRight,
   faFloppyDisk,
@@ -193,6 +193,45 @@ export default function Step({
     return grouped;
   };
 
+  const FIELD_COMPONENTS = {
+    text: TextField,
+    email: TextField,
+    number: TextField,
+    time: TextField,
+    select: SelectFieldWrapper,
+    radio: RadioField,
+    checkbox: CheckboxField,
+    date: DateField,
+    file: FileField,
+    group: GroupFieldWrapper,
+    tel: TelField,
+    ssn: SsnField,
+    address: AddressField,
+  };
+
+  const getFieldKey = (field) => {
+    if (
+      field.type === 'tel' ||
+      field.id.includes('telephone') ||
+      (typeof field.label === 'string' && field.label.toLowerCase().includes('phone'))
+    ) {
+      return 'tel';
+    }
+    if (
+      field.id === 'ssn' ||
+      (typeof field.label === 'string' && field.label.toLowerCase().includes('social security'))
+    ) {
+      return 'ssn';
+    }
+    if (
+      field.id === 'street' ||
+      (typeof field.label === 'string' && field.label.toLowerCase().includes('street address'))
+    ) {
+      return 'address';
+    }
+    return field.type;
+  };
+
   const renderField = (field) => {
     const conditionToCheck =
       field.visibilityCondition ??
@@ -210,433 +249,133 @@ export default function Step({
     if (!visible) return null;
 
     const error = touched[field.id] ? errors[field.id] : undefined;
+    const fieldKey = getFieldKey(field);
+    const Component = FIELD_COMPONENTS[fieldKey] || TextField;
 
-    if (
-      field.type === 'tel' ||
-      field.id.includes('telephone') ||
-      (typeof field.label === 'string' && field.label.toLowerCase().includes('phone'))
-    ) {
-      return (
-        <MaskedInput
-          key={field.id}
-          id={field.id}
-          label={field.label}
-          mask="(000) 000-0000"
-          placeholder={field.ui?.placeholder || '(123) 456-7890'}
-          required={isRequired}
-          value={formData[field.id] || ''}
-          onChange={(val) => handleChange(field.id, val)}
-          error={error}
-          iconLeft={field.type === 'tel' ? <FontAwesomeIcon icon={faPhone} aria-hidden="true" /> : undefined}
-          iconRight={
-            error ? (
-              <span className="jules-validation-icon-error">
-                <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
-                <span className="sr-only">Error</span>
-              </span>
-            ) :
-            (!error && touched[field.id] && formData[field.id] ? (
-              <span className="jules-validation-icon-success">
-                <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
-                <span className="sr-only">Valid</span>
-              </span>
-            ) : undefined)
-          }
-        />
-      );
-    }
+    const commonProps = {
+      field: { ...field, required: isRequired },
+      value: formData[field.id],
+      error,
+      touched: touched[field.id],
+    };
 
-    const isStreet =
-      field.id === 'street' ||
-      (typeof field.label === 'string' && field.label.toLowerCase().includes('street address'));
+    const handleValueChange = (val) => handleChange(field.id, val);
 
-    switch (field.type) {
-      case 'text':
-      case 'email':
-      case 'number':
-      case 'time':
-        if (
-          field.id === 'ssn' ||
-          (typeof field.label === 'string' &&
-            field.label.toLowerCase().includes('social security'))
-        ) {
-          return (
-            <MaskedInput
-              key={field.id}
-              id={field.id}
-              label={field.label}
-              mask="000-00-0000"
-              placeholder="123-45-6789"
-              required={isRequired}
-              value={formData[field.id] || ''}
-              onChange={(val) => handleChange(field.id, val)}
-              error={error}
-              iconRight={
-                error ? (
-                  <span className="jules-validation-icon-error">
-                    <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
-                    <span className="sr-only">Error</span>
-                  </span>
-                ) :
-                (!error && touched[field.id] && formData[field.id] ? (
-                  <span className="jules-validation-icon-success">
-                    <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
-                    <span className="sr-only">Valid</span>
-                  </span>
-                ) : undefined)
-              }
-            />
-          );
-        }
-        if (isStreet) {
-          // AddressAutocomplete does not yet support iconLeft/iconRight props in this refactor.
-          // If it did, we could add them here. For now, just passing error.
-          return (
-            <>
-              <AddressAutocomplete
-                key={field.id}
-                id={field.id}
-                label={field.label}
-                required={isRequired}
-                value={formData[field.id] || ''}
-                placeholder={placeholders[field.id] || field.ui?.placeholder || ''}
-                onChange={(val) => handleChange(field.id, val)}
-                onAddressSelect={(addr) => {
-                  const fullAddr = addr.formatted_address || addr.formattedAddress || '';
-                  setPlaceholders((p) => ({ ...p, [field.id]: fullAddr }));
-
-                  const components = addr.address_components || addr.addressComponents || [];
-                  const comps = {};
-                  components.forEach((c) => {
-                    c.types.forEach((t) => {
-                      comps[t] = {
-                        long_name: c.long_name || c.longName,
-                        short_name: c.short_name || c.shortName,
-                      };
-                    });
-                  });
-                  if (findFieldById('city')) {
-                    const cityVal =
-                      comps.locality?.long_name ||
-                      comps.locality?.longName ||
-                      comps.postal_town?.long_name ||
-                      comps.postalTown?.longName ||
-                      comps.sublocality_level_1?.long_name ||
-                      comps.sublocalityLevel1?.longName ||
-                      comps.administrative_area_level_2?.long_name ||
-                      comps.administrativeAreaLevel2?.longName ||
-                      '';
-                    handleChange('city', cityVal);
-                  }
-                  if (findFieldById('borough')) {
-                    const boroughSource =
-                      comps.sublocality_level_1?.long_name ||
-                      comps.sublocalityLevel1?.longName ||
-                      comps.administrative_area_level_2?.long_name ||
-                      comps.administrativeAreaLevel2?.longName ||
-                      '';
-                    const boroughMap = {
-                      bronx: 'Bronx',
-                      'bronx county': 'Bronx',
-                      brooklyn: 'Brooklyn',
-                      'kings county': 'Brooklyn',
-                      manhattan: 'Manhattan',
-                      'new york': 'Manhattan',
-                      'new york county': 'Manhattan',
-                      queens: 'Queens',
-                      'queens county': 'Queens',
-                      'staten island': 'Staten Island',
-                      'richmond county': 'Staten Island',
-                    };
-                    const bName = boroughMap[boroughSource.trim().toLowerCase()];
-                    if (bName) {
-                      handleChange('borough', bName);
-                    }
-                  }
-                  if (findFieldById('state')) {
-                    handleChange(
-                      'state',
-                      comps.administrative_area_level_1?.short_name || comps.administrativeAreaLevel1?.shortName || ''
-                    );
-                  }
-                  if (findFieldById('zip_code')) {
-                    handleChange('zip_code', comps.postal_code?.long_name || comps.postalCode?.longName || '');
-                  }
-                  if (
-                    findFieldById('latitude') &&
-                    addr.location?.latitude !== undefined
-                  ) {
-                    handleChange('latitude', addr.location.latitude);
-                  }
-                  if (
-                    findFieldById('longitude') &&
-                    addr.location?.longitude !== undefined
-                  ) {
-                    handleChange('longitude', addr.location.longitude);
-                  }
-
-                  const streetOnly = fullAddr.split(',')[0];
-                  handleChange(field.id, streetOnly);
-                }}
-                error={error} // Pass error to AddressAutocomplete
-              />
-              {/* AddressAutocomplete does not currently use the error prop to display jules-alert, so keep this if needed */}
-              {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
-            </>
-          );
-        }
-        return (
-          <TextInput
-            key={field.id}
-            id={field.id}
-            label={field.label}
-            tooltip={field.tooltip}
-            type={field.type}
-            required={isRequired}
-            value={formData[field.id] || ''}
-            onChange={(e) => handleChange(field.id, e.target.value)}
-            error={error}
-            iconLeft={field.type === 'email' ? <FontAwesomeIcon icon={faEnvelope} aria-hidden="true" /> : undefined}
-            iconRight={
-              error ? (
-                <span className="jules-validation-icon-error">
-                  <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
-                  <span className="sr-only">Error</span>
-                </span>
-              ) :
-              (!error && touched[field.id] && formData[field.id] ? (
-                <span className="jules-validation-icon-success">
-                  <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
-                  <span className="sr-only">Valid</span>
-                </span>
-              ) : undefined)
-            }
-            // Hint prop can be added if field.description exists
-          />
-        );
+    switch (fieldKey) {
       case 'select':
-        // SelectField currently has its own dropdown arrow. Right icons might conflict.
-        // Left icons are generally safer for native selects.
-        if (field.metadata?.multiple) {
-          return (
-            <SelectField
-              key={field.id}
-              id={field.id}
-              label={field.label}
-              tooltip={field.tooltip}
-              options={field.ui?.options || []}
-              required={isRequired}
-              multiple
-              minSelections={field.constraints?.minSelections}
-              maxSelections={field.constraints?.maxSelections}
-              value={formData[field.id] || []}
-              onChange={(e) =>
-                handleChange(
-                  field.id,
-                  Array.from(e.target.selectedOptions).map((opt) => opt.value)
-                )
-              }
-              error={error}
-              // iconLeft can be added here if desired for multi-select
-              // iconRight for validation status might be complex with multi-select UX
-            />
-          );
-        }
         return (
-          <SelectField
-            key={field.id}
-            id={field.id}
-            label={field.label}
-            tooltip={field.tooltip}
-            options={field.ui?.options || []}
-            placeholder={field.ui?.placeholder}
-            required={isRequired}
-            value={formData[field.id] || ''}
-            onChange={(e) => handleChange(field.id, e.target.value)}
-            error={error}
-            // iconLeft can be added here e.g. if options have associated icons.
-            // For validation, a right icon is tricky. The select's border will show error state.
-            // iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
+          <Component
+            {...commonProps}
+            onChange={(e) => {
+              if (field.metadata?.multiple) {
+                handleValueChange(Array.from(e.target.selectedOptions).map((o) => o.value));
+              } else {
+                handleValueChange(e.target.value);
+              }
+            }}
           />
         );
       case 'radio':
-        return (
-          <RadioGroup
-            key={field.id}
-            id={field.id} // This id will be used as 'name' for radio inputs in RadioGroup
-            label={field.label}
-            tooltip={field.tooltip}
-            options={field.ui?.options || []}
-            required={isRequired}
-            value={formData[field.id] || ''}
-            onChange={(e) => handleChange(field.id, e.target.value)} // Assuming RadioGroup's onChange gives the value directly
-            error={error} // Pass error prop
-            layout={field.ui?.layout} // Pass layout if specified (e.g., 'horizontal')
-          />
-        );
+        return <Component {...commonProps} onChange={(e) => handleValueChange(e.target.value)} />;
       case 'checkbox':
-        if (field.metadata?.multiple) { // This implies a CheckboxGroup
-          return (
-            <CheckboxGroup
-              key={field.id}
-              id={field.id} // Base for checkbox names/ids in CheckboxGroup
-              label={field.label}
-              tooltip={field.tooltip}
-              options={field.ui?.options || []}
-              value={formData[field.id] || []}
-              onChange={(val) => handleChange(field.id, val)}
-              required={isRequired}
-              error={error} // Pass error prop
-              layout={field.ui?.layout} // Pass layout
-            />
-          );
-        }
-        // This is for a single checkbox, not a group
-        // Consider creating a dedicated SingleCheckbox component that uses jules styles
-        // For now, rendering a basic one that might not fully align with jules custom checkbox styles
-        return (
-          <div className="jules-form-field"> {/* Wrap single checkbox for consistent layout */}
-            <label className="jules-checkbox-option" htmlFor={field.id}>
-              <input
-                key={field.id}
-                type="checkbox"
-                id={field.id}
-                className="jules-checkbox-input" // Basic class, custom styling might need more structure
-                checked={!!formData[field.id]}
-                onChange={(e) => handleChange(field.id, e.target.checked)}
-                required={isRequired}
-              />
-              <span className="jules-checkbox-custom" aria-hidden="true"></span>
-              {field.label && (
-                <span className="jules-checkbox-label-text">
-                  {field.label}
-                  {/* Tooltip should ideally be part of the label text or handled by a wrapper */}
-                  {field.tooltip && <Tooltip text={field.tooltip} />}
-                </span>
-              )}
-            </label>
-            {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
-          </div>
-        );
-      case 'date':
-        return (
-          <TextInput
-            key={field.id}
-            id={field.id}
-            label={field.label}
-            tooltip={field.tooltip}
-            type="date"
-            required={isRequired}
-            value={formData[field.id] || ''}
-            onChange={(e) => handleChange(field.id, e.target.value)}
-            error={error}
-            iconLeft={<FontAwesomeIcon icon={faCalendarDays} aria-hidden="true" />}
-            iconRight={
-              error ? (
-                <span className="jules-validation-icon-error">
-                  <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
-                  <span className="sr-only">Error</span>
-                </span>
-              ) :
-              (!error && touched[field.id] && formData[field.id] ? (
-                <span className="jules-validation-icon-success">
-                  <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
-                  <span className="sr-only">Valid</span>
-                </span>
-              ) : undefined)
-            }
-          />
-        );
+        return <Component {...commonProps} onChange={handleValueChange} />;
+      case 'group':
+        return <Component {...commonProps} onChange={handleValueChange} fullData={fullData} />;
       case 'file':
         return (
-          <FileInput
-            key={field.id}
-            id={field.id}
-            label={field.label}
-            tooltip={field.tooltip}
-            description={field.description}
-            multiple={field.metadata?.multiple}
-            required={isRequired}
-            onChange={(val) => handleChange(field.id, val)}
+          <Component
+            {...commonProps}
+            onChange={handleValueChange}
             applicationId={applicationId}
-            hint={Array.isArray(field.metadata?.examples)
-              ? `Examples: ${field.metadata.examples.join(', ')}`
-              : field.metadata?.examples}
-            error={error}
           />
         );
-      case 'group':
+      case 'address':
         return (
-          <GroupField
-            key={field.id}
-            field={field}
-            value={formData[field.id] || []}
-            onChange={(val) => handleChange(field.id, val)}
-            fullData={fullData}
+          <Component
+            {...commonProps}
+            onChange={handleValueChange}
+            onAddressSelect={(addr) => {
+              const fullAddr = addr.formatted_address || addr.formattedAddress || '';
+              setPlaceholders((p) => ({ ...p, [field.id]: fullAddr }));
+
+              const components = addr.address_components || addr.addressComponents || [];
+              const comps = {};
+              components.forEach((c) => {
+                c.types.forEach((t) => {
+                  comps[t] = {
+                    long_name: c.long_name || c.longName,
+                    short_name: c.short_name || c.shortName,
+                  };
+                });
+              });
+              if (findFieldById('city')) {
+                const cityVal =
+                  comps.locality?.long_name ||
+                  comps.locality?.longName ||
+                  comps.postal_town?.long_name ||
+                  comps.postalTown?.longName ||
+                  comps.sublocality_level_1?.long_name ||
+                  comps.sublocalityLevel1?.longName ||
+                  comps.administrative_area_level_2?.long_name ||
+                  comps.administrativeAreaLevel2?.longName ||
+                  '';
+                handleChange('city', cityVal);
+              }
+              if (findFieldById('borough')) {
+                const boroughSource =
+                  comps.sublocality_level_1?.long_name ||
+                  comps.sublocalityLevel1?.longName ||
+                  comps.administrative_area_level_2?.long_name ||
+                  comps.administrativeAreaLevel2?.longName ||
+                  '';
+                const boroughMap = {
+                  bronx: 'Bronx',
+                  'bronx county': 'Bronx',
+                  brooklyn: 'Brooklyn',
+                  'kings county': 'Brooklyn',
+                  manhattan: 'Manhattan',
+                  'new york': 'Manhattan',
+                  'new york county': 'Manhattan',
+                  queens: 'Queens',
+                  'queens county': 'Queens',
+                  'staten island': 'Staten Island',
+                  'richmond county': 'Staten Island',
+                };
+                const bName = boroughMap[boroughSource.trim().toLowerCase()];
+                if (bName) {
+                  handleChange('borough', bName);
+                }
+              }
+              if (findFieldById('state')) {
+                handleChange(
+                  'state',
+                  comps.administrative_area_level_1?.short_name || comps.administrativeAreaLevel1?.shortName || ''
+                );
+              }
+              if (findFieldById('zip_code')) {
+                handleChange('zip_code', comps.postal_code?.long_name || comps.postalCode?.longName || '');
+              }
+              if (
+                findFieldById('latitude') &&
+                addr.location?.latitude !== undefined
+              ) {
+                handleChange('latitude', addr.location.latitude);
+              }
+              if (
+                findFieldById('longitude') &&
+                addr.location?.longitude !== undefined
+              ) {
+                handleChange('longitude', addr.location.longitude);
+              }
+
+              const streetOnly = fullAddr.split(',')[0];
+              handleValueChange(streetOnly);
+            }}
+            placeholder={placeholders[field.id]}
           />
         );
       default:
-        if (
-          field.id === 'ssn' ||
-          (typeof field.label === 'string' &&
-            field.label.toLowerCase().includes('social security'))
-        ) {
-          return (
-            <MaskedInput
-              key={field.id}
-              id={field.id}
-              label={field.label}
-              mask="000-00-0000"
-              placeholder="123-45-6789"
-              required={isRequired}
-              value={formData[field.id] || ''}
-              onChange={(val) => handleChange(field.id, val)}
-              error={error}
-              // Icons for MaskedInput (like SSN) generally not needed unless for validation
-              iconRight={
-                error ? (
-                  <span className="jules-validation-icon-error">
-                    <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
-                    <span className="sr-only">Error</span>
-                  </span>
-                ) :
-                (!error && touched[field.id] && formData[field.id] ? (
-                  <span className="jules-validation-icon-success">
-                    <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
-                    <span className="sr-only">Valid</span>
-                  </span>
-                ) : undefined)
-              }
-            />
-          );
-        }
-        return (
-            <TextInput // Default to TextInput
-              key={field.id}
-              id={field.id}
-              label={field.label}
-              tooltip={field.tooltip}
-              type={field.type}
-              required={isRequired}
-              value={formData[field.id] || ''}
-              onChange={(e) => handleChange(field.id, e.target.value)}
-              error={error}
-              iconRight={
-                error ? (
-                  <span className="jules-validation-icon-error">
-                    <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
-                    <span className="sr-only">Error</span>
-                  </span>
-                ) :
-                (!error && touched[field.id] && formData[field.id] ? (
-                  <span className="jules-validation-icon-success">
-                    <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
-                    <span className="sr-only">Valid</span>
-                  </span>
-                ) : undefined)
-              }
-            />
-        );
+        return <Component {...commonProps} onChange={(e) => handleValueChange(e.target.value)} />;
     }
   };
 
