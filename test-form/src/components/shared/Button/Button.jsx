@@ -46,9 +46,6 @@ const Button = ({
     };
     const spinnerSizeClass = spinnerSizeClassMap[size] || '';
 
-    // Determine if there is any visible content other than the spinner
-    const hasOtherContent = Boolean(children || iconLeft || iconRight);
-
     return (
         <button
             type={type}

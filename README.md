@@ -104,3 +104,4 @@ docker run -p 3000:80 intake-form-client
 ```
 
 The container serves the compiled React app via nginx on host port `3000`. Adjust the `REACT_APP_SERVER_URL` build argument if the server runs elsewhere.
+
