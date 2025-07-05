@@ -286,7 +286,15 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
               />
               {/* Error display for AddressAutocomplete might need specific handling if not internal */}
               {/* For now, assuming AddressAutocomplete might show its own error or this is for a general field error */}
-              {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
+              {error && (
+                <div
+                  id={`${subField.id}-error`}
+                  className="jules-alert jules-alert-error jules-input-error-message"
+                  tabIndex="-1"
+                >
+                  {error}
+                </div>
+              )}
             </>
           );
         }

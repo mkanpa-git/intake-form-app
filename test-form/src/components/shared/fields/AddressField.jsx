@@ -14,7 +14,15 @@ export default function AddressField({ field, value, onChange, error, onAddressS
         onAddressSelect={onAddressSelect}
         error={error}
       />
-      {error && <div className="jules-alert jules-alert-error jules-input-error-message">{error}</div>}
+      {error && (
+        <div
+          id={`${field.id}-error`}
+          className="jules-alert jules-alert-error jules-input-error-message"
+          tabIndex="-1"
+        >
+          {error}
+        </div>
+      )}
     </>
   );
 }
