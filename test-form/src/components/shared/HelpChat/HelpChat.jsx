@@ -42,6 +42,7 @@ export default function HelpChat({
     const text =
       typeof overrideOrEvent === 'string' ? overrideOrEvent : input;
     const trimmed = text.trim();
+
     if (!trimmed) return;
     const userMsg = { role: 'user', content: trimmed };
     setMessages((prev) => [...prev, userMsg]);
