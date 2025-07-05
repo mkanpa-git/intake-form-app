@@ -7,6 +7,13 @@ import FileInput from '../FileInput/FileInput';
 import MaskedInput from '../MaskedInput/MaskedInput';
 import AddressAutocomplete from '../AddressAutocomplete';
 import Button from '../Button/Button'; // Import the new Button component
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPen,
+  faTrash,
+  faPlus,
+  faCheck,
+} from '@fortawesome/free-solid-svg-icons';
 import { evaluateCondition } from '../../../utils/formHelpers';
 
 export default function GroupField({ field, value = [], onChange, fullData = {} }) {
@@ -329,8 +336,22 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
                   </td>
                 ))}
                 <td className="jules-groupfield-actions">
-                  <Button variant="tertiary" size="small" onClick={() => handleEdit(idx)} iconLeft="✎">Edit</Button>
-                  <Button variant="destructive" size="small" onClick={() => handleDelete(idx)} iconLeft="🗑">Delete</Button>
+                  <Button
+                    variant="tertiary"
+                    size="small"
+                    onClick={() => handleEdit(idx)}
+                    iconLeft={<FontAwesomeIcon icon={faPen} aria-hidden="true" />}
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    variant="destructive"
+                    size="small"
+                    onClick={() => handleDelete(idx)}
+                    iconLeft={<FontAwesomeIcon icon={faTrash} aria-hidden="true" />}
+                  >
+                    Delete
+                  </Button>
                 </td>
               </tr>
             ))}
@@ -341,8 +362,8 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
         <Button
           variant="secondary"
           onClick={() => { setShowForm(true); setEditingIndex(null); setCurrentEntry({}); }}
-          iconLeft="＋"
-          style={{marginTop: entries.length > 0 ? 'var(--jules-space-md)' : '0'}}
+          iconLeft={<FontAwesomeIcon icon={faPlus} aria-hidden="true" />}
+          style={{ marginTop: entries.length > 0 ? 'var(--jules-space-md)' : '0' }}
         >
           Add {field.label}
         </Button>
@@ -352,7 +373,13 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
           <h3>{editingIndex !== null ? `Edit ${field.label}` : `Add New ${field.label}`}</h3>
           {field.fields.map(renderField)}
           <div className="jules-form-actions">
-            <Button variant="primary" onClick={handleSave} iconLeft="✓">Save</Button>
+            <Button
+              variant="primary"
+              onClick={handleSave}
+              iconLeft={<FontAwesomeIcon icon={faCheck} aria-hidden="true" />}
+            >
+              Save
+            </Button>
             <Button variant="secondary" onClick={handleCancel}>Cancel</Button>
           </div>
         </div>
