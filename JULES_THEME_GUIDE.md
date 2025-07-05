@@ -84,3 +84,24 @@ A consistent spacing scale (e.g., 4px/8px base increments) is used for padding a
     *   Completed steps are marked (e.g., green checkmark).
 
 This theme aims to provide a highly usable, accessible, and visually appealing interface for users interacting with MyCity Services forms.
+
+## Theme Switching
+
+The design tokens support both light and dark themes. By default the light theme values are applied from the `:root` selector in `jules_tokens.css`. A `[data-theme='dark']` block overrides key color variables for dark mode.
+
+Set the desired theme on the root HTML element:
+
+```html
+<html data-theme="dark">
+```
+
+In React you can toggle this attribute dynamically:
+
+```js
+const toggle = () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  document.documentElement.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+};
+```
+
+The sample `App.js` includes a button that switches between light and dark modes at runtime.
