@@ -144,6 +144,7 @@ export default function HelpChat({
             {suggestions.map((s, i) => (
               <button
                 key={i}
+                type="button"
                 className="jules-helpchat-chip"
                 onClick={() => handleSuggestionClick(s)}
               >

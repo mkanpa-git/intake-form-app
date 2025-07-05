@@ -645,14 +645,26 @@
 }
 
 .jules-helpchat-chip {
-  background-color: var(--jules-neutral-gray-100);
-  border: var(--jules-border-width-sm) solid var(--jules-border-color);
-  border-radius: var(--jules-border-radius-md);
-  padding: 2px 8px;
+  background-color: var(--jules-primary-blue-50);
+  border: var(--jules-border-width-sm) solid var(--jules-primary-blue-300);
+  border-radius: var(--jules-border-radius-xl);
+  padding: 2px 10px;
   font-size: var(--jules-font-size-sm);
+  color: var(--jules-primary-blue-700);
   cursor: pointer;
+  transition: background-color var(--jules-transition-duration-fast)
+      var(--jules-transition-timing-function),
+    border-color var(--jules-transition-duration-fast)
+      var(--jules-transition-timing-function);
 }
 
 .jules-helpchat-chip:hover {
-  background-color: var(--jules-neutral-gray-200);
+  background-color: var(--jules-primary-blue-100);
+  border-color: var(--jules-primary-blue-500);
+  color: var(--jules-primary-blue-900);
+}
+
+.jules-helpchat-chip:focus-visible {
+  outline: var(--jules-focus-ring);
+  outline-offset: 2px;
 }
