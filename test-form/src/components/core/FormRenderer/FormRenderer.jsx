@@ -251,6 +251,7 @@ export default function FormRenderer({ applicationId, onExit }) {
                   >
                     {err.msg}
                   </a>
+
                 </li>
               ))}
             </ul>
