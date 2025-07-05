@@ -91,6 +91,12 @@ DATABASE_URL=<postgres connection url>
 
 The `users` table stores OAuth provider information using `provider` and `provider_id` columns. The server queries these fields to locate or create the authenticated user.
 
+## Help Chat
+
+Form pages include a "Need Help?" button that opens a small chat window. Messages are sent to the `/api/help-chat` route which proxies requests to the OpenAI API. Set `OPENAI_API_KEY` in `test-form/server/.env` for the feature to work.
+
+Chat conversations are ephemeral and are **not** stored on the server. Responses may be inaccurate, so do not share personal or sensitive information.
+
 ## Docker build
 
 A `Dockerfile` is provided under `test-form` to build the React client for production.

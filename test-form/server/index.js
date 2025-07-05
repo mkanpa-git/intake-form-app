@@ -9,6 +9,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const pgSession = require('connect-pg-simple')(session);
 const helmet = require('helmet');
 const csurf = require('csurf');
+const rateLimit = require('express-rate-limit');
 const pool = require('./db');
 const authRoutes = require('./routes/auth');
 const applicationsRoutes = require('./routes/applications');
@@ -18,7 +19,8 @@ const { getApplications, getApplication } = applicationsRoutes;
 const app = express();
 const PORT = process.env.PORT || 5000;
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
-console.log (GOOGLE_API_KEY ? 'Google API Key is set' : '❌ Google API Key is NOT set! Please set it in .env file');
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+console.log(GOOGLE_API_KEY ? 'Google API Key is set' : '❌ Google API Key is NOT set! Please set it in .env file');
 
 const storage = createStorageStrategy({ uploadsDir: path.join(__dirname, 'uploads') });
 
@@ -112,6 +114,40 @@ app.post('/api/applications/:appId/upload', upload, async (req, res) => {
 
 app.use(placesRoutes);
 app.use(applicationsRoutes);
+
+// --- Help Chat ---
+const chatLimiter = rateLimit({ windowMs: 60 * 1000, max: 5 });
+app.post('/api/help-chat', chatLimiter, async (req, res) => {
+  if (!OPENAI_API_KEY) {
+    return res.status(500).json({ error: 'OpenAI key not configured' });
+  }
+  try {
+    const { message, history = [] } = req.body || {};
+    const messages = [
+      { role: 'system', content: 'You are a helpful assistant for the intake form application.' },
+      ...history,
+      { role: 'user', content: message }
+    ];
+    const apiRes = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({ model: 'gpt-3.5-turbo', messages, temperature: 0.2 })
+    });
+    const data = await apiRes.json();
+    if (!apiRes.ok) {
+      console.error('OpenAI error', data);
+      return res.status(500).json({ error: 'OpenAI request failed' });
+    }
+    const reply = data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
+    res.json({ reply });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Request failed' });
+  }
+});
 
 // --- Case Management UI ---
 app.get('/cases', async (req, res) => {

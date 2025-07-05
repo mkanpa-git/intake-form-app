@@ -548,3 +548,50 @@
 .jules-toast-info {
   border-color: var(--jules-primary-blue-500);
 }
+
+/* --- Help Chat --- */
+.jules-helpchat-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jules-space-md);
+}
+
+.jules-helpchat-disclaimer {
+  font-size: var(--jules-font-size-sm);
+  color: var(--jules-text-color-muted);
+}
+
+.jules-helpchat-conversation {
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-md);
+  padding: var(--jules-space-md);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.jules-helpchat-message {
+  margin-bottom: var(--jules-space-sm);
+}
+
+.jules-helpchat-user {
+  text-align: right;
+  color: var(--jules-text-color-body);
+}
+
+.jules-helpchat-assistant {
+  text-align: left;
+  color: var(--jules-text-color-muted);
+}
+
+.jules-helpchat-input-row {
+  display: flex;
+  gap: var(--jules-space-sm);
+}
+
+.jules-helpchat-input {
+  flex: 1;
+  padding: var(--jules-space-sm);
+  border: var(--jules-border-width-sm) solid var(--jules-border-color);
+  border-radius: var(--jules-border-radius-md);
+  font: inherit;
+}
