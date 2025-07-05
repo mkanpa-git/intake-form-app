@@ -31,13 +31,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test-server": "jest --config server/jest.config.js"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "test-server": "jest --config server/jest.config.js",
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx,json,css,md}\""
   },
   "browserslist": {
     "production": [
@@ -59,6 +55,8 @@
     "concurrently": "^9.1.2",
     "jest-axe": "^10.0.0",
     "jest": "^27.5.1",
-    "supertest": "^6.3.3"
+    "supertest": "^6.3.3",
+    "eslint": "^8.57.0",
+    "prettier": "^2.8.8"
   }
 }
