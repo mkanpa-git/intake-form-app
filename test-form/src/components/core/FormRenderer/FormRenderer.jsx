@@ -156,6 +156,7 @@ export default function FormRenderer({ applicationId, onExit }) {
     setErrorSummary([]);
   };
 
+
   const handleValidationFail = (summary) => {
     setErrorSummary(summary);
     setTimeout(() => {
@@ -257,6 +258,7 @@ export default function FormRenderer({ applicationId, onExit }) {
                       } else {
                         const label = document.querySelector(`label[for="${err.id}"]`);
                         label && label.focus();
+
                       }
                     }}
                   >
