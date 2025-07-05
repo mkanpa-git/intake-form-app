@@ -19,7 +19,11 @@ export default function FormRenderer({ applicationId, onExit }) {
   const [stepData, setStepData] = useState({});
   const [allData, setAllData] = useState({});
   const [editingFromReview, setEditingFromReview] = useState(false);
-  const [currentStepValidation, setCurrentStepValidation] = useState({ errors: {}, touched: {}, timestamp: null });
+  const [currentStepValidation, setCurrentStepValidation] = useState({
+    errors: {},
+    touched: {},
+    timestamp: null,
+  });
   const [isSubmitting, setIsSubmitting] = useState(false); // New state for submission loading
 
   // Derived state, initialized after formSpec is loaded
@@ -32,7 +36,6 @@ export default function FormRenderer({ applicationId, onExit }) {
   const errorSummaryRef = useRef(null);
   const [chatOpen, setChatOpen] = useState(false);
 
-
   useEffect(() => {
     const fetchFormSpec = async () => {
       setIsLoading(true);
@@ -42,12 +45,14 @@ export default function FormRenderer({ applicationId, onExit }) {
         const response = await fetch('/data/childcare_form.json');
 
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status} while trying to fetch form specification.`);
+          throw new Error(
+            `HTTP error! status: ${response.status} while trying to fetch form specification.`,
+          );
         }
         const data = await response.json();
         setFormSpec(data);
       } catch (e) {
-        console.error("Failed to load form specification:", e);
+        console.error('Failed to load form specification:', e);
         setError(e.message);
       } finally {
         setIsLoading(false);
@@ -65,7 +70,11 @@ export default function FormRenderer({ applicationId, onExit }) {
       setSteps(loadedSteps);
       setReviewIndex(loadedSteps.findIndex((s) => s.type === 'review'));
       setStepperPosition(loadedForm?.layout?.stepperPosition || 'right');
-      setOrientation( (loadedForm?.layout?.stepperPosition || 'right') === 'top' ? 'horizontal' : 'vertical');
+      setOrientation(
+        (loadedForm?.layout?.stepperPosition || 'right') === 'top'
+          ? 'horizontal'
+          : 'vertical',
+      );
 
       if (applicationId) {
         getApplication(applicationId).then((saved) => {
@@ -93,7 +102,7 @@ export default function FormRenderer({ applicationId, onExit }) {
     steps[currentStep]?.sections?.flatMap((section) =>
       (section.fields || [])
         .filter((f) => f.type === 'file' && f.required)
-        .map((f) => f.label)
+        .map((f) => f.label),
     ) || [];
 
   const handleDataChange = (data) => {
@@ -162,7 +171,6 @@ export default function FormRenderer({ applicationId, onExit }) {
     setErrorSummary([]);
   };
 
-
   const handleValidationFail = (summary) => {
     setErrorSummary(summary);
     setTimeout(() => {
@@ -196,13 +204,17 @@ export default function FormRenderer({ applicationId, onExit }) {
 
     const result = validateStep(
       steps[currentStep],
-      stepData[steps[currentStep].id] || {}
+      stepData[steps[currentStep].id] || {},
     );
 
     if (!silent && targetIndex > currentStep) {
       if (!result.valid) {
         // If trying to move forward and validation fails, set errors and touched state to trigger display in Step component
-        setCurrentStepValidation({ errors: result.errors, touched: result.touched, timestamp: Date.now() });
+        setCurrentStepValidation({
+          errors: result.errors,
+          touched: result.touched,
+          timestamp: Date.now(),
+        });
         const summary = Object.entries(result.errors)
           .filter(([, msg]) => msg)
           .map(([id, msg]) => ({ id, msg }));
@@ -222,15 +234,26 @@ export default function FormRenderer({ applicationId, onExit }) {
   }
 
   if (error) {
-    return <div>Error loading form: {error}. Please ensure childcare_form.json is available in the public folder or served at /data/childcare_form.json.</div>;
+    return (
+      <div>
+        Error loading form: {error}. Please ensure childcare_form.json is
+        available in the public folder or served at /data/childcare_form.json.
+      </div>
+    );
   }
 
   if (!formSpec || !form || steps.length === 0) {
-    return <div>Form definition loaded, but content is missing or invalid.</div>;
+    return (
+      <div>Form definition loaded, but content is missing or invalid.</div>
+    );
   }
 
   return (
-    <div className={stepperPosition === 'top' ? 'wizard-layout-column' : 'wizard-layout-row'}>
+    <div
+      className={
+        stepperPosition === 'top' ? 'wizard-layout-column' : 'wizard-layout-row'
+      }
+    >
       {stepperPosition !== 'top' && (
         <Stepper
           steps={steps}
@@ -244,8 +267,18 @@ export default function FormRenderer({ applicationId, onExit }) {
       <div className="form-main">
         <h1>{form.title}</h1>
         <p>{form.description}</p>
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 'var(--jules-space-md)' }}>
-          <Button variant="tertiary" size="small" onClick={() => setChatOpen(true)}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            marginBottom: 'var(--jules-space-md)',
+          }}
+        >
+          <Button
+            variant="tertiary"
+            size="small"
+            onClick={() => setChatOpen(true)}
+          >
             Need Help?
           </Button>
         </div>
@@ -255,7 +288,9 @@ export default function FormRenderer({ applicationId, onExit }) {
             tabIndex="-1"
             ref={errorSummaryRef}
           >
-            <div className="jules-alert-title">Please correct the following errors:</div>
+            <div className="jules-alert-title">
+              Please correct the following errors:
+            </div>
             <ul>
               {errorSummary.map((err) => (
                 <li key={err.id}>
@@ -267,9 +302,10 @@ export default function FormRenderer({ applicationId, onExit }) {
                       if (input && typeof input.focus === 'function') {
                         input.focus();
                       } else {
-                        const label = document.querySelector(`label[for="${err.id}"]`);
+                        const label = document.querySelector(
+                          `label[for="${err.id}"]`,
+                        );
                         label && label.focus();
-
                       }
                     }}
                   >
@@ -290,8 +326,9 @@ export default function FormRenderer({ applicationId, onExit }) {
             canNavigate={canNavigate}
           />
         )}
-        {steps.length > 0 && steps[currentStep] && (
-          steps[currentStep].type === 'review' ? (
+        {steps.length > 0 &&
+          steps[currentStep] &&
+          (steps[currentStep].type === 'review' ? (
             <ReviewStep
               steps={steps}
               stepData={stepData}
@@ -319,9 +356,14 @@ export default function FormRenderer({ applicationId, onExit }) {
               validationAttempt={currentStepValidation} // Pass validation attempt state
               onValidationFail={handleValidationFail}
             />
-          )
-        )}
-        <HelpChat isOpen={chatOpen} onClose={() => setChatOpen(false)} />
+          ))}
+        <HelpChat
+          isOpen={chatOpen}
+          onClose={() => setChatOpen(false)}
+          step={steps[currentStep]}
+          stepData={stepData}
+          allData={allData}
+        />
       </div>
     </div>
   );
