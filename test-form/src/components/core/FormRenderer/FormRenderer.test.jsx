@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import FormRenderer from './FormRenderer';
-import formSpec from '../../../data/childcare_form.json';
+import formSpec from '../../../../public/data/childcare_form.json';
 
 jest.mock('react-markdown', () => ({ children }) => <div>{children}</div>);
 
@@ -16,7 +16,7 @@ beforeAll(() => {
 beforeEach(() => {
   global.fetch = jest.fn((url) => {
     if (url.startsWith('/api/applications/')) {
-      const spec = require('../../../data/childcare_form.json');
+      const spec = require('../../../../public/data/childcare_form.json');
       const reviewIndex = spec.form.steps.findIndex((s) => s.id === 'review');
       return Promise.resolve({
         ok: true,
