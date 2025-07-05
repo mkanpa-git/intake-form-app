@@ -92,7 +92,11 @@ function App() {
               )}
             </div>
           )}
-          <button type="button" onClick={toggleTheme} className="theme-toggle">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="theme-toggle"
+          >
             {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
           </button>
         </nav>

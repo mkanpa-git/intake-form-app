@@ -47,6 +47,29 @@
   text-decoration: underline;
 }
 
+/* Theme toggle button styled like a navigation link */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--jules-text-color-link);
+  font-family: var(--jules-font-family-sans);
+  font-size: var(--jules-font-size-md);
+  font-weight: var(--jules-font-weight-medium);
+  margin-left: var(--jules-space-lg);
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  color: var(--jules-text-color-link-hover);
+  text-decoration: underline;
+}
+
+.theme-toggle:focus-visible {
+  outline: var(--jules-focus-ring-width) solid var(--jules-focus-ring-color);
+  outline-offset: var(--jules-focus-ring-offset);
+}
+
 /* User menu */
 .user-menu {
   position: relative;
@@ -211,6 +234,10 @@
   }
 
   .form-header nav a {
+    margin: var(--jules-space-sm) 0;
+  }
+
+  .theme-toggle {
     margin: var(--jules-space-sm) 0;
   }
 
