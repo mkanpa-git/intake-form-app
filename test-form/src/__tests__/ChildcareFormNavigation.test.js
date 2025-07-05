@@ -26,18 +26,13 @@ describe('Childcare form navigation', () => {
     expect(heading).toBeInTheDocument();
   });
 
-  test.skip.each(steps.map((s, i) => [i, s.title]).slice(1))( 
-    'navigates to step %i - %s',
-    async (index, title) => {
+  test('navigates to second step', async () => {
       const user = userEvent.setup();
       render(<FormRenderer />);
-      for (let i = 0; i < index; i++) {
-        const btn = await screen.findByRole('button', { name: /next/i });
-        await user.click(btn);
-      }
+      const btn = await screen.findByRole('button', { name: /next/i });
+      await user.click(btn);
       expect(
-        await screen.findByRole('heading', { level: 2, name: title })
+        await screen.findByRole('heading', { level: 2, name: steps[1].title })
       ).toBeInTheDocument();
-    }
-  );
+  });
 });
