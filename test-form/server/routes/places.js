@@ -1,19 +1,35 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const crypto = require('crypto');
+const logger = require('../logger');
+
+const IS_PROD = process.env.NODE_ENV === 'production';
+
+function getSafeHeaders(headers) {
+  const { cookie, authorization, ...rest } = headers;
+  return rest;
+}
 
 const router = express.Router();
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
 router.get('/api/places/autocomplete', async (req, res) => {
+  const reqId = crypto.randomUUID();
   const input = req.query.input;
   const sessiontoken = req.query.sessiontoken;
 
-  console.log(`[Autocomplete] Incoming request:`);
-  console.log(`→ Query input: ${input}`);
-  console.log(`→ Session token: ${sessiontoken}`);
-  console.log(`→ Headers:`, req.headers);
+  logger.info('[Autocomplete] request received', { reqId });
+  if (!IS_PROD) {
+    logger.debug('[Autocomplete] request details', {
+      reqId,
+      input,
+      sessiontoken,
+      headers: getSafeHeaders(req.headers),
+    });
+  }
 
   if (!input) {
+    logger.warn('Missing input parameter', { reqId });
     return res.status(400).json({ error: 'Missing input parameter' });
   }
 
@@ -31,9 +47,7 @@ router.get('/api/places/autocomplete', async (req, res) => {
     };
     if (sessiontoken) headers['X-Goog-Session-Token'] = sessiontoken;
 
-    console.log(`↳ Fetching from: ${url}`);
-    console.log(`↳ With headers:`, { ...headers, 'X-Goog-Api-Key': headers['X-Goog-Api-Key'] ? '***' : '❌ undefined' });
-    console.log(`↳ With body:`, body);
+    logger.debug('Requesting Google Places autocomplete', { reqId });
 
     const response = await fetch(url, {
       method: 'POST',
@@ -43,31 +57,30 @@ router.get('/api/places/autocomplete', async (req, res) => {
 
     const data = await response.json();
     if (data.error) {
-      console.error(`❌ Google API Error:`);
-      console.error(`→ Status: ${data.error.status}`);
-      console.error(`→ Message: ${data.error.message}`);
-      console.error(`→ Full error object:\n`, JSON.stringify(data.error, null, 2));
-      if (Array.isArray(data.error.details)) {
-        console.error(`→ Error details:\n`, JSON.stringify(data.error.details[0], null, 2));
-      }
-    } else {
-      console.log(`✅ Response data:`, JSON.stringify(data, null, 2));
+      logger.error('Google API error', { reqId, status: data.error.status, message: data.error.message });
     }
     res.json(data);
+    logger.info('Autocomplete response sent', { reqId, statusCode: res.statusCode });
   } catch (err) {
-    console.error(err);
+    logger.error(err.message, { reqId });
     res.status(500).json({ error: 'Failed to fetch autocomplete results' });
   }
 });
 
 router.get('/api/places/details/:id', async (req, res) => {
-  console.log(`[Place Details] Incoming request:`);
-  console.log(`→ Place ID: ${req.params.id}`);
-  console.log(`→ Session token: ${req.query.sessiontoken}`);
-  console.log(`→ Headers:`, req.headers);
+  const reqId = crypto.randomUUID();
+  logger.info('[Place Details] request received', { reqId });
 
   const placeId = req.params.id;
   const sessiontoken = req.query.sessiontoken;
+  if (!IS_PROD) {
+    logger.debug('[Place Details] request details', {
+      reqId,
+      placeId,
+      sessiontoken,
+      headers: getSafeHeaders(req.headers),
+    });
+  }
 
   try {
     const url = `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?languageCode=en`;
@@ -78,16 +91,15 @@ router.get('/api/places/details/:id', async (req, res) => {
     };
     if (sessiontoken) headers['X-Goog-Session-Token'] = sessiontoken;
 
-    console.log(`↳ Fetching from: ${url}`);
-    console.log(`↳ With headers:`, { ...headers, 'X-Goog-Api-Key': headers['X-Goog-Api-Key'] ? '***' : '❌ undefined' });
+    logger.debug('Requesting Google Place details', { reqId });
 
     const response = await fetch(url, { headers });
     const data = await response.json();
-    console.log(`✅ Place Details Response:`, JSON.stringify(data, null, 2));
 
     res.json(data);
+    logger.info('Place details response sent', { reqId, statusCode: res.statusCode });
   } catch (err) {
-    console.error(err);
+    logger.error(err.message, { reqId });
     res.status(500).json({ error: 'Failed to fetch place details' });
   }
 });
