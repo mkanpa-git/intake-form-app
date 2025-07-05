@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import TextInput from '../components/shared/TextInput/TextInput';
 import Button from '../components/shared/Button';
+import { getCsrfToken } from '../utils/csrf';
 
 export default function Profile() {
   const { user, setUser } = useContext(AuthContext);
@@ -27,7 +28,10 @@ export default function Profile() {
     e.preventDefault();
     const res = await fetch('/api/me', {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': getCsrfToken()
+      },
       body: JSON.stringify(form)
     });
     if (res.ok) {

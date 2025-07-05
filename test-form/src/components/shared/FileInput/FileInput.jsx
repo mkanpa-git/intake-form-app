@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 // import styles from './FileInput.module.css'; // Removed CSS Module import - likely redundant
 import Tooltip from '../Tooltip/Tooltip'; // Assuming Tooltip is already refactored
+import { getCsrfToken } from '../../../utils/csrf';
 
 export default function FileInput({
   id,
@@ -39,6 +40,7 @@ export default function FileInput({
       try {
         const res = await fetch(`/api/applications/${applicationId}/upload`, {
           method: 'POST',
+          headers: { 'X-CSRF-Token': getCsrfToken() },
           body: form,
         });
         const data = await res.json();

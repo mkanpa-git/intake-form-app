@@ -7,6 +7,8 @@ const session = require('express-session');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const pgSession = require('connect-pg-simple')(session);
+const helmet = require('helmet');
+const csurf = require('csurf');
 const pool = require('./db');
 const authRoutes = require('./routes/auth');
 const applicationsRoutes = require('./routes/applications');
@@ -27,6 +29,9 @@ app.use(session({
   saveUninitialized: false
 }));
 
+// Security middleware
+app.use(helmet());
+
 app.use(passport.initialize());
 app.use(passport.session());
 // Middleware to parse JSON bodies
@@ -35,6 +40,11 @@ if ((process.env.FILE_STORAGE || 'LOCAL').toUpperCase() !== 'GCP') {
   app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 }
 app.use(express.urlencoded({ extended: true }));
+app.use(csurf());
+app.use((req, res, next) => {
+  res.cookie('XSRF-TOKEN', req.csrfToken());
+  next();
+});
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -113,6 +123,12 @@ app.get('/cases/:appId', async (req, res) => {
   const appData = await getApplication(req.params.appId);
   if (!appData) return res.status(404).send('Application not found');
   res.render('application', { app: appData });
+});
+
+// CSRF error handler
+app.use((err, req, res, next) => {
+  if (err.code !== 'EBADCSRFTOKEN') return next(err);
+  res.status(403).send('Invalid CSRF token');
 });
 
 app.use((err, req, res, next) => {
