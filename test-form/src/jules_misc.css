@@ -1,5 +1,14 @@
 @import './jules_tokens.css';
 
+/* Disable transitions when the user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --jules-transition-duration-fast: 0ms;
+    --jules-transition-duration-base: 0ms;
+    --jules-transition-duration-slow: 0ms;
+  }
+}
+
 /* --- Tooltips --- */
 .jules-tooltip-wrapper {
   display: inline-flex; /* Align icon with text nicely */
