@@ -96,8 +96,11 @@ The `users` table stores OAuth provider information using `provider` and `provid
 A `Dockerfile` is provided under `test-form` to build the React client for production.
 
 ```bash
-docker build -t intake-form-client -f test-form/Dockerfile test-form
-docker run -p 3000:80 --env REACT_APP_SERVER_URL=http://localhost:5000 intake-form-client
+# Set the API origin when building so login links target the Express server
+docker build \
+  --build-arg REACT_APP_SERVER_URL=http://localhost:5000 \
+  -t intake-form-client -f test-form/Dockerfile test-form
+docker run -p 3000:80 intake-form-client
 ```
 
-The container serves the compiled React app via nginx on host port `3000`. Adjust `REACT_APP_SERVER_URL` if the server is hosted elsewhere.
+The container serves the compiled React app via nginx on host port `3000`. Adjust the `REACT_APP_SERVER_URL` build argument if the server runs elsewhere.
