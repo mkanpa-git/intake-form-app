@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import FormRenderer from '../components/core/FormRenderer/FormRenderer';
-import formSpec from '../data/childcare_form.json';
+import formSpec from '../../public/data/childcare_form.json';
 
 // Mock markdown rendering used in InfoSection/Step components
 jest.mock('react-markdown', () => ({ children }) => <div>{children}</div>);

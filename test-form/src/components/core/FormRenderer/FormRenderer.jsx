@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
 import ReviewStep from '../ReviewStep/ReviewStep';
-// import formSpec from '../../../data/childcare_form.json'; // Removed direct import
+// import formSpec from '../../../data/childcare_form.json'; // Form spec is now loaded via fetch from /data/childcare_form.json
 import { validateStep } from '../../../utils/formHelpers';
 import { getApplication, upsertApplication } from '../../../utils/appStorage';
 
@@ -31,12 +31,8 @@ export default function FormRenderer({ applicationId, onExit }) {
       setIsLoading(true);
       setError(null);
       try {
-        // First attempt: fetch from public root
-        let response = await fetch('/childcare_form.json');
-        if (!response.ok) {
-          // Fallback: fetch from /data/ (assuming dev server might serve it from src/data)
-          response = await fetch('/data/childcare_form.json');
-        }
+        // Load form specification from the public data directory
+        const response = await fetch('/data/childcare_form.json');
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status} while trying to fetch form specification.`);
