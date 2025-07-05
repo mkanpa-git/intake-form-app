@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link, Routes, Route } from 'react-router-dom';
 import { AuthContext } from './context/AuthContext';
 import Profile from './pages/Profile';
@@ -25,8 +25,17 @@ function App() {
   const [page, setPage] = useState('dashboard');
   const [currentId, setCurrentId] = useState(null);
   const [currentService, setCurrentService] = useState('childcare');
+  const [theme, setTheme] = useState('light');
   const { user } = useContext(AuthContext);
   const server = process.env.REACT_APP_SERVER_URL || '';
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   const startApplication = (serviceKey, id) => {
     setCurrentService(serviceKey);
@@ -83,6 +92,9 @@ function App() {
               )}
             </div>
           )}
+          <button type="button" onClick={toggleTheme} className="theme-toggle">
+            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+          </button>
         </nav>
       </header>
 

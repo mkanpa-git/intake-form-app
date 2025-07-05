@@ -133,3 +133,24 @@
   --jules-z-index-popover: 1060;
   --jules-z-index-tooltip: 1070;
 }
+[data-theme='dark'] {
+  --jules-neutral-white: #000000;
+  --jules-neutral-gray-50: #1a1a1a;
+  --jules-neutral-gray-100: #222222;
+  --jules-neutral-gray-200: #2c2c2c;
+  --jules-neutral-gray-300: #444444;
+  --jules-neutral-gray-400: #555555;
+  --jules-neutral-gray-500: #888888;
+  --jules-neutral-gray-600: #aaaaaa;
+  --jules-neutral-gray-700: #cccccc;
+  --jules-neutral-gray-800: #dddddd;
+  --jules-neutral-gray-900: #ffffff;
+
+  --jules-text-color-body: var(--jules-neutral-gray-800);
+  --jules-text-color-headings: var(--jules-neutral-gray-900);
+  --jules-text-color-muted: var(--jules-neutral-gray-600);
+  --jules-text-color-link: var(--jules-primary-blue-300);
+  --jules-text-color-link-hover: var(--jules-primary-blue-50);
+  --jules-border-color: var(--jules-neutral-gray-300);
+  --jules-focus-ring-color: var(--jules-primary-blue-700);
+}
