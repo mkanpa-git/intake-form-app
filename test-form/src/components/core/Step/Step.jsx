@@ -375,7 +375,14 @@ export default function Step({
           />
         );
       default:
-        return <Component {...commonProps} onChange={(e) => handleValueChange(e.target.value)} />;
+        return (
+          <Component
+            {...commonProps}
+            onChange={(val) =>
+              handleValueChange(val && val.target ? val.target.value : val)
+            }
+          />
+        );
     }
   };
 
