@@ -5,7 +5,7 @@ servers:
     url: https://virtserver.swaggerhub.com/mkanpa/ApplicationsService/1.0.0
 info:
   version: "1.0.0"
-  title: MyCity Applications Service API
+  title: ModelCity Applications Service API
   description: >-
     Application Details JSON Response. The generic structure is represented by the schema  `ApplicationSubmission` and the data element *Forms.FormInputDocument* references the Childcare service specific schema `CFWB012`. <br/><br/>
     
@@ -744,7 +744,7 @@ components:
               NYCIDEmail: 
                 type: string
                 description: "The email address of the Applicant."
-                example: "amit.nihala@mycity.com.devint"
+                example: "amit.nihala@modelcity.com.devint"
               ApplicationSubmissionDate:
                 type: string
                 description: "The date and time when the application was submitted by the Applicant."
@@ -862,7 +862,7 @@ components:
                   type: string
                 SuppressApplicantNotification:
                   type: string
-                  description: "--- Backlog for future consideration --- An optional flag for processing agency to specify if the status update notification is strictly meant for use by internal system/ process communication only.  Unless explicitly suppressed by the processing agency by setting this indicator to 'Yes', by default, status update is considered to be applicant facing for MyCity to appropriately inform (via Portal Dashboard) / notify (via email) the Applicant."                  
+                  description: "--- Backlog for future consideration --- An optional flag for processing agency to specify if the status update notification is strictly meant for use by internal system/ process communication only.  Unless explicitly suppressed by the processing agency by setting this indicator to 'Yes', by default, status update is considered to be applicant facing for ModelCity to appropriately inform (via Portal Dashboard) / notify (via email) the Applicant."
                   enum: ["Yes","No", "True", "False"]    
                   default: "No"                  
                   example: "Yes"                  

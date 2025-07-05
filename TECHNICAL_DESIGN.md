@@ -110,4 +110,4 @@ The React client communicates with the Express API in the `test-form/server` dir
 - `GET /cases/:appId` &ndash; shows a single application in the dashboard. 【F:test-form/server/index.js†L316-L319】
 
 ### External API Definition
-An OpenAPI 3.0 specification (`openapi/openapi.yaml`) describes the external MyCity Applications Service API. It defines a `GET /appl/{applId}` operation returning an `ApplicationSubmission` object. 【F:openapi/openapi.yaml†L60-L79】
+An OpenAPI 3.0 specification (`openapi/openapi.yaml`) describes the external ModelCity Applications Service API. It defines a `GET /appl/{applId}` operation returning an `ApplicationSubmission` object. 【F:openapi/openapi.yaml†L60-L79】

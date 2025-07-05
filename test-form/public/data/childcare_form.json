@@ -12,14 +12,14 @@
         "sections": [
           {
             "id": "mycity_consent_info",
-            "title": "MyCity Consent",
+            "title": "ModelCity Consent",
             "type": "info",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "In connection with this application for child care services, **MyCity**:\\n\\n- Collects, processes, stores, and shares the information you submit to screen you when you apply for child care services;\\n- Receives, processes, and stores the information the City already knows about you to screen you when you apply for child care services;\\n- Uses your information to improve MyCity; and\\n- Communicates with you about your MyCity account.\\n\\n---\\n\\nIf you consent, the following information may be shared between child care services agencies:\\n\\n- Demographic and background information, including address, phone number, household composition.\\n- Housing information, including benefits awarded/received, current housing/shelter status.\\n- Benefits information, including public assistance awarded/received, child care program participation.\\n\\n---\\n\\nIf you choose not to consent, **you will not be denied** any benefits or services you are receiving or any benefits for which you are eligible.\\n\\nThe [MyCity Privacy Policy](https://www.nyc.gov/privacy) details how MyCity handles the information you submit through MyCity."
+            "content": "In connection with this application for child care services, **ModelCity**:\\n\\n- Collects, processes, stores, and shares the information you submit to screen you when you apply for child care services;\\n- Receives, processes, and stores the information the City already knows about you to screen you when you apply for child care services;\\n- Uses your information to improve ModelCity; and\\n- Communicates with you about your ModelCity account.\\n\\n---\\n\\nIf you consent, the following information may be shared between child care services agencies:\\n\\n- Demographic and background information, including address, phone number, household composition.\\n- Housing information, including benefits awarded/received, current housing/shelter status.\\n- Benefits information, including public assistance awarded/received, child care program participation.\\n\\n---\\n\\nIf you choose not to consent, **you will not be denied** any benefits or services you are receiving or any benefits for which you are eligible.\\n\\nThe [ModelCity Privacy Policy](https://www.nyc.gov/privacy) details how ModelCity handles the information you submit through ModelCity."
           }
         ]
       },
@@ -126,7 +126,7 @@
                 "label": "Date of Birth",
                 "type": "date",
                 "required": true,
-                "tooltip": "To edit Date of Birth click on NYC MyCity in the top-left corner then click on Account Settings."
+                "tooltip": "To edit Date of Birth click on NYC ModelCity in the top-left corner then click on Account Settings."
               },
               {
                 "id": "sex",
@@ -191,7 +191,7 @@
                 "label": "Mobile or Other Phone",
                 "type": "tel",
                 "required": false,
-                "tooltip": "To edit Telephone (Cell or Other) click on NYC MyCity in the top-left corner then click on Account Settings and then click on Contact.",
+                "tooltip": "To edit Telephone (Cell or Other) click on NYC ModelCity in the top-left corner then click on Account Settings and then click on Contact.",
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
                 },
@@ -211,14 +211,14 @@
           {
             "id": "address_info",
             "title": "Address",
-            "tooltip": "To edit home address click on NYC MyCity in the top-left corner then click on Account Settings.",
+            "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings.",
             "fields": [
               {
                 "id": "street",
                 "label": "Street Address",
                 "type": "text",
                 "required": true,
-                "tooltip": "To edit home address click on NYC MyCity in the top-left corner then click on Account Settings."
+                "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings."
               },
               {
                 "id": "apt",
@@ -359,7 +359,7 @@
                 "id": "ssn",
                 "label": "Social Security Number",
                 "type": "text",
-                "tooltip": "To edit social security number click on NYC MyCity in the top-left corner then click on Account Settings.",
+                "tooltip": "To edit social security number click on NYC ModelCity in the top-left corner then click on Account Settings.",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
