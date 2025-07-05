@@ -8,7 +8,6 @@ import {
 import Section from '../Section/Section';
 import InfoSection from '../InfoSection/InfoSection';
 import TableLayout from '../../shared/TableLayout/TableLayout';
-import Tooltip from '../../shared/Tooltip/Tooltip';
 import GroupField from '../../shared/GroupField/GroupField';
 import {
   TextField,
