@@ -1,5 +1,7 @@
 import React from 'react';
 import Button from './shared/Button/Button'; // Import the new Button component
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export default function ApplicationCard({
   id,
@@ -52,7 +54,7 @@ export default function ApplicationCard({
           variant="primary" // Continue button might be primary in this context
           size="small"
           onClick={() => onContinue && onContinue(id)}
-          iconRight="→"
+          iconRight={<FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />}
         >
           Continue
         </Button>
@@ -60,7 +62,7 @@ export default function ApplicationCard({
           variant="destructive"
           size="small"
           onClick={() => onDelete && onDelete(id)}
-          iconLeft="🗑"
+          iconLeft={<FontAwesomeIcon icon={faTrash} aria-hidden="true" />}
         >
           Delete
         </Button>

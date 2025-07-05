@@ -19,6 +19,19 @@ import AddressAutocomplete from '../../shared/AddressAutocomplete';
 import Tooltip from '../../shared/Tooltip/Tooltip';
 import ReactMarkdown from 'react-markdown';
 import Button from '../../shared/Button/Button'; // Import the new Button component
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPhone,
+  faEnvelope,
+  faCalendarDays,
+  faCircleXmark,
+  faCircleCheck,
+  faArrowLeft,
+  faArrowRight,
+  faFloppyDisk,
+  faReply,
+  faCheck,
+} from '@fortawesome/free-solid-svg-icons';
 // import styles from './Step.module.css'; // Removed CSS Module import
 
 export default function Step({
@@ -214,8 +227,21 @@ export default function Step({
           value={formData[field.id] || ''}
           onChange={(val) => handleChange(field.id, val)}
           error={error}
-          iconLeft={field.type === 'tel' ? "✆" : undefined} // Example: Phone icon for tel type
-          iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
+          iconLeft={field.type === 'tel' ? <FontAwesomeIcon icon={faPhone} aria-hidden="true" /> : undefined}
+          iconRight={
+            error ? (
+              <span className="jules-validation-icon-error">
+                <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
+                <span className="sr-only">Error</span>
+              </span>
+            ) :
+            (!error && touched[field.id] && formData[field.id] ? (
+              <span className="jules-validation-icon-success">
+                <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
+                <span className="sr-only">Valid</span>
+              </span>
+            ) : undefined)
+          }
         />
       );
     }
@@ -245,7 +271,20 @@ export default function Step({
               value={formData[field.id] || ''}
               onChange={(val) => handleChange(field.id, val)}
               error={error}
-              iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
+              iconRight={
+                error ? (
+                  <span className="jules-validation-icon-error">
+                    <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
+                    <span className="sr-only">Error</span>
+                  </span>
+                ) :
+                (!error && touched[field.id] && formData[field.id] ? (
+                  <span className="jules-validation-icon-success">
+                    <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
+                    <span className="sr-only">Valid</span>
+                  </span>
+                ) : undefined)
+              }
             />
           );
         }
@@ -357,8 +396,21 @@ export default function Step({
             value={formData[field.id] || ''}
             onChange={(e) => handleChange(field.id, e.target.value)}
             error={error}
-            iconLeft={field.type === 'email' ? "@" : undefined} // Example: Email icon
-            iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
+            iconLeft={field.type === 'email' ? <FontAwesomeIcon icon={faEnvelope} aria-hidden="true" /> : undefined}
+            iconRight={
+              error ? (
+                <span className="jules-validation-icon-error">
+                  <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
+                  <span className="sr-only">Error</span>
+                </span>
+              ) :
+              (!error && touched[field.id] && formData[field.id] ? (
+                <span className="jules-validation-icon-success">
+                  <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
+                  <span className="sr-only">Valid</span>
+                </span>
+              ) : undefined)
+            }
             // Hint prop can be added if field.description exists
           />
         );
@@ -478,8 +530,21 @@ export default function Step({
             value={formData[field.id] || ''}
             onChange={(e) => handleChange(field.id, e.target.value)}
             error={error}
-            iconLeft={"📅"} // Example: Calendar icon for date
-            iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
+            iconLeft={<FontAwesomeIcon icon={faCalendarDays} aria-hidden="true" />}
+            iconRight={
+              error ? (
+                <span className="jules-validation-icon-error">
+                  <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
+                  <span className="sr-only">Error</span>
+                </span>
+              ) :
+              (!error && touched[field.id] && formData[field.id] ? (
+                <span className="jules-validation-icon-success">
+                  <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
+                  <span className="sr-only">Valid</span>
+                </span>
+              ) : undefined)
+            }
           />
         );
       case 'file':
@@ -528,7 +593,20 @@ export default function Step({
               onChange={(val) => handleChange(field.id, val)}
               error={error}
               // Icons for MaskedInput (like SSN) generally not needed unless for validation
-              iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
+              iconRight={
+                error ? (
+                  <span className="jules-validation-icon-error">
+                    <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
+                    <span className="sr-only">Error</span>
+                  </span>
+                ) :
+                (!error && touched[field.id] && formData[field.id] ? (
+                  <span className="jules-validation-icon-success">
+                    <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
+                    <span className="sr-only">Valid</span>
+                  </span>
+                ) : undefined)
+              }
             />
           );
         }
@@ -543,7 +621,20 @@ export default function Step({
               value={formData[field.id] || ''}
               onChange={(e) => handleChange(field.id, e.target.value)}
               error={error}
-              iconRight={error ? <span className="jules-validation-icon-error">✕</span> : (!error && touched[field.id] && formData[field.id] ? <span className="jules-validation-icon-success">✓</span> : undefined)}
+              iconRight={
+                error ? (
+                  <span className="jules-validation-icon-error">
+                    <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
+                    <span className="sr-only">Error</span>
+                  </span>
+                ) :
+                (!error && touched[field.id] && formData[field.id] ? (
+                  <span className="jules-validation-icon-success">
+                    <FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" />
+                    <span className="sr-only">Valid</span>
+                  </span>
+                ) : undefined)
+              }
             />
         );
     }
@@ -643,7 +734,7 @@ export default function Step({
             size="small"
             className="jules-step-back-to-review"
             onClick={handleBackToReviewClick}
-            iconLeft="↩"
+            iconLeft={<FontAwesomeIcon icon={faReply} aria-hidden="true" />}
           >
             Back to Review step
           </Button>
@@ -742,25 +833,41 @@ export default function Step({
       })}
       <div className="jules-step-navigation">
         {!isFirst && (
-          <Button variant="secondary" onClick={handleBackClick} iconLeft="←">
+          <Button
+            variant="secondary"
+            onClick={handleBackClick}
+            iconLeft={<FontAwesomeIcon icon={faArrowLeft} aria-hidden="true" />}
+          >
             Back
           </Button>
         )}
         <Button
           variant="secondary"
           onClick={handleSaveDraftClick}
-          iconLeft="💾"
+          iconLeft={<FontAwesomeIcon icon={faFloppyDisk} aria-hidden="true" />}
           isLoading={isSavingDraft}
         >
           Save Draft
         </Button>
         {!isLast && (
-          <Button variant="primary" onClick={handleNextClick} iconRight="→">
+          <Button
+            variant="primary"
+            onClick={handleNextClick}
+            iconRight={<FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />}
+          >
             Next
           </Button>
         )}
         {/* Assuming onNext handles final submission if isLast is true, or a dedicated submit handler would be passed. */}
-        {isLast && <Button variant="primary" onClick={handleNextClick} iconRight="✓">Submit</Button>}
+        {isLast && (
+          <Button
+            variant="primary"
+            onClick={handleNextClick}
+            iconRight={<FontAwesomeIcon icon={faCheck} aria-hidden="true" />}
+          >
+            Submit
+          </Button>
+        )}
       </div>
     </div>
   );

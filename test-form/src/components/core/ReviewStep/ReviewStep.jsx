@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import Modal from '../../shared/Modal/Modal'; // Assuming Modal is already refactored
 import Button from '../../shared/Button/Button'; // Import the new Button component
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPen,
+  faFileLines,
+  faCheck,
+} from '@fortawesome/free-solid-svg-icons';
 // import styles from './ReviewStep.module.css'; // Removed CSS Module import - likely redundant
 
 function isObject(val) {
@@ -110,8 +116,8 @@ export default function ReviewStep({ steps = [], stepData = {}, onEdit, onSubmit
                   variant="tertiary"
                   size="small"
                   onClick={() => onEdit(idx)}
-                  iconLeft="✎"
-                  style={{marginRight: 'var(--jules-space-sm)'}}
+                  iconLeft={<FontAwesomeIcon icon={faPen} aria-hidden="true" />}
+                  style={{ marginRight: 'var(--jules-space-sm)' }}
                 >
                   Edit
                 </Button>
@@ -119,7 +125,7 @@ export default function ReviewStep({ steps = [], stepData = {}, onEdit, onSubmit
                   variant="tertiary"
                   size="small"
                   onClick={() => handleOpenModal(idx)}
-                  iconLeft="📄"
+                  iconLeft={<FontAwesomeIcon icon={faFileLines} aria-hidden="true" />}
                 >
                   View as JSON
                 </Button>
@@ -135,7 +141,7 @@ export default function ReviewStep({ steps = [], stepData = {}, onEdit, onSubmit
         <Button
           variant="primary"
           onClick={onSubmit}
-          iconRight="✓"
+          iconRight={<FontAwesomeIcon icon={faCheck} aria-hidden="true" />}
           isLoading={isSubmitting} // Pass isSubmitting to isLoading prop
         >
           Submit Application
