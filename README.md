@@ -97,6 +97,10 @@ Form pages include a "Need Help?" button that opens a small chat window. Message
 
 The chat endpoint now sends the current step's field info and any validation errors to the AI service. Replies include up to three suggested follow-up questions shown as clickable chips.
 
+The Help Chat window uses the `jules_` design system. Messages now appear in modern
+speech bubbles with clear distinction between user and assistant responses and
+accessible colors.
+
 Chat conversations are ephemeral and are **not** stored on the server. Responses may be inaccurate, so do not share personal or sensitive information.
 
 ## Docker build
