@@ -95,6 +95,8 @@ The `users` table stores OAuth provider information using `provider` and `provid
 
 Form pages include a "Need Help?" button that opens a small chat window. Messages are sent to the `/api/help-chat` route which proxies requests to the OpenAI API. Set `OPENAI_API_KEY` in `test-form/server/.env` for the feature to work.
 
+The chat endpoint now sends the current step's field info and any validation errors to the AI service. Replies include up to three suggested follow-up questions shown as clickable chips.
+
 Chat conversations are ephemeral and are **not** stored on the server. Responses may be inaccurate, so do not share personal or sensitive information.
 
 ## Docker build
