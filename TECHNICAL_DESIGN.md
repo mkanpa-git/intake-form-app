@@ -4,7 +4,7 @@
 
 The project uses a React front‑end with an Express back‑end. The README notes that both are started together from the [`test-form`](test-form) directory using a single command."**" For development the `dev` script runs the Express API proxy and React app so the site is accessible at `http://localhost:3000`.【F:README.md†L1-L21】
 
-Dynamic form definitions are loaded at runtime. The form renderer fetches `childcare_form.json` from the public folder with a fallback to `/data/childcare_form.json` if it is unavailable. This logic is in `FormRenderer.jsx`.【F:test-form/src/components/core/FormRenderer/FormRenderer.jsx†L29-L39】
+Dynamic form definitions are loaded at runtime. The form renderer loads the specification using the `formSpecPath` prop, which defaults to `/data/childcare_form.json`.【F:test-form/src/components/core/FormRenderer/FormRenderer.jsx†L44-L72】
 
 The Express server (`test-form/server/index.js`) handles Google OAuth authentication, session management and API endpoints for applications and file uploads. It also proxies calls to Google Places APIs for autocomplete and place details. 【F:test-form/server/index.js†L1-L177】【F:test-form/server/index.js†L187-L229】
 
@@ -44,7 +44,7 @@ CREATE TABLE application_files (
 ```
 【F:test-form/server/db/schema.sql†L1-L41】
 
-Form specifications are stored in JSON under `childcare_form.json` and are loaded by the renderer at runtime.
+Form specifications are stored in JSON under `childcare_form.json` and are loaded by the renderer at runtime using the `formSpecPath` prop.
 
 ## Technical Architecture
 

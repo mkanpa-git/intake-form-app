@@ -9,7 +9,15 @@ import { getApplication, upsertApplication } from '../../../utils/appStorage';
 import Button from '../../shared/Button/Button';
 import HelpChat from '../../shared/HelpChat';
 
-export default function FormRenderer({ applicationId, onExit }) {
+/**
+ * Renders a multi-step form specified in a JSON file.
+ *
+ * @param {Object} props - Component props.
+ * @param {string} [props.applicationId] - ID of the application to load.
+ * @param {Function} [props.onExit] - Called when the user exits the form.
+ * @param {string} [props.formSpecPath='/data/childcare_form.json'] - Path to the form specification JSON file.
+ */
+export default function FormRenderer({ applicationId, onExit, formSpecPath = '/data/childcare_form.json' }) {
   const { showToast } = useToast();
   const [formSpec, setFormSpec] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -41,8 +49,8 @@ export default function FormRenderer({ applicationId, onExit }) {
       setIsLoading(true);
       setError(null);
       try {
-        // Load form specification from the public data directory
-        const response = await fetch('/data/childcare_form.json');
+        // Load form specification from the provided path
+        const response = await fetch(formSpecPath);
 
         if (!response.ok) {
           throw new Error(
@@ -60,7 +68,7 @@ export default function FormRenderer({ applicationId, onExit }) {
     };
 
     fetchFormSpec();
-  }, []);
+  }, [formSpecPath]);
 
   useEffect(() => {
     if (formSpec) {
@@ -236,8 +244,8 @@ export default function FormRenderer({ applicationId, onExit }) {
   if (error) {
     return (
       <div>
-        Error loading form: {error}. Please ensure childcare_form.json is
-        available in the public folder or served at /data/childcare_form.json.
+        Error loading form: {error}. Ensure the form specification exists at
+        {formSpecPath}.
       </div>
     );
   }

@@ -24,7 +24,7 @@ The `dev` script runs both the Express API proxy and the React app so you can ac
 
 For details on how forms are dynamically generated and best practices for extending the form rendering capabilities, please refer to the [FORM_GENERATION_GUIDELINES.md](FORM_GENERATION_GUIDELINES.md) document.
 
-The primary form configuration, `childcare_form.json`, is dynamically loaded at runtime by the `FormRenderer` component and should be located in `test-form/public/data/childcare_form.json`.
+The primary form configuration, `childcare_form.json`, is dynamically loaded at runtime by the `FormRenderer` component and should be located in `test-form/public/data/childcare_form.json`. The path can be overridden using the `formSpecPath` prop.
 
 ## Case management UI
 
