@@ -5,6 +5,7 @@ import Profile from './pages/Profile';
 // import "./form.css"; // Old theme - commented out
 import FormPage from "./pages/FormPage";
 import Dashboard from "./pages/Dashboard";
+import ThemeSettings from './components/shared/ThemeSettings';
 import './App.css'; // App specific styles, kept for now
 
 // Jules Theme CSS Files
@@ -25,16 +26,40 @@ function App() {
   const [page, setPage] = useState('dashboard');
   const [currentId, setCurrentId] = useState(null);
   const [currentService, setCurrentService] = useState('childcare');
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('system');
+  const [themeModalOpen, setThemeModalOpen] = useState(false);
   const { user } = useContext(AuthContext);
   const server = process.env.REACT_APP_SERVER_URL || '';
 
   useEffect(() => {
+    const applySystemTheme = () => {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+    };
+
+    if (theme === 'system') {
+      applySystemTheme();
+      const mq = window.matchMedia('(prefers-color-scheme: dark)');
+      mq.addEventListener('change', applySystemTheme);
+      return () => mq.removeEventListener('change', applySystemTheme);
+    }
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+  useEffect(() => {
+    const saved = localStorage.getItem('themePreference');
+    if (saved) {
+      setTheme(saved);
+    }
+  }, []);
+
+  const handleThemeChange = (value) => {
+    setTheme(value);
+    if (value === 'system') {
+      localStorage.removeItem('themePreference');
+    } else {
+      localStorage.setItem('themePreference', value);
+    }
   };
 
   const startApplication = (serviceKey, id) => {
@@ -94,13 +119,19 @@ function App() {
           )}
           <button
             type="button"
-            onClick={toggleTheme}
+            onClick={() => setThemeModalOpen(true)}
             className="theme-toggle"
           >
-            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+            Day/Night View
           </button>
         </nav>
       </header>
+      <ThemeSettings
+        isOpen={themeModalOpen}
+        onClose={() => setThemeModalOpen(false)}
+        value={theme}
+        onChange={handleThemeChange}
+      />
 
       <main className="form-main">
         <Routes>
