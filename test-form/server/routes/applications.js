@@ -14,14 +14,21 @@ async function getApplication(id) {
 }
 
 async function upsertApplication(id, data) {
-  const {
+  let {
     userId = null,
-    serviceKey = 'childcare',
+    serviceKey,
     status = 'draft',
     currentStep = 0,
     stepData = {},
     allData = {},
   } = data;
+
+  // Preserve existing service when not provided
+  if (serviceKey === undefined) {
+    const res = await pool.query('SELECT service_key FROM applications WHERE id = $1', [id]);
+    serviceKey = res.rows[0]?.service_key || 'childcare';
+  }
+
   await pool.query(
     `INSERT INTO applications (id, user_id, service_key, status, current_step, step_data, all_data)
      VALUES ($1,$2,$3,$4,$5,$6,$7)
