@@ -1,16 +1,22 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import FormPage from './FormPage';
+import FormRenderer from '../components/core/FormRenderer/FormRenderer';
 
-jest.mock('../components/core/FormRenderer/FormRenderer', () => () => <div>Default Form</div>);
-jest.mock('../components/core/FormRenderer/DycdFormRenderer', () => () => <div>DYCD Form</div>);
+jest.mock('../components/core/FormRenderer/FormRenderer', () => jest.fn(() => <div>Rendered</div>));
 
-test('renders DYCD renderer when service is dycd', () => {
-  render(<FormPage service="dycd" />);
-  expect(screen.getByText('DYCD Form')).toBeInTheDocument();
+beforeEach(() => {
+  FormRenderer.mockClear();
 });
 
-test('renders default renderer when service is childcare', () => {
+test('passes DYCD form path when service is dycd', () => {
+  render(<FormPage service="dycd" />);
+  expect(FormRenderer.mock.calls[0][0].formSpecPath).toBe('/data/dycd_form.json');
+});
+
+test('passes childcare form path when service is childcare', () => {
   render(<FormPage service="childcare" />);
-  expect(screen.getByText('Default Form')).toBeInTheDocument();
+  expect(FormRenderer.mock.calls[0][0].formSpecPath).toBe(
+    '/data/childcare_form.json',
+  );
 });
