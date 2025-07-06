@@ -1,0 +1,136 @@
+{
+  "form": {
+    "title": "Group Child Care Permit Application",
+    "description": "Multi-step application for obtaining a permit to operate group child care programs.",
+    "layout": {
+      "stepperPosition": "left"
+    },
+    "steps": [
+      {
+        "id": "establishment_information",
+        "title": "Establishment Information",
+        "sections": [
+          {
+            "id": "establishment_address",
+            "title": "Establishment Address",
+            "description": "Enter the physical address where business will operate. If you are applying for a Tattoo License, enter your mailing or home address.",
+            "fields": [
+              {
+                "id": "address_type",
+                "label": "Address Type",
+                "type": "select",
+                "required": true,
+                "ui": {
+                  "options": ["Complete Address", "Cross Street (Intersection)", "Place (Landmark)"]
+                }
+              },
+              { "id": "building_number", "label": "Building #", "type": "text", "required": true },
+              { "id": "street_1", "label": "Street 1", "type": "text", "required": true },
+              { "id": "street_2", "label": "Street 2", "type": "text", "required": false },
+              {
+                "id": "unit_type",
+                "label": "Unit Type",
+                "type": "select",
+                "required": false,
+                "ui": {
+                  "options": ["LBBY", "APT", "BLDG", "STE", "FL", "BSMT", "FRNT", "SIDE", "REAR", "UPPR", "LOWR", "PIER"]
+                }
+              },
+              { "id": "unit", "label": "Unit", "type": "text", "required": false },
+              { "id": "city", "label": "City", "type": "text", "required": true },
+              { "id": "state", "label": "State", "type": "text", "required": true },
+              {
+                "id": "borough",
+                "label": "Borough",
+                "type": "select",
+                "required": true,
+                "ui": {
+                  "options": ["Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island"]
+                }
+              },
+              { "id": "bin", "label": "Bin", "type": "text", "required": false, "metadata": { "source": "Geoclient API" }},
+              { "id": "bbl", "label": "Bbl", "type": "text", "required": false, "metadata": { "source": "Geoclient API" }},
+              { "id": "community_district", "label": "Community District", "type": "text", "required": false, "metadata": { "source": "Geoclient API" }},
+              { "id": "council_district", "label": "Council District", "type": "text", "required": false, "metadata": { "source": "Geoclient API" }},
+              { "id": "police_precinct", "label": "Police Precinct", "type": "text", "required": false, "metadata": { "source": "Geoclient API" }},
+              { "id": "house_number", "label": "House Number", "type": "text", "required": false, "metadata": { "source": "Geoclient API" }}
+            ]
+          }
+        ]
+      },
+      { "id": "contact_information", "title": "Contact Information – Applicant and Other Contacts" },
+      { "id": "application_info_1", "title": "Application Specific Information 1" },
+      { "id": "application_info_2", "title": "Application Specific Information 2" },
+      {
+        "id": "document_upload",
+        "title": "Upload Documents",
+        "description": "REQUIRED DOCUMENTS\nIn order for your application to be processed, based on information provided, you are required to upload the following documents:",
+        "sections": [
+          {
+            "id": "initial_site_survey",
+            "title": "Initial Site Survey Form",
+            "fields": [
+              {
+                "id": "site_survey_file",
+                "label": "Upload Initial Site Survey Form",
+                "type": "file",
+                "required": true,
+                "constraints": {
+                  "maxFileSizeMB": 25,
+                  "allowedTypes": ["application/pdf", "image/jpeg", "image/jpg", "image/png"]
+                },
+                "metadata": {
+                  "proofCategory": "Initial Site Survey",
+                  "multiple": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "personal_id_proof",
+            "title": "Proof of Personal Identification",
+            "fields": [
+              {
+                "id": "personal_id_file",
+                "label": "Upload Proof of Personal Identification",
+                "type": "file",
+                "required": true,
+                "constraints": {
+                  "maxFileSizeMB": 25,
+                  "allowedTypes": ["application/pdf", "image/jpeg", "image/jpg", "image/png"]
+                },
+                "metadata": {
+                  "proofCategory": "Personal ID",
+                  "multiple": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "fee_exemption_proof",
+            "title": "Proof of Fee Exemption",
+            "fields": [
+              {
+                "id": "fee_exemption_file",
+                "label": "Upload Proof of Fee Exemption (ACS Affiliation or Municipal Exemption)",
+                "type": "file",
+                "required": true,
+                "constraints": {
+                  "maxFileSizeMB": 25,
+                  "allowedTypes": ["application/pdf", "image/jpeg", "image/jpg", "image/png"]
+                },
+                "metadata": {
+                  "proofCategory": "Fee Exemption",
+                  "multiple": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      { "id": "step_6_placeholder", "title": "To be defined" },
+      { "id": "step_7_placeholder", "title": "To be defined" },
+      { "id": "step_8_placeholder", "title": "To be defined" }
+    ]
+  }
+}
