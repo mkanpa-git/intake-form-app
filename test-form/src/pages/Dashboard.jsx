@@ -4,6 +4,17 @@ import { AuthContext } from '../context/AuthContext';
 import ServiceCard from '../components/ServiceCard';
 import ApplicationCard from '../components/ApplicationCard';
 
+const SERVICE_INFO = {
+  childcare: {
+    name: 'Child Care Assistance',
+    interaction: 'Child Care Assistance Application',
+  },
+  dycd: {
+    name: 'DYCD Youth Services Intake – Ages 13 and Younger',
+    interaction: 'Youth Services Intake',
+  },
+};
+
 export default function Dashboard({ onStart }) {
   const { user } = useContext(AuthContext);
   const [apps, setApps] = useState([]);
@@ -18,18 +29,11 @@ export default function Dashboard({ onStart }) {
 
   const createNew = async (serviceKey) => {
     const id = crypto.randomUUID();
-    const isDycd = serviceKey === 'dycd';
     await upsertApplication(id, {
       serviceKey,
       stepData: {},
       allData: {},
       currentStep: 0,
-      serviceName: isDycd
-        ? 'DYCD Youth Services Intake – Ages 13 and Younger'
-        : 'Child Care Assistance',
-      interactionName: isDycd
-        ? 'Youth Services Intake'
-        : 'Child Care Assistance Application',
       status: 'draft',
     });
     const updated = await loadApplications();
@@ -39,7 +43,7 @@ export default function Dashboard({ onStart }) {
 
   const handleContinue = (id) => {
     const app = apps.find((a) => a.id === id);
-    const key = app?.serviceKey || 'childcare';
+    const key = app?.serviceKey || app?.service_key || 'childcare';
     onStart && onStart(key, id);
   };
 
@@ -75,17 +79,22 @@ export default function Dashboard({ onStart }) {
           {/* h2 will be styled by jules_base.css */}
           <h2>Saved Applications</h2>
           <div className="jules-grid-container jules-saved-applications-grid">
-            {apps.map((app) => (
-              <ApplicationCard
-                key={app.id}
-                id={app.id}
-                serviceName={app.serviceName || 'Child Care Assistance'}
-                interactionName={app.interactionName || 'Child Care Assistance Application'}
-                savedAt={app.updatedAt}
-                onContinue={handleContinue}
-                onDelete={handleDelete}
-              />
-            ))}
+            {apps.map((app) => {
+              const key = app.serviceKey || app.service_key || 'childcare';
+              const info = SERVICE_INFO[key] || SERVICE_INFO.childcare;
+              const savedAt = app.updatedAt || app.updated_at;
+              return (
+                <ApplicationCard
+                  key={app.id}
+                  id={app.id}
+                  serviceName={info.name}
+                  interactionName={info.interaction}
+                  savedAt={savedAt}
+                  onContinue={handleContinue}
+                  onDelete={handleDelete}
+                />
+              );
+            })}
           </div>
         </div>
       )}
