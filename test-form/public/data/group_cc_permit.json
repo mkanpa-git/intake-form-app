@@ -1,0 +1,14 @@
+{
+  "form": {
+    "title": "Group Child Care Permit Application",
+    "description": "Application for obtaining a group child care permit",
+    "layout": { "stepperPosition": "left" },
+    "steps": [
+      {
+        "id": "info",
+        "title": "Information",
+        "sections": []
+      }
+    ]
+  }
+}
