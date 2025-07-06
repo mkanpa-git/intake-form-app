@@ -13,6 +13,10 @@ const SERVICE_INFO = {
     name: 'DYCD Youth Services Intake – Ages 13 and Younger',
     interaction: 'Youth Services Intake',
   },
+  DOHMH: {
+    name: 'Group Child Care Permit',
+    interaction: 'Group Child Care Permit Application',
+  },
 };
 
 export default function Dashboard({ onStart }) {
@@ -71,6 +75,12 @@ export default function Dashboard({ onStart }) {
           interaction="Youth Services Intake"
           description="Form to collect youth and guardian information for DYCD programs"
           onStart={() => createNew('dycd')}
+        />
+        <ServiceCard
+          name="Group Child Care Permit"
+          interaction="Group Child Care Permit Application"
+          description="Application for Group Child Care Permit"
+          onStart={() => createNew('DOHMH')}
         />
       </div>
 

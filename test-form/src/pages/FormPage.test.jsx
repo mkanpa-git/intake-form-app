@@ -24,3 +24,11 @@ test('uses FormRenderer for childcare service', () => {
     undefined,
   );
 });
+
+test('uses FormRenderer for DOHMH service', () => {
+  render(<FormPage service="DOHMH" />);
+  expect(FormRenderer).toHaveBeenCalledWith(
+    expect.objectContaining({ formSpecPath: '/data/group_cc_permit.json' }),
+    undefined,
+  );
+});
