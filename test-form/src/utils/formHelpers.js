@@ -24,7 +24,7 @@ export function evaluateCondition(condition, data) {
 
 export function cleanupHiddenFields(step, formData) {
   const cleaned = { ...formData };
-  if (!step) return cleaned;
+  if (!step || !Array.isArray(step.sections)) return cleaned;
 
   step.sections.forEach((section) => {
     const sectionVisible = section.visibilityCondition
@@ -165,6 +165,10 @@ export function validateStep(step, formData, formErrors = {}, touched = {}) {
   let valid = true;
   let updatedErrors = { ...formErrors };
   let updatedTouched = { ...touched };
+
+  if (!step || !Array.isArray(step.sections)) {
+    return { valid: true, errors: { ...formErrors }, touched: { ...touched } };
+  }
 
   step.sections.forEach((section) => {
     if (section.required) {
