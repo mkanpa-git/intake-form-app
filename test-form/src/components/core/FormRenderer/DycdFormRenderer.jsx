@@ -3,7 +3,7 @@ import { useToast } from '../../../context/ToastContext';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
 import ReviewStep from '../ReviewStep/ReviewStep';
-import formSpec from '../../../data/dycd_form.json';
+import formSpec from '../../../../public/data/dycd_form.json';
 import { validateStep } from '../../../utils/formHelpers';
 import { getApplication, upsertApplication } from '../../../utils/appStorage';
 
