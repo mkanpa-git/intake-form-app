@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import FormPage from './FormPage';
 import FormRenderer from '../components/core/FormRenderer/FormRenderer';
 
@@ -9,14 +9,18 @@ beforeEach(() => {
   FormRenderer.mockClear();
 });
 
-test('passes DYCD form path when service is dycd', () => {
+test('uses FormRenderer for dycd service', () => {
   render(<FormPage service="dycd" />);
-  expect(FormRenderer.mock.calls[0][0].formSpecPath).toBe('/data/dycd_form.json');
+  expect(FormRenderer).toHaveBeenCalledWith(
+    expect.objectContaining({ formSpecPath: '/data/dycd_form.json' }),
+    undefined,
+  );
 });
 
-test('passes childcare form path when service is childcare', () => {
+test('uses FormRenderer for childcare service', () => {
   render(<FormPage service="childcare" />);
-  expect(FormRenderer.mock.calls[0][0].formSpecPath).toBe(
-    '/data/childcare_form.json',
+  expect(FormRenderer).toHaveBeenCalledWith(
+    expect.objectContaining({ formSpecPath: '/data/childcare_form.json' }),
+    undefined,
   );
 });
