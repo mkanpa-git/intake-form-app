@@ -57,4 +57,21 @@ describe('GroupField component', () => {
     expect(handleChange).not.toHaveBeenCalled();
     expect(screen.getByText('Name is required.')).toBeInTheDocument();
   });
+
+  test('only displays fields listed in metadata.tableColumns', () => {
+    const fieldWithColumns = {
+      ...field,
+      metadata: { tableColumns: ['name'] },
+    };
+    const value = [{ name: 'John', age: '4' }];
+    render(<GroupField field={fieldWithColumns} value={value} onChange={() => {}} />);
+
+    // Header should only show "Name"
+    expect(screen.getByRole('columnheader', { name: 'Name' })).toBeInTheDocument();
+    expect(screen.queryByRole('columnheader', { name: 'Age' })).not.toBeInTheDocument();
+
+    // Row should only include the name value
+    expect(screen.getByText('John')).toBeInTheDocument();
+    expect(screen.queryByText('4')).not.toBeInTheDocument();
+  });
 });
