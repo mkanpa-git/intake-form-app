@@ -26,6 +26,7 @@ export default function SelectFieldWrapper({ field, value, onChange, error, touc
       required={field.required}
       minSelections={field.constraints?.minSelections}
       maxSelections={field.constraints?.maxSelections}
+      placeholder={field.ui?.placeholder}
       value={value || (field.metadata?.multiple ? [] : '')}
       onChange={onChange}
       error={error}
