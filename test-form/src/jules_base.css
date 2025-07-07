@@ -24,6 +24,11 @@ body {
   line-height: var(--jules-line-height-base);
   color: var(--jules-text-color-body);
   background-color: var(--jules-neutral-gray-100); /* Page background */
+  transition:
+    background-color var(--jules-transition-duration-base)
+      var(--jules-transition-timing-function),
+    color var(--jules-transition-duration-base)
+      var(--jules-transition-timing-function);
 }
 
 /* 3. Base styles for Headings (h1-h6) */
