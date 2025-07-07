@@ -16,3 +16,17 @@ if (!global.crypto) {
 } else if (!global.crypto.randomUUID) {
   global.crypto.randomUUID = () => 'test-id';
 }
+
+// jsdom does not implement matchMedia; provide a stub used in components
+if (!window.matchMedia) {
+  window.matchMedia = jest.fn().mockImplementation((query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  }));
+}

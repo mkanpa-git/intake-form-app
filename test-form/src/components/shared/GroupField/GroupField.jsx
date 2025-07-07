@@ -336,10 +336,10 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
             </tr>
           </thead>
           <tbody>
-            {entries.map((item, idx) => (
+              {entries.map((item, idx) => (
               <tr key={idx}>
                 {field.fields.map((f) => (
-                  <td key={f.id}>
+                  <td key={f.id} data-label={f.label}>
                     {Array.isArray(item[f.id]) ? item[f.id].join(', ') : item[f.id]}
                   </td>
                 ))}
