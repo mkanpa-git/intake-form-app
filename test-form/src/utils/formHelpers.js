@@ -72,10 +72,7 @@ export function cleanupHiddenFields(step, formData) {
             ? evaluateCondition(field.visibilityCondition, formData)
             : true) &&
           (field.requiredCondition
-            ? evaluateCondition(
-                field.requiredCondition.condition || field.requiredCondition,
-                formData
-              )
+            ? evaluateCondition(field.requiredCondition, formData)
             : true);
 
         if (!isVisible && cleaned[field.id] !== undefined) {
@@ -89,11 +86,7 @@ export function cleanupHiddenFields(step, formData) {
                 ? evaluateCondition(subField.visibilityCondition, formData)
                 : true) &&
               (subField.requiredCondition
-                ? evaluateCondition(
-                    subField.requiredCondition.condition ||
-                      subField.requiredCondition,
-                    formData
-                  )
+                ? evaluateCondition(subField.requiredCondition, formData)
                 : true);
 
             if (!isSubVisible && cleaned[subField.id] !== undefined) {
@@ -115,15 +108,8 @@ export function validateField(field, value, data = {}) {
   const requiredCondition = field.requiredCondition;
 
   let isRequired = false;
-  if (
-    requiredCondition &&
-    (requiredCondition.condition ||
-      (requiredCondition.field && requiredCondition.operator))
-  ) {
-    isRequired = evaluateCondition(
-      requiredCondition.condition || requiredCondition,
-      data
-    );
+  if (requiredCondition) {
+    isRequired = evaluateCondition(requiredCondition, data);
   } else if (typeof required === "boolean") {
     isRequired = required;
   } else if (typeof field.isRequired === "boolean") {
@@ -232,15 +218,8 @@ export function validateStep(
               } = subField;
 
               let isRequired = false;
-              if (
-                requiredCondition &&
-                (requiredCondition.condition ||
-                  (requiredCondition.field && requiredCondition.operator))
-              ) {
-                isRequired = evaluateCondition(
-                  requiredCondition.condition || requiredCondition,
-                  fullData
-                );
+              if (requiredCondition) {
+                isRequired = evaluateCondition(requiredCondition, fullData);
               } else if (typeof required === "boolean") {
                 isRequired = required;
               } else if (typeof precomputedRequired === "boolean") {
@@ -278,14 +257,8 @@ export function validateStep(
           const requiredCondition = field.requiredCondition;
 
           let isRequired = false;
-          if (
-            requiredCondition &&
-            (requiredCondition.condition || (requiredCondition.field && requiredCondition.operator))
-          ) {
-            isRequired = evaluateCondition(
-              requiredCondition.condition || requiredCondition,
-              fullData
-            );
+          if (requiredCondition) {
+            isRequired = evaluateCondition(requiredCondition, fullData);
           } else if (typeof required === "boolean") {
             isRequired = required;
           }

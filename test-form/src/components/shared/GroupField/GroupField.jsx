@@ -50,10 +50,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
     const errors = {};
     (field.fields || []).forEach((subField) => {
       const required = subField.requiredCondition
-        ? evaluateCondition(
-            subField.requiredCondition.condition || subField.requiredCondition,
-            fullData
-          )
+        ? evaluateCondition(subField.requiredCondition, fullData)
         : subField.required;
       const val = currentEntry[subField.id];
       if (
@@ -109,16 +106,12 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
 
   const renderField = (subField) => {
     const conditionToCheck =
-      subField.visibilityCondition ??
-      (subField.requiredCondition?.condition || subField.requiredCondition);
+      subField.visibilityCondition ?? subField.requiredCondition;
     const visible = conditionToCheck
       ? evaluateCondition(conditionToCheck, fullData)
       : true;
     const required = subField.requiredCondition
-      ? evaluateCondition(
-          subField.requiredCondition.condition || subField.requiredCondition,
-          fullData
-        )
+      ? evaluateCondition(subField.requiredCondition, fullData)
       : subField.required;
     if (!visible) return null;
 
