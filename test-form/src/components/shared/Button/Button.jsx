@@ -3,7 +3,7 @@ import React from 'react';
 
 const Button = ({
     children,
-    variant = 'primary', // 'primary', 'secondary', 'tertiary', 'destructive', 'danger' (alias for destructive)
+    variant = 'primary', // 'primary', 'secondary', 'tertiary', 'danger'
     size = 'medium',     // 'small', 'medium', 'large'
     isLoading = false,
     iconLeft,
@@ -17,8 +17,8 @@ const Button = ({
 }) => {
     const baseClass = 'jules-button';
 
-    // Map variant 'danger' to 'destructive' if used
-    const effectiveVariant = variant === 'danger' ? 'destructive' : variant;
+    // Use variant directly. Older "destructive" alias is still supported
+    const effectiveVariant = variant === 'destructive' ? 'danger' : variant;
     const variantClass = `jules-button-${effectiveVariant}`;
 
     const sizeClassMap = {
