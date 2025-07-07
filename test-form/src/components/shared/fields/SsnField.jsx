@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MaskedInput from '../MaskedInput/MaskedInput';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCircleXmark,
+  faCircleCheck,
+  faEye,
+  faEyeSlash,
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function SsnField({ field, value, onChange, error, touched }) {
-  const iconRight = error ? (
+  const [revealed, setRevealed] = useState(false);
+
+  const toggleIcon = (
+    <button
+      type="button"
+      onClick={() => setRevealed((r) => !r)}
+      className="jules-input-icon-button"
+      aria-label={revealed ? 'Hide SSN' : 'Show SSN'}
+    >
+      <FontAwesomeIcon icon={revealed ? faEyeSlash : faEye} aria-hidden="true" />
+    </button>
+  );
+
+  const validationIcon = error ? (
     <span className="jules-validation-icon-error">
       <FontAwesomeIcon icon={faCircleXmark} aria-hidden="true" />
       <span className="sr-only">Error</span>
@@ -26,7 +44,9 @@ export default function SsnField({ field, value, onChange, error, touched }) {
       value={value || ''}
       onChange={onChange}
       error={error}
-      iconRight={iconRight}
+      type={revealed ? 'text' : 'password'}
+      iconLeft={toggleIcon}
+      iconRight={validationIcon}
     />
   );
 }
