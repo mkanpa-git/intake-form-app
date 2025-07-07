@@ -21,12 +21,14 @@ export default function TextInput({
 }) {
   const [isFocused, setIsFocused] = useState(false);
   // Determine if the input has a value. Handles both controlled and uncontrolled components.
-  const [hasValue, setHasValue] = useState(Boolean(value || defaultValue || props.placeholder === ' '));
+  const [hasValue, setHasValue] = useState(
+    Boolean(value || defaultValue || (props.placeholder && props.placeholder !== ' '))
+  );
 
 
   // Update hasValue state if the value prop changes (for controlled components)
   useEffect(() => {
-    setHasValue(Boolean(value || props.placeholder === ' '));
+    setHasValue(Boolean(value || (props.placeholder && props.placeholder !== ' ')));
   }, [value, props.placeholder]);
 
 

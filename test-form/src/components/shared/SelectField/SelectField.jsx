@@ -25,11 +25,14 @@ export default function SelectField({
   const [isFocused, setIsFocused] = useState(false);
   // For select, "has value" means a non-empty option is selected.
   // If there's a placeholder option (value=""), that doesn't count as having a value.
-  const [hasValue, setHasValue] = useState(Boolean(multiple ? (value || defaultValue)?.length > 0 : (value || defaultValue)));
+  const [hasValue, setHasValue] = useState(
+    Boolean(placeholder) ||
+      Boolean(multiple ? (value || defaultValue)?.length > 0 : (value || defaultValue))
+  );
 
   useEffect(() => {
-    setHasValue(Boolean(multiple ? value?.length > 0 : value));
-  }, [value, multiple]);
+    setHasValue(Boolean(placeholder) || Boolean(multiple ? value?.length > 0 : value));
+  }, [value, multiple, placeholder]);
 
   const handleFocus = (e) => {
     setIsFocused(true);
@@ -39,8 +42,8 @@ export default function SelectField({
   const handleBlur = (e) => {
     setIsFocused(false);
     // For uncontrolled select with placeholder, check if current value is not the placeholder value
-    if (defaultValue !== undefined && !multiple && placeholder) {
-        setHasValue(Boolean(e.target.value));
+    if (defaultValue !== undefined && !multiple) {
+        setHasValue(Boolean(placeholder) || Boolean(e.target.value));
     }
     props.onBlur && props.onBlur(e);
   };
@@ -48,9 +51,9 @@ export default function SelectField({
   const handleChange = (e) => {
     if (multiple) {
         const selectedValues = Array.from(e.target.selectedOptions).map(opt => opt.value);
-        setHasValue(selectedValues.length > 0);
+        setHasValue(Boolean(placeholder) || selectedValues.length > 0);
     } else {
-        setHasValue(Boolean(e.target.value)); // True if value is not ""
+        setHasValue(Boolean(placeholder) || Boolean(e.target.value)); // True if value is not "" or placeholder provided
     }
     props.onChange && props.onChange(e);
   };
