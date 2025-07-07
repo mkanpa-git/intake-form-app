@@ -421,7 +421,8 @@ export default function Step({
       { sections },
       { ...formData },
       errors,
-      touched
+      touched,
+      fullData
     );
     setErrors(result.errors);
     setTouched(result.touched);
@@ -443,7 +444,8 @@ export default function Step({
       { sections },
       { ...formData },
       errors,
-      touched
+      touched,
+      fullData
     );
     setErrors(result.errors);
     setTouched(result.touched);
@@ -455,7 +457,8 @@ export default function Step({
       { sections },
       { ...formData },
       errors,
-      touched
+      touched,
+      fullData
     );
     setErrors(result.errors);
     setTouched(result.touched);

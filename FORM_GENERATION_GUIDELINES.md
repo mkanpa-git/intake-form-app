@@ -41,6 +41,20 @@ The renderer should intelligently translate the JSON schema into appropriate UI 
 *   **Conditional Logic:**
     *   **`visibilityCondition`:** Fields or sections should only be rendered if their `visibilityCondition` (evaluated against current form data using `formHelpers.js`) is met.
     *   **`requiredCondition`:** A field becomes mandatory if its `requiredCondition` is met. This should be visually indicated (e.g., with an asterisk) and enforced during validation.
+    *   **Repeating Group Conditions:** To base a condition on entries within a repeating `group` field use:
+
+      ```json
+      {
+        "repeatingGroup": "children",
+        "operator": "ANY", // ANY, ALL, or NONE
+        "condition": {
+          "field": "age",
+          "operator": "equals",
+          "value": 5
+        }
+      }
+      ```
+      The `operator` evaluates how many records must satisfy the inner `condition`.
 *   **Input Validation:**
     *   Use the `required` property and evaluated `requiredCondition` to mark fields as mandatory.
     *   Utilize the `constraints` object for more specific validation:

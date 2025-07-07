@@ -51,7 +51,7 @@ export default function HelpChat({
     try {
       let errorSummary = [];
       if (step) {
-        const result = validateStep(step, stepData[step.id] || {}, {}, {});
+        const result = validateStep(step, stepData[step.id] || {}, {}, {}, allData);
         errorSummary = Object.entries(result.errors)
           .filter(([, msg]) => msg)
           .map(([id, msg]) => ({ id, msg }));

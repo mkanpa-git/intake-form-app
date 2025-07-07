@@ -213,6 +213,9 @@ export default function FormRenderer({ applicationId, onExit, formSpecPath = '/d
     const result = validateStep(
       steps[currentStep],
       stepData[steps[currentStep].id] || {},
+      {},
+      {},
+      allData
     );
 
     if (!silent && targetIndex > currentStep) {
