@@ -5,7 +5,7 @@ import Profile from './pages/Profile';
 // import "./form.css"; // Old theme - commented out
 import FormPage from "./pages/FormPage";
 import Dashboard from "./pages/Dashboard";
-import ThemeSettings from './components/shared/ThemeSettings';
+import ThemeToggle from './components/shared/ThemeToggle';
 import './App.css'; // App specific styles, kept for now
 
 // Jules Theme CSS Files
@@ -27,7 +27,6 @@ function App() {
   const [currentId, setCurrentId] = useState(null);
   const [currentService, setCurrentService] = useState('childcare');
   const [theme, setTheme] = useState('system');
-  const [themeModalOpen, setThemeModalOpen] = useState(false);
   const { user } = useContext(AuthContext);
   const server = process.env.REACT_APP_SERVER_URL || '';
 
@@ -60,6 +59,11 @@ function App() {
     } else {
       localStorage.setItem('themePreference', value);
     }
+  };
+
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark';
+    handleThemeChange(next);
   };
 
   const startApplication = (serviceKey, id) => {
@@ -117,21 +121,10 @@ function App() {
               )}
             </div>
           )}
-          <button
-            type="button"
-            onClick={() => setThemeModalOpen(true)}
-            className="theme-toggle"
-          >
-            Day/Night View
-          </button>
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
         </nav>
       </header>
-      <ThemeSettings
-        isOpen={themeModalOpen}
-        onClose={() => setThemeModalOpen(false)}
-        value={theme}
-        onChange={handleThemeChange}
-      />
+
 
       <main className="form-main">
         <Routes>

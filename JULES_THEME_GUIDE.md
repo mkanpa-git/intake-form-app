@@ -104,4 +104,4 @@ const toggle = () => {
 };
 ```
 
-The sample `App.js` includes a button that switches between light and dark modes at runtime.
+The sample `App.js` now includes an icon toggle that switches between light and dark modes with a subtle fade transition.
