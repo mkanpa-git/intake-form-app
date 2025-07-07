@@ -322,6 +322,13 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
     }
   };
 
+  const tableColumnIds = field.metadata?.tableColumns;
+  const tableFields = tableColumnIds
+    ? tableColumnIds
+        .map((id) => field.fields.find((f) => f.id === id))
+        .filter(Boolean)
+    : field.fields;
+
   return (
     <div className="jules-groupfield">
       <h3 className="jules-groupfield-title">{field.label}</h3> {/* Changed h4 to h3 and added class */}
@@ -329,16 +336,16 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
         <table className="jules-groupfield-table">
           <thead>
             <tr>
-              {field.fields.map((f) => (
+              {tableFields.map((f) => (
                 <th key={f.id}>{f.label}</th>
               ))}
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-              {entries.map((item, idx) => (
+            {entries.map((item, idx) => (
               <tr key={idx}>
-                {field.fields.map((f) => (
+                {tableFields.map((f) => (
                   <td key={f.id} data-label={f.label}>
                     {Array.isArray(item[f.id]) ? item[f.id].join(', ') : item[f.id]}
                   </td>
