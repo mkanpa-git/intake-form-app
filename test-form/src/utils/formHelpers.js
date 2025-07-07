@@ -1,5 +1,9 @@
 export function evaluateCondition(condition, data) {
-  if (!condition || !condition.field || !("value" in condition)) return true;
+  if (!condition) return true;
+  if (condition.repeatingGroup) {
+    return evaluateRepeatingGroupCondition(condition, data);
+  }
+  if (!condition.field || !("value" in condition)) return true;
   const actual = data[condition.field];
   const expected = condition.value;
   switch (condition.operator) {
@@ -17,6 +21,23 @@ export function evaluateCondition(condition, data) {
       return actual === undefined || actual === null;
     case "includes":
       return Array.isArray(actual) && actual.includes(expected);
+    default:
+      return false;
+  }
+}
+
+export function evaluateRepeatingGroupCondition(condition, data) {
+  const { repeatingGroup, operator, condition: recordCond } = condition;
+  if (!repeatingGroup || !recordCond) return false;
+  const records = Array.isArray(data[repeatingGroup]) ? data[repeatingGroup] : [];
+  const testRecord = (rec) => evaluateCondition(recordCond, rec);
+  switch (operator) {
+    case "ANY":
+      return records.some(testRecord);
+    case "ALL":
+      return records.length > 0 && records.every(testRecord);
+    case "NONE":
+      return records.every((r) => !testRecord(r));
     default:
       return false;
   }
@@ -161,7 +182,13 @@ export function validateField(field, value, data = {}) {
   return error;
 }
 
-export function validateStep(step, formData, formErrors = {}, touched = {}) {
+export function validateStep(
+  step,
+  formData,
+  formErrors = {},
+  touched = {},
+  fullData = formData
+) {
   let valid = true;
   let updatedErrors = { ...formErrors };
   let updatedTouched = { ...touched };
@@ -212,7 +239,7 @@ export function validateStep(step, formData, formErrors = {}, touched = {}) {
               ) {
                 isRequired = evaluateCondition(
                   requiredCondition.condition || requiredCondition,
-                  formData
+                  fullData
                 );
               } else if (typeof required === "boolean") {
                 isRequired = required;
@@ -255,7 +282,10 @@ export function validateStep(step, formData, formErrors = {}, touched = {}) {
             requiredCondition &&
             (requiredCondition.condition || (requiredCondition.field && requiredCondition.operator))
           ) {
-            isRequired = evaluateCondition(requiredCondition.condition || requiredCondition, formData);
+            isRequired = evaluateCondition(
+              requiredCondition.condition || requiredCondition,
+              fullData
+            );
           } else if (typeof required === "boolean") {
             isRequired = required;
           }
