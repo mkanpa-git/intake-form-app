@@ -28,6 +28,7 @@ export default function TextField({ field, value, onChange, error, touched }) {
       required={field.required}
       value={value || ''}
       onChange={e => onChange(e.target.value)}
+      placeholder={field.ui?.placeholder}
       error={error}
       iconLeft={iconLeft}
       iconRight={iconRight}
