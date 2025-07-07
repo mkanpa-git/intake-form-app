@@ -59,7 +59,7 @@ export default function ApplicationCard({
           Continue
         </Button>
         <Button
-          variant="destructive"
+          variant="danger"
           size="small"
           onClick={() => onDelete && onDelete(id)}
           iconLeft={<FontAwesomeIcon icon={faTrash} aria-hidden="true" />}
