@@ -665,6 +665,11 @@
                 "id": "familymember",
                 "label": "Family Members",
                 "type": "group",
+                "requiredCondition": {
+                  "repeatingGroup": "children",
+                  "operator": "ANY",
+                  "condition": { "field": "do_both_parents_reside_in_home", "operator": "equals", "value": "Yes" }
+                },  
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
@@ -672,13 +677,7 @@
                     "last_name",
                     "relationship_to_applicant",
                     "date_of_birth"
-                  ],
-                  "requiredCondition": {
-                    "repeatingGroup": "children",
-                    "field": "do_both_parents_reside_in_home",
-                    "operator": "ANY",
-                    "value": "Yes"
-                  }
+                  ]
                 },
                 "fields": [
                   {
