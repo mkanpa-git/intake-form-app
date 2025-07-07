@@ -41,6 +41,11 @@
   max-width: calc(100% - (var(--jules-space-md) * 2)); /* Prevent overflow */
 }
 
+/* If the input has a left icon, shift the label so it doesn't overlap */
+.jules-form-field-has-icon-left .jules-label {
+  left: calc(var(--jules-space-md) + 1em + var(--jules-space-sm));
+}
+
 .jules-label .jules-tooltip-wrapper {
   pointer-events: auto; /* Re-enable events for tooltip */
   margin-left: var(--jules-space-xxs);

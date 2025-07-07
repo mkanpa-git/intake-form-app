@@ -56,6 +56,8 @@ export default function TextInput({
     'jules-form-field',
     isFocused ? 'is-focused' : '',
     hasValue ? 'has-value' : '',
+    iconLeft ? 'jules-form-field-has-icon-left' : '',
+    iconRight ? 'jules-form-field-has-icon-right' : '',
     className || ''
   ].join(' ').trim();
 
