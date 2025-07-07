@@ -14,7 +14,7 @@ The `jules_` theme is organized into several CSS files located in `test-form/src
 *   **`jules_stepper.css`**: Styles the multi-step navigation component (stepper), indicating current, completed, and future steps.
 *   **`jules_section.css`**: Styles for form sections, including collapsible section headers and content areas, as well as informational display sections.
 *   **`jules_groupfield.css`**: Specific styles for "group" fields that allow adding multiple entries (e.g., children, jobs), typically displayed in a table with add/edit/delete functionality.
-*   **`jules_tablelayout.css`**: Styles for data presented in a tabular format, such as work schedules, including table headers, cells, and row copy controls.
+*   **`jules_tablelayout.css`**: Styles for data presented in a tabular format, such as work schedules, including table headers, cells, and row copy controls. On screens narrower than 768&nbsp;px the table converts to a stacked layout. You can control how many columns remain visible using the `maxColumns` option on a section.
 *   **`jules_misc.css`**: Styles for miscellaneous UI components like tooltips, modals, alert messages (error, success, warning, info), and specific styling for the review step.
 
 ## 2. Core Theme Foundation

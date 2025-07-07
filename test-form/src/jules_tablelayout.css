@@ -2,6 +2,7 @@
 
 .jules-tablelayout-container {
   margin-bottom: var(--jules-space-lg);
+  overflow-x: auto; /* allow horizontal scroll when needed */
   /* No default border/background, table itself will have it */
 }
 
@@ -114,4 +115,52 @@
   /* Assuming .jules-button is used */
   padding: var(--jules-space-xs) var(--jules-space-sm); /* Smaller button for this context */
   font-size: var(--jules-font-size-sm);
+}
+
+/* Mobile stacked layout */
+@media (max-width: 768px) {
+  .jules-tablelayout-container {
+    overflow-x: visible;
+  }
+
+  .jules-tablelayout-table thead {
+    display: none;
+  }
+
+  .jules-tablelayout-table,
+  .jules-tablelayout-table tbody,
+  .jules-tablelayout-table tr,
+  .jules-tablelayout-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .jules-tablelayout-table tr {
+    margin-bottom: var(--jules-space-md);
+    border-bottom: var(--jules-border-width-sm) solid var(--jules-border-color);
+  }
+
+  .jules-tablelayout-table td {
+    text-align: left;
+    padding-left: calc(var(--jules-space-lg) + var(--jules-space-sm));
+    position: relative;
+    border-right: none;
+  }
+
+  .jules-tablelayout-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: var(--jules-space-sm);
+    font-weight: var(--jules-font-weight-semibold);
+    text-transform: uppercase;
+  }
+
+  .jules-tablelayout-collapsed-row td {
+    border: none;
+    padding: 0;
+  }
+
+  .jules-tablelayout-hidden-field {
+    margin-bottom: var(--jules-space-md);
+  }
 }

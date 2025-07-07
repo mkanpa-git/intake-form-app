@@ -116,3 +116,19 @@ docker run -p 3000:80 intake-form-client
 ```
 
 The container serves the compiled React app via nginx on host port `3000`. Adjust the `REACT_APP_SERVER_URL` build argument if the server runs elsewhere.
+
+## Table Layout Responsiveness
+
+Sections using the table layout automatically adapt on smaller screens. Set `ui.maxColumns` on a section to specify how many columns remain visible when the screen width drops below 768&nbsp;px. Extra columns are collapsed beneath each row in a stacked format.
+
+```json
+{
+  "layout": "table",
+  "ui": {
+    "columns": ["Start", "End", "Notes"],
+    "maxColumns": 2
+  }
+}
+```
+
+In desktop view all columns appear in a single row. On mobile, only the first two columns show in the table while the "Notes" field appears below each row with its label displayed above the value.
