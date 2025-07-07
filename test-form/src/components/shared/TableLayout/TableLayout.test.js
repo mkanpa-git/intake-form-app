@@ -2,6 +2,19 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import TableLayout from './TableLayout';
 
+beforeAll(() => {
+  Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: () => ({
+      matches: false,
+      addListener: () => {},
+      removeListener: () => {},
+      addEventListener: () => {},
+      removeEventListener: () => {},
+    }),
+  });
+});
+
 describe('TableLayout row copy', () => {
   const fields = [
     { id: 'monday_start', label: 'Monday Start', type: 'time', ui: { rowGroup: 'Monday', column: 1 } },

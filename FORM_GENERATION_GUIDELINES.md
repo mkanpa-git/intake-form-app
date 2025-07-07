@@ -37,6 +37,7 @@ The renderer should intelligently translate the JSON schema into appropriate UI 
         *   `ui.rowGroup`: Links fields to specific rows (e.g., "Monday", "Tuesday").
         *   `ui.column`: Links fields to specific columns within a row.
         *   `ui.rowCopy`: Implement functionality to copy data from one row to others (e.g., "Apply Monday's schedule to all weekdays").
+        *   `ui.maxColumns`: On small screens, limit visible columns to this number and display remaining fields stacked below each row.
 *   **Conditional Logic:**
     *   **`visibilityCondition`:** Fields or sections should only be rendered if their `visibilityCondition` (evaluated against current form data using `formHelpers.js`) is met.
     *   **`requiredCondition`:** A field becomes mandatory if its `requiredCondition` is met. This should be visually indicated (e.g., with an asterisk) and enforced during validation.
