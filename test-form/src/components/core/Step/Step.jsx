@@ -234,16 +234,12 @@ export default function Step({
 
   const renderField = (field) => {
     const conditionToCheck =
-      field.visibilityCondition ??
-      (field.requiredCondition?.condition || field.requiredCondition);
+      field.visibilityCondition ?? field.requiredCondition;
     const visible = conditionToCheck
       ? evaluateCondition(conditionToCheck, fullData)
       : true;
     const isRequired = field.requiredCondition
-      ? evaluateCondition(
-          field.requiredCondition.condition || field.requiredCondition,
-          fullData
-        )
+      ? evaluateCondition(field.requiredCondition, fullData)
       : field.required;
 
     if (!visible) return null;
@@ -393,15 +389,8 @@ export default function Step({
       const { required, requiredCondition } = f;
 
       let isRequired = false;
-      if (
-        requiredCondition &&
-        (requiredCondition.condition ||
-          (requiredCondition.field && requiredCondition.operator))
-      ) {
-        isRequired = evaluateCondition(
-          requiredCondition.condition || requiredCondition,
-          fullData
-        );
+      if (requiredCondition) {
+        isRequired = evaluateCondition(requiredCondition, fullData);
       } else if (typeof required === "boolean") {
         isRequired = required;
       }
