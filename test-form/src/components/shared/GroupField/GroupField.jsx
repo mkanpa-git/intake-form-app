@@ -351,7 +351,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
                     Edit
                   </Button>
                   <Button
-                    variant="danger"
+                    variant="secondary"
                     size="small"
                     onClick={() => handleDelete(idx)}
                     iconLeft={<FontAwesomeIcon icon={faTrash} aria-hidden="true" />}
