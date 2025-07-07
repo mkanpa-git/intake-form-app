@@ -26,14 +26,12 @@ const step = {
           label: 'Guardian',
           type: 'text',
           requiredCondition: {
+            repeatingGroup: 'children',
+            operator: 'ANY',
             condition: {
-              repeatingGroup: 'children',
-              operator: 'ANY',
-              condition: {
-                field: 'needs_help',
-                operator: 'equals',
-                value: true,
-              },
+              field: 'needs_help',
+              operator: 'equals',
+              value: true,
             },
           },
         },
