@@ -1,159 +1,159 @@
 {
   "form": {
-    "title": "Childcare Voucher Application",
-    "description": "Step-by-step form for applying for Childcare Assistance",
+    "title": "Demande de bon de garde d'enfants",
+    "description": "Formulaire étape par étape pour demander une aide à la garde d'enfants",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "gauche"
     },
     "steps": [
       {
-        "id": "consent_step",
-        "title": "Consent",
+        "id": "consentement_étape",
+        "title": "Consentement",
         "sections": [
           {
             "id": "mycity_consent_info",
-            "title": "ModelCity Consent",
-            "type": "info",
+            "title": "Consentement de ModelCity",
+            "type": "informations",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "In connection with this application for child care services, **ModelCity**:\\n\\n- Collects, processes, stores, and shares the information you submit to screen you when you apply for child care services;\\n- Receives, processes, and stores the information the City already knows about you to screen you when you apply for child care services;\\n- Uses your information to improve ModelCity; and\\n- Communicates with you about your ModelCity account.\\n\\n---\\n\\nIf you consent, the following information may be shared between child care services agencies:\\n\\n- Demographic and background information, including address, phone number, household composition.\\n- Housing information, including benefits awarded/received, current housing/shelter status.\\n- Benefits information, including public assistance awarded/received, child care program participation.\\n\\n---\\n\\nIf you choose not to consent, **you will not be denied** any benefits or services you are receiving or any benefits for which you are eligible.\\n\\nThe [ModelCity Privacy Policy](https://www.nyc.gov/privacy) details how ModelCity handles the information you submit through ModelCity."
+            "content": "Dans le cadre de cette demande de services de garde d'enfants, **ModelCity** :\\n\\n- Collecte, traite, stocke et partage les informations que vous soumettez pour vous sélectionner lorsque vous faites une demande de services de garde d'enfants ;\\n- Reçoit, traite et stocke les informations que la Ville connaît déjà à votre sujet pour vous sélectionner lorsque vous faites une demande de services de garde d'enfants ;\\n- Utilise vos informations pour améliorer ModelCity ; et\\n- Communique avec vous au sujet de votre compte ModelCity.\\n\\n---\\n\\nSi vous y consentez, les informations suivantes peuvent être partagées entre les agences de services de garde d'enfants :\\n\\n- Informations démographiques et contextuelles, y compris l'adresse, le numéro de téléphone, la composition du ménage.\\n- Informations sur le logement, y compris les prestations accordées/reçues, le statut actuel de logement/refuge.\\n- Informations sur les prestations, y compris l'aide publique accordée/reçue, la participation à un programme de garde d'enfants.\\n\\n---\\n\\nSi vous choisissez de ne pas consentir, **aucun avantage ou service que vous recevez ou auquel vous avez droit ne vous sera refusé**.\\n\\nLa [Politique de confidentialité de ModelCity](https://www.nyc.gov/privacy) détaille la manière dont ModelCity traite les informations que vous soumettez via ModelCity."
           }
         ]
       },
       {
-        "id": "instructions_step",
+        "id": "instructions_étape",
         "title": "Instructions",
         "sections": [
           {
-            "id": "application_instructions",
-            "title": "Application Instructions",
-            "type": "info",
+            "id": "instructions_d'application",
+            "title": "Instructions de candidature",
+            "type": "informations",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**Let’s get started on your application!**\\n\\nTo complete this application, you will be asked for information about:\\n\\n- Yourself\\n- Your household\\n- Your employment or reason for care\\n- Your income\\n\\nAll required fields are marked and must be filled out to move forward with the application. The pages of the application are shown on the right-hand side of the screen and will be highlighted as you move through the application.\\n\\nYour application will be saved automatically as you progress to each page.  \\nIf you need to pause at any time, click the **“Save for later”** button at the bottom of each page to save your application.  \\nYou can log back in to resume your application.\\n\\nWhen you’re ready to begin, click **“Next”** below.\\n\\n---\\n\\n⚠️ **Important:**  \\nTo keep your information current and safe, applications in draft status that you have not edited for **30 days** will be deleted.  \\nIf your draft application is deleted, you can still create and submit a new application when you're ready to apply."
+            "content": "**Commençons votre demande !**\\n\\nPour compléter cette demande, il vous sera demandé des informations sur :\\n\\n- Vous-même\\n- Votre foyer\\n- Votre emploi ou le motif de vos soins\\n- Vos revenus\\n\\nTous les champs obligatoires sont marqués et doivent être remplis pour poursuivre le traitement de la demande. Les pages de la demande sont affichées sur le côté droit de l'écran et seront mises en surbrillance au fur et à mesure que vous progressez dans la demande.\\n\\nVotre demande sera automatiquement enregistrée à mesure que vous progressez dans chaque page. \\nSi vous devez interrompre votre demande à tout moment, cliquez sur le bouton **« Enregistrer pour plus tard »** en bas de chaque page pour l'enregistrer. \\nVous pouvez vous reconnecter pour reprendre votre demande.\\n\\nLorsque vous êtes prêt à commencer, cliquez sur **« Suivant »** ci-dessous.\\n\\n---\\n\\n⚠️ **Important :** \\nPour que vos informations soient à jour et sécurisées, les demandes à l'état de brouillon que vous n'avez pas modifiées depuis **30 jours** seront supprimées. \\nSi votre brouillon de candidature est supprimé, vous pouvez toujours créer et soumettre une nouvelle candidature lorsque vous êtes prêt à postuler."
           },
           {
-            "id": "new_york_city_residency",
-            "title": "New York City Residency",
-            "type": "info",
+            "id": "résidence à new_york",
+            "title": "Résidence à New York",
+            "type": "informations",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "You will need to upload **ONE** of the following documents to confirm your NYC residency:\\n\\n- IDNYC\\n- Driver’s License\\n- Utility Bill (dated within the last 60 days, with your address)\\n- Current lease, rent, or mortgage statement (dated within the last 60 days, with your address)\\n- Section 8 Award Letter\\n- NYCHA Certificate\\n- CFWB-027 Housing Attestation with address listed\\n- Shelter Residency Letter with address listed\\n\\nIf you do not have any of those documents, you must submit a **CFWB-067 Residency Attestation**."
+            "content": "Vous devrez télécharger **UN** des documents suivants pour confirmer votre résidence à New York :\\n\\n- IDNYC\\n- Permis de conduire\\n- Facture de services publics (datée de moins de 60 jours, avec votre adresse)\\n- Relevé de bail, de loyer ou d'hypothèque actuel (daté de moins de 60 jours, avec votre adresse)\\n- Lettre d'attribution de la section 8\\n- Certificat NYCHA\\n- Attestation de logement CFWB-027 avec l'adresse indiquée\\n- Lettre de résidence dans un refuge avec l'adresse indiquée\\n\\nSi vous ne disposez d'aucun de ces documents, vous devez soumettre une **Attestation de résidence CFWB-067**."
           },
           {
-            "id": "children_documents",
-            "title": "Children Documents",
-            "type": "info",
+            "id": "documents_enfants",
+            "title": "Documents pour enfants",
+            "type": "informations",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Citizenship or Immigration Status\\nThese documents confirm the citizenship or immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for each child needing care. *Do not upload these documents for children who do not need care.*\\n\\n- Birth Certificate from US state or territory\\n- Alien Registration Card including Permanent Resident or Green Card\\n- Passport\\n- FS-240 (Consular Report of Birth Abroad)\\n- Naturalization Certificate\\n- Other documentation that proves child’s immigration status\\n\\n### Child's Relationship to Applicant\\nThese documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether they need child care.\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Passport with parent's signature\\n- Court order for legal guardian with financial responsibility\\n- Letter of guardianship\\n- Other - CFWB-058 Caretaker Attestation\\n\\nIf you are not the child's parent or stepparent, you must submit a **CFWB-058 Caretaker Attestation Form**.\\n\\n### Age of Children\\nYou will need to upload **ONE** of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Alien Registration Card\\n- Passport\\n- Official hospital documentation of the child’s birth"
+            "content": "### Citoyenneté ou statut d'immigration\\nCes documents confirment la citoyenneté ou le statut d'immigration des enfants de votre famille pour lesquels vous demandez une aide à la garde d'enfants. Veuillez télécharger l'un des documents suivants pour chaque enfant nécessitant des soins. *Ne téléchargez pas ces documents pour les enfants qui n'ont pas besoin de soins.*\\n\\n- Acte de naissance d'un État ou d'un territoire américain\\n- Carte d'enregistrement d'étranger, y compris la carte de résident permanent ou la carte verte\\n- Passeport\\n- FS-240 (Rapport consulaire de naissance à l'étranger)\\n- Certificat de naturalisation\\n- Autre document prouvant le statut d'immigration de l'enfant\\n\\n### Lien de parenté de l'enfant avec le demandeur\\nCes documents confirment votre lien de parenté avec les enfants de moins de 18 ans de votre foyer. Veuillez télécharger l'un des documents suivants pour chaque enfant de moins de 18 ans du foyer, qu'il ait besoin ou non de soins.\\n\\n- Acte de naissance\\n- Acte d'adoption\\n- Acte de baptême\\n- Passeport avec signature du parent\\n- Ordonnance du tribunal pour un tuteur légal avec responsabilité financière\\n- Lettre de tutelle\\n- Autre - Attestation de tuteur CFWB-058\\n\\nSi vous n'êtes pas le parent ou le beau-parent de l'enfant, vous devez soumettre une **Attestation de tuteur CFWB-058 Formulaire**.\\n\\n### Âge des enfants\\nVous devrez télécharger **UN** des documents suivants pour chaque enfant du foyer âgé de moins de 18 ans, que des services de garde soient nécessaires ou non :\\n\\n- Acte de naissance\\n- Acte d'adoption\\n- Acte de baptême\\n- Carte d'enregistrement des étrangers\\n- Passeport\\n- Documentation hospitalière officielle attestant la naissance de l'enfant"
           },
           {
-            "id": "employment_income",
-            "title": "Employment & Income",
-            "type": "info",
+            "id": "revenu d'emploi",
+            "title": "Emploi et revenu",
+            "type": "informations",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Income\\nThese documents confirm your family’s income.\\n\\n---\\n\\n### If You Are Employed\\nIf you are employed and receive paystubs, you must submit them to confirm your income. The number of paystubs you must submit varies by how often you get paid and whether your payment amount is the same or different each time you are paid – see the table below for details. Submit the most recent paystub you have received, followed by others in consecutive order.\\n\\n**Income Information**\\n\\n| How Often Do You Get Paid? | Always the SAME Amount | DIFFERENT Amounts Each Time |\\n|----------------------------|-------------------------|------------------------------|\\n| Weekly (Every Week) | 4 most recent, consecutive pay stubs | 12 most recent, consecutive pay stubs |\\n| Bi-Weekly (Every Two Weeks) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Semi-Monthly (Two Times Per Month) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Monthly (One Time Per Month) | 3 most recent, consecutive pay stubs | 3 most recent, consecutive pay stubs |\\n\\nIf you do not have any paystubs, you must submit a **CFWB-015 Referral to Employer for Employee Income Information Form**.\\n\\n---\\n\\n### If You Are Self-Employed\\nIf you have been self-employed for **one year or more**, you must submit a current, complete and signed income tax package (e.g., 1040, 1065, Schedule C, SE for partnership, K-1, etc.).\\n\\nIf you have been self-employed for **less than one year**, you must submit a **CFWB-031 Self-Employment Income Information Attestation Form**.\\n\\n---\\n\\n### Other Income\\nIf you receive other types of income outside or instead of employment income, you must submit your most recent check, pay stub, or current award letter that indicates the amount you receive. If your other income fluctuates, **3 months of documentation is required**.\\n\\nThis includes, but is not limited to:\\n- Income from SSI, SSD\\n- Unemployment benefits\\n- Rental income\\n- Pensions\\n- Annuities\\n- Worker’s compensation\\n- Alimony\\n- Child support"
+            "content": "### Revenus\\nCes documents confirment les revenus de votre famille.\\n\\n---\\n\\n### Si vous êtes salarié\\nSi vous êtes salarié et recevez des bulletins de paie, vous devez les soumettre pour confirmer vos revenus. Le nombre de bulletins de paie que vous devez soumettre varie selon la fréquence de vos paiements et si le montant de votre paiement est le même ou différent à chaque versement ; consultez le tableau ci-dessous pour plus de détails. Soumettez le bulletin de paie le plus récent que vous avez reçu, suivi des autres dans l'ordre consécutif.\\n\\n**Informations sur les revenus**\\n\\n| À quelle fréquence êtes-vous payé ? | Toujours le MÊME montant | Montants DIFFÉRENTS à chaque fois |\\n|----------------------------|-------------------------|------------------------------|\\n| Hebdomadaire (chaque semaine) | 4 bulletins de paie consécutifs les plus récents | 12 bulletins de paie consécutifs les plus récents |\\n| Bimensuel (toutes les deux semaines) | 2 bulletins de paie consécutifs les plus récents | 6 talons de paie consécutifs les plus récents |\\n| Bimensuel (deux fois par mois) | 2 talons de paie consécutifs les plus récents | 6 talons de paie consécutifs les plus récents |\\n| Mensuel (une fois par mois) | 3 talons de paie consécutifs les plus récents | 3 derniers talons de paie consécutifs |\\n\\nSi vous n'avez pas de talons de paie, vous devez soumettre un **CFWB-015 Formulaire de référence à l'employeur pour les renseignements sur le revenu des employés**.\\n\\n---\\n\\n### Si vous êtes travailleur indépendant\\nSi vous êtes travailleur indépendant depuis **un an ou plus**, vous devez soumettre une trousse d'impôt sur le revenu à jour, complète et signée (p. ex., 1040, 1065, annexe C, SE pour société de personnes, K-1, etc.).\\n\\nSi vous êtes travailleur indépendant depuis **moins d'un an**, vous devez soumettre un **CFWB-031 Formulaire d'attestation des renseignements sur le revenu d'un travail indépendant**.\\n\\n---\\n\\n### Autres revenus\\nSi vous recevez d'autres types de revenus en dehors ou à la place d'un revenu d'emploi, vous devez soumettre votre chèque, talon de paie ou lettre d'attribution la plus récente indiquant le montant que vous recevez. Si vos autres revenus fluctuent, **3 mois de documentation sont requis**.\\n\\nCela comprend, sans s'y limiter :\\n- Revenus provenant de la SSI, de la SSD\\n- Allocations de chômage\\n- Revenus locatifs\\n- Pensions\\n- Rentes\\n- Indemnisation des accidents du travail\\n- Pension alimentaire\\n- Pension alimentaire pour enfants"
           },
           {
-            "id": "reason_for_care",
-            "title": "Reason for Care",
-            "type": "info",
+            "id": "raison_des_soins",
+            "title": "Motif des soins",
+            "type": "informations",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Reason for Care\\nThese documents confirm your reason for care. Every applicant must have a qualified reason for care; in a two-parent household, parents or caretakers can have the same or different reasons for care. Only the documents related to your stated reasons for care need to be uploaded, and documentation must be uploaded for all parent or caretakers in the household.\\n\\n---\\n\\n### Working 10+ Hours Per Week\\nYour employment or self-employment income documents will cover this reason for care. You do not need to submit additional documentation.\\n\\n---\\n\\n### Participating in an Educational or Vocational Training Program\\nYou will need to upload **ONE** of the following documents to confirm your participation in vocational school, two-year college, or four-year college.\\n\\n- CFWB-005 Vocational, Education and Training Verification Form\\n- A letter from the educational or vocational training program on their official letterhead; this letter must contain all the information required in the CFWB-005 Vocational, Education and Training Verification Form.\\n\\n---\\n\\n### Looking for Work\\nYou will need to upload **ONE** of the following documents to confirm that you are looking for work.\\n\\n- CFWB-026 Work Search Record Form\\n- Approved work search plan from the NYS Dept. of Labor\\n- Proof of receipt of unemployment insurance\\n\\n---\\n\\n### Experiencing Homelessness\\nYou will need to upload **ONE** of the following documents to confirm that you are experiencing homelessness. This includes families who may be living in shelter or sharing the housing of others due to loss of housing, economic hardship, or similar reason.\\n\\n- Shelter Residency Letter (If living in Shelter, including Humanitarian Emergency Relief Centers)\\n- CFWB-027 Housing Attestation (If living doubled-up, in a place not meant for human habitation, in a hotel/motel, or in another living situation)\\n\\n---\\n\\n### Attending Services for Domestic Violence\\nYou will need to upload a referral for services from a domestic violence service provider to confirm that you are attending services for domestic violence.\\n\\n---\\n\\n### Attending Services for Substance Abuse Treatment\\nYou will need to upload a referral for a substance abuse treatment service provider to confirm that you are attending services for substance abuse treatment."
+            "content": "### Motif de la prise en charge\\nCes documents confirment le motif de votre prise en charge. Chaque demandeur doit avoir un motif valable de prise en charge ; dans un foyer biparental, les parents ou les tuteurs peuvent avoir des motifs de prise en charge identiques ou différents. Seuls les documents relatifs aux motifs de prise en charge que vous avez indiqués doivent être téléchargés, et les documents doivent être téléchargés pour tous les parents ou tuteurs du foyer.\\n\\n---\\n\\n### Travail de 10 heures ou plus par semaine\\nVos documents de revenu d'emploi ou de travail indépendant couvriront ce motif de prise en charge. Vous n'avez pas besoin de soumettre de documents supplémentaires.\\n\\n---\\n\\n### Participation à un programme d'études ou de formation professionnelle\\nVous devrez télécharger **UN** des documents suivants pour confirmer votre participation à une école professionnelle, un collège de deux ans ou un collège de quatre ans.\\n\\n- Formulaire de vérification de l'éducation et de la formation professionnelles CFWB-005\\n- Une lettre du programme d'études ou de formation professionnelle sur papier à en-tête officiel ; Cette lettre doit contenir toutes les informations requises dans le formulaire CFWB-005 de vérification de la formation professionnelle, de l'éducation et de la formation.\\n\\n---\\n\\n### Recherche d'emploi\\nVous devrez télécharger **UN** des documents suivants pour confirmer que vous recherchez un emploi.\\n\\n- CFWB-026 Formulaire d'enregistrement de recherche d'emploi\\n- Plan de recherche d'emploi approuvé par le Département du travail de l'État de New York\\n- Preuve de réception de l'assurance-chômage\\n\\n---\\n\\n### Sans-abrisme\\nVous devrez télécharger **UN** des documents suivants pour confirmer que vous êtes sans-abri. Cela inclut les familles qui peuvent vivre dans un refuge ou partager le logement d'autres personnes en raison d'une perte de logement, de difficultés économiques ou d'une raison similaire.\\n\\n- Lettre de résidence en refuge (si vous vivez dans un refuge, y compris les centres de secours d'urgence humanitaire)\\n- Attestation de logement CFWB-027 (si vous vivez à deux, dans un endroit non destiné à l'habitation humaine, dans un hôtel/motel ou dans une autre situation de vie)\\n\\n---\\n\\n### Fréquentation de services pour violence domestique\\nVous devrez télécharger une recommandation de services d'un fournisseur de services de violence domestique pour confirmer que vous fréquentez des services pour violence domestique.\\n\\n---\\n\\n### Fréquentation de services de traitement de la toxicomanie\\nVous devrez télécharger une recommandation d'un fournisseur de services de traitement de la toxicomanie pour confirmer que vous fréquentez des services de traitement de la toxicomanie."
           },
           {
-            "id": "additional_details",
-            "title": "Additional Details",
-            "type": "info",
+            "id": "détails_supplémentaires",
+            "title": "Détails supplémentaires",
+            "type": "informations",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Application Scope\\nThis application is used to apply **only** for **Category 2 or 3 child care assistance** (for families not in receipt of cash assistance). To apply for **Cash Assistance** or other benefits, including **Category 1 Child Care Assistance** (for families in receipt of cash assistance), you must use the **New York State Application for Certain Benefits and Services (LDSS-2921)**.\\n\\n---\\n\\n### Exempt Applicants\\nThe following applicants may be eligible for child care assistance **without regard to income** and do not need to complete this application:\\n\\n- Foster parents who need child care assistance to allow them to work and are only applying for assistance for the foster children;\\n- Families in receipt of protective or preventive services.\\n\\n---\\n\\n### Application Completion\\nAll sections of this form must be filled out to be considered complete **unless the section is identified as optional**. If you do not complete all required sections of this form, you may not be considered for Child Care Assistance.\\n\\n---\\n\\n### Rights and Responsibilities\\nYou may obtain information about your rights and responsibilities [here](https://otda.ny.gov/programs/applications/). If you do not have access to the internet, you can call the **Administration for Children’s Services at 212-835-7610** to request that physical copies of the booklets which highlight your rights and responsibilities be mailed to you, including:\\n\\n- **LDSS-4148A**: What You Should Know About Your Rights and Responsibilities\\n- **LDSS-4148B**: What You Should Know About Social Services Programs\\n- **LDSS-4148C**: What You Should Know If You Have an Emergency"
+            "content": "### Champ d'application\\nCette demande est utilisée pour demander **uniquement** une **aide à la garde d'enfants de catégorie 2 ou 3** (pour les familles ne bénéficiant pas d'aide financière). Pour demander une **aide financière** ou d'autres prestations, y compris une **aide à la garde d'enfants de catégorie 1** (pour les familles bénéficiant d'une aide financière), vous devez utiliser la **Demande de l'État de New York pour certaines prestations et services (LDSS-2921)**.\\n\\n---\\n\\n### Demandeurs exemptés\\nLes demandeurs suivants peuvent être admissibles à une aide à la garde d'enfants **sans égard aux revenus** et n'ont pas besoin de remplir cette demande :\\n\\n- Les parents d'accueil qui ont besoin d'une aide à la garde d'enfants pour pouvoir travailler et qui demandent uniquement une aide pour les enfants placés ;\\n- Les familles bénéficiant de services de protection ou de prévention.\\n\\n---\\n\\n### Remplissage de la demande\\nToutes les sections de ce formulaire doivent être remplies pour être considérées comme complètes **sauf si la section est identifiée comme facultative**. Si vous ne remplissez pas toutes les sections obligatoires de ce formulaire, votre demande d'aide à la garde d'enfants pourrait ne pas être prise en compte.\\n\\n---\\n\\n### Droits et responsabilités\\nVous pouvez obtenir des informations sur vos droits et responsabilités [ici](https://otda.ny.gov/programs/applications/). Si vous n'avez pas accès à Internet, vous pouvez appeler l'**Administration des services à l'enfance au 212-835-7610** pour demander l'envoi par courrier de copies papier des brochures décrivant vos droits et responsabilités, notamment :\\n\\n- **LDSS-4148A** : Ce que vous devez savoir sur vos droits et responsabilités\\n- **LDSS-4148B** : Ce que vous devez savoir sur les programmes de services sociaux\\n- **LDSS-4148C** : Ce que vous devez savoir en cas d'urgence"
           }
         ]
       },
       {
-        "id": "applicant",
-        "title": "Applicant",
+        "id": "demandeur",
+        "title": "Demandeur",
         "sections": [
           {
-            "id": "personal_info",
-            "title": "Personal Information",
+            "id": "informations personnelles",
+            "title": "Informations personnelles",
             "fields": [
               {
-                "id": "first_name",
-                "label": "First Name",
-                "type": "text",
+                "id": "prénom",
+                "label": "Prénom",
+                "type": "texte",
                 "required": true
               },
               {
-                "id": "last_name",
-                "label": "Last Name",
-                "type": "text",
+                "id": "nom de famille",
+                "label": "Nom de famille",
+                "type": "texte",
                 "required": true
               },
               {
-                "id": "mi",
-                "label": "Middle Initial",
-                "type": "text",
+                "id": "moi",
+                "label": "Initiale du milieu",
+                "type": "texte",
                 "required": false
               },
               {
-                "id": "date_of_birth",
-                "label": "Date of Birth",
+                "id": "date_de_naissance",
+                "label": "Date de naissance",
                 "type": "date",
                 "required": true,
-                "tooltip": "To edit Date of Birth click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "Pour modifier la date de naissance, cliquez sur NYC ModelCity dans le coin supérieur gauche, puis cliquez sur Paramètres du compte."
               },
               {
-                "id": "sex",
-                "label": "Sex",
+                "id": "sexe",
+                "label": "Sexe",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Male",
-                    "Female"
+                    "Mâle",
+                    "Femelle"
                   ]
                 }
               },
               {
-                "id": "marital_status",
-                "label": "Marital Status",
-                "type": "select",
+                "id": "état civil",
+                "label": "État matrimonial",
+                "type": "sélectionner",
                 "required": true,
-                "tooltip": "Indicate your marital status (single, married, divorced, separated or widowed).",
+                "tooltip": "Indiquez votre état civil (célibataire, marié, divorcé, séparé ou veuf).",
                 "ui": {
                   "options": [
                     "",
-                    "Single",
-                    "Married",
-                    "Divorced",
-                    "Widowed",
-                    "Separated"
+                    "Célibataire",
+                    "Marié",
+                    "Divorcé",
+                    "Veuf",
+                    "Séparé"
                   ]
                 }
               }
@@ -161,12 +161,12 @@
           },
           {
             "id": "contact_info",
-            "title": "Contact Information",
+            "title": "Coordonnées",
             "fields": [
               {
-                "id": "telephone_home",
-                "label": "Home Phone",
-                "type": "tel",
+                "id": "téléphone_domicile",
+                "label": "Téléphone fixe",
+                "type": "tél.",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -176,9 +176,9 @@
                 }
               },
               {
-                "id": "telephone_work",
-                "label": "Work Phone",
-                "type": "tel",
+                "id": "téléphone_travail",
+                "label": "Téléphone professionnel",
+                "type": "tél.",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -188,11 +188,11 @@
                 }
               },
               {
-                "id": "telephone_mobile_or_other",
-                "label": "Mobile or Other Phone",
-                "type": "tel",
+                "id": "téléphone_mobile_ou_autre",
+                "label": "Téléphone portable ou autre",
+                "type": "tél.",
                 "required": false,
-                "tooltip": "To edit Telephone (Cell or Other) click on NYC ModelCity in the top-left corner then click on Account Settings and then click on Contact.",
+                "tooltip": "Pour modifier le téléphone (portable ou autre), cliquez sur NYC ModelCity dans le coin supérieur gauche, puis cliquez sur Paramètres du compte, puis sur Contact.",
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
                 },
@@ -201,76 +201,88 @@
                 }
               },
               {
-                "id": "email",
-                "label": "Email",
-                "type": "email",
+                "id": "e-mail",
+                "label": "E-mail",
+                "type": "e-mail",
                 "required": true,
-                "tooltip": "To edit email, go to NYC ID Profile tab by clicking your name at the top right corner"
+                "tooltip": "Pour modifier votre adresse e-mail, accédez à l'onglet Profil NYC ID en cliquant sur votre nom dans le coin supérieur droit."
               }
             ]
           },
           {
-            "id": "address_info",
-            "title": "Address",
-            "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings.",
+            "id": "adresse_info",
+            "title": "Adresse",
+            "tooltip": "Pour modifier l'adresse du domicile, cliquez sur NYC ModelCity dans le coin supérieur gauche, puis cliquez sur Paramètres du compte.",
             "ui": {
-              "autocomplete": "street",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "rue",
+              "placeholder": "Commencez à taper votre adresse postale",
+              "overrideComponent": "Saisie automatique d'adresses"
             },
             "metadata": {
               "integration": {
                 "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "feature": "Saisie automatique d'adresses"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "ville",
+                  "source": "localité",
                   "fallbackSources": [
-                    "postal_town",
-                    "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "ville postale",
+                    "sous-localité_niveau_1",
+                    "zone_administrative_niveau_2"
                   ]
                 },
                 {
-                  "fieldId": "borough",
-                  "source": "sublocality_level_1",
+                  "fieldId": "arrondissement",
+                  "source": "sous-localité_niveau_1",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "zone_administrative_niveau_2"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "Carte de l'arrondissement"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "zip_code", "source": "postal_code" },
-                { "fieldId": "latitude", "source": "location.latitude" },
-                { "fieldId": "longitude", "source": "location.longitude" }
+                {
+                  "fieldId": "État",
+                  "source": "zone_administrative_niveau_1"
+                },
+                {
+                  "fieldId": "code postal",
+                  "source": "Code Postal"
+                },
+                {
+                  "fieldId": "latitude",
+                  "source": "emplacement.latitude"
+                },
+                {
+                  "fieldId": "longitude",
+                  "source": "emplacement.longitude"
+                }
               ]
             },
             "fields": [
               {
-                "id": "street",
-                "label": "Street Address",
-                "type": "text",
+                "id": "rue",
+                "label": "Adresse de la rue",
+                "type": "texte",
                 "required": true,
-                "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "Pour modifier l'adresse du domicile, cliquez sur NYC ModelCity dans le coin supérieur gauche, puis cliquez sur Paramètres du compte."
               },
               {
-                "id": "apt",
-                "label": "Apt #",
-                "type": "text",
+                "id": "apte",
+                "label": "Appt #",
+                "type": "texte",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "ville",
+                "label": "Ville",
+                "type": "texte",
                 "required": true
               },
               {
-                "id": "borough",
-                "label": "Borough",
-                "type": "select",
+                "id": "arrondissement",
+                "label": "Arrondissement",
+                "type": "sélectionner",
                 "required": true,
                 "ui": {
                   "options": [
@@ -278,119 +290,119 @@
                     "Bronx",
                     "Brooklyn",
                     "Manhattan",
-                    "Queens",
+                    "Reines",
                     "Staten Island"
                   ]
                 }
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "État",
+                "label": "État",
+                "type": "texte",
                 "required": true
               },
               {
-                "id": "zip_code",
-                "label": "Zip Code",
-                "type": "text",
+                "id": "code postal",
+                "label": "Code postal",
+                "type": "texte",
                 "required": true
               },
               {
                 "id": "latitude",
                 "label": "Latitude",
-                "type": "number",
+                "type": "nombre",
                 "required": false
               },
               {
                 "id": "longitude",
                 "label": "Longitude",
-                "type": "number",
+                "type": "nombre",
                 "required": false
               },
               {
-                "id": "is_temporary_address",
-                "label": "Is Temporary Address",
+                "id": "est_adresse_temporaire",
+                "label": "Est une adresse temporaire",
                 "type": "radio",
                 "required": true,
-                "tooltip": "Check YES if you are currently living in a homeless shelter, doubled-up with another family, in a hotel/motel, in a car/ bus/ train, in a park/campsite, or other temporary accomodation.",
+                "tooltip": "Cochez OUI si vous vivez actuellement dans un refuge pour sans-abri, en double avec une autre famille, dans un hôtel/motel, dans une voiture/bus/train, dans un parc/camping ou dans un autre logement temporaire.",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "currently_living_in",
-                "label": "Currently Living In",
-                "type": "select",
+                "id": "actuellement_vivant_à",
+                "label": "Je vis actuellement à",
+                "type": "sélectionner",
                 "required": false,
                 "requiredCondition": {
-                  "field": "is_temporary_address",
-                  "operator": "equals",
-                  "value": "Yes"
+                  "field": "est_adresse_temporaire",
+                  "operator": "est égal à",
+                  "value": "Oui"
                 },
                 "ui": {
                   "options": [
                     "",
-                    "Homeless Shelter",
-                    "Doubled-up with another Family",
-                    "Hotel/Motel",
-                    "Car, Bus, Train",
-                    "Park",
-                    "Campsite",
-                    "Other"
+                    "Refuge pour sans-abri",
+                    "Doublé avec une autre famille",
+                    "Hôtel/Motel",
+                    "Voiture, bus, train",
+                    "Parc",
+                    "Camping",
+                    "Autre"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "demographics",
-            "title": "Demographics",
+            "id": "démographie",
+            "title": "Démographie",
             "fields": [
               {
-                "id": "ethnicity",
-                "label": "Ethnicity",
-                "type": "select",
+                "id": "origine ethnique",
+                "label": "Origine ethnique",
+                "type": "sélectionner",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Hispanic",
+                    "hispanique",
                     "Latino",
-                    "No",
-                    "Prefer not to answer"
+                    "Non",
+                    "Je préfère ne pas répondre"
                   ]
                 }
               },
               {
-                "id": "race",
-                "label": "Race",
-                "type": "checkbox",
+                "id": "course",
+                "label": "Course",
+                "type": "case à cocher",
                 "required": false,
-                "tooltip": "You may choose multiple race categories. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                "tooltip": "Vous pouvez choisir plusieurs catégories ethniques. La communication de ces informations est facultative et n'affectera pas votre admissibilité à l'Aide à la garde d'enfants ni le montant de l'aide qui vous sera versée par cet organisme.",
                 "ui": {
                   "options": [
                     {
-                      "value": "AI",
-                      "label": "American Indian or Alaska Native"
+                      "value": "IA",
+                      "label": "Indien d'Amérique ou autochtone d'Alaska"
                     },
                     {
-                      "value": "AS",
-                      "label": "Asian"
+                      "value": "COMME",
+                      "label": "asiatique"
                     },
                     {
                       "value": "BL",
-                      "label": "Black or African American"
+                      "label": "Noir ou Afro-Américain"
                     },
                     {
                       "value": "HP",
-                      "label": "Native Hawaiian or Pacific Islander"
+                      "label": "Hawaïen de souche ou insulaire du Pacifique"
                     },
                     {
                       "value": "WH",
-                      "label": "White"
+                      "label": "Blanc"
                     }
                   ]
                 },
@@ -399,10 +411,10 @@
                 }
               },
               {
-                "id": "ssn",
-                "label": "Social Security Number",
-                "type": "text",
-                "tooltip": "To edit social security number click on NYC ModelCity in the top-left corner then click on Account Settings.",
+                "id": "SSN",
+                "label": "Numéro de sécurité sociale",
+                "type": "texte",
+                "tooltip": "Pour modifier le numéro de sécurité sociale, cliquez sur NYC ModelCity dans le coin supérieur gauche, puis cliquez sur Paramètres du compte.",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
@@ -414,87 +426,87 @@
             ]
           },
           {
-            "id": "language_info",
-            "title": "Language Preferences",
+            "id": "informations_langue",
+            "title": "Préférences linguistiques",
             "fields": [
               {
-                "id": "primary_language",
-                "label": "Primary Language",
+                "id": "langue_principale",
+                "label": "Langue principale",
                 "type": "radio",
                 "required": true,
-                "tooltip": "Select the language that is spoken most often in your household. If “other”, provide the name of the language.",
+                "tooltip": "Sélectionnez la langue la plus parlée à la maison. Si « autre » est indiqué, indiquez le nom de la langue.",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "Anglais",
+                    "Espagnol",
+                    "Autre"
                   ]
                 }
               },
               {
-                "id": "preferred_language",
-                "label": "Preferred Language",
+                "id": "langue préférée",
+                "label": "Langue préférée",
                 "type": "radio",
                 "required": true,
-                "tooltip": "Select the language you prefer to communicate in. If “other”, provide the name of the language.",
+                "tooltip": "Sélectionnez la langue dans laquelle vous préférez communiquer. Si « autre », indiquez le nom de la langue.",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "Anglais",
+                    "Espagnol",
+                    "Autre"
                   ]
                 }
               },
               {
-                "id": "other_primary_language",
-                "label": "Other Primary Language",
-                "type": "text",
+                "id": "autre_langue_principale",
+                "label": "Autre langue principale",
+                "type": "texte",
                 "required": false,
                 "requiredCondition": {
-                  "field": "primary_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "langue_principale",
+                  "operator": "est égal à",
+                  "value": "Autre"
                 }
               },
               {
-                "id": "other_preferred_language",
-                "label": "Other Preferred Language",
-                "type": "text",
+                "id": "autre_langue_préférée",
+                "label": "Autre langue préférée",
+                "type": "texte",
                 "required": false,
                 "requiredCondition": {
-                  "field": "preferred_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "langue préférée",
+                  "operator": "est égal à",
+                  "value": "Autre"
                 }
               }
             ]
           },
           {
-            "id": "cash_assistance",
-            "title": "Cash Assistance",
+            "id": "aide financière",
+            "title": "Aide financière",
             "fields": [
               {
-                "id": "has_cash_assistance",
-                "label": "Do you receive Cash Assistance?",
+                "id": "a_une_assistance_en_espèces",
+                "label": "Recevez-vous une aide financière ?",
                 "type": "radio",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "ca_number",
-                "label": "Cash Assistance Number",
-                "type": "text",
+                "id": "numéro_ca",
+                "label": "Numéro d'assistance en espèces",
+                "type": "texte",
                 "required": false,
                 "requiredCondition": {
                   "condition": {
-                    "field": "has_cash_assistance",
-                    "operator": "equals",
-                    "value": "Yes"
+                    "field": "a_une_assistance_en_espèces",
+                    "operator": "est égal à",
+                    "value": "Oui"
                   }
                 }
               }
@@ -503,124 +515,124 @@
         ]
       },
       {
-        "id": "children_needing_care",
-        "title": "Children Needing Care",
+        "id": "enfants_ayant_besoin_de_soins",
+        "title": "Enfants ayant besoin de soins",
         "sections": [
           {
-            "id": "child_details",
-            "title": "Child Details",
+            "id": "détails_de_l'enfant",
+            "title": "Détails de l'enfant",
             "required": true,
             "fields": [
               {
-                "id": "children",
-                "label": "Children Needing Care",
-                "type": "group",
+                "id": "enfants",
+                "label": "Enfants ayant besoin de soins",
+                "type": "groupe",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                  "first_name",
-                  "last_name",
-                  "date_of_birth",
-                  "relationship_to_applicant"
+                    "prénom",
+                    "nom de famille",
+                    "date_de_naissance",
+                    "relation_avec_le_candidat"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "prénom",
+                    "label": "Prénom",
+                    "type": "texte",
                     "required": true,
-                    "tooltip": "Provide the first name, last name, and middle initial of each child you are applying for child care assistance for."
+                    "tooltip": "Indiquez le prénom, le nom et l’initiale du deuxième prénom de chaque enfant pour lequel vous demandez une aide à la garde d’enfants."
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "nom de famille",
+                    "label": "Nom de famille",
+                    "type": "texte",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "moi",
+                    "label": "Initiale du milieu",
+                    "type": "texte",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "relation_avec_le_candidat",
+                    "label": "Lien de parenté avec le demandeur",
+                    "type": "sélectionner",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "Child",
-                        "Grandchild",
-                        "Foster Child",
-                        "Other"
+                        "Enfant",
+                        "Petit enfant",
+                        "enfant placé en famille d'accueil",
+                        "Autre"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
+                    "id": "date_de_naissance",
+                    "label": "Date de naissance",
                     "type": "date",
                     "required": true,
-                    "tooltip": "Provide the date of birth."
+                    "tooltip": "Indiquez la date de naissance."
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
+                    "id": "sexe",
+                    "label": "Sexe",
                     "type": "radio",
                     "required": true,
-                    "tooltip": "Select to indicate the sex.",
+                    "tooltip": "Sélectionnez pour indiquer le sexe.",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "Mâle",
+                        "Femelle"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "origine ethnique",
+                    "label": "Origine ethnique hispanique ou latino",
+                    "type": "sélectionner",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each child in need of child care is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for child care assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Cochez « OUI » ou « NON » pour indiquer si chaque enfant nécessitant une garde est hispanique ou latino-américaine ou non. La fourniture d'informations sur l'origine ethnique est facultative et n'affectera pas votre admissibilité à l'aide à la garde d'enfants ni le montant de l'aide qui vous sera versée par cet organisme.",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "Oui",
+                        "Non",
+                        "Je préfère ne pas répondre"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "course",
+                    "label": "Course",
+                    "type": "case à cocher",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single child. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Vous pouvez choisir plusieurs catégories ethniques pour un même enfant. La communication de ces informations est facultative et n'affectera pas votre admissibilité à l'Aide à la garde d'enfants ni le montant de l'aide qui vous sera versée par cet organisme.",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "IA",
+                          "label": "Indien d'Amérique ou autochtone d'Alaska"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "COMME",
+                          "label": "asiatique"
                         },
                         {
                           "value": "BL",
-                          "label": "Black or African American"
+                          "label": "Noir ou Afro-Américain"
                         },
                         {
                           "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "label": "Hawaïen de souche ou insulaire du Pacifique"
                         },
                         {
                           "value": "WH",
-                          "label": "White"
+                          "label": "Blanc"
                         }
                       ]
                     },
@@ -629,11 +641,11 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "SSN",
+                    "label": "Numéro de sécurité sociale",
+                    "type": "texte",
                     "required": false,
-                    "tooltip": "Provide each child’s Social Security Number (SSN). You are not required to provide SSNs. They may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "Indiquez le numéro de sécurité sociale (NSS) de chaque enfant. Vous n'êtes pas tenu de fournir ce numéro. Il peut être utilisé par les agences fédérales, étatiques et locales pour prévenir les doublons et les fraudes, ainsi que pour les déclarations fédérales.",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
@@ -642,41 +654,41 @@
                     }
                   },
                   {
-                    "id": "do_both_parents_reside_in_home",
-                    "label": "Do both parents reside in the home?",
+                    "id": "les deux parents résident-ils dans la maison",
+                    "label": "Les deux parents résident-ils dans la maison ?",
                     "type": "radio",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether both of the child’s parents live in the home.",
+                    "tooltip": "Cochez « OUI » ou « NON » pour indiquer si les deux parents de l’enfant vivent dans le foyer.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Oui",
+                        "Non"
                       ]
                     }
                   },
                   {
-                    "id": "has_disability",
-                    "label": "Does the child have a disability?",
+                    "id": "a un handicap",
+                    "label": "L'enfant a-t-il un handicap ?",
                     "type": "radio",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether the child needing child care has a disability.",
+                    "tooltip": "Cochez « OUI » ou « NON » pour indiquer si l’enfant nécessitant des services de garde a un handicap.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Oui",
+                        "Non"
                       ]
                     }
                   },
                   {
-                    "id": "is_immigration_status_satisfactory",
-                    "label": "Is child U.S. Citizen, U.S. National, or person with satisfactory immigration status?",
+                    "id": "le statut d'immigration est-il satisfaisant",
+                    "label": "L'enfant est-il citoyen américain, ressortissant américain ou une personne ayant un statut d'immigration satisfaisant ?",
                     "type": "radio",
                     "required": true,
-                    "tooltip": "You will only be asked about the immigration status of the children in need of care. Other members of the family will not need to state or prove their immigration status. Your child will be eligible for care if they are a U.S. citizen, a legal permanent resident (green card holder), a refugee, or an asylee; have a T-visa; or hold another qualified immigration status. Please select “Yes” if your child holds one of these statuses.",
+                    "tooltip": "On vous demandera uniquement le statut d'immigration des enfants nécessitant des soins. Les autres membres de la famille n'auront pas besoin de déclarer ni de prouver leur statut d'immigration. Votre enfant sera admissible à des soins s'il est citoyen américain, résident permanent légal (titulaire d'une carte verte), réfugié ou demandeur d'asile ; s'il possède un visa T ; ou s'il détient un autre statut d'immigration. Veuillez sélectionner « Oui » si votre enfant possède l'un de ces statuts.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Oui",
+                        "Non"
                       ]
                     }
                   }
@@ -687,142 +699,146 @@
         ]
       },
       {
-        "id": "family_members",
-        "title": "Family Members",
+        "id": "membres_de_la_famille",
+        "title": "Membres de la famille",
         "sections": [
           {
-            "id": "household_members_info",
-            "title": "Household Members Information",
-            "type": "info",
+            "id": "informations_sur_les_membres_du_ménage",
+            "title": "Informations sur les membres du ménage",
+            "type": "informations",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**List the household members who do _not_ need child care.**\\n\\nIf applicable, list:\\n\\n- Your **spouse**, your child’s **second parent**, **caretaker**, or **step-parent**\\n- Any other **adult with whom you share a child**, if they live in your home\\n\\nThen, if applicable, list:\\n\\n- Any **siblings under the age of 18** who live in your home\\n\\n> **Only list other household members** — such as **aunts, uncles, cousins, grandparents, or friends** — _if they have financial responsibility_ for the child.\\n\\nA household member with financial responsibility, other than a parent or step-parent, is one who has a **letter or order of guardianship**.\\n\\n**Otherwise, do not include them.**"
+            "content": "**Indiquez les membres du ménage qui n'ont _pas_ besoin de services de garde d'enfants.**\\n\\nLe cas échéant, indiquez :\\n\\n- Votre **conjoint**, le **deuxième parent** de votre enfant, le **gardien** ou le **beau-parent**\\n- Tout autre **adulte avec qui vous partagez un enfant**, s'il vit à votre domicile\\n\\nEnsuite, le cas échéant, indiquez :\\n\\n- Tous les **frères et sœurs de moins de 18 ans** qui vivent à votre domicile\\n\\n> **N'indiquez les autres membres du ménage** — tels que les **tantes, oncles, cousins, grands-parents ou amis** — que s'ils ont une responsabilité financière_ envers l'enfant.\\n\\nUn membre du ménage ayant une responsabilité financière, autre qu'un parent ou un beau-parent, est celui qui a une **lettre ou une ordonnance de tutelle**.\\n\\n**Sinon, ne les incluez pas.**"
           },
           {
-            "id": "family_member_details",
-            "title": "Household Member Details",
-            "description": "Include household members who do not need child care assistance (e.g., spouse, partner, other children).",
+            "id": "détails_des_membres_de_la_famille",
+            "title": "Détails des membres du ménage",
+            "description": "Inclure les membres du ménage qui n’ont pas besoin d’aide pour la garde d’enfants (p. ex., conjoint, partenaire, autres enfants).",
             "fields": [
               {
-                "id": "familymember",
-                "label": "Family Members",
-                "type": "group",
+                "id": "membre de la famille",
+                "label": "Membres de la famille",
+                "type": "groupe",
                 "requiredCondition": {
-                  "repeatingGroup": "children",
-                  "operator": "ANY",
-                  "condition": { "field": "do_both_parents_reside_in_home", "operator": "equals", "value": "Yes" }
-                },  
+                  "repeatingGroup": "enfants",
+                  "operator": "N'IMPORTE LEQUEL",
+                  "condition": {
+                    "field": "les deux parents résident-ils dans la maison",
+                    "operator": "est égal à",
+                    "value": "Oui"
+                  }
+                },
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "first_name",
-                    "last_name",
-                    "relationship_to_applicant",
-                    "date_of_birth"
+                    "prénom",
+                    "nom de famille",
+                    "relation_avec_le_candidat",
+                    "date_de_naissance"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "prénom",
+                    "label": "Prénom",
+                    "type": "texte",
                     "required": true,
-                    "tooltip": "Provide last and first name, and middle initial if applicable."
+                    "tooltip": "Indiquez le nom, le prénom et l'initiale du deuxième prénom, le cas échéant."
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "nom de famille",
+                    "label": "Nom de famille",
+                    "type": "texte",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "moi",
+                    "label": "Initiale du milieu",
+                    "type": "texte",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "relation_avec_le_candidat",
+                    "label": "Lien de parenté avec le demandeur",
+                    "type": "sélectionner",
                     "required": true,
-                    "tooltip": "Provide each person’s relationship to you (e.g. spouse, partner, child, foster parent, other).",
+                    "tooltip": "Indiquez le lien de parenté de chaque personne avec vous (par exemple, conjoint, partenaire, enfant, parent d’accueil, autre).",
                     "ui": {
                       "options": [
                         "",
-                        "Spouse",
-                        "Partner",
-                        "Foster Parent",
-                        "Child",
-                        "Other"
+                        "Conjoint",
+                        "Partenaire",
+                        "Parent d'accueil",
+                        "Enfant",
+                        "Autre"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
+                    "id": "date_de_naissance",
+                    "label": "Date de naissance",
                     "type": "date",
                     "required": true,
-                    "tooltip": "Provide the family member's date of birth."
+                    "tooltip": "Indiquez la date de naissance du membre de la famille."
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
+                    "id": "sexe",
+                    "label": "Sexe",
                     "type": "radio",
                     "required": true,
-                    "tooltip": "Indicate the sex for each family member listed.",
+                    "tooltip": "Indiquez le sexe de chaque membre de la famille répertorié.",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "Mâle",
+                        "Femelle"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "origine ethnique",
+                    "label": "Origine ethnique hispanique ou latino",
+                    "type": "sélectionner",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each member in the household is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Cochez « OUI » ou « NON » pour indiquer si chaque membre du foyer est hispanique ou latino-américain ou non. La communication de l'origine ethnique est facultative et n'affectera pas votre admissibilité à l'aide à la garde d'enfants ni le montant de l'aide qui vous sera versée par cet organisme.",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "Oui",
+                        "Non",
+                        "Je préfère ne pas répondre"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "course",
+                    "label": "Course",
+                    "type": "case à cocher",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single person. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Vous pouvez choisir plusieurs catégories ethniques pour une même personne. La communication de ces informations est facultative et n'affectera pas votre admissibilité à l'Aide à la garde d'enfants ni le montant de l'aide qui vous sera versée par cet organisme.",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "IA",
+                          "label": "Indien d'Amérique ou autochtone d'Alaska"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "COMME",
+                          "label": "asiatique"
                         },
                         {
                           "value": "BL",
-                          "label": "Black or African American"
+                          "label": "Noir ou Afro-Américain"
                         },
                         {
                           "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "label": "Hawaïen de souche ou insulaire du Pacifique"
                         },
                         {
                           "value": "WH",
-                          "label": "White"
+                          "label": "Blanc"
                         }
                       ]
                     },
@@ -831,11 +847,11 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "SSN",
+                    "label": "Numéro de sécurité sociale",
+                    "type": "texte",
                     "required": false,
-                    "tooltip": "Fill in the Social Security Number (SSN) for your family members. SSN is optional. SSN may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "Indiquez le numéro de sécurité sociale (SSN) des membres de votre famille. Ce numéro est facultatif. Il peut être utilisé par les agences fédérales, étatiques et locales pour prévenir les doublons et les fraudes, ainsi que pour les déclarations fédérales.",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
@@ -850,28 +866,28 @@
         ]
       },
       {
-        "id": "child_family_needs",
-        "title": "Child / Family Needs",
+        "id": "besoins_de_l'enfant_et_de_la_famille",
+        "title": "Besoins de l'enfant/de la famille",
         "sections": [
           {
-            "id": "assistance_reason",
-            "title": "Reason for Child Care Assistance",
-            "description": "Select one or two reasons you are requesting Child Care Assistance.",
-            "tooltip": "Select one reason. In a two-parent household, parents/caretakers can have the same or different reasons for needing child care. Both parents/caretakers will be required to submit documentation in support of their own reason. If you are living in temporary housing, please select Homelessness even if you have another reason that applies to you.",
+            "id": "raison_de_l'assistance",
+            "title": "Motif de l'aide à la garde d'enfants",
+            "description": "Sélectionnez une ou deux raisons pour lesquelles vous demandez une aide à la garde d’enfants.",
+            "tooltip": "Sélectionnez une raison. Dans un foyer biparental, les parents/tuteurs peuvent avoir des raisons identiques ou différentes de recourir à la garde d'enfants. Les deux parents/tuteurs devront fournir des justificatifs pour justifier leur propre raison. Si vous vivez dans un logement temporaire, veuillez sélectionner « Sans-abri », même si vous avez une autre raison.",
             "fields": [
               {
-                "id": "assistance_reason",
-                "label": "Reason(s) for Assistance",
-                "type": "select",
+                "id": "raison_de_l'assistance",
+                "label": "Motif(s) de l'assistance",
+                "type": "sélectionner",
                 "required": true,
                 "ui": {
                   "options": [
                     "",
-                    "Employment",
-                    "Looking for Work",
-                    "Vocational Training/Educational Activities",
-                    "Receiving Domestic Violence Services",
-                    "Homelessness"
+                    "Emploi",
+                    "À la recherche d'un emploi",
+                    "Formation professionnelle/Activités éducatives",
+                    "Recevoir des services en matière de violence familiale",
+                    "Sans-abrisme"
                   ]
                 },
                 "constraints": {
@@ -885,72 +901,72 @@
             ]
           },
           {
-            "id": "military_status",
-            "title": "Military and Parental Availability",
-            "description": "Provide information about parental military status and availability for child care.",
+            "id": "statut militaire",
+            "title": "Disponibilité militaire et parentale",
+            "description": "Fournir des informations sur le statut militaire des parents et leur disponibilité pour la garde des enfants.",
             "fields": [
               {
-                "id": "is_parent_currently_active_in_military",
-                "label": "Is a Parent Currently Active Full-Time in the U.S. Military?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently active full-time in the U.S. Military.",
+                "id": "est-ce que le parent est actuellement actif dans l'armée",
+                "label": "Un parent est-il actuellement actif à temps plein dans l’armée américaine ?",
+                "tooltip": "Cochez « OUI » ou « NON » pour indiquer si un parent est actuellement actif à temps plein dans l’armée américaine.",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
                 "id": "is_parent_mem_of_guard_or_mru",
-                "label": "Is a Parent a Member of National Guard or Military Reserve Unit?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently a member of a National Guard or Military Reserve Unit.",
+                "label": "Un parent est-il membre de la Garde nationale ou d’une unité de réserve militaire ?",
+                "tooltip": "Cochez « OUI » ou « NON » pour indiquer si un parent est actuellement membre d’une unité de la Garde nationale ou de la Réserve militaire.",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "is_non_custodial_parent_available",
-                "label": "Is the Non-Custodial Parent Available to Provide Care?",
-                "tooltip": "Check “YES” or “NO” to indicate whether there is a non-custodial parent available to provide child care.",
+                "id": "est-ce que le parent non gardien est disponible",
+                "label": "Le parent qui n’a pas la garde est-il disponible pour fournir des soins ?",
+                "tooltip": "Cochez « OUI » ou « NON » pour indiquer si un parent n’ayant pas la garde de l’enfant est disponible pour assurer la garde de l’enfant.",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "duplicate_application",
-            "title": "Other Applications",
-            "description": "Indicate if you are also applying for or receiving child care from other agencies.",
-            "tooltip": "Indicate whether you are currently receiving or have applied for child care assistance with one of the agencies or organizations listed below. Note: If you are receiving Cash Assistance and are interested in child care assistance, you must apply through the Human Resources Administration. Reach out to your Benefits Access Center or visit the Human Resources Administration webpage.",
+            "id": "application_en_double",
+            "title": "Autres applications",
+            "description": "Indiquez si vous demandez ou recevez également des services de garde d’enfants auprès d’autres organismes.",
+            "tooltip": "Indiquez si vous recevez actuellement ou avez fait une demande d'aide à la garde d'enfants auprès de l'un des organismes ou organisations ci-dessous. Remarque : Si vous recevez une aide financière et souhaitez bénéficier d'une aide à la garde d'enfants, vous devez déposer votre demande auprès de l'Administration des ressources humaines. Contactez votre Centre d'accès aux prestations ou consultez le site web de l'Administration des ressources humaines.",
             "fields": [
               {
-                "id": "duplicate_app",
-                "label": "Are You Receiving or Applying for Child Care Through Another Agency?",
-                "type": "select",
+                "id": "application_dupliquée",
+                "label": "Recevez-vous ou demandez-vous des services de garde d’enfants par l’intermédiaire d’une autre agence ?",
+                "type": "sélectionner",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Not Applicable",
-                    "Department of Education (DOE)",
-                    "Human Resources Administration (HRA)",
-                    "Department of Youth and Community Development (DYCD)",
-                    "Department of Homeless Services (DHS)",
-                    "Consortium for Worker Education (CWE)",
-                    "Administration for Children's Services (ACS)"
+                    "Non applicable",
+                    "Ministère de l'Éducation (DOE)",
+                    "Administration des ressources humaines (HRA)",
+                    "Département de la jeunesse et du développement communautaire (DYCD)",
+                    "Département des services aux sans-abri (DHS)",
+                    "Consortium pour l'éducation des travailleurs (CWE)",
+                    "Administration des services à l'enfance (ACS)"
                   ]
                 }
               }
@@ -959,370 +975,370 @@
         ]
       },
       {
-        "id": "employment",
-        "title": "Employment",
+        "id": "emploi",
+        "title": "Emploi",
         "sections": [
           {
-            "id": "employment_precheck",
-            "title": "Tell us about your employment",
-            "description": "Tell us about your employment",
+            "id": "vérification_préalable_de_l'emploi",
+            "title": "Parlez-nous de votre emploi",
+            "description": "Parlez-nous de votre emploi",
             "fields": [
               {
-                "id": "applicant_emp_income_indicator",
-                "label": "Does applicant earn any income/ wages from employment? ",
+                "id": "indicateur_de_revenu_du_demandeur",
+                "label": "Le demandeur perçoit-il un revenu/un salaire provenant de son emploi ?",
                 "type": "radio",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
                 "id": "coparent_emp_income_indicator",
-                "label": "Does Coparent/2nd Guardian earn any income/ wages from employment? ",
+                "label": "Le coparent/deuxième tuteur perçoit-il un revenu/un salaire provenant d'un emploi ?",
                 "type": "radio",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "applicant_jobs",
-            "title": "Applicant Employment Information",
-            "description": "Enter details for up to two jobs held by the applicant.",
+            "id": "demandeur_d'emploi",
+            "title": "Informations sur l'emploi du candidat",
+            "description": "Saisissez les détails de deux emplois maximum occupés par le candidat.",
             "visibilityCondition": {
-              "field": "applicant_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "field": "indicateur_de_revenu_du_demandeur",
+              "operator": "est égal à",
+              "value": "Oui"
             },
             "fields": [
               {
-                "id": "applicant_1st_job_start_date",
-                "label": "1st Job - Start Date",
+                "id": "candidat_1er_emploi_date_de_début",
+                "label": "1er emploi - Date de début",
                 "type": "date",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1er emploi"
                 }
               },
               {
-                "id": "applicant_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
+                "id": "candidat_1er_emploi_rotation_poste",
+                "label": "1er emploi - A-t-il un horaire rotatif ?",
                 "type": "radio",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ],
-                  "group": "1st Job"
+                  "group": "1er emploi"
                 }
               },
               {
-                "id": "applicant_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
+                "id": "candidat_1er_emploi_nécessite_des_heures_supplémentaires",
+                "label": "1er emploi - Nécessite des heures supplémentaires ?",
                 "type": "radio",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ],
-                  "group": "1st Job"
+                  "group": "1er emploi"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "candidat_1er_emploi_employeur_nom",
+                "label": "1er emploi - Nom de l'employeur",
+                "type": "texte",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1er emploi"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "candidat_1er_emploi_employeur_téléphone",
+                "label": "1er emploi - Téléphone de l'employeur",
+                "type": "tél.",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1er emploi"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "candidat_1er_emploi_employeur_rue",
+                "label": "1er emploi - Adresse de l'employeur",
+                "type": "texte",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1er emploi"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "candidat_1er_emploi_employeur_ville",
+                "label": "1er emploi - Employeur Ville",
+                "type": "texte",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1er emploi"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "candidat_1er_emploi_employeur_état",
+                "label": "1er emploi - État employeur",
+                "type": "texte",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1er emploi"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "candidat_1er_emploi_employeur_code postal",
+                "label": "1er emploi - Code postal de l'employeur",
+                "type": "texte",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1er emploi"
                 }
               },
               {
-                "id": "applicant_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
+                "id": "candidat_2e_date_de_début_d'emploi",
+                "label": "2e emploi - Date de début",
                 "type": "date",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2e emploi"
                 }
               },
               {
-                "id": "applicant_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
+                "id": "candidat_2e_emploi_rotation_poste",
+                "label": "2e emploi - Avec quart rotatif ?",
                 "type": "radio",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ],
-                  "group": "2nd Job"
+                  "group": "2e emploi"
                 }
               },
               {
-                "id": "applicant_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
+                "id": "candidat_2e_emploi_nécessite_des_heures_supplémentaires",
+                "label": "2e emploi – Nécessite des heures supplémentaires ?",
                 "type": "radio",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ],
-                  "group": "2nd Job"
+                  "group": "2e emploi"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "candidat_2e_emploi_nom_employeur",
+                "label": "2e emploi - Nom de l'employeur",
+                "type": "texte",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2e emploi"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "candidat_2e_emploi_employeur_téléphone",
+                "label": "2e emploi - Téléphone de l'employeur",
+                "type": "tél.",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2e emploi"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "candidat_2e_emploi_employeur_rue",
+                "label": "2e emploi - Adresse de l'employeur",
+                "type": "texte",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2e emploi"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "candidat_2e_emploi_employeur_ville",
+                "label": "2e emploi - Employeur Ville",
+                "type": "texte",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2e emploi"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "candidat_2e_emploi_employeur_état",
+                "label": "2e emploi - État employeur",
+                "type": "texte",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2e emploi"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "candidat_2e_emploi_employeur_code postal",
+                "label": "2e emploi - Code postal de l'employeur",
+                "type": "texte",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2e emploi"
                 }
               }
             ]
           },
           {
-            "id": "second_parent_jobs",
-            "title": "Second Parent Employment Information",
-            "description": "Enter details for up to two jobs held by the second parent (if applicable).",
+            "id": "emplois_secondaires",
+            "title": "Informations sur l'emploi du deuxième parent",
+            "description": "Saisissez les détails de deux emplois maximum occupés par le deuxième parent (le cas échéant).",
             "visibilityCondition": {
               "field": "coparent_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "operator": "est égal à",
+              "value": "Oui"
             },
             "fields": [
               {
-                "id": "second_parent_1st_job_start_date",
-                "label": "1st Job - Start Date",
+                "id": "deuxième_parent_1er_emploi_date_de_début",
+                "label": "1er emploi - Date de début",
                 "type": "date",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
+                "id": "deuxième_parent_1er_emploi_rotation_poste",
+                "label": "1er emploi - A-t-il un horaire rotatif ?",
                 "type": "radio",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
+                "id": "deuxième_parent_1er_emploi_nécessite_des_heures_supplémentaires",
+                "label": "1er emploi - Nécessite des heures supplémentaires ?",
                 "type": "radio",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "deuxième_parent_1er_emploi_nom_employeur",
+                "label": "1er emploi - Nom de l'employeur",
+                "type": "texte",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "deuxième_parent_1er_emploi_employeur_téléphone",
+                "label": "1er emploi - Téléphone de l'employeur",
+                "type": "tél.",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "deuxième_parent_1er_emploi_employeur_rue",
+                "label": "1er emploi - Adresse de l'employeur",
+                "type": "texte",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "deuxième_parent_1er_emploi_employeur_ville",
+                "label": "1er emploi - Employeur Ville",
+                "type": "texte",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "deuxième_parent_1er_emploi_employeur_état",
+                "label": "1er emploi - État employeur",
+                "type": "texte",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "deuxième_parent_1er_emploi_employeur_code postal",
+                "label": "1er emploi - Code postal de l'employeur",
+                "type": "texte",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
+                "id": "deuxième_parent_2e_date_de_début_emploi",
+                "label": "2e emploi - Date de début",
                 "type": "date",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
+                "id": "deuxième_parent_2e_emploi_rotation_équipe",
+                "label": "2e emploi - Avec quart rotatif ?",
                 "type": "radio",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
+                "id": "deuxième_parent_2e_emploi_nécessite_des_heures_supplémentaires",
+                "label": "2e emploi – Nécessite des heures supplémentaires ?",
                 "type": "radio",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "nom_employeur_second_parent_2e_emploi",
+                "label": "2e emploi - Nom de l'employeur",
+                "type": "texte",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "deuxième_parent_2e_emploi_employeur_téléphone",
+                "label": "2e emploi - Téléphone de l'employeur",
+                "type": "tél.",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "deuxième_parent_2e_emploi_employeur_rue",
+                "label": "2e emploi - Adresse de l'employeur",
+                "type": "texte",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "deuxième_parent_2e_emploi_employeur_ville",
+                "label": "2e emploi - Employeur Ville",
+                "type": "texte",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "deuxième_parent_2e_emploi_employeur_état",
+                "label": "2e emploi - État employeur",
+                "type": "texte",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "deuxième_parent_2e_emploi_employeur_code postal",
+                "label": "2e emploi - Code postal de l'employeur",
+                "type": "texte",
                 "required": false
               }
             ]
@@ -1330,29 +1346,29 @@
         ]
       },
       {
-        "id": "schedule",
-        "title": "Work/Activity/Travel Time Schedule",
+        "id": "calendrier",
+        "title": "Horaire de travail/d'activité/de déplacement",
         "sections": [
           {
-            "id": "schedule_section_info",
-            "title": "Schedule Information",
-            "type": "info",
+            "id": "information_section_horaire",
+            "title": "Informations sur le calendrier",
+            "type": "informations",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please indicate what days and hours you will need child care for based on your reason for care.\\n\\n- **Employed**: Indicate the hours you attend work\\n- **Educational or Vocational Program**: Indicate the hours you attend school or your program\\n- **Looking for Work**: Indicate the hours you spend looking for work\\n- **Homeless**: Indicate the hours you spend looking for housing\\n- **Attending Services for Domestic Violence**: Indicate the hours you attend services.\\n- **Attending Services for Substance Abuse Treatment**: Indicate the hours you attend services."
+            "content": "Veuillez indiquer les jours et les heures pendant lesquels vous aurez besoin de services de garde d'enfants en fonction de la raison de votre garde.\\n\\n- **Employé** : Indiquez les heures pendant lesquelles vous travaillez\\n- **Programme éducatif ou professionnel** : Indiquez les heures pendant lesquelles vous fréquentez l'école ou votre programme\\n- **Recherche d'emploi** : Indiquez les heures que vous passez à chercher du travail\\n- **Sans-abri** : Indiquez les heures que vous passez à chercher un logement\\n- **Fréquentation de services pour violence familiale** : Indiquez les heures pendant lesquelles vous fréquentez les services.\\n- **Fréquentation de services de traitement de la toxicomanie** : Indiquez les heures pendant lesquelles vous fréquentez les services."
           },
           {
-            "id": "first_parent_activity_schedule",
-            "title": "First Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the first parent's activities.",
+            "id": "premier_programme_d'activités_parentales",
+            "title": "Programme d'activités pour les premiers parents",
+            "description": "Saisissez les heures de début et de fin de chaque jour de la semaine pour les activités du premier parent.",
             "ui": {
-              "layout": "table",
+              "layout": "tableau",
               "columns": [
-                "Start Time",
-                "End Time"
+                "Heure de début",
+                "Fin des temps"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
@@ -1362,162 +1378,162 @@
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "Lundi",
+                  "Mardi",
+                  "Mercredi",
+                  "Jeudi",
+                  "Vendredi"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "Appliquer l'horaire sélectionné à d'autres jours de la semaine",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "Lundi",
+                  "Mardi",
+                  "Mercredi",
+                  "Jeudi",
+                  "Vendredi",
+                  "Samedi",
+                  "Dimanche"
                 ]
               }
             },
             "fields": [
               {
-                "id": "fp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "id": "fp_lundi_à partir de",
+                "label": "Lundi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Lundi",
                   "column": 1
                 }
               },
               {
-                "id": "fp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "id": "fp_lundi_à",
+                "label": "Du lundi au",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Lundi",
                   "column": 2
                 }
               },
               {
-                "id": "fp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "id": "fp_mardi_à partir de",
+                "label": "Mardi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Mardi",
                   "column": 1
                 }
               },
               {
-                "id": "fp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "id": "fp_mardi_à",
+                "label": "Mardi à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Mardi",
                   "column": 2
                 }
               },
               {
-                "id": "fp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "id": "fp_mercredi_à_partir",
+                "label": "Mercredi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Mercredi",
                   "column": 1
                 }
               },
               {
-                "id": "fp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "id": "fp_mercredi_à",
+                "label": "Mercredi à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Mercredi",
                   "column": 2
                 }
               },
               {
-                "id": "fp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "id": "fp_jeudi_à partir de",
+                "label": "Jeudi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Jeudi",
                   "column": 1
                 }
               },
               {
-                "id": "fp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "id": "fp_jeudi_à",
+                "label": "Jeudi à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Jeudi",
                   "column": 2
                 }
               },
               {
                 "id": "fp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "label": "Vendredi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Vendredi",
                   "column": 1
                 }
               },
               {
                 "id": "fp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "label": "Vendredi à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Vendredi",
                   "column": 2
                 }
               },
               {
-                "id": "fp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "id": "fp_samedi_à_partir",
+                "label": "Samedi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Samedi",
                   "column": 1
                 }
               },
               {
-                "id": "fp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "id": "fp_samedi_à",
+                "label": "Samedi à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Samedi",
                   "column": 2
                 }
               },
               {
-                "id": "fp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "id": "fp_dimanche_à partir de",
+                "label": "Dimanche à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Dimanche",
                   "column": 1
                 }
               },
               {
                 "id": "fp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "label": "Dimanche à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Dimanche",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "second_parent_activity_schedule",
-            "title": "Second Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the second parent's activities.",
+            "id": "programme_d'activités_du_second_parent",
+            "title": "Programme d'activités pour les deuxièmes parents",
+            "description": "Saisissez les heures de début et de fin de chaque jour de la semaine pour les activités du deuxième parent.",
             "ui": {
-              "layout": "table",
+              "layout": "tableau",
               "columns": [
-                "Start Time",
-                "End Time"
+                "Heure de début",
+                "Fin des temps"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
@@ -1527,310 +1543,310 @@
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "Lundi",
+                  "Mardi",
+                  "Mercredi",
+                  "Jeudi",
+                  "Vendredi"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "Appliquer l'horaire sélectionné à d'autres jours de la semaine",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "Lundi",
+                  "Mardi",
+                  "Mercredi",
+                  "Jeudi",
+                  "Vendredi",
+                  "Samedi",
+                  "Dimanche"
                 ]
               }
             },
             "fields": [
               {
-                "id": "sp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "id": "sp_lundi_à partir de",
+                "label": "Lundi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Lundi",
                   "column": 1
                 }
               },
               {
-                "id": "sp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "id": "sp_lundi_à",
+                "label": "Du lundi au",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Lundi",
                   "column": 2
                 }
               },
               {
-                "id": "sp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "id": "sp_mardi_à_partir de",
+                "label": "Mardi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Mardi",
                   "column": 1
                 }
               },
               {
                 "id": "sp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "label": "Mardi à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Mardi",
                   "column": 2
                 }
               },
               {
-                "id": "sp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "id": "sp_mercredi_à_partir de",
+                "label": "Mercredi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Mercredi",
                   "column": 1
                 }
               },
               {
-                "id": "sp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "id": "sp_mercredi_à",
+                "label": "Mercredi à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Mercredi",
                   "column": 2
                 }
               },
               {
-                "id": "sp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "id": "sp_jeudi_à partir de",
+                "label": "Jeudi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Jeudi",
                   "column": 1
                 }
               },
               {
-                "id": "sp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "id": "sp_jeudi_à",
+                "label": "Jeudi à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Jeudi",
                   "column": 2
                 }
               },
               {
                 "id": "sp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "label": "Vendredi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Vendredi",
                   "column": 1
                 }
               },
               {
                 "id": "sp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "label": "Vendredi à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Vendredi",
                   "column": 2
                 }
               },
               {
-                "id": "sp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "id": "sp_samedi_à_partir",
+                "label": "Samedi à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Samedi",
                   "column": 1
                 }
               },
               {
-                "id": "sp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "id": "sp_samedi_à",
+                "label": "Samedi à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Samedi",
                   "column": 2
                 }
               },
               {
-                "id": "sp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "id": "sp_dimanche_à_partir",
+                "label": "Dimanche à partir de",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Dimanche",
                   "column": 1
                 }
               },
               {
-                "id": "sp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "id": "sp_dimanche_à",
+                "label": "Dimanche à",
+                "type": "temps",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Dimanche",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "first_parent_travel_time",
-            "title": "First Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the first parent.",
+            "id": "premier_parent_temps_de_déplacement",
+            "title": "Temps de trajet du premier parent",
+            "description": "Saisissez les temps de trajet et le mode de transport du premier parent.",
             "fields": [
               {
                 "id": "fp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "label": "Temps de trajet pour déposer",
+                "type": "sélectionner",
+                "tooltip": "Sélectionnez votre temps de trajet habituel entre le travail/l'activité et votre fournisseur de services de garde d'enfants",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
+                    "15 minutes",
+                    "30 minutes",
                     "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "1 heure",
+                    "Plus d'une heure"
                   ]
                 }
               },
               {
                 "id": "fp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "label": "Heure de dépôt (si > 1 heure)",
+                "type": "texte",
                 "requiredCondition": {
                   "field": "fp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "est égal à",
+                  "value": "Plus d'une heure"
                 }
               },
               {
                 "id": "fp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "label": "Temps de trajet pour la prise en charge",
+                "type": "sélectionner",
+                "tooltip": "Sélectionnez votre temps de trajet habituel entre le travail/l'activité et votre fournisseur de services de garde d'enfants",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
+                    "15 minutes",
+                    "30 minutes",
                     "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "1 heure",
+                    "Plus d'une heure"
                   ]
                 }
               },
               {
                 "id": "fp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "label": "Heure de prise en charge (si > 1 heure)",
+                "type": "texte",
                 "requiredCondition": {
                   "field": "fp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "est égal à",
+                  "value": "Plus d'une heure"
                 }
               },
               {
                 "id": "fp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
+                "label": "Transports en commun pour le dépôt ?",
                 "type": "radio",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
+                "tooltip": "Indiquez si le demandeur utilise les transports en commun pour se rendre au travail/à l'activité et en revenir.",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
                 "id": "fp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
+                "label": "Transports en commun pour venir vous chercher ?",
+                "tooltip": "Indiquez si le demandeur utilise les transports en commun pour se rendre au travail/à l'activité et en revenir.",
                 "type": "radio",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "second_parent_travel_time",
-            "title": "Second Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the second parent.",
+            "id": "deuxième_parent_temps_de_déplacement",
+            "title": "Temps de trajet du deuxième parent",
+            "description": "Saisissez les temps de trajet et le mode de transport du deuxième parent.",
             "fields": [
               {
                 "id": "sp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
+                "label": "Temps de trajet pour déposer",
+                "type": "sélectionner",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
+                    "15 minutes",
+                    "30 minutes",
                     "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "1 heure",
+                    "Plus d'une heure"
                   ]
                 }
               },
               {
                 "id": "sp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
+                "label": "Temps de trajet pour la prise en charge",
+                "type": "sélectionner",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
+                    "15 minutes",
+                    "30 minutes",
                     "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "1 heure",
+                    "Plus d'une heure"
                   ]
                 }
               },
               {
                 "id": "sp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "label": "Heure de dépôt (si > 1 heure)",
+                "type": "texte",
                 "requiredCondition": {
                   "field": "sp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "est égal à",
+                  "value": "Plus d'une heure"
                 }
               },
               {
                 "id": "sp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "label": "Heure de prise en charge (si > 1 heure)",
+                "type": "texte",
                 "requiredCondition": {
                   "field": "sp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "est égal à",
+                  "value": "Plus d'une heure"
                 }
               },
               {
                 "id": "sp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
+                "label": "Transports en commun pour le dépôt ?",
                 "type": "radio",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
                 "id": "sp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
+                "label": "Transports en commun pour venir vous chercher ?",
                 "type": "radio",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               }
@@ -1839,122 +1855,122 @@
         ]
       },
       {
-        "id": "income",
-        "title": "Income Information",
+        "id": "revenu",
+        "title": "Informations sur les revenus",
         "sections": [
           {
-            "id": "income_step_info",
+            "id": "revenu_étape_info",
             "title": "Instructions",
-            "type": "info",
+            "type": "informations",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please include income/benefits information for yourself and, if applicable, your spouse, your child’s second caretaker, and/or any other adult with whom you share a child, if they live in your home.\\n\\nIndicate if you receive money from the following sources by selecting “Yes” or “No.” If you select “Yes,” you will be asked for additional information.\\n\\nIf the second caretaker in the household also receives the same income source, add a separate line for their income."
+            "content": "Veuillez inclure les renseignements sur vos revenus et prestations sociales ainsi que, le cas échéant, ceux de votre conjoint, du deuxième gardien de votre enfant et/ou de tout autre adulte avec qui vous partagez un enfant, s'ils vivent sous votre toit.\\n\\nIndiquez si vous recevez de l'argent des sources suivantes en sélectionnant « Oui » ou « Non ». Si vous sélectionnez « Oui », des renseignements supplémentaires vous seront demandés.\\n\\nSi le deuxième gardien du ménage reçoit également la même source de revenus, ajoutez une ligne distincte pour ses revenus."
           },
           {
-            "id": "income_sources",
-            "title": "Income Sources",
-            "description": "Provide details about all income sources applicable to the applicant or household.",
+            "id": "sources de revenus",
+            "title": "Sources de revenus",
+            "description": "Fournissez des détails sur toutes les sources de revenus applicables au demandeur ou au ménage.",
             "fields": [
               {
-                "id": "income_sources",
-                "label": "List of Income Sources",
-                "type": "group",
+                "id": "sources de revenus",
+                "label": "Liste des sources de revenus",
+                "type": "groupe",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "name_ref",
-                    "how_often",
-                    "recipient",
-                    "monthly_amount"
+                    "nom_ref",
+                    "à quelle fréquence",
+                    "destinataire",
+                    "montant_mensuel"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "name_ref",
-                    "label": "Income Source Type",
-                    "type": "select",
+                    "id": "nom_ref",
+                    "label": "Type de source de revenu",
+                    "type": "sélectionner",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "ApplicantWages",
+                        "Salaire du candidat",
                         "SecondParentWages",
-                        "SelfEmployment",
-                        "ChildSupport",
-                        "Alimony",
-                        "Unemployment",
-                        "SocialSecurity",
-                        "Disability",
-                        "Rental",
-                        "Dividends",
-                        "Retirement",
-                        "CashAssistance",
-                        "Other"
+                        "Travail indépendant",
+                        "Pension alimentaire pour enfants",
+                        "Pension",
+                        "Chômage",
+                        "Sécurité sociale",
+                        "Invalidité",
+                        "De location",
+                        "Dividendes",
+                        "Retraite",
+                        "Assistance en espèces",
+                        "Autre"
                       ]
                     }
                   },
                   {
-                    "id": "other_source_text",
-                    "label": "Other Source (If applicable)",
-                    "type": "text",
+                    "id": "autre_texte_source",
+                    "label": "Autre source (le cas échéant)",
+                    "type": "texte",
                     "visibilityCondition": {
-                      "field": "name_ref",
-                      "operator": "equals",
-                      "value": "Other"
+                      "field": "nom_ref",
+                      "operator": "est égal à",
+                      "value": "Autre"
                     },
                     "requiredCondition": {
                       "condition": {
-                        "field": "name_ref",
-                        "operator": "equals",
-                        "value": "Other"
+                        "field": "nom_ref",
+                        "operator": "est égal à",
+                        "value": "Autre"
                       }
                     }
                   },
                   {
-                    "id": "is_source_applicable",
-                    "label": "Is this Source Applicable?",
+                    "id": "est-ce que la source est applicable",
+                    "label": "Cette source est-elle applicable ?",
                     "type": "radio",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Oui",
+                        "Non"
                       ]
                     }
                   },
                   {
-                    "id": "gross_amount",
-                    "label": "Gross Amount ($)",
-                    "type": "number",
+                    "id": "montant_brut",
+                    "label": "Montant brut ($)",
+                    "type": "nombre",
                     "required": true
                   },
                   {
-                    "id": "how_often",
-                    "label": "Frequency of Income",
+                    "id": "à quelle fréquence",
+                    "label": "Fréquence des revenus",
                     "type": "radio",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Weekly",
-                        "Bi-weekly",
-                        "Monthly",
-                        "Other"
+                        "Hebdomadaire",
+                        "Bihebdomadaire",
+                        "Mensuel",
+                        "Autre"
                       ]
                     }
                   },
                   {
-                    "id": "recipient",
-                    "label": "Recipient of Income",
-                    "type": "text",
+                    "id": "destinataire",
+                    "label": "Bénéficiaire du revenu",
+                    "type": "texte",
                     "required": true
                   },
                   {
-                    "id": "monthly_amount",
-                    "label": "Monthly Amount ($)",
-                    "type": "number",
+                    "id": "montant_mensuel",
+                    "label": "Montant mensuel ($)",
+                    "type": "nombre",
                     "required": true
                   }
                 ]
@@ -1962,37 +1978,37 @@
             ]
           },
           {
-            "id": "total_income",
-            "title": "Total Household Income",
-            "description": "Sum of all monthly income across sources.",
+            "id": "revenu_total",
+            "title": "Revenu total du ménage",
+            "description": "Somme de tous les revenus mensuels provenant de toutes les sources.",
             "fields": [
               {
-                "id": "total_income",
-                "label": "Total Monthly Income ($)",
-                "type": "number",
+                "id": "revenu_total",
+                "label": "Revenu mensuel total ($)",
+                "type": "nombre",
                 "required": true
               }
             ]
           },
           {
-            "id": "income_proof_section",
-            "title": "Income Proof",
+            "id": "section_preuve_de_revenu",
+            "title": "Preuve de revenu",
             "fields": [
               {
-                "id": "income_proof",
-                "label": "Upload Income Proof",
-                "type": "file",
+                "id": "preuve de revenu",
+                "label": "Télécharger une preuve de revenu",
+                "type": "déposer",
                 "requiredCondition": {
                   "condition": {
-                    "field": "assistance_reason",
-                    "operator": "includes",
-                    "value": "Employment"
+                    "field": "raison_de_l'assistance",
+                    "operator": "comprend",
+                    "value": "Emploi"
                   }
                 },
                 "constraints": {
                   "maxFileSizeMB": 5,
                   "allowedTypes": [
-                    "application/pdf",
+                    "candidature/pdf",
                     "image/jpeg"
                   ],
                   "imageResolution": {
@@ -2001,9 +2017,9 @@
                   }
                 },
                 "metadata": {
-                  "proofCategory": "Income Verification",
+                  "proofCategory": "Vérification des revenus",
                   "examples": [
-                    "Pay Stub",
+                    "Bulletin de paie",
                     "W-2"
                   ],
                   "multiple": true
@@ -2014,72 +2030,72 @@
         ]
       },
       {
-        "id": "provider",
-        "title": "Provider",
+        "id": "fournisseur",
+        "title": "Fournisseur",
         "sections": [
           {
-            "id": "provider_step_info",
+            "id": "fournisseur_étape_info",
             "title": "Instructions",
-            "type": "info",
+            "type": "informations",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "If you are found eligible for child care assistance, you can choose center-based or home-based care from a licensed, registered, or legally exempt provider. If you choose a provider that is not licensed or registered, the provider must be enrolled as a legally exempt provider.\\n\\nIf you know which child care providers you would like your child to attend, provide the names and addresses of your choice of providers. You can leave this section blank if you do not know (it will not impact your eligibility and you will have an opportunity to select a provider if determined eligible)."
+            "content": "Si vous êtes admissible à l'aide à la garde d'enfants, vous pouvez choisir une garde en centre ou à domicile auprès d'un prestataire agréé, enregistré ou exonéré. Si vous choisissez un prestataire non agréé ou enregistré, il doit être inscrit comme prestataire exonéré. Si vous savez quels prestataires de garde vous souhaitez confier à votre enfant, indiquez leurs noms et adresses. Vous pouvez laisser cette section vide si vous ne le savez pas (cela n'aura aucune incidence sur votre admissibilité et vous aurez la possibilité de choisir un prestataire si vous êtes jugé admissible)."
           },
           {
-            "id": "provider_choices",
-            "title": "Provider Choices",
-            "description": "Specify details of the provider where you intend to enroll the child(ren).",
+            "id": "choix_du_fournisseur",
+            "title": "Choix des fournisseurs",
+            "description": "Précisez les coordonnées du prestataire auprès duquel vous souhaitez inscrire l'enfant ou les enfants.",
             "fields": [
               {
-                "id": "provider_choices",
-                "label": "List of Providers",
-                "type": "group",
+                "id": "choix_du_fournisseur",
+                "label": "Liste des fournisseurs",
+                "type": "groupe",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "provider_name",
-                    "program_number",
-                    "provider_zip_code"
+                    "nom_du_fournisseur",
+                    "numéro_de_programme",
+                    "fournisseur_code_postal"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "provider_name",
-                    "label": "Provider Name",
-                    "type": "text",
+                    "id": "nom_du_fournisseur",
+                    "label": "Nom du fournisseur",
+                    "type": "texte",
                     "required": true
                   },
                   {
-                    "id": "program_number",
-                    "label": "Program Number (If Applicable)",
-                    "type": "text",
+                    "id": "numéro_de_programme",
+                    "label": "Numéro de programme (le cas échéant)",
+                    "type": "texte",
                     "required": false
                   },
                   {
-                    "id": "provider_street",
-                    "label": "Street Address",
-                    "type": "text",
+                    "id": "fournisseur_rue",
+                    "label": "Adresse de la rue",
+                    "type": "texte",
                     "required": true
                   },
                   {
-                    "id": "provider_city",
-                    "label": "City",
-                    "type": "text",
+                    "id": "fournisseur_ville",
+                    "label": "Ville",
+                    "type": "texte",
                     "required": true
                   },
                   {
-                    "id": "provider_state",
-                    "label": "State",
-                    "type": "text",
+                    "id": "état_fournisseur",
+                    "label": "État",
+                    "type": "texte",
                     "required": true
                   },
                   {
-                    "id": "provider_zip_code",
-                    "label": "Zip Code",
-                    "type": "text",
+                    "id": "fournisseur_code_postal",
+                    "label": "Code postal",
+                    "type": "texte",
                     "required": true
                   }
                 ]
@@ -2089,45 +2105,45 @@
         ]
       },
       {
-        "id": "document_upload_step",
-        "title": "Document Upload",
-        "description": "The Application for Child Care Assistance (CFWB-012) must include supporting documentation. Check to ensure that documentation is provided for each requirement of subsidy eligibility.",
+        "id": "étape_de_téléchargement_du_document",
+        "title": "Téléchargement de documents",
+        "description": "La demande d'aide à la garde d'enfants (CFWB-012) doit être accompagnée de pièces justificatives. Vérifiez que les pièces justificatives sont fournies pour chaque critère d'admissibilité à l'aide.",
         "sections": [
           {
-            "id": "nyc_residency",
-            "title": "New York City Residency",
-            "description": "These documents confirm that you live in New York City. Please upload one of the following documents.",
+            "id": "résidence_nyc",
+            "title": "Résidence à New York",
+            "description": "Ces documents confirment que vous résidez à New York. Veuillez télécharger l'un des documents suivants.",
             "fields": [
               {
                 "id": "nyc_residency_type",
-                "label": "Select one of the following:",
+                "label": "Sélectionnez l’une des options suivantes :",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
                     "IDNYC",
-                    "Utility Bill",
-                    "Section 8 Award Letter",
-                    "Driver’s License",
-                    "Rent Receipt",
-                    "NYCHA Certificate",
-                    "CFWB-067 Residency Attestation",
-                    "CFWB-027 Housing Attestation with address listed",
-                    "Shelter Residency Letter with address listed",
-                    "Other"
+                    "Facture de services publics",
+                    "Lettre d'attribution de la section 8",
+                    "Le permis de conduire",
+                    "Quittance de loyer",
+                    "Certificat NYCHA",
+                    "Attestation de résidence CFWB-067",
+                    "CFWB-027 Attestation de logement avec adresse indiquée",
+                    "Lettre de résidence en refuge avec adresse indiquée",
+                    "Autre"
                   ]
                 }
               },
               {
-                "id": "nyc_residency_file",
-                "label": "Upload Residency Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
-                "required": true, 
+                "id": "fichier_de_résidence_nyc",
+                "label": "Télécharger un document justificatif de résidence",
+                "description": "Pour ajouter un document à votre candidature, vous pouvez télécharger une image ou un fichier numérisé depuis votre téléphone ou appareil. Les formats acceptés sont : .pdf, .gif, .jpeg, .jpg et .png, jusqu'à 25 Mo. Découvrez comment télécharger vos fichiers grâce à ce tutoriel vidéo.",
+                "type": "déposer",
+                "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
+                    "candidature/pdf",
                     "image/jpeg",
                     "image/jpg",
                     "image/png",
@@ -2135,43 +2151,43 @@
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "NYC Residency",
+                  "proofCategory": "Résidence à New York",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "citizenship_status",
-            "title": "Citizenship or Immigration Status",
-            "description": "These documents confirm the citizenship/immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for ONLY each child needing care.",
+            "id": "statut de citoyenneté",
+            "title": "Citoyenneté ou statut d'immigration",
+            "description": "Ces documents confirment la citoyenneté/le statut d'immigration des enfants de votre famille pour lesquels vous demandez une aide à la garde d'enfants. Veuillez télécharger un des documents suivants UNIQUEMENT pour chaque enfant nécessitant des services de garde.",
             "fields": [
               {
-                "id": "citizenship_doc_type",
-                "label": "Select one of the following:",
+                "id": "citoyenneté_doc_type",
+                "label": "Sélectionnez l’une des options suivantes :",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
-                    "US Birth Certificate",
-                    "Alien Registration Card including Permanent Resident or Green Card",
-                    "Passport",
-                    "FS-240 (Report of Birth Abroad of a U.S. Citizen)",
-                    "Naturalization Certificate",
-                    "Other"
+                    "Certificat de naissance américain",
+                    "Carte d'enregistrement d'étranger, y compris la carte de résident permanent ou la carte verte",
+                    "Passeport",
+                    "FS-240 (Rapport de naissance à l'étranger d'un citoyen américain)",
+                    "Certificat de naturalisation",
+                    "Autre"
                   ]
                 }
               },
               {
-                "id": "citizenship_doc_file",
-                "label": "Upload Citizenship/Immigration Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "fichier_document_citoyenneté",
+                "label": "Télécharger le document de citoyenneté/immigration",
+                "description": "Pour ajouter un document à votre candidature, vous pouvez télécharger une image ou un fichier numérisé depuis votre téléphone ou appareil. Les formats acceptés sont : .pdf, .gif, .jpeg, .jpg et .png, jusqu'à 25 Mo. Découvrez comment télécharger vos fichiers grâce à ce tutoriel vidéo.",
+                "type": "déposer",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
+                    "candidature/pdf",
                     "image/jpeg",
                     "image/jpg",
                     "image/png",
@@ -2179,44 +2195,44 @@
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Citizenship/Immigration Status",
+                  "proofCategory": "Citoyenneté/Statut d'immigration",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "child_relationship",
-            "title": "Child’s Relationship to Parent/Applicant",
-            "description": "These documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them or not. If you are a legal guardian with financial responsibility, you must upload a Court order OR a letter of guardianship.",
+            "id": "relation_enfant",
+            "title": "Lien de parenté de l'enfant avec le parent/demandeur",
+            "description": "Ces documents confirment votre lien de parenté avec les enfants mineurs de votre foyer. Veuillez télécharger l'un des documents suivants pour chaque enfant mineur de votre foyer, qu'il ait besoin ou non de services de garde. Si vous êtes tuteur légal et avez des responsabilités financières, vous devez télécharger une ordonnance du tribunal OU une lettre de tutelle.",
             "fields": [
               {
-                "id": "relationship_doc_type",
-                "label": "Select one of the following:",
+                "id": "relation_doc_type",
+                "label": "Sélectionnez l’une des options suivantes :",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Passport with parent's signature",
-                    "Court order for legal guardian with financial responsibility",
-                    "Letter of Guardianship",
-                    "Other - CFWB-058 Caretaker Attestation"
+                    "Certificat de naissance",
+                    "Dossier d'adoption",
+                    "Acte de baptême",
+                    "Passeport avec signature des parents",
+                    "Ordonnance du tribunal pour un tuteur légal avec responsabilité financière",
+                    "Lettre de tutelle",
+                    "Autre - Attestation de gardien CFWB-058"
                   ]
                 }
               },
               {
-                "id": "relationship_doc_file",
-                "label": "Upload Relationship Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "fichier_doc_relation",
+                "label": "Télécharger le document de relation",
+                "description": "Pour ajouter un document à votre candidature, vous pouvez télécharger une image ou un fichier numérisé depuis votre téléphone ou appareil. Les formats acceptés sont : .pdf, .gif, .jpeg, .jpg et .png, jusqu'à 25 Mo. Découvrez comment télécharger vos fichiers grâce à ce tutoriel vidéo.",
+                "type": "déposer",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
+                    "candidature/pdf",
                     "image/jpeg",
                     "image/jpg",
                     "image/png",
@@ -2224,43 +2240,43 @@
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Relationship",
+                  "proofCategory": "Relation enfantine",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "age_proof",
-            "title": "Age",
-            "description": "These documents confirm the age of the children in your household. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:",
+            "id": "résistant au vieillissement",
+            "title": "Âge",
+            "description": "Ces documents confirment l'âge des enfants de votre foyer. Veuillez télécharger l'un des documents suivants pour chaque enfant de moins de 18 ans du foyer, qu'il ait besoin ou non de services de garde :",
             "fields": [
               {
-                "id": "age_doc_type",
-                "label": "Select one of the following:",
+                "id": "âge_doc_type",
+                "label": "Sélectionnez l’une des options suivantes :",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Alien Registration Card",
-                    "Passport",
-                    "Official hospital documentation of the child’s birth"
+                    "Certificat de naissance",
+                    "Dossier d'adoption",
+                    "Acte de baptême",
+                    "Carte d'enregistrement des étrangers",
+                    "Passeport",
+                    "Documentation hospitalière officielle de la naissance de l’enfant"
                   ]
                 }
               },
               {
                 "id": "age_doc_file",
-                "label": "Upload Age Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "label": "Télécharger un document justifiant l'âge",
+                "description": "Pour ajouter un document à votre candidature, vous pouvez télécharger une image ou un fichier numérisé depuis votre téléphone ou appareil. Les formats acceptés sont : .pdf, .gif, .jpeg, .jpg et .png, jusqu'à 25 Mo. Découvrez comment télécharger vos fichiers grâce à ce tutoriel vidéo.",
+                "type": "déposer",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
+                    "candidature/pdf",
                     "image/jpeg",
                     "image/jpg",
                     "image/png",
@@ -2268,7 +2284,7 @@
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Age",
+                  "proofCategory": "Âge de l'enfant",
                   "multiple": false
                 }
               }
@@ -2277,9 +2293,9 @@
         ]
       },
       {
-        "id": "review",
-        "title": "Review & Submit",
-        "type": "review",
+        "id": "revoir",
+        "title": "Réviser et soumettre",
+        "type": "revoir",
         "sections": []
       }
     ]
