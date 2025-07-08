@@ -17,7 +17,11 @@ import HelpChat from '../../shared/HelpChat';
  * @param {Function} [props.onExit] - Called when the user exits the form.
  * @param {string} [props.formSpecPath='/data/childcare_form.json'] - Path to the form specification JSON file.
  */
-export default function FormRenderer({ applicationId, onExit, formSpecPath = '/data/childcare_form.json' }) {
+export default function FormRenderer({
+  applicationId,
+  onExit,
+  formSpecPath = '/data/childcare_form.json',
+}) {
   const { showToast } = useToast();
   const [formSpec, setFormSpec] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -210,34 +214,41 @@ export default function FormRenderer({ applicationId, onExit, formSpecPath = '/d
     if (targetIndex < currentStep) return true;
     if (steps[currentStep]?.type === 'review') return true;
 
-    const result = validateStep(
-      steps[currentStep],
-      stepData[steps[currentStep].id] || {},
-      {},
-      {},
-      allData
-    );
+    for (let i = currentStep; i < targetIndex; i++) {
+      const result = validateStep(
+        steps[i],
+        stepData[steps[i].id] || {},
+        {},
+        {},
+        allData,
+      );
 
-    if (!silent && targetIndex > currentStep) {
       if (!result.valid) {
-        // If trying to move forward and validation fails, set errors and touched state to trigger display in Step component
-        setCurrentStepValidation({
-          errors: result.errors,
-          touched: result.touched,
-          timestamp: Date.now(),
-        });
-        const summary = Object.entries(result.errors)
-          .filter(([, msg]) => msg)
-          .map(([id, msg]) => ({ id, msg }));
-        setErrorSummary(summary);
-        setTimeout(() => {
-          errorSummaryRef.current && errorSummaryRef.current.focus();
-        }, 0);
-      } else {
-        setErrorSummary([]);
+        if (!silent) {
+          if (i !== currentStep) {
+            setCurrentStep(i);
+          }
+          setCurrentStepValidation({
+            errors: result.errors,
+            touched: result.touched,
+            timestamp: Date.now(),
+          });
+          const summary = Object.entries(result.errors)
+            .filter(([, msg]) => msg)
+            .map(([id, msg]) => ({ id, msg }));
+          setErrorSummary(summary);
+          setTimeout(() => {
+            errorSummaryRef.current && errorSummaryRef.current.focus();
+          }, 0);
+        }
+        return false;
       }
     }
-    return result.valid;
+
+    if (!silent && targetIndex > currentStep) {
+      setErrorSummary([]);
+    }
+    return true;
   };
 
   if (isLoading) {
