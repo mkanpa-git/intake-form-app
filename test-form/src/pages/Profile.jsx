@@ -3,11 +3,13 @@ import { AuthContext } from '../context/AuthContext';
 import TextInput from '../components/shared/TextInput/TextInput';
 import Button from '../components/shared/Button';
 import { getCsrfToken } from '../utils/csrf';
+import { useTranslation } from 'react-i18next';
 
 export default function Profile() {
   const { user, setUser } = useContext(AuthContext);
   const [form, setForm] = useState({ first_name: '', middle_initial: '', last_name: '' });
   const [status, setStatus] = useState('');
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (user) {
@@ -43,15 +45,15 @@ export default function Profile() {
     }
   };
 
-  if (!user) return <p>Please log in</p>;
+  if (!user) return <p>{t('pleaseLogIn')}</p>;
 
   return (
     <form className="jules-profile-form" onSubmit={handleSubmit} aria-labelledby="profile-heading">
-      <h1 id="profile-heading">Edit Profile</h1>
+      <h1 id="profile-heading">{t('editProfile')}</h1>
       <TextInput
         id="first_name"
         name="first_name"
-        label="First Name"
+        label={t('firstName')}
         value={form.first_name}
         onChange={handleChange}
         required
@@ -59,19 +61,19 @@ export default function Profile() {
       <TextInput
         id="middle_initial"
         name="middle_initial"
-        label="Middle Initial"
+        label={t('middleInitial')}
         value={form.middle_initial}
         onChange={handleChange}
       />
       <TextInput
         id="last_name"
         name="last_name"
-        label="Last Name"
+        label={t('lastName')}
         value={form.last_name}
         onChange={handleChange}
         required
       />
-      <Button type="submit" variant="primary">Save</Button>
+      <Button type="submit" variant="primary">{t('save')}</Button>
       {status && <span role="status">{status}</span>}
     </form>
   );

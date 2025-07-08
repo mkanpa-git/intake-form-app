@@ -1,6 +1,8 @@
 import { useState, useContext, useEffect } from "react";
 import { Link, Routes, Route } from 'react-router-dom';
 import { AuthContext } from './context/AuthContext';
+import LanguageSelect from './components/shared/LanguageSelect/LanguageSelect';
+import { useTranslation } from 'react-i18next';
 import Profile from './pages/Profile';
 // import "./form.css"; // Old theme - commented out
 import FormPage from "./pages/FormPage";
@@ -28,6 +30,7 @@ function App() {
   const [currentService, setCurrentService] = useState('childcare');
   const [theme, setTheme] = useState('system');
   const { user } = useContext(AuthContext);
+  const { t } = useTranslation();
   const server = process.env.REACT_APP_SERVER_URL || '';
 
   useEffect(() => {
@@ -88,18 +91,15 @@ function App() {
           >
             ☰
           </button>
-          <div className="brand">ModelCity Services</div>
+          <div className="brand">{t('brand')}</div>
         </div>
 
         <nav className={`right ${menuOpen ? "open" : ""}`}>
-          <Link
-            to="/"
-            onClick={() => setPage('dashboard')}
-          >
-            Dashboard
+          <Link to="/" onClick={() => setPage('dashboard')}>
+            {t('dashboard')}
           </Link>
           {!user && (
-            <a href={`${server}/auth/login`}>Login</a>
+            <a href={`${server}/auth/login`}>{t('login')}</a>
           )}
           {user && (
             <div className="user-menu">
@@ -115,12 +115,15 @@ function App() {
               </button>
               {userMenuOpen && (
                 <div className="dropdown" role="menu">
-                  <Link to="/profile" onClick={() => setUserMenuOpen(false)}>Profile</Link>
-                  <a href={`${server}/auth/logout`}>Logout</a>
+                  <Link to="/profile" onClick={() => setUserMenuOpen(false)}>
+                    {t('profile')}
+                  </Link>
+                  <a href={`${server}/auth/logout`}>{t('logout')}</a>
                 </div>
               )}
             </div>
           )}
+          <LanguageSelect />
           <ThemeToggle theme={theme} onToggle={toggleTheme} />
         </nav>
       </header>
@@ -148,7 +151,7 @@ function App() {
 
       <footer className="form-footer">
         <span>© 2025 City of Service</span>
-        <a href="#privacy">Privacy Policy</a>
+        <a href="#privacy">{t('privacyPolicy')}</a>
       </footer>
     </div>
   );
