@@ -33,6 +33,23 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 // import styles from './Step.module.css'; // Removed CSS Module import
 
+const BOROUGH_MAP = {
+  bronx: 'Bronx',
+  'bronx county': 'Bronx',
+  brooklyn: 'Brooklyn',
+  'kings county': 'Brooklyn',
+  manhattan: 'Manhattan',
+  'new york': 'Manhattan',
+  'new york county': 'Manhattan',
+  queens: 'Queens',
+  'queens county': 'Queens',
+  'staten island': 'Staten Island',
+  'richmond county': 'Staten Island',
+};
+
+const getByPath = (obj, path) =>
+  path.split('.').reduce((acc, part) => (acc ? acc[part] : undefined), obj);
+
 export default function Step({
   title,
   sections = [],
@@ -176,6 +193,47 @@ export default function Step({
     });
   };
 
+  const handleAddressAutofill = (addr, field, section) => {
+    const fullAddr = addr.formatted_address || addr.formattedAddress || '';
+    setPlaceholders((p) => ({ ...p, [field.id]: fullAddr }));
+
+    const components = addr.address_components || addr.addressComponents || [];
+    const comps = {};
+    components.forEach((c) => {
+      c.types.forEach((t) => {
+        comps[t] = {
+          long_name: c.long_name || c.longName,
+          short_name: c.short_name || c.shortName,
+        };
+      });
+    });
+
+    const targets = section?.metadata?.autofillTargets || [];
+    targets.forEach((t) => {
+      let val;
+      if (t.source?.includes('.')) {
+        val = getByPath(addr, t.source);
+      } else {
+        val = comps[t.source]?.long_name || comps[t.source]?.longName;
+        if (!val && Array.isArray(t.fallbackSources)) {
+          for (const fs of t.fallbackSources) {
+            val = comps[fs]?.long_name || comps[fs]?.longName;
+            if (val) break;
+          }
+        }
+      }
+      if (val !== undefined && t.mapping === 'boroughMap') {
+        val = BOROUGH_MAP[String(val).trim().toLowerCase()] || val;
+      }
+      if (val !== undefined) {
+        handleChange(t.fieldId, val);
+      }
+    });
+
+    const streetOnly = fullAddr.split(',')[0];
+    handleChange(field.id, streetOnly);
+  };
+
   const isSectionVisible = (section) => {
     if (!section) return true;
     return section.visibilityCondition
@@ -209,7 +267,7 @@ export default function Step({
     address: AddressField,
   };
 
-  const getFieldKey = (field) => {
+  const getFieldKey = (field, section) => {
     if (
       field.type === 'tel' ||
       field.id.includes('telephone') ||
@@ -224,6 +282,9 @@ export default function Step({
       return 'ssn';
     }
     if (
+      (section?.ui?.overrideComponent === 'AddressAutocomplete' &&
+        section.ui?.autocomplete === field.id) ||
+      field.type === 'address' ||
       field.id === 'street' ||
       (typeof field.label === 'string' && field.label.toLowerCase().includes('street address'))
     ) {
@@ -232,7 +293,7 @@ export default function Step({
     return field.type;
   };
 
-  const renderField = (field) => {
+  const renderField = (field, section) => {
     const visible = field.visibilityCondition
       ? evaluateCondition(field.visibilityCondition, fullData)
       : true;
@@ -243,7 +304,7 @@ export default function Step({
     if (!visible) return null;
 
     const error = touched[field.id] ? errors[field.id] : undefined;
-    const fieldKey = getFieldKey(field);
+    const fieldKey = getFieldKey(field, section);
     const Component = FIELD_COMPONENTS[fieldKey] || TextField;
 
     const commonProps = {
@@ -288,84 +349,8 @@ export default function Step({
           <Component
             {...commonProps}
             onChange={handleValueChange}
-            onAddressSelect={(addr) => {
-              const fullAddr = addr.formatted_address || addr.formattedAddress || '';
-              setPlaceholders((p) => ({ ...p, [field.id]: fullAddr }));
-
-              const components = addr.address_components || addr.addressComponents || [];
-              const comps = {};
-              components.forEach((c) => {
-                c.types.forEach((t) => {
-                  comps[t] = {
-                    long_name: c.long_name || c.longName,
-                    short_name: c.short_name || c.shortName,
-                  };
-                });
-              });
-              if (findFieldById('city')) {
-                const cityVal =
-                  comps.locality?.long_name ||
-                  comps.locality?.longName ||
-                  comps.postal_town?.long_name ||
-                  comps.postalTown?.longName ||
-                  comps.sublocality_level_1?.long_name ||
-                  comps.sublocalityLevel1?.longName ||
-                  comps.administrative_area_level_2?.long_name ||
-                  comps.administrativeAreaLevel2?.longName ||
-                  '';
-                handleChange('city', cityVal);
-              }
-              if (findFieldById('borough')) {
-                const boroughSource =
-                  comps.sublocality_level_1?.long_name ||
-                  comps.sublocalityLevel1?.longName ||
-                  comps.administrative_area_level_2?.long_name ||
-                  comps.administrativeAreaLevel2?.longName ||
-                  '';
-                const boroughMap = {
-                  bronx: 'Bronx',
-                  'bronx county': 'Bronx',
-                  brooklyn: 'Brooklyn',
-                  'kings county': 'Brooklyn',
-                  manhattan: 'Manhattan',
-                  'new york': 'Manhattan',
-                  'new york county': 'Manhattan',
-                  queens: 'Queens',
-                  'queens county': 'Queens',
-                  'staten island': 'Staten Island',
-                  'richmond county': 'Staten Island',
-                };
-                const bName = boroughMap[boroughSource.trim().toLowerCase()];
-                if (bName) {
-                  handleChange('borough', bName);
-                }
-              }
-              if (findFieldById('state')) {
-                handleChange(
-                  'state',
-                  comps.administrative_area_level_1?.short_name || comps.administrativeAreaLevel1?.shortName || ''
-                );
-              }
-              if (findFieldById('zip_code')) {
-                handleChange('zip_code', comps.postal_code?.long_name || comps.postalCode?.longName || '');
-              }
-              if (
-                findFieldById('latitude') &&
-                addr.location?.latitude !== undefined
-              ) {
-                handleChange('latitude', addr.location.latitude);
-              }
-              if (
-                findFieldById('longitude') &&
-                addr.location?.longitude !== undefined
-              ) {
-                handleChange('longitude', addr.location.longitude);
-              }
-
-              const streetOnly = fullAddr.split(',')[0];
-              handleValueChange(streetOnly);
-            }}
-            placeholder={placeholders[field.id]}
+            onAddressSelect={(addr) => handleAddressAutofill(addr, field, section)}
+            placeholder={placeholders[field.id] || section.ui?.placeholder || field.ui?.placeholder}
           />
         );
       default:
@@ -564,7 +549,7 @@ export default function Step({
                     )}
                     {/* Assuming internal structure of form-group-wrapper etc. is handled by specific component styles or utility classes */}
                     <div className="form-subgroup-grid grid gap-4"> {/* This grid class is from Tailwind, might need Jules equivalent or custom flex */}
-                      {groupFields.map((field) => renderField(field))}
+                      {groupFields.map((field) => renderField(field, sec))}
                     </div>
                   </div>
                 ));

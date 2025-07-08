@@ -212,6 +212,40 @@
             "id": "address_info",
             "title": "Address",
             "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings.",
+            "ui": {
+              "autocomplete": "street",
+              "placeholder": "Start typing your street address",
+              "overrideComponent": "AddressAutocomplete"
+            },
+            "metadata": {
+              "integration": {
+                "provider": "Google",
+                "feature": "AddressAutocomplete"
+              },
+              "autofillTargets": [
+                {
+                  "fieldId": "city",
+                  "source": "locality",
+                  "fallbackSources": [
+                    "postal_town",
+                    "sublocality_level_1",
+                    "administrative_area_level_2"
+                  ]
+                },
+                {
+                  "fieldId": "borough",
+                  "source": "sublocality_level_1",
+                  "fallbackSources": [
+                    "administrative_area_level_2"
+                  ],
+                  "mapping": "boroughMap"
+                },
+                { "fieldId": "state", "source": "administrative_area_level_1" },
+                { "fieldId": "zip_code", "source": "postal_code" },
+                { "fieldId": "latitude", "source": "geometry.location.lat" },
+                { "fieldId": "longitude", "source": "geometry.location.lng" }
+              ]
+            },
             "fields": [
               {
                 "id": "street",
