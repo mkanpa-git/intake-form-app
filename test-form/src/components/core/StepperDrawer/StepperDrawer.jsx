@@ -1,5 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Stepper from '../Stepper/Stepper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faAnglesRight,
+  faAnglesLeft,
+  faBarsProgress,
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function StepperDrawer({
   steps = [],
@@ -31,6 +37,15 @@ export default function StepperDrawer({
 
   return (
     <div className="stepper-drawer-container">
+      {!open && (
+        <button
+          className="stepper-drawer-handle"
+          aria-label="Open step navigation"
+          onClick={() => setOpen(true)}
+        >
+          <FontAwesomeIcon icon={faAnglesRight} />
+        </button>
+      )}
       <button
         ref={toggleRef}
         className="jules-button jules-button-secondary stepper-drawer-toggle"
@@ -38,8 +53,16 @@ export default function StepperDrawer({
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
       >
-        Steps
+        <FontAwesomeIcon icon={faBarsProgress} aria-hidden="true" />
+        <span className="sr-only">Toggle steps</span>
+        <span aria-hidden="true"> Steps</span>
       </button>
+      {open && (
+        <div
+          className="stepper-drawer-overlay open"
+          onClick={() => setOpen(false)}
+        />
+      )}
       <div
         id="stepperDrawer"
         ref={drawerRef}
@@ -50,7 +73,8 @@ export default function StepperDrawer({
           className="jules-button jules-button-tertiary stepper-drawer-close"
           onClick={() => setOpen(false)}
         >
-          Close
+          <FontAwesomeIcon icon={faAnglesLeft} aria-hidden="true" />
+          <span className="sr-only">Close</span>
         </button>
         <Stepper
           steps={steps}
