@@ -269,6 +269,50 @@
 }
 
 @media (max-width: 768px) {
+  .stepper-drawer-container {
+    position: relative;
+  }
+
+  .stepper-drawer-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--jules-space-xs);
+  }
+
+  .stepper-drawer-handle {
+    position: fixed;
+    top: var(--jules-space-md);
+    left: 0;
+    width: var(--jules-space-md);
+    height: var(--jules-space-lg);
+    background: var(--jules-primary-blue-500);
+    color: var(--jules-text-color-on-primary);
+    border-radius: 0 var(--jules-border-radius-md) var(--jules-border-radius-md) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: var(--jules-z-index-modal);
+  }
+
+  .stepper-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: var(--jules-z-index-modal-backdrop);
+  }
+
+  .stepper-drawer-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .stepper-drawer {
     position: fixed;
     top: 0;
@@ -298,6 +342,6 @@
   }
 
   .stepper-drawer-close {
-    margin: var(--jules-space-md);
+    margin: var(--jules-space-md) var(--jules-space-md) var(--jules-space-md) auto;
   }
 }
