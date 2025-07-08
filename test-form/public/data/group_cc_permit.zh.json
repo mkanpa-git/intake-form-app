@@ -1,192 +1,201 @@
 {
   "form": {
-    "title": "Group Child Care Permit Application",
-    "description": "Multi-step application for obtaining a permit to operate group child care programs.",
+    "title": "团体儿童保育许可证申请",
+    "description": "获取经营团体儿童保育计划许可证的多步骤申请。",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "左边"
     },
     "steps": [
       {
-        "id": "establishment_information",
-        "title": "Establishment Information",
+        "id": "机构信息",
+        "title": "机构信息",
         "sections": [
           {
-            "id": "establishment_address",
-            "title": "Establishment Address",
-            "description": "Enter the physical address where business will operate. If you are applying for a Tattoo License, enter your mailing or home address.",
+            "id": "机构地址",
+            "title": "机构地址",
+            "description": "输入企业的实际经营地址。如果您正在申请纹身许可证，请输入您的邮寄地址或家庭地址。",
             "ui": {
-              "autocomplete": "street_1",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "街道_1",
+              "placeholder": "开始输入您的街道地址",
+              "overrideComponent": "地址自动完成"
             },
             "metadata": {
               "integration": {
-                "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "provider": "谷歌",
+                "feature": "地址自动完成"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "城市",
+                  "source": "地方性",
                   "fallbackSources": [
-                    "postal_town",
+                    "邮政城镇",
                     "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "行政区域级别2"
                   ]
                 },
                 {
-                  "fieldId": "borough",
+                  "fieldId": "自治市镇",
                   "source": "sublocality_level_1",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "行政区域级别2"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "行政区地图"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "building_number", "source": "street_number" },
-                { "fieldId": "house_number", "source": "street_number" }
+                {
+                  "fieldId": "状态",
+                  "source": "行政区域级别1"
+                },
+                {
+                  "fieldId": "建筑物编号",
+                  "source": "街道号码"
+                },
+                {
+                  "fieldId": "门牌号",
+                  "source": "街道号码"
+                }
               ]
             },
             "fields": [
               {
-                "id": "address_type",
-                "label": "Address Type",
-                "type": "select",
+                "id": "地址类型",
+                "label": "地址类型",
+                "type": "选择",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Select",
-                    "Complete Address",
-                    "Cross Street (Intersection)",
-                    "Place (Landmark)"
+                    "选择",
+                    "完整地址",
+                    "十字路口",
+                    "地点（地标）"
                   ]
                 }
               },
               {
-                "id": "street_1",
-                "label": "Street 1",
-                "type": "text",
+                "id": "街道_1",
+                "label": "街道 1",
+                "type": "文本",
                 "required": true
               },
               {
-                "id": "building_number",
-                "label": "Building #",
-                "type": "text",
+                "id": "建筑物编号",
+                "label": "建筑 ＃",
+                "type": "文本",
                 "required": true
               },
               {
-                "id": "street_2",
-                "label": "Street 2",
-                "type": "text",
+                "id": "街道_2",
+                "label": "街道 2",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "unit_type",
-                "label": "Unit Type",
-                "type": "select",
+                "id": "单位类型",
+                "label": "单位类型",
+                "type": "选择",
                 "required": false,
                 "ui": {
                   "options": [
-                    "LBBY",
-                    "APT",
-                    "BLDG",
-                    "STE",
-                    "FL",
+                    "左撇子",
+                    "易于",
+                    "建筑物",
+                    "你",
+                    "在",
                     "BSMT",
-                    "FRNT",
-                    "SIDE",
-                    "REAR",
-                    "UPPR",
-                    "LOWR",
-                    "PIER"
+                    "前部",
+                    "边",
+                    "后部",
+                    "上皮细胞受体",
+                    "向下",
+                    "码头"
                   ]
                 }
               },
               {
-                "id": "unit",
-                "label": "Unit",
-                "type": "text",
+                "id": "单元",
+                "label": "单元",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "城市",
+                "label": "城市",
+                "type": "文本",
                 "required": true
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "状态",
+                "label": "状态",
+                "type": "文本",
                 "required": true
               },
               {
-                "id": "borough",
-                "label": "Borough",
-                "type": "select",
+                "id": "自治市镇",
+                "label": "自治市镇",
+                "type": "选择",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
-                    "Staten Island"
+                    "布朗克斯",
+                    "布鲁克林",
+                    "曼哈顿",
+                    "皇后区",
+                    "史泰登岛"
                   ]
                 }
               },
               {
-                "id": "bin",
-                "label": "Bin",
-                "type": "text",
+                "id": "垃圾桶",
+                "label": "垃圾桶",
+                "type": "文本",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "地理客户端 API"
                 }
               },
               {
-                "id": "bbl",
-                "label": "Bbl",
-                "type": "text",
+                "id": "桶",
+                "label": "桶",
+                "type": "文本",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "地理客户端 API"
                 }
               },
               {
-                "id": "community_district",
-                "label": "Community District",
-                "type": "text",
+                "id": "社区区",
+                "label": "社区区",
+                "type": "文本",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "地理客户端 API"
                 }
               },
               {
-                "id": "council_district",
-                "label": "Council District",
-                "type": "text",
+                "id": "议会区",
+                "label": "议会区",
+                "type": "文本",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "地理客户端 API"
                 }
               },
               {
-                "id": "police_precinct",
-                "label": "Police Precinct",
-                "type": "text",
+                "id": "警察局",
+                "label": "警察分局",
+                "type": "文本",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "地理客户端 API"
                 }
               },
               {
-                "id": "house_number",
-                "label": "House Number",
-                "type": "text",
+                "id": "门牌号",
+                "label": "门牌号",
+                "type": "文本",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "地理客户端 API"
                 }
               }
             ]
@@ -194,174 +203,210 @@
         ]
       },
       {
-        "id": "contact_information",
-        "title": "Contact Information – Applicant and Other Contacts",
+        "id": "联系信息",
+        "title": "联系信息——申请人和其他联系人",
         "sections": [
           {
-            "id": "contact_info_guidance",
-            "title": "Contact Type Guidance",
-            "type": "info",
+            "id": "联系信息指南",
+            "title": "接触类型指导",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "### Applying as a Corporation, Partnership, or Not-for-Profit?\n\nSelect **\"Business Information\"** as your Type of Contact and complete the required fields.  \nBusinesses also have the opportunity to provide a complete list of the responsible individuals within their organization. To add each individual's information to your application, please select **\"Other Contact\"** as the Type of Contact and complete the required fields that appear.\n\n---\n\n### Applying as an Individual or Sole Proprietorship?\n\nSelect **\"Individual Owner\"** as your Type of Contact and complete the required fields that appear.\n\n---\n\n### Emergency Contact?\n\nUnless a **\"Designated Emergency Contact\"** is specified, the applicant will be assumed to be the Emergency Contact.  \nTo identify someone other than the applicant to be contacted in the event of an emergency, please select **\"Designated Emergency Contact\"** as the Type of Contact and complete the required fields that appear."
+            "content": "### 以公司、合伙企业或非营利组织的名义申请？\n\n选择“企业信息”作为您的联系人类型，并填写必填字段。\n企业还可以提供其组织内所有负责人的完整列表。要将每个人的信息添加到您的申请中，请选择“其他联系人”作为联系人类型，并填写显示的必填字段。\n\n---\n\n### 以个人或独资企业名义申请？\n\n选择“个人所有者”作为您的联系人类型，并填写显示的必填字段。\n\n---\n\n### 紧急联系人？\n\n除非指定“指定紧急联系人”，否则申请人将被视为紧急联系人。\n为了在紧急情况下联系申请人以外的其他人，请选择“指定紧急联系人”作为联系人类型，并填写显示的必填字段。"
           },
           {
             "id": "contact_list",
-            "title": "Contact List",
+            "title": "联系人列表",
             "fields": [
               {
-                "id": "contacts",
-                "label": "Contacts",
-                "type": "group",
+                "id": "联系方式",
+                "label": "联系方式",
+                "type": "团体",
                 "metadata": {
                   "multiple": true,
-                  "tableColumns": ["contact_type", "first_name", "last_name", "establishment_name", "email"]
+                  "tableColumns": [
+                    "联系方式",
+                    "名",
+                    "姓",
+                    "机构名称",
+                    "电子邮件"
+                  ]
                 },
                 "fields": [
                   {
-                    "id": "contact_type",
-                    "label": "Type of Contact",
-                    "type": "select",
+                    "id": "联系方式",
+                    "label": "联系方式",
+                    "type": "选择",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Business Information",
-                        "Individual Owner",
-                        "Other Contact",
-                        "Designated Emergency Contact"
+                        "商业信息",
+                        "个人业主",
+                        "其他联系方式",
+                        "指定紧急联系人"
                       ]
                     }
                   },
                   {
-                    "id": "establishment_name",
-                    "label": "Establishment Name",
-                    "type": "text",
+                    "id": "机构名称",
+                    "label": "机构名称",
+                    "type": "文本",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "联系方式",
+                      "operator": "等于",
+                      "value": "商业信息"
                     }
                   },
                   {
                     "id": "dba_name",
-                    "label": "DBA / Trade Name",
-                    "type": "text",
+                    "label": "DBA/商标名称",
+                    "type": "文本",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "联系方式",
+                      "operator": "等于",
+                      "value": "商业信息"
                     }
                   },
                   {
-                    "id": "legal_structure",
-                    "label": "Legal Structure",
-                    "type": "select",
+                    "id": "法律结构",
+                    "label": "法律结构",
+                    "type": "选择",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "联系方式",
+                      "operator": "等于",
+                      "value": "商业信息"
                     },
                     "ui": {
                       "options": [
-                        "Corporation",
-                        "Partnership",
-                        "Limited Partnership",
-                        "Limited Liability",
-                        "Not-for-Profit"
+                        "公司",
+                        "合伙",
+                        "有限合伙",
+                        "有限责任",
+                        "非营利性"
                       ]
                     }
                   },
                   {
-                    "id": "nys_sales_tax_id",
-                    "label": "NYS Sales Tax ID #",
-                    "type": "text",
+                    "id": "纽约州销售税号",
+                    "label": "纽约州销售税号",
+                    "type": "文本",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "联系方式",
+                      "operator": "等于",
+                      "value": "商业信息"
                     }
                   },
                   {
-                    "id": "is_out_of_state_corp",
-                    "label": "Are you a corporation formed outside of New York State?",
-                    "type": "radio",
+                    "id": "不在州内",
+                    "label": "您是在纽约州以外成立的公司吗？",
+                    "type": "收音机",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "联系方式",
+                      "operator": "等于",
+                      "value": "商业信息"
                     },
                     "ui": {
-                      "options": ["Yes", "No"]
-                    }
-                  },
-                  {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
-                    "requiredCondition": {
-                      "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                      "options": [
+                        "是的",
+                        "不"
                       ]
                     }
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "名",
+                    "label": "名",
+                    "type": "文本",
                     "requiredCondition": {
                       "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                        {
+                          "field": "联系方式",
+                          "operator": "等于",
+                          "value": "个人业主"
+                        },
+                        {
+                          "field": "联系方式",
+                          "operator": "等于",
+                          "value": "其他联系方式"
+                        },
+                        {
+                          "field": "联系方式",
+                          "operator": "等于",
+                          "value": "指定紧急联系人"
+                        }
                       ]
                     }
                   },
                   {
-                    "id": "title",
-                    "label": "Title",
-                    "type": "text",
+                    "id": "姓",
+                    "label": "姓",
+                    "type": "文本",
+                    "requiredCondition": {
+                      "anyOf": [
+                        {
+                          "field": "联系方式",
+                          "operator": "等于",
+                          "value": "个人业主"
+                        },
+                        {
+                          "field": "联系方式",
+                          "operator": "等于",
+                          "value": "其他联系方式"
+                        },
+                        {
+                          "field": "联系方式",
+                          "operator": "等于",
+                          "value": "指定紧急联系人"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "标题",
+                    "label": "标题",
+                    "type": "文本",
                     "required": false
                   },
                   {
-                    "id": "email",
-                    "label": "E-mail Address",
-                    "type": "email",
+                    "id": "电子邮件",
+                    "label": "电子邮件",
+                    "type": "电子邮件",
                     "required": true
                   },
                   {
                     "id": "ssn_itin",
-                    "label": "SSN / ITIN",
-                    "type": "text",
+                    "label": "社会安全号码/个人报税号码",
+                    "type": "文本",
                     "required": false,
                     "constraints": {
                       "pattern": "^(\\d{3}-\\d{2}-\\d{4}|\\d{9})$"
                     },
                     "ui": {
-                      "placeholder": "XXX-XX-XXXX or 9-digit ITIN"
+                      "placeholder": "XXX-XX-XXXX 或 9 位 ITIN"
                     }
                   },
                   {
                     "id": "ssn_itin_type",
-                    "label": "Did you enter SSN or ITIN?",
-                    "type": "radio",
+                    "label": "您输入了 SSN 或 ITIN 吗？",
+                    "type": "收音机",
                     "requiredCondition": {
                       "field": "ssn_itin",
-                      "operator": "notEquals",
+                      "operator": "不等于",
                       "value": ""
                     },
                     "ui": {
-                      "options": ["SSN", "ITIN"]
+                      "options": [
+                        "社会安全号码",
+                        "个人报税识别号 (ITIN)"
+                      ]
                     }
                   },
                   {
-                    "id": "phone",
-                    "label": "Phone Number",
-                    "type": "tel",
+                    "id": "电话",
+                    "label": "电话号码",
+                    "type": "电话",
                     "required": true,
                     "constraints": {
                       "pattern": "^\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -371,24 +416,27 @@
                     }
                   },
                   {
-                    "id": "tty_phone",
-                    "label": "TTY Phone",
-                    "type": "tel",
+                    "id": "tty_电话",
+                    "label": "TTY电话",
+                    "type": "电话",
                     "required": false
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "出生日期",
+                    "label": "出生日期",
+                    "type": "日期",
                     "required": false
                   },
                   {
-                    "id": "gender",
-                    "label": "Gender",
-                    "type": "radio",
+                    "id": "性别",
+                    "label": "性别",
+                    "type": "收音机",
                     "required": false,
                     "ui": {
-                      "options": ["Female", "Male"]
+                      "options": [
+                        "女性",
+                        "男性"
+                      ]
                     }
                   }
                 ]
@@ -397,212 +445,211 @@
           }
         ]
       },
-
       {
-        "id": "application_info_1",
-        "title": "Application Specific Information 1",
+        "id": "应用程序信息1",
+        "title": "应用特定信息 1",
         "sections": [
           {
-            "id": "program_details",
-            "title": "Program Details",
+            "id": "程序详情",
+            "title": "项目详情",
             "fields": [
               {
-                "id": "program_type",
-                "label": "Program Type",
-                "type": "select",
+                "id": "程序类型",
+                "label": "项目类型",
+                "type": "选择",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Infant Toddler",
-                    "Preschool"
+                    "婴幼儿",
+                    "学前班"
                   ]
                 }
               },
               {
                 "id": "orientation_cert_number",
-                "label": "Pre Permit Orientation Cert #",
-                "type": "text",
+                "label": "许可前培训证书编号",
+                "type": "文本",
                 "required": true
               },
               {
-                "id": "permittee_name",
-                "label": "Permittee (Sponsor Name)",
-                "type": "text",
+                "id": "许可证持有人姓名",
+                "label": "许可证持有人（担保人姓名）",
+                "type": "文本",
                 "required": true
               },
               {
-                "id": "is_applicant_same_as_permittee",
-                "label": "Applicant same as Permittee?",
-                "type": "checkbox",
+                "id": "申请人是否与许可证持有人相同",
+                "label": "申请人与许可证持有人相同吗？",
+                "type": "复选框",
                 "ui": {
                   "defaultChecked": true
                 }
               },
               {
-                "id": "permit_expiration_date",
-                "label": "Expiration Date",
-                "type": "date",
+                "id": "许可证到期日期",
+                "label": "截止日期",
+                "type": "日期",
                 "required": false
               },
               {
-                "id": "permit_number",
-                "label": "Permit #",
-                "type": "text",
+                "id": "许可证号",
+                "label": "允许 ＃",
+                "type": "文本",
                 "required": false
               }
             ]
           },
           {
-            "id": "program_contact",
-            "title": "Program Contact",
+            "id": "程序联系人",
+            "title": "项目联系人",
             "fields": [
               {
-                "id": "program_phone",
-                "label": "Phone",
-                "type": "tel"
+                "id": "程序电话",
+                "label": "电话",
+                "type": "电话"
               },
               {
-                "id": "program_fax",
-                "label": "Fax",
-                "type": "tel"
+                "id": "传真程序",
+                "label": "传真",
+                "type": "电话"
               },
               {
-                "id": "program_email",
-                "label": "Email",
-                "type": "email",
+                "id": "程序电子邮件",
+                "label": "电子邮件",
+                "type": "电子邮件",
                 "required": true
               },
               {
-                "id": "program_website",
-                "label": "Website",
-                "type": "text"
+                "id": "程序网站",
+                "label": "网站",
+                "type": "文本"
               }
             ]
           },
           {
-            "id": "program_days_hours",
-            "title": "Days Open (Hours)",
+            "id": "计划天数小时数",
+            "title": "开放日期（时间）",
             "fields": [
               {
-                "id": "open_days",
-                "label": "Open Days",
-                "type": "checkbox",
+                "id": "开放日",
+                "label": "开放日",
+                "type": "复选框",
                 "ui": {
                   "options": [
-                    "Sunday",
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
+                    "星期日",
+                    "周一",
+                    "周二",
+                    "周三",
+                    "周四",
+                    "星期五",
+                    "周六"
                   ]
                 }
               },
               {
-                "id": "nightcare",
-                "label": "Nightcare",
-                "type": "checkbox"
+                "id": "夜间护理",
+                "label": "夜间护理",
+                "type": "复选框"
               },
               {
-                "id": "open_from",
-                "label": "Open From",
-                "type": "time",
+                "id": "打开方式",
+                "label": "打开自",
+                "type": "时间",
                 "required": true
               },
               {
-                "id": "close_at",
-                "label": "Close At",
-                "type": "time",
+                "id": "关闭",
+                "label": "平仓价",
+                "type": "时间",
                 "required": true
               },
               {
-                "id": "inspection_delivery_method",
-                "label": "Inspection Report Delivery Method",
-                "type": "select",
+                "id": "检查_交付_方法",
+                "label": "检验报告交付方式",
+                "type": "选择",
                 "ui": {
                   "options": [
-                    "Email",
-                    "Fax",
-                    "Regular Mail"
+                    "电子邮件",
+                    "传真",
+                    "普通邮件"
                   ]
                 }
               },
               {
-                "id": "inspection_language",
-                "label": "Inspection Language",
-                "type": "select",
+                "id": "检查语言",
+                "label": "检查语言",
+                "type": "选择",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish"
+                    "英语",
+                    "西班牙语"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "school_year_dates",
-            "title": "School Year Dates",
+            "id": "学年日期",
+            "title": "学年日期",
             "fields": [
               {
-                "id": "school_year_from",
-                "label": "Regular School Year From",
-                "type": "date"
+                "id": "学年从",
+                "label": "常规学年从",
+                "type": "日期"
               },
               {
-                "id": "school_year_to",
-                "label": "Regular School Year To",
-                "type": "date"
+                "id": "学年到",
+                "label": "正常学年",
+                "type": "日期"
               },
               {
-                "id": "has_summer_program",
-                "label": "Summer Program",
-                "type": "checkbox"
+                "id": "有夏季项目",
+                "label": "暑期项目",
+                "type": "复选框"
               }
             ]
           },
           {
-            "id": "school_breaks",
-            "title": "School Breaks",
+            "id": "学校假期",
+            "title": "学校假期",
             "fields": [
               {
-                "id": "school_breaks",
-                "label": "School Breaks",
-                "type": "group",
+                "id": "学校假期",
+                "label": "学校假期",
+                "type": "团体",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "term",
-                    "from",
-                    "to"
+                    "学期",
+                    "从",
+                    "到"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "term",
-                    "label": "Term",
-                    "type": "select",
+                    "id": "学期",
+                    "label": "学期",
+                    "type": "选择",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Fall",
-                        "Spring",
-                        "Summer",
-                        "Winter"
+                        "落下",
+                        "春天",
+                        "夏天",
+                        "冬天"
                       ]
                     }
                   },
                   {
-                    "id": "from",
-                    "label": "From",
-                    "type": "date",
+                    "id": "从",
+                    "label": "从",
+                    "type": "日期",
                     "required": true
                   },
                   {
-                    "id": "to",
-                    "label": "To",
-                    "type": "date",
+                    "id": "到",
+                    "label": "到",
+                    "type": "日期",
                     "required": true
                   }
                 ]
@@ -610,24 +657,24 @@
             ]
           },
           {
-            "id": "holidays",
-            "title": "Holidays",
+            "id": "假期",
+            "title": "假期",
             "fields": [
               {
-                "id": "holidays",
-                "label": "Holiday List",
-                "type": "group",
+                "id": "假期",
+                "label": "假期清单",
+                "type": "团体",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "holiday_name"
+                    "假期名称"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "holiday_name",
-                    "label": "Holiday Name",
-                    "type": "text",
+                    "id": "假期名称",
+                    "label": "节日名称",
+                    "type": "文本",
                     "required": true
                   }
                 ]
@@ -635,85 +682,85 @@
             ]
           },
           {
-            "id": "food_services_info",
-            "title": "Food Services Information",
+            "id": "食品服务信息",
+            "title": "食品服务信息",
             "fields": [
               {
-                "id": "food_provided",
-                "label": "Is food provided for children in care?",
-                "type": "radio",
+                "id": "提供的食物",
+                "label": "是否为受照顾的儿童提供食物？",
+                "type": "收音机",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
-                "id": "food_prepared_on_site",
-                "label": "Is food prepared on site?",
-                "type": "radio",
+                "id": "现场准备的食物",
+                "label": "食物是现场准备的吗？",
+                "type": "收音机",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
-                "id": "food_preparation_location",
-                "label": "Where is food prepared?",
-                "type": "text"
+                "id": "食物准备地点",
+                "label": "食物在哪里准备？",
+                "type": "文本"
               },
               {
-                "id": "dohmh_food_service_permit",
-                "label": "DOHMH Food Service Permit #",
-                "type": "text"
+                "id": "dohmh_食品服务许可证",
+                "label": "DOHMH 食品服务许可证号",
+                "type": "文本"
               },
               {
-                "id": "person_on_certificate",
-                "label": "Person Name on Certificate",
-                "type": "text"
+                "id": "证书上的人员",
+                "label": "证书上的人员姓名",
+                "type": "文本"
               },
               {
-                "id": "food_protection_cert_number",
-                "label": "Food Protection Certificate #",
-                "type": "text"
+                "id": "食品保护证书编号",
+                "label": "食品保护证书#",
+                "type": "文本"
               }
             ]
           }
         ]
       },
       {
-        "id": "application_info_2",
-        "title": "Application Specific Information 2"
+        "id": "应用程序信息2",
+        "title": "应用特定信息 2"
       },
       {
-        "id": "document_upload",
-        "title": "Upload Documents",
-        "description": "REQUIRED DOCUMENTS\nIn order for your application to be processed, based on information provided, you are required to upload the following documents:",
+        "id": "文档上传",
+        "title": "上传文件",
+        "description": "所需文件\n为了便于处理您的申请，根据您提供的信息，您需要上传以下文件：",
         "sections": [
           {
-            "id": "initial_site_survey",
-            "title": "Initial Site Survey Form",
+            "id": "初始站点调查",
+            "title": "初步现场调查表",
             "fields": [
               {
-                "id": "site_survey_file",
-                "label": "Upload Initial Site Survey Form",
-                "type": "file",
+                "id": "站点调查文件",
+                "label": "上传初始现场调查表",
+                "type": "文件",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "应用程序/pdf",
+                    "图片/jpeg",
+                    "图片/jpg",
+                    "图片/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Initial Site Survey",
+                  "proofCategory": "初步现场调查",
                   "multiple": false
                 }
               }
@@ -721,49 +768,49 @@
           },
           {
             "id": "personal_id_proof",
-            "title": "Proof of Personal Identification",
+            "title": "个人身份证明",
             "fields": [
               {
-                "id": "personal_id_file",
-                "label": "Upload Proof of Personal Identification",
-                "type": "file",
+                "id": "个人身份证文件",
+                "label": "上传个人身份证明",
+                "type": "文件",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "应用程序/pdf",
+                    "图片/jpeg",
+                    "图片/jpg",
+                    "图片/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Personal ID",
+                  "proofCategory": "个人身份证",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "fee_exemption_proof",
-            "title": "Proof of Fee Exemption",
+            "id": "费用豁免证明",
+            "title": "费用豁免证明",
             "fields": [
               {
-                "id": "fee_exemption_file",
-                "label": "Upload Proof of Fee Exemption (ACS Affiliation or Municipal Exemption)",
-                "type": "file",
+                "id": "费用豁免文件",
+                "label": "上传费用豁免证明（ACS 附属机构或市政豁免）",
+                "type": "文件",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "应用程序/pdf",
+                    "图片/jpeg",
+                    "图片/jpg",
+                    "图片/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Fee Exemption",
+                  "proofCategory": "费用豁免",
                   "multiple": false
                 }
               }
@@ -772,17 +819,16 @@
         ]
       },
       {
-        "id": "step_6_placeholder",
-        "title": "To be defined"
+        "id": "步骤6占位符",
+        "title": "待定义"
       },
       {
-        "id": "step_7_placeholder",
-        "title": "To be defined"
+        "id": "步骤7_占位符",
+        "title": "待定义"
       },
       {
-        "id": "step_8_placeholder",
-        "title": "To be defined"
+        "id": "步骤8占位符",
+        "title": "待定义"
       }
     ]
-  }
-}
+  }}

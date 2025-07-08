@@ -1,192 +1,201 @@
 {
   "form": {
-    "title": "Group Child Care Permit Application",
-    "description": "Multi-step application for obtaining a permit to operate group child care programs.",
+    "title": "গ্রুপ চাইল্ড কেয়ার পারমিটের আবেদন",
+    "description": "গ্রুপ চাইল্ড কেয়ার প্রোগ্রাম পরিচালনার জন্য পারমিট পাওয়ার জন্য বহু-পদক্ষেপের আবেদন।",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "বাম"
     },
     "steps": [
       {
-        "id": "establishment_information",
-        "title": "Establishment Information",
+        "id": "প্রতিষ্ঠানের তথ্য",
+        "title": "প্রতিষ্ঠানের তথ্য",
         "sections": [
           {
-            "id": "establishment_address",
-            "title": "Establishment Address",
-            "description": "Enter the physical address where business will operate. If you are applying for a Tattoo License, enter your mailing or home address.",
+            "id": "প্রতিষ্ঠানের ঠিকানা",
+            "title": "প্রতিষ্ঠানের ঠিকানা",
+            "description": "ব্যবসাটি যে ঠিকানায় পরিচালিত হবে সেই ঠিকানাটি লিখুন। আপনি যদি ট্যাটু লাইসেন্সের জন্য আবেদন করেন, তাহলে আপনার ডাক বা বাড়ির ঠিকানা লিখুন।",
             "ui": {
-              "autocomplete": "street_1",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "রাস্তার_১",
+              "placeholder": "আপনার রাস্তার ঠিকানা টাইপ করা শুরু করুন",
+              "overrideComponent": "ঠিকানাস্বয়ংক্রিয়ভাবে সম্পন্ন করুন"
             },
             "metadata": {
               "integration": {
-                "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "provider": "গুগল",
+                "feature": "ঠিকানাস্বয়ংক্রিয়ভাবে সম্পন্ন করুন"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "শহর",
+                  "source": "এলাকা",
                   "fallbackSources": [
-                    "postal_town",
-                    "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "পোস্টাল_টাউন",
+                    "উপ-স্থানীয়_স্তর_১",
+                    "প্রশাসনিক_ক্ষেত্র_স্তর_২"
                   ]
                 },
                 {
-                  "fieldId": "borough",
-                  "source": "sublocality_level_1",
+                  "fieldId": "বরো",
+                  "source": "উপ-স্থানীয়_স্তর_১",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "প্রশাসনিক_ক্ষেত্র_স্তর_২"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "বরো ম্যাপ"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "building_number", "source": "street_number" },
-                { "fieldId": "house_number", "source": "street_number" }
+                {
+                  "fieldId": "অবস্থা",
+                  "source": "প্রশাসনিক_ক্ষেত্র_স্তর_১"
+                },
+                {
+                  "fieldId": "ভবন নম্বর",
+                  "source": "রাস্তার নম্বর"
+                },
+                {
+                  "fieldId": "ঘর নম্বর",
+                  "source": "রাস্তার নম্বর"
+                }
               ]
             },
             "fields": [
               {
-                "id": "address_type",
-                "label": "Address Type",
-                "type": "select",
+                "id": "ঠিকানা_প্রকার",
+                "label": "ঠিকানার ধরণ",
+                "type": "নির্বাচন করুন",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Select",
-                    "Complete Address",
-                    "Cross Street (Intersection)",
-                    "Place (Landmark)"
+                    "নির্বাচন করুন",
+                    "সম্পূর্ণ ঠিকানা",
+                    "ক্রস স্ট্রিট (চৌকি)",
+                    "স্থান (ল্যান্ডমার্ক)"
                   ]
                 }
               },
               {
-                "id": "street_1",
-                "label": "Street 1",
-                "type": "text",
+                "id": "রাস্তার_১",
+                "label": "রাস্তা ১",
+                "type": "টেক্সট",
                 "required": true
               },
               {
-                "id": "building_number",
-                "label": "Building #",
-                "type": "text",
+                "id": "ভবন নম্বর",
+                "label": "ভবন #",
+                "type": "টেক্সট",
                 "required": true
               },
               {
-                "id": "street_2",
-                "label": "Street 2",
-                "type": "text",
+                "id": "রাস্তার_২",
+                "label": "রাস্তা ২",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "unit_type",
-                "label": "Unit Type",
-                "type": "select",
+                "id": "ইউনিট_টাইপ",
+                "label": "ইউনিটের ধরণ",
+                "type": "নির্বাচন করুন",
                 "required": false,
                 "ui": {
                   "options": [
-                    "LBBY",
-                    "APT",
-                    "BLDG",
-                    "STE",
-                    "FL",
-                    "BSMT",
-                    "FRNT",
-                    "SIDE",
-                    "REAR",
-                    "UPPR",
-                    "LOWR",
-                    "PIER"
+                    "এলবিবিওয়াই",
+                    "এপিটি",
+                    "বিএলডিজি",
+                    "তুমি",
+                    "ভি",
+                    "বিএসএমটি",
+                    "FRNT সম্পর্কে",
+                    "পাশ",
+                    "পিছনে",
+                    "ইউপিপিআর",
+                    "নিচে",
+                    "পাইর"
                   ]
                 }
               },
               {
-                "id": "unit",
-                "label": "Unit",
-                "type": "text",
+                "id": "ইউনিট",
+                "label": "ইউনিট",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "শহর",
+                "label": "শহর",
+                "type": "টেক্সট",
                 "required": true
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "অবস্থা",
+                "label": "রাজ্য",
+                "type": "টেক্সট",
                 "required": true
               },
               {
-                "id": "borough",
-                "label": "Borough",
-                "type": "select",
+                "id": "বরো",
+                "label": "বরো",
+                "type": "নির্বাচন করুন",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
-                    "Staten Island"
+                    "ব্রঙ্কস",
+                    "ব্রুকলিন",
+                    "ম্যানহাটন",
+                    "কুইন্স",
+                    "স্টেটেন দ্বীপ"
                   ]
                 }
               },
               {
-                "id": "bin",
-                "label": "Bin",
-                "type": "text",
+                "id": "বিন",
+                "label": "বিন",
+                "type": "টেক্সট",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "জিওক্লায়েন্ট এপিআই"
                 }
               },
               {
-                "id": "bbl",
-                "label": "Bbl",
-                "type": "text",
+                "id": "বিবিএল",
+                "label": "বিবিএল",
+                "type": "টেক্সট",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "জিওক্লায়েন্ট এপিআই"
                 }
               },
               {
-                "id": "community_district",
-                "label": "Community District",
-                "type": "text",
+                "id": "সম্প্রদায়_জেলা",
+                "label": "কমিউনিটি জেলা",
+                "type": "টেক্সট",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "জিওক্লায়েন্ট এপিআই"
                 }
               },
               {
-                "id": "council_district",
-                "label": "Council District",
-                "type": "text",
+                "id": "কাউন্সিল_ডিস্ট্রিক্ট",
+                "label": "কাউন্সিল জেলা",
+                "type": "টেক্সট",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "জিওক্লায়েন্ট এপিআই"
                 }
               },
               {
-                "id": "police_precinct",
-                "label": "Police Precinct",
-                "type": "text",
+                "id": "পুলিশ_প্রিসিঙ্কট",
+                "label": "পুলিশ প্রিসিঙ্কট",
+                "type": "টেক্সট",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "জিওক্লায়েন্ট এপিআই"
                 }
               },
               {
-                "id": "house_number",
-                "label": "House Number",
-                "type": "text",
+                "id": "ঘর নম্বর",
+                "label": "বাড়ির নম্বর",
+                "type": "টেক্সট",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "জিওক্লায়েন্ট এপিআই"
                 }
               }
             ]
@@ -194,201 +203,240 @@
         ]
       },
       {
-        "id": "contact_information",
-        "title": "Contact Information – Applicant and Other Contacts",
+        "id": "যোগাযোগের তথ্য",
+        "title": "যোগাযোগের তথ্য - আবেদনকারী এবং অন্যান্য পরিচিতি",
         "sections": [
           {
-            "id": "contact_info_guidance",
-            "title": "Contact Type Guidance",
-            "type": "info",
+            "id": "যোগাযোগ_তথ্য_নির্দেশনা",
+            "title": "যোগাযোগের ধরণ নির্দেশিকা",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "### Applying as a Corporation, Partnership, or Not-for-Profit?\n\nSelect **\"Business Information\"** as your Type of Contact and complete the required fields.  \nBusinesses also have the opportunity to provide a complete list of the responsible individuals within their organization. To add each individual's information to your application, please select **\"Other Contact\"** as the Type of Contact and complete the required fields that appear.\n\n---\n\n### Applying as an Individual or Sole Proprietorship?\n\nSelect **\"Individual Owner\"** as your Type of Contact and complete the required fields that appear.\n\n---\n\n### Emergency Contact?\n\nUnless a **\"Designated Emergency Contact\"** is specified, the applicant will be assumed to be the Emergency Contact.  \nTo identify someone other than the applicant to be contacted in the event of an emergency, please select **\"Designated Emergency Contact\"** as the Type of Contact and complete the required fields that appear."
+            "content": "### কর্পোরেশন, অংশীদারিত্ব, অথবা অলাভজনক প্রতিষ্ঠান হিসেবে আবেদন করছেন?\n\nআপনার যোগাযোগের ধরণ হিসেবে **\"ব্যবসায়িক তথ্য\"** নির্বাচন করুন এবং প্রয়োজনীয় ক্ষেত্রগুলি পূরণ করুন।\n\nব্যবসা প্রতিষ্ঠানগুলি তাদের প্রতিষ্ঠানের মধ্যে দায়িত্বশীল ব্যক্তিদের একটি সম্পূর্ণ তালিকা প্রদান করার সুযোগও রাখে। আপনার আবেদনে প্রতিটি ব্যক্তির তথ্য যোগ করতে, অনুগ্রহ করে যোগাযোগের ধরণ হিসেবে **\"অন্যান্য যোগাযোগ\"** নির্বাচন করুন এবং প্রদর্শিত প্রয়োজনীয় ক্ষেত্রগুলি পূরণ করুন।\n\n---\n\n### একজন ব্যক্তি বা একক মালিকানা হিসেবে আবেদন করছেন?\n\nআপনার যোগাযোগের ধরণ হিসেবে **\"ব্যক্তিগত মালিক\"** নির্বাচন করুন এবং প্রদর্শিত প্রয়োজনীয় ক্ষেত্রগুলি পূরণ করুন।\n\n---\n\n### জরুরি যোগাযোগ?\n\n**\"নির্ধারিত জরুরি যোগাযোগ\"** উল্লেখ না করা পর্যন্ত, আবেদনকারীকে জরুরি যোগাযোগ হিসেবে ধরে নেওয়া হবে।\n\nজরুরি পরিস্থিতিতে যোগাযোগের জন্য আবেদনকারী ছাড়া অন্য কাউকে সনাক্ত করতে, অনুগ্রহ করে যোগাযোগের ধরণ হিসেবে **\"নির্ধারিত জরুরি যোগাযোগ\"** নির্বাচন করুন এবং প্রদর্শিত প্রয়োজনীয় ক্ষেত্রগুলি পূরণ করুন।"
           },
           {
-            "id": "contact_list",
-            "title": "Contact List",
+            "id": "যোগাযোগের তালিকা",
+            "title": "যোগাযোগের তালিকা",
             "fields": [
               {
-                "id": "contacts",
-                "label": "Contacts",
-                "type": "group",
+                "id": "যোগাযোগ",
+                "label": "পরিচিতি",
+                "type": "দল",
                 "metadata": {
                   "multiple": true,
-                  "tableColumns": ["contact_type", "first_name", "last_name", "establishment_name", "email"]
+                  "tableColumns": [
+                    "যোগাযোগের ধরণ",
+                    "প্রথম_নাম",
+                    "শেষ নাম",
+                    "প্রতিষ্ঠানের নাম",
+                    "ইমেইল"
+                  ]
                 },
                 "fields": [
                   {
-                    "id": "contact_type",
-                    "label": "Type of Contact",
-                    "type": "select",
+                    "id": "যোগাযোগের ধরণ",
+                    "label": "যোগাযোগের ধরণ",
+                    "type": "নির্বাচন করুন",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Business Information",
-                        "Individual Owner",
-                        "Other Contact",
-                        "Designated Emergency Contact"
+                        "ব্যবসায়িক তথ্য",
+                        "ব্যক্তিগত মালিক",
+                        "অন্যান্য যোগাযোগ",
+                        "মনোনীত জরুরি যোগাযোগ"
                       ]
                     }
                   },
                   {
-                    "id": "establishment_name",
-                    "label": "Establishment Name",
-                    "type": "text",
+                    "id": "প্রতিষ্ঠানের নাম",
+                    "label": "প্রতিষ্ঠানের নাম",
+                    "type": "টেক্সট",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "যোগাযোগের ধরণ",
+                      "operator": "সমান",
+                      "value": "ব্যবসায়িক তথ্য"
                     }
                   },
                   {
-                    "id": "dba_name",
-                    "label": "DBA / Trade Name",
-                    "type": "text",
+                    "id": "dba_name সম্পর্কে",
+                    "label": "ডিবিএ / ট্রেড নাম",
+                    "type": "টেক্সট",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "যোগাযোগের ধরণ",
+                      "operator": "সমান",
+                      "value": "ব্যবসায়িক তথ্য"
                     }
                   },
                   {
-                    "id": "legal_structure",
-                    "label": "Legal Structure",
-                    "type": "select",
+                    "id": "আইনি_কাঠামো",
+                    "label": "আইনি কাঠামো",
+                    "type": "নির্বাচন করুন",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "যোগাযোগের ধরণ",
+                      "operator": "সমান",
+                      "value": "ব্যবসায়িক তথ্য"
                     },
                     "ui": {
                       "options": [
-                        "Corporation",
-                        "Partnership",
-                        "Limited Partnership",
-                        "Limited Liability",
-                        "Not-for-Profit"
+                        "কর্পোরেশন",
+                        "অংশীদারিত্ব",
+                        "সীমিত অংশীদারিত্ব",
+                        "সীমিত দায়",
+                        "অলাভজনক"
                       ]
                     }
                   },
                   {
-                    "id": "nys_sales_tax_id",
-                    "label": "NYS Sales Tax ID #",
-                    "type": "text",
+                    "id": "নিউ ইয়র্ক টাইমস",
+                    "label": "NYS বিক্রয় কর আইডি #",
+                    "type": "টেক্সট",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "যোগাযোগের ধরণ",
+                      "operator": "সমান",
+                      "value": "ব্যবসায়িক তথ্য"
                     }
                   },
                   {
-                    "id": "is_out_of_state_corp",
-                    "label": "Are you a corporation formed outside of New York State?",
-                    "type": "radio",
+                    "id": "রাজ্যের_কর্পোরেশনের_বাইরে_আছে",
+                    "label": "আপনি কি নিউ ইয়র্ক স্টেটের বাইরে গঠিত কোনও কর্পোরেশন?",
+                    "type": "রেডিও",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "যোগাযোগের ধরণ",
+                      "operator": "সমান",
+                      "value": "ব্যবসায়িক তথ্য"
                     },
                     "ui": {
-                      "options": ["Yes", "No"]
-                    }
-                  },
-                  {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
-                    "requiredCondition": {
-                      "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                      "options": [
+                        "হাঁ",
+                        "না"
                       ]
                     }
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "প্রথম_নাম",
+                    "label": "প্রথম নাম",
+                    "type": "টেক্সট",
                     "requiredCondition": {
                       "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                        {
+                          "field": "যোগাযোগের ধরণ",
+                          "operator": "সমান",
+                          "value": "ব্যক্তিগত মালিক"
+                        },
+                        {
+                          "field": "যোগাযোগের ধরণ",
+                          "operator": "সমান",
+                          "value": "অন্যান্য যোগাযোগ"
+                        },
+                        {
+                          "field": "যোগাযোগের ধরণ",
+                          "operator": "সমান",
+                          "value": "মনোনীত জরুরি যোগাযোগ"
+                        }
                       ]
                     }
                   },
                   {
-                    "id": "title",
-                    "label": "Title",
-                    "type": "text",
+                    "id": "শেষ নাম",
+                    "label": "পদবি",
+                    "type": "টেক্সট",
+                    "requiredCondition": {
+                      "anyOf": [
+                        {
+                          "field": "যোগাযোগের ধরণ",
+                          "operator": "সমান",
+                          "value": "ব্যক্তিগত মালিক"
+                        },
+                        {
+                          "field": "যোগাযোগের ধরণ",
+                          "operator": "সমান",
+                          "value": "অন্যান্য যোগাযোগ"
+                        },
+                        {
+                          "field": "যোগাযোগের ধরণ",
+                          "operator": "সমান",
+                          "value": "মনোনীত জরুরি যোগাযোগ"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "শিরোনাম",
+                    "label": "শিরোনাম",
+                    "type": "টেক্সট",
                     "required": false
                   },
                   {
-                    "id": "email",
-                    "label": "E-mail Address",
-                    "type": "email",
+                    "id": "ইমেইল",
+                    "label": "ই-মেইল ঠিকানা",
+                    "type": "ইমেইল",
                     "required": true
                   },
                   {
-                    "id": "ssn_itin",
-                    "label": "SSN / ITIN",
-                    "type": "text",
+                    "id": "এসএসএন_ইটিন",
+                    "label": "এসএসএন / আইটিআইএন",
+                    "type": "টেক্সট",
                     "required": false,
                     "constraints": {
                       "pattern": "^(\\d{3}-\\d{2}-\\d{4}|\\d{9})$"
                     },
                     "ui": {
-                      "placeholder": "XXX-XX-XXXX or 9-digit ITIN"
+                      "placeholder": "XXX-XX-XXXX অথবা ৯-সংখ্যার ITIN"
                     }
                   },
                   {
-                    "id": "ssn_itin_type",
-                    "label": "Did you enter SSN or ITIN?",
-                    "type": "radio",
+                    "id": "ssn_itin_type সম্পর্কে",
+                    "label": "তুমি কি SSN অথবা ITIN লিখেছো?",
+                    "type": "রেডিও",
                     "requiredCondition": {
-                      "field": "ssn_itin",
-                      "operator": "notEquals",
+                      "field": "এসএসএন_ইটিন",
+                      "operator": "সমান নয়",
                       "value": ""
                     },
                     "ui": {
-                      "options": ["SSN", "ITIN"]
+                      "options": [
+                        "এসএসএন",
+                        "আইটিআইএন"
+                      ]
                     }
                   },
                   {
-                    "id": "phone",
-                    "label": "Phone Number",
-                    "type": "tel",
+                    "id": "ফোন",
+                    "label": "ফোন নম্বর",
+                    "type": "টেলিফোন",
                     "required": true,
                     "constraints": {
                       "pattern": "^\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
                     },
                     "ui": {
-                      "placeholder": "(123) 456-7890"
+                      "placeholder": "(১২৩) ৪৫৬-৭৮৯০"
                     }
                   },
                   {
-                    "id": "tty_phone",
-                    "label": "TTY Phone",
-                    "type": "tel",
+                    "id": "tty_phone সম্পর্কে",
+                    "label": "টিটিওয়াই ফোন",
+                    "type": "টেলিফোন",
                     "required": false
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "জন্ম তারিখ",
+                    "label": "জন্ম তারিখ",
+                    "type": "তারিখ",
                     "required": false
                   },
                   {
-                    "id": "gender",
-                    "label": "Gender",
-                    "type": "radio",
+                    "id": "লিঙ্গ",
+                    "label": "লিঙ্গ",
+                    "type": "রেডিও",
                     "required": false,
                     "ui": {
-                      "options": ["Female", "Male"]
+                      "options": [
+                        "মহিলা",
+                        "পুরুষ"
+                      ]
                     }
                   }
                 ]
@@ -397,212 +445,211 @@
           }
         ]
       },
-
       {
-        "id": "application_info_1",
-        "title": "Application Specific Information 1",
+        "id": "অ্যাপ্লিকেশন_তথ্য_১",
+        "title": "আবেদন সংক্রান্ত তথ্য ১",
         "sections": [
           {
-            "id": "program_details",
-            "title": "Program Details",
+            "id": "প্রোগ্রাম_বিস্তারিত",
+            "title": "প্রোগ্রামের বিবরণ",
             "fields": [
               {
-                "id": "program_type",
-                "label": "Program Type",
-                "type": "select",
+                "id": "প্রোগ্রাম_টাইপ",
+                "label": "প্রোগ্রামের ধরণ",
+                "type": "নির্বাচন করুন",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Infant Toddler",
-                    "Preschool"
+                    "শিশু শিশু",
+                    "প্রি-স্কুল"
                   ]
                 }
               },
               {
-                "id": "orientation_cert_number",
-                "label": "Pre Permit Orientation Cert #",
-                "type": "text",
+                "id": "ওরিয়েন্টেশন_সার্ট_নম্বর",
+                "label": "প্রি-পারমিট ওরিয়েন্টেশন সার্টিফিকেট #",
+                "type": "টেক্সট",
                 "required": true
               },
               {
-                "id": "permittee_name",
-                "label": "Permittee (Sponsor Name)",
-                "type": "text",
+                "id": "অনুমতিপ্রাপ্তের নাম",
+                "label": "অনুমতিপ্রাপ্ত (স্পন্সরের নাম)",
+                "type": "টেক্সট",
                 "required": true
               },
               {
-                "id": "is_applicant_same_as_permittee",
-                "label": "Applicant same as Permittee?",
-                "type": "checkbox",
+                "id": "আবেদনকারী কি পারমিটের মতোই?",
+                "label": "আবেদনকারী এবং পারমিটধারী একই?",
+                "type": "চেকবক্স",
                 "ui": {
                   "defaultChecked": true
                 }
               },
               {
-                "id": "permit_expiration_date",
-                "label": "Expiration Date",
-                "type": "date",
+                "id": "অনুমতির_মেয়াদ_তারিখ",
+                "label": "মেয়াদ শেষ হওয়ার তারিখ",
+                "type": "তারিখ",
                 "required": false
               },
               {
-                "id": "permit_number",
-                "label": "Permit #",
-                "type": "text",
+                "id": "পারমিট_নম্বর",
+                "label": "অনুমতি #",
+                "type": "টেক্সট",
                 "required": false
               }
             ]
           },
           {
-            "id": "program_contact",
-            "title": "Program Contact",
+            "id": "প্রোগ্রাম_যোগাযোগ",
+            "title": "প্রোগ্রাম যোগাযোগ",
             "fields": [
               {
-                "id": "program_phone",
-                "label": "Phone",
-                "type": "tel"
+                "id": "প্রোগ্রাম_ফোন",
+                "label": "ফোন",
+                "type": "টেলিফোন"
               },
               {
-                "id": "program_fax",
-                "label": "Fax",
-                "type": "tel"
+                "id": "ফ্যাক্স_প্রোগ্রাম",
+                "label": "ফ্যাক্স",
+                "type": "টেলিফোন"
               },
               {
-                "id": "program_email",
-                "label": "Email",
-                "type": "email",
+                "id": "প্রোগ্রাম_ইমেল",
+                "label": "ইমেইল",
+                "type": "ইমেইল",
                 "required": true
               },
               {
-                "id": "program_website",
-                "label": "Website",
-                "type": "text"
+                "id": "প্রোগ্রাম_ওয়েবসাইট",
+                "label": "ওয়েবসাইট",
+                "type": "টেক্সট"
               }
             ]
           },
           {
-            "id": "program_days_hours",
-            "title": "Days Open (Hours)",
+            "id": "প্রোগ্রাম_দিন_ঘন্টা",
+            "title": "খোলা দিন (ঘন্টা)",
             "fields": [
               {
-                "id": "open_days",
-                "label": "Open Days",
-                "type": "checkbox",
+                "id": "খোলা_দিন",
+                "label": "খোলা দিন",
+                "type": "চেকবক্স",
                 "ui": {
                   "options": [
-                    "Sunday",
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
+                    "রবিবার",
+                    "সোমবার",
+                    "মঙ্গলবার",
+                    "বুধবার",
+                    "বৃহস্পতিবার",
+                    "শুক্রবার",
+                    "শনিবার"
                   ]
                 }
               },
               {
-                "id": "nightcare",
-                "label": "Nightcare",
-                "type": "checkbox"
+                "id": "রাতের যত্ন",
+                "label": "নাইটকেয়ার",
+                "type": "চেকবক্স"
               },
               {
-                "id": "open_from",
-                "label": "Open From",
-                "type": "time",
+                "id": "থেকে_খুলুন",
+                "label": "থেকে খুলুন",
+                "type": "সময়",
                 "required": true
               },
               {
-                "id": "close_at",
-                "label": "Close At",
-                "type": "time",
+                "id": "বন্ধ_এ",
+                "label": "বন্ধ",
+                "type": "সময়",
                 "required": true
               },
               {
-                "id": "inspection_delivery_method",
-                "label": "Inspection Report Delivery Method",
-                "type": "select",
+                "id": "পরিদর্শন_প্রদান_পদ্ধতি",
+                "label": "পরিদর্শন প্রতিবেদন বিতরণ পদ্ধতি",
+                "type": "নির্বাচন করুন",
                 "ui": {
                   "options": [
-                    "Email",
-                    "Fax",
-                    "Regular Mail"
+                    "ইমেইল",
+                    "ফ্যাক্স",
+                    "নিয়মিত মেইল"
                   ]
                 }
               },
               {
-                "id": "inspection_language",
-                "label": "Inspection Language",
-                "type": "select",
+                "id": "পরিদর্শন_ভাষা",
+                "label": "পরিদর্শন ভাষা",
+                "type": "নির্বাচন করুন",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish"
+                    "ইংরেজী",
+                    "স্পেনীয়"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "school_year_dates",
-            "title": "School Year Dates",
+            "id": "স্কুল_বছরের_তারিখ",
+            "title": "স্কুল বছরের তারিখ",
             "fields": [
               {
-                "id": "school_year_from",
-                "label": "Regular School Year From",
-                "type": "date"
+                "id": "স্কুল_বছর_থেকে",
+                "label": "নিয়মিত স্কুল বছর থেকে",
+                "type": "তারিখ"
               },
               {
-                "id": "school_year_to",
-                "label": "Regular School Year To",
-                "type": "date"
+                "id": "স্কুল_বছর_পর্যন্ত",
+                "label": "নিয়মিত স্কুল বছর থেকে",
+                "type": "তারিখ"
               },
               {
-                "id": "has_summer_program",
-                "label": "Summer Program",
-                "type": "checkbox"
+                "id": "গ্রীষ্মকালীন_প্রোগ্রাম আছে",
+                "label": "গ্রীষ্মকালীন প্রোগ্রাম",
+                "type": "চেকবক্স"
               }
             ]
           },
           {
-            "id": "school_breaks",
-            "title": "School Breaks",
+            "id": "স্কুল_বিরতি",
+            "title": "স্কুল ছুটি",
             "fields": [
               {
-                "id": "school_breaks",
-                "label": "School Breaks",
-                "type": "group",
+                "id": "স্কুল_বিরতি",
+                "label": "স্কুল ছুটি",
+                "type": "দল",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "term",
-                    "from",
-                    "to"
+                    "পদ",
+                    "থেকে",
+                    "থেকে"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "term",
-                    "label": "Term",
-                    "type": "select",
+                    "id": "পদ",
+                    "label": "মেয়াদ",
+                    "type": "নির্বাচন করুন",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Fall",
-                        "Spring",
-                        "Summer",
-                        "Winter"
+                        "পতন",
+                        "বসন্ত",
+                        "গ্রীষ্ম",
+                        "শীতকালীন"
                       ]
                     }
                   },
                   {
-                    "id": "from",
-                    "label": "From",
-                    "type": "date",
+                    "id": "থেকে",
+                    "label": "থেকে",
+                    "type": "তারিখ",
                     "required": true
                   },
                   {
-                    "id": "to",
-                    "label": "To",
-                    "type": "date",
+                    "id": "থেকে",
+                    "label": "থেকে",
+                    "type": "তারিখ",
                     "required": true
                   }
                 ]
@@ -610,24 +657,24 @@
             ]
           },
           {
-            "id": "holidays",
-            "title": "Holidays",
+            "id": "ছুটির দিন",
+            "title": "ছুটির দিন",
             "fields": [
               {
-                "id": "holidays",
-                "label": "Holiday List",
-                "type": "group",
+                "id": "ছুটির দিন",
+                "label": "ছুটির তালিকা",
+                "type": "দল",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "holiday_name"
+                    "ছুটির নাম"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "holiday_name",
-                    "label": "Holiday Name",
-                    "type": "text",
+                    "id": "ছুটির নাম",
+                    "label": "ছুটির নাম",
+                    "type": "টেক্সট",
                     "required": true
                   }
                 ]
@@ -635,135 +682,135 @@
             ]
           },
           {
-            "id": "food_services_info",
-            "title": "Food Services Information",
+            "id": "খাদ্য_পরিষেবা_তথ্য",
+            "title": "খাদ্য পরিষেবা সম্পর্কিত তথ্য",
             "fields": [
               {
-                "id": "food_provided",
-                "label": "Is food provided for children in care?",
-                "type": "radio",
+                "id": "খাবার_প্রদান করা হয়েছে",
+                "label": "পরিচর্যায় থাকা শিশুদের জন্য কি খাবার সরবরাহ করা হয়?",
+                "type": "রেডিও",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "food_prepared_on_site",
-                "label": "Is food prepared on site?",
-                "type": "radio",
+                "id": "খাবার_প্রস্তুত_অন_সাইটে",
+                "label": "খাবার কি সাইটে প্রস্তুত করা হয়?",
+                "type": "রেডিও",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "food_preparation_location",
-                "label": "Where is food prepared?",
-                "type": "text"
+                "id": "খাবার_প্রস্তুতির_অবস্থান",
+                "label": "খাবার কোথায় তৈরি করা হয়?",
+                "type": "টেক্সট"
               },
               {
-                "id": "dohmh_food_service_permit",
-                "label": "DOHMH Food Service Permit #",
-                "type": "text"
+                "id": "দোহম_খাবার_পরিষেবা_পারমিট",
+                "label": "DOHMH খাদ্য পরিষেবা পারমিট #",
+                "type": "টেক্সট"
               },
               {
-                "id": "person_on_certificate",
-                "label": "Person Name on Certificate",
-                "type": "text"
+                "id": "ব্যক্তি_অন_সার্টিফিকেট",
+                "label": "সার্টিফিকেটে ব্যক্তির নাম",
+                "type": "টেক্সট"
               },
               {
-                "id": "food_protection_cert_number",
-                "label": "Food Protection Certificate #",
-                "type": "text"
+                "id": "খাদ্য_সুরক্ষা_প্রত্যয়নপত্র_নম্বর",
+                "label": "খাদ্য সুরক্ষা সার্টিফিকেট #",
+                "type": "টেক্সট"
               }
             ]
           }
         ]
       },
       {
-        "id": "application_info_2",
-        "title": "Application Specific Information 2"
+        "id": "অ্যাপ্লিকেশন_তথ্য_২",
+        "title": "আবেদন সংক্রান্ত তথ্য ২"
       },
       {
-        "id": "document_upload",
-        "title": "Upload Documents",
-        "description": "REQUIRED DOCUMENTS\nIn order for your application to be processed, based on information provided, you are required to upload the following documents:",
+        "id": "ডকুমেন্ট_আপলোড",
+        "title": "ডকুমেন্ট আপলোড করুন",
+        "description": "প্রয়োজনীয় নথিপত্র\nপ্রদত্ত তথ্যের ভিত্তিতে আপনার আবেদন প্রক্রিয়াকরণের জন্য, আপনাকে নিম্নলিখিত নথিগুলি আপলোড করতে হবে:",
         "sections": [
           {
-            "id": "initial_site_survey",
-            "title": "Initial Site Survey Form",
+            "id": "প্রাথমিক_সাইট_জরিপ",
+            "title": "প্রাথমিক স্থান জরিপ ফর্ম",
             "fields": [
               {
-                "id": "site_survey_file",
-                "label": "Upload Initial Site Survey Form",
-                "type": "file",
+                "id": "সাইট_জরিপ_ফাইল",
+                "label": "প্রাথমিক সাইট জরিপ ফর্ম আপলোড করুন",
+                "type": "ফাইল",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "আবেদন/পিডিএফ",
+                    "ছবি/জেপিইজি",
+                    "ছবি/jpg",
+                    "ছবি/পিএনজি"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Initial Site Survey",
+                  "proofCategory": "প্রাথমিক স্থান জরিপ",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "personal_id_proof",
-            "title": "Proof of Personal Identification",
+            "id": "ব্যক্তিগত_পরিচয়_প্রমাণ",
+            "title": "ব্যক্তিগত পরিচয়পত্রের প্রমাণপত্র",
             "fields": [
               {
-                "id": "personal_id_file",
-                "label": "Upload Proof of Personal Identification",
-                "type": "file",
+                "id": "ব্যক্তিগত_আইডি_ফাইল",
+                "label": "ব্যক্তিগত পরিচয়পত্রের প্রমাণ আপলোড করুন",
+                "type": "ফাইল",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "আবেদন/পিডিএফ",
+                    "ছবি/জেপিইজি",
+                    "ছবি/jpg",
+                    "ছবি/পিএনজি"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Personal ID",
+                  "proofCategory": "ব্যক্তিগত পরিচয়পত্র",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "fee_exemption_proof",
-            "title": "Proof of Fee Exemption",
+            "id": "ফি_ছাড়_প্রমাণ",
+            "title": "ফি ছাড়ের প্রমাণ",
             "fields": [
               {
-                "id": "fee_exemption_file",
-                "label": "Upload Proof of Fee Exemption (ACS Affiliation or Municipal Exemption)",
-                "type": "file",
+                "id": "ফি_এক্সেমপশন_ফাইল",
+                "label": "ফি ছাড়ের প্রমাণ (ACS অ্যাফিলিয়েশন বা পৌরসভা ছাড়) আপলোড করুন",
+                "type": "ফাইল",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "আবেদন/পিডিএফ",
+                    "ছবি/জেপিইজি",
+                    "ছবি/jpg",
+                    "ছবি/পিএনজি"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Fee Exemption",
+                  "proofCategory": "ফি ছাড়",
                   "multiple": false
                 }
               }
@@ -772,17 +819,16 @@
         ]
       },
       {
-        "id": "step_6_placeholder",
-        "title": "To be defined"
+        "id": "ধাপ_৬_স্থানধারক",
+        "title": "সংজ্ঞায়িত করা হবে"
       },
       {
-        "id": "step_7_placeholder",
-        "title": "To be defined"
+        "id": "ধাপ_৭_স্থানধারক",
+        "title": "সংজ্ঞায়িত করা হবে"
       },
       {
-        "id": "step_8_placeholder",
-        "title": "To be defined"
+        "id": "ধাপ_৮_স্থানধারক",
+        "title": "সংজ্ঞায়িত করা হবে"
       }
     ]
-  }
-}
+  }}

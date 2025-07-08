@@ -1,192 +1,201 @@
 {
   "form": {
-    "title": "Group Child Care Permit Application",
-    "description": "Multi-step application for obtaining a permit to operate group child care programs.",
+    "title": "طلب تصريح رعاية أطفال جماعية",
+    "description": "طلب متعدد الخطوات للحصول على تصريح لتشغيل برامج رعاية الأطفال الجماعية.",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "غادر"
     },
     "steps": [
       {
-        "id": "establishment_information",
-        "title": "Establishment Information",
+        "id": "معلومات المنشأة",
+        "title": "معلومات المنشأة",
         "sections": [
           {
-            "id": "establishment_address",
-            "title": "Establishment Address",
-            "description": "Enter the physical address where business will operate. If you are applying for a Tattoo License, enter your mailing or home address.",
+            "id": "عنوان المنشأة",
+            "title": "عنوان المنشأة",
+            "description": "أدخل العنوان الفعلي الذي ستُمارس فيه أعمالك. إذا كنت تتقدم بطلب للحصول على رخصة وشم، فأدخل عنوان بريدك أو عنوان منزلك.",
             "ui": {
-              "autocomplete": "street_1",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "الشارع_1",
+              "placeholder": "ابدأ بكتابة عنوان الشارع الخاص بك",
+              "overrideComponent": "عنوان الإكمال التلقائي"
             },
             "metadata": {
               "integration": {
-                "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "provider": "جوجل",
+                "feature": "عنوان الإكمال التلقائي"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "مدينة",
+                  "source": "المنطقة",
                   "fallbackSources": [
-                    "postal_town",
-                    "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "المدينة البريدية",
+                    "المستوى الفرعي 1",
+                    "مستوى المنطقة الإدارية 2"
                   ]
                 },
                 {
-                  "fieldId": "borough",
-                  "source": "sublocality_level_1",
+                  "fieldId": "البلدة",
+                  "source": "المستوى الفرعي 1",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "مستوى المنطقة الإدارية 2"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "خريطة البلدة"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "building_number", "source": "street_number" },
-                { "fieldId": "house_number", "source": "street_number" }
+                {
+                  "fieldId": "ولاية",
+                  "source": "مستوى المنطقة الإدارية 1"
+                },
+                {
+                  "fieldId": "رقم المبنى",
+                  "source": "رقم الشارع"
+                },
+                {
+                  "fieldId": "رقم المنزل",
+                  "source": "رقم الشارع"
+                }
               ]
             },
             "fields": [
               {
-                "id": "address_type",
-                "label": "Address Type",
-                "type": "select",
+                "id": "نوع العنوان",
+                "label": "نوع العنوان",
+                "type": "يختار",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Select",
-                    "Complete Address",
-                    "Cross Street (Intersection)",
-                    "Place (Landmark)"
+                    "يختار",
+                    "العنوان الكامل",
+                    "تقاطع الشارع",
+                    "مكان (معلم)"
                   ]
                 }
               },
               {
-                "id": "street_1",
-                "label": "Street 1",
-                "type": "text",
+                "id": "الشارع_1",
+                "label": "الشارع 1",
+                "type": "نص",
                 "required": true
               },
               {
-                "id": "building_number",
-                "label": "Building #",
-                "type": "text",
+                "id": "رقم المبنى",
+                "label": "مبنى #",
+                "type": "نص",
                 "required": true
               },
               {
-                "id": "street_2",
-                "label": "Street 2",
-                "type": "text",
+                "id": "الشارع_2",
+                "label": "شارع 2",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "unit_type",
-                "label": "Unit Type",
-                "type": "select",
+                "id": "نوع الوحدة",
+                "label": "نوع الوحدة",
+                "type": "يختار",
                 "required": false,
                 "ui": {
                   "options": [
-                    "LBBY",
-                    "APT",
-                    "BLDG",
-                    "STE",
-                    "FL",
+                    "لبى بى بى",
+                    "أبت",
+                    "مبنى",
+                    "أنت",
+                    "في",
                     "BSMT",
-                    "FRNT",
-                    "SIDE",
-                    "REAR",
-                    "UPPR",
-                    "LOWR",
-                    "PIER"
+                    "الجبهة",
+                    "جانب",
+                    "مؤخرة",
+                    "يو بي آر",
+                    "تحت",
+                    "رصيف"
                   ]
                 }
               },
               {
-                "id": "unit",
-                "label": "Unit",
-                "type": "text",
+                "id": "وحدة",
+                "label": "وحدة",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "مدينة",
+                "label": "مدينة",
+                "type": "نص",
                 "required": true
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "ولاية",
+                "label": "ولاية",
+                "type": "نص",
                 "required": true
               },
               {
-                "id": "borough",
-                "label": "Borough",
-                "type": "select",
+                "id": "البلدة",
+                "label": "البلدة",
+                "type": "يختار",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
-                    "Staten Island"
+                    "برونكس",
+                    "بروكلين",
+                    "مانهاتن",
+                    "كوينز",
+                    "جزيرة ستاتن"
                   ]
                 }
               },
               {
-                "id": "bin",
-                "label": "Bin",
-                "type": "text",
+                "id": "سلة المهملات",
+                "label": "سلة المهملات",
+                "type": "نص",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "واجهة برمجة تطبيقات العميل الجغرافي"
                 }
               },
               {
-                "id": "bbl",
-                "label": "Bbl",
-                "type": "text",
+                "id": "برميل",
+                "label": "برميل",
+                "type": "نص",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "واجهة برمجة تطبيقات العميل الجغرافي"
                 }
               },
               {
-                "id": "community_district",
-                "label": "Community District",
-                "type": "text",
+                "id": "منطقة المجتمع",
+                "label": "المنطقة المجتمعية",
+                "type": "نص",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "واجهة برمجة تطبيقات العميل الجغرافي"
                 }
               },
               {
-                "id": "council_district",
-                "label": "Council District",
-                "type": "text",
+                "id": "مجلس_المنطقة",
+                "label": "منطقة المجلس",
+                "type": "نص",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "واجهة برمجة تطبيقات العميل الجغرافي"
                 }
               },
               {
-                "id": "police_precinct",
-                "label": "Police Precinct",
-                "type": "text",
+                "id": "مركز الشرطة",
+                "label": "مركز الشرطة",
+                "type": "نص",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "واجهة برمجة تطبيقات العميل الجغرافي"
                 }
               },
               {
-                "id": "house_number",
-                "label": "House Number",
-                "type": "text",
+                "id": "رقم المنزل",
+                "label": "رقم المنزل",
+                "type": "نص",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "واجهة برمجة تطبيقات العميل الجغرافي"
                 }
               }
             ]
@@ -194,174 +203,210 @@
         ]
       },
       {
-        "id": "contact_information",
-        "title": "Contact Information – Applicant and Other Contacts",
+        "id": "معلومات الاتصال",
+        "title": "معلومات الاتصال – مقدم الطلب وجهات الاتصال الأخرى",
         "sections": [
           {
-            "id": "contact_info_guidance",
-            "title": "Contact Type Guidance",
-            "type": "info",
+            "id": "معلومات الاتصال والإرشادات",
+            "title": "إرشادات نوع الاتصال",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "### Applying as a Corporation, Partnership, or Not-for-Profit?\n\nSelect **\"Business Information\"** as your Type of Contact and complete the required fields.  \nBusinesses also have the opportunity to provide a complete list of the responsible individuals within their organization. To add each individual's information to your application, please select **\"Other Contact\"** as the Type of Contact and complete the required fields that appear.\n\n---\n\n### Applying as an Individual or Sole Proprietorship?\n\nSelect **\"Individual Owner\"** as your Type of Contact and complete the required fields that appear.\n\n---\n\n### Emergency Contact?\n\nUnless a **\"Designated Emergency Contact\"** is specified, the applicant will be assumed to be the Emergency Contact.  \nTo identify someone other than the applicant to be contacted in the event of an emergency, please select **\"Designated Emergency Contact\"** as the Type of Contact and complete the required fields that appear."
+            "content": "### هل تتقدم بطلبك كشركة، أو شراكة، أو مؤسسة غير ربحية؟\n\nاختر **\"معلومات العمل\"** كنوع جهة الاتصال الخاصة بك وأكمل الحقول المطلوبة.\n\nللشركات أيضًا فرصة تقديم قائمة كاملة بالأفراد المسؤولين داخل مؤسستها. لإضافة معلومات كل فرد إلى طلبك، يرجى اختيار **\"جهة اتصال أخرى\"** كنوع جهة الاتصال وتعبئة الحقول المطلوبة.\n\n---\n\n### هل تتقدم بطلبك كفرد أو مؤسسة فردية؟\n\nاختر **\"مالك فردي\"** كنوع جهة الاتصال الخاصة بك وأكمل الحقول المطلوبة.\n\n---\n\n### جهة اتصال في حالات الطوارئ؟\n\nما لم يتم تحديد **\"جهة اتصال طوارئ مُحددة\"**، فسيتم اعتبار مقدم الطلب هو جهة الاتصال في حالات الطوارئ.\n\nلتحديد شخص آخر غير مقدم الطلب ليتم الاتصال به في حالات الطوارئ، يرجى اختيار **\"جهة اتصال طوارئ مُحددة\"** كنوع جهة الاتصال وتعبئة الحقول المطلوبة."
           },
           {
-            "id": "contact_list",
-            "title": "Contact List",
+            "id": "قائمة جهات الاتصال",
+            "title": "قائمة جهات الاتصال",
             "fields": [
               {
-                "id": "contacts",
-                "label": "Contacts",
-                "type": "group",
+                "id": "جهات الاتصال",
+                "label": "جهات الاتصال",
+                "type": "مجموعة",
                 "metadata": {
                   "multiple": true,
-                  "tableColumns": ["contact_type", "first_name", "last_name", "establishment_name", "email"]
+                  "tableColumns": [
+                    "نوع جهة الاتصال",
+                    "الاسم الأول",
+                    "اسم العائلة",
+                    "اسم المنشأة",
+                    "بريد إلكتروني"
+                  ]
                 },
                 "fields": [
                   {
-                    "id": "contact_type",
-                    "label": "Type of Contact",
-                    "type": "select",
+                    "id": "نوع جهة الاتصال",
+                    "label": "نوع الاتصال",
+                    "type": "يختار",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Business Information",
-                        "Individual Owner",
-                        "Other Contact",
-                        "Designated Emergency Contact"
+                        "معلومات الأعمال",
+                        "مالك فردي",
+                        "جهة اتصال أخرى",
+                        "جهة الاتصال المعينة في حالات الطوارئ"
                       ]
                     }
                   },
                   {
-                    "id": "establishment_name",
-                    "label": "Establishment Name",
-                    "type": "text",
+                    "id": "اسم المنشأة",
+                    "label": "اسم المنشأة",
+                    "type": "نص",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "نوع جهة الاتصال",
+                      "operator": "يساوي",
+                      "value": "معلومات الأعمال"
                     }
                   },
                   {
-                    "id": "dba_name",
-                    "label": "DBA / Trade Name",
-                    "type": "text",
+                    "id": "اسم قاعدة البيانات",
+                    "label": "DBA / الاسم التجاري",
+                    "type": "نص",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "نوع جهة الاتصال",
+                      "operator": "يساوي",
+                      "value": "معلومات الأعمال"
                     }
                   },
                   {
-                    "id": "legal_structure",
-                    "label": "Legal Structure",
-                    "type": "select",
+                    "id": "البنية القانونية",
+                    "label": "الهيكل القانوني",
+                    "type": "يختار",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "نوع جهة الاتصال",
+                      "operator": "يساوي",
+                      "value": "معلومات الأعمال"
                     },
                     "ui": {
                       "options": [
-                        "Corporation",
-                        "Partnership",
-                        "Limited Partnership",
-                        "Limited Liability",
-                        "Not-for-Profit"
+                        "مؤسَّسة",
+                        "شراكة",
+                        "شركة شراكة محدودة",
+                        "المسؤولية المحدودة",
+                        "غير ربحية"
                       ]
                     }
                   },
                   {
-                    "id": "nys_sales_tax_id",
-                    "label": "NYS Sales Tax ID #",
-                    "type": "text",
+                    "id": "معرف ضريبة المبيعات في ولاية نيويورك",
+                    "label": "رقم تعريف ضريبة المبيعات في ولاية نيويورك",
+                    "type": "نص",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "نوع جهة الاتصال",
+                      "operator": "يساوي",
+                      "value": "معلومات الأعمال"
                     }
                   },
                   {
-                    "id": "is_out_of_state_corp",
-                    "label": "Are you a corporation formed outside of New York State?",
-                    "type": "radio",
+                    "id": "شركة خارج الولاية",
+                    "label": "هل أنت شركة تأسست خارج ولاية نيويورك؟",
+                    "type": "راديو",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "نوع جهة الاتصال",
+                      "operator": "يساوي",
+                      "value": "معلومات الأعمال"
                     },
                     "ui": {
-                      "options": ["Yes", "No"]
-                    }
-                  },
-                  {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
-                    "requiredCondition": {
-                      "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                      "options": [
+                        "نعم",
+                        "لا"
                       ]
                     }
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "الاسم الأول",
+                    "label": "الاسم الأول",
+                    "type": "نص",
                     "requiredCondition": {
                       "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                        {
+                          "field": "نوع جهة الاتصال",
+                          "operator": "يساوي",
+                          "value": "مالك فردي"
+                        },
+                        {
+                          "field": "نوع جهة الاتصال",
+                          "operator": "يساوي",
+                          "value": "جهة اتصال أخرى"
+                        },
+                        {
+                          "field": "نوع جهة الاتصال",
+                          "operator": "يساوي",
+                          "value": "جهة الاتصال المعينة في حالات الطوارئ"
+                        }
                       ]
                     }
                   },
                   {
-                    "id": "title",
-                    "label": "Title",
-                    "type": "text",
+                    "id": "اسم العائلة",
+                    "label": "اسم العائلة",
+                    "type": "نص",
+                    "requiredCondition": {
+                      "anyOf": [
+                        {
+                          "field": "نوع جهة الاتصال",
+                          "operator": "يساوي",
+                          "value": "مالك فردي"
+                        },
+                        {
+                          "field": "نوع جهة الاتصال",
+                          "operator": "يساوي",
+                          "value": "جهة اتصال أخرى"
+                        },
+                        {
+                          "field": "نوع جهة الاتصال",
+                          "operator": "يساوي",
+                          "value": "جهة الاتصال المعينة في حالات الطوارئ"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "عنوان",
+                    "label": "عنوان",
+                    "type": "نص",
                     "required": false
                   },
                   {
-                    "id": "email",
-                    "label": "E-mail Address",
-                    "type": "email",
+                    "id": "بريد إلكتروني",
+                    "label": "عنوان البريد الإلكتروني",
+                    "type": "بريد إلكتروني",
                     "required": true
                   },
                   {
                     "id": "ssn_itin",
-                    "label": "SSN / ITIN",
-                    "type": "text",
+                    "label": "الرقم الضريبي الفردي/الرقم الضريبي الفردي",
+                    "type": "نص",
                     "required": false,
                     "constraints": {
                       "pattern": "^(\\d{3}-\\d{2}-\\d{4}|\\d{9})$"
                     },
                     "ui": {
-                      "placeholder": "XXX-XX-XXXX or 9-digit ITIN"
+                      "placeholder": "XXX-XX-XXXX أو رقم تعريف دافع الضرائب الفردي المكون من 9 أرقام"
                     }
                   },
                   {
-                    "id": "ssn_itin_type",
-                    "label": "Did you enter SSN or ITIN?",
-                    "type": "radio",
+                    "id": "نوع رقم الضمان الاجتماعي",
+                    "label": "هل أدخلت الرقم الضريبي الاجتماعي أو رقم التعريف الضريبي الفردي (ITIN)؟",
+                    "type": "راديو",
                     "requiredCondition": {
                       "field": "ssn_itin",
-                      "operator": "notEquals",
+                      "operator": "لا يساوي",
                       "value": ""
                     },
                     "ui": {
-                      "options": ["SSN", "ITIN"]
+                      "options": [
+                        "رقم الضمان الاجتماعي",
+                        "رقم تعريف دافع الضرائب الفردي"
+                      ]
                     }
                   },
                   {
-                    "id": "phone",
-                    "label": "Phone Number",
-                    "type": "tel",
+                    "id": "هاتف",
+                    "label": "رقم التليفون",
+                    "type": "هاتف",
                     "required": true,
                     "constraints": {
                       "pattern": "^\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -371,24 +416,27 @@
                     }
                   },
                   {
-                    "id": "tty_phone",
-                    "label": "TTY Phone",
-                    "type": "tel",
+                    "id": "هاتف tty",
+                    "label": "هاتف TTY",
+                    "type": "هاتف",
                     "required": false
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "تاريخ الميلاد",
+                    "label": "تاريخ الميلاد",
+                    "type": "تاريخ",
                     "required": false
                   },
                   {
-                    "id": "gender",
-                    "label": "Gender",
-                    "type": "radio",
+                    "id": "جنس",
+                    "label": "جنس",
+                    "type": "راديو",
                     "required": false,
                     "ui": {
-                      "options": ["Female", "Male"]
+                      "options": [
+                        "أنثى",
+                        "ذكر"
+                      ]
                     }
                   }
                 ]
@@ -397,212 +445,211 @@
           }
         ]
       },
-
       {
-        "id": "application_info_1",
-        "title": "Application Specific Information 1",
+        "id": "معلومات التطبيق 1",
+        "title": "معلومات خاصة بالتطبيق 1",
         "sections": [
           {
-            "id": "program_details",
-            "title": "Program Details",
+            "id": "تفاصيل البرنامج",
+            "title": "تفاصيل البرنامج",
             "fields": [
               {
-                "id": "program_type",
-                "label": "Program Type",
-                "type": "select",
+                "id": "نوع البرنامج",
+                "label": "نوع البرنامج",
+                "type": "يختار",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Infant Toddler",
-                    "Preschool"
+                    "طفل رضيع",
+                    "مرحلة ما قبل المدرسة"
                   ]
                 }
               },
               {
-                "id": "orientation_cert_number",
-                "label": "Pre Permit Orientation Cert #",
-                "type": "text",
+                "id": "رقم شهادة التوجه",
+                "label": "شهادة التوجيه قبل الحصول على التصريح رقم",
+                "type": "نص",
                 "required": true
               },
               {
-                "id": "permittee_name",
-                "label": "Permittee (Sponsor Name)",
-                "type": "text",
+                "id": "اسم صاحب التصريح",
+                "label": "صاحب التصريح (اسم الراعي)",
+                "type": "نص",
                 "required": true
               },
               {
-                "id": "is_applicant_same_as_permittee",
-                "label": "Applicant same as Permittee?",
-                "type": "checkbox",
+                "id": "هل المتقدم هو نفسه الحاصل على التصريح",
+                "label": "هل المتقدم هو نفس صاحب التصريح؟",
+                "type": "مربع الاختيار",
                 "ui": {
                   "defaultChecked": true
                 }
               },
               {
-                "id": "permit_expiration_date",
-                "label": "Expiration Date",
-                "type": "date",
+                "id": "تاريخ انتهاء الصلاحية",
+                "label": "تاريخ انتهاء الصلاحية",
+                "type": "تاريخ",
                 "required": false
               },
               {
-                "id": "permit_number",
-                "label": "Permit #",
-                "type": "text",
+                "id": "رقم التصريح",
+                "label": "يسمح #",
+                "type": "نص",
                 "required": false
               }
             ]
           },
           {
-            "id": "program_contact",
-            "title": "Program Contact",
+            "id": "برنامج_الاتصال",
+            "title": "برنامج الاتصال",
             "fields": [
               {
-                "id": "program_phone",
-                "label": "Phone",
-                "type": "tel"
+                "id": "برنامج الهاتف",
+                "label": "هاتف",
+                "type": "هاتف"
               },
               {
-                "id": "program_fax",
-                "label": "Fax",
-                "type": "tel"
+                "id": "برنامج الفاكس",
+                "label": "فاكس",
+                "type": "هاتف"
               },
               {
-                "id": "program_email",
-                "label": "Email",
-                "type": "email",
+                "id": "برنامج البريد الإلكتروني",
+                "label": "بريد إلكتروني",
+                "type": "بريد إلكتروني",
                 "required": true
               },
               {
-                "id": "program_website",
-                "label": "Website",
-                "type": "text"
+                "id": "موقع البرنامج",
+                "label": "موقع إلكتروني",
+                "type": "نص"
               }
             ]
           },
           {
-            "id": "program_days_hours",
-            "title": "Days Open (Hours)",
+            "id": "أيام_البرنامج_الساعات",
+            "title": "أيام العمل (الساعات)",
             "fields": [
               {
-                "id": "open_days",
-                "label": "Open Days",
-                "type": "checkbox",
+                "id": "أيام مفتوحة",
+                "label": "الأيام المفتوحة",
+                "type": "مربع الاختيار",
                 "ui": {
                   "options": [
-                    "Sunday",
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
+                    "الأحد",
+                    "الاثنين",
+                    "يوم الثلاثاء",
+                    "الأربعاء",
+                    "يوم الخميس",
+                    "جمعة",
+                    "السبت"
                   ]
                 }
               },
               {
-                "id": "nightcare",
-                "label": "Nightcare",
-                "type": "checkbox"
+                "id": "رعاية ليلية",
+                "label": "رعاية ليلية",
+                "type": "مربع الاختيار"
               },
               {
-                "id": "open_from",
-                "label": "Open From",
-                "type": "time",
+                "id": "مفتوح من",
+                "label": "مفتوح من",
+                "type": "وقت",
                 "required": true
               },
               {
-                "id": "close_at",
-                "label": "Close At",
-                "type": "time",
+                "id": "قريب_عند",
+                "label": "إغلاق عند",
+                "type": "وقت",
                 "required": true
               },
               {
-                "id": "inspection_delivery_method",
-                "label": "Inspection Report Delivery Method",
-                "type": "select",
+                "id": "طريقة التفتيش والتسليم",
+                "label": "طريقة تسليم تقرير التفتيش",
+                "type": "يختار",
                 "ui": {
                   "options": [
-                    "Email",
-                    "Fax",
-                    "Regular Mail"
+                    "بريد إلكتروني",
+                    "فاكس",
+                    "البريد العادي"
                   ]
                 }
               },
               {
-                "id": "inspection_language",
-                "label": "Inspection Language",
-                "type": "select",
+                "id": "لغة التفتيش",
+                "label": "لغة التفتيش",
+                "type": "يختار",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish"
+                    "إنجليزي",
+                    "الأسبانية"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "school_year_dates",
-            "title": "School Year Dates",
+            "id": "تواريخ العام الدراسي",
+            "title": "تواريخ العام الدراسي",
             "fields": [
               {
-                "id": "school_year_from",
-                "label": "Regular School Year From",
-                "type": "date"
+                "id": "السنة الدراسية من",
+                "label": "العام الدراسي العادي من",
+                "type": "تاريخ"
               },
               {
-                "id": "school_year_to",
-                "label": "Regular School Year To",
-                "type": "date"
+                "id": "السنة الدراسية حتى",
+                "label": "العام الدراسي العادي إلى",
+                "type": "تاريخ"
               },
               {
-                "id": "has_summer_program",
-                "label": "Summer Program",
-                "type": "checkbox"
+                "id": "لديه برنامج صيفي",
+                "label": "برنامج الصيف",
+                "type": "مربع الاختيار"
               }
             ]
           },
           {
-            "id": "school_breaks",
-            "title": "School Breaks",
+            "id": "العطلات المدرسية",
+            "title": "العطلات المدرسية",
             "fields": [
               {
-                "id": "school_breaks",
-                "label": "School Breaks",
-                "type": "group",
+                "id": "العطلات المدرسية",
+                "label": "العطلات المدرسية",
+                "type": "مجموعة",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "term",
-                    "from",
-                    "to"
+                    "شرط",
+                    "من",
+                    "ل"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "term",
-                    "label": "Term",
-                    "type": "select",
+                    "id": "شرط",
+                    "label": "شرط",
+                    "type": "يختار",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Fall",
-                        "Spring",
-                        "Summer",
-                        "Winter"
+                        "يسقط",
+                        "ربيع",
+                        "صيف",
+                        "شتاء"
                       ]
                     }
                   },
                   {
-                    "id": "from",
-                    "label": "From",
-                    "type": "date",
+                    "id": "من",
+                    "label": "من",
+                    "type": "تاريخ",
                     "required": true
                   },
                   {
-                    "id": "to",
-                    "label": "To",
-                    "type": "date",
+                    "id": "ل",
+                    "label": "ل",
+                    "type": "تاريخ",
                     "required": true
                   }
                 ]
@@ -610,24 +657,24 @@
             ]
           },
           {
-            "id": "holidays",
-            "title": "Holidays",
+            "id": "العطلات",
+            "title": "العطلات",
             "fields": [
               {
-                "id": "holidays",
-                "label": "Holiday List",
-                "type": "group",
+                "id": "العطلات",
+                "label": "قائمة العطلات",
+                "type": "مجموعة",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "holiday_name"
+                    "اسم العطلة"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "holiday_name",
-                    "label": "Holiday Name",
-                    "type": "text",
+                    "id": "اسم العطلة",
+                    "label": "اسم العطلة",
+                    "type": "نص",
                     "required": true
                   }
                 ]
@@ -635,135 +682,135 @@
             ]
           },
           {
-            "id": "food_services_info",
-            "title": "Food Services Information",
+            "id": "معلومات خدمات الطعام",
+            "title": "معلومات خدمات الطعام",
             "fields": [
               {
-                "id": "food_provided",
-                "label": "Is food provided for children in care?",
-                "type": "radio",
+                "id": "الطعام المقدم",
+                "label": "هل يتم توفير الطعام للأطفال في الرعاية؟",
+                "type": "راديو",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "food_prepared_on_site",
-                "label": "Is food prepared on site?",
-                "type": "radio",
+                "id": "الطعام_مُعد_في_الموقع",
+                "label": "هل يتم تحضير الطعام في الموقع؟",
+                "type": "راديو",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "food_preparation_location",
-                "label": "Where is food prepared?",
-                "type": "text"
+                "id": "مكان تحضير الطعام",
+                "label": "أين يتم تحضير الطعام؟",
+                "type": "نص"
               },
               {
-                "id": "dohmh_food_service_permit",
-                "label": "DOHMH Food Service Permit #",
-                "type": "text"
+                "id": "تصريح خدمة طعام دوهمه",
+                "label": "تصريح خدمة الطعام رقم DOHMH",
+                "type": "نص"
               },
               {
-                "id": "person_on_certificate",
-                "label": "Person Name on Certificate",
-                "type": "text"
+                "id": "الشخص الحاصل على الشهادة",
+                "label": "اسم الشخص الموجود على الشهادة",
+                "type": "نص"
               },
               {
-                "id": "food_protection_cert_number",
-                "label": "Food Protection Certificate #",
-                "type": "text"
+                "id": "رقم شهادة حماية الغذاء",
+                "label": "شهادة حماية الغذاء #",
+                "type": "نص"
               }
             ]
           }
         ]
       },
       {
-        "id": "application_info_2",
-        "title": "Application Specific Information 2"
+        "id": "معلومات التطبيق 2",
+        "title": "معلومات خاصة بالتطبيق 2"
       },
       {
-        "id": "document_upload",
-        "title": "Upload Documents",
-        "description": "REQUIRED DOCUMENTS\nIn order for your application to be processed, based on information provided, you are required to upload the following documents:",
+        "id": "تحميل المستند",
+        "title": "تحميل المستندات",
+        "description": "المستندات المطلوبة\n\nلكي تتم معالجة طلبك، بناءً على المعلومات المُقدمة، يتعين عليك تحميل المستندات التالية:",
         "sections": [
           {
-            "id": "initial_site_survey",
-            "title": "Initial Site Survey Form",
+            "id": "مسح الموقع الأولي",
+            "title": "نموذج المسح الأولي للموقع",
             "fields": [
               {
-                "id": "site_survey_file",
-                "label": "Upload Initial Site Survey Form",
-                "type": "file",
+                "id": "ملف استطلاع الموقع",
+                "label": "تحميل نموذج المسح الأولي للموقع",
+                "type": "ملف",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "تطبيق/pdf",
+                    "صورة/jpeg",
+                    "صورة/jpg",
+                    "صورة/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Initial Site Survey",
+                  "proofCategory": "المسح الأولي للموقع",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "personal_id_proof",
-            "title": "Proof of Personal Identification",
+            "id": "إثبات الهوية الشخصية",
+            "title": "إثبات الهوية الشخصية",
             "fields": [
               {
-                "id": "personal_id_file",
-                "label": "Upload Proof of Personal Identification",
-                "type": "file",
+                "id": "ملف الهوية الشخصية",
+                "label": "تحميل إثبات الهوية الشخصية",
+                "type": "ملف",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "تطبيق/pdf",
+                    "صورة/jpeg",
+                    "صورة/jpg",
+                    "صورة/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Personal ID",
+                  "proofCategory": "الهوية الشخصية",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "fee_exemption_proof",
-            "title": "Proof of Fee Exemption",
+            "id": "إعفاء من الرسوم",
+            "title": "إثبات الإعفاء من الرسوم",
             "fields": [
               {
-                "id": "fee_exemption_file",
-                "label": "Upload Proof of Fee Exemption (ACS Affiliation or Municipal Exemption)",
-                "type": "file",
+                "id": "ملف الإعفاء من الرسوم",
+                "label": "تحميل إثبات الإعفاء من الرسوم (الانتماء إلى ACS أو الإعفاء البلدي)",
+                "type": "ملف",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "تطبيق/pdf",
+                    "صورة/jpeg",
+                    "صورة/jpg",
+                    "صورة/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Fee Exemption",
+                  "proofCategory": "إعفاء من الرسوم",
                   "multiple": false
                 }
               }
@@ -772,17 +819,16 @@
         ]
       },
       {
-        "id": "step_6_placeholder",
-        "title": "To be defined"
+        "id": "الخطوة 6_عنصر نائب",
+        "title": "سيتم تعريفه"
       },
       {
-        "id": "step_7_placeholder",
-        "title": "To be defined"
+        "id": "الخطوة 7_عنصر نائب",
+        "title": "سيتم تعريفه"
       },
       {
-        "id": "step_8_placeholder",
-        "title": "To be defined"
+        "id": "الخطوة 8_العنصر النائب",
+        "title": "سيتم تعريفه"
       }
     ]
-  }
-}
+  }}
