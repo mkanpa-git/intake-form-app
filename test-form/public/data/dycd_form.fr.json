@@ -1,52 +1,52 @@
 {
   "form": {
-    "title": "DYCD Youth Services Intake – Ages 13 and Younger",
-    "description": "Form to collect youth and guardian information for DYCD programs",
+    "title": "Admission aux services jeunesse du DYCD – 13 ans et moins",
+    "description": "Formulaire de collecte d'informations sur les jeunes et les tuteurs pour les programmes DYCD",
     "steps": [
       {
-        "id": "demographics",
-        "title": "Youth Information",
+        "id": "démographie",
+        "title": "Information jeunesse",
         "sections": [
           {
-            "id": "youth_info",
-            "title": "Basic Information",
+            "id": "info_jeunesse",
+            "title": "Informations de base",
             "fields": [
               {
-                "id": "first_name",
-                "label": "First Name",
-                "type": "text",
+                "id": "prénom",
+                "label": "Prénom",
+                "type": "texte",
                 "required": true
               },
               {
-                "id": "last_name",
-                "label": "Last Name",
-                "type": "text",
+                "id": "nom de famille",
+                "label": "Nom de famille",
+                "type": "texte",
                 "required": true
               },
               {
                 "id": "dob",
-                "label": "Date of Birth",
+                "label": "Date de naissance",
                 "type": "date",
                 "required": true
               },
               {
-                "id": "gender",
-                "label": "Gender",
-                "type": "select",
+                "id": "genre",
+                "label": "Genre",
+                "type": "sélectionner",
                 "ui": {
                   "options": [
-                    "Male",
-                    "Female",
-                    "Non-binary",
-                    "Other"
+                    "Mâle",
+                    "Femelle",
+                    "Non binaire",
+                    "Autre"
                   ]
                 },
                 "required": true
               },
               {
-                "id": "ethnicity",
-                "label": "Ethnicity",
-                "type": "text"
+                "id": "origine ethnique",
+                "label": "Origine ethnique",
+                "type": "texte"
               }
             ]
           }
@@ -54,33 +54,33 @@
       },
       {
         "id": "guardian_info",
-        "title": "Parent/Guardian Info",
+        "title": "Informations sur les parents/tuteurs",
         "sections": [
           {
-            "id": "guardian_contact",
-            "title": "Contact Details",
+            "id": "contact_tuteur",
+            "title": "Coordonnées",
             "fields": [
               {
-                "id": "guardian_name",
-                "label": "Name of Parent/Guardian",
-                "type": "text",
+                "id": "nom_du_tuteur",
+                "label": "Nom du parent/tuteur",
+                "type": "texte",
                 "required": true
               },
               {
-                "id": "phone",
-                "label": "Phone Number",
-                "type": "tel",
+                "id": "téléphone",
+                "label": "Numéro de téléphone",
+                "type": "tél.",
                 "required": true
               },
               {
-                "id": "email",
-                "label": "Email Address",
-                "type": "email"
+                "id": "e-mail",
+                "label": "Adresse email",
+                "type": "e-mail"
               },
               {
-                "id": "relationship",
-                "label": "Relationship to Youth",
-                "type": "text",
+                "id": "relation",
+                "label": "Relation avec la jeunesse",
+                "type": "texte",
                 "required": true
               }
             ]
@@ -88,33 +88,33 @@
         ]
       },
       {
-        "id": "school_info",
-        "title": "School Information",
+        "id": "informations_école",
+        "title": "Informations sur l'école",
         "sections": [
           {
-            "id": "school",
-            "title": "Current School Details",
+            "id": "école",
+            "title": "Détails de l'école actuelle",
             "fields": [
               {
-                "id": "school_name",
-                "label": "School Name",
-                "type": "text"
+                "id": "nom_de_l'école",
+                "label": "Nom de l'école",
+                "type": "texte"
               },
               {
                 "id": "grade",
-                "label": "Current Grade",
-                "type": "text"
+                "label": "Niveau actuel",
+                "type": "texte"
               },
               {
-                "id": "school_type",
-                "label": "School Type",
-                "type": "select",
+                "id": "type_d'école",
+                "label": "Type d'école",
+                "type": "sélectionner",
                 "ui": {
                   "options": [
-                    "Public",
-                    "Private",
-                    "Charter",
-                    "Home School"
+                    "Publique",
+                    "Privé",
+                    "Charte",
+                    "École à la maison"
                   ]
                 }
               }
@@ -123,178 +123,178 @@
         ]
       },
       {
-        "id": "education_work_status",
-        "title": "Part III: Applicant’s Education/Work Status",
+        "id": "éducation_travail_statut",
+        "title": "Partie III : Études/situation professionnelle du demandeur",
         "sections": [
           {
-            "id": "education_status",
-            "title": "Education Status",
+            "id": "statut_éducation",
+            "title": "Statut d'éducation",
             "fields": [
               {
-                "id": "education_status",
-                "label": "Applicant’s Education Status",
-                "type": "select",
+                "id": "statut_éducation",
+                "label": "Niveau d'études du candidat",
+                "type": "sélectionner",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Full-Time Student",
-                    "Part-Time Student",
-                    "Not in School"
+                    "Étudiant à temps plein",
+                    "Étudiant à temps partiel",
+                    "Pas à l'école"
                   ]
                 }
               },
               {
-                "id": "grade_level_category",
-                "label": "Select Grade Level Category",
+                "id": "catégorie_de_niveau_scolaire",
+                "label": "Sélectionnez la catégorie de niveau scolaire",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Elementary School",
-                    "Middle School",
-                    "High School",
-                    "Community College",
-                    "College/University",
-                    "Other"
+                    "École primaire",
+                    "Collège",
+                    "Lycée",
+                    "Collège communautaire",
+                    "Collège/Université",
+                    "Autre"
                   ]
                 }
               },
               {
                 "id": "grade_elem",
-                "label": "Select Specific Grade (Elementary School)",
-                "type": "select",
+                "label": "Sélectionnez une classe spécifique (école primaire)",
+                "type": "sélectionner",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Elementary School"
+                  "field": "catégorie_de_niveau_scolaire",
+                  "operator": "est égal à",
+                  "value": "École primaire"
                 },
                 "ui": {
                   "options": [
-                    "Pre-K",
+                    "Pré-maternelle",
                     "K",
-                    "1st",
-                    "2nd",
-                    "3rd",
-                    "4th",
-                    "5th"
+                    "1er",
+                    "2e",
+                    "3ème",
+                    "4ème",
+                    "5ème"
                   ]
                 }
               },
               {
-                "id": "grade_middle",
-                "label": "Select Specific Grade (Middle School)",
-                "type": "select",
+                "id": "niveau moyen",
+                "label": "Sélectionnez un niveau spécifique (collège)",
+                "type": "sélectionner",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Middle School"
+                  "field": "catégorie_de_niveau_scolaire",
+                  "operator": "est égal à",
+                  "value": "Collège"
                 },
                 "ui": {
                   "options": [
-                    "6th",
-                    "7th",
-                    "8th"
+                    "6ème",
+                    "7ème",
+                    "8e"
                   ]
                 }
               },
               {
-                "id": "grade_high",
-                "label": "Select Specific Grade (High School)",
-                "type": "select",
+                "id": "note_élevée",
+                "label": "Sélectionnez un niveau spécifique (lycée)",
+                "type": "sélectionner",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "High School"
+                  "field": "catégorie_de_niveau_scolaire",
+                  "operator": "est égal à",
+                  "value": "Lycée"
                 },
                 "ui": {
                   "options": [
-                    "9th",
-                    "10th",
-                    "11th",
-                    "12th",
-                    "High School Diploma",
-                    "High School Equivalency"
+                    "9e",
+                    "10e",
+                    "11e",
+                    "12e",
+                    "Diplôme d'études secondaires",
+                    "Équivalence du diplôme d'études secondaires"
                   ]
                 }
               },
               {
                 "id": "grade_cc",
-                "label": "Select Specific Grade (Community College)",
-                "type": "select",
+                "label": "Sélectionnez un niveau spécifique (collège communautaire)",
+                "type": "sélectionner",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Community College"
+                  "field": "catégorie_de_niveau_scolaire",
+                  "operator": "est égal à",
+                  "value": "Collège communautaire"
                 },
                 "ui": {
                   "options": [
-                    "1st Year",
-                    "2nd Year",
-                    "3rd Year",
-                    "Associate’s Degree"
+                    "1ère année",
+                    "2e année",
+                    "3e année",
+                    "Diplôme d'associé"
                   ]
                 }
               },
               {
-                "id": "grade_university",
-                "label": "Select Specific Grade (College/University)",
-                "type": "select",
+                "id": "grade_universitaire",
+                "label": "Sélectionnez un niveau spécifique (collège/université)",
+                "type": "sélectionner",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "College/University"
+                  "field": "catégorie_de_niveau_scolaire",
+                  "operator": "est égal à",
+                  "value": "Collège/Université"
                 },
                 "ui": {
                   "options": [
-                    "Freshman",
-                    "Sophomore",
+                    "Étudiant de première année",
+                    "Étudiant en deuxième année",
                     "Junior",
                     "Senior",
-                    "Bachelor’s Degree",
-                    "Some Master’s",
-                    "Master’s Degree",
-                    "Some Doctorate",
-                    "Doctorate Degree"
+                    "Licence",
+                    "Quelques Masters",
+                    "Une maîtrise",
+                    "Certains doctorats",
+                    "Doctorat"
                   ]
                 }
               },
               {
-                "id": "grade_other",
-                "label": "Select Specific Grade (Other)",
-                "type": "select",
+                "id": "grade_autre",
+                "label": "Sélectionnez une classe spécifique (autre)",
+                "type": "sélectionner",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "catégorie_de_niveau_scolaire",
+                  "operator": "est égal à",
+                  "value": "Autre"
                 },
                 "ui": {
                   "options": [
-                    "Foreign Degree",
-                    "No Formal Schooling"
+                    "Diplôme étranger",
+                    "Pas de scolarité formelle"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "work_status",
-            "title": "Work Status",
+            "id": "statut_de_travail",
+            "title": "Statut de travail",
             "fields": [
               {
-                "id": "work_status",
-                "label": "Applicant’s Current Work Status",
-                "type": "select",
+                "id": "statut_de_travail",
+                "label": "Statut professionnel actuel du candidat",
+                "type": "sélectionner",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Employed Full-Time",
-                    "Employed Part-Time",
-                    "Retired",
-                    "Unemployed (Short-Term ≤ 6 mo)",
-                    "Unemployed (Long-Term > 6 mo)",
-                    "Unemployed (Not in labor force)",
-                    "Migrant Seasonal Farm Worker",
-                    "Not applicable (under 14)"
+                    "Employé à temps plein",
+                    "Employé à temps partiel",
+                    "À la retraite",
+                    "Chômeur (court terme ≤ 6 mois)",
+                    "Chômeur (Longue durée > 6 mois)",
+                    "Chômeur (inactif)",
+                    "Travailleur agricole saisonnier migrant",
+                    "Non applicable (moins de 14 ans)"
                   ]
                 }
               }
@@ -302,94 +302,94 @@
           },
           {
             "id": "ft_student_info",
-            "title": "Full-Time Student Info",
+            "title": "Informations pour les étudiants à temps plein",
             "fields": [
               {
-                "id": "student_id",
-                "label": "Student ID / OSIS",
-                "type": "text",
+                "id": "identifiant_étudiant",
+                "label": "Carte d'étudiant / OSIS",
+                "type": "texte",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "statut_éducation",
+                  "operator": "est égal à",
+                  "value": "Étudiant à temps plein"
                 }
               },
               {
-                "id": "student_school_type",
-                "label": "School Type",
-                "type": "select",
+                "id": "étudiant_type_d'école",
+                "label": "Type d'école",
+                "type": "sélectionner",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "statut_éducation",
+                  "operator": "est égal à",
+                  "value": "Étudiant à temps plein"
                 },
                 "ui": {
                   "options": [
-                    "Public",
-                    "Charter",
-                    "Private",
-                    "Other"
+                    "Publique",
+                    "Charte",
+                    "Privé",
+                    "Autre"
                   ]
                 }
               },
               {
-                "id": "student_school_type_other",
-                "label": "If Other, please specify school type",
-                "type": "text",
+                "id": "étudiant_type_d'école_autre",
+                "label": "Si autre, veuillez préciser le type d'école",
+                "type": "texte",
                 "requiredCondition": {
-                  "field": "student_school_type",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "type_d'école_étudiant",
+                  "operator": "est égal à",
+                  "value": "Autre"
                 }
               },
               {
-                "id": "student_school_name",
-                "label": "School Name",
-                "type": "text",
+                "id": "nom_de_l'école_étudiant",
+                "label": "Nom de l'école",
+                "type": "texte",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "statut_éducation",
+                  "operator": "est égal à",
+                  "value": "Étudiant à temps plein"
                 }
               },
               {
-                "id": "student_school_address",
-                "label": "School Address",
-                "type": "text",
+                "id": "adresse_de_l'école_étudiant",
+                "label": "Adresse de l'école",
+                "type": "texte",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "statut_éducation",
+                  "operator": "est égal à",
+                  "value": "Étudiant à temps plein"
                 }
               },
               {
-                "id": "student_school_city",
-                "label": "School City",
-                "type": "text",
+                "id": "ville_scolaire_étudiante",
+                "label": "Cité scolaire",
+                "type": "texte",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "statut_éducation",
+                  "operator": "est égal à",
+                  "value": "Étudiant à temps plein"
                 }
               },
               {
-                "id": "student_school_state",
-                "label": "School State",
-                "type": "text",
+                "id": "étudiant_école_état",
+                "label": "État scolaire",
+                "type": "texte",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "statut_éducation",
+                  "operator": "est égal à",
+                  "value": "Étudiant à temps plein"
                 }
               },
               {
-                "id": "student_school_zip",
-                "label": "School Zip Code",
-                "type": "text",
+                "id": "étudiant_école_zip",
+                "label": "Code postal de l'école",
+                "type": "texte",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "statut_éducation",
+                  "operator": "est égal à",
+                  "value": "Étudiant à temps plein"
                 }
               }
             ]
@@ -397,91 +397,91 @@
         ]
       },
       {
-        "id": "household_info",
-        "title": "Part VI: Household Information",
+        "id": "informations_ménage",
+        "title": "Partie VI : Informations sur le ménage",
         "sections": [
           {
-            "id": "household_composition",
-            "title": "Household Composition",
+            "id": "composition du ménage",
+            "title": "Composition du ménage",
             "fields": [
               {
-                "id": "head_of_household",
-                "label": "Is the parent/guardian the head of household?",
+                "id": "chef_de_ménage",
+                "label": "Le parent/tuteur est-il le chef de famille ?",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Oui",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "household_income_source",
-                "label": "Primary Source of Household Income",
+                "id": "source_de_revenu_du_ménage",
+                "label": "Principale source de revenu du ménage",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Employment",
-                    "Public Assistance",
-                    "Social Security",
+                    "Emploi",
+                    "Aide publique",
+                    "Sécurité sociale",
                     "Pension",
-                    "No Income",
-                    "Other"
+                    "Aucun revenu",
+                    "Autre"
                   ]
                 }
               },
               {
-                "id": "household_income_source_other",
-                "label": "Specify Other Income Source",
-                "type": "text",
+                "id": "source_de_revenu_du_ménage_autre",
+                "label": "Précisez une autre source de revenus",
+                "type": "texte",
                 "requiredCondition": {
-                  "field": "household_income_source",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "source_de_revenu_du_ménage",
+                  "operator": "est égal à",
+                  "value": "Autre"
                 },
                 "visibleCondition": {
-                  "field": "household_income_source",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "source_de_revenu_du_ménage",
+                  "operator": "est égal à",
+                  "value": "Autre"
                 }
               },
               {
-                "id": "housing_type",
-                "label": "Type of Housing",
+                "id": "type_de_logement",
+                "label": "Type de logement",
                 "type": "radio",
                 "required": true,
                 "ui": {
                   "options": [
                     "NYCHA",
-                    "Shelter",
-                    "Own Home",
-                    "Rental",
-                    "Supportive Housing",
-                    "Other"
+                    "Abri",
+                    "Maison propre",
+                    "De location",
+                    "Logements avec services de soutien",
+                    "Autre"
                   ]
                 }
               },
               {
-                "id": "housing_type_other",
-                "label": "Specify Other Housing Type",
-                "type": "text",
+                "id": "type_de_logement_autre",
+                "label": "Spécifiez un autre type de logement",
+                "type": "texte",
                 "requiredCondition": {
-                  "field": "housing_type",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "type_de_logement",
+                  "operator": "est égal à",
+                  "value": "Autre"
                 },
                 "visibleCondition": {
-                  "field": "housing_type",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "type_de_logement",
+                  "operator": "est égal à",
+                  "value": "Autre"
                 }
               },
               {
-                "id": "household_size",
-                "label": "Number of People in Household",
-                "type": "number",
+                "id": "taille_du_ménage",
+                "label": "Nombre de personnes dans le ménage",
+                "type": "nombre",
                 "required": true,
                 "ui": {
                   "min": 1
@@ -492,70 +492,70 @@
         ]
       },
       {
-        "id": "medical_info",
-        "title": "Medical & Emergency",
+        "id": "informations médicales",
+        "title": "Médical et urgence",
         "sections": [
           {
-            "id": "emergency",
-            "title": "Emergency Contact",
+            "id": "urgence",
+            "title": "Contact d'urgence",
             "fields": [
               {
-                "id": "emergency_name",
-                "label": "Emergency Contact Name",
-                "type": "text"
+                "id": "nom_urgence",
+                "label": "Nom du contact d'urgence",
+                "type": "texte"
               },
               {
-                "id": "emergency_phone",
-                "label": "Emergency Contact Phone",
-                "type": "tel"
+                "id": "téléphone d'urgence",
+                "label": "Numéro de téléphone d'urgence",
+                "type": "tél."
               }
             ]
           },
           {
-            "id": "medical",
-            "title": "Medical Info",
+            "id": "médical",
+            "title": "Informations médicales",
             "fields": [
               {
-                "id": "medical_conditions",
-                "label": "Medical Conditions",
-                "type": "text"
+                "id": "conditions médicales",
+                "label": "Conditions médicales",
+                "type": "texte"
               },
               {
-                "id": "medications",
-                "label": "Medications",
-                "type": "text"
+                "id": "médicaments",
+                "label": "Médicaments",
+                "type": "texte"
               },
               {
                 "id": "allergies",
                 "label": "Allergies",
-                "type": "text"
+                "type": "texte"
               }
             ]
           }
         ]
       },
       {
-        "id": "consent",
-        "title": "Consent & Signature",
+        "id": "consentement",
+        "title": "Consentement et signature",
         "sections": [
           {
-            "id": "consent_info",
-            "title": "Authorization",
+            "id": "consentement_info",
+            "title": "Autorisation",
             "fields": [
               {
-                "id": "media_consent",
-                "label": "Media Release Consent",
-                "type": "checkbox"
+                "id": "consentement des médias",
+                "label": "Consentement à la publication des médias",
+                "type": "case à cocher"
               },
               {
                 "id": "signature",
-                "label": "Parent/Guardian Signature",
-                "type": "text",
+                "label": "Signature du parent/tuteur",
+                "type": "texte",
                 "required": true
               },
               {
-                "id": "date_signed",
-                "label": "Date Signed",
+                "id": "date_signature",
+                "label": "Date de signature",
                 "type": "date",
                 "required": true
               }
@@ -564,9 +564,9 @@
         ]
       },
       {
-        "id": "review",
-        "title": "Review & Submit",
-        "type": "review",
+        "id": "revoir",
+        "title": "Réviser et soumettre",
+        "type": "revoir",
         "sections": []
       }
     ]

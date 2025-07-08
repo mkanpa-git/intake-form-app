@@ -1,86 +1,86 @@
 {
   "form": {
-    "title": "DYCD Youth Services Intake – Ages 13 and Younger",
-    "description": "Form to collect youth and guardian information for DYCD programs",
+    "title": "Admisyon Sèvis pou Jèn DYCD – Laj 13 an oswa mwens",
+    "description": "Fòm pou kolekte enfòmasyon sou jèn yo ak gadyen legal yo pou pwogram DYCD yo",
     "steps": [
       {
-        "id": "demographics",
-        "title": "Youth Information",
+        "id": "demografik",
+        "title": "Enfòmasyon pou Jèn yo",
         "sections": [
           {
-            "id": "youth_info",
-            "title": "Basic Information",
+            "id": "enfòmasyon_jenès",
+            "title": "Enfòmasyon debaz",
             "fields": [
               {
-                "id": "first_name",
-                "label": "First Name",
-                "type": "text",
+                "id": "prenon",
+                "label": "Prenon",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "last_name",
-                "label": "Last Name",
-                "type": "text",
+                "id": "non fanmi",
+                "label": "Non Fanmi",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "dob",
-                "label": "Date of Birth",
-                "type": "date",
+                "id": "dat",
+                "label": "Dat Nesans",
+                "type": "dat",
                 "required": true
               },
               {
-                "id": "gender",
-                "label": "Gender",
-                "type": "select",
+                "id": "sèks",
+                "label": "Sèks",
+                "type": "chwazi",
                 "ui": {
                   "options": [
-                    "Male",
-                    "Female",
-                    "Non-binary",
-                    "Other"
+                    "Gason",
+                    "Fi",
+                    "Non-binè",
+                    "Lòt"
                   ]
                 },
                 "required": true
               },
               {
-                "id": "ethnicity",
-                "label": "Ethnicity",
-                "type": "text"
+                "id": "etnisite",
+                "label": "Etnisite",
+                "type": "tèks"
               }
             ]
           }
         ]
       },
       {
-        "id": "guardian_info",
-        "title": "Parent/Guardian Info",
+        "id": "gadyen_info",
+        "title": "Enfòmasyon sou Paran/Gadyen",
         "sections": [
           {
-            "id": "guardian_contact",
-            "title": "Contact Details",
+            "id": "kontak_gadyen",
+            "title": "Enfòmasyon pou kontakte",
             "fields": [
               {
-                "id": "guardian_name",
-                "label": "Name of Parent/Guardian",
-                "type": "text",
+                "id": "non_gadyen",
+                "label": "Non Paran/Gadyen an",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "phone",
-                "label": "Phone Number",
-                "type": "tel",
+                "id": "telefòn",
+                "label": "Nimewo Telefòn",
+                "type": "telefòn",
                 "required": true
               },
               {
-                "id": "email",
-                "label": "Email Address",
-                "type": "email"
+                "id": "imèl",
+                "label": "Adrès imel",
+                "type": "imèl"
               },
               {
-                "id": "relationship",
-                "label": "Relationship to Youth",
-                "type": "text",
+                "id": "relasyon",
+                "label": "Relasyon ak Jèn yo",
+                "type": "tèks",
                 "required": true
               }
             ]
@@ -88,33 +88,33 @@
         ]
       },
       {
-        "id": "school_info",
-        "title": "School Information",
+        "id": "enfòmasyon_lekòl",
+        "title": "Enfòmasyon sou Lekòl la",
         "sections": [
           {
-            "id": "school",
-            "title": "Current School Details",
+            "id": "lekòl",
+            "title": "Detay Lekòl Aktyèl yo",
             "fields": [
               {
-                "id": "school_name",
-                "label": "School Name",
-                "type": "text"
+                "id": "non_lekòl",
+                "label": "Non Lekòl la",
+                "type": "tèks"
               },
               {
-                "id": "grade",
-                "label": "Current Grade",
-                "type": "text"
+                "id": "klas",
+                "label": "Klas aktyèl la",
+                "type": "tèks"
               },
               {
-                "id": "school_type",
-                "label": "School Type",
-                "type": "select",
+                "id": "kalite_lekòl",
+                "label": "Kalite lekòl",
+                "type": "chwazi",
                 "ui": {
                   "options": [
-                    "Public",
-                    "Private",
-                    "Charter",
-                    "Home School"
+                    "Piblik",
+                    "Prive",
+                    "Konstitisyon",
+                    "Lekòl Lakay"
                   ]
                 }
               }
@@ -123,178 +123,178 @@
         ]
       },
       {
-        "id": "education_work_status",
-        "title": "Part III: Applicant’s Education/Work Status",
+        "id": "sitiyasyon_edikasyon_travay",
+        "title": "Pati III: Edikasyon/Sitiyasyon Travay Aplikan an",
         "sections": [
           {
-            "id": "education_status",
-            "title": "Education Status",
+            "id": "sitiyasyon_edikasyon",
+            "title": "Sitiyasyon Edikasyon",
             "fields": [
               {
-                "id": "education_status",
-                "label": "Applicant’s Education Status",
-                "type": "select",
+                "id": "sitiyasyon_edikasyon",
+                "label": "Sitiyasyon edikasyon aplikan an",
+                "type": "chwazi",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Full-Time Student",
-                    "Part-Time Student",
-                    "Not in School"
+                    "Elèv aplentan",
+                    "Elèv a tan pasyèl",
+                    "Pa nan lekòl"
                   ]
                 }
               },
               {
-                "id": "grade_level_category",
-                "label": "Select Grade Level Category",
-                "type": "radio",
+                "id": "kategori_nivo_klas",
+                "label": "Chwazi kategori nivo klas la",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Elementary School",
-                    "Middle School",
-                    "High School",
-                    "Community College",
-                    "College/University",
-                    "Other"
+                    "Lekòl Elemantè",
+                    "Lekòl Mwayen",
+                    "Lekòl Segondè",
+                    "Kolèj Kominotè",
+                    "Kolèj/Inivèsite",
+                    "Lòt"
                   ]
                 }
               },
               {
-                "id": "grade_elem",
-                "label": "Select Specific Grade (Elementary School)",
-                "type": "select",
+                "id": "klas_elem",
+                "label": "Chwazi yon klas espesifik (lekòl primè)",
+                "type": "chwazi",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Elementary School"
+                  "field": "kategori_nivo_klas",
+                  "operator": "egal",
+                  "value": "Lekòl Elemantè"
                 },
                 "ui": {
                   "options": [
                     "Pre-K",
                     "K",
-                    "1st",
-                    "2nd",
-                    "3rd",
-                    "4th",
-                    "5th"
+                    "1ye",
+                    "2yèm",
+                    "3yèm",
+                    "4yèm",
+                    "5yèm"
                   ]
                 }
               },
               {
-                "id": "grade_middle",
-                "label": "Select Specific Grade (Middle School)",
-                "type": "select",
+                "id": "klas_mwayen",
+                "label": "Chwazi yon klas espesifik (lekòl presegondè)",
+                "type": "chwazi",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Middle School"
+                  "field": "kategori_nivo_klas",
+                  "operator": "egal",
+                  "value": "Lekòl Mwayen"
                 },
                 "ui": {
                   "options": [
-                    "6th",
-                    "7th",
-                    "8th"
+                    "6yèm",
+                    "7yèm",
+                    "8yèm"
                   ]
                 }
               },
               {
-                "id": "grade_high",
-                "label": "Select Specific Grade (High School)",
-                "type": "select",
+                "id": "klas_segondè",
+                "label": "Chwazi yon klas espesifik (lekòl segondè)",
+                "type": "chwazi",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "High School"
+                  "field": "kategori_nivo_klas",
+                  "operator": "egal",
+                  "value": "Lekòl Segondè"
                 },
                 "ui": {
                   "options": [
-                    "9th",
-                    "10th",
-                    "11th",
-                    "12th",
-                    "High School Diploma",
-                    "High School Equivalency"
+                    "9yèm",
+                    "10yèm",
+                    "11yèm",
+                    "12yèm",
+                    "Diplòm Lekòl Segondè",
+                    "Ekivalans Lekòl Segondè"
                   ]
                 }
               },
               {
-                "id": "grade_cc",
-                "label": "Select Specific Grade (Community College)",
-                "type": "select",
+                "id": "klas_cc",
+                "label": "Chwazi yon klas espesifik (Kolèj kominotè)",
+                "type": "chwazi",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Community College"
+                  "field": "kategori_nivo_klas",
+                  "operator": "egal",
+                  "value": "Kolèj Kominotè"
                 },
                 "ui": {
                   "options": [
-                    "1st Year",
-                    "2nd Year",
-                    "3rd Year",
-                    "Associate’s Degree"
+                    "1ye Ane",
+                    "2yèm Ane",
+                    "3yèm Ane",
+                    "Diplòm Asosye"
                   ]
                 }
               },
               {
-                "id": "grade_university",
-                "label": "Select Specific Grade (College/University)",
-                "type": "select",
+                "id": "klas_inivèsite",
+                "label": "Chwazi yon klas espesifik (Kolèj/Inivèsite)",
+                "type": "chwazi",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "College/University"
+                  "field": "kategori_nivo_klas",
+                  "operator": "egal",
+                  "value": "Kolèj/Inivèsite"
                 },
                 "ui": {
                   "options": [
-                    "Freshman",
-                    "Sophomore",
-                    "Junior",
-                    "Senior",
-                    "Bachelor’s Degree",
-                    "Some Master’s",
-                    "Master’s Degree",
-                    "Some Doctorate",
-                    "Doctorate Degree"
+                    "Premye ane",
+                    "Dezyèm ane",
+                    "Jinyò",
+                    "Granmoun Aje",
+                    "Lisans",
+                    "Gen kèk metriz",
+                    "Metriz",
+                    "Kèk Doktora",
+                    "Doktora"
                   ]
                 }
               },
               {
-                "id": "grade_other",
-                "label": "Select Specific Grade (Other)",
-                "type": "select",
+                "id": "lòt_klas",
+                "label": "Chwazi yon Klas Espesifik (Lòt)",
+                "type": "chwazi",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "kategori_nivo_klas",
+                  "operator": "egal",
+                  "value": "Lòt"
                 },
                 "ui": {
                   "options": [
-                    "Foreign Degree",
-                    "No Formal Schooling"
+                    "Diplòm etranje",
+                    "Pa gen lekòl fòmèl"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "work_status",
-            "title": "Work Status",
+            "id": "estati_travay",
+            "title": "Sitiyasyon Travay",
             "fields": [
               {
-                "id": "work_status",
-                "label": "Applicant’s Current Work Status",
-                "type": "select",
+                "id": "estati_travay",
+                "label": "Sitiyasyon Travay Kounye a Aplikan an",
+                "type": "chwazi",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Employed Full-Time",
-                    "Employed Part-Time",
-                    "Retired",
-                    "Unemployed (Short-Term ≤ 6 mo)",
-                    "Unemployed (Long-Term > 6 mo)",
-                    "Unemployed (Not in labor force)",
-                    "Migrant Seasonal Farm Worker",
-                    "Not applicable (under 14)"
+                    "Anplwaye a plen tan",
+                    "Anplwaye a tan pasyèl",
+                    "Retrete",
+                    "Chomaj (Kout tèm ≤ 6 mwa)",
+                    "Chomaj (Lontèm > 6 mwa)",
+                    "Chomaj (Pa nan fòs travay la)",
+                    "Travayè Agrikòl Sezonye Migran",
+                    "Pa aplikab (mwens pase 14 an)"
                   ]
                 }
               }
@@ -302,94 +302,94 @@
           },
           {
             "id": "ft_student_info",
-            "title": "Full-Time Student Info",
+            "title": "Enfòmasyon sou Elèv Aplentan",
             "fields": [
               {
-                "id": "student_id",
-                "label": "Student ID / OSIS",
-                "type": "text",
+                "id": "id_elèv",
+                "label": "ID Elèv / OSIS",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "sitiyasyon_edikasyon",
+                  "operator": "egal",
+                  "value": "Elèv aplentan"
                 }
               },
               {
-                "id": "student_school_type",
-                "label": "School Type",
-                "type": "select",
+                "id": "kalite_elèv_lekòl",
+                "label": "Kalite lekòl",
+                "type": "chwazi",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "sitiyasyon_edikasyon",
+                  "operator": "egal",
+                  "value": "Elèv aplentan"
                 },
                 "ui": {
                   "options": [
-                    "Public",
-                    "Charter",
-                    "Private",
-                    "Other"
+                    "Piblik",
+                    "Konstitisyon",
+                    "Prive",
+                    "Lòt"
                   ]
                 }
               },
               {
-                "id": "student_school_type_other",
-                "label": "If Other, please specify school type",
-                "type": "text",
+                "id": "lòt kalite_elèv_lekòl",
+                "label": "Si se yon lòt, tanpri presize kalite lekòl la.",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "student_school_type",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "kalite_elèv_lekòl",
+                  "operator": "egal",
+                  "value": "Lòt"
                 }
               },
               {
-                "id": "student_school_name",
-                "label": "School Name",
-                "type": "text",
+                "id": "non_elèv_lekòl",
+                "label": "Non Lekòl la",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "sitiyasyon_edikasyon",
+                  "operator": "egal",
+                  "value": "Elèv aplentan"
                 }
               },
               {
-                "id": "student_school_address",
-                "label": "School Address",
-                "type": "text",
+                "id": "adrès_elèv_lekòl",
+                "label": "Adrès Lekòl la",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "sitiyasyon_edikasyon",
+                  "operator": "egal",
+                  "value": "Elèv aplentan"
                 }
               },
               {
-                "id": "student_school_city",
-                "label": "School City",
-                "type": "text",
+                "id": "vil_lekòl_elèv",
+                "label": "Vil Lekòl la",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "sitiyasyon_edikasyon",
+                  "operator": "egal",
+                  "value": "Elèv aplentan"
                 }
               },
               {
-                "id": "student_school_state",
-                "label": "School State",
-                "type": "text",
+                "id": "eta_lekòl_elèv",
+                "label": "Eta Lekòl la",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "sitiyasyon_edikasyon",
+                  "operator": "egal",
+                  "value": "Elèv aplentan"
                 }
               },
               {
-                "id": "student_school_zip",
-                "label": "School Zip Code",
-                "type": "text",
+                "id": "kòd postal_elèv_lekòl",
+                "label": "Kòd Postal Lekòl la",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "sitiyasyon_edikasyon",
+                  "operator": "egal",
+                  "value": "Elèv aplentan"
                 }
               }
             ]
@@ -397,91 +397,91 @@
         ]
       },
       {
-        "id": "household_info",
-        "title": "Part VI: Household Information",
+        "id": "enfòmasyon_lakay",
+        "title": "Pati VI: Enfòmasyon sou Kay la",
         "sections": [
           {
-            "id": "household_composition",
-            "title": "Household Composition",
+            "id": "konpozisyon_kay",
+            "title": "Konpozisyon Kay la",
             "fields": [
               {
-                "id": "head_of_household",
-                "label": "Is the parent/guardian the head of household?",
-                "type": "radio",
+                "id": "chèf_fanmi",
+                "label": "Èske paran/gadyen legal la se chèf fanmi an?",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "household_income_source",
-                "label": "Primary Source of Household Income",
-                "type": "radio",
+                "id": "sous_revni_kay la",
+                "label": "Sous Prensipal Revni Kay la",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Employment",
-                    "Public Assistance",
-                    "Social Security",
-                    "Pension",
-                    "No Income",
-                    "Other"
+                    "Anplwa",
+                    "Asistans Piblik",
+                    "Sekirite Sosyal",
+                    "Pansyon",
+                    "Pa gen revni",
+                    "Lòt"
                   ]
                 }
               },
               {
-                "id": "household_income_source_other",
-                "label": "Specify Other Income Source",
-                "type": "text",
+                "id": "lòt sous_revni_kay",
+                "label": "Espesifye lòt sous revni",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "household_income_source",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "sous_revni_kay la",
+                  "operator": "egal",
+                  "value": "Lòt"
                 },
                 "visibleCondition": {
-                  "field": "household_income_source",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "sous_revni_kay la",
+                  "operator": "egal",
+                  "value": "Lòt"
                 }
               },
               {
-                "id": "housing_type",
-                "label": "Type of Housing",
-                "type": "radio",
+                "id": "kalite_lojman",
+                "label": "Kalite Lojman",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
                     "NYCHA",
-                    "Shelter",
-                    "Own Home",
-                    "Rental",
-                    "Supportive Housing",
-                    "Other"
+                    "Abri",
+                    "Kay pwòp",
+                    "Lokasyon",
+                    "Lojman Sipòtif",
+                    "Lòt"
                   ]
                 }
               },
               {
-                "id": "housing_type_other",
-                "label": "Specify Other Housing Type",
-                "type": "text",
+                "id": "lòt_tip_lojman",
+                "label": "Espesifye lòt kalite lojman",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "housing_type",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "kalite_lojman",
+                  "operator": "egal",
+                  "value": "Lòt"
                 },
                 "visibleCondition": {
-                  "field": "housing_type",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "kalite_lojman",
+                  "operator": "egal",
+                  "value": "Lòt"
                 }
               },
               {
-                "id": "household_size",
-                "label": "Number of People in Household",
-                "type": "number",
+                "id": "gwosè_kay",
+                "label": "Kantite Moun nan Kay la",
+                "type": "nimewo",
                 "required": true,
                 "ui": {
                   "min": 1
@@ -492,71 +492,71 @@
         ]
       },
       {
-        "id": "medical_info",
-        "title": "Medical & Emergency",
+        "id": "enfòmasyon_medikal",
+        "title": "Medikal ak Ijans",
         "sections": [
           {
-            "id": "emergency",
-            "title": "Emergency Contact",
+            "id": "ijans",
+            "title": "Kontak Ijans",
             "fields": [
               {
-                "id": "emergency_name",
-                "label": "Emergency Contact Name",
-                "type": "text"
+                "id": "non_ijans",
+                "label": "Non Kontak Ijans",
+                "type": "tèks"
               },
               {
-                "id": "emergency_phone",
-                "label": "Emergency Contact Phone",
-                "type": "tel"
+                "id": "telefòn_ijans",
+                "label": "Telefòn pou kontakte an ijans",
+                "type": "telefòn"
               }
             ]
           },
           {
-            "id": "medical",
-            "title": "Medical Info",
+            "id": "medikal",
+            "title": "Enfòmasyon Medikal",
             "fields": [
               {
-                "id": "medical_conditions",
-                "label": "Medical Conditions",
-                "type": "text"
+                "id": "kondisyon_medikal",
+                "label": "Kondisyon Medikal",
+                "type": "tèks"
               },
               {
-                "id": "medications",
-                "label": "Medications",
-                "type": "text"
+                "id": "medikaman",
+                "label": "Medikaman",
+                "type": "tèks"
               },
               {
-                "id": "allergies",
-                "label": "Allergies",
-                "type": "text"
+                "id": "alèji",
+                "label": "Alèji",
+                "type": "tèks"
               }
             ]
           }
         ]
       },
       {
-        "id": "consent",
-        "title": "Consent & Signature",
+        "id": "konsantman",
+        "title": "Konsantman ak Siyati",
         "sections": [
           {
-            "id": "consent_info",
-            "title": "Authorization",
+            "id": "konsantman_info",
+            "title": "Otorizasyon",
             "fields": [
               {
-                "id": "media_consent",
-                "label": "Media Release Consent",
-                "type": "checkbox"
+                "id": "konsantman_medya",
+                "label": "Konsantman pou Kominike Medya yo",
+                "type": "kaz pou tcheke"
               },
               {
-                "id": "signature",
-                "label": "Parent/Guardian Signature",
-                "type": "text",
+                "id": "siyati",
+                "label": "Siyati Paran/Gadyen",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "date_signed",
-                "label": "Date Signed",
-                "type": "date",
+                "id": "dat_siyen",
+                "label": "Dat Siyen",
+                "type": "dat",
                 "required": true
               }
             ]
@@ -564,9 +564,9 @@
         ]
       },
       {
-        "id": "review",
-        "title": "Review & Submit",
-        "type": "review",
+        "id": "revizyon",
+        "title": "Revize & Soumèt",
+        "type": "revizyon",
         "sections": []
       }
     ]

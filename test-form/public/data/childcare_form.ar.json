@@ -1,172 +1,172 @@
 {
   "form": {
-    "title": "Childcare Voucher Application",
-    "description": "Step-by-step form for applying for Childcare Assistance",
+    "title": "طلب قسيمة رعاية الأطفال",
+    "description": "نموذج خطوة بخطوة للتقدم بطلب للحصول على مساعدة رعاية الطفل",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "غادر"
     },
     "steps": [
       {
-        "id": "consent_step",
-        "title": "Consent",
+        "id": "خطوة الموافقة",
+        "title": "موافقة",
         "sections": [
           {
-            "id": "mycity_consent_info",
-            "title": "ModelCity Consent",
-            "type": "info",
+            "id": "معلومات موافقة مدينتي",
+            "title": "موافقة نموذج المدينة",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "In connection with this application for child care services, **ModelCity**:\\n\\n- Collects, processes, stores, and shares the information you submit to screen you when you apply for child care services;\\n- Receives, processes, and stores the information the City already knows about you to screen you when you apply for child care services;\\n- Uses your information to improve ModelCity; and\\n- Communicates with you about your ModelCity account.\\n\\n---\\n\\nIf you consent, the following information may be shared between child care services agencies:\\n\\n- Demographic and background information, including address, phone number, household composition.\\n- Housing information, including benefits awarded/received, current housing/shelter status.\\n- Benefits information, including public assistance awarded/received, child care program participation.\\n\\n---\\n\\nIf you choose not to consent, **you will not be denied** any benefits or services you are receiving or any benefits for which you are eligible.\\n\\nThe [ModelCity Privacy Policy](https://www.nyc.gov/privacy) details how ModelCity handles the information you submit through ModelCity."
+            "content": "فيما يتعلق بهذا الطلب للحصول على خدمات رعاية الأطفال، تقوم **ModelCity** بما يلي:\\n\\n- جمع ومعالجة وتخزين ومشاركة المعلومات التي ترسلها لفحصك عند التقدم بطلب للحصول على خدمات رعاية الأطفال؛\\n- استلام ومعالجة وتخزين المعلومات التي تعرفها المدينة بالفعل عنك لفحصك عند التقدم بطلب للحصول على خدمات رعاية الأطفال؛\\n- استخدام معلوماتك لتحسين ModelCity؛ و- التواصل معك بشأن حساب ModelCity الخاص بك.\\n\\n---\\n\\nإذا وافقت، فقد تتم مشاركة المعلومات التالية بين وكالات خدمات رعاية الأطفال:\\n\\n- المعلومات الديموغرافية والخلفية، بما في ذلك العنوان ورقم الهاتف وتكوين الأسرة.\\n- معلومات الإسكان، بما في ذلك المزايا الممنوحة/المستلمة، وحالة الإسكان/المأوى الحالية.\\n- معلومات المزايا، بما في ذلك المساعدة العامة الممنوحة/المستلمة، والمشاركة في برنامج رعاية الأطفال.\\n\\n---\\n\\nإذا اخترت عدم الموافقة، **لن يتم رفض** أي مزايا أو خدمات تتلقاها أو أي مزايا تكون مؤهلاً لها.\\n\\nتوضح [سياسة خصوصية ModelCity](https://www.nyc.gov/privacy) كيفية تعامل ModelCity مع المعلومات التي ترسلها من خلال ModelCity."
           }
         ]
       },
       {
-        "id": "instructions_step",
-        "title": "Instructions",
+        "id": "تعليمات_الخطوة",
+        "title": "تعليمات",
         "sections": [
           {
-            "id": "application_instructions",
-            "title": "Application Instructions",
-            "type": "info",
+            "id": "تعليمات التطبيق",
+            "title": "تعليمات التقديم",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**Let’s get started on your application!**\\n\\nTo complete this application, you will be asked for information about:\\n\\n- Yourself\\n- Your household\\n- Your employment or reason for care\\n- Your income\\n\\nAll required fields are marked and must be filled out to move forward with the application. The pages of the application are shown on the right-hand side of the screen and will be highlighted as you move through the application.\\n\\nYour application will be saved automatically as you progress to each page.  \\nIf you need to pause at any time, click the **“Save for later”** button at the bottom of each page to save your application.  \\nYou can log back in to resume your application.\\n\\nWhen you’re ready to begin, click **“Next”** below.\\n\\n---\\n\\n⚠️ **Important:**  \\nTo keep your information current and safe, applications in draft status that you have not edited for **30 days** will be deleted.  \\nIf your draft application is deleted, you can still create and submit a new application when you're ready to apply."
+            "content": "**لنبدأ طلبك!**\\n\\nلإكمال هذا الطلب، سيُطلب منك معلومات عن:\\n\\n- نفسك\\n- أسرتك\\n- وظيفتك أو سبب رعايتك\\n- دخلك\\n\\nجميع الحقول المطلوبة مُعلّمة ويجب تعبئتها للمتابعة في الطلب. تظهر صفحات الطلب على يمين الشاشة، وسيتم تمييزها أثناء التنقل خلالها.\\n\\nسيتم حفظ طلبك تلقائيًا عند الانتقال إلى كل صفحة.\\nإذا كنت بحاجة إلى التوقف مؤقتًا في أي وقت، فانقر على زر **\"حفظ لوقت لاحق\"** أسفل كل صفحة لحفظ طلبك.\\nيمكنك تسجيل الدخول مرة أخرى لاستئناف طلبك.\\n\\nعندما تكون مستعدًا للبدء، انقر على **\"التالي\"** أدناه.\\n\\n---\\n\\n⚠️ **هام:** \\nللحفاظ على معلوماتك مُحدّثة وآمنة، سيتم حذف الطلبات التي في حالة المسودة والتي لم تُعدّلها لمدة **30 يومًا**. إذا تم حذف مسودة طلبك، فلا يزال بإمكانك إنشاء طلب جديد وإرساله عندما تكون مستعدًا للتقديم."
           },
           {
-            "id": "new_york_city_residency",
-            "title": "New York City Residency",
-            "type": "info",
+            "id": "إقامة في مدينة نيويورك",
+            "title": "إقامة مدينة نيويورك",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "You will need to upload **ONE** of the following documents to confirm your NYC residency:\\n\\n- IDNYC\\n- Driver’s License\\n- Utility Bill (dated within the last 60 days, with your address)\\n- Current lease, rent, or mortgage statement (dated within the last 60 days, with your address)\\n- Section 8 Award Letter\\n- NYCHA Certificate\\n- CFWB-027 Housing Attestation with address listed\\n- Shelter Residency Letter with address listed\\n\\nIf you do not have any of those documents, you must submit a **CFWB-067 Residency Attestation**."
+            "content": "سوف تحتاج إلى تحميل **واحد** من المستندات التالية لتأكيد إقامتك في مدينة نيويورك:\\n\\n- هوية مدينة نيويورك\\n- رخصة القيادة\\n- فاتورة مرافق (مؤرخة خلال آخر 60 يومًا، مع عنوانك)\\n- عقد إيجار حالي أو بيان إيجار أو رهن عقاري (مؤرخ خلال آخر 60 يومًا، مع عنوانك)\\n- خطاب منح القسم 8\\n- شهادة NYCHA\\n- شهادة سكن CFWB-027 مع العنوان المدرج\\n- خطاب إقامة مأوى مع العنوان المدرج\\n\\nإذا لم يكن لديك أي من هذه المستندات، فيجب عليك تقديم **شهادة إقامة CFWB-067**."
           },
           {
-            "id": "children_documents",
-            "title": "Children Documents",
-            "type": "info",
+            "id": "مستندات الأطفال",
+            "title": "وثائق الأطفال",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Citizenship or Immigration Status\\nThese documents confirm the citizenship or immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for each child needing care. *Do not upload these documents for children who do not need care.*\\n\\n- Birth Certificate from US state or territory\\n- Alien Registration Card including Permanent Resident or Green Card\\n- Passport\\n- FS-240 (Consular Report of Birth Abroad)\\n- Naturalization Certificate\\n- Other documentation that proves child’s immigration status\\n\\n### Child's Relationship to Applicant\\nThese documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether they need child care.\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Passport with parent's signature\\n- Court order for legal guardian with financial responsibility\\n- Letter of guardianship\\n- Other - CFWB-058 Caretaker Attestation\\n\\nIf you are not the child's parent or stepparent, you must submit a **CFWB-058 Caretaker Attestation Form**.\\n\\n### Age of Children\\nYou will need to upload **ONE** of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Alien Registration Card\\n- Passport\\n- Official hospital documentation of the child’s birth"
+            "content": "### حالة الجنسية أو الهجرة: تؤكد هذه المستندات حالة الجنسية أو الهجرة لأطفال عائلتك الذين تتقدم بطلب للحصول على مساعدة رعاية أطفالهم. يُرجى تحميل أحد المستندات التالية لكل طفل يحتاج إلى رعاية. *لا تقم بتحميل هذه المستندات للأطفال الذين لا يحتاجون إلى رعاية.* - شهادة ميلاد من ولاية أو إقليم أمريكي - بطاقة تسجيل أجنبي بما في ذلك الإقامة الدائمة أو البطاقة الخضراء - جواز سفر - نموذج FS-240 (تقرير قنصلي للولادة في الخارج) - شهادة التجنس - مستندات أخرى تثبت حالة هجرة الطفل - علاقة الطفل بمقدم الطلب - تؤكد هذه المستندات علاقتك بالأطفال في منزلك الذين تقل أعمارهم عن 18 عامًا. يرجى تحميل أحد المستندات التالية لكل طفل في المنزل يقل عمره عن 18 عامًا، بغض النظر عما إذا كانوا بحاجة إلى رعاية أطفال أم لا. - شهادة الميلاد - سجل التبني - سجل المعمودية - جواز سفر يحمل توقيع أحد الوالدين - أمر محكمة للوصي القانوني المسؤول ماليًا - خطاب الوصاية - أخرى - شهادة مقدم الرعاية CFWB-058 - إذا لم تكن والد الطفل أو زوج أمه، فيجب عليك تقديم **نموذج شهادة مقدم الرعاية CFWB-058**.\\n\\n### عمر الأطفال\\nستحتاج إلى تحميل **وثيقة واحدة** من المستندات التالية لكل طفل في المنزل دون سن 18 عامًا، بغض النظر عما إذا كان يحتاج إلى رعاية الطفل أم لا:\\n\\n- شهادة الميلاد\\n- سجل التبني\\n- سجل المعمودية\\n- بطاقة تسجيل الأجانب\\n- جواز السفر\\n- وثيقة المستشفى الرسمية لميلاد الطفل"
           },
           {
-            "id": "employment_income",
-            "title": "Employment & Income",
-            "type": "info",
+            "id": "دخل العمل",
+            "title": "التوظيف والدخل",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Income\\nThese documents confirm your family’s income.\\n\\n---\\n\\n### If You Are Employed\\nIf you are employed and receive paystubs, you must submit them to confirm your income. The number of paystubs you must submit varies by how often you get paid and whether your payment amount is the same or different each time you are paid – see the table below for details. Submit the most recent paystub you have received, followed by others in consecutive order.\\n\\n**Income Information**\\n\\n| How Often Do You Get Paid? | Always the SAME Amount | DIFFERENT Amounts Each Time |\\n|----------------------------|-------------------------|------------------------------|\\n| Weekly (Every Week) | 4 most recent, consecutive pay stubs | 12 most recent, consecutive pay stubs |\\n| Bi-Weekly (Every Two Weeks) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Semi-Monthly (Two Times Per Month) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Monthly (One Time Per Month) | 3 most recent, consecutive pay stubs | 3 most recent, consecutive pay stubs |\\n\\nIf you do not have any paystubs, you must submit a **CFWB-015 Referral to Employer for Employee Income Information Form**.\\n\\n---\\n\\n### If You Are Self-Employed\\nIf you have been self-employed for **one year or more**, you must submit a current, complete and signed income tax package (e.g., 1040, 1065, Schedule C, SE for partnership, K-1, etc.).\\n\\nIf you have been self-employed for **less than one year**, you must submit a **CFWB-031 Self-Employment Income Information Attestation Form**.\\n\\n---\\n\\n### Other Income\\nIf you receive other types of income outside or instead of employment income, you must submit your most recent check, pay stub, or current award letter that indicates the amount you receive. If your other income fluctuates, **3 months of documentation is required**.\\n\\nThis includes, but is not limited to:\\n- Income from SSI, SSD\\n- Unemployment benefits\\n- Rental income\\n- Pensions\\n- Annuities\\n- Worker’s compensation\\n- Alimony\\n- Child support"
+            "content": "### الدخل\\nتؤكد هذه المستندات دخل عائلتك.\\n\\n---\\n\\n### إذا كنت موظفًا\\nإذا كنت موظفًا وتستلم كشوف رواتب، فيجب عليك تقديمها لتأكيد دخلك. يختلف عدد كشوف الرواتب التي يجب عليك تقديمها باختلاف عدد مرات استلامك للراتب، وما إذا كان مبلغ الدفع ثابتًا أم مختلفًا في كل مرة - راجع الجدول أدناه لمزيد من التفاصيل. قدم أحدث كشوف رواتب استلمتها، متبوعًا بالكشوفات الأخرى بالترتيب.\\n\\n**معلومات الدخل**\\n\\n| كم مرة تستلم راتبك؟ | دائمًا نفس المبلغ | مبالغ مختلفة في كل مرة |\\n|---------------------------|------------------------------|\\n| أسبوعيًا (كل أسبوع) | أحدث 4 كشوف رواتب متتالية | أحدث 12 كشوف رواتب متتالية |\\n| كل أسبوعين (كل أسبوعين) | أحدث 2 كشف راتب متتالي | أحدث 6 كشوف رواتب متتالية |\\n| نصف شهري (مرتين في الشهر) | أحدث 2 كشف راتب متتالي | أحدث 6 كشوف رواتب متتالية |\\n| شهري (مرة واحدة في الشهر) | أحدث 3 كشوف رواتب متتالية | 3 أحدث كشوف رواتب متتالية |\\n\\nإذا لم يكن لديك أي كشوف رواتب، يجب عليك تقديم **إحالة CFWB-015 إلى صاحب العمل للحصول على نموذج معلومات دخل الموظف**.\\n\\n---\\n\\n### إذا كنت تعمل لحسابك الخاص\\nإذا كنت تعمل لحسابك الخاص لمدة **عام واحد أو أكثر**، فيجب عليك تقديم حزمة ضريبة دخل حالية وكاملة وموقعة (على سبيل المثال، 1040، 1065، الجدول C، SE للشراكة، K-1، إلخ.).\\n\\nإذا كنت تعمل لحسابك الخاص لمدة **أقل من عام واحد**، فيجب عليك تقديم **نموذج شهادة معلومات دخل العمل الحر CFWB-031**.\\n\\n---\\n\\n### دخل آخر\\nإذا كنت تتلقى أنواعًا أخرى من الدخل خارج دخل العمل أو بدلاً منه، فيجب عليك تقديم أحدث شيك أو كشف راتب أو خطاب مكافأة حالي يشير إلى المبلغ الذي تتلقاه. إذا كان دخلك الآخر متقلبًا، **يلزم تقديم مستندات لمدة 3 أشهر**.\\n\\nيشمل هذا، على سبيل المثال لا الحصر:\\n- الدخل من SSI وSSD\\n- إعانات البطالة\\n- دخل الإيجار\\n- المعاشات التقاعدية\\n- المعاشات السنوية\\n- تعويضات العمال\\n- النفقة الزوجية\\n- نفقة الطفل"
           },
           {
-            "id": "reason_for_care",
-            "title": "Reason for Care",
-            "type": "info",
+            "id": "سبب_للرعاية",
+            "title": "سبب الرعاية",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Reason for Care\\nThese documents confirm your reason for care. Every applicant must have a qualified reason for care; in a two-parent household, parents or caretakers can have the same or different reasons for care. Only the documents related to your stated reasons for care need to be uploaded, and documentation must be uploaded for all parent or caretakers in the household.\\n\\n---\\n\\n### Working 10+ Hours Per Week\\nYour employment or self-employment income documents will cover this reason for care. You do not need to submit additional documentation.\\n\\n---\\n\\n### Participating in an Educational or Vocational Training Program\\nYou will need to upload **ONE** of the following documents to confirm your participation in vocational school, two-year college, or four-year college.\\n\\n- CFWB-005 Vocational, Education and Training Verification Form\\n- A letter from the educational or vocational training program on their official letterhead; this letter must contain all the information required in the CFWB-005 Vocational, Education and Training Verification Form.\\n\\n---\\n\\n### Looking for Work\\nYou will need to upload **ONE** of the following documents to confirm that you are looking for work.\\n\\n- CFWB-026 Work Search Record Form\\n- Approved work search plan from the NYS Dept. of Labor\\n- Proof of receipt of unemployment insurance\\n\\n---\\n\\n### Experiencing Homelessness\\nYou will need to upload **ONE** of the following documents to confirm that you are experiencing homelessness. This includes families who may be living in shelter or sharing the housing of others due to loss of housing, economic hardship, or similar reason.\\n\\n- Shelter Residency Letter (If living in Shelter, including Humanitarian Emergency Relief Centers)\\n- CFWB-027 Housing Attestation (If living doubled-up, in a place not meant for human habitation, in a hotel/motel, or in another living situation)\\n\\n---\\n\\n### Attending Services for Domestic Violence\\nYou will need to upload a referral for services from a domestic violence service provider to confirm that you are attending services for domestic violence.\\n\\n---\\n\\n### Attending Services for Substance Abuse Treatment\\nYou will need to upload a referral for a substance abuse treatment service provider to confirm that you are attending services for substance abuse treatment."
+            "content": "### سبب الرعاية\\nتؤكد هذه المستندات سبب رعايتك. يجب أن يكون لدى كل متقدم سبب مؤهل للرعاية؛ في أسرة مكونة من والدين، يمكن أن يكون لدى الوالدين أو مقدمي الرعاية نفس الأسباب أو أسباب مختلفة للرعاية. يجب تحميل المستندات المتعلقة بأسباب رعايتكم المعلنة فقط، ويجب تحميل المستندات لجميع الوالدين أو مقدمي الرعاية في الأسرة.\\n\\n---\\n\\n### العمل 10 ساعات أو أكثر في الأسبوع\\nستغطي مستندات دخلك من العمل أو العمل الحر هذا السبب للرعاية. لا تحتاج إلى تقديم مستندات إضافية.\\n\\n---\\n\\n### المشاركة في برنامج تعليمي أو تدريب مهني\\nستحتاج إلى تحميل **واحد** من المستندات التالية لتأكيد مشاركتك في المدرسة المهنية أو الكلية لمدة عامين أو الكلية لمدة أربع سنوات.\\n\\n- نموذج التحقق من التعليم والتدريب المهني CFWB-005\\n- خطاب من البرنامج التعليمي أو التدريب المهني على ورق رسمي رسمي؛ يجب أن تحتوي هذه الرسالة على جميع المعلومات المطلوبة في نموذج التحقق من التعليم والتدريب المهني CFWB-005.\\n\\n---\\n\\n### البحث عن عمل\\nستحتاج إلى تحميل **واحد** من المستندات التالية لتأكيد أنك تبحث عن عمل.\\n\\n- نموذج سجل البحث عن عمل CFWB-026\\n- خطة بحث عن عمل معتمدة من وزارة العمل في ولاية نيويورك\\n- إثبات استلام تأمين البطالة\\n\\n---\\n\\n### تعاني من التشرد\\nستحتاج إلى تحميل **واحد** من المستندات التالية لتأكيد أنك تعاني من التشرد. يتضمن ذلك العائلات التي قد تعيش في مأوى أو تشارك السكن مع آخرين بسبب فقدان السكن أو الصعوبات الاقتصادية أو سبب مماثل. - خطاب إقامة المأوى (إذا كنت تعيش في مأوى، بما في ذلك مراكز الإغاثة الإنسانية الطارئة) - شهادة السكن CFWB-027 (إذا كنت تعيش في مكان مزدوج، في مكان غير مخصص للسكن البشري، أو في فندق/موتيل، أو في وضع معيشي آخر) - حضور خدمات العنف المنزلي - ستحتاج إلى تحميل إحالة للخدمات من مزود خدمة العنف المنزلي لتأكيد حضورك لخدمات العنف المنزلي. - حضور خدمات علاج تعاطي المخدرات - ستحتاج إلى تحميل إحالة لمقدم خدمة علاج تعاطي المخدرات لتأكيد حضورك لخدمات علاج تعاطي المخدرات."
           },
           {
-            "id": "additional_details",
-            "title": "Additional Details",
-            "type": "info",
+            "id": "تفاصيل إضافية",
+            "title": "تفاصيل إضافية",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Application Scope\\nThis application is used to apply **only** for **Category 2 or 3 child care assistance** (for families not in receipt of cash assistance). To apply for **Cash Assistance** or other benefits, including **Category 1 Child Care Assistance** (for families in receipt of cash assistance), you must use the **New York State Application for Certain Benefits and Services (LDSS-2921)**.\\n\\n---\\n\\n### Exempt Applicants\\nThe following applicants may be eligible for child care assistance **without regard to income** and do not need to complete this application:\\n\\n- Foster parents who need child care assistance to allow them to work and are only applying for assistance for the foster children;\\n- Families in receipt of protective or preventive services.\\n\\n---\\n\\n### Application Completion\\nAll sections of this form must be filled out to be considered complete **unless the section is identified as optional**. If you do not complete all required sections of this form, you may not be considered for Child Care Assistance.\\n\\n---\\n\\n### Rights and Responsibilities\\nYou may obtain information about your rights and responsibilities [here](https://otda.ny.gov/programs/applications/). If you do not have access to the internet, you can call the **Administration for Children’s Services at 212-835-7610** to request that physical copies of the booklets which highlight your rights and responsibilities be mailed to you, including:\\n\\n- **LDSS-4148A**: What You Should Know About Your Rights and Responsibilities\\n- **LDSS-4148B**: What You Should Know About Social Services Programs\\n- **LDSS-4148C**: What You Should Know If You Have an Emergency"
+            "content": "### نطاق الطلب\\nيُستخدم هذا الطلب للتقديم **فقط** على **مساعدة رعاية الأطفال من الفئة ٢ أو ٣** (للأسر التي لا تتلقى مساعدة نقدية). للتقدم بطلب للحصول على **مساعدة نقدية** أو مزايا أخرى، بما في ذلك **مساعدة رعاية الأطفال من الفئة ١** (للأسر التي تتلقى مساعدة نقدية)، يجب عليك استخدام **طلب ولاية نيويورك للحصول على مزايا وخدمات معينة (LDSS-2921)**.\\n\\n---\\n\\n### المتقدمون المعفون\\nقد يكون المتقدمون التاليون مؤهلين للحصول على مساعدة رعاية الأطفال **بغض النظر عن الدخل** ولا يحتاجون إلى إكمال هذا الطلب:\\n\\n- الآباء بالتبني الذين يحتاجون إلى مساعدة في رعاية الأطفال لتمكينهم من العمل ويتقدمون بطلب للحصول على مساعدة لأطفال التبني فقط؛\\n- الأسر التي تتلقى خدمات الحماية أو الوقاية.\\n\\n---\\n\\n### إكمال الطلب\\nيجب تعبئة جميع أقسام هذا النموذج ليتم اعتباره مكتملًا **ما لم يُحدد القسم على أنه اختياري**. إذا لم تُكمل جميع الأقسام المطلوبة في هذا النموذج، فقد لا يُؤخذ طلبك في الاعتبار للحصول على مساعدة رعاية الطفل. الحقوق والمسؤوليات: يمكنك الحصول على معلومات حول حقوقك ومسؤولياتك [هنا] (https://otda.ny.gov/programs/applications/). إذا لم يكن لديك اتصال بالإنترنت، يمكنك الاتصال بإدارة خدمات الأطفال على الرقم 212-835-7610 لطلب إرسال نسخ مطبوعة من الكتيبات التي تُبرز حقوقك ومسؤولياتك إليك عبر البريد، بما في ذلك: - **LDSS-4148A**: ما يجب أن تعرفه عن حقوقك ومسؤولياتك - **LDSS-4148B**: ما يجب أن تعرفه عن برامج الخدمات الاجتماعية - **LDSS-4148C**: ما يجب أن تعرفه في حالة الطوارئ."
           }
         ]
       },
       {
-        "id": "applicant",
-        "title": "Applicant",
+        "id": "مقدم الطلب",
+        "title": "مقدم الطلب",
         "sections": [
           {
-            "id": "personal_info",
-            "title": "Personal Information",
+            "id": "معلومات شخصية",
+            "title": "معلومات شخصية",
             "fields": [
               {
-                "id": "first_name",
-                "label": "First Name",
-                "type": "text",
+                "id": "الاسم الأول",
+                "label": "الاسم الأول",
+                "type": "نص",
                 "required": true
               },
               {
-                "id": "last_name",
-                "label": "Last Name",
-                "type": "text",
+                "id": "اسم العائلة",
+                "label": "اسم العائلة",
+                "type": "نص",
                 "required": true
               },
               {
-                "id": "mi",
-                "label": "Middle Initial",
-                "type": "text",
+                "id": "أنا",
+                "label": "أول حرف من اسم الأب",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "date_of_birth",
-                "label": "Date of Birth",
-                "type": "date",
+                "id": "تاريخ الميلاد",
+                "label": "تاريخ الميلاد",
+                "type": "تاريخ",
                 "required": true,
-                "tooltip": "To edit Date of Birth click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "لتحرير تاريخ الميلاد انقر فوق NYC ModelCity في الزاوية العلوية اليسرى ثم انقر فوق إعدادات الحساب."
               },
               {
-                "id": "sex",
-                "label": "Sex",
-                "type": "radio",
+                "id": "الجنس",
+                "label": "الجنس",
+                "type": "راديو",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Male",
-                    "Female"
+                    "ذكر",
+                    "أنثى"
                   ]
                 }
               },
               {
-                "id": "marital_status",
-                "label": "Marital Status",
-                "type": "select",
+                "id": "الحالة الاجتماعية",
+                "label": "الحالة الاجتماعية",
+                "type": "يختار",
                 "required": true,
-                "tooltip": "Indicate your marital status (single, married, divorced, separated or widowed).",
+                "tooltip": "حدد حالتك الاجتماعية (أعزب، متزوج، مطلق، منفصل أو أرمل).",
                 "ui": {
                   "options": [
                     "",
-                    "Single",
-                    "Married",
-                    "Divorced",
-                    "Widowed",
-                    "Separated"
+                    "أعزب",
+                    "متزوج",
+                    "مُطلّق",
+                    "أرملة",
+                    "منفصل"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "contact_info",
-            "title": "Contact Information",
+            "id": "معلومات الاتصال",
+            "title": "معلومات الاتصال",
             "fields": [
               {
-                "id": "telephone_home",
-                "label": "Home Phone",
-                "type": "tel",
+                "id": "هاتف المنزل",
+                "label": "هاتف المنزل",
+                "type": "هاتف",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -176,9 +176,9 @@
                 }
               },
               {
-                "id": "telephone_work",
-                "label": "Work Phone",
-                "type": "tel",
+                "id": "أعمال الهاتف",
+                "label": "هاتف العمل",
+                "type": "هاتف",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -188,11 +188,11 @@
                 }
               },
               {
-                "id": "telephone_mobile_or_other",
-                "label": "Mobile or Other Phone",
-                "type": "tel",
+                "id": "هاتف محمول أو غيره",
+                "label": "الهاتف المحمول أو أي هاتف آخر",
+                "type": "هاتف",
                 "required": false,
-                "tooltip": "To edit Telephone (Cell or Other) click on NYC ModelCity in the top-left corner then click on Account Settings and then click on Contact.",
+                "tooltip": "لتحرير رقم الهاتف (جوال أو غيره)، انقر فوق NYC ModelCity في الزاوية العلوية اليسرى، ثم انقر فوق إعدادات الحساب، ثم انقر فوق جهة الاتصال.",
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
                 },
@@ -201,196 +201,208 @@
                 }
               },
               {
-                "id": "email",
-                "label": "Email",
-                "type": "email",
+                "id": "بريد إلكتروني",
+                "label": "بريد إلكتروني",
+                "type": "بريد إلكتروني",
                 "required": true,
-                "tooltip": "To edit email, go to NYC ID Profile tab by clicking your name at the top right corner"
+                "tooltip": "لتحرير البريد الإلكتروني، انتقل إلى علامة التبويب \"ملف تعريف هوية مدينة نيويورك\" بالنقر فوق اسمك في الزاوية اليمنى العليا"
               }
             ]
           },
           {
-            "id": "address_info",
-            "title": "Address",
-            "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings.",
+            "id": "معلومات العنوان",
+            "title": "عنوان",
+            "tooltip": "لتحرير عنوان المنزل انقر فوق NYC ModelCity في الزاوية العلوية اليسرى ثم انقر فوق إعدادات الحساب.",
             "ui": {
-              "autocomplete": "street",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "شارع",
+              "placeholder": "ابدأ بكتابة عنوان الشارع الخاص بك",
+              "overrideComponent": "عنوان الإكمال التلقائي"
             },
             "metadata": {
               "integration": {
-                "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "provider": "جوجل",
+                "feature": "عنوان الإكمال التلقائي"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "مدينة",
+                  "source": "المنطقة",
                   "fallbackSources": [
-                    "postal_town",
-                    "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "المدينة البريدية",
+                    "المستوى الفرعي 1",
+                    "مستوى المنطقة الإدارية 2"
                   ]
                 },
                 {
-                  "fieldId": "borough",
-                  "source": "sublocality_level_1",
+                  "fieldId": "البلدة",
+                  "source": "المستوى الفرعي 1",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "مستوى المنطقة الإدارية 2"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "خريطة البلدة"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "zip_code", "source": "postal_code" },
-                { "fieldId": "latitude", "source": "location.latitude" },
-                { "fieldId": "longitude", "source": "location.longitude" }
+                {
+                  "fieldId": "ولاية",
+                  "source": "مستوى المنطقة الإدارية 1"
+                },
+                {
+                  "fieldId": "الرمز البريدي",
+                  "source": "رمز بريدي"
+                },
+                {
+                  "fieldId": "خط العرض",
+                  "source": "الموقع.خط العرض"
+                },
+                {
+                  "fieldId": "خط الطول",
+                  "source": "الموقع.خط الطول"
+                }
               ]
             },
             "fields": [
               {
-                "id": "street",
-                "label": "Street Address",
-                "type": "text",
+                "id": "شارع",
+                "label": "عنوان الشارع",
+                "type": "نص",
                 "required": true,
-                "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "لتحرير عنوان المنزل انقر فوق NYC ModelCity في الزاوية العلوية اليسرى ثم انقر فوق إعدادات الحساب."
               },
               {
-                "id": "apt",
-                "label": "Apt #",
-                "type": "text",
+                "id": "مناسب",
+                "label": "رقم الشقة",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "مدينة",
+                "label": "مدينة",
+                "type": "نص",
                 "required": true
               },
               {
-                "id": "borough",
-                "label": "Borough",
-                "type": "select",
+                "id": "البلدة",
+                "label": "البلدة",
+                "type": "يختار",
                 "required": true,
                 "ui": {
                   "options": [
                     "",
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
-                    "Staten Island"
+                    "برونكس",
+                    "بروكلين",
+                    "مانهاتن",
+                    "كوينز",
+                    "جزيرة ستاتن"
                   ]
                 }
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "ولاية",
+                "label": "ولاية",
+                "type": "نص",
                 "required": true
               },
               {
-                "id": "zip_code",
-                "label": "Zip Code",
-                "type": "text",
+                "id": "الرمز البريدي",
+                "label": "الرمز البريدي",
+                "type": "نص",
                 "required": true
               },
               {
-                "id": "latitude",
-                "label": "Latitude",
-                "type": "number",
+                "id": "خط العرض",
+                "label": "خط العرض",
+                "type": "رقم",
                 "required": false
               },
               {
-                "id": "longitude",
-                "label": "Longitude",
-                "type": "number",
+                "id": "خط الطول",
+                "label": "خط الطول",
+                "type": "رقم",
                 "required": false
               },
               {
-                "id": "is_temporary_address",
-                "label": "Is Temporary Address",
-                "type": "radio",
+                "id": "هو العنوان المؤقت",
+                "label": "عنوان مؤقت",
+                "type": "راديو",
                 "required": true,
-                "tooltip": "Check YES if you are currently living in a homeless shelter, doubled-up with another family, in a hotel/motel, in a car/ bus/ train, in a park/campsite, or other temporary accomodation.",
+                "tooltip": "حدد نعم إذا كنت تعيش حاليًا في مأوى للمشردين، أو تعيش مع عائلة أخرى، أو في فندق/موتيل، أو في سيارة/حافلة/قطار، أو في حديقة/مخيم، أو أي سكن مؤقت آخر.",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "currently_living_in",
-                "label": "Currently Living In",
-                "type": "select",
+                "id": "أعيش حاليًا",
+                "label": "أعيش حاليا في",
+                "type": "يختار",
                 "required": false,
                 "requiredCondition": {
-                  "field": "is_temporary_address",
-                  "operator": "equals",
-                  "value": "Yes"
+                  "field": "هو العنوان المؤقت",
+                  "operator": "يساوي",
+                  "value": "نعم"
                 },
                 "ui": {
                   "options": [
                     "",
-                    "Homeless Shelter",
-                    "Doubled-up with another Family",
-                    "Hotel/Motel",
-                    "Car, Bus, Train",
-                    "Park",
-                    "Campsite",
-                    "Other"
+                    "مأوى للمشردين",
+                    "مضاعف مع عائلة أخرى",
+                    "فندق/موتيل",
+                    "سيارة، حافلة، قطار",
+                    "حديقة",
+                    "المخيم",
+                    "آخر"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "demographics",
-            "title": "Demographics",
+            "id": "التركيبة السكانية",
+            "title": "التركيبة السكانية",
             "fields": [
               {
-                "id": "ethnicity",
-                "label": "Ethnicity",
-                "type": "select",
+                "id": "عِرق",
+                "label": "عِرق",
+                "type": "يختار",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Hispanic",
-                    "Latino",
-                    "No",
-                    "Prefer not to answer"
+                    "إسباني",
+                    "لاتيني",
+                    "لا",
+                    "أفضل عدم الإجابة"
                   ]
                 }
               },
               {
-                "id": "race",
-                "label": "Race",
-                "type": "checkbox",
+                "id": "سباق",
+                "label": "سباق",
+                "type": "مربع الاختيار",
                 "required": false,
-                "tooltip": "You may choose multiple race categories. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                "tooltip": "يمكنك اختيار فئات عرقية متعددة. تقديم معلومات العرق اختياري ولن يؤثر على أهليتك للحصول على مساعدة رعاية الطفل أو على قيمة المساعدة التي ستقدمها لك هذه الوكالة.",
                 "ui": {
                   "options": [
                     {
-                      "value": "AI",
-                      "label": "American Indian or Alaska Native"
+                      "value": "الذكاء الاصطناعي",
+                      "label": "أمريكي هندي أو من سكان ألاسكا الأصليين"
                     },
                     {
-                      "value": "AS",
-                      "label": "Asian"
+                      "value": "مثل",
+                      "label": "آسيوي"
                     },
                     {
-                      "value": "BL",
-                      "label": "Black or African American"
+                      "value": "بي إل",
+                      "label": "أسود أو أمريكي من أصل أفريقي"
                     },
                     {
-                      "value": "HP",
-                      "label": "Native Hawaiian or Pacific Islander"
+                      "value": "إتش بي",
+                      "label": "مواطن هاواي أو من جزر المحيط الهادئ"
                     },
                     {
-                      "value": "WH",
-                      "label": "White"
+                      "value": "هل",
+                      "label": "أبيض"
                     }
                   ]
                 },
@@ -399,10 +411,10 @@
                 }
               },
               {
-                "id": "ssn",
-                "label": "Social Security Number",
-                "type": "text",
-                "tooltip": "To edit social security number click on NYC ModelCity in the top-left corner then click on Account Settings.",
+                "id": "رقم الضمان الاجتماعي",
+                "label": "رقم الضمان الاجتماعي",
+                "type": "نص",
+                "tooltip": "لتحرير رقم الضمان الاجتماعي انقر فوق NYC ModelCity في الزاوية العلوية اليسرى ثم انقر فوق إعدادات الحساب.",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
@@ -414,87 +426,87 @@
             ]
           },
           {
-            "id": "language_info",
-            "title": "Language Preferences",
+            "id": "معلومات اللغة",
+            "title": "تفضيلات اللغة",
             "fields": [
               {
-                "id": "primary_language",
-                "label": "Primary Language",
-                "type": "radio",
+                "id": "اللغة الأساسية",
+                "label": "اللغة الأساسية",
+                "type": "راديو",
                 "required": true,
-                "tooltip": "Select the language that is spoken most often in your household. If “other”, provide the name of the language.",
+                "tooltip": "اختر اللغة الأكثر استخدامًا في منزلك. إذا كانت \"أخرى\"، فأدخل اسمها.",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "إنجليزي",
+                    "الأسبانية",
+                    "آخر"
                   ]
                 }
               },
               {
-                "id": "preferred_language",
-                "label": "Preferred Language",
-                "type": "radio",
+                "id": "اللغة المفضلة",
+                "label": "اللغة المفضلة",
+                "type": "راديو",
                 "required": true,
-                "tooltip": "Select the language you prefer to communicate in. If “other”, provide the name of the language.",
+                "tooltip": "حدد اللغة التي تفضل التواصل بها. إذا كانت \"أخرى\"، قم بتوفير اسم اللغة.",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "إنجليزي",
+                    "الأسبانية",
+                    "آخر"
                   ]
                 }
               },
               {
-                "id": "other_primary_language",
-                "label": "Other Primary Language",
-                "type": "text",
+                "id": "لغة أساسية أخرى",
+                "label": "لغة أساسية أخرى",
+                "type": "نص",
                 "required": false,
                 "requiredCondition": {
-                  "field": "primary_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "اللغة الأساسية",
+                  "operator": "يساوي",
+                  "value": "آخر"
                 }
               },
               {
-                "id": "other_preferred_language",
-                "label": "Other Preferred Language",
-                "type": "text",
+                "id": "اللغة المفضلة الأخرى",
+                "label": "لغة مفضلة أخرى",
+                "type": "نص",
                 "required": false,
                 "requiredCondition": {
-                  "field": "preferred_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "اللغة المفضلة",
+                  "operator": "يساوي",
+                  "value": "آخر"
                 }
               }
             ]
           },
           {
-            "id": "cash_assistance",
-            "title": "Cash Assistance",
+            "id": "المساعدة النقدية",
+            "title": "المساعدة النقدية",
             "fields": [
               {
-                "id": "has_cash_assistance",
-                "label": "Do you receive Cash Assistance?",
-                "type": "radio",
+                "id": "لديه مساعدة نقدية",
+                "label": "هل تتلقى مساعدة نقدية؟",
+                "type": "راديو",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "ca_number",
-                "label": "Cash Assistance Number",
-                "type": "text",
+                "id": "رقم ca_number",
+                "label": "رقم المساعدة النقدية",
+                "type": "نص",
                 "required": false,
                 "requiredCondition": {
                   "condition": {
-                    "field": "has_cash_assistance",
-                    "operator": "equals",
-                    "value": "Yes"
+                    "field": "لديه مساعدة نقدية",
+                    "operator": "يساوي",
+                    "value": "نعم"
                   }
                 }
               }
@@ -503,124 +515,124 @@
         ]
       },
       {
-        "id": "children_needing_care",
-        "title": "Children Needing Care",
+        "id": "الأطفال الذين يحتاجون إلى رعاية",
+        "title": "الأطفال الذين يحتاجون إلى الرعاية",
         "sections": [
           {
-            "id": "child_details",
-            "title": "Child Details",
+            "id": "تفاصيل الطفل",
+            "title": "تفاصيل الطفل",
             "required": true,
             "fields": [
               {
-                "id": "children",
-                "label": "Children Needing Care",
-                "type": "group",
+                "id": "أطفال",
+                "label": "الأطفال الذين يحتاجون إلى الرعاية",
+                "type": "مجموعة",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                  "first_name",
-                  "last_name",
-                  "date_of_birth",
-                  "relationship_to_applicant"
+                    "الاسم الأول",
+                    "اسم العائلة",
+                    "تاريخ الميلاد",
+                    "العلاقة مع مقدم الطلب"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "الاسم الأول",
+                    "label": "الاسم الأول",
+                    "type": "نص",
                     "required": true,
-                    "tooltip": "Provide the first name, last name, and middle initial of each child you are applying for child care assistance for."
+                    "tooltip": "قم بتقديم الاسم الأول واسم العائلة والحرف الأول من الاسم الأوسط لكل طفل تتقدم بطلب للحصول على مساعدة في رعاية الطفل له."
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "اسم العائلة",
+                    "label": "اسم العائلة",
+                    "type": "نص",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "أنا",
+                    "label": "أول حرف من اسم الأب",
+                    "type": "نص",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "العلاقة مع مقدم الطلب",
+                    "label": "العلاقة مع مقدم الطلب",
+                    "type": "يختار",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "Child",
-                        "Grandchild",
-                        "Foster Child",
-                        "Other"
+                        "طفل",
+                        "حفيد",
+                        "طفل بالتبني",
+                        "آخر"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "تاريخ الميلاد",
+                    "label": "تاريخ الميلاد",
+                    "type": "تاريخ",
                     "required": true,
-                    "tooltip": "Provide the date of birth."
+                    "tooltip": "أدخل تاريخ الميلاد."
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
-                    "type": "radio",
+                    "id": "الجنس",
+                    "label": "الجنس",
+                    "type": "راديو",
                     "required": true,
-                    "tooltip": "Select to indicate the sex.",
+                    "tooltip": "حدد للإشارة إلى الجنس.",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "ذكر",
+                        "أنثى"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "عِرق",
+                    "label": "العرق إسباني أو لاتيني",
+                    "type": "يختار",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each child in need of child care is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for child care assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "حدد \"نعم\" أو \"لا\" لتحديد ما إذا كان كل طفل بحاجة إلى رعاية من أصل إسباني أو لاتيني أم لا. تقديم معلومات عن العرق اختياري ولن يؤثر على أهليتك للحصول على مساعدة رعاية الأطفال أو على قيمة المساعدة التي ستقدمها لك هذه الوكالة.",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "نعم",
+                        "لا",
+                        "أفضل عدم الإجابة"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "سباق",
+                    "label": "سباق",
+                    "type": "مربع الاختيار",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single child. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "يمكنك اختيار فئات عرقية متعددة لطفل واحد. تقديم معلومات العرق اختياري ولن يؤثر على أهليتك للحصول على مساعدة رعاية الطفل أو على قيمة المساعدة التي ستقدمها لك هذه الوكالة.",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "الذكاء الاصطناعي",
+                          "label": "أمريكي هندي أو من سكان ألاسكا الأصليين"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "مثل",
+                          "label": "آسيوي"
                         },
                         {
-                          "value": "BL",
-                          "label": "Black or African American"
+                          "value": "بي إل",
+                          "label": "أسود أو أمريكي من أصل أفريقي"
                         },
                         {
-                          "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "value": "إتش بي",
+                          "label": "مواطن هاواي أو من جزر المحيط الهادئ"
                         },
                         {
-                          "value": "WH",
-                          "label": "White"
+                          "value": "هل",
+                          "label": "أبيض"
                         }
                       ]
                     },
@@ -629,11 +641,11 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "رقم الضمان الاجتماعي",
+                    "label": "رقم الضمان الاجتماعي",
+                    "type": "نص",
                     "required": false,
-                    "tooltip": "Provide each child’s Social Security Number (SSN). You are not required to provide SSNs. They may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "يرجى تقديم رقم الضمان الاجتماعي (SSN) لكل طفل. لستَ مُلزمًا بتقديم أرقام الضمان الاجتماعي. يمكن للوكالات الفيدرالية والولائية والمحلية استخدامها لمنع تكرار الخدمات والاحتيال، ولأغراض الإبلاغ الفيدرالي.",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
@@ -642,41 +654,41 @@
                     }
                   },
                   {
-                    "id": "do_both_parents_reside_in_home",
-                    "label": "Do both parents reside in the home?",
-                    "type": "radio",
+                    "id": "هل يقيم كلا الوالدين في المنزل؟",
+                    "label": "هل يقيم كلا الوالدين في المنزل؟",
+                    "type": "راديو",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether both of the child’s parents live in the home.",
+                    "tooltip": "قم باختيار \"نعم\" أو \"لا\" للإشارة إلى ما إذا كان كلا والدي الطفل يعيشان في المنزل.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "نعم",
+                        "لا"
                       ]
                     }
                   },
                   {
-                    "id": "has_disability",
-                    "label": "Does the child have a disability?",
-                    "type": "radio",
+                    "id": "لديه إعاقة",
+                    "label": "هل الطفل لديه إعاقة؟",
+                    "type": "راديو",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether the child needing child care has a disability.",
+                    "tooltip": "قم باختيار \"نعم\" أو \"لا\" للإشارة إلى ما إذا كان الطفل الذي يحتاج إلى رعاية الأطفال يعاني من إعاقة.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "نعم",
+                        "لا"
                       ]
                     }
                   },
                   {
-                    "id": "is_immigration_status_satisfactory",
-                    "label": "Is child U.S. Citizen, U.S. National, or person with satisfactory immigration status?",
-                    "type": "radio",
+                    "id": "هل حالة الهجرة مرضية",
+                    "label": "هل الطفل مواطن أمريكي أو مواطن أمريكي أو شخص يتمتع بوضع هجرة مرضي؟",
+                    "type": "راديو",
                     "required": true,
-                    "tooltip": "You will only be asked about the immigration status of the children in need of care. Other members of the family will not need to state or prove their immigration status. Your child will be eligible for care if they are a U.S. citizen, a legal permanent resident (green card holder), a refugee, or an asylee; have a T-visa; or hold another qualified immigration status. Please select “Yes” if your child holds one of these statuses.",
+                    "tooltip": "سيتم سؤالك فقط عن وضع الهجرة للأطفال المحتاجين للرعاية. لن يُطلب من أفراد الأسرة الآخرين ذكر أو إثبات وضعهم في الهجرة. سيكون طفلك مؤهلاً للرعاية إذا كان مواطنًا أمريكيًا، أو مقيمًا دائمًا قانونيًا (حاملًا للبطاقة الخضراء)، أو لاجئًا، أو طالب لجوء؛ أو يحمل تأشيرة T؛ أو يحمل وضع هجرة مؤهلًا آخر. يُرجى اختيار \"نعم\" إذا كان طفلك يحمل إحدى هذه الأوضاع.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "نعم",
+                        "لا"
                       ]
                     }
                   }
@@ -687,142 +699,146 @@
         ]
       },
       {
-        "id": "family_members",
-        "title": "Family Members",
+        "id": "أفراد العائلة",
+        "title": "أفراد العائلة",
         "sections": [
           {
-            "id": "household_members_info",
-            "title": "Household Members Information",
-            "type": "info",
+            "id": "معلومات أفراد الأسرة",
+            "title": "معلومات أفراد الأسرة",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**List the household members who do _not_ need child care.**\\n\\nIf applicable, list:\\n\\n- Your **spouse**, your child’s **second parent**, **caretaker**, or **step-parent**\\n- Any other **adult with whom you share a child**, if they live in your home\\n\\nThen, if applicable, list:\\n\\n- Any **siblings under the age of 18** who live in your home\\n\\n> **Only list other household members** — such as **aunts, uncles, cousins, grandparents, or friends** — _if they have financial responsibility_ for the child.\\n\\nA household member with financial responsibility, other than a parent or step-parent, is one who has a **letter or order of guardianship**.\\n\\n**Otherwise, do not include them.**"
+            "content": "**أدرج أفراد الأسرة الذين لا يحتاجون إلى رعاية الطفل.**\\n\\nإذا كان ذلك ممكنًا، فأدرج:\\n\\n- **زوجك**، أو **والد طفلك الثاني**، أو **مقدم الرعاية**، أو **زوج أم/زوجة**\\n- أي **شخص بالغ آخر تتشارك معه طفلًا**، إذا كان يعيش في منزلك\\n\\nثم، إذا كان ذلك ممكنًا، فأدرج:\\n\\n- أي **أشقاء دون سن 18 عامًا** يعيشون في منزلك\\n\\n> **أدرج أفراد الأسرة الآخرين فقط** - مثل **العمات والأعمام وأبناء العمومة والأجداد أو الأصدقاء** - إذا كانت لديهم مسؤولية مالية عن الطفل.\\n\\nعضو الأسرة الذي يتحمل مسؤولية مالية، بخلاف أحد الوالدين أو زوج الأم/الزوجة، هو الشخص الذي لديه **خطاب أو أمر وصاية**.\\n\\n**وإلا، فلا تقم بإدراجهم.**"
           },
           {
-            "id": "family_member_details",
-            "title": "Household Member Details",
-            "description": "Include household members who do not need child care assistance (e.g., spouse, partner, other children).",
+            "id": "تفاصيل أفراد العائلة",
+            "title": "تفاصيل أفراد الأسرة",
+            "description": "قم بتضمين أفراد الأسرة الذين لا يحتاجون إلى مساعدة في رعاية الأطفال (على سبيل المثال، الزوج/الزوجة، الشريك، الأطفال الآخرون).",
             "fields": [
               {
-                "id": "familymember",
-                "label": "Family Members",
-                "type": "group",
+                "id": "عضو العائلة",
+                "label": "أفراد العائلة",
+                "type": "مجموعة",
                 "requiredCondition": {
-                  "repeatingGroup": "children",
-                  "operator": "ANY",
-                  "condition": { "field": "do_both_parents_reside_in_home", "operator": "equals", "value": "Yes" }
-                },  
+                  "repeatingGroup": "أطفال",
+                  "operator": "أي",
+                  "condition": {
+                    "field": "هل يقيم كلا الوالدين في المنزل؟",
+                    "operator": "يساوي",
+                    "value": "نعم"
+                  }
+                },
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "first_name",
-                    "last_name",
-                    "relationship_to_applicant",
-                    "date_of_birth"
+                    "الاسم الأول",
+                    "اسم العائلة",
+                    "العلاقة مع مقدم الطلب",
+                    "تاريخ الميلاد"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "الاسم الأول",
+                    "label": "الاسم الأول",
+                    "type": "نص",
                     "required": true,
-                    "tooltip": "Provide last and first name, and middle initial if applicable."
+                    "tooltip": "قم بتقديم الاسم الأخير والاسم الأول، والحرف الأول من الاسم الأوسط إذا كان ذلك ممكنا."
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "اسم العائلة",
+                    "label": "اسم العائلة",
+                    "type": "نص",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "أنا",
+                    "label": "أول حرف من اسم الأب",
+                    "type": "نص",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "العلاقة مع مقدم الطلب",
+                    "label": "العلاقة مع مقدم الطلب",
+                    "type": "يختار",
                     "required": true,
-                    "tooltip": "Provide each person’s relationship to you (e.g. spouse, partner, child, foster parent, other).",
+                    "tooltip": "قم بتقديم علاقة كل شخص بك (على سبيل المثال الزوج/الزوجة، الشريك/الشريكة، الطفل/الوالد بالتبني، أو غير ذلك).",
                     "ui": {
                       "options": [
                         "",
-                        "Spouse",
-                        "Partner",
-                        "Foster Parent",
-                        "Child",
-                        "Other"
+                        "زوج",
+                        "شريك",
+                        "الوالد الحاضن",
+                        "طفل",
+                        "آخر"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "تاريخ الميلاد",
+                    "label": "تاريخ الميلاد",
+                    "type": "تاريخ",
                     "required": true,
-                    "tooltip": "Provide the family member's date of birth."
+                    "tooltip": "قم بتوفير تاريخ ميلاد أحد أفراد العائلة."
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
-                    "type": "radio",
+                    "id": "الجنس",
+                    "label": "الجنس",
+                    "type": "راديو",
                     "required": true,
-                    "tooltip": "Indicate the sex for each family member listed.",
+                    "tooltip": "أشر إلى جنس كل فرد من أفراد العائلة المذكورين.",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "ذكر",
+                        "أنثى"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "عِرق",
+                    "label": "العرق إسباني أو لاتيني",
+                    "type": "يختار",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each member in the household is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "حدد \"نعم\" أو \"لا\" لتحديد ما إذا كان كل فرد في الأسرة من أصل إسباني أو لاتيني أم لا. تقديم معلومات عن العرق اختياري ولن يؤثر على أهليتك للحصول على مساعدة رعاية الطفل أو على قيمة المساعدة التي ستقدمها لك هذه الوكالة.",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "نعم",
+                        "لا",
+                        "أفضل عدم الإجابة"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "سباق",
+                    "label": "سباق",
+                    "type": "مربع الاختيار",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single person. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "يمكنك اختيار فئات عرقية متعددة لشخص واحد. تقديم معلومات العرق اختياري ولن يؤثر على أهليتك للحصول على مساعدة رعاية الطفل أو على قيمة المساعدة التي ستقدمها لك هذه الوكالة.",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "الذكاء الاصطناعي",
+                          "label": "أمريكي هندي أو من سكان ألاسكا الأصليين"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "مثل",
+                          "label": "آسيوي"
                         },
                         {
-                          "value": "BL",
-                          "label": "Black or African American"
+                          "value": "بي إل",
+                          "label": "أسود أو أمريكي من أصل أفريقي"
                         },
                         {
-                          "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "value": "إتش بي",
+                          "label": "مواطن هاواي أو من جزر المحيط الهادئ"
                         },
                         {
-                          "value": "WH",
-                          "label": "White"
+                          "value": "هل",
+                          "label": "أبيض"
                         }
                       ]
                     },
@@ -831,11 +847,11 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "رقم الضمان الاجتماعي",
+                    "label": "رقم الضمان الاجتماعي",
+                    "type": "نص",
                     "required": false,
-                    "tooltip": "Fill in the Social Security Number (SSN) for your family members. SSN is optional. SSN may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "أدخل رقم الضمان الاجتماعي (SSN) لأفراد عائلتك. رقم الضمان الاجتماعي اختياري. يمكن للوكالات الفيدرالية والولائية والمحلية استخدامه لمنع تكرار الخدمات والاحتيال، ولأغراض الإبلاغ الفيدرالي.",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
@@ -850,28 +866,28 @@
         ]
       },
       {
-        "id": "child_family_needs",
-        "title": "Child / Family Needs",
+        "id": "احتياجات الطفل والأسرة",
+        "title": "احتياجات الطفل / الأسرة",
         "sections": [
           {
-            "id": "assistance_reason",
-            "title": "Reason for Child Care Assistance",
-            "description": "Select one or two reasons you are requesting Child Care Assistance.",
-            "tooltip": "Select one reason. In a two-parent household, parents/caretakers can have the same or different reasons for needing child care. Both parents/caretakers will be required to submit documentation in support of their own reason. If you are living in temporary housing, please select Homelessness even if you have another reason that applies to you.",
+            "id": "سبب المساعدة",
+            "title": "سبب طلب مساعدة رعاية الطفل",
+            "description": "حدد سببًا أو سببين لطلب مساعدة رعاية الطفل.",
+            "tooltip": "اختر سببًا واحدًا. في الأسرة المكونة من والدين، قد تكون لدى الوالدين/مقدمي الرعاية أسباب متشابهة أو مختلفة لحاجتهم إلى رعاية الطفل. سيُطلب من كلا الوالدين/مقدمي الرعاية تقديم وثائق تدعم سببهما الخاص. إذا كنت تعيش في سكن مؤقت، يُرجى اختيار \"التشرد\" حتى لو كان لديك سبب آخر ينطبق عليك.",
             "fields": [
               {
-                "id": "assistance_reason",
-                "label": "Reason(s) for Assistance",
-                "type": "select",
+                "id": "سبب المساعدة",
+                "label": "سبب(أسباب) المساعدة",
+                "type": "يختار",
                 "required": true,
                 "ui": {
                   "options": [
                     "",
-                    "Employment",
-                    "Looking for Work",
-                    "Vocational Training/Educational Activities",
-                    "Receiving Domestic Violence Services",
-                    "Homelessness"
+                    "توظيف",
+                    "أبحث عن عمل",
+                    "التدريب المهني/الأنشطة التعليمية",
+                    "تلقي خدمات العنف الأسري",
+                    "التشرد"
                   ]
                 },
                 "constraints": {
@@ -885,72 +901,72 @@
             ]
           },
           {
-            "id": "military_status",
-            "title": "Military and Parental Availability",
-            "description": "Provide information about parental military status and availability for child care.",
+            "id": "الحالة العسكرية",
+            "title": "التوافر العسكري والوالدي",
+            "description": "توفير معلومات حول الوضع العسكري للوالدين ومدى توفر رعاية الأطفال.",
             "fields": [
               {
-                "id": "is_parent_currently_active_in_military",
-                "label": "Is a Parent Currently Active Full-Time in the U.S. Military?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently active full-time in the U.S. Military.",
-                "type": "radio",
+                "id": "هل هو الوالد النشط حاليًا في الجيش",
+                "label": "هل أحد الوالدين حاليًا يعمل بدوام كامل في الجيش الأمريكي؟",
+                "tooltip": "قم بتحديد \"نعم\" أو \"لا\" للإشارة إلى ما إذا كان أحد الوالدين نشطًا حاليًا بدوام كامل في الجيش الأمريكي.",
+                "type": "راديو",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "is_parent_mem_of_guard_or_mru",
-                "label": "Is a Parent a Member of National Guard or Military Reserve Unit?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently a member of a National Guard or Military Reserve Unit.",
-                "type": "radio",
+                "id": "هو والد الحارس أو الأم",
+                "label": "هل أحد الوالدين عضو في الحرس الوطني أو وحدة الاحتياط العسكرية؟",
+                "tooltip": "قم بتحديد \"نعم\" أو \"لا\" للإشارة إلى ما إذا كان أحد الوالدين عضوًا حاليًا في الحرس الوطني أو وحدة الاحتياط العسكرية.",
+                "type": "راديو",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "is_non_custodial_parent_available",
-                "label": "Is the Non-Custodial Parent Available to Provide Care?",
-                "tooltip": "Check “YES” or “NO” to indicate whether there is a non-custodial parent available to provide child care.",
-                "type": "radio",
+                "id": "هل الوالد غير الحاضن متاح؟",
+                "label": "هل الوالد غير الحاضن متاح لتقديم الرعاية؟",
+                "tooltip": "قم باختيار \"نعم\" أو \"لا\" للإشارة إلى ما إذا كان هناك أحد الوالدين غير الحاضنين متاحًا لتوفير رعاية الطفل.",
+                "type": "راديو",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "duplicate_application",
-            "title": "Other Applications",
-            "description": "Indicate if you are also applying for or receiving child care from other agencies.",
-            "tooltip": "Indicate whether you are currently receiving or have applied for child care assistance with one of the agencies or organizations listed below. Note: If you are receiving Cash Assistance and are interested in child care assistance, you must apply through the Human Resources Administration. Reach out to your Benefits Access Center or visit the Human Resources Administration webpage.",
+            "id": "تطبيق مكرر",
+            "title": "تطبيقات أخرى",
+            "description": "أشر إذا كنت تتقدم بطلب للحصول على رعاية أطفال أو تتلقى هذه الرعاية من وكالات أخرى.",
+            "tooltip": "حدد ما إذا كنت تتلقى حاليًا مساعدة رعاية أطفال أو تقدمت بطلب للحصول عليها من إحدى الوكالات أو المنظمات المذكورة أدناه. ملاحظة: إذا كنت تتلقى مساعدة نقدية وترغب في الحصول على مساعدة رعاية أطفال، فيجب عليك التقديم عبر إدارة الموارد البشرية. تواصل مع مركز الوصول إلى المزايا أو تفضل بزيارة صفحة إدارة الموارد البشرية على الإنترنت.",
             "fields": [
               {
-                "id": "duplicate_app",
-                "label": "Are You Receiving or Applying for Child Care Through Another Agency?",
-                "type": "select",
+                "id": "تطبيق مكرر",
+                "label": "هل تتلقى أو تتقدم بطلب للحصول على رعاية الأطفال من خلال وكالة أخرى؟",
+                "type": "يختار",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Not Applicable",
-                    "Department of Education (DOE)",
-                    "Human Resources Administration (HRA)",
-                    "Department of Youth and Community Development (DYCD)",
-                    "Department of Homeless Services (DHS)",
-                    "Consortium for Worker Education (CWE)",
-                    "Administration for Children's Services (ACS)"
+                    "غير قابل للتطبيق",
+                    "وزارة التعليم",
+                    "إدارة الموارد البشرية",
+                    "وزارة الشباب وتنمية المجتمع",
+                    "إدارة خدمات المشردين (DHS)",
+                    "اتحاد تعليم العمال (CWE)",
+                    "إدارة خدمات الأطفال (ACS)"
                   ]
                 }
               }
@@ -959,370 +975,370 @@
         ]
       },
       {
-        "id": "employment",
-        "title": "Employment",
+        "id": "توظيف",
+        "title": "توظيف",
         "sections": [
           {
-            "id": "employment_precheck",
-            "title": "Tell us about your employment",
-            "description": "Tell us about your employment",
+            "id": "فحص التوظيف المسبق",
+            "title": "أخبرنا عن عملك",
+            "description": "أخبرنا عن عملك",
             "fields": [
               {
-                "id": "applicant_emp_income_indicator",
-                "label": "Does applicant earn any income/ wages from employment? ",
-                "type": "radio",
+                "id": "مؤشر دخل المتقدم للوظيفة",
+                "label": "هل يحصل المتقدم على أي دخل/أجور من العمل؟",
+                "type": "راديو",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "coparent_emp_income_indicator",
-                "label": "Does Coparent/2nd Guardian earn any income/ wages from employment? ",
-                "type": "radio",
+                "id": "مؤشر دخل الموظف المشارك",
+                "label": "هل يكسب الوالد المشارك/الوصي الثاني أي دخل/أجور من العمل؟",
+                "type": "راديو",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "applicant_jobs",
-            "title": "Applicant Employment Information",
-            "description": "Enter details for up to two jobs held by the applicant.",
+            "id": "المتقدمون للوظائف",
+            "title": "معلومات توظيف المتقدم",
+            "description": "أدخل تفاصيل ما يصل إلى وظيفتين يشغلهما المتقدم.",
             "visibilityCondition": {
-              "field": "applicant_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "field": "مؤشر دخل المتقدم للوظيفة",
+              "operator": "يساوي",
+              "value": "نعم"
             },
             "fields": [
               {
-                "id": "applicant_1st_job_start_date",
-                "label": "1st Job - Start Date",
-                "type": "date",
+                "id": "تاريخ بدء الوظيفة الأولى للمتقدم",
+                "label": "الوظيفة الأولى - تاريخ البدء",
+                "type": "تاريخ",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "الوظيفة الأولى"
                 }
               },
               {
-                "id": "applicant_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "المتقدم للوظيفة الأولى في الوردية الدورية",
+                "label": "الوظيفة الأولى - هل يوجد وردية دوارة؟",
+                "type": "راديو",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ],
-                  "group": "1st Job"
+                  "group": "الوظيفة الأولى"
                 }
               },
               {
-                "id": "applicant_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
-                "type": "radio",
+                "id": "المتقدم للوظيفة الأولى يتطلب ساعات عمل إضافية",
+                "label": "الوظيفة الأولى - هل تتطلب العمل الإضافي؟",
+                "type": "راديو",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ],
-                  "group": "1st Job"
+                  "group": "الوظيفة الأولى"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "اسم صاحب العمل للوظيفة الأولى",
+                "label": "الوظيفة الأولى - اسم صاحب العمل",
+                "type": "نص",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "الوظيفة الأولى"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "رقم هاتف صاحب العمل للمتقدم للوظيفة الأولى",
+                "label": "الوظيفة الأولى - هاتف صاحب العمل",
+                "type": "هاتف",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "الوظيفة الأولى"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "المتقدم_للوظيفة_الأولى_لصاحب_العمل",
+                "label": "الوظيفة الأولى - عنوان صاحب العمل",
+                "type": "نص",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "الوظيفة الأولى"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "المتقدم_للوظيفة_الأولى_لصاحب_العمل_في_المدينة",
+                "label": "الوظيفة الأولى - مدينة صاحب العمل",
+                "type": "نص",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "الوظيفة الأولى"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "المتقدم للوظيفة الأولى وحالة صاحب العمل",
+                "label": "الوظيفة الأولى - دولة صاحب العمل",
+                "type": "نص",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "الوظيفة الأولى"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "مقدم الطلب_الأول_للوظيفة_صاحب_العمل_الرمز_البريدي",
+                "label": "الوظيفة الأولى - رمز صاحب العمل البريدي",
+                "type": "نص",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "الوظيفة الأولى"
                 }
               },
               {
-                "id": "applicant_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
-                "type": "date",
+                "id": "تاريخ بدء الوظيفة الثانية للمتقدم",
+                "label": "الوظيفة الثانية - تاريخ البدء",
+                "type": "تاريخ",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "الوظيفة الثانية"
                 }
               },
               {
-                "id": "applicant_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "المتقدم للوظيفة الثانية في الوردية الدورية",
+                "label": "الوظيفة الثانية - هل يوجد وردية دوارة؟",
+                "type": "راديو",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ],
-                  "group": "2nd Job"
+                  "group": "الوظيفة الثانية"
                 }
               },
               {
-                "id": "applicant_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
-                "type": "radio",
+                "id": "المتقدم للوظيفة الثانية يتطلب ساعات عمل إضافية",
+                "label": "الوظيفة الثانية - هل تتطلب العمل الإضافي؟",
+                "type": "راديو",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ],
-                  "group": "2nd Job"
+                  "group": "الوظيفة الثانية"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "اسم صاحب العمل للوظيفة الثانية",
+                "label": "الوظيفة الثانية - اسم صاحب العمل",
+                "type": "نص",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "الوظيفة الثانية"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "هاتف صاحب العمل للمتقدم للوظيفة الثانية",
+                "label": "الوظيفة الثانية - هاتف صاحب العمل",
+                "type": "هاتف",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "الوظيفة الثانية"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "المتقدم للوظيفة الثانية في شارع صاحب العمل",
+                "label": "الوظيفة الثانية - عنوان صاحب العمل",
+                "type": "نص",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "الوظيفة الثانية"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "المتقدم للوظيفة الثانية في مدينة صاحب العمل",
+                "label": "الوظيفة الثانية - مدينة صاحب العمل",
+                "type": "نص",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "الوظيفة الثانية"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "المتقدم للوظيفة الثانية وحالة صاحب العمل",
+                "label": "الوظيفة الثانية - دولة صاحب العمل",
+                "type": "نص",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "الوظيفة الثانية"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "مقدم الطلب_الوظيفة_الثانية_صاحب_العمل_الرمز_البريدي",
+                "label": "الوظيفة الثانية - رمز صاحب العمل البريدي",
+                "type": "نص",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "الوظيفة الثانية"
                 }
               }
             ]
           },
           {
-            "id": "second_parent_jobs",
-            "title": "Second Parent Employment Information",
-            "description": "Enter details for up to two jobs held by the second parent (if applicable).",
+            "id": "وظائف الوالدين الثانية",
+            "title": "معلومات توظيف الوالد الثاني",
+            "description": "أدخل تفاصيل ما يصل إلى وظيفتين يشغلهما الوالد الثاني (إن أمكن).",
             "visibilityCondition": {
-              "field": "coparent_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "field": "مؤشر دخل الموظف المشارك",
+              "operator": "يساوي",
+              "value": "نعم"
             },
             "fields": [
               {
-                "id": "second_parent_1st_job_start_date",
-                "label": "1st Job - Start Date",
-                "type": "date",
+                "id": "تاريخ بدء الوظيفة الأولى للوالد الثاني",
+                "label": "الوظيفة الأولى - تاريخ البدء",
+                "type": "تاريخ",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "وردية العمل الدورية الأولى للوالد الثاني",
+                "label": "الوظيفة الأولى - هل يوجد وردية دوارة؟",
+                "type": "راديو",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
-                "type": "radio",
+                "id": "الوظيفة الأولى تتطلب وقتًا إضافيًا للوالد الثاني",
+                "label": "الوظيفة الأولى - هل تتطلب العمل الإضافي؟",
+                "type": "راديو",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "اسم صاحب العمل الأول للوالد الثاني",
+                "label": "الوظيفة الأولى - اسم صاحب العمل",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "رقم هاتف صاحب العمل الأول للوالد الثاني",
+                "label": "الوظيفة الأولى - هاتف صاحب العمل",
+                "type": "هاتف",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "الوالد الثاني_الوظيفة_الأولى_شارع_صاحب_العمل",
+                "label": "الوظيفة الأولى - عنوان صاحب العمل",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "الوالد الثاني_الوظيفة_الأولى_مدينة_صاحب_العمل",
+                "label": "الوظيفة الأولى - مدينة صاحب العمل",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "حالة صاحب العمل الأول للوظيفة الثانية",
+                "label": "الوظيفة الأولى - دولة صاحب العمل",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "الوالد الثاني_الوظيفة_الأولى_الرمز_البريدي_لصاحب_العمل",
+                "label": "الوظيفة الأولى - رمز صاحب العمل البريدي",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
-                "type": "date",
+                "id": "تاريخ بدء الوظيفة الثانية للوالد الثاني",
+                "label": "الوظيفة الثانية - تاريخ البدء",
+                "type": "تاريخ",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "وردية العمل الثانية للوالد الثاني",
+                "label": "الوظيفة الثانية - هل يوجد وردية دوارة؟",
+                "type": "راديو",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
-                "type": "radio",
+                "id": "الوظيفة الثانية للوالد تتطلب ساعات عمل إضافية",
+                "label": "الوظيفة الثانية - هل تتطلب العمل الإضافي؟",
+                "type": "راديو",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "اسم صاحب العمل الثاني للوالد الثاني",
+                "label": "الوظيفة الثانية - اسم صاحب العمل",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "رقم هاتف صاحب العمل الثاني",
+                "label": "الوظيفة الثانية - هاتف صاحب العمل",
+                "type": "هاتف",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "الوالد الثاني_الوظيفة الثانية_شارع صاحب العمل",
+                "label": "الوظيفة الثانية - عنوان صاحب العمل",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "الوالد الثاني_الوظيفة الثانية_مدينة صاحب العمل",
+                "label": "الوظيفة الثانية - مدينة صاحب العمل",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "حالة صاحب العمل الثاني للوظيفة الثانية",
+                "label": "الوظيفة الثانية - دولة صاحب العمل",
+                "type": "نص",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "الوالد الثاني_الوظيفة الثانية_الرمز البريدي لصاحب العمل",
+                "label": "الوظيفة الثانية - رمز صاحب العمل البريدي",
+                "type": "نص",
                 "required": false
               }
             ]
@@ -1330,29 +1346,29 @@
         ]
       },
       {
-        "id": "schedule",
-        "title": "Work/Activity/Travel Time Schedule",
+        "id": "جدول",
+        "title": "جدول العمل/النشاط/السفر",
         "sections": [
           {
-            "id": "schedule_section_info",
-            "title": "Schedule Information",
-            "type": "info",
+            "id": "معلومات قسم الجدول",
+            "title": "معلومات الجدول الزمني",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please indicate what days and hours you will need child care for based on your reason for care.\\n\\n- **Employed**: Indicate the hours you attend work\\n- **Educational or Vocational Program**: Indicate the hours you attend school or your program\\n- **Looking for Work**: Indicate the hours you spend looking for work\\n- **Homeless**: Indicate the hours you spend looking for housing\\n- **Attending Services for Domestic Violence**: Indicate the hours you attend services.\\n- **Attending Services for Substance Abuse Treatment**: Indicate the hours you attend services."
+            "content": "يرجى الإشارة إلى الأيام والساعات التي ستحتاج فيها إلى رعاية الطفل بناءً على سبب رعايتك.\\n\\n- **موظف**: حدد الساعات التي تحضر فيها العمل\\n- **برنامج تعليمي أو مهني**: حدد الساعات التي تحضر فيها المدرسة أو برنامجك\\n- **البحث عن عمل**: حدد الساعات التي تقضيها في البحث عن عمل\\n- **بلا مأوى**: حدد الساعات التي تقضيها في البحث عن سكن\\n- **حضور خدمات العنف المنزلي**: حدد الساعات التي تحضر فيها الخدمات.\\n- **حضور خدمات علاج تعاطي المخدرات**: حدد الساعات التي تحضر فيها الخدمات."
           },
           {
-            "id": "first_parent_activity_schedule",
-            "title": "First Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the first parent's activities.",
+            "id": "جدول نشاط الوالد الأول",
+            "title": "جدول أنشطة أولياء الأمور",
+            "description": "أدخل أوقات البداية والنهاية لكل يوم من أيام الأسبوع لأنشطة الوالدين الأولى.",
             "ui": {
-              "layout": "table",
+              "layout": "طاولة",
               "columns": [
-                "Start Time",
-                "End Time"
+                "وقت البدء",
+                "وقت النهاية"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
@@ -1362,162 +1378,162 @@
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "الاثنين",
+                  "يوم الثلاثاء",
+                  "الأربعاء",
+                  "يوم الخميس",
+                  "جمعة"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "تطبيق الجدول المحدد على أيام الأسبوع الأخرى",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "الاثنين",
+                  "يوم الثلاثاء",
+                  "الأربعاء",
+                  "يوم الخميس",
+                  "جمعة",
+                  "السبت",
+                  "الأحد"
                 ]
               }
             },
             "fields": [
               {
                 "id": "fp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "label": "الاثنين من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "الاثنين",
                   "column": 1
                 }
               },
               {
                 "id": "fp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "label": "من الاثنين إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "الاثنين",
                   "column": 2
                 }
               },
               {
-                "id": "fp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "id": "fp_الثلاثاء_من",
+                "label": "الثلاثاء من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "يوم الثلاثاء",
                   "column": 1
                 }
               },
               {
-                "id": "fp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "id": "fp_الثلاثاء_إلى",
+                "label": "الثلاثاء إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "يوم الثلاثاء",
                   "column": 2
                 }
               },
               {
-                "id": "fp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "id": "fp_الأربعاء_من",
+                "label": "الأربعاء من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "الأربعاء",
                   "column": 1
                 }
               },
               {
-                "id": "fp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "id": "fp_الأربعاء_إلى",
+                "label": "الأربعاء إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "الأربعاء",
                   "column": 2
                 }
               },
               {
                 "id": "fp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "label": "الخميس من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "يوم الخميس",
                   "column": 1
                 }
               },
               {
                 "id": "fp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "label": "الخميس إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "يوم الخميس",
                   "column": 2
                 }
               },
               {
                 "id": "fp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "label": "الجمعة من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "جمعة",
                   "column": 1
                 }
               },
               {
                 "id": "fp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "label": "الجمعة إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "جمعة",
                   "column": 2
                 }
               },
               {
-                "id": "fp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "id": "fp_السبت_من",
+                "label": "السبت من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "السبت",
                   "column": 1
                 }
               },
               {
-                "id": "fp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "id": "fp_السبت_إلى",
+                "label": "السبت إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "السبت",
                   "column": 2
                 }
               },
               {
                 "id": "fp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "label": "الأحد من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "الأحد",
                   "column": 1
                 }
               },
               {
                 "id": "fp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "label": "الأحد إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "الأحد",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "second_parent_activity_schedule",
-            "title": "Second Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the second parent's activities.",
+            "id": "جدول نشاط الوالد الثاني",
+            "title": "جدول أنشطة الوالدين الثانويين",
+            "description": "أدخل أوقات البداية والنهاية لكل يوم من أيام الأسبوع لأنشطة الوالدين الثانية.",
             "ui": {
-              "layout": "table",
+              "layout": "طاولة",
               "columns": [
-                "Start Time",
-                "End Time"
+                "وقت البدء",
+                "وقت النهاية"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
@@ -1527,310 +1543,310 @@
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "الاثنين",
+                  "يوم الثلاثاء",
+                  "الأربعاء",
+                  "يوم الخميس",
+                  "جمعة"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "تطبيق الجدول المحدد على أيام الأسبوع الأخرى",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "الاثنين",
+                  "يوم الثلاثاء",
+                  "الأربعاء",
+                  "يوم الخميس",
+                  "جمعة",
+                  "السبت",
+                  "الأحد"
                 ]
               }
             },
             "fields": [
               {
                 "id": "sp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "label": "الاثنين من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "الاثنين",
                   "column": 1
                 }
               },
               {
-                "id": "sp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "id": "من الاثنين إلى",
+                "label": "من الاثنين إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "الاثنين",
                   "column": 2
                 }
               },
               {
-                "id": "sp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "id": "من الثلاثاء إلى السبت",
+                "label": "الثلاثاء من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "يوم الثلاثاء",
                   "column": 1
                 }
               },
               {
-                "id": "sp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "id": "من الثلاثاء إلى",
+                "label": "الثلاثاء إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "يوم الثلاثاء",
                   "column": 2
                 }
               },
               {
-                "id": "sp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "id": "الأربعاء من",
+                "label": "الأربعاء من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "الأربعاء",
                   "column": 1
                 }
               },
               {
-                "id": "sp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "id": "الأربعاء_إلى",
+                "label": "الأربعاء إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "الأربعاء",
                   "column": 2
                 }
               },
               {
-                "id": "sp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "id": "من يوم الخميس",
+                "label": "الخميس من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "يوم الخميس",
                   "column": 1
                 }
               },
               {
-                "id": "sp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "id": "من الخميس إلى",
+                "label": "الخميس إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "يوم الخميس",
                   "column": 2
                 }
               },
               {
-                "id": "sp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "id": "من يوم الجمعة",
+                "label": "الجمعة من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "جمعة",
                   "column": 1
                 }
               },
               {
-                "id": "sp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "id": "من يوم الجمعة إلى",
+                "label": "الجمعة إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "جمعة",
                   "column": 2
                 }
               },
               {
-                "id": "sp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "id": "السبت من",
+                "label": "السبت من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "السبت",
                   "column": 1
                 }
               },
               {
-                "id": "sp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "id": "من السبت إلى",
+                "label": "السبت إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "السبت",
                   "column": 2
                 }
               },
               {
                 "id": "sp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "label": "الأحد من",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "الأحد",
                   "column": 1
                 }
               },
               {
                 "id": "sp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "label": "الأحد إلى",
+                "type": "وقت",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "الأحد",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "first_parent_travel_time",
-            "title": "First Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the first parent.",
+            "id": "وقت سفر الوالد الأول",
+            "title": "وقت سفر الوالد الأول",
+            "description": "أدخل أوقات السفر ووسيلة النقل للوالد الأول.",
             "fields": [
               {
-                "id": "fp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "id": "وقت السفر بعد الإسقاط",
+                "label": "وقت السفر عند التسليم",
+                "type": "يختار",
+                "tooltip": "حدد وقت السفر المعتاد من العمل/النشاط إلى مقدم رعاية طفلك",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 دقيقة",
+                    "30 دقيقة",
+                    "45 دقيقة",
+                    "ساعة واحدة",
+                    "أكثر من ساعة"
                   ]
                 }
               },
               {
-                "id": "fp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "id": "وقت الإسقاط fp_gt_1ساعة",
+                "label": "وقت التسليم (إذا كان > ساعة واحدة)",
+                "type": "نص",
                 "requiredCondition": {
-                  "field": "fp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "وقت السفر",
+                  "operator": "يساوي",
+                  "value": "أكثر من ساعة"
                 }
               },
               {
-                "id": "fp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "id": "وقت السفر لالتقاط fp",
+                "label": "وقت السفر عند الاستلام",
+                "type": "يختار",
+                "tooltip": "حدد وقت السفر المعتاد من العمل/النشاط إلى مقدم رعاية طفلك",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 دقيقة",
+                    "30 دقيقة",
+                    "45 دقيقة",
+                    "ساعة واحدة",
+                    "أكثر من ساعة"
                   ]
                 }
               },
               {
-                "id": "fp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "id": "وقت الاستلام: ساعة واحدة",
+                "label": "وقت الاستلام (إذا كان > ساعة واحدة)",
+                "type": "نص",
                 "requiredCondition": {
-                  "field": "fp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "وقت السفر",
+                  "operator": "يساوي",
+                  "value": "أكثر من ساعة"
                 }
               },
               {
-                "id": "fp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
-                "type": "radio",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
+                "id": "fp_إنزال_النقل_العام",
+                "label": "المواصلات العامة للتوصيل؟",
+                "type": "راديو",
+                "tooltip": "أشر إلى ما إذا كان مقدم الطلب يستخدم وسائل النقل العام للانتقال من وإلى العمل/النشاط إلى مقدم الخدمة.",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "fp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
-                "type": "radio",
+                "id": "خدمة النقل العام fp",
+                "label": "المواصلات العامة للاستلام؟",
+                "tooltip": "أشر إلى ما إذا كان مقدم الطلب يستخدم وسائل النقل العام للانتقال من وإلى العمل/النشاط إلى مقدم الخدمة.",
+                "type": "راديو",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "second_parent_travel_time",
-            "title": "Second Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the second parent.",
+            "id": "وقت سفر الوالد الثاني",
+            "title": "وقت سفر الوالد الثاني",
+            "description": "أدخل أوقات السفر وطريقة النقل للوالد الثاني.",
             "fields": [
               {
-                "id": "sp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
+                "id": "وقت السفر",
+                "label": "وقت السفر عند نقطة الإنزال",
+                "type": "يختار",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 دقيقة",
+                    "30 دقيقة",
+                    "45 دقيقة",
+                    "ساعة واحدة",
+                    "أكثر من ساعة"
                   ]
                 }
               },
               {
-                "id": "sp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
+                "id": "وقت السفر",
+                "label": "وقت السفر عند الاستلام",
+                "type": "يختار",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 دقيقة",
+                    "30 دقيقة",
+                    "45 دقيقة",
+                    "ساعة واحدة",
+                    "أكثر من ساعة"
                   ]
                 }
               },
               {
-                "id": "sp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "id": "وقت الإسقاط النهائي ساعة واحدة",
+                "label": "وقت التسليم (إذا كان > ساعة واحدة)",
+                "type": "نص",
                 "requiredCondition": {
-                  "field": "sp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "وقت السفر",
+                  "operator": "يساوي",
+                  "value": "أكثر من ساعة"
                 }
               },
               {
-                "id": "sp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "id": "وقت الاستلام: ساعة واحدة",
+                "label": "وقت الاستلام (إذا كان > ساعة واحدة)",
+                "type": "نص",
                 "requiredCondition": {
-                  "field": "sp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "وقت السفر",
+                  "operator": "يساوي",
+                  "value": "أكثر من ساعة"
                 }
               },
               {
-                "id": "sp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
-                "type": "radio",
+                "id": "إسقاط النقل العام",
+                "label": "المواصلات العامة للتوصيل؟",
+                "type": "راديو",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               },
               {
-                "id": "sp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
-                "type": "radio",
+                "id": "خدمة النقل العام",
+                "label": "وسائل النقل العام للاستلام؟",
+                "type": "راديو",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "نعم",
+                    "لا"
                   ]
                 }
               }
@@ -1839,122 +1855,122 @@
         ]
       },
       {
-        "id": "income",
-        "title": "Income Information",
+        "id": "دخل",
+        "title": "معلومات الدخل",
         "sections": [
           {
-            "id": "income_step_info",
-            "title": "Instructions",
-            "type": "info",
+            "id": "معلومات خطوة الدخل",
+            "title": "تعليمات",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please include income/benefits information for yourself and, if applicable, your spouse, your child’s second caretaker, and/or any other adult with whom you share a child, if they live in your home.\\n\\nIndicate if you receive money from the following sources by selecting “Yes” or “No.” If you select “Yes,” you will be asked for additional information.\\n\\nIf the second caretaker in the household also receives the same income source, add a separate line for their income."
+            "content": "يرجى تضمين معلومات الدخل/المزايا الخاصة بك، وإذا لزم الأمر، لزوجك/زوجتك، أو الوصي الثاني لطفلك، أو أي شخص بالغ آخر تتشارك معه طفلًا، إذا كان يعيش معك في المنزل. حدد ما إذا كنت تتلقى أموالًا من المصادر التالية باختيار \"نعم\" أو \"لا\". إذا اخترت \"نعم\"، فسيُطلب منك معلومات إضافية. إذا كان الوصي الثاني في المنزل يتلقى أيضًا نفس مصدر الدخل، فأضف سطرًا منفصلًا لدخله."
           },
           {
-            "id": "income_sources",
-            "title": "Income Sources",
-            "description": "Provide details about all income sources applicable to the applicant or household.",
+            "id": "مصادر الدخل",
+            "title": "مصادر الدخل",
+            "description": "تقديم تفاصيل حول جميع مصادر الدخل التي تنطبق على مقدم الطلب أو الأسرة.",
             "fields": [
               {
-                "id": "income_sources",
-                "label": "List of Income Sources",
-                "type": "group",
+                "id": "مصادر الدخل",
+                "label": "قائمة مصادر الدخل",
+                "type": "مجموعة",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "name_ref",
-                    "how_often",
-                    "recipient",
-                    "monthly_amount"
+                    "اسم المرجع",
+                    "عدد المرات",
+                    "متلقي",
+                    "المبلغ الشهري"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "name_ref",
-                    "label": "Income Source Type",
-                    "type": "select",
+                    "id": "اسم المرجع",
+                    "label": "نوع مصدر الدخل",
+                    "type": "يختار",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "ApplicantWages",
-                        "SecondParentWages",
-                        "SelfEmployment",
-                        "ChildSupport",
-                        "Alimony",
-                        "Unemployment",
-                        "SocialSecurity",
-                        "Disability",
-                        "Rental",
-                        "Dividends",
-                        "Retirement",
-                        "CashAssistance",
-                        "Other"
+                        "أجور المتقدمين",
+                        "أجور الوالدين الثانويين",
+                        "العمل الحر",
+                        "دعم الطفل",
+                        "النفقة",
+                        "البطالة",
+                        "الضمان الاجتماعي",
+                        "الإعاقة",
+                        "الإيجار",
+                        "أرباح الأسهم",
+                        "التقاعد",
+                        "المساعدة النقدية",
+                        "آخر"
                       ]
                     }
                   },
                   {
-                    "id": "other_source_text",
-                    "label": "Other Source (If applicable)",
-                    "type": "text",
+                    "id": "نص المصدر الآخر",
+                    "label": "مصدر آخر (إن وجد)",
+                    "type": "نص",
                     "visibilityCondition": {
-                      "field": "name_ref",
-                      "operator": "equals",
-                      "value": "Other"
+                      "field": "اسم المرجع",
+                      "operator": "يساوي",
+                      "value": "آخر"
                     },
                     "requiredCondition": {
                       "condition": {
-                        "field": "name_ref",
-                        "operator": "equals",
-                        "value": "Other"
+                        "field": "اسم المرجع",
+                        "operator": "يساوي",
+                        "value": "آخر"
                       }
                     }
                   },
                   {
-                    "id": "is_source_applicable",
-                    "label": "Is this Source Applicable?",
-                    "type": "radio",
+                    "id": "هل المصدر قابل للتطبيق",
+                    "label": "هل هذا المصدر ينطبق؟",
+                    "type": "راديو",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "نعم",
+                        "لا"
                       ]
                     }
                   },
                   {
-                    "id": "gross_amount",
-                    "label": "Gross Amount ($)",
-                    "type": "number",
+                    "id": "المبلغ الإجمالي",
+                    "label": "المبلغ الإجمالي ($)",
+                    "type": "رقم",
                     "required": true
                   },
                   {
-                    "id": "how_often",
-                    "label": "Frequency of Income",
-                    "type": "radio",
+                    "id": "عدد المرات",
+                    "label": "تردد الدخل",
+                    "type": "راديو",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Weekly",
-                        "Bi-weekly",
-                        "Monthly",
-                        "Other"
+                        "أسبوعي",
+                        "كل أسبوعين",
+                        "شهريا",
+                        "آخر"
                       ]
                     }
                   },
                   {
-                    "id": "recipient",
-                    "label": "Recipient of Income",
-                    "type": "text",
+                    "id": "متلقي",
+                    "label": "متلقي الدخل",
+                    "type": "نص",
                     "required": true
                   },
                   {
-                    "id": "monthly_amount",
-                    "label": "Monthly Amount ($)",
-                    "type": "number",
+                    "id": "المبلغ الشهري",
+                    "label": "المبلغ الشهري ($)",
+                    "type": "رقم",
                     "required": true
                   }
                 ]
@@ -1962,38 +1978,38 @@
             ]
           },
           {
-            "id": "total_income",
-            "title": "Total Household Income",
-            "description": "Sum of all monthly income across sources.",
+            "id": "إجمالي الدخل",
+            "title": "إجمالي دخل الأسرة",
+            "description": "مجموع كل الدخل الشهري عبر المصادر.",
             "fields": [
               {
-                "id": "total_income",
-                "label": "Total Monthly Income ($)",
-                "type": "number",
+                "id": "إجمالي الدخل",
+                "label": "إجمالي الدخل الشهري (دولار)",
+                "type": "رقم",
                 "required": true
               }
             ]
           },
           {
-            "id": "income_proof_section",
-            "title": "Income Proof",
+            "id": "قسم إثبات الدخل",
+            "title": "إثبات الدخل",
             "fields": [
               {
-                "id": "income_proof",
-                "label": "Upload Income Proof",
-                "type": "file",
+                "id": "ضمان الدخل",
+                "label": "تحميل إثبات الدخل",
+                "type": "ملف",
                 "requiredCondition": {
                   "condition": {
-                    "field": "assistance_reason",
-                    "operator": "includes",
-                    "value": "Employment"
+                    "field": "سبب المساعدة",
+                    "operator": "يشمل",
+                    "value": "توظيف"
                   }
                 },
                 "constraints": {
                   "maxFileSizeMB": 5,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg"
+                    "تطبيق/pdf",
+                    "صورة/jpeg"
                   ],
                   "imageResolution": {
                     "minWidth": 800,
@@ -2001,10 +2017,10 @@
                   }
                 },
                 "metadata": {
-                  "proofCategory": "Income Verification",
+                  "proofCategory": "التحقق من الدخل",
                   "examples": [
-                    "Pay Stub",
-                    "W-2"
+                    "كشف الراتب",
+                    "نموذج W-2"
                   ],
                   "multiple": true
                 }
@@ -2014,72 +2030,72 @@
         ]
       },
       {
-        "id": "provider",
-        "title": "Provider",
+        "id": "مزود",
+        "title": "مزود",
         "sections": [
           {
-            "id": "provider_step_info",
-            "title": "Instructions",
-            "type": "info",
+            "id": "معلومات خطوة المزود",
+            "title": "تعليمات",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "If you are found eligible for child care assistance, you can choose center-based or home-based care from a licensed, registered, or legally exempt provider. If you choose a provider that is not licensed or registered, the provider must be enrolled as a legally exempt provider.\\n\\nIf you know which child care providers you would like your child to attend, provide the names and addresses of your choice of providers. You can leave this section blank if you do not know (it will not impact your eligibility and you will have an opportunity to select a provider if determined eligible)."
+            "content": "إذا كنتَ مؤهلاً للحصول على مساعدة رعاية أطفال، يمكنك اختيار رعاية في مركز رعاية أو رعاية منزلية من مُقدّم رعاية مرخص أو مُسجّل أو مُعفى قانونيًا. إذا اخترتَ مُقدّم رعاية غير مرخص أو مُسجّل، فيجب أن يكون مُسجّلاً كمُقدّم رعاية مُعفى قانونيًا. إذا كنتَ تعرف مُقدّمي رعاية الأطفال الذين ترغب في أن يرتادهم طفلك، فأدخل أسماء وعناوين مُقدّمي الرعاية الذين اخترتهم. يُمكنك ترك هذا القسم فارغًا إذا لم تكن تعرف (لن يؤثر ذلك على أهليتك، وستتاح لك فرصة اختيار مُقدّم رعاية إذا ثبت أهليتك)."
           },
           {
-            "id": "provider_choices",
-            "title": "Provider Choices",
-            "description": "Specify details of the provider where you intend to enroll the child(ren).",
+            "id": "خيارات المزود",
+            "title": "خيارات مقدم الخدمة",
+            "description": "حدد تفاصيل مقدم الخدمة الذي تنوي تسجيل الطفل (الأطفال) فيه.",
             "fields": [
               {
-                "id": "provider_choices",
-                "label": "List of Providers",
-                "type": "group",
+                "id": "خيارات المزود",
+                "label": "قائمة مقدمي الخدمات",
+                "type": "مجموعة",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "provider_name",
-                    "program_number",
-                    "provider_zip_code"
+                    "اسم المزود",
+                    "رقم البرنامج",
+                    "مزود_الرمز_البريدي"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "provider_name",
-                    "label": "Provider Name",
-                    "type": "text",
+                    "id": "اسم المزود",
+                    "label": "اسم المزود",
+                    "type": "نص",
                     "required": true
                   },
                   {
-                    "id": "program_number",
-                    "label": "Program Number (If Applicable)",
-                    "type": "text",
+                    "id": "رقم البرنامج",
+                    "label": "رقم البرنامج (إن وجد)",
+                    "type": "نص",
                     "required": false
                   },
                   {
-                    "id": "provider_street",
-                    "label": "Street Address",
-                    "type": "text",
+                    "id": "مزود_الشارع",
+                    "label": "عنوان الشارع",
+                    "type": "نص",
                     "required": true
                   },
                   {
-                    "id": "provider_city",
-                    "label": "City",
-                    "type": "text",
+                    "id": "مزود_المدينة",
+                    "label": "مدينة",
+                    "type": "نص",
                     "required": true
                   },
                   {
-                    "id": "provider_state",
-                    "label": "State",
-                    "type": "text",
+                    "id": "حالة المزود",
+                    "label": "ولاية",
+                    "type": "نص",
                     "required": true
                   },
                   {
-                    "id": "provider_zip_code",
-                    "label": "Zip Code",
-                    "type": "text",
+                    "id": "مزود_الرمز_البريدي",
+                    "label": "الرمز البريدي",
+                    "type": "نص",
                     "required": true
                   }
                 ]
@@ -2089,186 +2105,186 @@
         ]
       },
       {
-        "id": "document_upload_step",
-        "title": "Document Upload",
-        "description": "The Application for Child Care Assistance (CFWB-012) must include supporting documentation. Check to ensure that documentation is provided for each requirement of subsidy eligibility.",
+        "id": "خطوة تحميل المستند",
+        "title": "تحميل المستندات",
+        "description": "يجب أن يتضمن طلب مساعدة رعاية الطفل (CFWB-012) وثائق داعمة. يُرجى التأكد من تقديم الوثائق اللازمة لكل شرط من شروط استحقاق الدعم.",
         "sections": [
           {
-            "id": "nyc_residency",
-            "title": "New York City Residency",
-            "description": "These documents confirm that you live in New York City. Please upload one of the following documents.",
+            "id": "إقامة في مدينة نيويورك",
+            "title": "إقامة مدينة نيويورك",
+            "description": "هذه المستندات تؤكد أنك تقيم في مدينة نيويورك. يُرجى تحميل أحد المستندات التالية.",
             "fields": [
               {
-                "id": "nyc_residency_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "نوع الإقامة في مدينة نيويورك",
+                "label": "اختر أحد الخيارات التالية:",
+                "type": "راديو",
                 "required": true,
                 "ui": {
                   "options": [
-                    "IDNYC",
-                    "Utility Bill",
-                    "Section 8 Award Letter",
-                    "Driver’s License",
-                    "Rent Receipt",
-                    "NYCHA Certificate",
-                    "CFWB-067 Residency Attestation",
-                    "CFWB-027 Housing Attestation with address listed",
-                    "Shelter Residency Letter with address listed",
-                    "Other"
+                    "هوية مدينة نيويورك",
+                    "فاتورة المرافق",
+                    "خطاب جائزة القسم 8",
+                    "رخصة السائق",
+                    "إيصال الإيجار",
+                    "شهادة NYCHA",
+                    "شهادة الإقامة CFWB-067",
+                    "CFWB-027 شهادة السكن مع العنوان المدرج",
+                    "خطاب إقامة في ملجأ مع ذكر العنوان",
+                    "آخر"
                   ]
                 }
               },
               {
-                "id": "nyc_residency_file",
-                "label": "Upload Residency Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
-                "required": true, 
+                "id": "ملف إقامة مدينة نيويورك",
+                "label": "تحميل وثيقة إثبات الإقامة",
+                "description": "لإضافة مستند إلى تطبيقك، يمكنك تحميل صورة أو ملف ممسوح ضوئيًا من هاتفك أو جهازك. تشمل الصيغ المقبولة: .pdf، .gif، .jpeg، .jpg، و.png، حتى حجم 25 ميجابايت. تعرّف على كيفية تحميل ملفاتك من خلال هذا الفيديو التعليمي.",
+                "type": "ملف",
+                "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "تطبيق/pdf",
+                    "صورة/jpeg",
+                    "صورة/jpg",
+                    "صورة/png",
+                    "صورة/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "NYC Residency",
+                  "proofCategory": "الإقامة في مدينة نيويورك",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "citizenship_status",
-            "title": "Citizenship or Immigration Status",
-            "description": "These documents confirm the citizenship/immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for ONLY each child needing care.",
+            "id": "حالة المواطنة",
+            "title": "حالة المواطنة أو الهجرة",
+            "description": "تؤكد هذه المستندات حالة الجنسية/الهجرة لأطفال عائلتك الذين تتقدم بطلب للحصول على مساعدة رعاية أطفال. يُرجى تحميل أحد المستندات التالية لكل طفل يحتاج إلى رعاية فقط.",
             "fields": [
               {
-                "id": "citizenship_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "نوع وثيقة المواطنة",
+                "label": "اختر أحد الخيارات التالية:",
+                "type": "راديو",
                 "required": true,
                 "ui": {
                   "options": [
-                    "US Birth Certificate",
-                    "Alien Registration Card including Permanent Resident or Green Card",
-                    "Passport",
-                    "FS-240 (Report of Birth Abroad of a U.S. Citizen)",
-                    "Naturalization Certificate",
-                    "Other"
+                    "شهادة الميلاد الأمريكية",
+                    "بطاقة تسجيل الأجانب بما في ذلك الإقامة الدائمة أو البطاقة الخضراء",
+                    "جواز سفر",
+                    "FS-240 (تقرير ميلاد مواطن أمريكي في الخارج)",
+                    "شهادة التجنس",
+                    "آخر"
                   ]
                 }
               },
               {
-                "id": "citizenship_doc_file",
-                "label": "Upload Citizenship/Immigration Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "ملف وثيقة المواطنة",
+                "label": "تحميل وثيقة الجنسية/الهجرة",
+                "description": "لإضافة مستند إلى تطبيقك، يمكنك تحميل صورة أو ملف ممسوح ضوئيًا من هاتفك أو جهازك. تشمل الصيغ المقبولة: .pdf، .gif، .jpeg، .jpg، و.png، حتى حجم 25 ميجابايت. تعرّف على كيفية تحميل ملفاتك من خلال هذا الفيديو التعليمي.",
+                "type": "ملف",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "تطبيق/pdf",
+                    "صورة/jpeg",
+                    "صورة/jpg",
+                    "صورة/png",
+                    "صورة/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Citizenship/Immigration Status",
+                  "proofCategory": "حالة المواطنة/الهجرة",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "child_relationship",
-            "title": "Child’s Relationship to Parent/Applicant",
-            "description": "These documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them or not. If you are a legal guardian with financial responsibility, you must upload a Court order OR a letter of guardianship.",
+            "id": "علاقة الطفل",
+            "title": "علاقة الطفل بالوالد/المتقدم",
+            "description": "تُثبت هذه المستندات صلتك بأطفال أسرتك دون سن ١٨ عامًا. يُرجى تحميل أحد المستندات التالية لكل طفل في الأسرة دون سن ١٨ عامًا، سواءً كانوا بحاجة إلى رعاية أم لا. إذا كنتَ وصيًا قانونيًا ومسؤولًا ماليًا، فيجب عليك تحميل أمر قضائي أو خطاب وصاية.",
             "fields": [
               {
-                "id": "relationship_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "نوع مستند العلاقة",
+                "label": "اختر أحد الخيارات التالية:",
+                "type": "راديو",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Passport with parent's signature",
-                    "Court order for legal guardian with financial responsibility",
-                    "Letter of Guardianship",
-                    "Other - CFWB-058 Caretaker Attestation"
+                    "شهادة الميلاد",
+                    "سجل التبني",
+                    "سجل المعمودية",
+                    "جواز السفر مع توقيع الوالدين",
+                    "أمر قضائي بشأن الوصي القانوني ذو المسؤولية المالية",
+                    "خطاب الوصاية",
+                    "أخرى - شهادة الوصي CFWB-058"
                   ]
                 }
               },
               {
-                "id": "relationship_doc_file",
-                "label": "Upload Relationship Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "ملف_وثيقة_العلاقة",
+                "label": "تحميل مستند العلاقة",
+                "description": "لإضافة مستند إلى تطبيقك، يمكنك تحميل صورة أو ملف ممسوح ضوئيًا من هاتفك أو جهازك. تشمل الصيغ المقبولة: .pdf، .gif، .jpeg، .jpg، و.png، حتى حجم 25 ميجابايت. تعرّف على كيفية تحميل ملفاتك من خلال هذا الفيديو التعليمي.",
+                "type": "ملف",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "تطبيق/pdf",
+                    "صورة/jpeg",
+                    "صورة/jpg",
+                    "صورة/png",
+                    "صورة/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Relationship",
+                  "proofCategory": "علاقة الطفل",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "age_proof",
-            "title": "Age",
-            "description": "These documents confirm the age of the children in your household. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:",
+            "id": "مقاوم للشيخوخة",
+            "title": "عمر",
+            "description": "هذه المستندات تُثبت عمر الأطفال في أسرتكم. يُرجى تحميل أحد المستندات التالية لكل طفل في الأسرة دون سن 18 عامًا، بغض النظر عما إذا كانوا بحاجة إلى رعاية أطفال أم لا:",
             "fields": [
               {
-                "id": "age_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "نوع مستند العمر",
+                "label": "اختر أحد الخيارات التالية:",
+                "type": "راديو",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Alien Registration Card",
-                    "Passport",
-                    "Official hospital documentation of the child’s birth"
+                    "شهادة الميلاد",
+                    "سجل التبني",
+                    "سجل المعمودية",
+                    "بطاقة تسجيل الأجانب",
+                    "جواز سفر",
+                    "توثيق المستشفى الرسمي لميلاد الطفل"
                   ]
                 }
               },
               {
-                "id": "age_doc_file",
-                "label": "Upload Age Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "ملف_وثائق_العمر",
+                "label": "تحميل وثيقة إثبات العمر",
+                "description": "لإضافة مستند إلى تطبيقك، يمكنك تحميل صورة أو ملف ممسوح ضوئيًا من هاتفك أو جهازك. تشمل الصيغ المقبولة: .pdf، .gif، .jpeg، .jpg، و.png، حتى حجم 25 ميجابايت. تعرّف على كيفية تحميل ملفاتك من خلال هذا الفيديو التعليمي.",
+                "type": "ملف",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "تطبيق/pdf",
+                    "صورة/jpeg",
+                    "صورة/jpg",
+                    "صورة/png",
+                    "صورة/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Age",
+                  "proofCategory": "عمر الطفل",
                   "multiple": false
                 }
               }
@@ -2277,9 +2293,9 @@
         ]
       },
       {
-        "id": "review",
-        "title": "Review & Submit",
-        "type": "review",
+        "id": "مراجعة",
+        "title": "المراجعة والإرسال",
+        "type": "مراجعة",
         "sections": []
       }
     ]

@@ -1,192 +1,201 @@
 {
   "form": {
-    "title": "Group Child Care Permit Application",
-    "description": "Multi-step application for obtaining a permit to operate group child care programs.",
+    "title": "단체 아동 보육 허가 신청서",
+    "description": "단체 아동보육 프로그램 운영 허가를 받기 위한 여러 단계의 신청.",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "왼쪽"
     },
     "steps": [
       {
-        "id": "establishment_information",
-        "title": "Establishment Information",
+        "id": "설립 정보",
+        "title": "설립 정보",
         "sections": [
           {
-            "id": "establishment_address",
-            "title": "Establishment Address",
-            "description": "Enter the physical address where business will operate. If you are applying for a Tattoo License, enter your mailing or home address.",
+            "id": "설립 주소",
+            "title": "설립 주소",
+            "description": "사업체를 운영할 실제 주소를 입력하세요. 문신 허가를 신청하는 경우 우편 주소나 집 주소를 입력하세요.",
             "ui": {
-              "autocomplete": "street_1",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "거리_1",
+              "placeholder": "도로명 주소를 입력하세요",
+              "overrideComponent": "주소 자동완성"
             },
             "metadata": {
               "integration": {
                 "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "feature": "주소 자동완성"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "도시",
+                  "source": "소재지",
                   "fallbackSources": [
-                    "postal_town",
-                    "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "우편도시",
+                    "하위 지역성 수준 1",
+                    "행정구역 레벨 2"
                   ]
                 },
                 {
-                  "fieldId": "borough",
-                  "source": "sublocality_level_1",
+                  "fieldId": "자치구",
+                  "source": "하위 지역성 수준 1",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "행정구역 레벨 2"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "자치구 지도"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "building_number", "source": "street_number" },
-                { "fieldId": "house_number", "source": "street_number" }
+                {
+                  "fieldId": "상태",
+                  "source": "행정구역레벨1"
+                },
+                {
+                  "fieldId": "건물 번호",
+                  "source": "번지"
+                },
+                {
+                  "fieldId": "집 번호",
+                  "source": "번지"
+                }
               ]
             },
             "fields": [
               {
-                "id": "address_type",
-                "label": "Address Type",
-                "type": "select",
+                "id": "주소_유형",
+                "label": "주소 유형",
+                "type": "선택하다",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Select",
-                    "Complete Address",
-                    "Cross Street (Intersection)",
-                    "Place (Landmark)"
+                    "선택하다",
+                    "전체 주소",
+                    "크로스 스트리트(교차로)",
+                    "장소(랜드마크)"
                   ]
                 }
               },
               {
-                "id": "street_1",
-                "label": "Street 1",
-                "type": "text",
+                "id": "거리_1",
+                "label": "거리 1",
+                "type": "텍스트",
                 "required": true
               },
               {
-                "id": "building_number",
-                "label": "Building #",
-                "type": "text",
+                "id": "건물 번호",
+                "label": "건물 #",
+                "type": "텍스트",
                 "required": true
               },
               {
-                "id": "street_2",
-                "label": "Street 2",
-                "type": "text",
+                "id": "거리_2",
+                "label": "거리 2",
+                "type": "텍스트",
                 "required": false
               },
               {
-                "id": "unit_type",
-                "label": "Unit Type",
-                "type": "select",
+                "id": "단위_유형",
+                "label": "단위 유형",
+                "type": "선택하다",
                 "required": false,
                 "ui": {
                   "options": [
-                    "LBBY",
-                    "APT",
-                    "BLDG",
-                    "STE",
-                    "FL",
-                    "BSMT",
-                    "FRNT",
-                    "SIDE",
-                    "REAR",
+                    "엘비",
+                    "적절한",
+                    "빌딩",
+                    "너",
+                    "안에",
+                    "비에스엠티",
+                    "프런트",
+                    "옆",
+                    "뒤쪽",
                     "UPPR",
-                    "LOWR",
-                    "PIER"
+                    "아래에",
+                    "교각"
                   ]
                 }
               },
               {
-                "id": "unit",
-                "label": "Unit",
-                "type": "text",
+                "id": "단위",
+                "label": "단위",
+                "type": "텍스트",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "도시",
+                "label": "도시",
+                "type": "텍스트",
                 "required": true
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "상태",
+                "label": "상태",
+                "type": "텍스트",
                 "required": true
               },
               {
-                "id": "borough",
-                "label": "Borough",
-                "type": "select",
+                "id": "자치구",
+                "label": "자치구",
+                "type": "선택하다",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
-                    "Staten Island"
+                    "브롱크스",
+                    "브루클린",
+                    "맨해튼",
+                    "퀸즈",
+                    "스태튼 아일랜드"
                   ]
                 }
               },
               {
-                "id": "bin",
-                "label": "Bin",
-                "type": "text",
+                "id": "큰 상자",
+                "label": "큰 상자",
+                "type": "텍스트",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "지오클라이언트 API"
                 }
               },
               {
-                "id": "bbl",
-                "label": "Bbl",
-                "type": "text",
+                "id": "비비엘",
+                "label": "비블",
+                "type": "텍스트",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "지오클라이언트 API"
                 }
               },
               {
-                "id": "community_district",
-                "label": "Community District",
-                "type": "text",
+                "id": "커뮤니티_지구",
+                "label": "커뮤니티 지구",
+                "type": "텍스트",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "지오클라이언트 API"
                 }
               },
               {
-                "id": "council_district",
-                "label": "Council District",
-                "type": "text",
+                "id": "협의회_지구",
+                "label": "지방의회",
+                "type": "텍스트",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "지오클라이언트 API"
                 }
               },
               {
-                "id": "police_precinct",
-                "label": "Police Precinct",
-                "type": "text",
+                "id": "경찰서",
+                "label": "경찰서",
+                "type": "텍스트",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "지오클라이언트 API"
                 }
               },
               {
-                "id": "house_number",
-                "label": "House Number",
-                "type": "text",
+                "id": "집 번호",
+                "label": "집 번호",
+                "type": "텍스트",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "지오클라이언트 API"
                 }
               }
             ]
@@ -194,174 +203,210 @@
         ]
       },
       {
-        "id": "contact_information",
-        "title": "Contact Information – Applicant and Other Contacts",
+        "id": "연락처 정보",
+        "title": "연락처 정보 – 신청자 및 기타 연락처",
         "sections": [
           {
-            "id": "contact_info_guidance",
-            "title": "Contact Type Guidance",
-            "type": "info",
+            "id": "연락처_정보_안내",
+            "title": "연락처 유형 안내",
+            "type": "정보",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "### Applying as a Corporation, Partnership, or Not-for-Profit?\n\nSelect **\"Business Information\"** as your Type of Contact and complete the required fields.  \nBusinesses also have the opportunity to provide a complete list of the responsible individuals within their organization. To add each individual's information to your application, please select **\"Other Contact\"** as the Type of Contact and complete the required fields that appear.\n\n---\n\n### Applying as an Individual or Sole Proprietorship?\n\nSelect **\"Individual Owner\"** as your Type of Contact and complete the required fields that appear.\n\n---\n\n### Emergency Contact?\n\nUnless a **\"Designated Emergency Contact\"** is specified, the applicant will be assumed to be the Emergency Contact.  \nTo identify someone other than the applicant to be contacted in the event of an emergency, please select **\"Designated Emergency Contact\"** as the Type of Contact and complete the required fields that appear."
+            "content": "### 법인, 파트너십 또는 비영리 단체로 지원하시나요?\n\n연락처 유형으로 **\"사업 정보\"**를 선택하고 필수 입력란을 작성하세요.\n기업은 조직 내 담당자의 전체 목록을 제공할 수도 있습니다. 신청서에 각 담당자의 정보를 추가하려면 연락처 유형으로 **\"기타 담당자\"**를 선택하고 표시되는 필수 입력란을 작성하세요.\n\n---\n\n### 개인 또는 개인사업자로 지원하시나요?\n\n연락처 유형으로 **\"개인 소유자\"**를 선택하고 표시되는 필수 입력란을 작성하세요.\n\n---\n\n### 비상 연락처?\n\n**\"지정된 비상 연락처\"**를 지정하지 않으면 신청자가 비상 연락처로 간주됩니다.\n비상 상황 발생 시 신청자 외의 다른 사람에게 연락하려면 연락처 유형으로 **\"지정된 비상 연락처\"**를 선택하고 표시되는 필수 입력란을 작성하세요."
           },
           {
-            "id": "contact_list",
-            "title": "Contact List",
+            "id": "연락처 목록",
+            "title": "연락처 목록",
             "fields": [
               {
-                "id": "contacts",
-                "label": "Contacts",
-                "type": "group",
+                "id": "콘택트 렌즈",
+                "label": "콘택트 렌즈",
+                "type": "그룹",
                 "metadata": {
                   "multiple": true,
-                  "tableColumns": ["contact_type", "first_name", "last_name", "establishment_name", "email"]
+                  "tableColumns": [
+                    "연락처_유형",
+                    "이름",
+                    "성",
+                    "시설 이름",
+                    "이메일"
+                  ]
                 },
                 "fields": [
                   {
-                    "id": "contact_type",
-                    "label": "Type of Contact",
-                    "type": "select",
+                    "id": "연락처_유형",
+                    "label": "연락처 유형",
+                    "type": "선택하다",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Business Information",
-                        "Individual Owner",
-                        "Other Contact",
-                        "Designated Emergency Contact"
+                        "사업 정보",
+                        "개인 소유자",
+                        "기타 연락처",
+                        "지정된 비상 연락처"
                       ]
                     }
                   },
                   {
-                    "id": "establishment_name",
-                    "label": "Establishment Name",
-                    "type": "text",
+                    "id": "시설 이름",
+                    "label": "설립명",
+                    "type": "텍스트",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "연락처_유형",
+                      "operator": "동등하다",
+                      "value": "사업 정보"
                     }
                   },
                   {
-                    "id": "dba_name",
-                    "label": "DBA / Trade Name",
-                    "type": "text",
+                    "id": "디비이름",
+                    "label": "DBA / 상호",
+                    "type": "텍스트",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "연락처_유형",
+                      "operator": "동등하다",
+                      "value": "사업 정보"
                     }
                   },
                   {
-                    "id": "legal_structure",
-                    "label": "Legal Structure",
-                    "type": "select",
+                    "id": "법적 구조",
+                    "label": "법적 구조",
+                    "type": "선택하다",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "연락처_유형",
+                      "operator": "동등하다",
+                      "value": "사업 정보"
                     },
                     "ui": {
                       "options": [
-                        "Corporation",
-                        "Partnership",
-                        "Limited Partnership",
-                        "Limited Liability",
-                        "Not-for-Profit"
+                        "법인",
+                        "공동",
+                        "유한책임조합",
+                        "유한책임",
+                        "비영리"
                       ]
                     }
                   },
                   {
-                    "id": "nys_sales_tax_id",
-                    "label": "NYS Sales Tax ID #",
-                    "type": "text",
+                    "id": "뉴욕주 판매세 ID",
+                    "label": "NYS 판매세 ID 번호",
+                    "type": "텍스트",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "연락처_유형",
+                      "operator": "동등하다",
+                      "value": "사업 정보"
                     }
                   },
                   {
-                    "id": "is_out_of_state_corp",
-                    "label": "Are you a corporation formed outside of New York State?",
-                    "type": "radio",
+                    "id": "주_외_법인",
+                    "label": "뉴욕주 외부에서 설립된 법인이신가요?",
+                    "type": "라디오",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "연락처_유형",
+                      "operator": "동등하다",
+                      "value": "사업 정보"
                     },
                     "ui": {
-                      "options": ["Yes", "No"]
-                    }
-                  },
-                  {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
-                    "requiredCondition": {
-                      "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                      "options": [
+                        "예",
+                        "아니요"
                       ]
                     }
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "이름",
+                    "label": "이름",
+                    "type": "텍스트",
                     "requiredCondition": {
                       "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                        {
+                          "field": "연락처_유형",
+                          "operator": "동등하다",
+                          "value": "개인 소유자"
+                        },
+                        {
+                          "field": "연락처_유형",
+                          "operator": "동등하다",
+                          "value": "기타 연락처"
+                        },
+                        {
+                          "field": "연락처_유형",
+                          "operator": "동등하다",
+                          "value": "지정된 비상 연락처"
+                        }
                       ]
                     }
                   },
                   {
-                    "id": "title",
-                    "label": "Title",
-                    "type": "text",
+                    "id": "성",
+                    "label": "성",
+                    "type": "텍스트",
+                    "requiredCondition": {
+                      "anyOf": [
+                        {
+                          "field": "연락처_유형",
+                          "operator": "동등하다",
+                          "value": "개인 소유자"
+                        },
+                        {
+                          "field": "연락처_유형",
+                          "operator": "동등하다",
+                          "value": "기타 연락처"
+                        },
+                        {
+                          "field": "연락처_유형",
+                          "operator": "동등하다",
+                          "value": "지정된 비상 연락처"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "제목",
+                    "label": "제목",
+                    "type": "텍스트",
                     "required": false
                   },
                   {
-                    "id": "email",
-                    "label": "E-mail Address",
-                    "type": "email",
+                    "id": "이메일",
+                    "label": "이메일 주소",
+                    "type": "이메일",
                     "required": true
                   },
                   {
                     "id": "ssn_itin",
-                    "label": "SSN / ITIN",
-                    "type": "text",
+                    "label": "사회보장번호/개인식별번호",
+                    "type": "텍스트",
                     "required": false,
                     "constraints": {
                       "pattern": "^(\\d{3}-\\d{2}-\\d{4}|\\d{9})$"
                     },
                     "ui": {
-                      "placeholder": "XXX-XX-XXXX or 9-digit ITIN"
+                      "placeholder": "XXX-XX-XXXX 또는 9자리 ITIN"
                     }
                   },
                   {
                     "id": "ssn_itin_type",
-                    "label": "Did you enter SSN or ITIN?",
-                    "type": "radio",
+                    "label": "SSN 또는 ITIN을 입력하셨나요?",
+                    "type": "라디오",
                     "requiredCondition": {
                       "field": "ssn_itin",
-                      "operator": "notEquals",
+                      "operator": "같지 않음",
                       "value": ""
                     },
                     "ui": {
-                      "options": ["SSN", "ITIN"]
+                      "options": [
+                        "사회보장번호",
+                        "ITIN"
+                      ]
                     }
                   },
                   {
-                    "id": "phone",
-                    "label": "Phone Number",
-                    "type": "tel",
+                    "id": "핸드폰",
+                    "label": "전화 번호",
+                    "type": "전화",
                     "required": true,
                     "constraints": {
                       "pattern": "^\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -372,23 +417,26 @@
                   },
                   {
                     "id": "tty_phone",
-                    "label": "TTY Phone",
-                    "type": "tel",
+                    "label": "TTY 전화",
+                    "type": "전화",
                     "required": false
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "생일",
+                    "label": "생일",
+                    "type": "날짜",
                     "required": false
                   },
                   {
-                    "id": "gender",
-                    "label": "Gender",
-                    "type": "radio",
+                    "id": "성별",
+                    "label": "성별",
+                    "type": "라디오",
                     "required": false,
                     "ui": {
-                      "options": ["Female", "Male"]
+                      "options": [
+                        "여성",
+                        "남성"
+                      ]
                     }
                   }
                 ]
@@ -397,212 +445,211 @@
           }
         ]
       },
-
       {
-        "id": "application_info_1",
-        "title": "Application Specific Information 1",
+        "id": "애플리케이션_정보_1",
+        "title": "응용 프로그램별 정보 1",
         "sections": [
           {
-            "id": "program_details",
-            "title": "Program Details",
+            "id": "프로그램 세부 정보",
+            "title": "프로그램 세부 정보",
             "fields": [
               {
-                "id": "program_type",
-                "label": "Program Type",
-                "type": "select",
+                "id": "프로그램 유형",
+                "label": "프로그램 유형",
+                "type": "선택하다",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Infant Toddler",
-                    "Preschool"
+                    "유아",
+                    "취학 전의"
                   ]
                 }
               },
               {
-                "id": "orientation_cert_number",
-                "label": "Pre Permit Orientation Cert #",
-                "type": "text",
+                "id": "오리엔테이션_인증_번호",
+                "label": "허가 전 오리엔테이션 인증서 번호",
+                "type": "텍스트",
                 "required": true
               },
               {
-                "id": "permittee_name",
-                "label": "Permittee (Sponsor Name)",
-                "type": "text",
+                "id": "허가자 이름",
+                "label": "허가자(후원자 이름)",
+                "type": "텍스트",
                 "required": true
               },
               {
-                "id": "is_applicant_same_as_permittee",
-                "label": "Applicant same as Permittee?",
-                "type": "checkbox",
+                "id": "신청자와 허가자가 동일함",
+                "label": "신청자와 허가자가 동일합니까?",
+                "type": "체크박스",
                 "ui": {
                   "defaultChecked": true
                 }
               },
               {
-                "id": "permit_expiration_date",
-                "label": "Expiration Date",
-                "type": "date",
+                "id": "허가_만료_날짜",
+                "label": "만료일",
+                "type": "날짜",
                 "required": false
               },
               {
-                "id": "permit_number",
-                "label": "Permit #",
-                "type": "text",
+                "id": "허가 번호",
+                "label": "허용하다 #",
+                "type": "텍스트",
                 "required": false
               }
             ]
           },
           {
-            "id": "program_contact",
-            "title": "Program Contact",
+            "id": "프로그램_연락처",
+            "title": "프로그램 연락처",
             "fields": [
               {
-                "id": "program_phone",
-                "label": "Phone",
-                "type": "tel"
+                "id": "프로그램_전화",
+                "label": "핸드폰",
+                "type": "전화"
               },
               {
-                "id": "program_fax",
-                "label": "Fax",
-                "type": "tel"
+                "id": "팩스 프로그램",
+                "label": "팩스",
+                "type": "전화"
               },
               {
-                "id": "program_email",
-                "label": "Email",
-                "type": "email",
+                "id": "프로그램_이메일",
+                "label": "이메일",
+                "type": "이메일",
                 "required": true
               },
               {
-                "id": "program_website",
-                "label": "Website",
-                "type": "text"
+                "id": "프로그램_웹사이트",
+                "label": "웹사이트",
+                "type": "텍스트"
               }
             ]
           },
           {
-            "id": "program_days_hours",
-            "title": "Days Open (Hours)",
+            "id": "프로그램_일_시간",
+            "title": "영업일(시간)",
             "fields": [
               {
-                "id": "open_days",
-                "label": "Open Days",
-                "type": "checkbox",
+                "id": "오픈데이",
+                "label": "오픈 데이",
+                "type": "체크박스",
                 "ui": {
                   "options": [
-                    "Sunday",
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
+                    "일요일",
+                    "월요일",
+                    "화요일",
+                    "수요일",
+                    "목요일",
+                    "금요일",
+                    "토요일"
                   ]
                 }
               },
               {
-                "id": "nightcare",
-                "label": "Nightcare",
-                "type": "checkbox"
+                "id": "야간 진료",
+                "label": "나이트케어",
+                "type": "체크박스"
               },
               {
-                "id": "open_from",
-                "label": "Open From",
-                "type": "time",
+                "id": "열다",
+                "label": "오픈 에서",
+                "type": "시간",
                 "required": true
               },
               {
-                "id": "close_at",
-                "label": "Close At",
-                "type": "time",
+                "id": "닫다",
+                "label": "닫기",
+                "type": "시간",
                 "required": true
               },
               {
-                "id": "inspection_delivery_method",
-                "label": "Inspection Report Delivery Method",
-                "type": "select",
+                "id": "검사_전달_방법",
+                "label": "검사 보고서 전달 방법",
+                "type": "선택하다",
                 "ui": {
                   "options": [
-                    "Email",
-                    "Fax",
-                    "Regular Mail"
+                    "이메일",
+                    "팩스",
+                    "일반 우편"
                   ]
                 }
               },
               {
-                "id": "inspection_language",
-                "label": "Inspection Language",
-                "type": "select",
+                "id": "검사 언어",
+                "label": "검사 언어",
+                "type": "선택하다",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish"
+                    "영어",
+                    "스페인 사람"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "school_year_dates",
-            "title": "School Year Dates",
+            "id": "학년도 날짜",
+            "title": "학년 일정",
             "fields": [
               {
-                "id": "school_year_from",
-                "label": "Regular School Year From",
-                "type": "date"
+                "id": "학년도",
+                "label": "정규 학년도부터",
+                "type": "날짜"
               },
               {
-                "id": "school_year_to",
-                "label": "Regular School Year To",
-                "type": "date"
+                "id": "학년도",
+                "label": "정규 학년도",
+                "type": "날짜"
               },
               {
-                "id": "has_summer_program",
-                "label": "Summer Program",
-                "type": "checkbox"
+                "id": "여름 프로그램",
+                "label": "여름 프로그램",
+                "type": "체크박스"
               }
             ]
           },
           {
-            "id": "school_breaks",
-            "title": "School Breaks",
+            "id": "학교 방학",
+            "title": "학교 방학",
             "fields": [
               {
-                "id": "school_breaks",
-                "label": "School Breaks",
-                "type": "group",
+                "id": "학교 방학",
+                "label": "학교 방학",
+                "type": "그룹",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "term",
-                    "from",
-                    "to"
+                    "용어",
+                    "~에서",
+                    "에게"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "term",
-                    "label": "Term",
-                    "type": "select",
+                    "id": "용어",
+                    "label": "용어",
+                    "type": "선택하다",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Fall",
-                        "Spring",
-                        "Summer",
-                        "Winter"
+                        "떨어지다",
+                        "봄",
+                        "여름",
+                        "겨울"
                       ]
                     }
                   },
                   {
-                    "id": "from",
-                    "label": "From",
-                    "type": "date",
+                    "id": "~에서",
+                    "label": "에서",
+                    "type": "날짜",
                     "required": true
                   },
                   {
-                    "id": "to",
-                    "label": "To",
-                    "type": "date",
+                    "id": "에게",
+                    "label": "에게",
+                    "type": "날짜",
                     "required": true
                   }
                 ]
@@ -610,24 +657,24 @@
             ]
           },
           {
-            "id": "holidays",
-            "title": "Holidays",
+            "id": "휴가",
+            "title": "휴가",
             "fields": [
               {
-                "id": "holidays",
-                "label": "Holiday List",
-                "type": "group",
+                "id": "휴가",
+                "label": "휴일 목록",
+                "type": "그룹",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "holiday_name"
+                    "휴일_이름"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "holiday_name",
-                    "label": "Holiday Name",
-                    "type": "text",
+                    "id": "휴일_이름",
+                    "label": "휴일 이름",
+                    "type": "텍스트",
                     "required": true
                   }
                 ]
@@ -635,135 +682,135 @@
             ]
           },
           {
-            "id": "food_services_info",
-            "title": "Food Services Information",
+            "id": "식품 서비스 정보",
+            "title": "식품 서비스 정보",
             "fields": [
               {
-                "id": "food_provided",
-                "label": "Is food provided for children in care?",
-                "type": "radio",
+                "id": "음식 제공",
+                "label": "보호받는 어린이에게 음식이 제공됩니까?",
+                "type": "라디오",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "예",
+                    "아니요"
                   ]
                 }
               },
               {
-                "id": "food_prepared_on_site",
-                "label": "Is food prepared on site?",
-                "type": "radio",
+                "id": "현장에서_준비된_음식",
+                "label": "음식은 현장에서 준비되나요?",
+                "type": "라디오",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "예",
+                    "아니요"
                   ]
                 }
               },
               {
-                "id": "food_preparation_location",
-                "label": "Where is food prepared?",
-                "type": "text"
+                "id": "음식 준비 장소",
+                "label": "음식은 어디에서 준비하나요?",
+                "type": "텍스트"
               },
               {
-                "id": "dohmh_food_service_permit",
-                "label": "DOHMH Food Service Permit #",
-                "type": "text"
+                "id": "도옴_식품_서비스_허가증",
+                "label": "DOHMH 식품 서비스 허가 번호",
+                "type": "텍스트"
               },
               {
-                "id": "person_on_certificate",
-                "label": "Person Name on Certificate",
-                "type": "text"
+                "id": "증명서를 소지한 사람",
+                "label": "증명서에 기재된 개인 이름",
+                "type": "텍스트"
               },
               {
-                "id": "food_protection_cert_number",
-                "label": "Food Protection Certificate #",
-                "type": "text"
+                "id": "식품 보호 인증 번호",
+                "label": "식품 보호 인증서 #",
+                "type": "텍스트"
               }
             ]
           }
         ]
       },
       {
-        "id": "application_info_2",
-        "title": "Application Specific Information 2"
+        "id": "애플리케이션_정보_2",
+        "title": "응용 프로그램별 정보 2"
       },
       {
-        "id": "document_upload",
-        "title": "Upload Documents",
-        "description": "REQUIRED DOCUMENTS\nIn order for your application to be processed, based on information provided, you are required to upload the following documents:",
+        "id": "문서 업로드",
+        "title": "문서 업로드",
+        "description": "필수 서류\n제공하신 정보를 바탕으로 신청서가 처리되려면 다음 서류를 업로드해야 합니다.",
         "sections": [
           {
-            "id": "initial_site_survey",
-            "title": "Initial Site Survey Form",
+            "id": "초기_현장_조사",
+            "title": "초기 현장 조사 양식",
             "fields": [
               {
-                "id": "site_survey_file",
-                "label": "Upload Initial Site Survey Form",
-                "type": "file",
+                "id": "사이트 조사 파일",
+                "label": "초기 현장 조사 양식 업로드",
+                "type": "파일",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "신청서/pdf",
+                    "이미지/jpeg",
+                    "이미지/jpg",
+                    "이미지/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Initial Site Survey",
+                  "proofCategory": "초기 현장 조사",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "personal_id_proof",
-            "title": "Proof of Personal Identification",
+            "id": "개인 신분증",
+            "title": "개인 식별 증명",
             "fields": [
               {
-                "id": "personal_id_file",
-                "label": "Upload Proof of Personal Identification",
-                "type": "file",
+                "id": "개인_신분_파일",
+                "label": "개인 식별 증빙 자료 업로드",
+                "type": "파일",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "신청서/pdf",
+                    "이미지/jpeg",
+                    "이미지/jpg",
+                    "이미지/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Personal ID",
+                  "proofCategory": "개인 신분증",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "fee_exemption_proof",
-            "title": "Proof of Fee Exemption",
+            "id": "수수료 면제 보장",
+            "title": "수수료 면제 증빙",
             "fields": [
               {
-                "id": "fee_exemption_file",
-                "label": "Upload Proof of Fee Exemption (ACS Affiliation or Municipal Exemption)",
-                "type": "file",
+                "id": "수수료 면제 파일",
+                "label": "수수료 면제 증빙서류 업로드(ACS 제휴 또는 지방자치단체 면제)",
+                "type": "파일",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "신청서/pdf",
+                    "이미지/jpeg",
+                    "이미지/jpg",
+                    "이미지/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Fee Exemption",
+                  "proofCategory": "수수료 면제",
                   "multiple": false
                 }
               }
@@ -772,17 +819,16 @@
         ]
       },
       {
-        "id": "step_6_placeholder",
-        "title": "To be defined"
+        "id": "6단계_자리표시자",
+        "title": "정의되어야 함"
       },
       {
-        "id": "step_7_placeholder",
-        "title": "To be defined"
+        "id": "7단계_자리표시자",
+        "title": "정의되어야 함"
       },
       {
-        "id": "step_8_placeholder",
-        "title": "To be defined"
+        "id": "8단계_자리표시자",
+        "title": "정의되어야 함"
       }
     ]
-  }
-}
+  }}

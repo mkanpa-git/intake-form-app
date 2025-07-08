@@ -1,172 +1,172 @@
 {
   "form": {
-    "title": "Childcare Voucher Application",
-    "description": "Step-by-step form for applying for Childcare Assistance",
+    "title": "Aplikasyon pou Koupon Gadri",
+    "description": "Fòm etap pa etap pou aplike pou Asistans Gadri Timoun",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "gòch"
     },
     "steps": [
       {
-        "id": "consent_step",
-        "title": "Consent",
+        "id": "etap_konsantman",
+        "title": "Konsantman",
         "sections": [
           {
             "id": "mycity_consent_info",
-            "title": "ModelCity Consent",
-            "type": "info",
+            "title": "Konsantman ModelCity",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "In connection with this application for child care services, **ModelCity**:\\n\\n- Collects, processes, stores, and shares the information you submit to screen you when you apply for child care services;\\n- Receives, processes, and stores the information the City already knows about you to screen you when you apply for child care services;\\n- Uses your information to improve ModelCity; and\\n- Communicates with you about your ModelCity account.\\n\\n---\\n\\nIf you consent, the following information may be shared between child care services agencies:\\n\\n- Demographic and background information, including address, phone number, household composition.\\n- Housing information, including benefits awarded/received, current housing/shelter status.\\n- Benefits information, including public assistance awarded/received, child care program participation.\\n\\n---\\n\\nIf you choose not to consent, **you will not be denied** any benefits or services you are receiving or any benefits for which you are eligible.\\n\\nThe [ModelCity Privacy Policy](https://www.nyc.gov/privacy) details how ModelCity handles the information you submit through ModelCity."
+            "content": "An koneksyon avèk aplikasyon sa a pou sèvis gadri, **ModelCity**:\\n\\n- Kolekte, trete, estoke, epi pataje enfòmasyon ou soumèt yo pou verifye w lè w aplike pou sèvis gadri;\\n- Resevwa, trete, epi estoke enfòmasyon Vil la deja konnen sou ou pou verifye w lè w aplike pou sèvis gadri;\\n- Itilize enfòmasyon w yo pou amelyore ModelCity; epi\\n- Kominike avèk ou konsènan kont ModelCity ou a.\\n\\n---\\n\\nSi ou bay konsantman ou, ajans sèvis gadri yo ka pataje enfòmasyon sa yo ant yo:\\n\\n- Enfòmasyon demografik ak orijin, tankou adrès, nimewo telefòn, konpozisyon kay la.\\n- Enfòmasyon sou lojman, tankou benefis yo akòde/resevwa, sitiyasyon lojman/abri aktyèl la.\\n- Enfòmasyon sou benefis yo, tankou asistans piblik yo akòde/resevwa, patisipasyon nan pwogram gadri.\\n\\n---\\n\\nSi ou chwazi pou ou pa bay konsantman ou, **yo p ap refize w** okenn benefis oswa sèvis w ap resevwa oswa okenn benefis ou kalifye pou yo.\\n\\n[Règleman sou enfòmasyon prive ModelCity](https://www.nyc.gov/privacy) detaye kijan ModelCity jere enfòmasyon ou soumèt atravè ModelCity."
           }
         ]
       },
       {
-        "id": "instructions_step",
-        "title": "Instructions",
+        "id": "etap_enstriksyon yo",
+        "title": "Enstriksyon yo",
         "sections": [
           {
-            "id": "application_instructions",
-            "title": "Application Instructions",
-            "type": "info",
+            "id": "enstriksyon_aplikasyon",
+            "title": "Enstriksyon Aplikasyon",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**Let’s get started on your application!**\\n\\nTo complete this application, you will be asked for information about:\\n\\n- Yourself\\n- Your household\\n- Your employment or reason for care\\n- Your income\\n\\nAll required fields are marked and must be filled out to move forward with the application. The pages of the application are shown on the right-hand side of the screen and will be highlighted as you move through the application.\\n\\nYour application will be saved automatically as you progress to each page.  \\nIf you need to pause at any time, click the **“Save for later”** button at the bottom of each page to save your application.  \\nYou can log back in to resume your application.\\n\\nWhen you’re ready to begin, click **“Next”** below.\\n\\n---\\n\\n⚠️ **Important:**  \\nTo keep your information current and safe, applications in draft status that you have not edited for **30 days** will be deleted.  \\nIf your draft application is deleted, you can still create and submit a new application when you're ready to apply."
+            "content": "**Ann kòmanse aplikasyon w lan!**\\n\\nPou w ranpli aplikasyon sa a, y ap mande w enfòmasyon sou:\\n\\n- Tèt ou\\n- Kay ou\\n- Travay ou oswa rezon pou swen w lan\\n- Revni w\\n\\nTout chan obligatwa yo make epi ou dwe ranpli pou w kontinye ak aplikasyon an. Paj aplikasyon yo parèt sou bò dwat ekran an epi y ap mete an evidans pandan w ap avanse nan aplikasyon an.\\n\\nAplikasyon w lan ap sove otomatikman pandan w ap avanse nan chak paj. \\nSi w bezwen pran yon poz nenpòt ki lè, klike sou bouton **\"Sove pou pita\"** ki anba chak paj pou sove aplikasyon w lan. \\nOu ka konekte ankò pou rekòmanse aplikasyon w lan.\\n\\nLè w pare pou kòmanse, klike sou **\"Next\"** anba a.\\n\\n---\\n\\n⚠️ **Enpòtan:** \\nPou kenbe enfòmasyon w yo ajou epi an sekirite, aplikasyon ki nan estati bouyon ke ou pa modifye pandan **30 jou** yo pral efase. Si yo efase bouyon aplikasyon w lan, ou ka toujou kreye epi soumèt yon nouvo aplikasyon lè w pare pou aplike."
           },
           {
-            "id": "new_york_city_residency",
-            "title": "New York City Residency",
-            "type": "info",
+            "id": "rezidans_vil_nouyòk",
+            "title": "Rezidans nan Vil Nouyòk",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "You will need to upload **ONE** of the following documents to confirm your NYC residency:\\n\\n- IDNYC\\n- Driver’s License\\n- Utility Bill (dated within the last 60 days, with your address)\\n- Current lease, rent, or mortgage statement (dated within the last 60 days, with your address)\\n- Section 8 Award Letter\\n- NYCHA Certificate\\n- CFWB-027 Housing Attestation with address listed\\n- Shelter Residency Letter with address listed\\n\\nIf you do not have any of those documents, you must submit a **CFWB-067 Residency Attestation**."
+            "content": "Ou ap bezwen telechaje **YOUN** nan dokiman sa yo pou konfime rezidans ou nan NYC:\\n\\n- IDNYC\\n- Lisans chofè\\n- Fakti sèvis piblik (date nan 60 dènye jou yo, ak adrès ou)\\n- Deklarasyon kontra lokasyon, lwaye, oswa ipotèk aktyèl (date nan 60 dènye jou yo, ak adrès ou)\\n- Lèt Akò Seksyon 8\\n- Sètifika NYCHA\\n- Atestasyon Lojman CFWB-027 ak adrès ki nan lis la\\n- Lèt Rezidans nan Abri ak adrès ki nan lis la\\n\\nSi ou pa gen okenn nan dokiman sa yo, ou dwe soumèt yon **Atestasyon Rezidans CFWB-067**."
           },
           {
-            "id": "children_documents",
-            "title": "Children Documents",
-            "type": "info",
+            "id": "dokiman_timoun",
+            "title": "Dokiman pou Timoun yo",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Citizenship or Immigration Status\\nThese documents confirm the citizenship or immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for each child needing care. *Do not upload these documents for children who do not need care.*\\n\\n- Birth Certificate from US state or territory\\n- Alien Registration Card including Permanent Resident or Green Card\\n- Passport\\n- FS-240 (Consular Report of Birth Abroad)\\n- Naturalization Certificate\\n- Other documentation that proves child’s immigration status\\n\\n### Child's Relationship to Applicant\\nThese documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether they need child care.\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Passport with parent's signature\\n- Court order for legal guardian with financial responsibility\\n- Letter of guardianship\\n- Other - CFWB-058 Caretaker Attestation\\n\\nIf you are not the child's parent or stepparent, you must submit a **CFWB-058 Caretaker Attestation Form**.\\n\\n### Age of Children\\nYou will need to upload **ONE** of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Alien Registration Card\\n- Passport\\n- Official hospital documentation of the child’s birth"
+            "content": "### Sitwayènte oswa Sitiyasyon Imigrasyon\\nDokiman sa yo konfime sitwayènte oswa sitiyasyon imigrasyon timoun ki nan fanmi w pou ki w ap aplike pou asistans gadri. Tanpri telechaje youn nan dokiman sa yo pou chak timoun ki bezwen swen. *Pa telechaje dokiman sa yo pou timoun ki pa bezwen swen.*\\n\\n- Sètifika nesans ki soti nan yon eta oswa teritwa ameriken\\n- Kat enskripsyon pou etranje ki gen ladan Rezidans Pèmanan oswa Kat Vèt\\n- Paspò\\n- FS-240 (Rapò Konsilè sou Nesans Aletranje)\\n- Sètifika Natiralizasyon\\n- Lòt dokiman ki pwouve sitiyasyon imigrasyon timoun nan\\n\\n### Relasyon Timoun nan ak Aplikan an\\nDokiman sa yo konfime relasyon ou ak timoun ki nan kay ou ki poko gen 18 an. Tanpri telechaje youn nan dokiman sa yo pou chak timoun nan kay la ki poko gen 18 an, kit yo bezwen swen timoun oswa non.\\n\\n- Sètifika nesans\\n- Dosye adopsyon\\n- Dosye batèm\\n- Paspò ak siyati paran an\\n- Lòd tribinal pou gadyen legal ki gen responsablite finansyè\\n- Lèt gadyen legal\\n- Lòt - Atestasyon Moun k ap Pran Swen CFWB-058\\n\\nSi ou pa paran oswa bòpè/bèlmè timoun nan, ou dwe soumèt yon **Fòm Atestasyon Moun k ap Pran Swen CFWB-058**.\\n\\n### Laj Timoun yo\\nOu ap bezwen telechaje **YON** nan dokiman sa yo pou chak timoun nan kay la ki poko gen 18 an, kit yo bezwen gadri oswa non:\\n\\n- Sètifika nesans\\n- Dosye adopsyon\\n- Dosye batèm\\n- Kat enskripsyon etranje\\n- Paspò\\n- Dokiman ofisyèl lopital ki montre nesans timoun nan"
           },
           {
-            "id": "employment_income",
-            "title": "Employment & Income",
-            "type": "info",
+            "id": "revni_anplwa",
+            "title": "Anplwa ak Revni",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Income\\nThese documents confirm your family’s income.\\n\\n---\\n\\n### If You Are Employed\\nIf you are employed and receive paystubs, you must submit them to confirm your income. The number of paystubs you must submit varies by how often you get paid and whether your payment amount is the same or different each time you are paid – see the table below for details. Submit the most recent paystub you have received, followed by others in consecutive order.\\n\\n**Income Information**\\n\\n| How Often Do You Get Paid? | Always the SAME Amount | DIFFERENT Amounts Each Time |\\n|----------------------------|-------------------------|------------------------------|\\n| Weekly (Every Week) | 4 most recent, consecutive pay stubs | 12 most recent, consecutive pay stubs |\\n| Bi-Weekly (Every Two Weeks) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Semi-Monthly (Two Times Per Month) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Monthly (One Time Per Month) | 3 most recent, consecutive pay stubs | 3 most recent, consecutive pay stubs |\\n\\nIf you do not have any paystubs, you must submit a **CFWB-015 Referral to Employer for Employee Income Information Form**.\\n\\n---\\n\\n### If You Are Self-Employed\\nIf you have been self-employed for **one year or more**, you must submit a current, complete and signed income tax package (e.g., 1040, 1065, Schedule C, SE for partnership, K-1, etc.).\\n\\nIf you have been self-employed for **less than one year**, you must submit a **CFWB-031 Self-Employment Income Information Attestation Form**.\\n\\n---\\n\\n### Other Income\\nIf you receive other types of income outside or instead of employment income, you must submit your most recent check, pay stub, or current award letter that indicates the amount you receive. If your other income fluctuates, **3 months of documentation is required**.\\n\\nThis includes, but is not limited to:\\n- Income from SSI, SSD\\n- Unemployment benefits\\n- Rental income\\n- Pensions\\n- Annuities\\n- Worker’s compensation\\n- Alimony\\n- Child support"
+            "content": "### Revni\\nDokiman sa yo konfime revni fanmi ou.\\n\\n---\\n\\n### Si w ap travay\\nSi w ap travay epi w resevwa fichye peman, ou dwe soumèt yo pou konfime revni w. Kantite fichye peman ou dwe soumèt yo varye selon konbyen fwa ou resevwa peman w epi si montan peman w lan se menm oswa diferan chak fwa ou resevwa peman – gade tablo ki anba a pou plis detay. Soumèt dènye fichye peman ou te resevwa a, epi apre sa lòt yo nan lòd youn apre lòt.\\n\\n**Enfòmasyon sou revni**\\n\\n| Konbyen fwa ou resevwa peman? | Toujou MENM Montan an | DIFERAN Montan Chak Fwa |\\n|----------------------------|--------------------------|-----------------------------|\\n| Chak semèn (Chak semèn) | 4 dènye fichye peman youn apre lòt | 12 dènye fichye peman youn apre lòt |\\n| Chak de semèn (Chak de semèn) | 2 dènye fichye peman youn apre lòt | 6 dènye fichye peman youn apre lòt |\\n| Chak de mwa (De fwa pa mwa) | 2 dènye fichye peman youn apre lòt | 6 dènye fichye peman youn apre lòt |\\n| Chak mwa (Yon fwa pa mwa) | 3 dènye fichye peman youn apre lòt | 3 dènye fichye peman youn apre lòt |\\n\\nSi ou pa gen okenn fichye peman, ou dwe soumèt yon **Fòm Referans CFWB-015 pou Anplwayè pou Enfòmasyon sou Revni Anplwaye**.\\n\\n---\\n\\n### Si ou se yon travayè endepandan\\nSi ou te travay poukont ou pandan **yon ane oswa plis**, ou dwe soumèt yon pake taks sou revni aktyèl, konplè epi siyen (pa egzanp, 1040, 1065, Orè C, SE pou patenarya, K-1, elatriye).\\n\\nSi ou te travay poukont ou pandan **mwens pase yon ane**, ou dwe soumèt yon **Fòm Atestasyon Enfòmasyon sou Revni Travay poukont ou CFWB-031**.\\n\\n---\\n\\n### Lòt Revni\\nSi ou resevwa lòt kalite revni deyò oswa olye de revni travay, ou dwe soumèt dènye chèk ou, fichye peman ou, oswa lèt rekonpans aktyèl ou ki endike kantite lajan ou resevwa a. Si lòt revni ou yo varye, **ou bezwen dokiman pou 3 mwa**.\\n\\nSa gen ladan l, men li pa limite a:\\n- Revni ki soti nan SSI, SSD\\n- Benefis chomaj\\n- Revni lokasyon\\n- Pansyon\\n- Anuite\\n- Konpansasyon travayè\\n- Pansyon alimantè\\n- Pansyon alimantè pou timoun"
           },
           {
-            "id": "reason_for_care",
-            "title": "Reason for Care",
-            "type": "info",
+            "id": "rezon_pou_swen",
+            "title": "Rezon pou Swen",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Reason for Care\\nThese documents confirm your reason for care. Every applicant must have a qualified reason for care; in a two-parent household, parents or caretakers can have the same or different reasons for care. Only the documents related to your stated reasons for care need to be uploaded, and documentation must be uploaded for all parent or caretakers in the household.\\n\\n---\\n\\n### Working 10+ Hours Per Week\\nYour employment or self-employment income documents will cover this reason for care. You do not need to submit additional documentation.\\n\\n---\\n\\n### Participating in an Educational or Vocational Training Program\\nYou will need to upload **ONE** of the following documents to confirm your participation in vocational school, two-year college, or four-year college.\\n\\n- CFWB-005 Vocational, Education and Training Verification Form\\n- A letter from the educational or vocational training program on their official letterhead; this letter must contain all the information required in the CFWB-005 Vocational, Education and Training Verification Form.\\n\\n---\\n\\n### Looking for Work\\nYou will need to upload **ONE** of the following documents to confirm that you are looking for work.\\n\\n- CFWB-026 Work Search Record Form\\n- Approved work search plan from the NYS Dept. of Labor\\n- Proof of receipt of unemployment insurance\\n\\n---\\n\\n### Experiencing Homelessness\\nYou will need to upload **ONE** of the following documents to confirm that you are experiencing homelessness. This includes families who may be living in shelter or sharing the housing of others due to loss of housing, economic hardship, or similar reason.\\n\\n- Shelter Residency Letter (If living in Shelter, including Humanitarian Emergency Relief Centers)\\n- CFWB-027 Housing Attestation (If living doubled-up, in a place not meant for human habitation, in a hotel/motel, or in another living situation)\\n\\n---\\n\\n### Attending Services for Domestic Violence\\nYou will need to upload a referral for services from a domestic violence service provider to confirm that you are attending services for domestic violence.\\n\\n---\\n\\n### Attending Services for Substance Abuse Treatment\\nYou will need to upload a referral for a substance abuse treatment service provider to confirm that you are attending services for substance abuse treatment."
+            "content": "### Rezon pou Swen an\\nDokiman sa yo konfime rezon ou genyen pou swen an. Chak aplikan dwe gen yon rezon kalifye pou swen an; nan yon kay ki gen de paran, paran yo oswa moun k ap pran swen yo ka gen menm rezon oswa diferan rezon pou swen an. Se sèlman dokiman ki gen rapò ak rezon ou deklare pou swen an ki bezwen telechaje, epi dokiman yo dwe telechaje pou tout paran oswa moun k ap pran swen nan kay la.\\n\\n---\\n\\n### Travay 10+ Èdtan Pa Semèn\\nDokiman revni travay ou oswa travay endepandan ou yo ap kouvri rezon sa a pou swen an. Ou pa bezwen soumèt lòt dokiman.\\n\\n---\\n\\n### Patisipasyon nan yon Pwogram Fòmasyon Edikasyonèl oswa Pwofesyonèl\\nOu pral bezwen telechaje **YOUN** nan dokiman sa yo pou konfime patisipasyon ou nan lekòl pwofesyonèl, kolèj dezan, oswa kolèj katran.\\n\\n- Fòm Verifikasyon Pwofesyonèl, Edikasyon ak Fòmasyon CFWB-005\\n- Yon lèt ki soti nan pwogram fòmasyon edikasyonèl oswa pwofesyonèl la sou papye antet ofisyèl yo; Lèt sa a dwe genyen tout enfòmasyon ki nesesè nan Fòm Verifikasyon Pwofesyonèl, Edikasyon ak Fòmasyon CFWB-005 la.\\n\\n---\\n\\n### Ap chèche travay\\nOu ap bezwen telechaje **YOUN** nan dokiman sa yo pou konfime w ap chèche travay.\\n\\n- Fòm Dosye Rechèch Travay CFWB-026\\n- Plan rechèch travay apwouve nan men Depatman Travay Eta New York\\n- Prèv resi asirans chomaj\\n\\n---\\n\\n### Ap fè eksperyans sanzabri\\nOu ap bezwen telechaje **YOUN** nan dokiman sa yo pou konfime w ap fè eksperyans sanzabri. Sa gen ladan fanmi ki ka ap viv nan yon abri oswa k ap pataje lojman ak lòt moun akòz pèt lojman, difikilte ekonomik, oswa rezon menm jan an.\\n\\n- Lèt Rezidans nan Abri (Si w ap viv nan yon Abri, ki gen ladan Sant Sekou Ijans Imanitè)\\n- Atestasyon Lojman CFWB-027 (Si w ap viv doub, nan yon kote ki pa fèt pou moun rete, nan yon otèl/motèl, oswa nan yon lòt sitiyasyon lojman)\\n\\n---\\n\\n### Ale nan Sèvis pou Vyolans Domestik\\nOu pral bezwen telechaje yon referans pou sèvis ki soti nan yon founisè sèvis vyolans domestik pou konfime ke w ap ale nan sèvis pou vyolans domestik.\\n\\n---\\n\\n### Ale nan Sèvis pou Tretman Abi Sibstans\\nOu pral bezwen telechaje yon referans pou yon founisè sèvis tretman abi sibstans pou konfime ke w ap ale nan sèvis pou tretman abi sibstans."
           },
           {
-            "id": "additional_details",
-            "title": "Additional Details",
-            "type": "info",
+            "id": "detay_adisyonèl",
+            "title": "Detay adisyonèl",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Application Scope\\nThis application is used to apply **only** for **Category 2 or 3 child care assistance** (for families not in receipt of cash assistance). To apply for **Cash Assistance** or other benefits, including **Category 1 Child Care Assistance** (for families in receipt of cash assistance), you must use the **New York State Application for Certain Benefits and Services (LDSS-2921)**.\\n\\n---\\n\\n### Exempt Applicants\\nThe following applicants may be eligible for child care assistance **without regard to income** and do not need to complete this application:\\n\\n- Foster parents who need child care assistance to allow them to work and are only applying for assistance for the foster children;\\n- Families in receipt of protective or preventive services.\\n\\n---\\n\\n### Application Completion\\nAll sections of this form must be filled out to be considered complete **unless the section is identified as optional**. If you do not complete all required sections of this form, you may not be considered for Child Care Assistance.\\n\\n---\\n\\n### Rights and Responsibilities\\nYou may obtain information about your rights and responsibilities [here](https://otda.ny.gov/programs/applications/). If you do not have access to the internet, you can call the **Administration for Children’s Services at 212-835-7610** to request that physical copies of the booklets which highlight your rights and responsibilities be mailed to you, including:\\n\\n- **LDSS-4148A**: What You Should Know About Your Rights and Responsibilities\\n- **LDSS-4148B**: What You Should Know About Social Services Programs\\n- **LDSS-4148C**: What You Should Know If You Have an Emergency"
+            "content": "### Dimansyon Aplikasyon an\\nAplikasyon sa a sèvi pou aplike **sèlman** pou **asistans gadri Kategori 2 oswa 3** (pou fanmi ki pa resevwa asistans lajan kach). Pou aplike pou **Asistans Lajan Kach** oswa lòt benefis, tankou **Asistans Gadri Kategori 1** (pou fanmi k ap resevwa asistans lajan kach), ou dwe itilize **Aplikasyon Eta New York pou Sèten Benefis ak Sèvis (LDSS-2921)**.\\n\\n---\\n\\n### Aplikan Egzan\\nAplikan sa yo ka kalifye pou asistans gadri **san konsidere revni** epi yo pa bezwen ranpli aplikasyon sa a:\\n\\n- Paran adoptif ki bezwen asistans gadri pou pèmèt yo travay epi k ap aplike sèlman pou asistans pou timoun adoptif yo;\\n- Fanmi k ap resevwa sèvis pwoteksyon oswa prevantif.\\n\\n---\\n\\n### Ranpli Aplikasyon an\\nTout seksyon nan fòm sa a dwe ranpli pou yo konsidere kòm konplè **sof si seksyon an idantifye kòm opsyonèl**. Si ou pa ranpli tout seksyon obligatwa nan fòm sa a, yo ka pa konsidere w pou Asistans Gadri Timoun.\\n\\n---\\n\\n### Dwa ak Responsablite\\nOu ka jwenn enfòmasyon sou dwa ak responsablite w yo [isit la](https://otda.ny.gov/programs/applications/). Si ou pa gen aksè a entènèt, ou ka rele **Administrasyon pou Sèvis pou Timoun nan 212-835-7610** pou mande pou yo voye kopi fizik ti liv ki mete aksan sou dwa ak responsablite w yo ba ou pa lapòs, tankou:\\n\\n- **LDSS-4148A**: Sa ou ta dwe konnen sou dwa ak responsablite w yo\\n- **LDSS-4148B**: Sa ou ta dwe konnen sou pwogram sèvis sosyal yo\\n- **LDSS-4148C**: Sa ou ta dwe konnen si w gen yon ijans"
           }
         ]
       },
       {
-        "id": "applicant",
-        "title": "Applicant",
+        "id": "aplikan",
+        "title": "Aplikan",
         "sections": [
           {
-            "id": "personal_info",
-            "title": "Personal Information",
+            "id": "enfòmasyon_pèsonèl",
+            "title": "Enfòmasyon pèsonèl",
             "fields": [
               {
-                "id": "first_name",
-                "label": "First Name",
-                "type": "text",
+                "id": "prenon",
+                "label": "Prenon",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "last_name",
-                "label": "Last Name",
-                "type": "text",
+                "id": "non fanmi",
+                "label": "Non Fanmi",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "mi",
-                "label": "Middle Initial",
-                "type": "text",
+                "id": "mwen",
+                "label": "Inisyal Dezyèm Non",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "date_of_birth",
-                "label": "Date of Birth",
-                "type": "date",
+                "id": "dat_nesans",
+                "label": "Dat Nesans",
+                "type": "dat",
                 "required": true,
-                "tooltip": "To edit Date of Birth click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "Pou modifye dat nesans ou, klike sou NYC ModelCity nan kwen anwo gòch la, epi klike sou Paramèt Kont."
               },
               {
-                "id": "sex",
-                "label": "Sex",
-                "type": "radio",
+                "id": "sèks",
+                "label": "Sèks",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Male",
-                    "Female"
+                    "Gason",
+                    "Fi"
                   ]
                 }
               },
               {
-                "id": "marital_status",
-                "label": "Marital Status",
-                "type": "select",
+                "id": "eta_matrimonyal",
+                "label": "Eta sivil",
+                "type": "chwazi",
                 "required": true,
-                "tooltip": "Indicate your marital status (single, married, divorced, separated or widowed).",
+                "tooltip": "Endike eta sivil ou (selibatè, marye, divòse, separe oswa vèv).",
                 "ui": {
                   "options": [
                     "",
-                    "Single",
-                    "Married",
-                    "Divorced",
-                    "Widowed",
-                    "Separated"
+                    "Selibatè",
+                    "Marye",
+                    "Divòse",
+                    "Vèv",
+                    "Separe"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "contact_info",
-            "title": "Contact Information",
+            "id": "enfòmasyon_kontak",
+            "title": "Enfòmasyon pou kontakte",
             "fields": [
               {
-                "id": "telephone_home",
-                "label": "Home Phone",
-                "type": "tel",
+                "id": "telefòn_lakay",
+                "label": "Telefòn lakay",
+                "type": "telefòn",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -176,9 +176,9 @@
                 }
               },
               {
-                "id": "telephone_work",
-                "label": "Work Phone",
-                "type": "tel",
+                "id": "telefòn_travay",
+                "label": "Telefòn Travay",
+                "type": "telefòn",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -188,11 +188,11 @@
                 }
               },
               {
-                "id": "telephone_mobile_or_other",
-                "label": "Mobile or Other Phone",
-                "type": "tel",
+                "id": "telefòn_mobil_oswa_lòt",
+                "label": "Telefòn mobil oswa lòt telefòn",
+                "type": "telefòn",
                 "required": false,
-                "tooltip": "To edit Telephone (Cell or Other) click on NYC ModelCity in the top-left corner then click on Account Settings and then click on Contact.",
+                "tooltip": "Pou modifye Telefòn (Selilè oswa Lòt) klike sou NYC ModelCity nan kwen anwo gòch la, answit klike sou Anviwònman Kont epi klike sou Kontak.",
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
                 },
@@ -201,196 +201,208 @@
                 }
               },
               {
-                "id": "email",
-                "label": "Email",
-                "type": "email",
+                "id": "imèl",
+                "label": "Imèl",
+                "type": "imèl",
                 "required": true,
-                "tooltip": "To edit email, go to NYC ID Profile tab by clicking your name at the top right corner"
+                "tooltip": "Pou modifye imèl ou, ale nan onglet Pwofil ID NYC a lè w klike sou non w nan kwen anwo dwat la."
               }
             ]
           },
           {
-            "id": "address_info",
-            "title": "Address",
-            "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings.",
+            "id": "adrès_enfòmasyon",
+            "title": "Adrès",
+            "tooltip": "Pou modifye adrès lakay ou, klike sou NYC ModelCity nan kwen anwo gòch la, epi klike sou Anviwònman Kont lan.",
             "ui": {
-              "autocomplete": "street",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "lari",
+              "placeholder": "Kòmanse tape adrès lari ou a",
+              "overrideComponent": "Adrès Otokonplete"
             },
             "metadata": {
               "integration": {
                 "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "feature": "Adrès Otokonplete"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "vil",
+                  "source": "lokalite",
                   "fallbackSources": [
-                    "postal_town",
-                    "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "vil_pòs",
+                    "nivo_soublokalite_1",
+                    "nivo_zòn_administratif_2"
                   ]
                 },
                 {
-                  "fieldId": "borough",
-                  "source": "sublocality_level_1",
+                  "fieldId": "awondisman",
+                  "source": "nivo_soublokalite_1",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "nivo_zòn_administratif_2"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "Kat jeyografik awondisman"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "zip_code", "source": "postal_code" },
-                { "fieldId": "latitude", "source": "location.latitude" },
-                { "fieldId": "longitude", "source": "location.longitude" }
+                {
+                  "fieldId": "eta",
+                  "source": "nivo_zòn_administratif_1"
+                },
+                {
+                  "fieldId": "kòd postal",
+                  "source": "kòd postal"
+                },
+                {
+                  "fieldId": "latitid",
+                  "source": "kote.latitid"
+                },
+                {
+                  "fieldId": "lonjitid",
+                  "source": "kote.lonjitid"
+                }
               ]
             },
             "fields": [
               {
-                "id": "street",
-                "label": "Street Address",
-                "type": "text",
+                "id": "lari",
+                "label": "Adrès lari",
+                "type": "tèks",
                 "required": true,
-                "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "Pou modifye adrès lakay ou, klike sou NYC ModelCity nan kwen anwo gòch la, epi klike sou Anviwònman Kont lan."
               },
               {
-                "id": "apt",
-                "label": "Apt #",
-                "type": "text",
+                "id": "apwopriye",
+                "label": "Apatman #",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "vil",
+                "label": "Vil",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "borough",
+                "id": "awondisman",
                 "label": "Borough",
-                "type": "select",
+                "type": "chwazi",
                 "required": true,
                 "ui": {
                   "options": [
                     "",
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
+                    "Bronks",
+                    "Bwouklin",
+                    "Manhatann",
+                    "Rèn yo",
                     "Staten Island"
                   ]
                 }
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "eta",
+                "label": "Eta",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "zip_code",
-                "label": "Zip Code",
-                "type": "text",
+                "id": "kòd postal",
+                "label": "Kòd Postal",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "latitude",
-                "label": "Latitude",
-                "type": "number",
+                "id": "latitid",
+                "label": "Latitid",
+                "type": "nimewo",
                 "required": false
               },
               {
-                "id": "longitude",
-                "label": "Longitude",
-                "type": "number",
+                "id": "lonjitid",
+                "label": "Lonjitid",
+                "type": "nimewo",
                 "required": false
               },
               {
-                "id": "is_temporary_address",
-                "label": "Is Temporary Address",
-                "type": "radio",
+                "id": "se_adrès_tanporè",
+                "label": "Se yon adrès tanporè",
+                "type": "radyo",
                 "required": true,
-                "tooltip": "Check YES if you are currently living in a homeless shelter, doubled-up with another family, in a hotel/motel, in a car/ bus/ train, in a park/campsite, or other temporary accomodation.",
+                "tooltip": "Tcheke WI si w ap viv kounye a nan yon abri pou moun ki san kay, si w ap viv ak yon lòt fanmi, nan yon otèl/motèl, nan yon machin/bis/tren, nan yon pak/kan, oubyen nan yon lòt lojman tanporè.",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "currently_living_in",
-                "label": "Currently Living In",
-                "type": "select",
+                "id": "ap_viv_kounye_a",
+                "label": "Ap viv kounye a nan",
+                "type": "chwazi",
                 "required": false,
                 "requiredCondition": {
-                  "field": "is_temporary_address",
-                  "operator": "equals",
-                  "value": "Yes"
+                  "field": "se_adrès_tanporè",
+                  "operator": "egal",
+                  "value": "Wi"
                 },
                 "ui": {
                   "options": [
                     "",
-                    "Homeless Shelter",
-                    "Doubled-up with another Family",
-                    "Hotel/Motel",
-                    "Car, Bus, Train",
-                    "Park",
-                    "Campsite",
-                    "Other"
+                    "Abri pou moun ki san kay",
+                    "Doub ak yon lòt fanmi",
+                    "Otèl/Motèl",
+                    "Machin, Bis, Tren",
+                    "Pak",
+                    "Kanping",
+                    "Lòt"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "demographics",
-            "title": "Demographics",
+            "id": "demografik",
+            "title": "Demografi",
             "fields": [
               {
-                "id": "ethnicity",
-                "label": "Ethnicity",
-                "type": "select",
+                "id": "etnisite",
+                "label": "Etnisite",
+                "type": "chwazi",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Hispanic",
+                    "Ispanik",
                     "Latino",
-                    "No",
-                    "Prefer not to answer"
+                    "Non",
+                    "Prefere pa reponn"
                   ]
                 }
               },
               {
-                "id": "race",
-                "label": "Race",
-                "type": "checkbox",
+                "id": "ras",
+                "label": "Ras",
+                "type": "kaz pou tcheke",
                 "required": false,
-                "tooltip": "You may choose multiple race categories. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                "tooltip": "Ou ka chwazi plizyè kategori ras. Bay enfòmasyon sou ras ou se volontè epi li p ap afekte kalifikasyon ou pou Asistans pou Gadri Timoun oswa kantite asistans ajans sa a ap ba ou.",
                 "ui": {
                   "options": [
                     {
-                      "value": "AI",
-                      "label": "American Indian or Alaska Native"
+                      "value": "IA",
+                      "label": "Endyen Ameriken oswa natif natal Alaska"
                     },
                     {
-                      "value": "AS",
-                      "label": "Asian"
+                      "value": "KÒM",
+                      "label": "Azyatik"
                     },
                     {
                       "value": "BL",
-                      "label": "Black or African American"
+                      "label": "Nwa oswa Afriken Ameriken"
                     },
                     {
                       "value": "HP",
-                      "label": "Native Hawaiian or Pacific Islander"
+                      "label": "Natif natal Awayen oswa zile Pasifik"
                     },
                     {
                       "value": "WH",
-                      "label": "White"
+                      "label": "Blan"
                     }
                   ]
                 },
@@ -399,10 +411,10 @@
                 }
               },
               {
-                "id": "ssn",
-                "label": "Social Security Number",
-                "type": "text",
-                "tooltip": "To edit social security number click on NYC ModelCity in the top-left corner then click on Account Settings.",
+                "id": "nimewo sekirite sosyal",
+                "label": "Nimewo Sekirite Sosyal",
+                "type": "tèks",
+                "tooltip": "Pou modifye nimewo sekirite sosyal ou a, klike sou NYC ModelCity nan kwen anwo gòch la, epi klike sou Anviwònman Kont.",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
@@ -414,87 +426,87 @@
             ]
           },
           {
-            "id": "language_info",
-            "title": "Language Preferences",
+            "id": "enfòmasyon_lang",
+            "title": "Preferans Lang",
             "fields": [
               {
-                "id": "primary_language",
-                "label": "Primary Language",
-                "type": "radio",
+                "id": "lang_prensipal",
+                "label": "Lang Prensipal",
+                "type": "radyo",
                 "required": true,
-                "tooltip": "Select the language that is spoken most often in your household. If “other”, provide the name of the language.",
+                "tooltip": "Chwazi lang ki pi pale lakay ou a. Si se \"lòt\", bay non lang lan.",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "Anglè",
+                    "Panyòl",
+                    "Lòt"
                   ]
                 }
               },
               {
-                "id": "preferred_language",
-                "label": "Preferred Language",
-                "type": "radio",
+                "id": "lang_prefere",
+                "label": "Lang prefere",
+                "type": "radyo",
                 "required": true,
-                "tooltip": "Select the language you prefer to communicate in. If “other”, provide the name of the language.",
+                "tooltip": "Chwazi lang ou prefere pou kominike ladan l. Si se \"lòt\", bay non lang lan.",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "Anglè",
+                    "Panyòl",
+                    "Lòt"
                   ]
                 }
               },
               {
-                "id": "other_primary_language",
-                "label": "Other Primary Language",
-                "type": "text",
+                "id": "lòt_lang_prensipal",
+                "label": "Lòt Lang Prensipal",
+                "type": "tèks",
                 "required": false,
                 "requiredCondition": {
-                  "field": "primary_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "lang_prensipal",
+                  "operator": "egal",
+                  "value": "Lòt"
                 }
               },
               {
-                "id": "other_preferred_language",
-                "label": "Other Preferred Language",
-                "type": "text",
+                "id": "lòt_lang_prefere",
+                "label": "Lòt Lang Preferansyèl",
+                "type": "tèks",
                 "required": false,
                 "requiredCondition": {
-                  "field": "preferred_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "lang_prefere",
+                  "operator": "egal",
+                  "value": "Lòt"
                 }
               }
             ]
           },
           {
-            "id": "cash_assistance",
-            "title": "Cash Assistance",
+            "id": "asistans_kach",
+            "title": "Èd Lajan Kach",
             "fields": [
               {
-                "id": "has_cash_assistance",
-                "label": "Do you receive Cash Assistance?",
-                "type": "radio",
+                "id": "gen_asistans_lajan_kach",
+                "label": "Èske ou resevwa Èd Lajan Kach?",
+                "type": "radyo",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "ca_number",
-                "label": "Cash Assistance Number",
-                "type": "text",
+                "id": "nimewo_ka",
+                "label": "Nimewo Èd Lajan Kach",
+                "type": "tèks",
                 "required": false,
                 "requiredCondition": {
                   "condition": {
-                    "field": "has_cash_assistance",
-                    "operator": "equals",
-                    "value": "Yes"
+                    "field": "gen_asistans_lajan_kach",
+                    "operator": "egal",
+                    "value": "Wi"
                   }
                 }
               }
@@ -503,124 +515,124 @@
         ]
       },
       {
-        "id": "children_needing_care",
-        "title": "Children Needing Care",
+        "id": "timoun_ki_bezwen_swen",
+        "title": "Timoun ki bezwen swen",
         "sections": [
           {
-            "id": "child_details",
-            "title": "Child Details",
+            "id": "detay_timoun",
+            "title": "Detay sou Timoun",
             "required": true,
             "fields": [
               {
-                "id": "children",
-                "label": "Children Needing Care",
-                "type": "group",
+                "id": "timoun yo",
+                "label": "Timoun ki bezwen swen",
+                "type": "gwoup",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                  "first_name",
-                  "last_name",
-                  "date_of_birth",
-                  "relationship_to_applicant"
+                    "prenon",
+                    "non fanmi",
+                    "dat_nesans",
+                    "relasyon_ak_aplikan an"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "prenon",
+                    "label": "Prenon",
+                    "type": "tèks",
                     "required": true,
-                    "tooltip": "Provide the first name, last name, and middle initial of each child you are applying for child care assistance for."
+                    "tooltip": "Bay prenon, non fanmi, ak inisyal dezyèm non chak timoun w ap aplike pou asistans gadri pou li."
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "non fanmi",
+                    "label": "Non Fanmi",
+                    "type": "tèks",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "mwen",
+                    "label": "Inisyal Dezyèm Non",
+                    "type": "tèks",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "relasyon_ak_aplikan an",
+                    "label": "Relasyon avèk Aplikan an",
+                    "type": "chwazi",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "Child",
-                        "Grandchild",
-                        "Foster Child",
-                        "Other"
+                        "Timoun",
+                        "Pitit pitit",
+                        "Timoun Adoptif",
+                        "Lòt"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "dat_nesans",
+                    "label": "Dat Nesans",
+                    "type": "dat",
                     "required": true,
-                    "tooltip": "Provide the date of birth."
+                    "tooltip": "Bay dat nesans lan."
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
-                    "type": "radio",
+                    "id": "sèks",
+                    "label": "Sèks",
+                    "type": "radyo",
                     "required": true,
-                    "tooltip": "Select to indicate the sex.",
+                    "tooltip": "Chwazi pou endike sèks la.",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "Gason",
+                        "Fi"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "etnisite",
+                    "label": "Etnisite Ispanik oswa Latino",
+                    "type": "chwazi",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each child in need of child care is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for child care assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Tcheke \"WI\" oswa \"NON\" pou endike si chak timoun ki bezwen gadri se Ispanik oswa Latino oswa non. Bay enfòmasyon sou orijin etnik se volontè epi li p ap afekte kalifikasyon ou pou asistans gadri oswa kantite asistans ajans sa a pral ba ou.",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "Wi",
+                        "Non",
+                        "Prefere pa reponn"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "ras",
+                    "label": "Ras",
+                    "type": "kaz pou tcheke",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single child. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Ou ka chwazi plizyè kategori ras pou yon sèl timoun. Bay enfòmasyon sou ras la se volontè epi li p ap afekte kalifikasyon w pou Asistans Gadri Timoun oswa kantite asistans ajans sa a ap ba ou.",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "IA",
+                          "label": "Endyen Ameriken oswa natif natal Alaska"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "KÒM",
+                          "label": "Azyatik"
                         },
                         {
                           "value": "BL",
-                          "label": "Black or African American"
+                          "label": "Nwa oswa Afriken Ameriken"
                         },
                         {
                           "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "label": "Natif natal Awayen oswa zile Pasifik"
                         },
                         {
                           "value": "WH",
-                          "label": "White"
+                          "label": "Blan"
                         }
                       ]
                     },
@@ -629,11 +641,11 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "nimewo sekirite sosyal",
+                    "label": "Nimewo Sekirite Sosyal",
+                    "type": "tèks",
                     "required": false,
-                    "tooltip": "Provide each child’s Social Security Number (SSN). You are not required to provide SSNs. They may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "Bay Nimewo Sekirite Sosyal (SSN) chak timoun. Ou pa oblije bay nimewo Sekirite Sosyal yo. Ajans federal, leta ak lokal yo ka itilize yo pou anpeche sèvis yo repete epi pou anpeche fwod, epi pou Rapò Federal.",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
@@ -642,41 +654,41 @@
                     }
                   },
                   {
-                    "id": "do_both_parents_reside_in_home",
-                    "label": "Do both parents reside in the home?",
-                    "type": "radio",
+                    "id": "èske_toulede_paran_yo_rete_lakay_",
+                    "label": "Èske tou de paran yo abite nan kay la?",
+                    "type": "radyo",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether both of the child’s parents live in the home.",
+                    "tooltip": "Make yon kwa \"WI\" oswa \"NON\" pou endike si tou de paran timoun nan ap viv nan kay la.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Wi",
+                        "Non"
                       ]
                     }
                   },
                   {
-                    "id": "has_disability",
-                    "label": "Does the child have a disability?",
-                    "type": "radio",
+                    "id": "gen_andikap",
+                    "label": "Èske timoun nan gen yon andikap?",
+                    "type": "radyo",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether the child needing child care has a disability.",
+                    "tooltip": "Make yon kwa \"WI\" oswa \"NON\" pou endike si timoun ki bezwen gadri a gen yon andikap.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Wi",
+                        "Non"
                       ]
                     }
                   },
                   {
-                    "id": "is_immigration_status_satisfactory",
-                    "label": "Is child U.S. Citizen, U.S. National, or person with satisfactory immigration status?",
-                    "type": "radio",
+                    "id": "èske_sitiyasyon_imigrasyon_an_satisfezan",
+                    "label": "Èske timoun nan se sitwayen ameriken, nasyonal ameriken, oswa yon moun ki gen yon estati imigrasyon satisfezan?",
+                    "type": "radyo",
                     "required": true,
-                    "tooltip": "You will only be asked about the immigration status of the children in need of care. Other members of the family will not need to state or prove their immigration status. Your child will be eligible for care if they are a U.S. citizen, a legal permanent resident (green card holder), a refugee, or an asylee; have a T-visa; or hold another qualified immigration status. Please select “Yes” if your child holds one of these statuses.",
+                    "tooltip": "Y ap sèlman poze w kesyon sou sitiyasyon imigrasyon timoun ki bezwen swen yo. Lòt manm fanmi an p ap bezwen deklare oswa pwouve sitiyasyon imigrasyon yo. Pitit ou a ap kalifye pou swen si li se yon sitwayen ameriken, yon rezidan pèmanan legal (detantè kat vèt), yon refijye, oswa yon moun ki resevwa azil; si li gen yon viza T; oswa si li gen yon lòt sitiyasyon imigrasyon kalifye. Tanpri chwazi \"Wi\" si pitit ou a gen youn nan sitiyasyon sa yo.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Wi",
+                        "Non"
                       ]
                     }
                   }
@@ -687,142 +699,146 @@
         ]
       },
       {
-        "id": "family_members",
-        "title": "Family Members",
+        "id": "manm fanmi",
+        "title": "Manm Fanmi yo",
         "sections": [
           {
-            "id": "household_members_info",
-            "title": "Household Members Information",
-            "type": "info",
+            "id": "enfòmasyon_sou_manm_kay_",
+            "title": "Enfòmasyon sou Manm Kay la",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**List the household members who do _not_ need child care.**\\n\\nIf applicable, list:\\n\\n- Your **spouse**, your child’s **second parent**, **caretaker**, or **step-parent**\\n- Any other **adult with whom you share a child**, if they live in your home\\n\\nThen, if applicable, list:\\n\\n- Any **siblings under the age of 18** who live in your home\\n\\n> **Only list other household members** — such as **aunts, uncles, cousins, grandparents, or friends** — _if they have financial responsibility_ for the child.\\n\\nA household member with financial responsibility, other than a parent or step-parent, is one who has a **letter or order of guardianship**.\\n\\n**Otherwise, do not include them.**"
+            "content": "**Bay lis moun nan kay la ki _pa_ bezwen gadri.**\\n\\nSi sa aplikab, bay lis sa yo:\\n\\n- **Konjwen w**, **dezyèm paran** pitit ou a, **moun k ap pran swen l**, oswa **bèlmè**\\n- Nenpòt lòt **adilt ou pataje yon timoun avè l**, si yo rete lakay ou\\n\\nApre sa, si sa aplikab, bay lis sa yo:\\n\\n- Nenpòt **frè ak sè ki poko gen 18 an** ki rete lakay ou\\n\\n> **Sèlman bay lis lòt moun nan kay la** — tankou **matant, tonton, kouzen, granparan, oswa zanmi** — _si yo gen responsablite finansyè_ pou timoun nan.\\n\\nYon moun nan kay la ki gen responsablite finansyè, apa de yon paran oswa yon bèlmè, se yon moun ki gen yon **lèt oswa yon lòd gadyen legal**.\\n\\n**Sinon, pa mete yo ladan l.**"
           },
           {
-            "id": "family_member_details",
-            "title": "Household Member Details",
-            "description": "Include household members who do not need child care assistance (e.g., spouse, partner, other children).",
+            "id": "detay_manm_fanmi",
+            "title": "Detay sou Manm Kay la",
+            "description": "Mete manm kay la ki pa bezwen asistans pou gadri timoun (pa egzanp, mari oswa madanm, patnè, lòt timoun).",
             "fields": [
               {
-                "id": "familymember",
-                "label": "Family Members",
-                "type": "group",
+                "id": "manm fanmi",
+                "label": "Manm Fanmi yo",
+                "type": "gwoup",
                 "requiredCondition": {
-                  "repeatingGroup": "children",
-                  "operator": "ANY",
-                  "condition": { "field": "do_both_parents_reside_in_home", "operator": "equals", "value": "Yes" }
-                },  
+                  "repeatingGroup": "timoun yo",
+                  "operator": "NENPÒT",
+                  "condition": {
+                    "field": "èske_toulede_paran_yo_rete_lakay_",
+                    "operator": "egal",
+                    "value": "Wi"
+                  }
+                },
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "first_name",
-                    "last_name",
-                    "relationship_to_applicant",
-                    "date_of_birth"
+                    "prenon",
+                    "non fanmi",
+                    "relasyon_ak_aplikan an",
+                    "dat_nesans"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "prenon",
+                    "label": "Prenon",
+                    "type": "tèks",
                     "required": true,
-                    "tooltip": "Provide last and first name, and middle initial if applicable."
+                    "tooltip": "Bay non fanmi ak prenon, epi inisyal dezyèm non an si sa aplikab."
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "non fanmi",
+                    "label": "Non Fanmi",
+                    "type": "tèks",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "mwen",
+                    "label": "Inisyal Dezyèm Non",
+                    "type": "tèks",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "relasyon_ak_aplikan an",
+                    "label": "Relasyon avèk Aplikan an",
+                    "type": "chwazi",
                     "required": true,
-                    "tooltip": "Provide each person’s relationship to you (e.g. spouse, partner, child, foster parent, other).",
+                    "tooltip": "Bay relasyon chak moun avèk ou (pa egzanp, mari oswa madanm, patnè, pitit, paran adoptif, lòt).",
                     "ui": {
                       "options": [
                         "",
-                        "Spouse",
-                        "Partner",
-                        "Foster Parent",
-                        "Child",
-                        "Other"
+                        "Konjwen",
+                        "Patnè",
+                        "Paran adoptif",
+                        "Timoun",
+                        "Lòt"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "dat_nesans",
+                    "label": "Dat Nesans",
+                    "type": "dat",
                     "required": true,
-                    "tooltip": "Provide the family member's date of birth."
+                    "tooltip": "Bay dat nesans manm fanmi an."
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
-                    "type": "radio",
+                    "id": "sèks",
+                    "label": "Sèks",
+                    "type": "radyo",
                     "required": true,
-                    "tooltip": "Indicate the sex for each family member listed.",
+                    "tooltip": "Endike sèks pou chak manm fanmi ki nan lis la.",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "Gason",
+                        "Fi"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "etnisite",
+                    "label": "Etnisite Ispanik oswa Latino",
+                    "type": "chwazi",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each member in the household is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Tcheke \"WI\" oswa \"NON\" pou endike si chak moun nan kay la se Ispanik oswa Latino oswa non. Bay enfòmasyon sou orijin etnik se volontè epi li p ap afekte kalifikasyon ou pou Asistans pou Gadri Timoun oswa kantite asistans ajans sa a pral ba ou.",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "Wi",
+                        "Non",
+                        "Prefere pa reponn"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "ras",
+                    "label": "Ras",
+                    "type": "kaz pou tcheke",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single person. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Ou ka chwazi plizyè kategori ras pou yon sèl moun. Bay enfòmasyon sou ras ou se volontè epi li p ap afekte kalifikasyon ou pou Asistans Gadri Timoun oswa kantite asistans ajans sa a ap ba ou.",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "IA",
+                          "label": "Endyen Ameriken oswa natif natal Alaska"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "KÒM",
+                          "label": "Azyatik"
                         },
                         {
                           "value": "BL",
-                          "label": "Black or African American"
+                          "label": "Nwa oswa Afriken Ameriken"
                         },
                         {
                           "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "label": "Natif natal Awayen oswa zile Pasifik"
                         },
                         {
                           "value": "WH",
-                          "label": "White"
+                          "label": "Blan"
                         }
                       ]
                     },
@@ -831,11 +847,11 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "nimewo sekirite sosyal",
+                    "label": "Nimewo Sekirite Sosyal",
+                    "type": "tèks",
                     "required": false,
-                    "tooltip": "Fill in the Social Security Number (SSN) for your family members. SSN is optional. SSN may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "Ranpli Nimewo Sekirite Sosyal (SSN) pou manm fanmi ou yo. SSN se opsyonèl. Ajans federal, leta ak lokal yo ka itilize SSN pou anpeche doub sèvis ak fwod, epi pou Rapò Federal.",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
@@ -850,28 +866,28 @@
         ]
       },
       {
-        "id": "child_family_needs",
-        "title": "Child / Family Needs",
+        "id": "bezwen_fanmi_timoun",
+        "title": "Bezwen Timoun / Fanmi",
         "sections": [
           {
-            "id": "assistance_reason",
-            "title": "Reason for Child Care Assistance",
-            "description": "Select one or two reasons you are requesting Child Care Assistance.",
-            "tooltip": "Select one reason. In a two-parent household, parents/caretakers can have the same or different reasons for needing child care. Both parents/caretakers will be required to submit documentation in support of their own reason. If you are living in temporary housing, please select Homelessness even if you have another reason that applies to you.",
+            "id": "rezon_asistans",
+            "title": "Rezon pou Asistans pou Gadri Timoun",
+            "description": "Chwazi youn oubyen de rezon ki fè w ap mande Asistans pou Gadri Timoun.",
+            "tooltip": "Chwazi yon rezon. Nan yon kay ki gen de paran, paran/moun k ap pran swen timoun nan ka gen menm rezon an oswa diferan rezon pou bezwen gadri timoun nan. Toulede paran/moun k ap pran swen timoun nan ap oblije soumèt dokiman ki jistifye pwòp rezon pa yo. Si w ap viv nan yon lojman tanporè, tanpri chwazi Sanzabri menm si ou gen yon lòt rezon ki aplike pou ou.",
             "fields": [
               {
-                "id": "assistance_reason",
-                "label": "Reason(s) for Assistance",
-                "type": "select",
+                "id": "rezon_asistans",
+                "label": "Rezon(yo) pou Asistans",
+                "type": "chwazi",
                 "required": true,
                 "ui": {
                   "options": [
                     "",
-                    "Employment",
-                    "Looking for Work",
-                    "Vocational Training/Educational Activities",
-                    "Receiving Domestic Violence Services",
-                    "Homelessness"
+                    "Anplwa",
+                    "Ap chèche travay",
+                    "Fòmasyon Pwofesyonèl/Aktivite Edikasyonèl",
+                    "Resevwa Sèvis pou Vyolans Domestik",
+                    "Moun ki pa gen kay"
                   ]
                 },
                 "constraints": {
@@ -885,72 +901,72 @@
             ]
           },
           {
-            "id": "military_status",
-            "title": "Military and Parental Availability",
-            "description": "Provide information about parental military status and availability for child care.",
+            "id": "sitiyasyon_militè",
+            "title": "Disponibilite Militè ak Paran",
+            "description": "Bay enfòmasyon sou sitiyasyon militè paran yo ak disponiblite pou gadri timoun.",
             "fields": [
               {
-                "id": "is_parent_currently_active_in_military",
-                "label": "Is a Parent Currently Active Full-Time in the U.S. Military?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently active full-time in the U.S. Military.",
-                "type": "radio",
+                "id": "paran_li_aktif_kounye_nan_militè",
+                "label": "Èske yon paran aktif kounye a a plen tan nan lame ameriken an?",
+                "tooltip": "Tcheke \"WI\" oswa \"NON\" pou endike si yon paran aktif kounye a a plen tan nan Lame Ameriken an.",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "is_parent_mem_of_guard_or_mru",
-                "label": "Is a Parent a Member of National Guard or Military Reserve Unit?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently a member of a National Guard or Military Reserve Unit.",
-                "type": "radio",
+                "id": "se_mem_paran_gad_oswa_mru",
+                "label": "Èske yon paran se yon manm Gad Nasyonal oswa Inite Rezèv Militè?",
+                "tooltip": "Tcheke \"WI\" oswa \"NON\" pou endike si yon paran se yon manm Gad Nasyonal oswa yon Inite Rezèv Militè kounye a.",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "is_non_custodial_parent_available",
-                "label": "Is the Non-Custodial Parent Available to Provide Care?",
-                "tooltip": "Check “YES” or “NO” to indicate whether there is a non-custodial parent available to provide child care.",
-                "type": "radio",
+                "id": "èske_paran_ki_pa_gen_gad_li_disponib",
+                "label": "Èske paran ki pa gen gad timoun nan disponib pou bay swen?",
+                "tooltip": "Make yon ti kwa ak \"WI\" oswa \"NON\" pou endike si gen yon paran ki pa gen gad timoun nan ki disponib pou bay swen timoun nan.",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "duplicate_application",
-            "title": "Other Applications",
-            "description": "Indicate if you are also applying for or receiving child care from other agencies.",
-            "tooltip": "Indicate whether you are currently receiving or have applied for child care assistance with one of the agencies or organizations listed below. Note: If you are receiving Cash Assistance and are interested in child care assistance, you must apply through the Human Resources Administration. Reach out to your Benefits Access Center or visit the Human Resources Administration webpage.",
+            "id": "aplikasyon_kopi",
+            "title": "Lòt Aplikasyon yo",
+            "description": "Endike si w ap aplike tou pou oswa w ap resevwa gadri nan men lòt ajans.",
+            "tooltip": "Endike si w ap resevwa kounye a oswa si w te aplike pou asistans pou gadri nan youn nan ajans oswa òganizasyon ki nan lis anba a. Remak: Si w ap resevwa Asistans Lajan Kach epi ou enterese nan asistans pou gadri, ou dwe aplike atravè Administrasyon Resous Imèn. Kontakte Sant Aksè Benefis ou a oswa vizite paj wèb Administrasyon Resous Imèn nan.",
             "fields": [
               {
-                "id": "duplicate_app",
-                "label": "Are You Receiving or Applying for Child Care Through Another Agency?",
-                "type": "select",
+                "id": "aplikasyon_kopi",
+                "label": "Èske w ap resevwa oswa w ap aplike pou gadri nan yon lòt ajans?",
+                "type": "chwazi",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Not Applicable",
-                    "Department of Education (DOE)",
-                    "Human Resources Administration (HRA)",
-                    "Department of Youth and Community Development (DYCD)",
-                    "Department of Homeless Services (DHS)",
-                    "Consortium for Worker Education (CWE)",
-                    "Administration for Children's Services (ACS)"
+                    "Pa Aplikab",
+                    "Depatman Edikasyon (DOE)",
+                    "Administrasyon Resous Imèn (HRA)",
+                    "Depatman Jèn ak Devlopman Kominotè (DYCD)",
+                    "Depatman Sèvis pou Moun ki San Kay (DHS)",
+                    "Konsòsyòm pou Edikasyon Travayè (CWE)",
+                    "Administrasyon pou Sèvis pou Timoun (ACS)"
                   ]
                 }
               }
@@ -959,370 +975,370 @@
         ]
       },
       {
-        "id": "employment",
-        "title": "Employment",
+        "id": "travay",
+        "title": "Anplwa",
         "sections": [
           {
-            "id": "employment_precheck",
-            "title": "Tell us about your employment",
-            "description": "Tell us about your employment",
+            "id": "verifikasyon_anplwa",
+            "title": "Di nou kijan travay ou ye",
+            "description": "Di nou kijan travay ou ye",
             "fields": [
               {
-                "id": "applicant_emp_income_indicator",
-                "label": "Does applicant earn any income/ wages from employment? ",
-                "type": "radio",
+                "id": "endikatè_revni_aplikan_anplwaye",
+                "label": "Èske aplikan an touche nenpòt revni/salè nan travay li?",
+                "type": "radyo",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "coparent_emp_income_indicator",
-                "label": "Does Coparent/2nd Guardian earn any income/ wages from employment? ",
-                "type": "radio",
+                "id": "endikatè_revni_koparan_anplwaye",
+                "label": "Èske koparan/2yèm gadyen legal la touche nenpòt revni/salè nan travay li?",
+                "type": "radyo",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "applicant_jobs",
-            "title": "Applicant Employment Information",
-            "description": "Enter details for up to two jobs held by the applicant.",
+            "id": "aplikan_djòb",
+            "title": "Enfòmasyon sou Anplwa Aplikan an",
+            "description": "Antre detay pou yon maksimòm de travay aplikan an genyen.",
             "visibilityCondition": {
-              "field": "applicant_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "field": "endikatè_revni_aplikan_anplwaye",
+              "operator": "egal",
+              "value": "Wi"
             },
             "fields": [
               {
-                "id": "applicant_1st_job_start_date",
-                "label": "1st Job - Start Date",
-                "type": "date",
+                "id": "dat_komansman_travay_aplikan_1ye_",
+                "label": "Premye Travay - Dat Kòmansman",
+                "type": "dat",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "Premye Travay"
                 }
               },
               {
-                "id": "applicant_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "aplikan_1ye_travay_chanjman_rotasyon",
+                "label": "1ye Travay - Èske gen chanjman wotasyon?",
+                "type": "radyo",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ],
-                  "group": "1st Job"
+                  "group": "Premye Travay"
                 }
               },
               {
-                "id": "applicant_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
-                "type": "radio",
+                "id": "aplikan_1ye_travay_mande_lè siplemantè",
+                "label": "Premye Travay - Li mande lè siplemantè?",
+                "type": "radyo",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ],
-                  "group": "1st Job"
+                  "group": "Premye Travay"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "non_anplwayè_aplikan_1ye_travay",
+                "label": "Premye Travay - Non Patwon an",
+                "type": "tèks",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "Premye Travay"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "aplikan_1ye_djòb_anplwayè_telefòn",
+                "label": "Premye Travay - Telefòn Patwon",
+                "type": "telefòn",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "Premye Travay"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "aplikan_1ye_travay_anplwayè_ri",
+                "label": "Premye Travay - Adrès Patwon an",
+                "type": "tèks",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "Premye Travay"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "aplikan_1ye_travay_anplwa_vil",
+                "label": "Premye Travay - Vil Anplwayè",
+                "type": "tèks",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "Premye Travay"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "aplikan_1ye_travay_eta_anplwayè",
+                "label": "Premye Travay - Eta Anplwayè a",
+                "type": "tèks",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "Premye Travay"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "kòd postal_anplwayè_aplikan_1ye_travay",
+                "label": "Premye Travay - Kòd Postal Patwon an",
+                "type": "tèks",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "Premye Travay"
                 }
               },
               {
-                "id": "applicant_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
-                "type": "date",
+                "id": "dat_komansman_2yèm_travay_aplikan an",
+                "label": "2yèm Travay - Dat Kòmansman",
+                "type": "dat",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "Dezyèm Travay"
                 }
               },
               {
-                "id": "applicant_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "aplikan_2yèm_travay_chanjman_rotasyon",
+                "label": "2yèm Travay - Èske li gen chanjman wotasyon?",
+                "type": "radyo",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ],
-                  "group": "2nd Job"
+                  "group": "Dezyèm Travay"
                 }
               },
               {
-                "id": "applicant_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
-                "type": "radio",
+                "id": "aplikan_2yèm_travay_mande_lè_siplemantè",
+                "label": "Dezyèm travay - Li mande lè siplemantè?",
+                "type": "radyo",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ],
-                  "group": "2nd Job"
+                  "group": "Dezyèm Travay"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "non_anplwayè_aplikan_2yèm_travay",
+                "label": "2yèm Travay - Non Patwon an",
+                "type": "tèks",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "Dezyèm Travay"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "aplikan_2yèm_travay_anplwa_telefòn",
+                "label": "2yèm Travay - Telefòn Patwon",
+                "type": "telefòn",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "Dezyèm Travay"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "aplikan_2yèm_travay_anplwa_ri",
+                "label": "2yèm Travay - Adrès Patwon an",
+                "type": "tèks",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "Dezyèm Travay"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "aplikan_2yèm_travay_anplwa_vil",
+                "label": "2yèm Travay - Vil Anplwayè",
+                "type": "tèks",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "Dezyèm Travay"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "aplikan_2yèm_travay_eta_anplwayè",
+                "label": "2yèm Travay - Eta Anplwayè a",
+                "type": "tèks",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "Dezyèm Travay"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "kòd postal_anplwayè_aplikan_2yèm_travay",
+                "label": "2yèm Travay - Kòd Postal Patwon an",
+                "type": "tèks",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "Dezyèm Travay"
                 }
               }
             ]
           },
           {
-            "id": "second_parent_jobs",
-            "title": "Second Parent Employment Information",
-            "description": "Enter details for up to two jobs held by the second parent (if applicable).",
+            "id": "dezyèm_paran_travay",
+            "title": "Enfòmasyon sou Anplwa Dezyèm Paran an",
+            "description": "Antre detay pou yon maksimòm de travay dezyèm paran an te genyen (si sa aplikab).",
             "visibilityCondition": {
-              "field": "coparent_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "field": "endikatè_revni_koparan_anplwaye",
+              "operator": "egal",
+              "value": "Wi"
             },
             "fields": [
               {
-                "id": "second_parent_1st_job_start_date",
-                "label": "1st Job - Start Date",
-                "type": "date",
+                "id": "dezyèm_paran_premye_dat_kòmansman_travay",
+                "label": "Premye Travay - Dat Kòmansman",
+                "type": "dat",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "dezyèm_paran_1ye_travay_chanjman_wotasyon",
+                "label": "1ye Travay - Èske gen chanjman wotasyon?",
+                "type": "radyo",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
-                "type": "radio",
+                "id": "dezyèm_paran_1ye_travay_mande_lè_siplemantè",
+                "label": "Premye Travay - Li mande lè siplemantè?",
+                "type": "radyo",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "non_anplwayè_dezyèm_paran_premye_travay",
+                "label": "Premye Travay - Non Patwon an",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "dezyèm_paran_premye_djòb_telefòn_anplwayè",
+                "label": "Premye Travay - Telefòn Patwon",
+                "type": "telefòn",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "dezyèm_paran_premye_djòb_anplwayè_ri",
+                "label": "Premye Travay - Adrès Patwon an",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "dezyèm_paran_premye_travay_anplwayè_vil",
+                "label": "Premye Travay - Vil Anplwayè",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "dezyèm_paran_premye_travay_eta_anplwayè",
+                "label": "Premye Travay - Eta Anplwayè a",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "dezyèm_paran_premye_travay_anplwayè_kòd_postal",
+                "label": "Premye Travay - Kòd Postal Patwon an",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
-                "type": "date",
+                "id": "dezyèm_paran_2yèm_dat_kòmansman_travay",
+                "label": "2yèm Travay - Dat Kòmansman",
+                "type": "dat",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "dezyèm_paran_2yèm_travay_chanjman_wotasyon",
+                "label": "2yèm Travay - Èske li gen chanjman wotasyon?",
+                "type": "radyo",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
-                "type": "radio",
+                "id": "dezyèm_paran_2yèm_travay_mande_lè_siplemantè",
+                "label": "Dezyèm travay - Li mande lè siplemantè?",
+                "type": "radyo",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "dezyèm_paran_2yèm_djòb_non_anplwayè",
+                "label": "2yèm Travay - Non Patwon an",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "dezyèm_paran_2yèm_djòb_anplwayè_telefòn",
+                "label": "2yèm Travay - Telefòn Patwon",
+                "type": "telefòn",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "dezyèm_paran_2yèm_djòb_anplwayè_ri",
+                "label": "2yèm Travay - Adrès Patwon an",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "dezyèm_paran_2yèm_travay_vil_anplwayè",
+                "label": "2yèm Travay - Vil Anplwayè",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "dezyèm_paran_2yèm_travay_eta_anplwayè",
+                "label": "2yèm Travay - Eta Anplwayè a",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "dezyèm_paran_2yèm_travay_anplwayè_kòd_postal",
+                "label": "2yèm Travay - Kòd Postal Patwon an",
+                "type": "tèks",
                 "required": false
               }
             ]
@@ -1330,29 +1346,29 @@
         ]
       },
       {
-        "id": "schedule",
-        "title": "Work/Activity/Travel Time Schedule",
+        "id": "orè",
+        "title": "Orè Travay/Aktivite/Vwayaj",
         "sections": [
           {
-            "id": "schedule_section_info",
-            "title": "Schedule Information",
-            "type": "info",
+            "id": "enfòmasyon_seksyon_orè",
+            "title": "Enfòmasyon sou Orè a",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please indicate what days and hours you will need child care for based on your reason for care.\\n\\n- **Employed**: Indicate the hours you attend work\\n- **Educational or Vocational Program**: Indicate the hours you attend school or your program\\n- **Looking for Work**: Indicate the hours you spend looking for work\\n- **Homeless**: Indicate the hours you spend looking for housing\\n- **Attending Services for Domestic Violence**: Indicate the hours you attend services.\\n- **Attending Services for Substance Abuse Treatment**: Indicate the hours you attend services."
+            "content": "Tanpri endike ki jou ak ki lè w ap bezwen gadri, selon rezon ki fè w ap bezwen gadri a.\\n\\n- **Anplwaye**: Endike konbyen èdtan ou ale travay\\n- **Pwogram Edikasyonèl oswa Pwofesyonèl**: Endike konbyen èdtan ou ale lekòl oswa nan pwogram ou an\\n- **Ap chèche travay**: Endike konbyen èdtan ou pase ap chèche travay\\n- **San kay**: Endike konbyen èdtan ou pase ap chèche lojman\\n- **Ap patisipe nan sèvis pou vyolans domestik**: Endike konbyen èdtan ou ale nan sèvis yo.\\n- **Ap patisipe nan sèvis pou tretman abi sibstans**: Endike konbyen èdtan ou ale nan sèvis yo."
           },
           {
-            "id": "first_parent_activity_schedule",
-            "title": "First Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the first parent's activities.",
+            "id": "premye_paran_aktivite_orè",
+            "title": "Premye Orè Aktivite Paran yo",
+            "description": "Antre lè kòmansman ak lè fen pou chak jou nan semèn nan pou aktivite premye paran an.",
             "ui": {
-              "layout": "table",
+              "layout": "tab",
               "columns": [
-                "Start Time",
-                "End Time"
+                "Lè Kòmanse",
+                "Lè Finisman"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
@@ -1362,162 +1378,162 @@
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "Lendi",
+                  "Madi",
+                  "Mèkredi",
+                  "Jedi",
+                  "Vandredi"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "Aplike orè chwazi a nan lòt jou lasemèn yo",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "Lendi",
+                  "Madi",
+                  "Mèkredi",
+                  "Jedi",
+                  "Vandredi",
+                  "Samdi",
+                  "Dimanch"
                 ]
               }
             },
             "fields": [
               {
-                "id": "fp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "id": "fp_lendi_soti",
+                "label": "Lendi Depi",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Lendi",
                   "column": 1
                 }
               },
               {
-                "id": "fp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "id": "fp_lendi_pou",
+                "label": "Lendi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Lendi",
                   "column": 2
                 }
               },
               {
-                "id": "fp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "id": "fp_madi_soti",
+                "label": "Madi Depi",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Madi",
                   "column": 1
                 }
               },
               {
-                "id": "fp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "id": "fp_madi_pou",
+                "label": "Madi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Madi",
                   "column": 2
                 }
               },
               {
-                "id": "fp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "id": "fp_mèkredi_soti",
+                "label": "Mèkredi Depi",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Mèkredi",
                   "column": 1
                 }
               },
               {
-                "id": "fp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "id": "fp_mèkredi_pou",
+                "label": "Mèkredi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Mèkredi",
                   "column": 2
                 }
               },
               {
-                "id": "fp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "id": "fp_jeudi_soti",
+                "label": "Jedi Depi",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Jedi",
                   "column": 1
                 }
               },
               {
-                "id": "fp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "id": "fp_jeudi_pou",
+                "label": "Jedi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Jedi",
                   "column": 2
                 }
               },
               {
-                "id": "fp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "id": "fp_vandredi_soti",
+                "label": "Vandredi Depi",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Vandredi",
                   "column": 1
                 }
               },
               {
-                "id": "fp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "id": "fp_vandredi_pou",
+                "label": "Vandredi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Vandredi",
                   "column": 2
                 }
               },
               {
-                "id": "fp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "id": "fp_samdi_soti",
+                "label": "Samdi Apati de",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Samdi",
                   "column": 1
                 }
               },
               {
-                "id": "fp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "id": "fp_samdi_pou",
+                "label": "Samdi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Samdi",
                   "column": 2
                 }
               },
               {
-                "id": "fp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "id": "fp_dimanch_soti",
+                "label": "Dimanch Apati de",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Dimanch",
                   "column": 1
                 }
               },
               {
-                "id": "fp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "id": "fp_dimanch_pou",
+                "label": "Dimanch Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Dimanch",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "second_parent_activity_schedule",
-            "title": "Second Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the second parent's activities.",
+            "id": "dezyèm_paran_aktivite_orè",
+            "title": "Orè Aktivite Dezyèm Paran an",
+            "description": "Antre lè kòmansman ak lè fen pou chak jou nan semèn nan pou aktivite dezyèm paran an.",
             "ui": {
-              "layout": "table",
+              "layout": "tab",
               "columns": [
-                "Start Time",
-                "End Time"
+                "Lè Kòmanse",
+                "Lè Finisman"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
@@ -1527,310 +1543,310 @@
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "Lendi",
+                  "Madi",
+                  "Mèkredi",
+                  "Jedi",
+                  "Vandredi"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "Aplike orè chwazi a nan lòt jou lasemèn yo",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "Lendi",
+                  "Madi",
+                  "Mèkredi",
+                  "Jedi",
+                  "Vandredi",
+                  "Samdi",
+                  "Dimanch"
                 ]
               }
             },
             "fields": [
               {
-                "id": "sp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "id": "sp_lendi_soti",
+                "label": "Lendi Apati de",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Lendi",
                   "column": 1
                 }
               },
               {
-                "id": "sp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "id": "sp_lendi_pou",
+                "label": "Lendi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Lendi",
                   "column": 2
                 }
               },
               {
-                "id": "sp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "id": "sp_madi_soti",
+                "label": "Madi Depi",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Madi",
                   "column": 1
                 }
               },
               {
-                "id": "sp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "id": "sp_madi_pou",
+                "label": "Madi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Madi",
                   "column": 2
                 }
               },
               {
-                "id": "sp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "id": "sp_mèkredi_soti",
+                "label": "Mèkredi Apati de",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Mèkredi",
                   "column": 1
                 }
               },
               {
-                "id": "sp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "id": "sp_mèkredi_pou",
+                "label": "Mèkredi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Mèkredi",
                   "column": 2
                 }
               },
               {
-                "id": "sp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "id": "sp_jedi_soti",
+                "label": "Jedi Depi",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Jedi",
                   "column": 1
                 }
               },
               {
-                "id": "sp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "id": "sp_jedi_pou",
+                "label": "Jedi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Jedi",
                   "column": 2
                 }
               },
               {
-                "id": "sp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "id": "sp_vandredi_soti",
+                "label": "Vandredi Depi",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Vandredi",
                   "column": 1
                 }
               },
               {
-                "id": "sp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "id": "sp_vandredi_pou",
+                "label": "Vandredi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Vandredi",
                   "column": 2
                 }
               },
               {
-                "id": "sp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "id": "sp_samdi_soti",
+                "label": "Samdi Apati de",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Samdi",
                   "column": 1
                 }
               },
               {
-                "id": "sp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "id": "sp_samdi_pou",
+                "label": "Samdi Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Samdi",
                   "column": 2
                 }
               },
               {
-                "id": "sp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "id": "sp_dimanch_soti",
+                "label": "Dimanch Apati de",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Dimanch",
                   "column": 1
                 }
               },
               {
-                "id": "sp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "id": "sp_dimanch_pou",
+                "label": "Dimanch Pou rive",
+                "type": "tan",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Dimanch",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "first_parent_travel_time",
-            "title": "First Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the first parent.",
+            "id": "premye_paran_vwayaj_tan",
+            "title": "Tan Vwayaj Premye Paran an",
+            "description": "Antre tan vwayaj ak metòd transpò pou premye paran an.",
             "fields": [
               {
-                "id": "fp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "id": "tan_vwayaj_fp_depoze",
+                "label": "Tan vwayaj pou depoze",
+                "type": "chwazi",
+                "tooltip": "Chwazi tan vwayaj abityèl ou soti nan travay/aktivite pou rive nan moun k ap pran swen timoun ou an.",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 minit",
+                    "30 minit",
+                    "45 minit",
+                    "1 èdtan",
+                    "Plis pase 1 èdtan"
                   ]
                 }
               },
               {
-                "id": "fp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "id": "tan_depoze_fp_gt_1 èdtan",
+                "label": "Lè pou depoze (si li pi long pase 1 èdtan)",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "fp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "tan_vwayaj_fp_depoze",
+                  "operator": "egal",
+                  "value": "Plis pase 1 èdtan"
                 }
               },
               {
-                "id": "fp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "id": "tan_vwayaj_fp_ranmasaj",
+                "label": "Tan vwayaj pou vin chèche a",
+                "type": "chwazi",
+                "tooltip": "Chwazi tan vwayaj abityèl ou soti nan travay/aktivite pou rive nan moun k ap pran swen timoun ou an.",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 minit",
+                    "30 minit",
+                    "45 minit",
+                    "1 èdtan",
+                    "Plis pase 1 èdtan"
                   ]
                 }
               },
               {
-                "id": "fp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "id": "tan_ranmasaj_fp_gt_1 èdtan",
+                "label": "Lè pou vin chèche a (si li pi long pase 1 èdtan)",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "fp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "tan_vwayaj_fp_ranmasaj",
+                  "operator": "egal",
+                  "value": "Plis pase 1 èdtan"
                 }
               },
               {
-                "id": "fp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
-                "type": "radio",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
+                "id": "fp_transpò_piblik_depoze",
+                "label": "Transpò piblik pou depoze timoun?",
+                "type": "radyo",
+                "tooltip": "Endike si aplikan an itilize transpò piblik pou ale ak pou soti nan travay/aktivite pou rive nan founisè a.",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "fp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
-                "type": "radio",
+                "id": "fp_pickup_transpò_piblik",
+                "label": "Transpò piblik pou vin chèche w?",
+                "tooltip": "Endike si aplikan an itilize transpò piblik pou ale ak pou soti nan travay/aktivite pou rive nan founisè a.",
+                "type": "radyo",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "second_parent_travel_time",
-            "title": "Second Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the second parent.",
+            "id": "dezyèm_paran_vwayaj_tan",
+            "title": "Tan Vwayaj Dezyèm Paran an",
+            "description": "Antre tan vwayaj ak metòd transpò pou dezyèm paran an.",
             "fields": [
               {
-                "id": "sp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
+                "id": "tan_vwayaj_sp_depoze",
+                "label": "Tan vwayaj pou depoze",
+                "type": "chwazi",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 minit",
+                    "30 minit",
+                    "45 minit",
+                    "1 èdtan",
+                    "Plis pase 1 èdtan"
                   ]
                 }
               },
               {
-                "id": "sp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
+                "id": "tan_vwayaj_sp_ranmasaj",
+                "label": "Tan vwayaj pou vin chèche a",
+                "type": "chwazi",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 minit",
+                    "30 minit",
+                    "45 minit",
+                    "1 èdtan",
+                    "Plis pase 1 èdtan"
                   ]
                 }
               },
               {
-                "id": "sp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "id": "tan_depoz_sp_gt_1 èdtan",
+                "label": "Lè pou depoze (si li pi long pase 1 èdtan)",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "sp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "tan_vwayaj_sp_depoze",
+                  "operator": "egal",
+                  "value": "Plis pase 1 èdtan"
                 }
               },
               {
-                "id": "sp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "id": "tan_ranmasaj_sp_gt_1 èdtan",
+                "label": "Lè pou vin chèche a (si li pi long pase 1 èdtan)",
+                "type": "tèks",
                 "requiredCondition": {
-                  "field": "sp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "tan_vwayaj_sp_ranmasaj",
+                  "operator": "egal",
+                  "value": "Plis pase 1 èdtan"
                 }
               },
               {
-                "id": "sp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
-                "type": "radio",
+                "id": "sp_transpò_piblik_depoze",
+                "label": "Transpò piblik pou depoze timoun?",
+                "type": "radyo",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "sp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
-                "type": "radio",
+                "id": "sp_transpò_piblik_ranmasaj",
+                "label": "Transpò piblik pou vin chèche w?",
+                "type": "radyo",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               }
@@ -1839,122 +1855,122 @@
         ]
       },
       {
-        "id": "income",
-        "title": "Income Information",
+        "id": "revni",
+        "title": "Enfòmasyon sou Revni",
         "sections": [
           {
-            "id": "income_step_info",
-            "title": "Instructions",
-            "type": "info",
+            "id": "enfòmasyon_etap_revni",
+            "title": "Enstriksyon yo",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please include income/benefits information for yourself and, if applicable, your spouse, your child’s second caretaker, and/or any other adult with whom you share a child, if they live in your home.\\n\\nIndicate if you receive money from the following sources by selecting “Yes” or “No.” If you select “Yes,” you will be asked for additional information.\\n\\nIf the second caretaker in the household also receives the same income source, add a separate line for their income."
+            "content": "Tanpri mete enfòmasyon sou revni/benefis pou tèt ou epi, si sa aplikab, pou mari oswa madanm ou, dezyèm moun k ap pran swen pitit ou a, ak/oswa nenpòt lòt granmoun ou pataje yon timoun avèk li, si yo rete lakay ou.\\n\\nEndike si ou resevwa lajan nan sous sa yo lè w chwazi \"Wi\" oswa \"Non\". Si ou chwazi \"Wi,\" y ap mande w plis enfòmasyon.\\n\\nSi dezyèm moun k ap pran swen pitit la nan kay la resevwa menm sous revni an tou, ajoute yon liy apa pou revni li."
           },
           {
-            "id": "income_sources",
-            "title": "Income Sources",
-            "description": "Provide details about all income sources applicable to the applicant or household.",
+            "id": "sous_revni",
+            "title": "Sous Revni",
+            "description": "Bay detay sou tout sous revni ki aplikab pou aplikan an oswa kay la.",
             "fields": [
               {
-                "id": "income_sources",
-                "label": "List of Income Sources",
-                "type": "group",
+                "id": "sous_revni",
+                "label": "Lis Sous Revni yo",
+                "type": "gwoup",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "name_ref",
-                    "how_often",
-                    "recipient",
-                    "monthly_amount"
+                    "non_ref",
+                    "konbyen fwa",
+                    "moun k ap resevwa a",
+                    "montan_mansyèl"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "name_ref",
-                    "label": "Income Source Type",
-                    "type": "select",
+                    "id": "non_ref",
+                    "label": "Kalite Sous Revni",
+                    "type": "chwazi",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "ApplicantWages",
-                        "SecondParentWages",
-                        "SelfEmployment",
-                        "ChildSupport",
-                        "Alimony",
-                        "Unemployment",
-                        "SocialSecurity",
-                        "Disability",
-                        "Rental",
-                        "Dividends",
-                        "Retirement",
-                        "CashAssistance",
-                        "Other"
+                        "Salè Aplikan yo",
+                        "Salè Dezyèm Paran",
+                        "Travay Endepandan",
+                        "Pansyon Alimantè pou Timoun",
+                        "Pansyon alimantè",
+                        "Chomaj",
+                        "Sekirite Sosyal",
+                        "Andikap",
+                        "Lokasyon",
+                        "Dividann",
+                        "Retrèt",
+                        "Asistans Lajan Kach",
+                        "Lòt"
                       ]
                     }
                   },
                   {
-                    "id": "other_source_text",
-                    "label": "Other Source (If applicable)",
-                    "type": "text",
+                    "id": "lòt_sous_tèks",
+                    "label": "Lòt Sous (Si sa aplikab)",
+                    "type": "tèks",
                     "visibilityCondition": {
-                      "field": "name_ref",
-                      "operator": "equals",
-                      "value": "Other"
+                      "field": "non_ref",
+                      "operator": "egal",
+                      "value": "Lòt"
                     },
                     "requiredCondition": {
                       "condition": {
-                        "field": "name_ref",
-                        "operator": "equals",
-                        "value": "Other"
+                        "field": "non_ref",
+                        "operator": "egal",
+                        "value": "Lòt"
                       }
                     }
                   },
                   {
-                    "id": "is_source_applicable",
-                    "label": "Is this Source Applicable?",
-                    "type": "radio",
+                    "id": "se_sous_ki_aplikab",
+                    "label": "Èske sous sa a aplikab?",
+                    "type": "radyo",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Wi",
+                        "Non"
                       ]
                     }
                   },
                   {
-                    "id": "gross_amount",
-                    "label": "Gross Amount ($)",
-                    "type": "number",
+                    "id": "montan_brit",
+                    "label": "Montan Brit ($)",
+                    "type": "nimewo",
                     "required": true
                   },
                   {
-                    "id": "how_often",
-                    "label": "Frequency of Income",
-                    "type": "radio",
+                    "id": "konbyen fwa",
+                    "label": "Frekans Revni",
+                    "type": "radyo",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Weekly",
-                        "Bi-weekly",
-                        "Monthly",
-                        "Other"
+                        "Chak semèn",
+                        "Chak de semèn",
+                        "Chak mwa",
+                        "Lòt"
                       ]
                     }
                   },
                   {
-                    "id": "recipient",
-                    "label": "Recipient of Income",
-                    "type": "text",
+                    "id": "moun k ap resevwa a",
+                    "label": "Moun k ap resevwa revni an",
+                    "type": "tèks",
                     "required": true
                   },
                   {
-                    "id": "monthly_amount",
-                    "label": "Monthly Amount ($)",
-                    "type": "number",
+                    "id": "montan_mansyèl",
+                    "label": "Montan Mansyèl ($)",
+                    "type": "nimewo",
                     "required": true
                   }
                 ]
@@ -1962,38 +1978,38 @@
             ]
           },
           {
-            "id": "total_income",
-            "title": "Total Household Income",
-            "description": "Sum of all monthly income across sources.",
+            "id": "revni_total",
+            "title": "Revni Total Kay la",
+            "description": "Sòm tout revni mansyèl atravè sous yo.",
             "fields": [
               {
-                "id": "total_income",
-                "label": "Total Monthly Income ($)",
-                "type": "number",
+                "id": "revni_total",
+                "label": "Revni Mansyèl Total ($)",
+                "type": "nimewo",
                 "required": true
               }
             ]
           },
           {
-            "id": "income_proof_section",
-            "title": "Income Proof",
+            "id": "seksyon_prèv_revni",
+            "title": "Prèv Revni",
             "fields": [
               {
-                "id": "income_proof",
-                "label": "Upload Income Proof",
-                "type": "file",
+                "id": "prèv_revni",
+                "label": "Telechaje Prèv Revni",
+                "type": "dosye",
                 "requiredCondition": {
                   "condition": {
-                    "field": "assistance_reason",
-                    "operator": "includes",
-                    "value": "Employment"
+                    "field": "rezon_asistans",
+                    "operator": "gen ladan l",
+                    "value": "Anplwa"
                   }
                 },
                 "constraints": {
                   "maxFileSizeMB": 5,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg"
+                    "aplikasyon/pdf",
+                    "imaj/jpeg"
                   ],
                   "imageResolution": {
                     "minWidth": 800,
@@ -2001,9 +2017,9 @@
                   }
                 },
                 "metadata": {
-                  "proofCategory": "Income Verification",
+                  "proofCategory": "Verifikasyon Revni",
                   "examples": [
-                    "Pay Stub",
+                    "Souch peman",
                     "W-2"
                   ],
                   "multiple": true
@@ -2014,72 +2030,72 @@
         ]
       },
       {
-        "id": "provider",
-        "title": "Provider",
+        "id": "founisè",
+        "title": "Founisè",
         "sections": [
           {
-            "id": "provider_step_info",
-            "title": "Instructions",
-            "type": "info",
+            "id": "enfòmasyon_etap_founisè",
+            "title": "Enstriksyon yo",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "If you are found eligible for child care assistance, you can choose center-based or home-based care from a licensed, registered, or legally exempt provider. If you choose a provider that is not licensed or registered, the provider must be enrolled as a legally exempt provider.\\n\\nIf you know which child care providers you would like your child to attend, provide the names and addresses of your choice of providers. You can leave this section blank if you do not know (it will not impact your eligibility and you will have an opportunity to select a provider if determined eligible)."
+            "content": "Si yo jwenn ou kalifye pou asistans gadri, ou ka chwazi swen nan sant oswa lakay nan men yon founisè ki gen lisans, ki anrejistre, oswa ki legalman egzante. Si ou chwazi yon founisè ki pa gen lisans oswa ki anrejistre, founisè a dwe enskri kòm yon founisè legalman egzante.\\n\\nSi ou konnen ki founisè gadri ou ta renmen pitit ou a ale, bay non ak adrès founisè ou chwazi yo. Ou ka kite seksyon sa a vid si ou pa konnen (sa p ap gen enpak sou kalifikasyon ou epi w ap gen opòtinite pou chwazi yon founisè si yo jwenn li kalifye)."
           },
           {
-            "id": "provider_choices",
-            "title": "Provider Choices",
-            "description": "Specify details of the provider where you intend to enroll the child(ren).",
+            "id": "chwa_founisè",
+            "title": "Chwa Founisè",
+            "description": "Espesifye detay sou founisè kote ou gen entansyon enskri timoun yo.",
             "fields": [
               {
-                "id": "provider_choices",
-                "label": "List of Providers",
-                "type": "group",
+                "id": "chwa_founisè",
+                "label": "Lis Founisè yo",
+                "type": "gwoup",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "provider_name",
-                    "program_number",
-                    "provider_zip_code"
+                    "non_founisè",
+                    "nimewo_pwogram",
+                    "kòd_postal_founisè"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "provider_name",
-                    "label": "Provider Name",
-                    "type": "text",
+                    "id": "non_founisè",
+                    "label": "Non Founisè a",
+                    "type": "tèks",
                     "required": true
                   },
                   {
-                    "id": "program_number",
-                    "label": "Program Number (If Applicable)",
-                    "type": "text",
+                    "id": "nimewo_pwogram",
+                    "label": "Nimewo Pwogram (Si sa aplikab)",
+                    "type": "tèks",
                     "required": false
                   },
                   {
-                    "id": "provider_street",
-                    "label": "Street Address",
-                    "type": "text",
+                    "id": "lari_founisè",
+                    "label": "Adrès lari",
+                    "type": "tèks",
                     "required": true
                   },
                   {
-                    "id": "provider_city",
-                    "label": "City",
-                    "type": "text",
+                    "id": "vil_founisè",
+                    "label": "Vil",
+                    "type": "tèks",
                     "required": true
                   },
                   {
-                    "id": "provider_state",
-                    "label": "State",
-                    "type": "text",
+                    "id": "eta_founisè",
+                    "label": "Eta",
+                    "type": "tèks",
                     "required": true
                   },
                   {
-                    "id": "provider_zip_code",
-                    "label": "Zip Code",
-                    "type": "text",
+                    "id": "kòd_postal_founisè",
+                    "label": "Kòd Postal",
+                    "type": "tèks",
                     "required": true
                   }
                 ]
@@ -2089,186 +2105,186 @@
         ]
       },
       {
-        "id": "document_upload_step",
-        "title": "Document Upload",
-        "description": "The Application for Child Care Assistance (CFWB-012) must include supporting documentation. Check to ensure that documentation is provided for each requirement of subsidy eligibility.",
+        "id": "etap_telechajman_dokiman",
+        "title": "Telechaje Dokiman",
+        "description": "Aplikasyon pou Asistans pou Swen Timoun (CFWB-012) la dwe gen ladan dokiman sipò yo. Tcheke pou asire w ke dokiman yo bay pou chak kondisyon kalifikasyon pou sibvansyon an.",
         "sections": [
           {
-            "id": "nyc_residency",
-            "title": "New York City Residency",
-            "description": "These documents confirm that you live in New York City. Please upload one of the following documents.",
+            "id": "rezidans_nyc",
+            "title": "Rezidans nan Vil Nouyòk",
+            "description": "Dokiman sa yo konfime ou rete nan vil Nouyòk. Tanpri telechaje youn nan dokiman sa yo.",
             "fields": [
               {
-                "id": "nyc_residency_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "kalite_rezidans_nyc",
+                "label": "Chwazi youn nan bagay sa yo:",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
                     "IDNYC",
-                    "Utility Bill",
-                    "Section 8 Award Letter",
-                    "Driver’s License",
-                    "Rent Receipt",
-                    "NYCHA Certificate",
-                    "CFWB-067 Residency Attestation",
-                    "CFWB-027 Housing Attestation with address listed",
-                    "Shelter Residency Letter with address listed",
-                    "Other"
+                    "Fakti sèvis piblik",
+                    "Lèt Prim Seksyon 8",
+                    "Lisans chofè",
+                    "Resi Lwaye",
+                    "Sètifika NYCHA",
+                    "Atestasyon Rezidans CFWB-067",
+                    "Atestasyon Lojman CFWB-027 ak adrès ki nan lis la",
+                    "Lèt Rezidans nan yon Abri ak adrès ki ladan l",
+                    "Lòt"
                   ]
                 }
               },
               {
-                "id": "nyc_residency_file",
-                "label": "Upload Residency Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
-                "required": true, 
+                "id": "dosye_rezidans_nyc",
+                "label": "Telechaje Dokiman Prèv Rezidans",
+                "description": "Pou ajoute yon dokiman nan aplikasyon w lan, ou ka telechaje yon imaj oswa yon fichye eskane depi telefòn ou oswa aparèy ou. Fòma yo aksepte yo enkli .pdf, .gif, .jpeg, .jpg ak .png jiska 25 MB. Aprann kijan pou telechaje fichye w yo ak Videyo Leson patikilye sa a.",
+                "type": "dosye",
+                "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "aplikasyon/pdf",
+                    "imaj/jpeg",
+                    "imaj/jpg",
+                    "imaj/png",
+                    "imaj/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "NYC Residency",
+                  "proofCategory": "Rezidans nan Nouyòk",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "citizenship_status",
-            "title": "Citizenship or Immigration Status",
-            "description": "These documents confirm the citizenship/immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for ONLY each child needing care.",
+            "id": "estati_sitwayènte",
+            "title": "Sitwayènte oswa Estati Imigrasyon",
+            "description": "Dokiman sa yo konfime sitwayènte/sitiyasyon imigrasyon timoun ki nan fanmi w pou ki w ap aplike pou asistans gadri. Tanpri telechaje youn nan dokiman sa yo pou SÈLMAN chak timoun ki bezwen swen.",
             "fields": [
               {
-                "id": "citizenship_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "sitwayènte_dokiman_tip",
+                "label": "Chwazi youn nan bagay sa yo:",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
-                    "US Birth Certificate",
-                    "Alien Registration Card including Permanent Resident or Green Card",
-                    "Passport",
-                    "FS-240 (Report of Birth Abroad of a U.S. Citizen)",
-                    "Naturalization Certificate",
-                    "Other"
+                    "Sètifika nesans Etazini",
+                    "Kat enskripsyon pou etranje ki gen ladan kat rezidan pèmanan oswa kat vèt",
+                    "Paspò",
+                    "FS-240 (Rapò Nesans Aletranje pou yon Sitwayen Ameriken)",
+                    "Sètifika Natiralizasyon",
+                    "Lòt"
                   ]
                 }
               },
               {
-                "id": "citizenship_doc_file",
-                "label": "Upload Citizenship/Immigration Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "dosye_sitwayènte_doc",
+                "label": "Telechaje Dokiman Sitwayènte/Imigrasyon",
+                "description": "Pou ajoute yon dokiman nan aplikasyon w lan, ou ka telechaje yon imaj oswa yon fichye eskane depi telefòn ou oswa aparèy ou. Fòma yo aksepte yo enkli .pdf, .gif, .jpeg, .jpg ak .png jiska 25 MB. Aprann kijan pou telechaje fichye w yo ak Videyo Leson patikilye sa a.",
+                "type": "dosye",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "aplikasyon/pdf",
+                    "imaj/jpeg",
+                    "imaj/jpg",
+                    "imaj/png",
+                    "imaj/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Citizenship/Immigration Status",
+                  "proofCategory": "Sitwayènte/Sitiyasyon Imigrasyon",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "child_relationship",
-            "title": "Child’s Relationship to Parent/Applicant",
-            "description": "These documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them or not. If you are a legal guardian with financial responsibility, you must upload a Court order OR a letter of guardianship.",
+            "id": "relasyon_timoun",
+            "title": "Relasyon Timoun nan ak Paran/Aplikan an",
+            "description": "Dokiman sa yo konfime relasyon w ak timoun ki poko gen 18 an nan kay la. Tanpri telechaje youn nan dokiman sa yo pou chak timoun ki poko gen 18 an nan kay la, kit yo bezwen gadri kit yo pa bezwen. Si w se yon gadyen legal ki gen responsablite finansyè, ou dwe telechaje yon lòd tribinal OSWA yon lèt gadyen legal.",
             "fields": [
               {
-                "id": "relationship_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "kalite_dokiman_relasyon",
+                "label": "Chwazi youn nan bagay sa yo:",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Passport with parent's signature",
-                    "Court order for legal guardian with financial responsibility",
-                    "Letter of Guardianship",
-                    "Other - CFWB-058 Caretaker Attestation"
+                    "Sètifika nesans",
+                    "Dosye adopsyon",
+                    "Dosye batèm",
+                    "Paspò ak siyati paran an",
+                    "Lòd tribinal pou yon gadyen legal ki gen responsablite finansyè",
+                    "Lèt Titè",
+                    "Lòt - CFWB-058 Atestasyon Gadyen"
                   ]
                 }
               },
               {
-                "id": "relationship_doc_file",
-                "label": "Upload Relationship Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "dosye_dokiman_relasyon",
+                "label": "Telechaje Dokiman Relasyon an",
+                "description": "Pou ajoute yon dokiman nan aplikasyon w lan, ou ka telechaje yon imaj oswa yon fichye eskane depi telefòn ou oswa aparèy ou. Fòma yo aksepte yo enkli .pdf, .gif, .jpeg, .jpg ak .png jiska 25 MB. Aprann kijan pou telechaje fichye w yo ak Videyo Leson patikilye sa a.",
+                "type": "dosye",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "aplikasyon/pdf",
+                    "imaj/jpeg",
+                    "imaj/jpg",
+                    "imaj/png",
+                    "imaj/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Relationship",
+                  "proofCategory": "Relasyon ak Timoun",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "age_proof",
-            "title": "Age",
-            "description": "These documents confirm the age of the children in your household. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:",
+            "id": "prèv_laj",
+            "title": "Laj",
+            "description": "Dokiman sa yo konfime laj timoun ki nan kay ou a. Tanpri telechaje youn nan dokiman sa yo pou chak timoun ki poko gen 18 an nan kay la, kit yo bezwen gadri oswa non:",
             "fields": [
               {
-                "id": "age_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "kalite_laj_dokiman",
+                "label": "Chwazi youn nan bagay sa yo:",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Alien Registration Card",
-                    "Passport",
-                    "Official hospital documentation of the child’s birth"
+                    "Sètifika nesans",
+                    "Dosye adopsyon",
+                    "Dosye batèm",
+                    "Kat Enskripsyon pou Etranje",
+                    "Paspò",
+                    "Dokiman ofisyèl lopital ki montre nesans timoun nan"
                   ]
                 }
               },
               {
-                "id": "age_doc_file",
-                "label": "Upload Age Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "fichye_laj_doc",
+                "label": "Telechaje Dokiman Prèv Laj",
+                "description": "Pou ajoute yon dokiman nan aplikasyon w lan, ou ka telechaje yon imaj oswa yon fichye eskane depi telefòn ou oswa aparèy ou. Fòma yo aksepte yo enkli .pdf, .gif, .jpeg, .jpg ak .png jiska 25 MB. Aprann kijan pou telechaje fichye w yo ak Videyo Leson patikilye sa a.",
+                "type": "dosye",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "aplikasyon/pdf",
+                    "imaj/jpeg",
+                    "imaj/jpg",
+                    "imaj/png",
+                    "imaj/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Age",
+                  "proofCategory": "Laj Timoun",
                   "multiple": false
                 }
               }
@@ -2277,9 +2293,9 @@
         ]
       },
       {
-        "id": "review",
-        "title": "Review & Submit",
-        "type": "review",
+        "id": "revizyon",
+        "title": "Revize & Soumèt",
+        "type": "revizyon",
         "sections": []
       }
     ]
