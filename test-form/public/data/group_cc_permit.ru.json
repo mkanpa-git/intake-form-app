@@ -1,192 +1,201 @@
 {
   "form": {
-    "title": "Group Child Care Permit Application",
-    "description": "Multi-step application for obtaining a permit to operate group child care programs.",
+    "title": "Заявление на получение разрешения на групповой уход за детьми",
+    "description": "Многоэтапная подача заявления на получение разрешения на осуществление программ группового ухода за детьми.",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "левый"
     },
     "steps": [
       {
-        "id": "establishment_information",
-        "title": "Establishment Information",
+        "id": "информация_об_учреждении",
+        "title": "Информация об учреждении",
         "sections": [
           {
-            "id": "establishment_address",
-            "title": "Establishment Address",
-            "description": "Enter the physical address where business will operate. If you are applying for a Tattoo License, enter your mailing or home address.",
+            "id": "адрес_учреждения",
+            "title": "Адрес учреждения",
+            "description": "Введите физический адрес, по которому будет осуществляться деятельность. Если вы подаете заявку на получение лицензии на татуировку, введите свой почтовый или домашний адрес.",
             "ui": {
-              "autocomplete": "street_1",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "улица_1",
+              "placeholder": "Начните вводить свой почтовый адрес",
+              "overrideComponent": "АдресАвтозаполнение"
             },
             "metadata": {
               "integration": {
                 "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "feature": "АдресАвтозаполнение"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "город",
+                  "source": "местность",
                   "fallbackSources": [
-                    "postal_town",
-                    "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "почтовый_город",
+                    "уровень_подлокальности_1",
+                    "административная_область_уровень_2"
                   ]
                 },
                 {
-                  "fieldId": "borough",
-                  "source": "sublocality_level_1",
+                  "fieldId": "городок",
+                  "source": "уровень_подлокальности_1",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "административная_область_уровень_2"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "районКарта"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "building_number", "source": "street_number" },
-                { "fieldId": "house_number", "source": "street_number" }
+                {
+                  "fieldId": "состояние",
+                  "source": "административный_уровень_области_1"
+                },
+                {
+                  "fieldId": "номер_здания",
+                  "source": "улица_номер"
+                },
+                {
+                  "fieldId": "номер_дома",
+                  "source": "улица_номер"
+                }
               ]
             },
             "fields": [
               {
-                "id": "address_type",
-                "label": "Address Type",
-                "type": "select",
+                "id": "тип_адреса",
+                "label": "Тип адреса",
+                "type": "выбирать",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Select",
-                    "Complete Address",
-                    "Cross Street (Intersection)",
-                    "Place (Landmark)"
+                    "Выбирать",
+                    "Полный адрес",
+                    "Кросс-стрит (перекресток)",
+                    "Место (ориентир)"
                   ]
                 }
               },
               {
-                "id": "street_1",
-                "label": "Street 1",
-                "type": "text",
+                "id": "улица_1",
+                "label": "Улица 1",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "building_number",
-                "label": "Building #",
-                "type": "text",
+                "id": "номер_здания",
+                "label": "Здание #",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "street_2",
-                "label": "Street 2",
-                "type": "text",
+                "id": "улица_2",
+                "label": "Улица 2",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "unit_type",
-                "label": "Unit Type",
-                "type": "select",
+                "id": "тип_единицы",
+                "label": "Тип устройства",
+                "type": "выбирать",
                 "required": false,
                 "ui": {
                   "options": [
-                    "LBBY",
-                    "APT",
-                    "BLDG",
-                    "STE",
-                    "FL",
-                    "BSMT",
-                    "FRNT",
-                    "SIDE",
-                    "REAR",
-                    "UPPR",
-                    "LOWR",
-                    "PIER"
+                    "ЛББИ",
+                    "АПТ",
+                    "ЗДГ",
+                    "ТЫ",
+                    "В",
+                    "БСМТ",
+                    "ФРНТ",
+                    "СТОРОНА",
+                    "ЗАДНИЙ",
+                    "УППР",
+                    "ВНИЗ",
+                    "ПИРС"
                   ]
                 }
               },
               {
-                "id": "unit",
-                "label": "Unit",
-                "type": "text",
+                "id": "единица",
+                "label": "Единица",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "город",
+                "label": "Город",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "состояние",
+                "label": "Состояние",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "borough",
-                "label": "Borough",
-                "type": "select",
+                "id": "городок",
+                "label": "Городок",
+                "type": "выбирать",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
-                    "Staten Island"
+                    "Бронкс",
+                    "Бруклин",
+                    "Манхэттен",
+                    "Квинс",
+                    "Статен-Айленд"
                   ]
                 }
               },
               {
-                "id": "bin",
-                "label": "Bin",
-                "type": "text",
+                "id": "мусорное ведро",
+                "label": "Корзина",
+                "type": "текст",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Геоклиента"
                 }
               },
               {
-                "id": "bbl",
-                "label": "Bbl",
-                "type": "text",
+                "id": "баррель",
+                "label": "Баррель",
+                "type": "текст",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Геоклиента"
                 }
               },
               {
-                "id": "community_district",
-                "label": "Community District",
-                "type": "text",
+                "id": "сообщество_район",
+                "label": "Район Сообщества",
+                "type": "текст",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Геоклиента"
                 }
               },
               {
-                "id": "council_district",
-                "label": "Council District",
-                "type": "text",
+                "id": "совет_район",
+                "label": "Окружной совет",
+                "type": "текст",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Геоклиента"
                 }
               },
               {
-                "id": "police_precinct",
-                "label": "Police Precinct",
-                "type": "text",
+                "id": "полицейский_участок",
+                "label": "Полицейский участок",
+                "type": "текст",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Геоклиента"
                 }
               },
               {
-                "id": "house_number",
-                "label": "House Number",
-                "type": "text",
+                "id": "номер_дома",
+                "label": "Номер дома",
+                "type": "текст",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Геоклиента"
                 }
               }
             ]
@@ -194,174 +203,210 @@
         ]
       },
       {
-        "id": "contact_information",
-        "title": "Contact Information – Applicant and Other Contacts",
+        "id": "Контактная информация",
+        "title": "Контактная информация – Заявитель и другие контакты",
         "sections": [
           {
-            "id": "contact_info_guidance",
-            "title": "Contact Type Guidance",
-            "type": "info",
+            "id": "контактная_информация_руководство",
+            "title": "Руководство по типу контакта",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "### Applying as a Corporation, Partnership, or Not-for-Profit?\n\nSelect **\"Business Information\"** as your Type of Contact and complete the required fields.  \nBusinesses also have the opportunity to provide a complete list of the responsible individuals within their organization. To add each individual's information to your application, please select **\"Other Contact\"** as the Type of Contact and complete the required fields that appear.\n\n---\n\n### Applying as an Individual or Sole Proprietorship?\n\nSelect **\"Individual Owner\"** as your Type of Contact and complete the required fields that appear.\n\n---\n\n### Emergency Contact?\n\nUnless a **\"Designated Emergency Contact\"** is specified, the applicant will be assumed to be the Emergency Contact.  \nTo identify someone other than the applicant to be contacted in the event of an emergency, please select **\"Designated Emergency Contact\"** as the Type of Contact and complete the required fields that appear."
+            "content": "### Подаете заявку как корпорация, партнерство или некоммерческая организация?\n\nВыберите **\"Деловая информация\"** в качестве типа контакта и заполните обязательные поля. \nКомпании также имеют возможность предоставить полный список ответственных лиц в своей организации. Чтобы добавить информацию о каждом лице в заявку, выберите **\"Другой контакт\"** в качестве типа контакта и заполните обязательные поля.\n\n---\n\n### Подаете заявку как физическое лицо или индивидуальное предприятие?\n\nВыберите **\"Индивидуальный владелец\"** в качестве типа контакта и заполните обязательные поля.\n\n---\n\n### Контактное лицо для экстренных случаев?\n\nЕсли не указано **\"Назначенное контактное лицо для экстренных случаев\"**, заявитель будет считаться контактным лицом для экстренных случаев. \nЧтобы указать кого-то, кроме заявителя, с кем следует связаться в случае чрезвычайной ситуации, выберите **\"Назначенное контактное лицо для экстренных случаев\"** в качестве типа контакта и заполните обязательные поля."
           },
           {
-            "id": "contact_list",
-            "title": "Contact List",
+            "id": "список_контактов",
+            "title": "Список контактов",
             "fields": [
               {
-                "id": "contacts",
-                "label": "Contacts",
-                "type": "group",
+                "id": "контакты",
+                "label": "Контакты",
+                "type": "группа",
                 "metadata": {
                   "multiple": true,
-                  "tableColumns": ["contact_type", "first_name", "last_name", "establishment_name", "email"]
+                  "tableColumns": [
+                    "тип_контакта",
+                    "имя",
+                    "фамилия",
+                    "название_учреждения",
+                    "электронная почта"
+                  ]
                 },
                 "fields": [
                   {
-                    "id": "contact_type",
-                    "label": "Type of Contact",
-                    "type": "select",
+                    "id": "тип_контакта",
+                    "label": "Тип контакта",
+                    "type": "выбирать",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Business Information",
-                        "Individual Owner",
-                        "Other Contact",
-                        "Designated Emergency Contact"
+                        "Деловая информация",
+                        "Индивидуальный владелец",
+                        "Другие контакты",
+                        "Назначенный контакт для экстренной связи"
                       ]
                     }
                   },
                   {
-                    "id": "establishment_name",
-                    "label": "Establishment Name",
-                    "type": "text",
+                    "id": "название_учреждения",
+                    "label": "Название учреждения",
+                    "type": "текст",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "тип_контакта",
+                      "operator": "равно",
+                      "value": "Деловая информация"
                     }
                   },
                   {
-                    "id": "dba_name",
-                    "label": "DBA / Trade Name",
-                    "type": "text",
+                    "id": "имя_базы_данных",
+                    "label": "DBA / Торговое наименование",
+                    "type": "текст",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "тип_контакта",
+                      "operator": "равно",
+                      "value": "Деловая информация"
                     }
                   },
                   {
-                    "id": "legal_structure",
-                    "label": "Legal Structure",
-                    "type": "select",
+                    "id": "юридическая_структура",
+                    "label": "Правовая структура",
+                    "type": "выбирать",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "тип_контакта",
+                      "operator": "равно",
+                      "value": "Деловая информация"
                     },
                     "ui": {
                       "options": [
-                        "Corporation",
-                        "Partnership",
-                        "Limited Partnership",
-                        "Limited Liability",
-                        "Not-for-Profit"
+                        "Корпорация",
+                        "Партнерство",
+                        "Товарищество с ограниченной ответственностью",
+                        "Ограниченная ответственность",
+                        "Некоммерческая организация"
                       ]
                     }
                   },
                   {
                     "id": "nys_sales_tax_id",
-                    "label": "NYS Sales Tax ID #",
-                    "type": "text",
+                    "label": "Идентификационный номер налога с продаж в штате Нью-Йорк",
+                    "type": "текст",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "тип_контакта",
+                      "operator": "равно",
+                      "value": "Деловая информация"
                     }
                   },
                   {
                     "id": "is_out_of_state_corp",
-                    "label": "Are you a corporation formed outside of New York State?",
-                    "type": "radio",
+                    "label": "Вы представляете корпорацию, созданную за пределами штата Нью-Йорк?",
+                    "type": "радио",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "тип_контакта",
+                      "operator": "равно",
+                      "value": "Деловая информация"
                     },
                     "ui": {
-                      "options": ["Yes", "No"]
-                    }
-                  },
-                  {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
-                    "requiredCondition": {
-                      "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                      "options": [
+                        "Да",
+                        "Нет"
                       ]
                     }
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "имя",
+                    "label": "Имя",
+                    "type": "текст",
                     "requiredCondition": {
                       "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                        {
+                          "field": "тип_контакта",
+                          "operator": "равно",
+                          "value": "Индивидуальный владелец"
+                        },
+                        {
+                          "field": "тип_контакта",
+                          "operator": "равно",
+                          "value": "Другие контакты"
+                        },
+                        {
+                          "field": "тип_контакта",
+                          "operator": "равно",
+                          "value": "Назначенный контакт для экстренной связи"
+                        }
                       ]
                     }
                   },
                   {
-                    "id": "title",
-                    "label": "Title",
-                    "type": "text",
+                    "id": "фамилия",
+                    "label": "Фамилия",
+                    "type": "текст",
+                    "requiredCondition": {
+                      "anyOf": [
+                        {
+                          "field": "тип_контакта",
+                          "operator": "равно",
+                          "value": "Индивидуальный владелец"
+                        },
+                        {
+                          "field": "тип_контакта",
+                          "operator": "равно",
+                          "value": "Другие контакты"
+                        },
+                        {
+                          "field": "тип_контакта",
+                          "operator": "равно",
+                          "value": "Назначенный контакт для экстренной связи"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "заголовок",
+                    "label": "Заголовок",
+                    "type": "текст",
                     "required": false
                   },
                   {
-                    "id": "email",
-                    "label": "E-mail Address",
-                    "type": "email",
+                    "id": "электронная почта",
+                    "label": "Адрес электронной почты",
+                    "type": "электронная почта",
                     "required": true
                   },
                   {
                     "id": "ssn_itin",
                     "label": "SSN / ITIN",
-                    "type": "text",
+                    "type": "текст",
                     "required": false,
                     "constraints": {
                       "pattern": "^(\\d{3}-\\d{2}-\\d{4}|\\d{9})$"
                     },
                     "ui": {
-                      "placeholder": "XXX-XX-XXXX or 9-digit ITIN"
+                      "placeholder": "XXX-XX-XXXX или 9-значный ITIN"
                     }
                   },
                   {
                     "id": "ssn_itin_type",
-                    "label": "Did you enter SSN or ITIN?",
-                    "type": "radio",
+                    "label": "Вы ввели SSN или ITIN?",
+                    "type": "радио",
                     "requiredCondition": {
                       "field": "ssn_itin",
-                      "operator": "notEquals",
+                      "operator": "неравен",
                       "value": ""
                     },
                     "ui": {
-                      "options": ["SSN", "ITIN"]
+                      "options": [
+                        "ССН",
+                        "ИНН"
+                      ]
                     }
                   },
                   {
-                    "id": "phone",
-                    "label": "Phone Number",
-                    "type": "tel",
+                    "id": "телефон",
+                    "label": "Номер телефона",
+                    "type": "тел",
                     "required": true,
                     "constraints": {
                       "pattern": "^\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -372,23 +417,26 @@
                   },
                   {
                     "id": "tty_phone",
-                    "label": "TTY Phone",
-                    "type": "tel",
+                    "label": "Телетайп-телефон",
+                    "type": "тел",
                     "required": false
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "Дата рождения",
+                    "label": "Дата рождения",
+                    "type": "дата",
                     "required": false
                   },
                   {
-                    "id": "gender",
-                    "label": "Gender",
-                    "type": "radio",
+                    "id": "пол",
+                    "label": "Пол",
+                    "type": "радио",
                     "required": false,
                     "ui": {
-                      "options": ["Female", "Male"]
+                      "options": [
+                        "Женский",
+                        "Мужской"
+                      ]
                     }
                   }
                 ]
@@ -397,212 +445,211 @@
           }
         ]
       },
-
       {
-        "id": "application_info_1",
-        "title": "Application Specific Information 1",
+        "id": "информация_о_приложении_1",
+        "title": "Специфическая информация по применению 1",
         "sections": [
           {
-            "id": "program_details",
-            "title": "Program Details",
+            "id": "подробности_программы",
+            "title": "Подробности программы",
             "fields": [
               {
-                "id": "program_type",
-                "label": "Program Type",
-                "type": "select",
+                "id": "тип_программы",
+                "label": "Тип программы",
+                "type": "выбирать",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Infant Toddler",
-                    "Preschool"
+                    "Младенец Малыш",
+                    "Дошкольное"
                   ]
                 }
               },
               {
-                "id": "orientation_cert_number",
-                "label": "Pre Permit Orientation Cert #",
-                "type": "text",
+                "id": "номер_сертификата_ориентации",
+                "label": "Сертификат предварительной ориентации #",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "permittee_name",
-                "label": "Permittee (Sponsor Name)",
-                "type": "text",
+                "id": "имя_разрешителя",
+                "label": "Получатель разрешения (Имя спонсора)",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "is_applicant_same_as_permittee",
-                "label": "Applicant same as Permittee?",
-                "type": "checkbox",
+                "id": "является_заявителем_таким_же_как_разрешитель",
+                "label": "Заявитель и получатель разрешения — это одно и то же лицо?",
+                "type": "флажок",
                 "ui": {
                   "defaultChecked": true
                 }
               },
               {
-                "id": "permit_expiration_date",
-                "label": "Expiration Date",
-                "type": "date",
+                "id": "дата_истечения_разрешения",
+                "label": "Дата окончания срока",
+                "type": "дата",
                 "required": false
               },
               {
-                "id": "permit_number",
-                "label": "Permit #",
-                "type": "text",
+                "id": "номер_разрешения",
+                "label": "Разрешать #",
+                "type": "текст",
                 "required": false
               }
             ]
           },
           {
-            "id": "program_contact",
-            "title": "Program Contact",
+            "id": "программа_контакт",
+            "title": "Программа Контакты",
             "fields": [
               {
-                "id": "program_phone",
-                "label": "Phone",
-                "type": "tel"
+                "id": "программа_телефон",
+                "label": "Телефон",
+                "type": "тел"
               },
               {
-                "id": "program_fax",
-                "label": "Fax",
-                "type": "tel"
+                "id": "факс_программа",
+                "label": "Факс",
+                "type": "тел"
               },
               {
-                "id": "program_email",
-                "label": "Email",
-                "type": "email",
+                "id": "программа_email",
+                "label": "Электронная почта",
+                "type": "электронная почта",
                 "required": true
               },
               {
-                "id": "program_website",
-                "label": "Website",
-                "type": "text"
+                "id": "программа_вебсайт",
+                "label": "Веб-сайт",
+                "type": "текст"
               }
             ]
           },
           {
-            "id": "program_days_hours",
-            "title": "Days Open (Hours)",
+            "id": "программа_дни_часы",
+            "title": "Дни работы (часы)",
             "fields": [
               {
-                "id": "open_days",
-                "label": "Open Days",
-                "type": "checkbox",
+                "id": "открытые_дни",
+                "label": "Дни открытых дверей",
+                "type": "флажок",
                 "ui": {
                   "options": [
-                    "Sunday",
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
+                    "Воскресенье",
+                    "Понедельник",
+                    "Вторник",
+                    "Среда",
+                    "Четверг",
+                    "Пятница",
+                    "Суббота"
                   ]
                 }
               },
               {
-                "id": "nightcare",
-                "label": "Nightcare",
-                "type": "checkbox"
+                "id": "ночной уход",
+                "label": "Ночной уход",
+                "type": "флажок"
               },
               {
-                "id": "open_from",
-                "label": "Open From",
-                "type": "time",
+                "id": "открыть_из",
+                "label": "Открыть из",
+                "type": "время",
                 "required": true
               },
               {
-                "id": "close_at",
-                "label": "Close At",
-                "type": "time",
+                "id": "близко_в",
+                "label": "Закрыть в",
+                "type": "время",
                 "required": true
               },
               {
-                "id": "inspection_delivery_method",
-                "label": "Inspection Report Delivery Method",
-                "type": "select",
+                "id": "метод_доставки_инспекции",
+                "label": "Метод доставки отчета о проверке",
+                "type": "выбирать",
                 "ui": {
                   "options": [
-                    "Email",
-                    "Fax",
-                    "Regular Mail"
+                    "Электронная почта",
+                    "Факс",
+                    "Обычная почта"
                   ]
                 }
               },
               {
-                "id": "inspection_language",
-                "label": "Inspection Language",
-                "type": "select",
+                "id": "инспекционный_язык",
+                "label": "Язык инспекции",
+                "type": "выбирать",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish"
+                    "Английский",
+                    "испанский"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "school_year_dates",
-            "title": "School Year Dates",
+            "id": "даты_учебного_года",
+            "title": "Даты учебного года",
             "fields": [
               {
-                "id": "school_year_from",
-                "label": "Regular School Year From",
-                "type": "date"
+                "id": "учебный_год_от",
+                "label": "Обычный учебный год с",
+                "type": "дата"
               },
               {
-                "id": "school_year_to",
-                "label": "Regular School Year To",
-                "type": "date"
+                "id": "учебный_год_до",
+                "label": "Обычный учебный год",
+                "type": "дата"
               },
               {
-                "id": "has_summer_program",
-                "label": "Summer Program",
-                "type": "checkbox"
+                "id": "есть_летняя_программа",
+                "label": "Летняя программа",
+                "type": "флажок"
               }
             ]
           },
           {
-            "id": "school_breaks",
-            "title": "School Breaks",
+            "id": "школьные_перерывы",
+            "title": "Школьные каникулы",
             "fields": [
               {
-                "id": "school_breaks",
-                "label": "School Breaks",
-                "type": "group",
+                "id": "школьные_перерывы",
+                "label": "Школьные каникулы",
+                "type": "группа",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "term",
-                    "from",
-                    "to"
+                    "срок",
+                    "от",
+                    "к"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "term",
-                    "label": "Term",
-                    "type": "select",
+                    "id": "срок",
+                    "label": "Срок",
+                    "type": "выбирать",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Fall",
-                        "Spring",
-                        "Summer",
-                        "Winter"
+                        "Падать",
+                        "Весна",
+                        "Лето",
+                        "Зима"
                       ]
                     }
                   },
                   {
-                    "id": "from",
-                    "label": "From",
-                    "type": "date",
+                    "id": "от",
+                    "label": "От",
+                    "type": "дата",
                     "required": true
                   },
                   {
-                    "id": "to",
-                    "label": "To",
-                    "type": "date",
+                    "id": "к",
+                    "label": "К",
+                    "type": "дата",
                     "required": true
                   }
                 ]
@@ -610,24 +657,24 @@
             ]
           },
           {
-            "id": "holidays",
-            "title": "Holidays",
+            "id": "праздники",
+            "title": "Праздники",
             "fields": [
               {
-                "id": "holidays",
-                "label": "Holiday List",
-                "type": "group",
+                "id": "праздники",
+                "label": "Список праздников",
+                "type": "группа",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "holiday_name"
+                    "название_праздника"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "holiday_name",
-                    "label": "Holiday Name",
-                    "type": "text",
+                    "id": "название_праздника",
+                    "label": "Название праздника",
+                    "type": "текст",
                     "required": true
                   }
                 ]
@@ -636,84 +683,84 @@
           },
           {
             "id": "food_services_info",
-            "title": "Food Services Information",
+            "title": "Информация о продовольственных услугах",
             "fields": [
               {
-                "id": "food_provided",
-                "label": "Is food provided for children in care?",
-                "type": "radio",
+                "id": "еда_предоставлена",
+                "label": "Предоставляется ли питание детям, находящимся под опекой?",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
-                "id": "food_prepared_on_site",
-                "label": "Is food prepared on site?",
-                "type": "radio",
+                "id": "еда_приготовленная_на_месте",
+                "label": "Готовится ли еда на месте?",
+                "type": "радио",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
-                "id": "food_preparation_location",
-                "label": "Where is food prepared?",
-                "type": "text"
+                "id": "место_приготовления_еды",
+                "label": "Где готовится еда?",
+                "type": "текст"
               },
               {
                 "id": "dohmh_food_service_permit",
-                "label": "DOHMH Food Service Permit #",
-                "type": "text"
+                "label": "Разрешение DOHMH на оказание услуг общественного питания №",
+                "type": "текст"
               },
               {
-                "id": "person_on_certificate",
-                "label": "Person Name on Certificate",
-                "type": "text"
+                "id": "лицо_на_сертификате",
+                "label": "Имя лица в сертификате",
+                "type": "текст"
               },
               {
-                "id": "food_protection_cert_number",
-                "label": "Food Protection Certificate #",
-                "type": "text"
+                "id": "номер_сертификата_защиты_пищевых_продуктов",
+                "label": "Сертификат защиты пищевых продуктов №",
+                "type": "текст"
               }
             ]
           }
         ]
       },
       {
-        "id": "application_info_2",
-        "title": "Application Specific Information 2"
+        "id": "информация_о_приложении_2",
+        "title": "Специфическая информация по применению 2"
       },
       {
         "id": "document_upload",
-        "title": "Upload Documents",
-        "description": "REQUIRED DOCUMENTS\nIn order for your application to be processed, based on information provided, you are required to upload the following documents:",
+        "title": "Загрузить документы",
+        "description": "НЕОБХОДИМЫЕ ДОКУМЕНТЫ\nДля обработки вашего заявления на основании предоставленной информации вам необходимо загрузить следующие документы:",
         "sections": [
           {
-            "id": "initial_site_survey",
-            "title": "Initial Site Survey Form",
+            "id": "начальный_опрос_сайта",
+            "title": "Форма первоначального обследования участка",
             "fields": [
               {
-                "id": "site_survey_file",
-                "label": "Upload Initial Site Survey Form",
-                "type": "file",
+                "id": "файл_обзора_сайта",
+                "label": "Загрузить форму первоначального обследования участка",
+                "type": "файл",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "приложение/pdf",
+                    "изображение/jpeg",
+                    "изображение/jpg",
+                    "изображение/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Initial Site Survey",
+                  "proofCategory": "Первичное обследование участка",
                   "multiple": false
                 }
               }
@@ -721,49 +768,49 @@
           },
           {
             "id": "personal_id_proof",
-            "title": "Proof of Personal Identification",
+            "title": "Подтверждение личности",
             "fields": [
               {
-                "id": "personal_id_file",
-                "label": "Upload Proof of Personal Identification",
-                "type": "file",
+                "id": "личный_идентификационный_файл",
+                "label": "Загрузить подтверждение личности",
+                "type": "файл",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "приложение/pdf",
+                    "изображение/jpeg",
+                    "изображение/jpg",
+                    "изображение/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Personal ID",
+                  "proofCategory": "Персональный идентификатор",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "fee_exemption_proof",
-            "title": "Proof of Fee Exemption",
+            "id": "доказательство_освобождения_от_уплаты",
+            "title": "Доказательство освобождения от уплаты пошлины",
             "fields": [
               {
-                "id": "fee_exemption_file",
-                "label": "Upload Proof of Fee Exemption (ACS Affiliation or Municipal Exemption)",
-                "type": "file",
+                "id": "файл_освобождения_от_уплаты",
+                "label": "Загрузите подтверждение освобождения от уплаты сбора (принадлежность к ACS или освобождение от уплаты налога на муниципальные услуги)",
+                "type": "файл",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "приложение/pdf",
+                    "изображение/jpeg",
+                    "изображение/jpg",
+                    "изображение/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Fee Exemption",
+                  "proofCategory": "Освобождение от уплаты пошлины",
                   "multiple": false
                 }
               }
@@ -773,16 +820,15 @@
       },
       {
         "id": "step_6_placeholder",
-        "title": "To be defined"
+        "title": "Будет определено"
       },
       {
         "id": "step_7_placeholder",
-        "title": "To be defined"
+        "title": "Будет определено"
       },
       {
         "id": "step_8_placeholder",
-        "title": "To be defined"
+        "title": "Будет определено"
       }
     ]
-  }
-}
+  }}
