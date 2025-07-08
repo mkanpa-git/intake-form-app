@@ -10,6 +10,7 @@ import { getApplication, upsertApplication } from '../../../utils/appStorage';
 import Button from '../../shared/Button/Button';
 import HelpChat from '../../shared/HelpChat';
 import useMediaQuery from '../../../utils/useMediaQuery';
+import { useTranslation } from 'react-i18next';
 
 /**
  * Renders a multi-step form specified in a JSON file.
@@ -25,6 +26,7 @@ export default function FormRenderer({
   formSpecPath = '/data/childcare_form.json',
 }) {
   const { showToast } = useToast();
+  const { t } = useTranslation();
   const [formSpec, setFormSpec] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -314,7 +316,7 @@ export default function FormRenderer({
             size="small"
             onClick={() => setChatOpen(true)}
           >
-            Need Help?
+            {t('needHelp')}
           </Button>
         </div>
         {errorSummary.length > 0 && (

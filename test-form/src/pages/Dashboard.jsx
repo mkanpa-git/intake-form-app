@@ -3,6 +3,7 @@ import { loadApplications, upsertApplication, deleteApplication } from '../utils
 import { AuthContext } from '../context/AuthContext';
 import ServiceCard from '../components/ServiceCard';
 import ApplicationCard from '../components/ApplicationCard';
+import { useTranslation } from 'react-i18next';
 
 const SERVICE_INFO = {
   childcare: {
@@ -22,6 +23,7 @@ const SERVICE_INFO = {
 export default function Dashboard({ onStart }) {
   const { user } = useContext(AuthContext);
   const [apps, setApps] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (user) {
@@ -61,7 +63,7 @@ export default function Dashboard({ onStart }) {
     // For now, let's use a more specific class that can be styled.
     <div className="jules-dashboard-page">
       {/* h1 will be styled by jules_base.css */}
-      <h1>Service Catalog</h1>
+      <h1>{t('serviceCatalog')}</h1>
       {/* A generic grid class, could be styled with CSS Grid or Flexbox in jules_layout.css or jules_misc.css */}
       <div className="jules-grid-container jules-service-catalog-grid">
         <ServiceCard
@@ -87,7 +89,7 @@ export default function Dashboard({ onStart }) {
       {user && apps.length > 0 && (
         <div className="jules-draft-list">
           {/* h2 will be styled by jules_base.css */}
-          <h2>Saved Applications</h2>
+          <h2>{t('savedApplications')}</h2>
           <div className="jules-grid-container jules-saved-applications-grid">
             {apps.map((app) => {
               const key = app.serviceKey || app.service_key || 'childcare';

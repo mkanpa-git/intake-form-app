@@ -28,7 +28,10 @@
     "react-scripts": "5.0.1",
     "remark-gfm": "^4.0.1",
     "web-vitals": "^2.1.4",
-    "winston": "^3.17.0"
+    "winston": "^3.17.0",
+    "i18next": "^23.8.1",
+    "react-i18next": "^13.2.2",
+    "i18next-http-backend": "^2.2.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,788 @@
+{
+  "form": {
+    "title": "Group Child Care Permit Application",
+    "description": "Multi-step application for obtaining a permit to operate group child care programs.",
+    "layout": {
+      "stepperPosition": "left"
+    },
+    "steps": [
+      {
+        "id": "establishment_information",
+        "title": "Establishment Information",
+        "sections": [
+          {
+            "id": "establishment_address",
+            "title": "Establishment Address",
+            "description": "Enter the physical address where business will operate. If you are applying for a Tattoo License, enter your mailing or home address.",
+            "ui": {
+              "autocomplete": "street_1",
+              "placeholder": "Start typing your street address",
+              "overrideComponent": "AddressAutocomplete"
+            },
+            "metadata": {
+              "integration": {
+                "provider": "Google",
+                "feature": "AddressAutocomplete"
+              },
+              "autofillTargets": [
+                {
+                  "fieldId": "city",
+                  "source": "locality",
+                  "fallbackSources": [
+                    "postal_town",
+                    "sublocality_level_1",
+                    "administrative_area_level_2"
+                  ]
+                },
+                {
+                  "fieldId": "borough",
+                  "source": "sublocality_level_1",
+                  "fallbackSources": [
+                    "administrative_area_level_2"
+                  ],
+                  "mapping": "boroughMap"
+                },
+                { "fieldId": "state", "source": "administrative_area_level_1" },
+                { "fieldId": "building_number", "source": "street_number" },
+                { "fieldId": "house_number", "source": "street_number" }
+              ]
+            },
+            "fields": [
+              {
+                "id": "address_type",
+                "label": "Address Type",
+                "type": "select",
+                "required": true,
+                "ui": {
+                  "options": [
+                    "Select",
+                    "Complete Address",
+                    "Cross Street (Intersection)",
+                    "Place (Landmark)"
+                  ]
+                }
+              },
+              {
+                "id": "street_1",
+                "label": "Street 1",
+                "type": "text",
+                "required": true
+              },
+              {
+                "id": "building_number",
+                "label": "Building #",
+                "type": "text",
+                "required": true
+              },
+              {
+                "id": "street_2",
+                "label": "Street 2",
+                "type": "text",
+                "required": false
+              },
+              {
+                "id": "unit_type",
+                "label": "Unit Type",
+                "type": "select",
+                "required": false,
+                "ui": {
+                  "options": [
+                    "LBBY",
+                    "APT",
+                    "BLDG",
+                    "STE",
+                    "FL",
+                    "BSMT",
+                    "FRNT",
+                    "SIDE",
+                    "REAR",
+                    "UPPR",
+                    "LOWR",
+                    "PIER"
+                  ]
+                }
+              },
+              {
+                "id": "unit",
+                "label": "Unit",
+                "type": "text",
+                "required": false
+              },
+              {
+                "id": "city",
+                "label": "City",
+                "type": "text",
+                "required": true
+              },
+              {
+                "id": "state",
+                "label": "State",
+                "type": "text",
+                "required": true
+              },
+              {
+                "id": "borough",
+                "label": "Borough",
+                "type": "select",
+                "required": true,
+                "ui": {
+                  "options": [
+                    "Bronx",
+                    "Brooklyn",
+                    "Manhattan",
+                    "Queens",
+                    "Staten Island"
+                  ]
+                }
+              },
+              {
+                "id": "bin",
+                "label": "Bin",
+                "type": "text",
+                "required": false,
+                "metadata": {
+                  "source": "Geoclient API"
+                }
+              },
+              {
+                "id": "bbl",
+                "label": "Bbl",
+                "type": "text",
+                "required": false,
+                "metadata": {
+                  "source": "Geoclient API"
+                }
+              },
+              {
+                "id": "community_district",
+                "label": "Community District",
+                "type": "text",
+                "required": false,
+                "metadata": {
+                  "source": "Geoclient API"
+                }
+              },
+              {
+                "id": "council_district",
+                "label": "Council District",
+                "type": "text",
+                "required": false,
+                "metadata": {
+                  "source": "Geoclient API"
+                }
+              },
+              {
+                "id": "police_precinct",
+                "label": "Police Precinct",
+                "type": "text",
+                "required": false,
+                "metadata": {
+                  "source": "Geoclient API"
+                }
+              },
+              {
+                "id": "house_number",
+                "label": "House Number",
+                "type": "text",
+                "required": false,
+                "metadata": {
+                  "source": "Geoclient API"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "contact_information",
+        "title": "Contact Information – Applicant and Other Contacts",
+        "sections": [
+          {
+            "id": "contact_info_guidance",
+            "title": "Contact Type Guidance",
+            "type": "info",
+            "ui": {
+              "markdown": true,
+              "collapsible": false,
+              "defaultCollapsed": false
+            },
+            "content": "### Applying as a Corporation, Partnership, or Not-for-Profit?\n\nSelect **\"Business Information\"** as your Type of Contact and complete the required fields.  \nBusinesses also have the opportunity to provide a complete list of the responsible individuals within their organization. To add each individual's information to your application, please select **\"Other Contact\"** as the Type of Contact and complete the required fields that appear.\n\n---\n\n### Applying as an Individual or Sole Proprietorship?\n\nSelect **\"Individual Owner\"** as your Type of Contact and complete the required fields that appear.\n\n---\n\n### Emergency Contact?\n\nUnless a **\"Designated Emergency Contact\"** is specified, the applicant will be assumed to be the Emergency Contact.  \nTo identify someone other than the applicant to be contacted in the event of an emergency, please select **\"Designated Emergency Contact\"** as the Type of Contact and complete the required fields that appear."
+          },
+          {
+            "id": "contact_list",
+            "title": "Contact List",
+            "fields": [
+              {
+                "id": "contacts",
+                "label": "Contacts",
+                "type": "group",
+                "metadata": {
+                  "multiple": true,
+                  "tableColumns": ["contact_type", "first_name", "last_name", "establishment_name", "email"]
+                },
+                "fields": [
+                  {
+                    "id": "contact_type",
+                    "label": "Type of Contact",
+                    "type": "select",
+                    "required": true,
+                    "ui": {
+                      "options": [
+                        "Business Information",
+                        "Individual Owner",
+                        "Other Contact",
+                        "Designated Emergency Contact"
+                      ]
+                    }
+                  },
+                  {
+                    "id": "establishment_name",
+                    "label": "Establishment Name",
+                    "type": "text",
+                    "requiredCondition": {
+                      "field": "contact_type",
+                      "operator": "equals",
+                      "value": "Business Information"
+                    }
+                  },
+                  {
+                    "id": "dba_name",
+                    "label": "DBA / Trade Name",
+                    "type": "text",
+                    "requiredCondition": {
+                      "field": "contact_type",
+                      "operator": "equals",
+                      "value": "Business Information"
+                    }
+                  },
+                  {
+                    "id": "legal_structure",
+                    "label": "Legal Structure",
+                    "type": "select",
+                    "requiredCondition": {
+                      "field": "contact_type",
+                      "operator": "equals",
+                      "value": "Business Information"
+                    },
+                    "ui": {
+                      "options": [
+                        "Corporation",
+                        "Partnership",
+                        "Limited Partnership",
+                        "Limited Liability",
+                        "Not-for-Profit"
+                      ]
+                    }
+                  },
+                  {
+                    "id": "nys_sales_tax_id",
+                    "label": "NYS Sales Tax ID #",
+                    "type": "text",
+                    "requiredCondition": {
+                      "field": "contact_type",
+                      "operator": "equals",
+                      "value": "Business Information"
+                    }
+                  },
+                  {
+                    "id": "is_out_of_state_corp",
+                    "label": "Are you a corporation formed outside of New York State?",
+                    "type": "radio",
+                    "requiredCondition": {
+                      "field": "contact_type",
+                      "operator": "equals",
+                      "value": "Business Information"
+                    },
+                    "ui": {
+                      "options": ["Yes", "No"]
+                    }
+                  },
+                  {
+                    "id": "first_name",
+                    "label": "First Name",
+                    "type": "text",
+                    "requiredCondition": {
+                      "anyOf": [
+                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
+                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
+                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "last_name",
+                    "label": "Last Name",
+                    "type": "text",
+                    "requiredCondition": {
+                      "anyOf": [
+                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
+                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
+                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "title",
+                    "label": "Title",
+                    "type": "text",
+                    "required": false
+                  },
+                  {
+                    "id": "email",
+                    "label": "E-mail Address",
+                    "type": "email",
+                    "required": true
+                  },
+                  {
+                    "id": "ssn_itin",
+                    "label": "SSN / ITIN",
+                    "type": "text",
+                    "required": false,
+                    "constraints": {
+                      "pattern": "^(\\d{3}-\\d{2}-\\d{4}|\\d{9})$"
+                    },
+                    "ui": {
+                      "placeholder": "XXX-XX-XXXX or 9-digit ITIN"
+                    }
+                  },
+                  {
+                    "id": "ssn_itin_type",
+                    "label": "Did you enter SSN or ITIN?",
+                    "type": "radio",
+                    "requiredCondition": {
+                      "field": "ssn_itin",
+                      "operator": "notEquals",
+                      "value": ""
+                    },
+                    "ui": {
+                      "options": ["SSN", "ITIN"]
+                    }
+                  },
+                  {
+                    "id": "phone",
+                    "label": "Phone Number",
+                    "type": "tel",
+                    "required": true,
+                    "constraints": {
+                      "pattern": "^\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
+                    },
+                    "ui": {
+                      "placeholder": "(123) 456-7890"
+                    }
+                  },
+                  {
+                    "id": "tty_phone",
+                    "label": "TTY Phone",
+                    "type": "tel",
+                    "required": false
+                  },
+                  {
+                    "id": "date_of_birth",
+                    "label": "Date of Birth",
+                    "type": "date",
+                    "required": false
+                  },
+                  {
+                    "id": "gender",
+                    "label": "Gender",
+                    "type": "radio",
+                    "required": false,
+                    "ui": {
+                      "options": ["Female", "Male"]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "application_info_1",
+        "title": "Application Specific Information 1",
+        "sections": [
+          {
+            "id": "program_details",
+            "title": "Program Details",
+            "fields": [
+              {
+                "id": "program_type",
+                "label": "Program Type",
+                "type": "select",
+                "required": true,
+                "ui": {
+                  "options": [
+                    "Infant Toddler",
+                    "Preschool"
+                  ]
+                }
+              },
+              {
+                "id": "orientation_cert_number",
+                "label": "Pre Permit Orientation Cert #",
+                "type": "text",
+                "required": true
+              },
+              {
+                "id": "permittee_name",
+                "label": "Permittee (Sponsor Name)",
+                "type": "text",
+                "required": true
+              },
+              {
+                "id": "is_applicant_same_as_permittee",
+                "label": "Applicant same as Permittee?",
+                "type": "checkbox",
+                "ui": {
+                  "defaultChecked": true
+                }
+              },
+              {
+                "id": "permit_expiration_date",
+                "label": "Expiration Date",
+                "type": "date",
+                "required": false
+              },
+              {
+                "id": "permit_number",
+                "label": "Permit #",
+                "type": "text",
+                "required": false
+              }
+            ]
+          },
+          {
+            "id": "program_contact",
+            "title": "Program Contact",
+            "fields": [
+              {
+                "id": "program_phone",
+                "label": "Phone",
+                "type": "tel"
+              },
+              {
+                "id": "program_fax",
+                "label": "Fax",
+                "type": "tel"
+              },
+              {
+                "id": "program_email",
+                "label": "Email",
+                "type": "email",
+                "required": true
+              },
+              {
+                "id": "program_website",
+                "label": "Website",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "id": "program_days_hours",
+            "title": "Days Open (Hours)",
+            "fields": [
+              {
+                "id": "open_days",
+                "label": "Open Days",
+                "type": "checkbox",
+                "ui": {
+                  "options": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                  ]
+                }
+              },
+              {
+                "id": "nightcare",
+                "label": "Nightcare",
+                "type": "checkbox"
+              },
+              {
+                "id": "open_from",
+                "label": "Open From",
+                "type": "time",
+                "required": true
+              },
+              {
+                "id": "close_at",
+                "label": "Close At",
+                "type": "time",
+                "required": true
+              },
+              {
+                "id": "inspection_delivery_method",
+                "label": "Inspection Report Delivery Method",
+                "type": "select",
+                "ui": {
+                  "options": [
+                    "Email",
+                    "Fax",
+                    "Regular Mail"
+                  ]
+                }
+              },
+              {
+                "id": "inspection_language",
+                "label": "Inspection Language",
+                "type": "select",
+                "ui": {
+                  "options": [
+                    "English",
+                    "Spanish"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "school_year_dates",
+            "title": "School Year Dates",
+            "fields": [
+              {
+                "id": "school_year_from",
+                "label": "Regular School Year From",
+                "type": "date"
+              },
+              {
+                "id": "school_year_to",
+                "label": "Regular School Year To",
+                "type": "date"
+              },
+              {
+                "id": "has_summer_program",
+                "label": "Summer Program",
+                "type": "checkbox"
+              }
+            ]
+          },
+          {
+            "id": "school_breaks",
+            "title": "School Breaks",
+            "fields": [
+              {
+                "id": "school_breaks",
+                "label": "School Breaks",
+                "type": "group",
+                "metadata": {
+                  "multiple": true,
+                  "tableColumns": [
+                    "term",
+                    "from",
+                    "to"
+                  ]
+                },
+                "fields": [
+                  {
+                    "id": "term",
+                    "label": "Term",
+                    "type": "select",
+                    "required": true,
+                    "ui": {
+                      "options": [
+                        "Fall",
+                        "Spring",
+                        "Summer",
+                        "Winter"
+                      ]
+                    }
+                  },
+                  {
+                    "id": "from",
+                    "label": "From",
+                    "type": "date",
+                    "required": true
+                  },
+                  {
+                    "id": "to",
+                    "label": "To",
+                    "type": "date",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "holidays",
+            "title": "Holidays",
+            "fields": [
+              {
+                "id": "holidays",
+                "label": "Holiday List",
+                "type": "group",
+                "metadata": {
+                  "multiple": true,
+                  "tableColumns": [
+                    "holiday_name"
+                  ]
+                },
+                "fields": [
+                  {
+                    "id": "holiday_name",
+                    "label": "Holiday Name",
+                    "type": "text",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "food_services_info",
+            "title": "Food Services Information",
+            "fields": [
+              {
+                "id": "food_provided",
+                "label": "Is food provided for children in care?",
+                "type": "radio",
+                "required": true,
+                "ui": {
+                  "options": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "id": "food_prepared_on_site",
+                "label": "Is food prepared on site?",
+                "type": "radio",
+                "ui": {
+                  "options": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "id": "food_preparation_location",
+                "label": "Where is food prepared?",
+                "type": "text"
+              },
+              {
+                "id": "dohmh_food_service_permit",
+                "label": "DOHMH Food Service Permit #",
+                "type": "text"
+              },
+              {
+                "id": "person_on_certificate",
+                "label": "Person Name on Certificate",
+                "type": "text"
+              },
+              {
+                "id": "food_protection_cert_number",
+                "label": "Food Protection Certificate #",
+                "type": "text"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "application_info_2",
+        "title": "Application Specific Information 2"
+      },
+      {
+        "id": "document_upload",
+        "title": "Upload Documents",
+        "description": "REQUIRED DOCUMENTS\nIn order for your application to be processed, based on information provided, you are required to upload the following documents:",
+        "sections": [
+          {
+            "id": "initial_site_survey",
+            "title": "Initial Site Survey Form",
+            "fields": [
+              {
+                "id": "site_survey_file",
+                "label": "Upload Initial Site Survey Form",
+                "type": "file",
+                "required": true,
+                "constraints": {
+                  "maxFileSizeMB": 25,
+                  "allowedTypes": [
+                    "application/pdf",
+                    "image/jpeg",
+                    "image/jpg",
+                    "image/png"
+                  ]
+                },
+                "metadata": {
+                  "proofCategory": "Initial Site Survey",
+                  "multiple": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "personal_id_proof",
+            "title": "Proof of Personal Identification",
+            "fields": [
+              {
+                "id": "personal_id_file",
+                "label": "Upload Proof of Personal Identification",
+                "type": "file",
+                "required": true,
+                "constraints": {
+                  "maxFileSizeMB": 25,
+                  "allowedTypes": [
+                    "application/pdf",
+                    "image/jpeg",
+                    "image/jpg",
+                    "image/png"
+                  ]
+                },
+                "metadata": {
+                  "proofCategory": "Personal ID",
+                  "multiple": false
+                }
+              }
+            ]
+          },
+          {
+            "id": "fee_exemption_proof",
+            "title": "Proof of Fee Exemption",
+            "fields": [
+              {
+                "id": "fee_exemption_file",
+                "label": "Upload Proof of Fee Exemption (ACS Affiliation or Municipal Exemption)",
+                "type": "file",
+                "required": true,
+                "constraints": {
+                  "maxFileSizeMB": 25,
+                  "allowedTypes": [
+                    "application/pdf",
+                    "image/jpeg",
+                    "image/jpg",
+                    "image/png"
+                  ]
+                },
+                "metadata": {
+                  "proofCategory": "Fee Exemption",
+                  "multiple": false
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "step_6_placeholder",
+        "title": "To be defined"
+      },
+      {
+        "id": "step_7_placeholder",
+        "title": "To be defined"
+      },
+      {
+        "id": "step_8_placeholder",
+        "title": "To be defined"
+      }
+    ]
+  }
+}

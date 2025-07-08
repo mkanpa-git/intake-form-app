@@ -1,0 +1,18 @@
+{
+  "brand": "Servicios ModelCity",
+  "dashboard": "Tablero",
+  "login": "Iniciar sesión",
+  "logout": "Cerrar sesión",
+  "profile": "Perfil",
+  "serviceCatalog": "Catálogo de Servicios",
+  "savedApplications": "Solicitudes Guardadas",
+  "privacyPolicy": "Política de Privacidad",
+  "needHelp": "¿Necesita ayuda?",
+  "editProfile": "Editar Perfil",
+  "firstName": "Nombre",
+  "lastName": "Apellido",
+  "middleInitial": "Inicial del Segundo Nombre",
+  "save": "Guardar",
+  "pleaseLogIn": "Por favor inicie sesión",
+  "language": "Idioma"
+}
