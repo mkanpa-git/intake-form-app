@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useToast } from '../../../context/ToastContext';
 import Step from '../Step/Step';
 import Stepper from '../Stepper/Stepper';
+import StepperDrawer from '../StepperDrawer/StepperDrawer';
 import ReviewStep from '../ReviewStep/ReviewStep';
 // import formSpec from '../../../data/childcare_form.json'; // Form spec is now loaded via fetch from /data/childcare_form.json
 import { validateStep } from '../../../utils/formHelpers';
 import { getApplication, upsertApplication } from '../../../utils/appStorage';
 import Button from '../../shared/Button/Button';
 import HelpChat from '../../shared/HelpChat';
+import useMediaQuery from '../../../utils/useMediaQuery';
 
 /**
  * Renders a multi-step form specified in a JSON file.
@@ -44,6 +46,7 @@ export default function FormRenderer({
   const [reviewIndex, setReviewIndex] = useState(-1);
   const [stepperPosition, setStepperPosition] = useState('right');
   const [orientation, setOrientation] = useState('vertical');
+  const isMobile = useMediaQuery('(max-width: 768px)');
   const [errorSummary, setErrorSummary] = useState([]);
   const errorSummaryRef = useRef(null);
   const [chatOpen, setChatOpen] = useState(false);
@@ -276,16 +279,26 @@ export default function FormRenderer({
         stepperPosition === 'top' ? 'wizard-layout-column' : 'wizard-layout-row'
       }
     >
-      {stepperPosition !== 'top' && (
-        <Stepper
-          steps={steps}
-          currentStep={currentStep}
-          onStepChange={handleStepChange}
-          requiredDocs={requiredDocs}
-          orientation={orientation}
-          canNavigate={canNavigate}
-        />
-      )}
+      {stepperPosition !== 'top' &&
+        (isMobile ? (
+          <StepperDrawer
+            steps={steps}
+            currentStep={currentStep}
+            onStepChange={handleStepChange}
+            requiredDocs={requiredDocs}
+            canNavigate={canNavigate}
+            position={stepperPosition === 'left' ? 'left' : 'right'}
+          />
+        ) : (
+          <Stepper
+            steps={steps}
+            currentStep={currentStep}
+            onStepChange={handleStepChange}
+            requiredDocs={requiredDocs}
+            orientation={orientation}
+            canNavigate={canNavigate}
+          />
+        ))}
       <div className="form-main">
         <h1>{form.title}</h1>
         <p>{form.description}</p>
@@ -338,16 +351,26 @@ export default function FormRenderer({
             </ul>
           </div>
         )}
-        {stepperPosition === 'top' && (
-          <Stepper
-            steps={steps}
-            currentStep={currentStep}
-            onStepChange={handleStepChange}
-            requiredDocs={requiredDocs}
-            orientation={orientation}
-            canNavigate={canNavigate}
-          />
-        )}
+        {stepperPosition === 'top' &&
+          (isMobile ? (
+            <StepperDrawer
+              steps={steps}
+              currentStep={currentStep}
+              onStepChange={handleStepChange}
+              requiredDocs={requiredDocs}
+              canNavigate={canNavigate}
+              position="left"
+            />
+          ) : (
+            <Stepper
+              steps={steps}
+              currentStep={currentStep}
+              onStepChange={handleStepChange}
+              requiredDocs={requiredDocs}
+              orientation={orientation}
+              canNavigate={canNavigate}
+            />
+          ))}
         {steps.length > 0 &&
           steps[currentStep] &&
           (steps[currentStep].type === 'review' ? (
