@@ -16,6 +16,23 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { evaluateCondition } from '../../../utils/formHelpers';
 
+const BOROUGH_MAP = {
+  bronx: 'Bronx',
+  'bronx county': 'Bronx',
+  brooklyn: 'Brooklyn',
+  'kings county': 'Brooklyn',
+  manhattan: 'Manhattan',
+  'new york': 'Manhattan',
+  'new york county': 'Manhattan',
+  queens: 'Queens',
+  'queens county': 'Queens',
+  'staten island': 'Staten Island',
+  'richmond county': 'Staten Island',
+};
+
+const getByPath = (obj, path) =>
+  path.split('.').reduce((acc, part) => (acc ? acc[part] : undefined), obj);
+
 export default function GroupField({ field, value = [], onChange, fullData = {} }) {
   const [entries, setEntries] = useState(value);
   const [currentEntry, setCurrentEntry] = useState({});
@@ -44,6 +61,47 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
   const handleInputChange = (id, val) => {
     setCurrentEntry((prev) => ({ ...prev, [id]: val }));
     setEntryErrors((prev) => ({ ...prev, [id]: undefined }));
+  };
+
+  const handleAddressAutofill = (addr, subField) => {
+    const fullAddr = addr.formatted_address || addr.formattedAddress || '';
+    setPlaceholders((p) => ({ ...p, [subField.id]: fullAddr }));
+
+    const components = addr.address_components || addr.addressComponents || [];
+    const comps = {};
+    components.forEach((c) => {
+      c.types.forEach((t) => {
+        comps[t] = {
+          long_name: c.long_name || c.longName,
+          short_name: c.short_name || c.shortName,
+        };
+      });
+    });
+
+    const targets = field.metadata?.autofillTargets || [];
+    targets.forEach((t) => {
+      let val;
+      if (t.source?.includes('.')) {
+        val = getByPath(addr, t.source);
+      } else {
+        val = comps[t.source]?.long_name || comps[t.source]?.longName;
+        if (!val && Array.isArray(t.fallbackSources)) {
+          for (const fs of t.fallbackSources) {
+            val = comps[fs]?.long_name || comps[fs]?.longName;
+            if (val) break;
+          }
+        }
+      }
+      if (val !== undefined && t.mapping === 'boroughMap') {
+        val = BOROUGH_MAP[String(val).trim().toLowerCase()] || val;
+      }
+      if (val !== undefined) {
+        handleInputChange(t.fieldId, val);
+      }
+    });
+
+    const streetOnly = fullAddr.split(',')[0];
+    handleInputChange(subField.id, streetOnly);
   };
 
   const validateEntry = () => {
@@ -126,6 +184,11 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
       subField.id === 'street' ||
       (typeof subField.label === 'string' &&
         subField.label.toLowerCase().includes('street address'));
+    const isAddressField =
+      (field.ui?.overrideComponent === 'AddressAutocomplete' &&
+        field.ui?.autocomplete === subField.id) ||
+      subField.type === 'address' ||
+      isStreet;
     switch (subField.type) {
       case 'select':
         return (
@@ -194,89 +257,22 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
             />
           );
         }
-        if (isStreet) {
+        if (isAddressField) {
           return (
             <>
               <AddressAutocomplete
                 key={subField.id}
                 {...commonProps}
-                placeholder={placeholders[subField.id] || subField.ui?.placeholder || ''}
+                placeholder={
+                  placeholders[subField.id] ||
+                  field.ui?.placeholder ||
+                  subField.ui?.placeholder ||
+                  ''
+                }
                 onChange={(val) => handleInputChange(subField.id, val)}
-                onAddressSelect={(addr) => {
-                  const fullAddr = addr.formatted_address || addr.formattedAddress || '';
-                  setPlaceholders((p) => ({ ...p, [subField.id]: fullAddr }));
-
-                  const components = addr.address_components || addr.addressComponents || [];
-                  const comps = {};
-                  components.forEach((c) => {
-                    c.types.forEach((t) => {
-                      comps[t] = {
-                        long_name: c.long_name || c.longName,
-                        short_name: c.short_name || c.shortName,
-                      };
-                    });
-                  });
-                  if (field.fields.some((f) => f.id === 'city')) {
-                    const cityVal =
-                      comps.locality?.long_name ||
-                      comps.locality?.longName ||
-                      comps.postal_town?.long_name ||
-                      comps.postalTown?.longName ||
-                      comps.sublocality_level_1?.long_name ||
-                      comps.sublocalityLevel1?.longName ||
-                      comps.administrative_area_level_2?.long_name ||
-                      comps.administrativeAreaLevel2?.longName ||
-                      '';
-                    handleInputChange('city', cityVal);
-                  }
-                  if (field.fields.some((f) => f.id === 'borough')) {
-                    const boroughSource =
-                      comps.sublocality_level_1?.long_name ||
-                      comps.sublocalityLevel1?.longName ||
-                      comps.administrative_area_level_2?.long_name ||
-                      comps.administrativeAreaLevel2?.longName ||
-                      '';
-                    const boroughMap = {
-                      bronx: 'Bronx',
-                      'bronx county': 'Bronx',
-                      brooklyn: 'Brooklyn',
-                      'kings county': 'Brooklyn',
-                      manhattan: 'Manhattan',
-                      'new york': 'Manhattan',
-                      'new york county': 'Manhattan',
-                      queens: 'Queens',
-                      'queens county': 'Queens',
-                      'staten island': 'Staten Island',
-                      'richmond county': 'Staten Island',
-                    };
-                    const bName = boroughMap[boroughSource.trim().toLowerCase()];
-                    if (bName) {
-                      handleInputChange('borough', bName);
-                    }
-                  }
-                  if (field.fields.some((f) => f.id === 'state')) {
-                    handleInputChange(
-                      'state',
-                      comps.administrative_area_level_1?.short_name || comps.administrativeAreaLevel1?.shortName || ''
-                    );
-                  }
-                  if (field.fields.some((f) => f.id === 'zip_code')) {
-                    handleInputChange('zip_code', comps.postal_code?.long_name || comps.postalCode?.longName || '');
-                  }
-                  if (field.fields.some((f) => f.id === 'latitude') && addr.location?.latitude !== undefined) {
-                    handleInputChange('latitude', addr.location.latitude);
-                  }
-                  if (field.fields.some((f) => f.id === 'longitude') && addr.location?.longitude !== undefined) {
-                    handleInputChange('longitude', addr.location.longitude);
-                  }
-
-                  const streetOnly = fullAddr.split(',')[0];
-                  handleInputChange(subField.id, streetOnly);
-                }}
-                error={error} // Pass error to AddressAutocomplete
+                onAddressSelect={(addr) => handleAddressAutofill(addr, subField)}
+                error={error}
               />
-              {/* Error display for AddressAutocomplete might need specific handling if not internal */}
-              {/* For now, assuming AddressAutocomplete might show its own error or this is for a general field error */}
               {error && (
                 <div
                   id={`${subField.id}-error`}
