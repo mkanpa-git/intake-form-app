@@ -157,7 +157,7 @@ app.post('/api/help-chat', chatLimiter, async (req, res) => {
     }
 
     const systemPrompt =
-      'You are a helpful assistant for the intake form application. Provide concise guidance.' +
+      'You are a helpful assistant for the intake form application. Provide concise guidance, using the context below.' +
       '\nRespond in the following format:\nANSWER: <text>\nSUGGESTIONS:\n- <suggestion1>\n- <suggestion2>\n- <suggestion3>';
 
     const messages = [

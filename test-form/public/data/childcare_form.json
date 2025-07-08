@@ -148,6 +148,7 @@
                 "tooltip": "Indicate your marital status (single, married, divorced, separated or widowed).",
                 "ui": {
                   "options": [
+                    "",
                     "Single",
                     "Married",
                     "Divorced",
@@ -242,8 +243,8 @@
                 },
                 { "fieldId": "state", "source": "administrative_area_level_1" },
                 { "fieldId": "zip_code", "source": "postal_code" },
-                { "fieldId": "latitude", "source": "geometry.location.lat" },
-                { "fieldId": "longitude", "source": "geometry.location.lng" }
+                { "fieldId": "latitude", "source": "location.latitude" },
+                { "fieldId": "longitude", "source": "location.longitude" }
               ]
             },
             "fields": [
@@ -273,6 +274,7 @@
                 "required": true,
                 "ui": {
                   "options": [
+                    "",
                     "Bronx",
                     "Brooklyn",
                     "Manhattan",
@@ -323,8 +325,14 @@
                 "label": "Currently Living In",
                 "type": "select",
                 "required": false,
+                "requiredCondition": {
+                  "field": "is_temporary_address",
+                  "operator": "equals",
+                  "value": "Yes"
+                },
                 "ui": {
                   "options": [
+                    "",
                     "Homeless Shelter",
                     "Doubled-up with another Family",
                     "Hotel/Motel",
@@ -348,6 +356,7 @@
                 "required": false,
                 "ui": {
                   "options": [
+                    "",
                     "Hispanic",
                     "Latino",
                     "No",
@@ -542,6 +551,7 @@
                     "required": true,
                     "ui": {
                       "options": [
+                        "",
                         "Child",
                         "Grandchild",
                         "Foster Child",
@@ -577,6 +587,7 @@
                     "tooltip": "Check “YES” or “NO” to indicate if each child in need of child care is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for child care assistance or the amount of assistance that you will be given by this agency.",
                     "ui": {
                       "options": [
+                        "",
                         "Yes",
                         "No",
                         "Prefer not to answer"
@@ -741,6 +752,7 @@
                     "tooltip": "Provide each person’s relationship to you (e.g. spouse, partner, child, foster parent, other).",
                     "ui": {
                       "options": [
+                        "",
                         "Spouse",
                         "Partner",
                         "Foster Parent",
@@ -777,6 +789,7 @@
                     "tooltip": "Check “YES” or “NO” to indicate if each member in the household is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
                     "ui": {
                       "options": [
+                        "",
                         "Yes",
                         "No",
                         "Prefer not to answer"
@@ -853,6 +866,7 @@
                 "required": true,
                 "ui": {
                   "options": [
+                    "",
                     "Employment",
                     "Looking for Work",
                     "Vocational Training/Educational Activities",
@@ -929,6 +943,7 @@
                 "required": false,
                 "ui": {
                   "options": [
+                    "",
                     "Not Applicable",
                     "Department of Education (DOE)",
                     "Human Resources Administration (HRA)",
@@ -1671,6 +1686,7 @@
                 "tooltip": "Select your typical travel time from work/activity to your child care provider",
                 "ui": {
                   "options": [
+                    "",
                     "15 min",
                     "30 min",
                     "45 min",
@@ -1696,6 +1712,7 @@
                 "tooltip": "Select your typical travel time from work/activity to your child care provider",
                 "ui": {
                   "options": [
+                    "",
                     "15 min",
                     "30 min",
                     "45 min",
@@ -1751,6 +1768,7 @@
                 "type": "select",
                 "ui": {
                   "options": [
+                    "",
                     "15 min",
                     "30 min",
                     "45 min",
@@ -1765,6 +1783,7 @@
                 "type": "select",
                 "ui": {
                   "options": [
+                    "",
                     "15 min",
                     "30 min",
                     "45 min",
@@ -1860,6 +1879,7 @@
                     "required": true,
                     "ui": {
                       "options": [
+                        "",
                         "ApplicantWages",
                         "SecondParentWages",
                         "SelfEmployment",

@@ -14,6 +14,39 @@
             "id": "establishment_address",
             "title": "Establishment Address",
             "description": "Enter the physical address where business will operate. If you are applying for a Tattoo License, enter your mailing or home address.",
+            "ui": {
+              "autocomplete": "street_1",
+              "placeholder": "Start typing your street address",
+              "overrideComponent": "AddressAutocomplete"
+            },
+            "metadata": {
+              "integration": {
+                "provider": "Google",
+                "feature": "AddressAutocomplete"
+              },
+              "autofillTargets": [
+                {
+                  "fieldId": "city",
+                  "source": "locality",
+                  "fallbackSources": [
+                    "postal_town",
+                    "sublocality_level_1",
+                    "administrative_area_level_2"
+                  ]
+                },
+                {
+                  "fieldId": "borough",
+                  "source": "sublocality_level_1",
+                  "fallbackSources": [
+                    "administrative_area_level_2"
+                  ],
+                  "mapping": "boroughMap"
+                },
+                { "fieldId": "state", "source": "administrative_area_level_1" },
+                { "fieldId": "building_number", "source": "street_number" },
+                { "fieldId": "house_number", "source": "street_number" }
+              ]
+            },
             "fields": [
               {
                 "id": "address_type",
@@ -22,6 +55,7 @@
                 "required": true,
                 "ui": {
                   "options": [
+                    "Select",
                     "Complete Address",
                     "Cross Street (Intersection)",
                     "Place (Landmark)"
@@ -29,14 +63,14 @@
                 }
               },
               {
-                "id": "building_number",
-                "label": "Building #",
+                "id": "street_1",
+                "label": "Street 1",
                 "type": "text",
                 "required": true
               },
               {
-                "id": "street_1",
-                "label": "Street 1",
+                "id": "building_number",
+                "label": "Building #",
                 "type": "text",
                 "required": true
               },
