@@ -163,8 +163,9 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
   };
 
   const renderField = (subField) => {
-    const visible = subField.visibilityCondition
-      ? evaluateCondition(subField.visibilityCondition, fullData)
+    const conditionToCheck = subField.visibilityCondition ?? subField.requiredCondition;
+    const visible = conditionToCheck
+      ? evaluateCondition(conditionToCheck, fullData)
       : true;
     const required = subField.requiredCondition
       ? evaluateCondition(subField.requiredCondition, fullData)

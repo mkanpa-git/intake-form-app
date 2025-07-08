@@ -294,8 +294,9 @@ export default function Step({
   };
 
   const renderField = (field, section) => {
-    const visible = field.visibilityCondition
-      ? evaluateCondition(field.visibilityCondition, fullData)
+    const conditionToCheck = field.visibilityCondition ?? field.requiredCondition;
+    const visible = conditionToCheck
+      ? evaluateCondition(conditionToCheck, fullData)
       : true;
     const isRequired = field.requiredCondition
       ? evaluateCondition(field.requiredCondition, fullData)

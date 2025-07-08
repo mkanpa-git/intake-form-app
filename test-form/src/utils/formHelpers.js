@@ -1,5 +1,8 @@
 export function evaluateCondition(condition, data) {
   if (!condition) return true;
+  if (condition.condition && !condition.field && !('value' in condition) && !condition.repeatingGroup) {
+    return evaluateCondition(condition.condition, data);
+  }
   if (condition.repeatingGroup) {
     return evaluateRepeatingGroupCondition(condition, data);
   }
