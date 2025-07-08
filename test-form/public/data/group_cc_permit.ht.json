@@ -1,192 +1,201 @@
 {
   "form": {
-    "title": "Group Child Care Permit Application",
-    "description": "Multi-step application for obtaining a permit to operate group child care programs.",
+    "title": "Aplikasyon pou Pèmi Gadri Timoun an Gwoup",
+    "description": "Aplikasyon an plizyè etap pou jwenn yon pèmi pou opere pwogram gadri timoun an gwoup.",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "gòch"
     },
     "steps": [
       {
-        "id": "establishment_information",
-        "title": "Establishment Information",
+        "id": "enfòmasyon_etablisman",
+        "title": "Enfòmasyon sou Etablisman an",
         "sections": [
           {
-            "id": "establishment_address",
-            "title": "Establishment Address",
-            "description": "Enter the physical address where business will operate. If you are applying for a Tattoo License, enter your mailing or home address.",
+            "id": "adrès_etablisman",
+            "title": "Adrès Etablisman an",
+            "description": "Antre adrès fizik kote biznis la pral opere a. Si w ap aplike pou yon Lisans Tatou, antre adrès postal ou oswa adrès lakay ou.",
             "ui": {
-              "autocomplete": "street_1",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "lari_1",
+              "placeholder": "Kòmanse tape adrès lari ou a",
+              "overrideComponent": "Adrès Otokonplete"
             },
             "metadata": {
               "integration": {
                 "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "feature": "Adrès Otokonplete"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "vil",
+                  "source": "lokalite",
                   "fallbackSources": [
-                    "postal_town",
-                    "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "vil_pòs",
+                    "nivo_soublokalite_1",
+                    "nivo_zòn_administratif_2"
                   ]
                 },
                 {
-                  "fieldId": "borough",
-                  "source": "sublocality_level_1",
+                  "fieldId": "awondisman",
+                  "source": "nivo_soublokalite_1",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "nivo_zòn_administratif_2"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "Kat jeyografik awondisman"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "building_number", "source": "street_number" },
-                { "fieldId": "house_number", "source": "street_number" }
+                {
+                  "fieldId": "eta",
+                  "source": "nivo_zòn_administratif_1"
+                },
+                {
+                  "fieldId": "nimewo_batiman",
+                  "source": "nimewo_ri"
+                },
+                {
+                  "fieldId": "nimewo_kay",
+                  "source": "nimewo_ri"
+                }
               ]
             },
             "fields": [
               {
-                "id": "address_type",
-                "label": "Address Type",
-                "type": "select",
+                "id": "kalite_adrès",
+                "label": "Kalite Adrès",
+                "type": "chwazi",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Select",
-                    "Complete Address",
-                    "Cross Street (Intersection)",
-                    "Place (Landmark)"
+                    "Chwazi",
+                    "Adrès konplè",
+                    "Kwa Ri (Entèseksyon)",
+                    "Kote (Moniman)"
                   ]
                 }
               },
               {
-                "id": "street_1",
-                "label": "Street 1",
-                "type": "text",
+                "id": "lari_1",
+                "label": "Ri 1",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "building_number",
-                "label": "Building #",
-                "type": "text",
+                "id": "nimewo_batiman",
+                "label": "Nimewo bilding lan",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "street_2",
-                "label": "Street 2",
-                "type": "text",
+                "id": "lari_2",
+                "label": "Ri 2",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "unit_type",
-                "label": "Unit Type",
-                "type": "select",
+                "id": "kalite_inite",
+                "label": "Kalite Inite",
+                "type": "chwazi",
                 "required": false,
                 "ui": {
                   "options": [
                     "LBBY",
                     "APT",
-                    "BLDG",
-                    "STE",
-                    "FL",
+                    "BATIMAN",
+                    "OU",
+                    "NAN",
                     "BSMT",
-                    "FRNT",
-                    "SIDE",
-                    "REAR",
+                    "DEVAN",
+                    "BÒ",
+                    "DÈYÈ",
                     "UPPR",
-                    "LOWR",
-                    "PIER"
+                    "DESANN",
+                    "PYÈ"
                   ]
                 }
               },
               {
-                "id": "unit",
-                "label": "Unit",
-                "type": "text",
+                "id": "inite",
+                "label": "Inite",
+                "type": "tèks",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "vil",
+                "label": "Vil",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "eta",
+                "label": "Eta",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "borough",
+                "id": "awondisman",
                 "label": "Borough",
-                "type": "select",
+                "type": "chwazi",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
+                    "Bronks",
+                    "Bwouklin",
+                    "Manhatann",
+                    "Rèn yo",
                     "Staten Island"
                   ]
                 }
               },
               {
-                "id": "bin",
-                "label": "Bin",
-                "type": "text",
+                "id": "bwat",
+                "label": "Bwat",
+                "type": "tèks",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Jeokliyan"
                 }
               },
               {
-                "id": "bbl",
+                "id": "barik",
                 "label": "Bbl",
-                "type": "text",
+                "type": "tèks",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Jeokliyan"
                 }
               },
               {
-                "id": "community_district",
-                "label": "Community District",
-                "type": "text",
+                "id": "distri_kominotè",
+                "label": "Distri Kominotè a",
+                "type": "tèks",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Jeokliyan"
                 }
               },
               {
-                "id": "council_district",
-                "label": "Council District",
-                "type": "text",
+                "id": "konsèy_distri",
+                "label": "Konsèy Distri a",
+                "type": "tèks",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Jeokliyan"
                 }
               },
               {
-                "id": "police_precinct",
-                "label": "Police Precinct",
-                "type": "text",
+                "id": "komisarya_polis",
+                "label": "Komisarya Polis",
+                "type": "tèks",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Jeokliyan"
                 }
               },
               {
-                "id": "house_number",
-                "label": "House Number",
-                "type": "text",
+                "id": "nimewo_kay",
+                "label": "Nimewo Kay",
+                "type": "tèks",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "API Jeokliyan"
                 }
               }
             ]
@@ -194,174 +203,210 @@
         ]
       },
       {
-        "id": "contact_information",
-        "title": "Contact Information – Applicant and Other Contacts",
+        "id": "enfòmasyon_kontak",
+        "title": "Enfòmasyon pou Kontakte – Aplikan an ak Lòt Kontak",
         "sections": [
           {
-            "id": "contact_info_guidance",
-            "title": "Contact Type Guidance",
-            "type": "info",
+            "id": "gidans_enfòmasyon_kontak",
+            "title": "Gidans sou Kalite Kontak",
+            "type": "enfòmasyon",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "### Applying as a Corporation, Partnership, or Not-for-Profit?\n\nSelect **\"Business Information\"** as your Type of Contact and complete the required fields.  \nBusinesses also have the opportunity to provide a complete list of the responsible individuals within their organization. To add each individual's information to your application, please select **\"Other Contact\"** as the Type of Contact and complete the required fields that appear.\n\n---\n\n### Applying as an Individual or Sole Proprietorship?\n\nSelect **\"Individual Owner\"** as your Type of Contact and complete the required fields that appear.\n\n---\n\n### Emergency Contact?\n\nUnless a **\"Designated Emergency Contact\"** is specified, the applicant will be assumed to be the Emergency Contact.  \nTo identify someone other than the applicant to be contacted in the event of an emergency, please select **\"Designated Emergency Contact\"** as the Type of Contact and complete the required fields that appear."
+            "content": "### Èske w ap aplike kòm yon Sosyete, yon Patenarya, oswa yon Òganizasyon ki pa la pou fè pwofi?\n\nChwazi **\"Enfòmasyon sou Biznis\"** kòm Kalite Kontak ou epi ranpli chan obligatwa yo.\n\nBiznis yo gen opòtinite tou pou bay yon lis konplè moun responsab ki nan òganizasyon yo a. Pou ajoute enfòmasyon chak moun nan aplikasyon w lan, tanpri chwazi **\"Lòt Kontak\"** kòm Kalite Kontak epi ranpli chan obligatwa yo.\n\n---\n\n### Èske w ap aplike kòm yon Endividi oswa yon Antrepriz Endividyèl?\n\nChwazi **\"Pwopriyetè Endividyèl\"** kòm Kalite Kontak ou epi ranpli chan obligatwa yo.\n\n---\n\n### Kontak Ijans?\n\nSòf si yo espesifye yon **\"Kontak Ijans Deziyen\"**, yo pral sipoze aplikan an se Kontak Ijans lan.\n\nPou idantifye yon lòt moun apa aplikan an pou kontakte nan ka ta gen yon ijans, tanpri chwazi **\"Kontak Ijans Deziyen\"** kòm Kalite Kontak epi ranpli chan obligatwa yo."
           },
           {
-            "id": "contact_list",
-            "title": "Contact List",
+            "id": "lis_kontak",
+            "title": "Lis Kontak",
             "fields": [
               {
-                "id": "contacts",
-                "label": "Contacts",
-                "type": "group",
+                "id": "kontak",
+                "label": "Kontak",
+                "type": "gwoup",
                 "metadata": {
                   "multiple": true,
-                  "tableColumns": ["contact_type", "first_name", "last_name", "establishment_name", "email"]
+                  "tableColumns": [
+                    "kalite_kontak",
+                    "prenon",
+                    "non fanmi",
+                    "non_etablisman",
+                    "imèl"
+                  ]
                 },
                 "fields": [
                   {
-                    "id": "contact_type",
-                    "label": "Type of Contact",
-                    "type": "select",
+                    "id": "kalite_kontak",
+                    "label": "Kalite Kontak",
+                    "type": "chwazi",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Business Information",
-                        "Individual Owner",
-                        "Other Contact",
-                        "Designated Emergency Contact"
+                        "Enfòmasyon sou Biznis",
+                        "Pwopriyetè endividyèl",
+                        "Lòt Kontak",
+                        "Kontak Ijans Deziyen"
                       ]
                     }
                   },
                   {
-                    "id": "establishment_name",
-                    "label": "Establishment Name",
-                    "type": "text",
+                    "id": "non_etablisman",
+                    "label": "Non Etablisman an",
+                    "type": "tèks",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "kalite_kontak",
+                      "operator": "egal",
+                      "value": "Enfòmasyon sou Biznis"
                     }
                   },
                   {
-                    "id": "dba_name",
-                    "label": "DBA / Trade Name",
-                    "type": "text",
+                    "id": "non_dba",
+                    "label": "DBA / Non Komèsyal",
+                    "type": "tèks",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "kalite_kontak",
+                      "operator": "egal",
+                      "value": "Enfòmasyon sou Biznis"
                     }
                   },
                   {
-                    "id": "legal_structure",
-                    "label": "Legal Structure",
-                    "type": "select",
+                    "id": "estrikti_legal",
+                    "label": "Estrikti Legal",
+                    "type": "chwazi",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "kalite_kontak",
+                      "operator": "egal",
+                      "value": "Enfòmasyon sou Biznis"
                     },
                     "ui": {
                       "options": [
-                        "Corporation",
-                        "Partnership",
-                        "Limited Partnership",
-                        "Limited Liability",
-                        "Not-for-Profit"
+                        "Kòporasyon",
+                        "Patenarya",
+                        "Sosyete an kowòdinasyon",
+                        "Responsablite Limite",
+                        "Òganizasyon san bi likratif"
                       ]
                     }
                   },
                   {
                     "id": "nys_sales_tax_id",
-                    "label": "NYS Sales Tax ID #",
-                    "type": "text",
+                    "label": "Nimewo ID taks sou lavant Eta New York",
+                    "type": "tèks",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "kalite_kontak",
+                      "operator": "egal",
+                      "value": "Enfòmasyon sou Biznis"
                     }
                   },
                   {
-                    "id": "is_out_of_state_corp",
-                    "label": "Are you a corporation formed outside of New York State?",
-                    "type": "radio",
+                    "id": "se_kòporasyon_ki_pa_nan_eta a",
+                    "label": "Èske ou se yon sosyete ki fòme andeyò Eta New York?",
+                    "type": "radyo",
                     "requiredCondition": {
-                      "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "field": "kalite_kontak",
+                      "operator": "egal",
+                      "value": "Enfòmasyon sou Biznis"
                     },
                     "ui": {
-                      "options": ["Yes", "No"]
-                    }
-                  },
-                  {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
-                    "requiredCondition": {
-                      "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                      "options": [
+                        "Wi",
+                        "Non"
                       ]
                     }
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "prenon",
+                    "label": "Prenon",
+                    "type": "tèks",
                     "requiredCondition": {
                       "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                        {
+                          "field": "kalite_kontak",
+                          "operator": "egal",
+                          "value": "Pwopriyetè Endividyèl"
+                        },
+                        {
+                          "field": "kalite_kontak",
+                          "operator": "egal",
+                          "value": "Lòt Kontak"
+                        },
+                        {
+                          "field": "kalite_kontak",
+                          "operator": "egal",
+                          "value": "Kontak Ijans Deziyen"
+                        }
                       ]
                     }
                   },
                   {
-                    "id": "title",
-                    "label": "Title",
-                    "type": "text",
+                    "id": "non fanmi",
+                    "label": "Non Fanmi",
+                    "type": "tèks",
+                    "requiredCondition": {
+                      "anyOf": [
+                        {
+                          "field": "kalite_kontak",
+                          "operator": "egal",
+                          "value": "Pwopriyetè endividyèl"
+                        },
+                        {
+                          "field": "kalite_kontak",
+                          "operator": "egal",
+                          "value": "Lòt Kontak"
+                        },
+                        {
+                          "field": "kalite_kontak",
+                          "operator": "egal",
+                          "value": "Kontak Ijans Deziyen"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "tit",
+                    "label": "Tit",
+                    "type": "tèks",
                     "required": false
                   },
                   {
-                    "id": "email",
-                    "label": "E-mail Address",
-                    "type": "email",
+                    "id": "imèl",
+                    "label": "Adrès imel",
+                    "type": "imèl",
                     "required": true
                   },
                   {
                     "id": "ssn_itin",
-                    "label": "SSN / ITIN",
-                    "type": "text",
+                    "label": "Nimewo Sekirite Sosyal / ITIN",
+                    "type": "tèks",
                     "required": false,
                     "constraints": {
                       "pattern": "^(\\d{3}-\\d{2}-\\d{4}|\\d{9})$"
                     },
                     "ui": {
-                      "placeholder": "XXX-XX-XXXX or 9-digit ITIN"
+                      "placeholder": "XXX-XX-XXXX oubyen ITIN 9 chif"
                     }
                   },
                   {
-                    "id": "ssn_itin_type",
-                    "label": "Did you enter SSN or ITIN?",
-                    "type": "radio",
+                    "id": "kalite_itin_ssn",
+                    "label": "Èske ou te antre nimewo sekirite sosyal ou oswa ITIN nan?",
+                    "type": "radyo",
                     "requiredCondition": {
                       "field": "ssn_itin",
-                      "operator": "notEquals",
+                      "operator": "pa egal",
                       "value": ""
                     },
                     "ui": {
-                      "options": ["SSN", "ITIN"]
+                      "options": [
+                        "Nimewo Sekirite Sosyal",
+                        "ITIN"
+                      ]
                     }
                   },
                   {
-                    "id": "phone",
-                    "label": "Phone Number",
-                    "type": "tel",
+                    "id": "telefòn",
+                    "label": "Nimewo Telefòn",
+                    "type": "telefòn",
                     "required": true,
                     "constraints": {
                       "pattern": "^\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -371,24 +416,27 @@
                     }
                   },
                   {
-                    "id": "tty_phone",
-                    "label": "TTY Phone",
-                    "type": "tel",
+                    "id": "telefòn_tty",
+                    "label": "Telefòn TTY",
+                    "type": "telefòn",
                     "required": false
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "dat_nesans",
+                    "label": "Dat Nesans",
+                    "type": "dat",
                     "required": false
                   },
                   {
-                    "id": "gender",
-                    "label": "Gender",
-                    "type": "radio",
+                    "id": "sèks",
+                    "label": "Sèks",
+                    "type": "radyo",
                     "required": false,
                     "ui": {
-                      "options": ["Female", "Male"]
+                      "options": [
+                        "Fi",
+                        "Gason"
+                      ]
                     }
                   }
                 ]
@@ -397,212 +445,211 @@
           }
         ]
       },
-
       {
-        "id": "application_info_1",
-        "title": "Application Specific Information 1",
+        "id": "aplikasyon_enfòmasyon_1",
+        "title": "Enfòmasyon Espesifik sou Aplikasyon an 1",
         "sections": [
           {
-            "id": "program_details",
-            "title": "Program Details",
+            "id": "detay_pwogram",
+            "title": "Detay Pwogram nan",
             "fields": [
               {
-                "id": "program_type",
-                "label": "Program Type",
-                "type": "select",
+                "id": "kalite_pwogram",
+                "label": "Kalite Pwogram",
+                "type": "chwazi",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Infant Toddler",
-                    "Preschool"
+                    "Tibebe ki piti",
+                    "Lekòl matènèl"
                   ]
                 }
               },
               {
-                "id": "orientation_cert_number",
-                "label": "Pre Permit Orientation Cert #",
-                "type": "text",
+                "id": "nimewo_sètifika_oryantasyon",
+                "label": "Nimewo Sètifika Oryantasyon Pre-Pèmi",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "permittee_name",
-                "label": "Permittee (Sponsor Name)",
-                "type": "text",
+                "id": "non_moun ki gen pèmi an",
+                "label": "Moun ki gen pèmi an (Non moun ki patwone a)",
+                "type": "tèks",
                 "required": true
               },
               {
-                "id": "is_applicant_same_as_permittee",
-                "label": "Applicant same as Permittee?",
-                "type": "checkbox",
+                "id": "se_aplikan_an_menm_ak_pèmi an",
+                "label": "Aplikan an menm jan ak moun ki gen pèmi an?",
+                "type": "kaz pou tcheke",
                 "ui": {
                   "defaultChecked": true
                 }
               },
               {
-                "id": "permit_expiration_date",
-                "label": "Expiration Date",
-                "type": "date",
+                "id": "dat_ekspirasyon_pèmi",
+                "label": "Dat Ekspirasyon",
+                "type": "dat",
                 "required": false
               },
               {
-                "id": "permit_number",
-                "label": "Permit #",
-                "type": "text",
+                "id": "nimewo_pèmi",
+                "label": "Nimewo Pèmi",
+                "type": "tèks",
                 "required": false
               }
             ]
           },
           {
-            "id": "program_contact",
-            "title": "Program Contact",
+            "id": "kontak_pwogram",
+            "title": "Kontak Pwogram nan",
             "fields": [
               {
-                "id": "program_phone",
-                "label": "Phone",
-                "type": "tel"
+                "id": "pwogram_telefòn",
+                "label": "Telefòn",
+                "type": "telefòn"
               },
               {
-                "id": "program_fax",
-                "label": "Fax",
-                "type": "tel"
+                "id": "pwogram_faks",
+                "label": "Faks",
+                "type": "telefòn"
               },
               {
-                "id": "program_email",
-                "label": "Email",
-                "type": "email",
+                "id": "imèl_pwogram",
+                "label": "Imèl",
+                "type": "imèl",
                 "required": true
               },
               {
-                "id": "program_website",
-                "label": "Website",
-                "type": "text"
+                "id": "sit entènèt pwogram",
+                "label": "Sit wèb",
+                "type": "tèks"
               }
             ]
           },
           {
-            "id": "program_days_hours",
-            "title": "Days Open (Hours)",
+            "id": "jou_pwogram_èdtan",
+            "title": "Jou Ouvèti (Orè)",
             "fields": [
               {
-                "id": "open_days",
-                "label": "Open Days",
-                "type": "checkbox",
+                "id": "jounen pòt ouvè",
+                "label": "Jounen Pòt Ouvèt",
+                "type": "kaz pou tcheke",
                 "ui": {
                   "options": [
-                    "Sunday",
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
+                    "Dimanch",
+                    "Lendi",
+                    "Madi",
+                    "Mèkredi",
+                    "Jedi",
+                    "Vandredi",
+                    "Samdi"
                   ]
                 }
               },
               {
-                "id": "nightcare",
-                "label": "Nightcare",
-                "type": "checkbox"
+                "id": "gadri lannwit",
+                "label": "Swen lannwit",
+                "type": "kaz pou tcheke"
               },
               {
-                "id": "open_from",
-                "label": "Open From",
-                "type": "time",
+                "id": "louvri_soti nan",
+                "label": "Louvri Depi",
+                "type": "tan",
                 "required": true
               },
               {
-                "id": "close_at",
-                "label": "Close At",
-                "type": "time",
+                "id": "fèmen_nan",
+                "label": "Fèmen a",
+                "type": "tan",
                 "required": true
               },
               {
-                "id": "inspection_delivery_method",
-                "label": "Inspection Report Delivery Method",
-                "type": "select",
+                "id": "metòd_enspeksyon_livrezon",
+                "label": "Metòd Livrezon Rapò Enspeksyon an",
+                "type": "chwazi",
                 "ui": {
                   "options": [
-                    "Email",
-                    "Fax",
-                    "Regular Mail"
+                    "Imèl",
+                    "Faks",
+                    "Lapòs òdinè"
                   ]
                 }
               },
               {
-                "id": "inspection_language",
-                "label": "Inspection Language",
-                "type": "select",
+                "id": "enspeksyon_lang",
+                "label": "Lang Enspeksyon",
+                "type": "chwazi",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish"
+                    "Anglè",
+                    "Panyòl"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "school_year_dates",
-            "title": "School Year Dates",
+            "id": "dat_ane_lekòl",
+            "title": "Dat Ane Lekòl la",
             "fields": [
               {
-                "id": "school_year_from",
-                "label": "Regular School Year From",
-                "type": "date"
+                "id": "ane_lekòl_apati",
+                "label": "Ane lekòl regilye apati de",
+                "type": "dat"
               },
               {
-                "id": "school_year_to",
-                "label": "Regular School Year To",
-                "type": "date"
+                "id": "ane_lekòl_rive_",
+                "label": "Ane lekòl regilye a",
+                "type": "dat"
               },
               {
-                "id": "has_summer_program",
-                "label": "Summer Program",
-                "type": "checkbox"
+                "id": "pwogram_ete",
+                "label": "Pwogram Ete",
+                "type": "kaz pou tcheke"
               }
             ]
           },
           {
-            "id": "school_breaks",
-            "title": "School Breaks",
+            "id": "vakans_lekòl",
+            "title": "Vakans Lekòl",
             "fields": [
               {
-                "id": "school_breaks",
-                "label": "School Breaks",
-                "type": "group",
+                "id": "vakans_lekòl",
+                "label": "Vakans Lekòl",
+                "type": "gwoup",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "term",
-                    "from",
-                    "to"
+                    "tèm",
+                    "soti nan",
+                    "pou"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "term",
-                    "label": "Term",
-                    "type": "select",
+                    "id": "tèm",
+                    "label": "Tèm",
+                    "type": "chwazi",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Fall",
-                        "Spring",
-                        "Summer",
-                        "Winter"
+                        "Otòn",
+                        "Prentan",
+                        "Ete",
+                        "Ivè"
                       ]
                     }
                   },
                   {
-                    "id": "from",
-                    "label": "From",
-                    "type": "date",
+                    "id": "soti nan",
+                    "label": "Soti nan",
+                    "type": "dat",
                     "required": true
                   },
                   {
-                    "id": "to",
-                    "label": "To",
-                    "type": "date",
+                    "id": "pou",
+                    "label": "Pou",
+                    "type": "dat",
                     "required": true
                   }
                 ]
@@ -610,24 +657,24 @@
             ]
           },
           {
-            "id": "holidays",
-            "title": "Holidays",
+            "id": "jou ferye",
+            "title": "Jou ferye",
             "fields": [
               {
-                "id": "holidays",
-                "label": "Holiday List",
-                "type": "group",
+                "id": "jou ferye",
+                "label": "Lis Jou Ferye",
+                "type": "gwoup",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "holiday_name"
+                    "non_vakans"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "holiday_name",
-                    "label": "Holiday Name",
-                    "type": "text",
+                    "id": "non_vakans",
+                    "label": "Non jou ferye",
+                    "type": "tèks",
                     "required": true
                   }
                 ]
@@ -635,135 +682,135 @@
             ]
           },
           {
-            "id": "food_services_info",
-            "title": "Food Services Information",
+            "id": "enfòmasyon_sou_sèvis_manje",
+            "title": "Enfòmasyon sou Sèvis Manje",
             "fields": [
               {
-                "id": "food_provided",
-                "label": "Is food provided for children in care?",
-                "type": "radio",
+                "id": "manje_founi",
+                "label": "Èske yo bay timoun ki anba swen manje?",
+                "type": "radyo",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "food_prepared_on_site",
-                "label": "Is food prepared on site?",
-                "type": "radio",
+                "id": "manje_prepare_sou_plas",
+                "label": "Èske yo prepare manje sou plas?",
+                "type": "radyo",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Wi",
+                    "Non"
                   ]
                 }
               },
               {
-                "id": "food_preparation_location",
-                "label": "Where is food prepared?",
-                "type": "text"
+                "id": "kote_preparasyon_manje",
+                "label": "Ki kote yo prepare manje a?",
+                "type": "tèks"
               },
               {
-                "id": "dohmh_food_service_permit",
-                "label": "DOHMH Food Service Permit #",
-                "type": "text"
+                "id": "pèmi_sèvis_manje_dohmh",
+                "label": "Nimewo Pèmi Sèvis Manje DOHMH",
+                "type": "tèks"
               },
               {
-                "id": "person_on_certificate",
-                "label": "Person Name on Certificate",
-                "type": "text"
+                "id": "moun_sou_sètifika",
+                "label": "Non Moun ki sou Sètifika a",
+                "type": "tèks"
               },
               {
-                "id": "food_protection_cert_number",
-                "label": "Food Protection Certificate #",
-                "type": "text"
+                "id": "nimewo_sètifika_pwoteksyon_manje",
+                "label": "Sètifika Pwoteksyon Manje #",
+                "type": "tèks"
               }
             ]
           }
         ]
       },
       {
-        "id": "application_info_2",
-        "title": "Application Specific Information 2"
+        "id": "aplikasyon_enfòmasyon_2",
+        "title": "Enfòmasyon Espesifik sou Aplikasyon an 2"
       },
       {
-        "id": "document_upload",
-        "title": "Upload Documents",
-        "description": "REQUIRED DOCUMENTS\nIn order for your application to be processed, based on information provided, you are required to upload the following documents:",
+        "id": "telechaje_dokiman",
+        "title": "Telechaje Dokiman yo",
+        "description": "DOKIMAN KI NESESÈ YO\nPou yo ka trete aplikasyon w lan, dapre enfòmasyon yo bay la, ou dwe telechaje dokiman sa yo:",
         "sections": [
           {
-            "id": "initial_site_survey",
-            "title": "Initial Site Survey Form",
+            "id": "sondaj_inisyal_sou_sit",
+            "title": "Fòm Sondaj Inisyal sou Sit la",
             "fields": [
               {
-                "id": "site_survey_file",
-                "label": "Upload Initial Site Survey Form",
-                "type": "file",
+                "id": "dosye_sondaj_sit",
+                "label": "Telechaje Fòm Sondaj Inisyal Sit la",
+                "type": "dosye",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "aplikasyon/pdf",
+                    "imaj/jpeg",
+                    "imaj/jpg",
+                    "imaj/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Initial Site Survey",
+                  "proofCategory": "Sondaj Inisyal sou Sit la",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "personal_id_proof",
-            "title": "Proof of Personal Identification",
+            "id": "prèv_id_pèsonèl",
+            "title": "Prèv Idantifikasyon Pèsonèl",
             "fields": [
               {
-                "id": "personal_id_file",
-                "label": "Upload Proof of Personal Identification",
-                "type": "file",
+                "id": "dosye_id_pèsonèl",
+                "label": "Telechaje Prèv Idantifikasyon Pèsonèl",
+                "type": "dosye",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "aplikasyon/pdf",
+                    "imaj/jpeg",
+                    "imaj/jpg",
+                    "imaj/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Personal ID",
+                  "proofCategory": "Idantifikasyon pèsonèl",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "fee_exemption_proof",
-            "title": "Proof of Fee Exemption",
+            "id": "prèv_egzanpsyon_frè",
+            "title": "Prèv Egzansyon Frè",
             "fields": [
               {
-                "id": "fee_exemption_file",
-                "label": "Upload Proof of Fee Exemption (ACS Affiliation or Municipal Exemption)",
-                "type": "file",
+                "id": "dosye_egzanpsyon_frè",
+                "label": "Telechaje prèv egzanpsyon frè (Afilyasyon ACS oswa Egzansyon Minisipal)",
+                "type": "dosye",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png"
+                    "aplikasyon/pdf",
+                    "imaj/jpeg",
+                    "imaj/jpg",
+                    "imaj/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Fee Exemption",
+                  "proofCategory": "Egzanpsyon Frè",
                   "multiple": false
                 }
               }
@@ -772,17 +819,16 @@
         ]
       },
       {
-        "id": "step_6_placeholder",
-        "title": "To be defined"
+        "id": "etap_6_plase",
+        "title": "Pou defini"
       },
       {
-        "id": "step_7_placeholder",
-        "title": "To be defined"
+        "id": "etap_7_plaseholder",
+        "title": "Pou defini"
       },
       {
-        "id": "step_8_placeholder",
-        "title": "To be defined"
+        "id": "etap_8_plase",
+        "title": "Pou defini"
       }
     ]
-  }
-}
+  }}

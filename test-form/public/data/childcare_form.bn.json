@@ -1,396 +1,408 @@
 {
   "form": {
-    "title": "Childcare Voucher Application",
-    "description": "Step-by-step form for applying for Childcare Assistance",
+    "title": "চাইল্ড কেয়ার ভাউচার আবেদন",
+    "description": "শিশু যত্ন সহায়তার জন্য আবেদনের জন্য ধাপে ধাপে ফর্ম",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "বাম"
     },
     "steps": [
       {
-        "id": "consent_step",
-        "title": "Consent",
+        "id": "সম্মতি_পদক্ষেপ",
+        "title": "সম্মতি",
         "sections": [
           {
-            "id": "mycity_consent_info",
-            "title": "ModelCity Consent",
-            "type": "info",
+            "id": "আমার শহর_সম্মতি_তথ্য",
+            "title": "মডেলসিটির সম্মতি",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "In connection with this application for child care services, **ModelCity**:\\n\\n- Collects, processes, stores, and shares the information you submit to screen you when you apply for child care services;\\n- Receives, processes, and stores the information the City already knows about you to screen you when you apply for child care services;\\n- Uses your information to improve ModelCity; and\\n- Communicates with you about your ModelCity account.\\n\\n---\\n\\nIf you consent, the following information may be shared between child care services agencies:\\n\\n- Demographic and background information, including address, phone number, household composition.\\n- Housing information, including benefits awarded/received, current housing/shelter status.\\n- Benefits information, including public assistance awarded/received, child care program participation.\\n\\n---\\n\\nIf you choose not to consent, **you will not be denied** any benefits or services you are receiving or any benefits for which you are eligible.\\n\\nThe [ModelCity Privacy Policy](https://www.nyc.gov/privacy) details how ModelCity handles the information you submit through ModelCity."
+            "content": "শিশু যত্ন পরিষেবার জন্য এই আবেদনের সাথে সম্পর্কিত, **ModelCity**:\\n\\n- শিশু যত্ন পরিষেবার জন্য আবেদন করার সময় আপনার স্ক্রিনিংয়ের জন্য জমা দেওয়া তথ্য সংগ্রহ করে, প্রক্রিয়া করে, সংরক্ষণ করে এবং ভাগ করে;\\n- শিশু যত্ন পরিষেবার জন্য আবেদন করার সময় আপনার স্ক্রিনিংয়ের জন্য সিটি আপনার সম্পর্কে ইতিমধ্যেই যে তথ্য জানে তা গ্রহণ করে, প্রক্রিয়া করে এবং সংরক্ষণ করে;\\n- মডেলসিটিকে উন্নত করতে আপনার তথ্য ব্যবহার করে; এবং\\n- আপনার ModelCity অ্যাকাউন্ট সম্পর্কে আপনার সাথে যোগাযোগ করে।\\n\\n---\\n\\nআপনি যদি সম্মতি দেন, তাহলে নিম্নলিখিত তথ্য শিশু যত্ন পরিষেবা সংস্থাগুলির মধ্যে ভাগ করা যেতে পারে:\\n\\n- ঠিকানা, ফোন নম্বর, পরিবারের গঠন সহ জনসংখ্যাতাত্ত্বিক এবং পটভূমি তথ্য।\\n- আবাসন তথ্য, প্রদত্ত/প্রাপ্ত সুবিধা সহ, বর্তমান আবাসন/আশ্রয়স্থলের অবস্থা।\\n- প্রদত্ত/প্রাপ্ত সরকারি সহায়তা, শিশু যত্ন কর্মসূচিতে অংশগ্রহণ সহ সুবিধা সম্পর্কিত তথ্য।\\n\\n---\\n\\nআপনি যদি সম্মতি না দেওয়ার সিদ্ধান্ত নেন, তাহলে **আপনার পাওয়া কোনও সুবিধা বা পরিষেবা বা আপনি যার জন্য যোগ্য তা থেকে আপনাকে বঞ্চিত করা হবে না**।\\n\\n[ModelCity Privacy Policy](https://www.nyc.gov/privacy) বিস্তারিতভাবে বর্ণনা করে যে ModelCity ModelCity-এর মাধ্যমে আপনার জমা দেওয়া তথ্য কীভাবে পরিচালনা করে।"
           }
         ]
       },
       {
-        "id": "instructions_step",
-        "title": "Instructions",
+        "id": "নির্দেশাবলী_পদক্ষেপ",
+        "title": "নির্দেশনা",
         "sections": [
           {
-            "id": "application_instructions",
-            "title": "Application Instructions",
-            "type": "info",
+            "id": "অ্যাপ্লিকেশন_নির্দেশনা",
+            "title": "আবেদনের নির্দেশাবলী",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**Let’s get started on your application!**\\n\\nTo complete this application, you will be asked for information about:\\n\\n- Yourself\\n- Your household\\n- Your employment or reason for care\\n- Your income\\n\\nAll required fields are marked and must be filled out to move forward with the application. The pages of the application are shown on the right-hand side of the screen and will be highlighted as you move through the application.\\n\\nYour application will be saved automatically as you progress to each page.  \\nIf you need to pause at any time, click the **“Save for later”** button at the bottom of each page to save your application.  \\nYou can log back in to resume your application.\\n\\nWhen you’re ready to begin, click **“Next”** below.\\n\\n---\\n\\n⚠️ **Important:**  \\nTo keep your information current and safe, applications in draft status that you have not edited for **30 days** will be deleted.  \\nIf your draft application is deleted, you can still create and submit a new application when you're ready to apply."
+            "content": "**চলো আপনার আবেদন শুরু করা যাক!**\\n\\nএই আবেদনপত্রটি সম্পূর্ণ করার জন্য, আপনার কাছ থেকে নিম্নলিখিত তথ্য চাওয়া হবে:\\n\\n- আপনি\\n- আপনার পরিবার\\n- আপনার কর্মসংস্থান বা যত্নের কারণ\\n- আপনার আয়\\n\\nআবেদনের সাথে এগিয়ে যাওয়ার জন্য সমস্ত প্রয়োজনীয় ক্ষেত্র চিহ্নিত করা আছে এবং পূরণ করতে হবে। আবেদনপত্রের পৃষ্ঠাগুলি স্ক্রিনের ডানদিকে দেখানো হয়েছে এবং আপনি আবেদনপত্রটি সম্পূর্ণ করার সাথে সাথে হাইলাইট করা হবে।\\n\\nপ্রতিটি পৃষ্ঠায় যাওয়ার সাথে সাথে আপনার আবেদন স্বয়ংক্রিয়ভাবে সংরক্ষণ করা হবে। \\nযদি আপনার যেকোনো সময় বিরতি নেওয়ার প্রয়োজন হয়, তাহলে আপনার আবেদন সংরক্ষণ করতে প্রতিটি পৃষ্ঠার নীচে **“পরবর্তীর জন্য সংরক্ষণ করুন”** বোতামে ক্লিক করুন। \\nআপনার আবেদন পুনরায় শুরু করতে আপনি আবার লগ ইন করতে পারেন।\\n\\nআপনি যখন শুরু করার জন্য প্রস্তুত হবেন, তখন নীচে **“পরবর্তী”** ক্লিক করুন।\\n\\n---\\n\\n⚠️ **গুরুত্বপূর্ণ:** \\nআপনার তথ্য আপডেট এবং নিরাপদ রাখতে, **৩০ দিন** ধরে আপনি যে আবেদনগুলি সম্পাদনা করেননি সেগুলি খসড়া অবস্থায় থাকা অবস্থায় মুছে ফেলা হবে। \\nযদি আপনার খসড়া আবেদনটি মুছে ফেলা হয়, তবুও আপনি আবেদন করার জন্য প্রস্তুত থাকাকালীন একটি নতুন আবেদন তৈরি এবং জমা দিতে পারবেন।"
           },
           {
-            "id": "new_york_city_residency",
-            "title": "New York City Residency",
-            "type": "info",
+            "id": "নিউইয়র্ক শহরের বাসিন্দা",
+            "title": "নিউ ইয়র্ক সিটি রেসিডেন্সি",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "You will need to upload **ONE** of the following documents to confirm your NYC residency:\\n\\n- IDNYC\\n- Driver’s License\\n- Utility Bill (dated within the last 60 days, with your address)\\n- Current lease, rent, or mortgage statement (dated within the last 60 days, with your address)\\n- Section 8 Award Letter\\n- NYCHA Certificate\\n- CFWB-027 Housing Attestation with address listed\\n- Shelter Residency Letter with address listed\\n\\nIf you do not have any of those documents, you must submit a **CFWB-067 Residency Attestation**."
+            "content": "আপনার NYC বাসস্থান নিশ্চিত করার জন্য আপনাকে নিম্নলিখিত নথিগুলির মধ্যে **একটি** আপলোড করতে হবে:\\n\\n- IDNYC\\n- ড্রাইভিং লাইসেন্স\\n- ইউটিলিটি বিল (গত 60 দিনের মধ্যে, আপনার ঠিকানা সহ)\\n- বর্তমান লিজ, ভাড়া, বা বন্ধকী বিবৃতি (গত 60 দিনের মধ্যে, আপনার ঠিকানা সহ)\\n- ধারা 8 পুরস্কার পত্র\\n- NYCHA সার্টিফিকেট\\n- ঠিকানা তালিকাভুক্ত CFWB-027 আবাসন প্রত্যায়ন\\n- ঠিকানা তালিকাভুক্ত আশ্রয় আবাসন পত্র\\n\\nযদি আপনার কাছে এই নথিগুলির কোনওটি না থাকে, তাহলে আপনাকে অবশ্যই **CFWB-067 আবাসন প্রত্যায়ন** জমা দিতে হবে।"
           },
           {
-            "id": "children_documents",
-            "title": "Children Documents",
-            "type": "info",
+            "id": "শিশুদের_নথি",
+            "title": "শিশুদের নথিপত্র",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Citizenship or Immigration Status\\nThese documents confirm the citizenship or immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for each child needing care. *Do not upload these documents for children who do not need care.*\\n\\n- Birth Certificate from US state or territory\\n- Alien Registration Card including Permanent Resident or Green Card\\n- Passport\\n- FS-240 (Consular Report of Birth Abroad)\\n- Naturalization Certificate\\n- Other documentation that proves child’s immigration status\\n\\n### Child's Relationship to Applicant\\nThese documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether they need child care.\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Passport with parent's signature\\n- Court order for legal guardian with financial responsibility\\n- Letter of guardianship\\n- Other - CFWB-058 Caretaker Attestation\\n\\nIf you are not the child's parent or stepparent, you must submit a **CFWB-058 Caretaker Attestation Form**.\\n\\n### Age of Children\\nYou will need to upload **ONE** of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Alien Registration Card\\n- Passport\\n- Official hospital documentation of the child’s birth"
+            "content": "### নাগরিকত্ব বা অভিবাসন অবস্থা\\nএই নথিগুলি আপনার পরিবারের সেই শিশুদের নাগরিকত্ব বা অভিবাসন অবস্থা নিশ্চিত করে যাদের জন্য আপনি শিশু যত্ন সহায়তার জন্য আবেদন করছেন। যত্নের প্রয়োজন এমন প্রতিটি শিশুর জন্য অনুগ্রহ করে নিম্নলিখিত নথিগুলির মধ্যে একটি আপলোড করুন। *যেসব শিশুদের যত্নের প্রয়োজন নেই তাদের জন্য এই নথিগুলি আপলোড করবেন না।*\\n\\n- মার্কিন রাজ্য বা অঞ্চল থেকে জন্ম শংসাপত্র\\n- স্থায়ী বাসিন্দা বা গ্রিন কার্ড সহ বিদেশী নিবন্ধন কার্ড\\n- পাসপোর্ট\\n- FS-240 (বিদেশে জন্মের কনস্যুলার রিপোর্ট)\\n- নাগরিকত্ব শংসাপত্র\\n- শিশুর অভিবাসন অবস্থা প্রমাণ করে এমন অন্যান্য নথি\\n\\n### আবেদনকারীর সাথে শিশুর সম্পর্ক\\nএই নথিগুলি আপনার পরিবারের 18 বছরের কম বয়সী শিশুদের সাথে আপনার সম্পর্ক নিশ্চিত করে। 18 বছরের কম বয়সী পরিবারের প্রতিটি শিশুর জন্য, তাদের শিশু যত্নের প্রয়োজন কিনা তা নির্বিশেষে নিম্নলিখিত নথিগুলির মধ্যে একটি আপলোড করুন।\\n\\n- জন্ম শংসাপত্র\\n- দত্তক নেওয়ার রেকর্ড\\n- ব্যাপটিসমাল রেকর্ড\\n- পিতামাতার স্বাক্ষর সহ পাসপোর্ট\\n- আর্থিক দায়িত্ব সহ আইনী অভিভাবকের জন্য আদালতের আদেশ\\n- অভিভাবকত্বের চিঠি\\n- অন্যান্য - CFWB-058 তত্ত্বাবধায়ক প্রমাণীকরণ\\n\\nআপনি যদি সন্তানের পিতামাতা বা সৎ পিতামাতা না হন, তাহলে আপনাকে অবশ্যই **CFWB-058 তত্ত্বাবধায়ক প্রমাণীকরণ জমা দিতে হবে। ফর্ম**।\\n\\n### শিশুদের বয়স\\nআপনাকে ১৮ বছরের কম বয়সী পরিবারের প্রতিটি শিশুর জন্য নিম্নলিখিত **একটি** নথি আপলোড করতে হবে, তাদের জন্য শিশু যত্নের প্রয়োজন কিনা তা নির্বিশেষে:\\n\\n- জন্ম সনদ\\n- দত্তক গ্রহণের রেকর্ড\\n- ব্যাপ্টিজমাল রেকর্ড\\n- এলিয়েন রেজিস্ট্রেশন কার্ড\\n- পাসপোর্ট\\n- শিশুর জন্মের অফিসিয়াল হাসপাতালের নথিপত্র"
           },
           {
-            "id": "employment_income",
-            "title": "Employment & Income",
-            "type": "info",
+            "id": "কর্মসংস্থান_আয়",
+            "title": "কর্মসংস্থান এবং আয়",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Income\\nThese documents confirm your family’s income.\\n\\n---\\n\\n### If You Are Employed\\nIf you are employed and receive paystubs, you must submit them to confirm your income. The number of paystubs you must submit varies by how often you get paid and whether your payment amount is the same or different each time you are paid – see the table below for details. Submit the most recent paystub you have received, followed by others in consecutive order.\\n\\n**Income Information**\\n\\n| How Often Do You Get Paid? | Always the SAME Amount | DIFFERENT Amounts Each Time |\\n|----------------------------|-------------------------|------------------------------|\\n| Weekly (Every Week) | 4 most recent, consecutive pay stubs | 12 most recent, consecutive pay stubs |\\n| Bi-Weekly (Every Two Weeks) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Semi-Monthly (Two Times Per Month) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Monthly (One Time Per Month) | 3 most recent, consecutive pay stubs | 3 most recent, consecutive pay stubs |\\n\\nIf you do not have any paystubs, you must submit a **CFWB-015 Referral to Employer for Employee Income Information Form**.\\n\\n---\\n\\n### If You Are Self-Employed\\nIf you have been self-employed for **one year or more**, you must submit a current, complete and signed income tax package (e.g., 1040, 1065, Schedule C, SE for partnership, K-1, etc.).\\n\\nIf you have been self-employed for **less than one year**, you must submit a **CFWB-031 Self-Employment Income Information Attestation Form**.\\n\\n---\\n\\n### Other Income\\nIf you receive other types of income outside or instead of employment income, you must submit your most recent check, pay stub, or current award letter that indicates the amount you receive. If your other income fluctuates, **3 months of documentation is required**.\\n\\nThis includes, but is not limited to:\\n- Income from SSI, SSD\\n- Unemployment benefits\\n- Rental income\\n- Pensions\\n- Annuities\\n- Worker’s compensation\\n- Alimony\\n- Child support"
+            "content": "### আয়\\nএই নথিগুলি আপনার পরিবারের আয় নিশ্চিত করে।\\n\\n---\\n\\n### যদি আপনি কর্মরত থাকেন\\nআপনি যদি চাকরিজীবী হন এবং বেতনপত্র পান, তাহলে আপনার আয় নিশ্চিত করার জন্য আপনাকে অবশ্যই এগুলি জমা দিতে হবে। আপনাকে কত বেতনপত্র জমা দিতে হবে তা আপনি কতবার বেতন পান এবং প্রতিবার বেতন পাওয়ার সময় আপনার অর্থের পরিমাণ একই নাকি ভিন্ন - বিস্তারিত জানার জন্য নীচের টেবিলটি দেখুন। আপনি যে সাম্প্রতিকতম বেতনপত্র পেয়েছেন তা জমা দিন, তার পরে পরপর অন্যগুলি জমা দিন।\\n\\n**আয়ের তথ্য**\\n\\n| আপনি কতবার বেতন পান? | সর্বদা একই পরিমাণ | প্রতিবার বিভিন্ন পরিমাণ |\\n|--------------------------|--------------------------|\\n| সাপ্তাহিক (প্রতি সপ্তাহে) | ৪টি সাম্প্রতিকতম, ধারাবাহিক বেতনপত্র | ১২টি সাম্প্রতিকতম, ধারাবাহিক বেতনপত্র |\\n| দ্বি-সাপ্তাহিক (প্রতি দুই সপ্তাহে) | ২টি সাম্প্রতিকতম, ধারাবাহিক বেতনপত্র | ৬টি সাম্প্রতিক, ধারাবাহিক বেতন তালিকা |\\n| আধা-মাসিক (প্রতি মাসে দুইবার) | ২টি সাম্প্রতিক, ধারাবাহিক বেতন তালিকা | ৬টি সাম্প্রতিক, ধারাবাহিক বেতন তালিকা |\\n| মাসিক (প্রতি মাসে একবার) | ৩টি সাম্প্রতিক, ধারাবাহিক বেতন তালিকা | ৩টি সাম্প্রতিক, ধারাবাহিক বেতন তালিকা |\\n\\nযদি আপনার কোন বেতন তালিকা না থাকে, তাহলে আপনাকে অবশ্যই একটি **CFWB-015 রেফারেল ফর এমপ্লয়ি ইনকর্পোরেটেড ইনফরমেশন ফর্ম** জমা দিতে হবে।\\n\\n---\\n\\n### যদি আপনি স্ব-কর্মসংস্থান করেন\\nযদি আপনি **এক বছর বা তার বেশি** সময় ধরে স্ব-কর্মসংস্থান করে থাকেন, তাহলে আপনাকে অবশ্যই একটি বর্তমান, সম্পূর্ণ এবং স্বাক্ষরিত আয়কর প্যাকেজ জমা দিতে হবে (যেমন, 1040, 1065, তফসিল C, অংশীদারিত্বের জন্য SE, K-1, ইত্যাদি)।\\n\\nযদি আপনি **এক বছরেরও কম সময় ধরে** সময় ধরে স্ব-কর্মসংস্থান করে থাকেন, তাহলে আপনাকে অবশ্যই একটি **CFWB-031 স্ব-কর্মসংস্থান আয় তথ্য যাচাইকরণ ফর্ম** জমা দিতে হবে।\\n\\n---\\n\\n### অন্যান্য আয়\\nযদি আপনি কর্মসংস্থান আয়ের বাইরে বা পরিবর্তে অন্য ধরণের আয় পান, তাহলে আপনাকে অবশ্যই আপনার সাম্প্রতিক চেক, পে স্টাব, অথবা বর্তমান পুরস্কার পত্র জমা দিতে হবে যা আপনার প্রাপ্ত পরিমাণ নির্দেশ করে। যদি আপনার অন্যান্য আয় ওঠানামা করে, **৩ মাসের ডকুমেন্টেশন প্রয়োজন**।\\n\\nএর মধ্যে রয়েছে, তবে সীমাবদ্ধ নয়:\\n- SSI, SSD থেকে আয়\\n- বেকারত্ব ভাতা\\n- ভাড়ার আয়\\n- পেনশন\\n- বার্ষিকী\\n- কর্মীর ক্ষতিপূরণ\\n- ভরণপোষণ\\n- শিশু ভরণপোষণ"
           },
           {
-            "id": "reason_for_care",
-            "title": "Reason for Care",
-            "type": "info",
+            "id": "যত্নের_কারণ",
+            "title": "যত্নের কারণ",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Reason for Care\\nThese documents confirm your reason for care. Every applicant must have a qualified reason for care; in a two-parent household, parents or caretakers can have the same or different reasons for care. Only the documents related to your stated reasons for care need to be uploaded, and documentation must be uploaded for all parent or caretakers in the household.\\n\\n---\\n\\n### Working 10+ Hours Per Week\\nYour employment or self-employment income documents will cover this reason for care. You do not need to submit additional documentation.\\n\\n---\\n\\n### Participating in an Educational or Vocational Training Program\\nYou will need to upload **ONE** of the following documents to confirm your participation in vocational school, two-year college, or four-year college.\\n\\n- CFWB-005 Vocational, Education and Training Verification Form\\n- A letter from the educational or vocational training program on their official letterhead; this letter must contain all the information required in the CFWB-005 Vocational, Education and Training Verification Form.\\n\\n---\\n\\n### Looking for Work\\nYou will need to upload **ONE** of the following documents to confirm that you are looking for work.\\n\\n- CFWB-026 Work Search Record Form\\n- Approved work search plan from the NYS Dept. of Labor\\n- Proof of receipt of unemployment insurance\\n\\n---\\n\\n### Experiencing Homelessness\\nYou will need to upload **ONE** of the following documents to confirm that you are experiencing homelessness. This includes families who may be living in shelter or sharing the housing of others due to loss of housing, economic hardship, or similar reason.\\n\\n- Shelter Residency Letter (If living in Shelter, including Humanitarian Emergency Relief Centers)\\n- CFWB-027 Housing Attestation (If living doubled-up, in a place not meant for human habitation, in a hotel/motel, or in another living situation)\\n\\n---\\n\\n### Attending Services for Domestic Violence\\nYou will need to upload a referral for services from a domestic violence service provider to confirm that you are attending services for domestic violence.\\n\\n---\\n\\n### Attending Services for Substance Abuse Treatment\\nYou will need to upload a referral for a substance abuse treatment service provider to confirm that you are attending services for substance abuse treatment."
+            "content": "### যত্নের কারণ\\nএই নথিগুলি আপনার যত্নের কারণ নিশ্চিত করে। প্রতিটি আবেদনকারীর যত্নের জন্য একটি যোগ্য কারণ থাকতে হবে; দুই-পিতামাতার পরিবারে, বাবা-মা বা তত্ত্বাবধায়কদের যত্নের জন্য একই বা ভিন্ন কারণ থাকতে পারে। শুধুমাত্র আপনার উল্লেখিত যত্নের কারণগুলির সাথে সম্পর্কিত নথিগুলি আপলোড করতে হবে এবং পরিবারের সমস্ত বাবা-মা বা তত্ত্বাবধায়কদের জন্য ডকুমেন্টেশন আপলোড করতে হবে।\\n\\n---\\n\\n### সপ্তাহে 10+ ঘন্টা কাজ করা\\nআপনার কর্মসংস্থান বা স্ব-কর্মসংস্থান আয়ের নথিগুলি যত্নের এই কারণটি কভার করবে। আপনাকে অতিরিক্ত নথি জমা দিতে হবে না।\\n\\n---\\n\\n### শিক্ষাগত বা বৃত্তিমূলক প্রশিক্ষণ প্রোগ্রামে অংশগ্রহণ\\nবৃত্তিমূলক স্কুল, দুই-বছরের কলেজ বা চার-বছরের কলেজে আপনার অংশগ্রহণ নিশ্চিত করতে আপনাকে নিম্নলিখিত নথিগুলির মধ্যে **একটি** আপলোড করতে হবে।\\n\\n- CFWB-005 বৃত্তিমূলক, শিক্ষা এবং প্রশিক্ষণ যাচাইকরণ ফর্ম\\n- তাদের অফিসিয়াল লেটারহেডে শিক্ষাগত বা বৃত্তিমূলক প্রশিক্ষণ প্রোগ্রাম থেকে একটি চিঠি; এই চিঠিতে CFWB-005 বৃত্তিমূলক, শিক্ষা এবং প্রশিক্ষণ যাচাইকরণ ফর্মে প্রয়োজনীয় সমস্ত তথ্য থাকতে হবে।\\n\\n---\\n\\n### কাজ খুঁজছেন\\nআপনি যে কাজ খুঁজছেন তা নিশ্চিত করার জন্য আপনাকে নিম্নলিখিত নথিগুলির মধ্যে **একটি** আপলোড করতে হবে।\\n\\n- CFWB-026 কাজের অনুসন্ধান রেকর্ড ফর্ম\\n- NYS শ্রম বিভাগ থেকে অনুমোদিত কর্ম অনুসন্ধান পরিকল্পনা\\n- বেকারত্ব বীমা প্রাপ্তির প্রমাণ\\n\\n---\\n\\n### গৃহহীনতার অভিজ্ঞতা\\nআপনি যে গৃহহীনতার অভিজ্ঞতা অর্জন করছেন তা নিশ্চিত করার জন্য আপনাকে নিম্নলিখিত নথিগুলির মধ্যে **একটি** আপলোড করতে হবে। এর মধ্যে এমন পরিবারও অন্তর্ভুক্ত রয়েছে যারা আবাসন হারানোর কারণে, অর্থনৈতিক দুর্দশা বা অনুরূপ কারণে আশ্রয়কেন্দ্রে বসবাস করছেন অথবা অন্যদের আবাসন ভাগ করে নিচ্ছেন।\\n\\n- আশ্রয়কেন্দ্র আবাসন পত্র (যদি আশ্রয়কেন্দ্রে বসবাস করেন, মানবিক জরুরি ত্রাণ কেন্দ্র সহ)\\n- CFWB-027 আবাসন সনদ (যদি দ্বিগুণ জীবনযাপন করেন, মানুষের বসবাসের জন্য নয় এমন জায়গায়, হোটেল/মোটেলে, অথবা অন্য কোনও বসবাসের পরিস্থিতিতে)\\n\\n---\\n\\n### পারিবারিক সহিংসতার পরিষেবায় অংশগ্রহণ\\nআপনি পারিবারিক সহিংসতার পরিষেবায় যোগদান করছেন কিনা তা নিশ্চিত করার জন্য আপনাকে পারিবারিক সহিংসতা পরিষেবা প্রদানকারীর কাছ থেকে পরিষেবার জন্য একটি রেফারেল আপলোড করতে হবে।\\n\\n---\\n\\n### মাদকদ্রব্যের অপব্যবহারের চিকিৎসার জন্য পরিষেবায় অংশগ্রহণ\\nআপনি মাদকদ্রব্যের অপব্যবহারের চিকিৎসার পরিষেবায় যোগদান করছেন কিনা তা নিশ্চিত করার জন্য আপনাকে মাদকদ্রব্যের অপব্যবহারের চিকিৎসার পরিষেবা প্রদানকারীর জন্য একটি রেফারেল আপলোড করতে হবে।"
           },
           {
-            "id": "additional_details",
-            "title": "Additional Details",
-            "type": "info",
+            "id": "অতিরিক্ত_বিস্তারিত",
+            "title": "অতিরিক্ত তথ্য",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Application Scope\\nThis application is used to apply **only** for **Category 2 or 3 child care assistance** (for families not in receipt of cash assistance). To apply for **Cash Assistance** or other benefits, including **Category 1 Child Care Assistance** (for families in receipt of cash assistance), you must use the **New York State Application for Certain Benefits and Services (LDSS-2921)**.\\n\\n---\\n\\n### Exempt Applicants\\nThe following applicants may be eligible for child care assistance **without regard to income** and do not need to complete this application:\\n\\n- Foster parents who need child care assistance to allow them to work and are only applying for assistance for the foster children;\\n- Families in receipt of protective or preventive services.\\n\\n---\\n\\n### Application Completion\\nAll sections of this form must be filled out to be considered complete **unless the section is identified as optional**. If you do not complete all required sections of this form, you may not be considered for Child Care Assistance.\\n\\n---\\n\\n### Rights and Responsibilities\\nYou may obtain information about your rights and responsibilities [here](https://otda.ny.gov/programs/applications/). If you do not have access to the internet, you can call the **Administration for Children’s Services at 212-835-7610** to request that physical copies of the booklets which highlight your rights and responsibilities be mailed to you, including:\\n\\n- **LDSS-4148A**: What You Should Know About Your Rights and Responsibilities\\n- **LDSS-4148B**: What You Should Know About Social Services Programs\\n- **LDSS-4148C**: What You Should Know If You Have an Emergency"
+            "content": "### আবেদনের সুযোগ\\nএই আবেদনটি **শুধুমাত্র** **শ্রেণী ২ বা ৩ শিশু যত্ন সহায়তা** (নগদ সহায়তা প্রাপ্ত নয় এমন পরিবারগুলির জন্য) আবেদন করার জন্য ব্যবহার করা হয়। **নগদ সহায়তা** বা **শ্রেণী ১ শিশু যত্ন সহায়তা** (নগদ সহায়তা প্রাপ্ত পরিবারগুলির জন্য) সহ অন্যান্য সুবিধার জন্য আবেদন করতে, আপনাকে **নিউ ইয়র্ক স্টেট অ্যাপ্লিকেশন ফর সার্টেন বেনিফিটস অ্যান্ড সার্ভিসেস (LDSS-2921)** ব্যবহার করতে হবে।\\n\\n---\\n\\n### অব্যাহতিপ্রাপ্ত আবেদনকারীরা** নিম্নলিখিত আবেদনকারীরা **আয় নির্বিশেষে** শিশু যত্ন সহায়তার জন্য যোগ্য হতে পারেন** এবং তাদের এই আবেদনটি পূরণ করার প্রয়োজন নেই:\\n\\n- পালিত পিতামাতা যাদের কাজ করার জন্য শিশু যত্ন সহায়তার প্রয়োজন এবং শুধুমাত্র পালিত শিশুদের জন্য সহায়তার জন্য আবেদন করছেন;\\n- প্রতিরক্ষামূলক বা প্রতিরোধমূলক পরিষেবা প্রাপ্ত পরিবারগুলি।\\n\\n---\\n\\n### আবেদন সমাপ্তি\\nএই ফর্মের সমস্ত বিভাগ পূরণ করতে হবে **সম্পূর্ণ হিসাবে বিবেচিত হওয়ার জন্য যদি না বিভাগটি ঐচ্ছিক** হিসাবে চিহ্নিত করা হয়। যদি আপনি এই ফর্মের সমস্ত প্রয়োজনীয় বিভাগ পূরণ না করেন, তাহলে আপনাকে শিশু যত্ন সহায়তার জন্য বিবেচনা করা নাও হতে পারে।\\n\\n---\\n\\n### অধিকার এবং দায়িত্ব\\nআপনি আপনার অধিকার এবং দায়িত্ব সম্পর্কে তথ্য [এখানে] (https://otda.ny.gov/programs/applications/) পেতে পারেন। যদি আপনার ইন্টারনেট অ্যাক্সেস না থাকে, তাহলে আপনি **শিশু পরিষেবা প্রশাসনকে 212-835-7610** নম্বরে কল করে অনুরোধ করতে পারেন যে আপনার অধিকার এবং দায়িত্বগুলি তুলে ধরা পুস্তিকাগুলির প্রকৃত কপি আপনাকে ডাকযোগে পাঠানো হোক, যার মধ্যে রয়েছে:\\n\\n- **LDSS-4148A**: আপনার অধিকার এবং দায়িত্ব সম্পর্কে আপনার যা জানা উচিত\\n- **LDSS-4148B**: সামাজিক পরিষেবা কর্মসূচি সম্পর্কে আপনার যা জানা উচিত\\n- **LDSS-4148C**: আপনার যদি জরুরি অবস্থা থাকে তবে আপনার যা জানা উচিত"
           }
         ]
       },
       {
-        "id": "applicant",
-        "title": "Applicant",
+        "id": "আবেদনকারী",
+        "title": "আবেদনকারী",
         "sections": [
           {
-            "id": "personal_info",
-            "title": "Personal Information",
+            "id": "ব্যক্তিগত_তথ্য",
+            "title": "ব্যক্তিগত তথ্য",
             "fields": [
               {
-                "id": "first_name",
-                "label": "First Name",
-                "type": "text",
+                "id": "প্রথম_নাম",
+                "label": "প্রথম নাম",
+                "type": "টেক্সট",
                 "required": true
               },
               {
-                "id": "last_name",
-                "label": "Last Name",
-                "type": "text",
+                "id": "শেষ নাম",
+                "label": "পদবি",
+                "type": "টেক্সট",
                 "required": true
               },
               {
-                "id": "mi",
-                "label": "Middle Initial",
-                "type": "text",
+                "id": "আমি",
+                "label": "মধ্য আদ্যক্ষর",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "date_of_birth",
-                "label": "Date of Birth",
-                "type": "date",
+                "id": "জন্ম তারিখ",
+                "label": "জন্ম তারিখ",
+                "type": "তারিখ",
                 "required": true,
-                "tooltip": "To edit Date of Birth click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "জন্ম তারিখ সম্পাদনা করতে উপরের বাম কোণে NYC ModelCity-এ ক্লিক করুন এবং তারপর অ্যাকাউন্ট সেটিংস-এ ক্লিক করুন।"
               },
               {
-                "id": "sex",
-                "label": "Sex",
-                "type": "radio",
+                "id": "যৌনতা",
+                "label": "লিঙ্গ",
+                "type": "রেডিও",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Male",
-                    "Female"
+                    "পুরুষ",
+                    "মহিলা"
                   ]
                 }
               },
               {
-                "id": "marital_status",
-                "label": "Marital Status",
-                "type": "select",
+                "id": "বৈবাহিক_স্থিতি",
+                "label": "বৈবাহিক অবস্থা",
+                "type": "নির্বাচন করুন",
                 "required": true,
-                "tooltip": "Indicate your marital status (single, married, divorced, separated or widowed).",
+                "tooltip": "আপনার বৈবাহিক অবস্থা (অবিবাহিত, বিবাহিত, তালাকপ্রাপ্ত, পৃথক বা বিধবা) উল্লেখ করুন।",
                 "ui": {
                   "options": [
                     "",
-                    "Single",
-                    "Married",
-                    "Divorced",
-                    "Widowed",
-                    "Separated"
+                    "একক",
+                    "বিবাহিত",
+                    "তালাকপ্রাপ্ত",
+                    "বিধবা",
+                    "পৃথক করা হয়েছে"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "contact_info",
-            "title": "Contact Information",
+            "id": "যোগাযোগ_তথ্য",
+            "title": "যোগাযোগের তথ্য",
             "fields": [
               {
-                "id": "telephone_home",
-                "label": "Home Phone",
-                "type": "tel",
+                "id": "টেলিফোন_হোম",
+                "label": "হোম ফোন",
+                "type": "টেলিফোন",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
                 },
                 "ui": {
-                  "placeholder": "(123) 456-7890"
+                  "placeholder": "(১২৩) ৪৫৬-৭৮৯০"
                 }
               },
               {
-                "id": "telephone_work",
-                "label": "Work Phone",
-                "type": "tel",
+                "id": "টেলিফোন_কাজ",
+                "label": "অফিসের ফোন",
+                "type": "টেলিফোন",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
                 },
                 "ui": {
-                  "placeholder": "(123) 456-7890"
+                  "placeholder": "(১২৩) ৪৫৬-৭৮৯০"
                 }
               },
               {
-                "id": "telephone_mobile_or_other",
-                "label": "Mobile or Other Phone",
-                "type": "tel",
+                "id": "টেলিফোন_মোবাইল_অথবা_অন্য",
+                "label": "মোবাইল বা অন্য ফোন",
+                "type": "টেলিফোন",
                 "required": false,
-                "tooltip": "To edit Telephone (Cell or Other) click on NYC ModelCity in the top-left corner then click on Account Settings and then click on Contact.",
+                "tooltip": "টেলিফোন (সেল বা অন্যান্য) সম্পাদনা করতে উপরের বাম কোণে NYC ModelCity-এ ক্লিক করুন, তারপর অ্যাকাউন্ট সেটিংস-এ ক্লিক করুন এবং তারপর যোগাযোগ-এ ক্লিক করুন।",
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
                 },
                 "ui": {
-                  "placeholder": "(123) 456-7890"
+                  "placeholder": "(১২৩) ৪৫৬-৭৮৯০"
                 }
               },
               {
-                "id": "email",
-                "label": "Email",
-                "type": "email",
+                "id": "ইমেইল",
+                "label": "ইমেইল",
+                "type": "ইমেইল",
                 "required": true,
-                "tooltip": "To edit email, go to NYC ID Profile tab by clicking your name at the top right corner"
+                "tooltip": "ইমেল সম্পাদনা করতে, উপরের ডান কোণায় আপনার নামে ক্লিক করে NYC ID প্রোফাইল ট্যাবে যান।"
               }
             ]
           },
           {
-            "id": "address_info",
-            "title": "Address",
-            "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings.",
+            "id": "ঠিকানা_তথ্য",
+            "title": "জানুন",
+            "tooltip": "বাড়ির ঠিকানা সম্পাদনা করতে উপরের বাম কোণে NYC ModelCity-এ ক্লিক করুন এবং তারপর অ্যাকাউন্ট সেটিংস-এ ক্লিক করুন।",
             "ui": {
-              "autocomplete": "street",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "রাস্তা",
+              "placeholder": "আপনার রাস্তার ঠিকানা টাইপ করা শুরু করুন",
+              "overrideComponent": "ঠিকানাস্বয়ংক্রিয়ভাবে সম্পন্ন করুন"
             },
             "metadata": {
               "integration": {
-                "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "provider": "গুগল",
+                "feature": "ঠিকানাস্বয়ংক্রিয়ভাবে সম্পন্ন করুন"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "শহর",
+                  "source": "এলাকা",
                   "fallbackSources": [
-                    "postal_town",
-                    "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "পোস্টাল_টাউন",
+                    "উপ-স্থানীয়_স্তর_১",
+                    "প্রশাসনিক_ক্ষেত্র_স্তর_২"
                   ]
                 },
                 {
-                  "fieldId": "borough",
-                  "source": "sublocality_level_1",
+                  "fieldId": "বরো",
+                  "source": "উপ-স্থানীয়_স্তর_১",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "প্রশাসনিক_ক্ষেত্র_স্তর_২"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "বরো ম্যাপ"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "zip_code", "source": "postal_code" },
-                { "fieldId": "latitude", "source": "location.latitude" },
-                { "fieldId": "longitude", "source": "location.longitude" }
+                {
+                  "fieldId": "অবস্থা",
+                  "source": "প্রশাসনিক_ক্ষেত্র_স্তর_১"
+                },
+                {
+                  "fieldId": "জিপ কোড",
+                  "source": "পোস্টাল_কোড"
+                },
+                {
+                  "fieldId": "অক্ষাংশ",
+                  "source": "অবস্থান.অক্ষাংশ"
+                },
+                {
+                  "fieldId": "দ্রাঘিমাংশ",
+                  "source": "অবস্থান.দ্রাঘিমাংশ"
+                }
               ]
             },
             "fields": [
               {
-                "id": "street",
-                "label": "Street Address",
-                "type": "text",
+                "id": "রাস্তা",
+                "label": "রাস্তার ঠিকানা",
+                "type": "টেক্সট",
                 "required": true,
-                "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "বাড়ির ঠিকানা সম্পাদনা করতে উপরের বাম কোণে NYC ModelCity-এ ক্লিক করুন এবং তারপর অ্যাকাউন্ট সেটিংস-এ ক্লিক করুন।"
               },
               {
-                "id": "apt",
-                "label": "Apt #",
-                "type": "text",
+                "id": "উপযুক্ত",
+                "label": "অ্যাপার্টমেন্ট #",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "শহর",
+                "label": "শহর",
+                "type": "টেক্সট",
                 "required": true
               },
               {
-                "id": "borough",
-                "label": "Borough",
-                "type": "select",
+                "id": "বরো",
+                "label": "বরো",
+                "type": "নির্বাচন করুন",
                 "required": true,
                 "ui": {
                   "options": [
                     "",
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
-                    "Staten Island"
+                    "ব্রঙ্কস",
+                    "ব্রুকলিন",
+                    "ম্যানহাটন",
+                    "কুইন্স",
+                    "স্টেটেন দ্বীপ"
                   ]
                 }
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "অবস্থা",
+                "label": "রাজ্য",
+                "type": "টেক্সট",
                 "required": true
               },
               {
-                "id": "zip_code",
-                "label": "Zip Code",
-                "type": "text",
+                "id": "জিপ কোড",
+                "label": "জিপ কোড",
+                "type": "টেক্সট",
                 "required": true
               },
               {
-                "id": "latitude",
-                "label": "Latitude",
-                "type": "number",
+                "id": "অক্ষাংশ",
+                "label": "অক্ষাংশ",
+                "type": "সংখ্যা",
                 "required": false
               },
               {
-                "id": "longitude",
-                "label": "Longitude",
-                "type": "number",
+                "id": "দ্রাঘিমাংশ",
+                "label": "দ্রাঘিমাংশ",
+                "type": "সংখ্যা",
                 "required": false
               },
               {
-                "id": "is_temporary_address",
-                "label": "Is Temporary Address",
-                "type": "radio",
+                "id": "অস্থায়ী_ঠিকানা",
+                "label": "অস্থায়ী ঠিকানা কি?",
+                "type": "রেডিও",
                 "required": true,
-                "tooltip": "Check YES if you are currently living in a homeless shelter, doubled-up with another family, in a hotel/motel, in a car/ bus/ train, in a park/campsite, or other temporary accomodation.",
+                "tooltip": "আপনি যদি বর্তমানে গৃহহীন আশ্রয়কেন্দ্রে থাকেন, অন্য পরিবারের সাথে দ্বিগুণ বসবাস করেন, হোটেল/মোটেলে থাকেন, গাড়ি/বাস/ট্রেনে থাকেন, পার্ক/ক্যাম্পসাইটে থাকেন, অথবা অন্য কোনও অস্থায়ী আবাসস্থলে থাকেন, তাহলে হ্যাঁ চেক করুন।",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "currently_living_in",
-                "label": "Currently Living In",
-                "type": "select",
+                "id": "বর্তমানে_থাকা_যাওয়া",
+                "label": "বর্তমানে বসবাসরত",
+                "type": "নির্বাচন করুন",
                 "required": false,
                 "requiredCondition": {
-                  "field": "is_temporary_address",
-                  "operator": "equals",
-                  "value": "Yes"
+                  "field": "অস্থায়ী_ঠিকানা",
+                  "operator": "সমান",
+                  "value": "হাঁ"
                 },
                 "ui": {
                   "options": [
                     "",
-                    "Homeless Shelter",
-                    "Doubled-up with another Family",
-                    "Hotel/Motel",
-                    "Car, Bus, Train",
-                    "Park",
-                    "Campsite",
-                    "Other"
+                    "গৃহহীন আশ্রয়স্থল",
+                    "অন্য পরিবারের সাথে দ্বিগুণ সম্পর্ক",
+                    "হোটেল/মোটেল",
+                    "গাড়ি, বাস, ট্রেন",
+                    "পার্ক",
+                    "ক্যাম্পসাইট",
+                    "অন্যান্য"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "demographics",
-            "title": "Demographics",
+            "id": "জনসংখ্যাতাত্ত্বিক তথ্য",
+            "title": "জনসংখ্যা",
             "fields": [
               {
-                "id": "ethnicity",
-                "label": "Ethnicity",
-                "type": "select",
+                "id": "জাতিগততা",
+                "label": "জাতিগততা",
+                "type": "নির্বাচন করুন",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Hispanic",
-                    "Latino",
-                    "No",
-                    "Prefer not to answer"
+                    "হিস্পানিক",
+                    "ল্যাটিনো",
+                    "না",
+                    "উত্তর দিতে পছন্দ করি না।"
                   ]
                 }
               },
               {
-                "id": "race",
-                "label": "Race",
-                "type": "checkbox",
+                "id": "জাতি",
+                "label": "জাতি",
+                "type": "চেকবক্স",
                 "required": false,
-                "tooltip": "You may choose multiple race categories. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                "tooltip": "আপনি একাধিক জাতি বিভাগ বেছে নিতে পারেন। জাতি সম্পর্কিত তথ্য প্রদান স্বেচ্ছাসেবী এবং শিশু যত্ন সহায়তার জন্য আপনার যোগ্যতা বা এই সংস্থা কর্তৃক প্রদত্ত সহায়তার পরিমাণকে প্রভাবিত করবে না।",
                 "ui": {
                   "options": [
                     {
-                      "value": "AI",
-                      "label": "American Indian or Alaska Native"
+                      "value": "এআই",
+                      "label": "আমেরিকান ইন্ডিয়ান বা আলাস্কার আদিবাসী"
                     },
                     {
-                      "value": "AS",
-                      "label": "Asian"
+                      "value": "এএস",
+                      "label": "এশিয়ান"
                     },
                     {
-                      "value": "BL",
-                      "label": "Black or African American"
+                      "value": "বিএল",
+                      "label": "কালো বা আফ্রিকান আমেরিকান"
                     },
                     {
-                      "value": "HP",
-                      "label": "Native Hawaiian or Pacific Islander"
+                      "value": "এইচপি",
+                      "label": "স্থানীয় হাওয়াইয়ান বা প্রশান্ত মহাসাগরীয় দ্বীপপুঞ্জের বাসিন্দা"
                     },
                     {
-                      "value": "WH",
-                      "label": "White"
+                      "value": "হু",
+                      "label": "সাদা"
                     }
                   ]
                 },
@@ -399,102 +411,102 @@
                 }
               },
               {
-                "id": "ssn",
-                "label": "Social Security Number",
-                "type": "text",
-                "tooltip": "To edit social security number click on NYC ModelCity in the top-left corner then click on Account Settings.",
+                "id": "এসএসএন",
+                "label": "সামাজিক নিরাপত্তা নম্বর",
+                "type": "টেক্সট",
+                "tooltip": "সামাজিক নিরাপত্তা নম্বর সম্পাদনা করতে উপরের বাম কোণে NYC ModelCity-এ ক্লিক করুন এবং তারপর অ্যাকাউন্ট সেটিংস-এ ক্লিক করুন।",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                 },
                 "ui": {
-                  "placeholder": "123-45-6789"
+                  "placeholder": "১২৩-৪৫-৬৭৮৯"
                 }
               }
             ]
           },
           {
-            "id": "language_info",
-            "title": "Language Preferences",
+            "id": "ভাষা_তথ্য",
+            "title": "ভাষা পছন্দসমূহ",
             "fields": [
               {
-                "id": "primary_language",
-                "label": "Primary Language",
-                "type": "radio",
+                "id": "প্রাথমিক_ভাষা",
+                "label": "প্রাথমিক ভাষা",
+                "type": "রেডিও",
                 "required": true,
-                "tooltip": "Select the language that is spoken most often in your household. If “other”, provide the name of the language.",
+                "tooltip": "আপনার পরিবারে যে ভাষাটি সবচেয়ে বেশি ব্যবহৃত হয় তা নির্বাচন করুন। যদি \"অন্যান্য\" হয়, তাহলে ভাষার নাম দিন।",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "ইংরেজী",
+                    "স্পেনীয়",
+                    "অন্যান্য"
                   ]
                 }
               },
               {
-                "id": "preferred_language",
-                "label": "Preferred Language",
-                "type": "radio",
+                "id": "পছন্দের_ভাষা",
+                "label": "পছন্দের ভাষা",
+                "type": "রেডিও",
                 "required": true,
-                "tooltip": "Select the language you prefer to communicate in. If “other”, provide the name of the language.",
+                "tooltip": "আপনি যে ভাষায় যোগাযোগ করতে পছন্দ করেন তা নির্বাচন করুন। যদি \"অন্য\" হয়, তাহলে ভাষার নাম দিন।",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "ইংরেজী",
+                    "স্পেনীয়",
+                    "অন্যান্য"
                   ]
                 }
               },
               {
-                "id": "other_primary_language",
-                "label": "Other Primary Language",
-                "type": "text",
+                "id": "অন্যান্য_প্রাথমিক_ভাষা",
+                "label": "অন্যান্য প্রাথমিক ভাষা",
+                "type": "টেক্সট",
                 "required": false,
                 "requiredCondition": {
-                  "field": "primary_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "প্রাথমিক_ভাষা",
+                  "operator": "সমান",
+                  "value": "অন্যান্য"
                 }
               },
               {
-                "id": "other_preferred_language",
-                "label": "Other Preferred Language",
-                "type": "text",
+                "id": "অন্য_পছন্দের_ভাষা",
+                "label": "অন্যান্য পছন্দের ভাষা",
+                "type": "টেক্সট",
                 "required": false,
                 "requiredCondition": {
-                  "field": "preferred_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "পছন্দের_ভাষা",
+                  "operator": "সমান",
+                  "value": "অন্যান্য"
                 }
               }
             ]
           },
           {
-            "id": "cash_assistance",
-            "title": "Cash Assistance",
+            "id": "নগদ_সহায়তা",
+            "title": "নগদ সহায়তা",
             "fields": [
               {
-                "id": "has_cash_assistance",
-                "label": "Do you receive Cash Assistance?",
-                "type": "radio",
+                "id": "নগদ_সহায়তা_আছে",
+                "label": "আপনি কি নগদ সহায়তা পান?",
+                "type": "রেডিও",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "ca_number",
-                "label": "Cash Assistance Number",
-                "type": "text",
+                "id": "ca_number সম্পর্কে",
+                "label": "নগদ সহায়তা নম্বর",
+                "type": "টেক্সট",
                 "required": false,
                 "requiredCondition": {
                   "condition": {
-                    "field": "has_cash_assistance",
-                    "operator": "equals",
-                    "value": "Yes"
+                    "field": "নগদ_সহায়তা_আছে",
+                    "operator": "সমান",
+                    "value": "হাঁ"
                   }
                 }
               }
@@ -503,124 +515,124 @@
         ]
       },
       {
-        "id": "children_needing_care",
-        "title": "Children Needing Care",
+        "id": "শিশুদের_প্রয়োজন_যত্ন",
+        "title": "যত্নের প্রয়োজন এমন শিশুদের",
         "sections": [
           {
-            "id": "child_details",
-            "title": "Child Details",
+            "id": "শিশু_বিস্তারিত",
+            "title": "সন্তানের বিবরণ",
             "required": true,
             "fields": [
               {
-                "id": "children",
-                "label": "Children Needing Care",
-                "type": "group",
+                "id": "শিশুরা",
+                "label": "যত্নের প্রয়োজন এমন শিশুদের",
+                "type": "দল",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                  "first_name",
-                  "last_name",
-                  "date_of_birth",
-                  "relationship_to_applicant"
+                    "প্রথম_নাম",
+                    "শেষ নাম",
+                    "জন্ম তারিখ",
+                    "আবেদনকারীর সাথে সম্পর্ক"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "প্রথম_নাম",
+                    "label": "প্রথম নাম",
+                    "type": "টেক্সট",
                     "required": true,
-                    "tooltip": "Provide the first name, last name, and middle initial of each child you are applying for child care assistance for."
+                    "tooltip": "আপনি যে শিশুর জন্য শিশু যত্ন সহায়তার জন্য আবেদন করছেন তার প্রতিটি শিশুর প্রথম নাম, পদবি এবং মধ্যম নামের প্রথম অক্ষর দিন।"
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "শেষ নাম",
+                    "label": "পদবি",
+                    "type": "টেক্সট",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "আমি",
+                    "label": "মধ্য আদ্যক্ষর",
+                    "type": "টেক্সট",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "আবেদনকারীর সাথে সম্পর্ক",
+                    "label": "আবেদনকারীর সাথে সম্পর্ক",
+                    "type": "নির্বাচন করুন",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "Child",
-                        "Grandchild",
-                        "Foster Child",
-                        "Other"
+                        "শিশু",
+                        "নাতি",
+                        "পালিত সন্তান",
+                        "অন্যান্য"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "জন্ম তারিখ",
+                    "label": "জন্ম তারিখ",
+                    "type": "তারিখ",
                     "required": true,
-                    "tooltip": "Provide the date of birth."
+                    "tooltip": "জন্ম তারিখ দিন।"
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
-                    "type": "radio",
+                    "id": "যৌনতা",
+                    "label": "লিঙ্গ",
+                    "type": "রেডিও",
                     "required": true,
-                    "tooltip": "Select to indicate the sex.",
+                    "tooltip": "লিঙ্গ নির্দেশ করতে নির্বাচন করুন।",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "পুরুষ",
+                        "মহিলা"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "জাতিগততা",
+                    "label": "জাতিগততা হিস্পানিক বা ল্যাটিনো",
+                    "type": "নির্বাচন করুন",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each child in need of child care is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for child care assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "\"হ্যাঁ\" অথবা \"না\" চিহ্ন দিয়ে দেখান যে শিশু যত্নের প্রয়োজন এমন প্রতিটি শিশু হিস্পানিক বা ল্যাটিনো কিনা। জাতিগত তথ্য প্রদান স্বেচ্ছাসেবী এবং শিশু যত্ন সহায়তার জন্য আপনার যোগ্যতা বা এই সংস্থা কর্তৃক প্রদত্ত সহায়তার পরিমাণকে প্রভাবিত করবে না।",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "হাঁ",
+                        "না",
+                        "উত্তর দিতে পছন্দ করি না।"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "জাতি",
+                    "label": "জাতি",
+                    "type": "চেকবক্স",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single child. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "আপনি একটি শিশুর জন্য একাধিক বর্ণ বিভাগ বেছে নিতে পারেন। বর্ণ সম্পর্কিত তথ্য প্রদান স্বেচ্ছাসেবী এবং শিশু যত্ন সহায়তার জন্য আপনার যোগ্যতা বা এই সংস্থা কর্তৃক প্রদত্ত সহায়তার পরিমাণকে প্রভাবিত করবে না।",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "এআই",
+                          "label": "আমেরিকান ইন্ডিয়ান বা আলাস্কার আদিবাসী"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "এএস",
+                          "label": "এশিয়ান"
                         },
                         {
-                          "value": "BL",
-                          "label": "Black or African American"
+                          "value": "বিএল",
+                          "label": "কালো বা আফ্রিকান আমেরিকান"
                         },
                         {
-                          "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "value": "এইচপি",
+                          "label": "স্থানীয় হাওয়াইয়ান বা প্রশান্ত মহাসাগরীয় দ্বীপপুঞ্জের বাসিন্দা"
                         },
                         {
-                          "value": "WH",
-                          "label": "White"
+                          "value": "হু",
+                          "label": "সাদা"
                         }
                       ]
                     },
@@ -629,54 +641,54 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "এসএসএন",
+                    "label": "সামাজিক নিরাপত্তা নম্বর",
+                    "type": "টেক্সট",
                     "required": false,
-                    "tooltip": "Provide each child’s Social Security Number (SSN). You are not required to provide SSNs. They may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "প্রতিটি শিশুর সামাজিক নিরাপত্তা নম্বর (SSN) প্রদান করুন। আপনাকে SSN প্রদান করতে হবে না। পরিষেবার পুনরাবৃত্তি এবং জালিয়াতি রোধ করতে এবং ফেডারেল রিপোর্টিংয়ের জন্য ফেডারেল, রাজ্য এবং স্থানীয় সংস্থাগুলি এগুলি ব্যবহার করতে পারে।",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
                     "ui": {
-                      "placeholder": "123-45-6789"
+                      "placeholder": "১২৩-৪৫-৬৭৮৯"
                     }
                   },
                   {
-                    "id": "do_both_parents_reside_in_home",
-                    "label": "Do both parents reside in the home?",
-                    "type": "radio",
+                    "id": "বাবা-মা দুজনেই বাড়িতে থাকবেন",
+                    "label": "বাবা-মা দুজনেই কি বাড়িতে থাকেন?",
+                    "type": "রেডিও",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether both of the child’s parents live in the home.",
+                    "tooltip": "\"হ্যাঁ\" বা \"না\" চিহ্ন দিয়ে দেখান যে সন্তানের বাবা-মা দুজনেই বাড়িতে থাকেন কিনা।",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "হাঁ",
+                        "না"
                       ]
                     }
                   },
                   {
-                    "id": "has_disability",
-                    "label": "Does the child have a disability?",
-                    "type": "radio",
+                    "id": "অক্ষমতা আছে",
+                    "label": "শিশুটির কি কোন প্রতিবন্ধকতা আছে?",
+                    "type": "রেডিও",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether the child needing child care has a disability.",
+                    "tooltip": "শিশু যত্নের প্রয়োজন এমন শিশুর কোনও প্রতিবন্ধকতা আছে কিনা তা নির্দেশ করতে \"হ্যাঁ\" বা \"না\" চিহ্ন দিন।",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "হাঁ",
+                        "না"
                       ]
                     }
                   },
                   {
-                    "id": "is_immigration_status_satisfactory",
-                    "label": "Is child U.S. Citizen, U.S. National, or person with satisfactory immigration status?",
-                    "type": "radio",
+                    "id": "অভিবাসন_পরিস্থিতি_সন্তোষজনক",
+                    "label": "শিশুটি কি মার্কিন নাগরিক, মার্কিন নাগরিক, নাকি সন্তোষজনক অভিবাসন মর্যাদাসম্পন্ন ব্যক্তি?",
+                    "type": "রেডিও",
                     "required": true,
-                    "tooltip": "You will only be asked about the immigration status of the children in need of care. Other members of the family will not need to state or prove their immigration status. Your child will be eligible for care if they are a U.S. citizen, a legal permanent resident (green card holder), a refugee, or an asylee; have a T-visa; or hold another qualified immigration status. Please select “Yes” if your child holds one of these statuses.",
+                    "tooltip": "আপনাকে কেবল যত্নের প্রয়োজন এমন শিশুদের অভিবাসন অবস্থা সম্পর্কে জিজ্ঞাসা করা হবে। পরিবারের অন্যান্য সদস্যদের তাদের অভিবাসন অবস্থা জানাতে বা প্রমাণ করতে হবে না। আপনার সন্তান যদি মার্কিন নাগরিক, আইনগত স্থায়ী বাসিন্দা (গ্রিন কার্ডধারী), শরণার্থী, অথবা আশ্রয়প্রার্থী হয়; টি-ভিসা থাকে; অথবা অন্য কোনও যোগ্য অভিবাসন অবস্থা ধারণ করে, তাহলে সে যত্নের জন্য যোগ্য হবে। আপনার সন্তানের যদি এই অবস্থাগুলির মধ্যে একটি থাকে তবে দয়া করে \"হ্যাঁ\" নির্বাচন করুন।",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "হাঁ",
+                        "না"
                       ]
                     }
                   }
@@ -687,142 +699,146 @@
         ]
       },
       {
-        "id": "family_members",
-        "title": "Family Members",
+        "id": "পরিবারের সদস্যরা",
+        "title": "পরিবারের সদস্যরা",
         "sections": [
           {
-            "id": "household_members_info",
-            "title": "Household Members Information",
-            "type": "info",
+            "id": "পরিবারের_সদস্যদের_তথ্য",
+            "title": "পরিবারের সদস্যদের তথ্য",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**List the household members who do _not_ need child care.**\\n\\nIf applicable, list:\\n\\n- Your **spouse**, your child’s **second parent**, **caretaker**, or **step-parent**\\n- Any other **adult with whom you share a child**, if they live in your home\\n\\nThen, if applicable, list:\\n\\n- Any **siblings under the age of 18** who live in your home\\n\\n> **Only list other household members** — such as **aunts, uncles, cousins, grandparents, or friends** — _if they have financial responsibility_ for the child.\\n\\nA household member with financial responsibility, other than a parent or step-parent, is one who has a **letter or order of guardianship**.\\n\\n**Otherwise, do not include them.**"
+            "content": "**পরিবারের সেই সদস্যদের তালিকা তৈরি করুন যাদের শিশু যত্নের প্রয়োজন নেই।**\\n\\nপ্রযোজ্য ক্ষেত্রে, তালিকা তৈরি করুন:\\n\\n- আপনার **স্বামী**, আপনার সন্তানের **দ্বিতীয় পিতামাতা**, **তত্ত্বাবধায়ক**, অথবা **সৎ-পিতামাতা**\\n- আপনার বাড়িতে বসবাসকারী অন্য কোনও **প্রাপ্তবয়স্ক**, যদি তারা আপনার বাড়িতে থাকেন\\n\\nতারপর, যদি প্রযোজ্য হয়, তালিকা তৈরি করুন:\\n\\n- ১৮ বছরের কম বয়সী যে কোনও **ভাইবোন** যারা আপনার বাড়িতে থাকেন\\n\\n> **শুধুমাত্র পরিবারের অন্যান্য সদস্যদের তালিকা তৈরি করুন** — যেমন **মাসিমা, চাচা, চাচাতো ভাই, দাদা-দাদি, অথবা বন্ধুবান্ধব** — যদি তাদের সন্তানের প্রতি আর্থিক দায়িত্ব থাকে।\\n\\nপিতামাতা বা সৎ-পিতামাতা ব্যতীত পরিবারের আর্থিক দায়িত্বপ্রাপ্ত সদস্য হলেন তিনি যার **অভিভাবকের চিঠি বা আদেশ** আছে।\\n\\n**অন্যথায়, তাদের অন্তর্ভুক্ত করবেন না।**"
           },
           {
-            "id": "family_member_details",
-            "title": "Household Member Details",
-            "description": "Include household members who do not need child care assistance (e.g., spouse, partner, other children).",
+            "id": "পরিবারের_সদস্য_বিস্তারিত",
+            "title": "পরিবারের সদস্যদের বিবরণ",
+            "description": "পরিবারের এমন সদস্যদের অন্তর্ভুক্ত করুন যাদের শিশু যত্ন সহায়তার প্রয়োজন নেই (যেমন, স্বামী/স্ত্রী, সঙ্গী, অন্যান্য শিশু)।",
             "fields": [
               {
-                "id": "familymember",
-                "label": "Family Members",
-                "type": "group",
+                "id": "পরিবারের সদস্য",
+                "label": "পরিবারের সদস্যরা",
+                "type": "দল",
                 "requiredCondition": {
-                  "repeatingGroup": "children",
-                  "operator": "ANY",
-                  "condition": { "field": "do_both_parents_reside_in_home", "operator": "equals", "value": "Yes" }
-                },  
+                  "repeatingGroup": "শিশুরা",
+                  "operator": "যেকোনো",
+                  "condition": {
+                    "field": "বাবা-মা দুজনেই বাড়িতে থাকবেন",
+                    "operator": "সমান",
+                    "value": "হাঁ"
+                  }
+                },
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "first_name",
-                    "last_name",
-                    "relationship_to_applicant",
-                    "date_of_birth"
+                    "প্রথম_নাম",
+                    "শেষ নাম",
+                    "আবেদনকারীর সাথে সম্পর্ক",
+                    "জন্ম তারিখ"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "প্রথম_নাম",
+                    "label": "প্রথম নাম",
+                    "type": "টেক্সট",
                     "required": true,
-                    "tooltip": "Provide last and first name, and middle initial if applicable."
+                    "tooltip": "শেষ নাম এবং প্রথম নাম এবং প্রযোজ্য হলে মাঝের নামের প্রথম অক্ষর দিন।"
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "শেষ নাম",
+                    "label": "পদবি",
+                    "type": "টেক্সট",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "আমি",
+                    "label": "মধ্য আদ্যক্ষর",
+                    "type": "টেক্সট",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "আবেদনকারীর সাথে সম্পর্ক",
+                    "label": "আবেদনকারীর সাথে সম্পর্ক",
+                    "type": "নির্বাচন করুন",
                     "required": true,
-                    "tooltip": "Provide each person’s relationship to you (e.g. spouse, partner, child, foster parent, other).",
+                    "tooltip": "আপনার সাথে প্রতিটি ব্যক্তির সম্পর্ক সম্পর্কে তথ্য প্রদান করুন (যেমন, স্বামী/স্ত্রী, সঙ্গী, সন্তান, পালিত পিতামাতা, অন্যান্য)।",
                     "ui": {
                       "options": [
                         "",
-                        "Spouse",
-                        "Partner",
-                        "Foster Parent",
-                        "Child",
-                        "Other"
+                        "পত্নী",
+                        "অংশীদার",
+                        "পালিত পিতামাতা",
+                        "শিশু",
+                        "অন্যান্য"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "জন্ম তারিখ",
+                    "label": "জন্ম তারিখ",
+                    "type": "তারিখ",
                     "required": true,
-                    "tooltip": "Provide the family member's date of birth."
+                    "tooltip": "পরিবারের সদস্যের জন্ম তারিখ দিন।"
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
-                    "type": "radio",
+                    "id": "যৌনতা",
+                    "label": "লিঙ্গ",
+                    "type": "রেডিও",
                     "required": true,
-                    "tooltip": "Indicate the sex for each family member listed.",
+                    "tooltip": "তালিকাভুক্ত প্রতিটি পরিবারের সদস্যের লিঙ্গ নির্দেশ করুন।",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "পুরুষ",
+                        "মহিলা"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "জাতিগততা",
+                    "label": "জাতিগততা হিস্পানিক বা ল্যাটিনো",
+                    "type": "নির্বাচন করুন",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each member in the household is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "পরিবারের প্রতিটি সদস্য হিস্পানিক বা ল্যাটিনো কিনা তা নির্দেশ করতে \"হ্যাঁ\" বা \"না\" চিহ্ন দিন। জাতিগত তথ্য প্রদান স্বেচ্ছাসেবী এবং শিশু যত্ন সহায়তার জন্য আপনার যোগ্যতা বা এই সংস্থা কর্তৃক প্রদত্ত সহায়তার পরিমাণকে প্রভাবিত করবে না।",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "হাঁ",
+                        "না",
+                        "উত্তর দিতে পছন্দ করি না।"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "জাতি",
+                    "label": "জাতি",
+                    "type": "চেকবক্স",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single person. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "আপনি একজন ব্যক্তির জন্য একাধিক জাতি বিভাগ বেছে নিতে পারেন। জাতি সম্পর্কিত তথ্য প্রদান স্বেচ্ছাসেবী এবং শিশু যত্ন সহায়তার জন্য আপনার যোগ্যতা বা এই সংস্থা কর্তৃক প্রদত্ত সহায়তার পরিমাণকে প্রভাবিত করবে না।",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "এআই",
+                          "label": "আমেরিকান ইন্ডিয়ান বা আলাস্কার আদিবাসী"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "এএস",
+                          "label": "এশিয়ান"
                         },
                         {
-                          "value": "BL",
-                          "label": "Black or African American"
+                          "value": "বিএল",
+                          "label": "কালো বা আফ্রিকান আমেরিকান"
                         },
                         {
-                          "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "value": "এইচপি",
+                          "label": "স্থানীয় হাওয়াইয়ান বা প্রশান্ত মহাসাগরীয় দ্বীপপুঞ্জের বাসিন্দা"
                         },
                         {
-                          "value": "WH",
-                          "label": "White"
+                          "value": "হু",
+                          "label": "সাদা"
                         }
                       ]
                     },
@@ -831,16 +847,16 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "এসএসএন",
+                    "label": "সামাজিক নিরাপত্তা নম্বর",
+                    "type": "টেক্সট",
                     "required": false,
-                    "tooltip": "Fill in the Social Security Number (SSN) for your family members. SSN is optional. SSN may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "আপনার পরিবারের সদস্যদের জন্য সামাজিক নিরাপত্তা নম্বর (SSN) পূরণ করুন। SSN ঐচ্ছিক। পরিষেবার নকলকরণ এবং জালিয়াতি রোধ করতে এবং ফেডারেল রিপোর্টিংয়ের জন্য ফেডারেল, রাজ্য এবং স্থানীয় সংস্থাগুলি SSN ব্যবহার করতে পারে।",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
                     "ui": {
-                      "placeholder": "123-45-6789"
+                      "placeholder": "১২৩-৪৫-৬৭৮৯"
                     }
                   }
                 ]
@@ -850,28 +866,28 @@
         ]
       },
       {
-        "id": "child_family_needs",
-        "title": "Child / Family Needs",
+        "id": "শিশুর_পরিবারের_প্রয়োজন",
+        "title": "শিশু / পরিবারের চাহিদা",
         "sections": [
           {
-            "id": "assistance_reason",
-            "title": "Reason for Child Care Assistance",
-            "description": "Select one or two reasons you are requesting Child Care Assistance.",
-            "tooltip": "Select one reason. In a two-parent household, parents/caretakers can have the same or different reasons for needing child care. Both parents/caretakers will be required to submit documentation in support of their own reason. If you are living in temporary housing, please select Homelessness even if you have another reason that applies to you.",
+            "id": "সহায়তা_কারণ",
+            "title": "শিশু যত্ন সহায়তার কারণ",
+            "description": "শিশু যত্ন সহায়তার জন্য অনুরোধ করার এক বা দুটি কারণ নির্বাচন করুন।",
+            "tooltip": "একটি কারণ নির্বাচন করুন। দুই অভিভাবকের পরিবারে, বাবা-মা/তত্ত্বাবধায়কদের সন্তানের যত্নের প্রয়োজনের জন্য একই বা ভিন্ন কারণ থাকতে পারে। বাবা-মা/তত্ত্বাবধায়ক উভয়কেই তাদের নিজস্ব কারণের সমর্থনে নথিপত্র জমা দিতে হবে। আপনি যদি অস্থায়ী আবাসনে থাকেন, তাহলে অনুগ্রহ করে গৃহহীনতা নির্বাচন করুন, এমনকি যদি আপনার ক্ষেত্রে প্রযোজ্য অন্য কোনও কারণ থাকে।",
             "fields": [
               {
-                "id": "assistance_reason",
-                "label": "Reason(s) for Assistance",
-                "type": "select",
+                "id": "সহায়তা_কারণ",
+                "label": "সহায়তার কারণ(গুলি)",
+                "type": "নির্বাচন করুন",
                 "required": true,
                 "ui": {
                   "options": [
                     "",
-                    "Employment",
-                    "Looking for Work",
-                    "Vocational Training/Educational Activities",
-                    "Receiving Domestic Violence Services",
-                    "Homelessness"
+                    "কর্মসংস্থান",
+                    "কাজ খুঁজছি",
+                    "বৃত্তিমূলক প্রশিক্ষণ/শিক্ষামূলক কার্যক্রম",
+                    "পারিবারিক সহিংসতা পরিষেবা গ্রহণ",
+                    "গৃহহীনতা"
                   ]
                 },
                 "constraints": {
@@ -885,72 +901,72 @@
             ]
           },
           {
-            "id": "military_status",
-            "title": "Military and Parental Availability",
-            "description": "Provide information about parental military status and availability for child care.",
+            "id": "সামরিক_স্থিতি",
+            "title": "সামরিক এবং পিতামাতার প্রাপ্যতা",
+            "description": "পিতামাতার সামরিক অবস্থা এবং শিশু যত্নের জন্য প্রাপ্যতা সম্পর্কে তথ্য প্রদান করুন।",
             "fields": [
               {
-                "id": "is_parent_currently_active_in_military",
-                "label": "Is a Parent Currently Active Full-Time in the U.S. Military?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently active full-time in the U.S. Military.",
-                "type": "radio",
+                "id": "বর্তমানে সামরিক বাহিনীতে_সক্রিয়_পিতামাতা",
+                "label": "একজন অভিভাবক কি বর্তমানে মার্কিন সেনাবাহিনীতে পূর্ণকালীন সক্রিয়?",
+                "tooltip": "\"হ্যাঁ\" বা \"না\" চিহ্ন দিয়ে বোঝান যে একজন অভিভাবক বর্তমানে মার্কিন সেনাবাহিনীতে পূর্ণকালীন কর্মরত আছেন কিনা।",
+                "type": "রেডিও",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "is_parent_mem_of_guard_or_mru",
-                "label": "Is a Parent a Member of National Guard or Military Reserve Unit?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently a member of a National Guard or Military Reserve Unit.",
-                "type": "radio",
+                "id": "অভিভাবকের_মেম_হয়_নাকি_মরু",
+                "label": "একজন অভিভাবক কি ন্যাশনাল গার্ড বা মিলিটারি রিজার্ভ ইউনিটের সদস্য?",
+                "tooltip": "\"হ্যাঁ\" বা \"না\" চিহ্ন দিয়ে বোঝান যে একজন অভিভাবক বর্তমানে ন্যাশনাল গার্ড বা মিলিটারি রিজার্ভ ইউনিটের সদস্য কিনা।",
+                "type": "রেডিও",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "is_non_custodial_parent_available",
-                "label": "Is the Non-Custodial Parent Available to Provide Care?",
-                "tooltip": "Check “YES” or “NO” to indicate whether there is a non-custodial parent available to provide child care.",
-                "type": "radio",
+                "id": "অভিভাবকের_অনুপস্থিত_অনুপলব্ধ",
+                "label": "অ-হেফাজতকারী পিতামাতা কি যত্ন প্রদানের জন্য উপলব্ধ?",
+                "tooltip": "শিশু যত্ন প্রদানের জন্য কোনও অ-রক্ষণাবেক্ষণকারী অভিভাবক উপলব্ধ কিনা তা নির্দেশ করতে \"হ্যাঁ\" বা \"না\" চিহ্ন দিন।",
+                "type": "রেডিও",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "duplicate_application",
-            "title": "Other Applications",
-            "description": "Indicate if you are also applying for or receiving child care from other agencies.",
-            "tooltip": "Indicate whether you are currently receiving or have applied for child care assistance with one of the agencies or organizations listed below. Note: If you are receiving Cash Assistance and are interested in child care assistance, you must apply through the Human Resources Administration. Reach out to your Benefits Access Center or visit the Human Resources Administration webpage.",
+            "id": "ডুপ্লিকেট_অ্যাপ্লিকেশন",
+            "title": "অন্যান্য অ্যাপ্লিকেশন",
+            "description": "আপনি কি অন্য কোনও সংস্থার কাছ থেকে শিশু যত্নের জন্য আবেদন করছেন বা পাচ্ছেন কিনা তা উল্লেখ করুন।",
+            "tooltip": "আপনি বর্তমানে নীচে তালিকাভুক্ত কোনও সংস্থা বা সংস্থার কাছ থেকে শিশু যত্ন সহায়তা পাচ্ছেন কিনা বা আবেদন করেছেন কিনা তা উল্লেখ করুন। দ্রষ্টব্য: আপনি যদি নগদ সহায়তা পান এবং শিশু যত্ন সহায়তায় আগ্রহী হন, তাহলে আপনাকে অবশ্যই মানব সম্পদ প্রশাসনের মাধ্যমে আবেদন করতে হবে। আপনার বেনিফিট অ্যাক্সেস সেন্টারে যোগাযোগ করুন অথবা মানব সম্পদ প্রশাসনের ওয়েবপেজটি দেখুন।",
             "fields": [
               {
-                "id": "duplicate_app",
-                "label": "Are You Receiving or Applying for Child Care Through Another Agency?",
-                "type": "select",
+                "id": "ডুপ্লিকেট_অ্যাপ",
+                "label": "আপনি কি অন্য কোনও সংস্থার মাধ্যমে শিশু যত্ন নিচ্ছেন বা আবেদন করছেন?",
+                "type": "নির্বাচন করুন",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Not Applicable",
-                    "Department of Education (DOE)",
-                    "Human Resources Administration (HRA)",
-                    "Department of Youth and Community Development (DYCD)",
-                    "Department of Homeless Services (DHS)",
-                    "Consortium for Worker Education (CWE)",
-                    "Administration for Children's Services (ACS)"
+                    "প্রযোজ্য নয়",
+                    "শিক্ষা বিভাগ (DOE)",
+                    "মানব সম্পদ প্রশাসন (HRA)",
+                    "যুব ও সম্প্রদায় উন্নয়ন বিভাগ (DYCD)",
+                    "গৃহহীন পরিষেবা বিভাগ (DHS)",
+                    "কর্মী শিক্ষার জন্য কনসোর্টিয়াম (CWE)",
+                    "শিশু পরিষেবা প্রশাসন (ACS)"
                   ]
                 }
               }
@@ -959,370 +975,370 @@
         ]
       },
       {
-        "id": "employment",
-        "title": "Employment",
+        "id": "কর্মসংস্থান",
+        "title": "কর্মসংস্থান",
         "sections": [
           {
-            "id": "employment_precheck",
-            "title": "Tell us about your employment",
-            "description": "Tell us about your employment",
+            "id": "কর্মসংস্থান_পূর্ব-চেক",
+            "title": "আপনার চাকরি সম্পর্কে বলুন।",
+            "description": "আপনার চাকরি সম্পর্কে বলুন।",
             "fields": [
               {
-                "id": "applicant_emp_income_indicator",
-                "label": "Does applicant earn any income/ wages from employment? ",
-                "type": "radio",
+                "id": "আবেদনকারী_কর্মচারী_আয়_সূচক",
+                "label": "আবেদনকারী কি চাকরি থেকে কোন আয়/মজুরি পান?",
+                "type": "রেডিও",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "coparent_emp_income_indicator",
-                "label": "Does Coparent/2nd Guardian earn any income/ wages from employment? ",
-                "type": "radio",
+                "id": "সহ-পিতামাতা_কর্মচারী_আয়_সূচক",
+                "label": "সহ-প্যারেন্ট/দ্বিতীয় অভিভাবক কি চাকরি থেকে কোনও আয়/মজুরি পান?",
+                "type": "রেডিও",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "applicant_jobs",
-            "title": "Applicant Employment Information",
-            "description": "Enter details for up to two jobs held by the applicant.",
+            "id": "আবেদনকারী_চাকরি",
+            "title": "আবেদনকারীর কর্মসংস্থানের তথ্য",
+            "description": "আবেদনকারীর অধিষ্ঠিত সর্বাধিক দুটি চাকরির বিবরণ লিখুন।",
             "visibilityCondition": {
-              "field": "applicant_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "field": "আবেদনকারী_কর্মচারী_আয়_সূচক",
+              "operator": "সমান",
+              "value": "হাঁ"
             },
             "fields": [
               {
-                "id": "applicant_1st_job_start_date",
-                "label": "1st Job - Start Date",
-                "type": "date",
+                "id": "আবেদনকারীর_প্রথম_চাকরির_শুরু_তারিখ",
+                "label": "১ম চাকরি - শুরুর তারিখ",
+                "type": "তারিখ",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "১ম চাকরি"
                 }
               },
               {
-                "id": "applicant_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "আবেদনকারীর_প্রথম_চাকরির_ঘোরানো_স্থানান্তর",
+                "label": "১ম কাজ - ঘূর্ণন কি পরিবর্তন হয়েছে?",
+                "type": "রেডিও",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ],
-                  "group": "1st Job"
+                  "group": "১ম চাকরি"
                 }
               },
               {
-                "id": "applicant_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
-                "type": "radio",
+                "id": "আবেদনকারীর_প্রথম_চাকরির_প্রয়োজনীয়_ওভারটাইম",
+                "label": "১ম চাকরি - ওভারটাইম প্রয়োজন?",
+                "type": "রেডিও",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ],
-                  "group": "1st Job"
+                  "group": "১ম চাকরি"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "আবেদনকারীর_প্রথম_চাকরির_নিয়োগকর্তার_নাম",
+                "label": "১ম চাকরি - নিয়োগকর্তার নাম",
+                "type": "টেক্সট",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "১ম চাকরি"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "আবেদনকারীর_প্রথম_চাকরির_নিয়োগকর্তার_ফোন",
+                "label": "১ম চাকরি - নিয়োগকর্তার ফোন",
+                "type": "টেলিফোন",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "১ম চাকরি"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "আবেদনকারী_প্রথম_চাকরির_নিয়োগকর্তার_রাস্তা",
+                "label": "১ম চাকরি - নিয়োগকর্তার রাস্তার ঠিকানা",
+                "type": "টেক্সট",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "১ম চাকরি"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "আবেদনকারী_প্রথম_চাকরির_নিয়োগকর্তা_শহর",
+                "label": "১ম চাকরি - নিয়োগকর্তা শহর",
+                "type": "টেক্সট",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "১ম চাকরি"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "আবেদনকারী_প্রথম_চাকরির_নিয়োগকর্তা_রাজ্য",
+                "label": "১ম চাকরি - নিয়োগকর্তার রাজ্য",
+                "type": "টেক্সট",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "১ম চাকরি"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "আবেদনকারীর_প্রথম_চাকরির_নিয়োগকর্তার_জিপ কোড",
+                "label": "১ম চাকরি - নিয়োগকর্তার জিপ কোড",
+                "type": "টেক্সট",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "১ম চাকরি"
                 }
               },
               {
-                "id": "applicant_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
-                "type": "date",
+                "id": "আবেদনকারীর_দ্বিতীয়_চাকরির_শুরু_তারিখ",
+                "label": "২য় চাকরি - শুরুর তারিখ",
+                "type": "তারিখ",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "২য় চাকরি"
                 }
               },
               {
-                "id": "applicant_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "আবেদনকারীর_দ্বিতীয়_চাকরির_ঘোরানো_স্থানান্তর",
+                "label": "২য় কাজ - ঘূর্ণন কি পরিবর্তন হয়েছে?",
+                "type": "রেডিও",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ],
-                  "group": "2nd Job"
+                  "group": "২য় চাকরি"
                 }
               },
               {
-                "id": "applicant_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
-                "type": "radio",
+                "id": "আবেদনকারীর_দ্বিতীয়_চাকরির_প্রয়োজন_ওভারটাইম",
+                "label": "২য় কাজ - ওভারটাইম প্রয়োজন?",
+                "type": "রেডিও",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ],
-                  "group": "2nd Job"
+                  "group": "২য় চাকরি"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "আবেদনকারীর_দ্বিতীয়_চাকরির_নিয়োগকর্তার_নাম",
+                "label": "২য় চাকরি - নিয়োগকর্তার নাম",
+                "type": "টেক্সট",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "২য় চাকরি"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "আবেদনকারীর_দ্বিতীয়_চাকরির_নিয়োগকর্তার_ফোন",
+                "label": "২য় চাকরি - নিয়োগকর্তার ফোন নম্বর",
+                "type": "টেলিফোন",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "২য় চাকরি"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "আবেদনকারী_দ্বিতীয়_চাকরির_নিয়োগকর্তা_রাস্তা",
+                "label": "২য় চাকরি - নিয়োগকর্তার রাস্তার ঠিকানা",
+                "type": "টেক্সট",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "২য় চাকরি"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "আবেদনকারী_দ্বিতীয়_চাকরির_নিয়োগকর্তা_শহর",
+                "label": "২য় চাকরি - নিয়োগকর্তা শহর",
+                "type": "টেক্সট",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "২য় চাকরি"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "আবেদনকারী_দ্বিতীয়_চাকরির_নিয়োগকর্তা_রাজ্য",
+                "label": "২য় চাকরি - নিয়োগকর্তার রাজ্য",
+                "type": "টেক্সট",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "২য় চাকরি"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "আবেদনকারী_দ্বিতীয়_চাকরির_নিয়োগকর্তা_জিপ কোড",
+                "label": "২য় চাকরি - নিয়োগকর্তার জিপ কোড",
+                "type": "টেক্সট",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "২য় চাকরি"
                 }
               }
             ]
           },
           {
-            "id": "second_parent_jobs",
-            "title": "Second Parent Employment Information",
-            "description": "Enter details for up to two jobs held by the second parent (if applicable).",
+            "id": "দ্বিতীয়_পিতামাতার_চাকরি",
+            "title": "দ্বিতীয় পিতামাতার কর্মসংস্থান তথ্য",
+            "description": "দ্বিতীয় পিতামাতার (যদি প্রযোজ্য হয়) দুটি পর্যন্ত চাকরির বিবরণ লিখুন।",
             "visibilityCondition": {
-              "field": "coparent_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "field": "সহ-পিতামাতা_কর্মচারী_আয়_সূচক",
+              "operator": "সমান",
+              "value": "হাঁ"
             },
             "fields": [
               {
-                "id": "second_parent_1st_job_start_date",
-                "label": "1st Job - Start Date",
-                "type": "date",
+                "id": "দ্বিতীয়_পিতামাতার_প্রথম_চাকরির_শুরু_তারিখ",
+                "label": "১ম চাকরি - শুরুর তারিখ",
+                "type": "তারিখ",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "দ্বিতীয়_পিতামাতার_প্রথম_চাকরি_ঘূর্ণায়মান_স্থানান্তর",
+                "label": "১ম কাজ - ঘূর্ণন কি পরিবর্তন হয়েছে?",
+                "type": "রেডিও",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
-                "type": "radio",
+                "id": "দ্বিতীয়_পিতামাতার_প্রথম_চাকরির_প্রয়োজনীয়_ওভারটাইম",
+                "label": "১ম চাকরি - ওভারটাইম প্রয়োজন?",
+                "type": "রেডিও",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "দ্বিতীয়_পিতা_প্রথম_চাকরির_নিয়োগকর্তার_নাম",
+                "label": "১ম চাকরি - নিয়োগকর্তার নাম",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "দ্বিতীয়_পিতামাতার_প্রথম_চাকরির_নিয়োগকর্তার_ফোন",
+                "label": "১ম চাকরি - নিয়োগকর্তার ফোন",
+                "type": "টেলিফোন",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "দ্বিতীয়_পিতামাতার_প্রথম_চাকরি_নিয়োগকর্তার_রাস্তা",
+                "label": "১ম চাকরি - নিয়োগকর্তার রাস্তার ঠিকানা",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "দ্বিতীয়_পিতা_প্রথম_চাকরি_নিয়োগকর্তার_শহর",
+                "label": "১ম চাকরি - নিয়োগকর্তা শহর",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "দ্বিতীয়_পিতা_প্রথম_চাকরি_নিয়োগকর্তার_রাজ্য",
+                "label": "১ম চাকরি - নিয়োগকর্তার রাজ্য",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "দ্বিতীয়_পিতা_প্রথম_চাকরি_নিয়োগকর্তা_জিপ কোড",
+                "label": "১ম চাকরি - নিয়োগকর্তার জিপ কোড",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
-                "type": "date",
+                "id": "দ্বিতীয়_পিতামাতার_দ্বিতীয়_চাকরি_শুরু_তারিখ",
+                "label": "২য় চাকরি - শুরুর তারিখ",
+                "type": "তারিখ",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "দ্বিতীয়_পিতা_দ্বিতীয়_কাজ_ঘূর্ণায়মান_স্থানান্তর",
+                "label": "২য় কাজ - ঘূর্ণন কি পরিবর্তন হয়েছে?",
+                "type": "রেডিও",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
-                "type": "radio",
+                "id": "দ্বিতীয়_পিতামাতার_দ্বিতীয়_চাকরির_প্রয়োজন_ওভারটাইম",
+                "label": "২য় কাজ - ওভারটাইম প্রয়োজন?",
+                "type": "রেডিও",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "দ্বিতীয়_পিতা_দ্বিতীয়_চাকরির_নিয়োগকর্তার_নাম",
+                "label": "২য় চাকরি - নিয়োগকর্তার নাম",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "দ্বিতীয়_পিতা_দ্বিতীয়_চাকরির_নিয়োগকর্তার_ফোন",
+                "label": "২য় চাকরি - নিয়োগকর্তার ফোন নম্বর",
+                "type": "টেলিফোন",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "দ্বিতীয়_পিতা_দ্বিতীয়_চাকরি_নিয়োগকর্তার_রাস্তা",
+                "label": "২য় চাকরি - নিয়োগকর্তার রাস্তার ঠিকানা",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "দ্বিতীয়_পিতা_দ্বিতীয়_চাকরি_নিয়োগকর্তা_শহর",
+                "label": "২য় চাকরি - নিয়োগকর্তা শহর",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "দ্বিতীয়_পিতা_দ্বিতীয়_চাকরি_নিয়োগকর্তার_রাজ্য",
+                "label": "২য় চাকরি - নিয়োগকর্তার রাজ্য",
+                "type": "টেক্সট",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "দ্বিতীয়_পিতা_দ্বিতীয়_চাকরি_নিয়োগকর্তা_জিপ কোড",
+                "label": "২য় চাকরি - নিয়োগকর্তার জিপ কোড",
+                "type": "টেক্সট",
                 "required": false
               }
             ]
@@ -1330,507 +1346,507 @@
         ]
       },
       {
-        "id": "schedule",
-        "title": "Work/Activity/Travel Time Schedule",
+        "id": "সময়সূচী",
+        "title": "কাজ/কার্যকলাপ/ভ্রমণের সময়সূচী",
         "sections": [
           {
-            "id": "schedule_section_info",
-            "title": "Schedule Information",
-            "type": "info",
+            "id": "সময়সূচী_অধ্যায়_তথ্য",
+            "title": "সময়সূচী তথ্য",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please indicate what days and hours you will need child care for based on your reason for care.\\n\\n- **Employed**: Indicate the hours you attend work\\n- **Educational or Vocational Program**: Indicate the hours you attend school or your program\\n- **Looking for Work**: Indicate the hours you spend looking for work\\n- **Homeless**: Indicate the hours you spend looking for housing\\n- **Attending Services for Domestic Violence**: Indicate the hours you attend services.\\n- **Attending Services for Substance Abuse Treatment**: Indicate the hours you attend services."
+            "content": "আপনার যত্নের কারণের উপর ভিত্তি করে আপনার কোন দিন এবং ঘন্টার জন্য শিশু যত্নের প্রয়োজন হবে তা নির্দেশ করুন।\\n\\n- **নিযুক্ত**: আপনি কত ঘন্টা কাজে যোগদান করবেন তা নির্দেশ করুন\\n- **শিক্ষামূলক বা বৃত্তিমূলক প্রোগ্রাম**: আপনি স্কুলে বা আপনার প্রোগ্রামে যোগদানের সময় নির্দেশ করুন\\n- **কাজ খুঁজছেন**: আপনি কত ঘন্টা কাজ খুঁজছেন তা নির্দেশ করুন\\n- **গৃহহীন**: আপনি আবাসন খুঁজছেন তা নির্দেশ করুন\\n- **গার্হস্থ্য সহিংসতার পরিষেবায় যোগদান**: আপনি কত ঘন্টা পরিষেবায় যোগদান করেন তা নির্দেশ করুন।\\n- **মাদকদ্রব্য অপব্যবহারের চিকিৎসার পরিষেবায় যোগদান**: আপনি কত ঘন্টা পরিষেবায় যোগদান করেন তা নির্দেশ করুন।"
           },
           {
-            "id": "first_parent_activity_schedule",
-            "title": "First Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the first parent's activities.",
+            "id": "প্রথম_পিতামাতার_কার্যকলাপের_সময়সূচী",
+            "title": "প্রথম অভিভাবক কার্যকলাপের সময়সূচী",
+            "description": "প্রথম অভিভাবকের কার্যকলাপের জন্য সপ্তাহের প্রতিটি দিনের শুরু এবং শেষের সময় লিখুন।",
             "ui": {
-              "layout": "table",
+              "layout": "টেবিল",
               "columns": [
-                "Start Time",
-                "End Time"
+                "শুরুর সময়",
+                "শেষ সময়"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
-                "rowIdentifier": "ui.rowGroup",
+                "rowIdentifier": "ui.rowGroup সম্পর্কে",
                 "fieldsToCopy": [
                   1,
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "সোমবার",
+                  "মঙ্গলবার",
+                  "বুধবার",
+                  "বৃহস্পতিবার",
+                  "শুক্রবার"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "নির্বাচিত সময়সূচী অন্যান্য সপ্তাহের দিনগুলিতে প্রয়োগ করুন",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "সোমবার",
+                  "মঙ্গলবার",
+                  "বুধবার",
+                  "বৃহস্পতিবার",
+                  "শুক্রবার",
+                  "শনিবার",
+                  "রবিবার"
                 ]
               }
             },
             "fields": [
               {
-                "id": "fp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "id": "সোমবার_থেকে_fp",
+                "label": "সোমবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "সোমবার",
                   "column": 1
                 }
               },
               {
-                "id": "fp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "id": "সোমবার_থেকে_fp",
+                "label": "সোমবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "সোমবার",
                   "column": 2
                 }
               },
               {
-                "id": "fp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "id": "মঙ্গলবার_থেকে_fp",
+                "label": "মঙ্গলবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "মঙ্গলবার",
                   "column": 1
                 }
               },
               {
-                "id": "fp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "id": "মঙ্গলবার_থেকে_fp",
+                "label": "মঙ্গলবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "মঙ্গলবার",
                   "column": 2
                 }
               },
               {
-                "id": "fp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "id": "fp_বুধবার_থেকে",
+                "label": "বুধবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "বুধবার",
                   "column": 1
                 }
               },
               {
-                "id": "fp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "id": "fp_বুধবার_থেকে",
+                "label": "বুধবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "বুধবার",
                   "column": 2
                 }
               },
               {
-                "id": "fp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "id": "fp_বৃহস্পতিবার_থেকে",
+                "label": "বৃহস্পতিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "বৃহস্পতিবার",
                   "column": 1
                 }
               },
               {
-                "id": "fp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "id": "fp_বৃহস্পতিবার_থেকে",
+                "label": "বৃহস্পতিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "বৃহস্পতিবার",
                   "column": 2
                 }
               },
               {
-                "id": "fp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "id": "শুক্রবার_থেকে_fp",
+                "label": "শুক্রবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "শুক্রবার",
                   "column": 1
                 }
               },
               {
-                "id": "fp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "id": "শুক্রবার_তে_fp",
+                "label": "শুক্রবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "শুক্রবার",
                   "column": 2
                 }
               },
               {
-                "id": "fp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "id": "fp_শনিবার_থেকে",
+                "label": "শনিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "শনিবার",
                   "column": 1
                 }
               },
               {
-                "id": "fp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "id": "fp_শনিবার_থেকে",
+                "label": "শনিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "শনিবার",
                   "column": 2
                 }
               },
               {
-                "id": "fp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "id": "fp_রবিবার_থেকে",
+                "label": "রবিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "রবিবার",
                   "column": 1
                 }
               },
               {
-                "id": "fp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "id": "fp_রবিবার_থেকে",
+                "label": "রবিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "রবিবার",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "second_parent_activity_schedule",
-            "title": "Second Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the second parent's activities.",
+            "id": "দ্বিতীয়_পিতামাতার_কার্যকলাপ_সময়সূচী",
+            "title": "দ্বিতীয় অভিভাবক কার্যকলাপের সময়সূচী",
+            "description": "দ্বিতীয় অভিভাবকের কার্যকলাপের জন্য সপ্তাহের প্রতিটি দিনের শুরু এবং শেষের সময় লিখুন।",
             "ui": {
-              "layout": "table",
+              "layout": "টেবিল",
               "columns": [
-                "Start Time",
-                "End Time"
+                "শুরুর সময়",
+                "শেষ সময়"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
-                "rowIdentifier": "ui.rowGroup",
+                "rowIdentifier": "ui.rowGroup সম্পর্কে",
                 "fieldsToCopy": [
                   1,
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "সোমবার",
+                  "মঙ্গলবার",
+                  "বুধবার",
+                  "বৃহস্পতিবার",
+                  "শুক্রবার"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "নির্বাচিত সময়সূচী অন্যান্য সপ্তাহের দিনগুলিতে প্রয়োগ করুন",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "সোমবার",
+                  "মঙ্গলবার",
+                  "বুধবার",
+                  "বৃহস্পতিবার",
+                  "শুক্রবার",
+                  "শনিবার",
+                  "রবিবার"
                 ]
               }
             },
             "fields": [
               {
-                "id": "sp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "id": "সোমবার_থেকে_শুক্রবার",
+                "label": "সোমবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "সোমবার",
                   "column": 1
                 }
               },
               {
-                "id": "sp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "id": "সোমবার_থেকে_শুক্রবার",
+                "label": "সোমবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "সোমবার",
                   "column": 2
                 }
               },
               {
-                "id": "sp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "id": "মঙ্গলবার_থেকে",
+                "label": "মঙ্গলবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "মঙ্গলবার",
                   "column": 1
                 }
               },
               {
-                "id": "sp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "id": "মঙ্গলবার_থেকে",
+                "label": "মঙ্গলবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "মঙ্গলবার",
                   "column": 2
                 }
               },
               {
-                "id": "sp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "id": "বুধবার_থেকে_শুরু",
+                "label": "বুধবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "বুধবার",
                   "column": 1
                 }
               },
               {
-                "id": "sp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "id": "বুধবার_থেকে_শুক্রবার",
+                "label": "বুধবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "বুধবার",
                   "column": 2
                 }
               },
               {
-                "id": "sp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "id": "স্প_বৃহস্পতিবার_থেকে",
+                "label": "বৃহস্পতিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "বৃহস্পতিবার",
                   "column": 1
                 }
               },
               {
-                "id": "sp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "id": "স্প_বৃহস্পতিবার_থেকে",
+                "label": "বৃহস্পতিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "বৃহস্পতিবার",
                   "column": 2
                 }
               },
               {
-                "id": "sp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "id": "শুক্রবার_থেকে_শুক্রবার",
+                "label": "শুক্রবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "শুক্রবার",
                   "column": 1
                 }
               },
               {
-                "id": "sp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "id": "শুক্রবার_থেকে",
+                "label": "শুক্রবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "শুক্রবার",
                   "column": 2
                 }
               },
               {
-                "id": "sp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "id": "শনিবার_থেকে_শুরু",
+                "label": "শনিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "শনিবার",
                   "column": 1
                 }
               },
               {
-                "id": "sp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "id": "শনিবার_থেকে_শুরু",
+                "label": "শনিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "শনিবার",
                   "column": 2
                 }
               },
               {
-                "id": "sp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "id": "রবিবার_থেকে_এসপি_",
+                "label": "রবিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "রবিবার",
                   "column": 1
                 }
               },
               {
-                "id": "sp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "id": "রবিবার_থেকে_শুরু",
+                "label": "রবিবার থেকে",
+                "type": "সময়",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "রবিবার",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "first_parent_travel_time",
-            "title": "First Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the first parent.",
+            "id": "প্রথম_পিতামাতার_ভ্রমণের_সময়",
+            "title": "প্রথম পিতামাতার ভ্রমণের সময়",
+            "description": "প্রথম পিতামাতার ভ্রমণের সময় এবং পরিবহনের পদ্ধতি লিখুন।",
             "fields": [
               {
-                "id": "fp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "id": "এফপি_ড্রপঅফ_ভ্রমণের_সময়",
+                "label": "ড্রপ-অফ ভ্রমণের সময়",
+                "type": "নির্বাচন করুন",
+                "tooltip": "আপনার কর্মক্ষেত্র/কার্যকলাপ থেকে আপনার শিশু যত্ন প্রদানকারীর কাছে আপনার ভ্রমণের সাধারণ সময় নির্বাচন করুন।",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "১৫ মিনিট",
+                    "৩০ মিনিট",
+                    "৪৫ মিনিট",
+                    "১ ঘন্টা",
+                    "১ ঘন্টারও বেশি"
                   ]
                 }
               },
               {
-                "id": "fp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "id": "fp_ড্রপঅফ_টাইম_gt_১ ঘন্টা",
+                "label": "নামার সময় (যদি ১ ঘন্টার বেশি হয়)",
+                "type": "টেক্সট",
                 "requiredCondition": {
-                  "field": "fp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "এফপি_ড্রপঅফ_ভ্রমণের_সময়",
+                  "operator": "সমান",
+                  "value": "১ ঘন্টারও বেশি"
                 }
               },
               {
-                "id": "fp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "id": "এফপি_পিকআপ_ভ্রমণের_সময়",
+                "label": "পিক-আপ ভ্রমণের সময়",
+                "type": "নির্বাচন করুন",
+                "tooltip": "আপনার কর্মক্ষেত্র/কার্যকলাপ থেকে আপনার শিশু যত্ন প্রদানকারীর কাছে ভ্রমণের সময় নির্বাচন করুন।",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "১৫ মিনিট",
+                    "৩০ মিনিট",
+                    "৪৫ মিনিট",
+                    "১ ঘন্টা",
+                    "১ ঘন্টারও বেশি"
                   ]
                 }
               },
               {
-                "id": "fp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "id": "fp_পিকআপ_সময়_gt_১ ঘন্টা",
+                "label": "পিক-আপ সময় (যদি ১ ঘন্টার বেশি হয়)",
+                "type": "টেক্সট",
                 "requiredCondition": {
-                  "field": "fp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "এফপি_পিকআপ_ভ্রমণের_সময়",
+                  "operator": "সমান",
+                  "value": "১ ঘন্টারও বেশি"
                 }
               },
               {
-                "id": "fp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
-                "type": "radio",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
+                "id": "fp_public_transport_ড্রপঅফ",
+                "label": "নামানোর জন্য গণপরিবহন?",
+                "type": "রেডিও",
+                "tooltip": "আবেদনকারী কর্মস্থল/কার্যকলাপ থেকে প্রদানকারীর কাছে যাতায়াতের জন্য গণপরিবহন ব্যবহার করেন কিনা তা নির্দেশ করুন।",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "fp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
-                "type": "radio",
+                "id": "fp_পাবলিক_ট্রান্সপোর্ট_পিকআপ",
+                "label": "পিক-আপের জন্য গণপরিবহন?",
+                "tooltip": "আবেদনকারী কর্মস্থল/কার্যকলাপ থেকে প্রদানকারীর কাছে যাতায়াতের জন্য গণপরিবহন ব্যবহার করেন কিনা তা নির্দেশ করুন।",
+                "type": "রেডিও",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "second_parent_travel_time",
-            "title": "Second Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the second parent.",
+            "id": "দ্বিতীয়_পিতামাতার_ভ্রমণের_সময়",
+            "title": "দ্বিতীয় পিতামাতার ভ্রমণের সময়",
+            "description": "দ্বিতীয় পিতামাতার ভ্রমণের সময় এবং পরিবহনের পদ্ধতি লিখুন।",
             "fields": [
               {
-                "id": "sp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
+                "id": "এসপি_ড্রপঅফ_ভ্রমণের_সময়",
+                "label": "ড্রপ-অফ ভ্রমণের সময়",
+                "type": "নির্বাচন করুন",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "১৫ মিনিট",
+                    "৩০ মিনিট",
+                    "৪৫ মিনিট",
+                    "১ ঘন্টা",
+                    "১ ঘন্টারও বেশি"
                   ]
                 }
               },
               {
-                "id": "sp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
+                "id": "এসপি_পিকআপ_ভ্রমণের_সময়",
+                "label": "পিক-আপ ভ্রমণের সময়",
+                "type": "নির্বাচন করুন",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "১৫ মিনিট",
+                    "৩০ মিনিট",
+                    "৪৫ মিনিট",
+                    "১ ঘন্টা",
+                    "১ ঘন্টারও বেশি"
                   ]
                 }
               },
               {
-                "id": "sp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "id": "স্প_ড্রপঅফ_টাইম_জিটি_১ ঘন্টা",
+                "label": "নামার সময় (যদি ১ ঘন্টার বেশি হয়)",
+                "type": "টেক্সট",
                 "requiredCondition": {
-                  "field": "sp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "এসপি_ড্রপঅফ_ভ্রমণের_সময়",
+                  "operator": "সমান",
+                  "value": "১ ঘন্টারও বেশি"
                 }
               },
               {
-                "id": "sp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "id": "স্প_পিকআপ_টাইম_জিটি_১ ঘন্টা",
+                "label": "পিক-আপ সময় (যদি ১ ঘন্টার বেশি হয়)",
+                "type": "টেক্সট",
                 "requiredCondition": {
-                  "field": "sp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "field": "এসপি_পিকআপ_ভ্রমণের_সময়",
+                  "operator": "সমান",
+                  "value": "১ ঘন্টারও বেশি"
                 }
               },
               {
-                "id": "sp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
-                "type": "radio",
+                "id": "এসপি_পাবলিক_ট্রান্সপোর্ট_ড্রপঅফ",
+                "label": "নামানোর জন্য গণপরিবহন?",
+                "type": "রেডিও",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               },
               {
-                "id": "sp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
-                "type": "radio",
+                "id": "এসপি_পাবলিক_ট্রান্সপোর্ট_পিকআপ",
+                "label": "পিক-আপের জন্য গণপরিবহন?",
+                "type": "রেডিও",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "হাঁ",
+                    "না"
                   ]
                 }
               }
@@ -1839,122 +1855,122 @@
         ]
       },
       {
-        "id": "income",
-        "title": "Income Information",
+        "id": "আয়",
+        "title": "আয়ের তথ্য",
         "sections": [
           {
-            "id": "income_step_info",
-            "title": "Instructions",
-            "type": "info",
+            "id": "আয়_পদক্ষেপ_তথ্য",
+            "title": "নির্দেশনা",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please include income/benefits information for yourself and, if applicable, your spouse, your child’s second caretaker, and/or any other adult with whom you share a child, if they live in your home.\\n\\nIndicate if you receive money from the following sources by selecting “Yes” or “No.” If you select “Yes,” you will be asked for additional information.\\n\\nIf the second caretaker in the household also receives the same income source, add a separate line for their income."
+            "content": "অনুগ্রহ করে নিজের এবং, যদি প্রযোজ্য হয়, আপনার স্ত্রী/স্ত্রী, আপনার সন্তানের দ্বিতীয় তত্ত্বাবধায়ক, এবং/অথবা আপনার সাথে সন্তান ভাগ করে নেওয়া অন্য কোনও প্রাপ্তবয়স্ক ব্যক্তির জন্য আয়/সুবিধা সম্পর্কিত তথ্য অন্তর্ভুক্ত করুন, যদি তারা আপনার বাড়িতে থাকেন।\\n\\n\"হ্যাঁ\" বা \"না\" নির্বাচন করে নিম্নলিখিত উৎস থেকে আপনি অর্থ পাচ্ছেন কিনা তা নির্দেশ করুন। যদি আপনি \"হ্যাঁ\" নির্বাচন করেন, তাহলে আপনার কাছে অতিরিক্ত তথ্য চাওয়া হবে।\\n\\nযদি পরিবারের দ্বিতীয় তত্ত্বাবধায়কও একই আয়ের উৎস পান, তাহলে তাদের আয়ের জন্য একটি পৃথক লাইন যোগ করুন।"
           },
           {
-            "id": "income_sources",
-            "title": "Income Sources",
-            "description": "Provide details about all income sources applicable to the applicant or household.",
+            "id": "আয়ের উৎস",
+            "title": "আয়ের উৎস",
+            "description": "আবেদনকারী বা পরিবারের জন্য প্রযোজ্য সমস্ত আয়ের উৎস সম্পর্কে বিশদ বিবরণ প্রদান করুন।",
             "fields": [
               {
-                "id": "income_sources",
-                "label": "List of Income Sources",
-                "type": "group",
+                "id": "আয়ের উৎস",
+                "label": "আয়ের উৎসের তালিকা",
+                "type": "দল",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "name_ref",
-                    "how_often",
-                    "recipient",
-                    "monthly_amount"
+                    "নাম_রেফ",
+                    "কতবার",
+                    "প্রাপক",
+                    "মাসিক_পরিমাণ"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "name_ref",
-                    "label": "Income Source Type",
-                    "type": "select",
+                    "id": "নাম_রেফ",
+                    "label": "আয়ের উৎসের ধরণ",
+                    "type": "নির্বাচন করুন",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "ApplicantWages",
-                        "SecondParentWages",
-                        "SelfEmployment",
-                        "ChildSupport",
-                        "Alimony",
-                        "Unemployment",
-                        "SocialSecurity",
-                        "Disability",
-                        "Rental",
-                        "Dividends",
-                        "Retirement",
-                        "CashAssistance",
-                        "Other"
+                        "আবেদনকারীর বেতন",
+                        "সেকেন্ডপ্যারেন্টওয়েজ",
+                        "স্ব-কর্মসংস্থান",
+                        "শিশু সহায়তা",
+                        "ভরণপোষণ",
+                        "বেকারত্ব",
+                        "সামাজিক নিরাপত্তা",
+                        "অক্ষমতা",
+                        "ভাড়া",
+                        "লভ্যাংশ",
+                        "অবসর",
+                        "নগদ সহায়তা",
+                        "অন্যান্য"
                       ]
                     }
                   },
                   {
-                    "id": "other_source_text",
-                    "label": "Other Source (If applicable)",
-                    "type": "text",
+                    "id": "অন্যান্য_উৎস_পাঠ্য",
+                    "label": "অন্যান্য উৎস (প্রযোজ্য ক্ষেত্রে)",
+                    "type": "টেক্সট",
                     "visibilityCondition": {
-                      "field": "name_ref",
-                      "operator": "equals",
-                      "value": "Other"
+                      "field": "নাম_রেফ",
+                      "operator": "সমান",
+                      "value": "অন্যান্য"
                     },
                     "requiredCondition": {
                       "condition": {
-                        "field": "name_ref",
-                        "operator": "equals",
-                        "value": "Other"
+                        "field": "নাম_রেফ",
+                        "operator": "সমান",
+                        "value": "অন্যান্য"
                       }
                     }
                   },
                   {
-                    "id": "is_source_applicable",
-                    "label": "Is this Source Applicable?",
-                    "type": "radio",
+                    "id": "কি_উৎস_প্রযোজ্য",
+                    "label": "এই উৎস কি প্রযোজ্য?",
+                    "type": "রেডিও",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "হাঁ",
+                        "না"
                       ]
                     }
                   },
                   {
-                    "id": "gross_amount",
-                    "label": "Gross Amount ($)",
-                    "type": "number",
+                    "id": "মোট_পরিমাণ",
+                    "label": "মোট পরিমাণ ($)",
+                    "type": "সংখ্যা",
                     "required": true
                   },
                   {
-                    "id": "how_often",
-                    "label": "Frequency of Income",
-                    "type": "radio",
+                    "id": "কতবার",
+                    "label": "আয়ের ফ্রিকোয়েন্সি",
+                    "type": "রেডিও",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Weekly",
-                        "Bi-weekly",
-                        "Monthly",
-                        "Other"
+                        "সাপ্তাহিক",
+                        "দ্বি-সাপ্তাহিক",
+                        "মাসিক",
+                        "অন্যান্য"
                       ]
                     }
                   },
                   {
-                    "id": "recipient",
-                    "label": "Recipient of Income",
-                    "type": "text",
+                    "id": "প্রাপক",
+                    "label": "আয়ের প্রাপক",
+                    "type": "টেক্সট",
                     "required": true
                   },
                   {
-                    "id": "monthly_amount",
-                    "label": "Monthly Amount ($)",
-                    "type": "number",
+                    "id": "মাসিক_পরিমাণ",
+                    "label": "মাসিক পরিমাণ ($)",
+                    "type": "সংখ্যা",
                     "required": true
                   }
                 ]
@@ -1962,38 +1978,38 @@
             ]
           },
           {
-            "id": "total_income",
-            "title": "Total Household Income",
-            "description": "Sum of all monthly income across sources.",
+            "id": "মোট_আয়",
+            "title": "মোট পারিবারিক আয়",
+            "description": "উৎসভেদে সমস্ত মাসিক আয়ের যোগফল।",
             "fields": [
               {
-                "id": "total_income",
-                "label": "Total Monthly Income ($)",
-                "type": "number",
+                "id": "মোট_আয়",
+                "label": "মোট মাসিক আয় ($)",
+                "type": "সংখ্যা",
                 "required": true
               }
             ]
           },
           {
-            "id": "income_proof_section",
-            "title": "Income Proof",
+            "id": "আয়_প্রমাণ_বিভাগ",
+            "title": "আয়ের প্রমাণপত্র",
             "fields": [
               {
-                "id": "income_proof",
-                "label": "Upload Income Proof",
-                "type": "file",
+                "id": "আয়_প্রমাণ",
+                "label": "আয়ের প্রমাণপত্র আপলোড করুন",
+                "type": "ফাইল",
                 "requiredCondition": {
                   "condition": {
-                    "field": "assistance_reason",
-                    "operator": "includes",
-                    "value": "Employment"
+                    "field": "সহায়তা_কারণ",
+                    "operator": "অন্তর্ভুক্ত",
+                    "value": "কর্মসংস্থান"
                   }
                 },
                 "constraints": {
                   "maxFileSizeMB": 5,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg"
+                    "আবেদন/পিডিএফ",
+                    "ছবি/জেপিইজি"
                   ],
                   "imageResolution": {
                     "minWidth": 800,
@@ -2001,10 +2017,10 @@
                   }
                 },
                 "metadata": {
-                  "proofCategory": "Income Verification",
+                  "proofCategory": "আয় যাচাইকরণ",
                   "examples": [
-                    "Pay Stub",
-                    "W-2"
+                    "পে স্টাব",
+                    "W-2 সম্পর্কে"
                   ],
                   "multiple": true
                 }
@@ -2014,72 +2030,72 @@
         ]
       },
       {
-        "id": "provider",
-        "title": "Provider",
+        "id": "সরবরাহকারী",
+        "title": "সরবরাহকারী",
         "sections": [
           {
-            "id": "provider_step_info",
-            "title": "Instructions",
-            "type": "info",
+            "id": "সরবরাহকারীর_পদক্ষেপ_তথ্য",
+            "title": "নির্দেশনা",
+            "type": "তথ্য",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "If you are found eligible for child care assistance, you can choose center-based or home-based care from a licensed, registered, or legally exempt provider. If you choose a provider that is not licensed or registered, the provider must be enrolled as a legally exempt provider.\\n\\nIf you know which child care providers you would like your child to attend, provide the names and addresses of your choice of providers. You can leave this section blank if you do not know (it will not impact your eligibility and you will have an opportunity to select a provider if determined eligible)."
+            "content": "যদি আপনি শিশু যত্ন সহায়তার জন্য যোগ্য বলে বিবেচিত হন, তাহলে আপনি লাইসেন্সপ্রাপ্ত, নিবন্ধিত, অথবা আইনত অব্যাহতিপ্রাপ্ত প্রদানকারীর কাছ থেকে কেন্দ্র-ভিত্তিক বা বাড়িতে-ভিত্তিক যত্ন বেছে নিতে পারেন। যদি আপনি এমন কোনও প্রদানকারী বেছে নেন যা লাইসেন্সপ্রাপ্ত বা নিবন্ধিত নয়, তাহলে প্রদানকারীকে অবশ্যই আইনত অব্যাহতিপ্রাপ্ত প্রদানকারী হিসেবে তালিকাভুক্ত হতে হবে।\\n\\nযদি আপনি জানেন যে আপনার সন্তান কোন শিশু যত্ন প্রদানকারীর কাছে যেতে চান, তাহলে আপনার পছন্দের প্রদানকারীদের নাম এবং ঠিকানা প্রদান করুন। যদি আপনি না জানেন তবে আপনি এই বিভাগটি ফাঁকা রাখতে পারেন (এটি আপনার যোগ্যতার উপর প্রভাব ফেলবে না এবং যোগ্য হিসাবে বিবেচিত হলে আপনার কাছে একজন প্রদানকারী নির্বাচন করার সুযোগ থাকবে)।"
           },
           {
-            "id": "provider_choices",
-            "title": "Provider Choices",
-            "description": "Specify details of the provider where you intend to enroll the child(ren).",
+            "id": "প্রোভাইডার_চয়েস",
+            "title": "সরবরাহকারীর পছন্দ",
+            "description": "আপনি যে সরবরাহকারীর মাধ্যমে শিশু (শিশুদের) ভর্তি করতে চান তার বিশদ বিবরণ উল্লেখ করুন।",
             "fields": [
               {
-                "id": "provider_choices",
-                "label": "List of Providers",
-                "type": "group",
+                "id": "প্রোভাইডার_চয়েস",
+                "label": "সরবরাহকারীদের তালিকা",
+                "type": "দল",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "provider_name",
-                    "program_number",
-                    "provider_zip_code"
+                    "সরবরাহকারীর নাম",
+                    "প্রোগ্রাম_নম্বর",
+                    "সরবরাহকারী_জিপ_কোড"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "provider_name",
-                    "label": "Provider Name",
-                    "type": "text",
+                    "id": "সরবরাহকারীর নাম",
+                    "label": "সরবরাহকারীর নাম",
+                    "type": "টেক্সট",
                     "required": true
                   },
                   {
-                    "id": "program_number",
-                    "label": "Program Number (If Applicable)",
-                    "type": "text",
+                    "id": "প্রোগ্রাম_নম্বর",
+                    "label": "প্রোগ্রাম নম্বর (প্রযোজ্য ক্ষেত্রে)",
+                    "type": "টেক্সট",
                     "required": false
                   },
                   {
-                    "id": "provider_street",
-                    "label": "Street Address",
-                    "type": "text",
+                    "id": "প্রোভাইডার_স্ট্রিট",
+                    "label": "রাস্তার ঠিকানা",
+                    "type": "টেক্সট",
                     "required": true
                   },
                   {
-                    "id": "provider_city",
-                    "label": "City",
-                    "type": "text",
+                    "id": "সরবরাহকারী_শহর",
+                    "label": "শহর",
+                    "type": "টেক্সট",
                     "required": true
                   },
                   {
-                    "id": "provider_state",
-                    "label": "State",
-                    "type": "text",
+                    "id": "সরবরাহকারী_রাজ্য",
+                    "label": "রাজ্য",
+                    "type": "টেক্সট",
                     "required": true
                   },
                   {
-                    "id": "provider_zip_code",
-                    "label": "Zip Code",
-                    "type": "text",
+                    "id": "সরবরাহকারী_জিপ_কোড",
+                    "label": "জিপ কোড",
+                    "type": "টেক্সট",
                     "required": true
                   }
                 ]
@@ -2089,186 +2105,186 @@
         ]
       },
       {
-        "id": "document_upload_step",
-        "title": "Document Upload",
-        "description": "The Application for Child Care Assistance (CFWB-012) must include supporting documentation. Check to ensure that documentation is provided for each requirement of subsidy eligibility.",
+        "id": "ডকুমেন্ট_আপলোড_স্টেপ",
+        "title": "ডকুমেন্ট আপলোড",
+        "description": "শিশু যত্ন সহায়তার আবেদনপত্রে (CFWB-012) অবশ্যই সহায়ক নথিপত্র অন্তর্ভুক্ত করতে হবে। ভর্তুকি যোগ্যতার প্রতিটি প্রয়োজনীয়তার জন্য নথিপত্র সরবরাহ করা হয়েছে কিনা তা পরীক্ষা করে দেখুন।",
         "sections": [
           {
-            "id": "nyc_residency",
-            "title": "New York City Residency",
-            "description": "These documents confirm that you live in New York City. Please upload one of the following documents.",
+            "id": "নিউ ইয়র্ক সিটি রেসিডেন্সি",
+            "title": "নিউ ইয়র্ক সিটি রেসিডেন্সি",
+            "description": "এই নথিগুলি নিশ্চিত করে যে আপনি নিউ ইয়র্ক সিটিতে থাকেন। অনুগ্রহ করে নিম্নলিখিত নথিগুলির মধ্যে একটি আপলোড করুন।",
             "fields": [
               {
-                "id": "nyc_residency_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "নিউ ইয়র্ক সিটির রেসিডেন্সি টাইপ",
+                "label": "নিম্নলিখিতগুলির মধ্যে একটি নির্বাচন করুন:",
+                "type": "রেডিও",
                 "required": true,
                 "ui": {
                   "options": [
-                    "IDNYC",
-                    "Utility Bill",
-                    "Section 8 Award Letter",
-                    "Driver’s License",
-                    "Rent Receipt",
-                    "NYCHA Certificate",
-                    "CFWB-067 Residency Attestation",
-                    "CFWB-027 Housing Attestation with address listed",
-                    "Shelter Residency Letter with address listed",
-                    "Other"
+                    "আইডিএনওয়াইসি",
+                    "ইউটিলিটি বিল",
+                    "বিভাগ ৮ পুরস্কার পত্র",
+                    "ড্রাইভিং লাইসেন্স",
+                    "ভাড়া রশিদ",
+                    "NYCHA সার্টিফিকেট",
+                    "CFWB-067 রেসিডেন্সি অ্যাটেস্টেশন",
+                    "CFWB-027 ঠিকানা সহ আবাসন প্রত্যয়ন",
+                    "ঠিকানাসহ আশ্রয়স্থলের আবাসিক চিঠি",
+                    "অন্যান্য"
                   ]
                 }
               },
               {
-                "id": "nyc_residency_file",
-                "label": "Upload Residency Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
-                "required": true, 
+                "id": "nyc_residency_file সম্পর্কে",
+                "label": "আবাসিক প্রমাণের নথি আপলোড করুন",
+                "description": "আপনার অ্যাপ্লিকেশনে একটি ডকুমেন্ট যোগ করতে, আপনি আপনার ফোন বা ডিভাইস থেকে একটি ছবি বা স্ক্যান করা ফাইল আপলোড করতে পারেন। গ্রহণযোগ্য ফর্ম্যাটগুলির মধ্যে রয়েছে .pdf, .gif, .jpeg, .jpg এবং .png যা 25 MB পর্যন্ত আকারের। এই টিউটোরিয়াল ভিডিওটি ব্যবহার করে আপনার ফাইলগুলি কীভাবে আপলোড করবেন তা শিখুন।",
+                "type": "ফাইল",
+                "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "আবেদন/পিডিএফ",
+                    "ছবি/জেপিইজি",
+                    "ছবি/jpg",
+                    "ছবি/পিএনজি",
+                    "ছবি/জিআইএফ"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "NYC Residency",
+                  "proofCategory": "এনওয়াইসি রেসিডেন্সি",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "citizenship_status",
-            "title": "Citizenship or Immigration Status",
-            "description": "These documents confirm the citizenship/immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for ONLY each child needing care.",
+            "id": "নাগরিকত্বের_স্থিতি",
+            "title": "নাগরিকত্ব বা অভিবাসন অবস্থা",
+            "description": "এই নথিগুলি আপনার পরিবারের সেই শিশুদের নাগরিকত্ব/অভিবাসন অবস্থা নিশ্চিত করে যাদের জন্য আপনি শিশু যত্ন সহায়তার জন্য আবেদন করছেন। শুধুমাত্র যত্নের প্রয়োজন এমন প্রতিটি শিশুর জন্য নিম্নলিখিত নথিগুলির মধ্যে একটি আপলোড করুন।",
             "fields": [
               {
-                "id": "citizenship_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "নাগরিকত্ব_ডক_টাইপ",
+                "label": "নিম্নলিখিতগুলির মধ্যে একটি নির্বাচন করুন:",
+                "type": "রেডিও",
                 "required": true,
                 "ui": {
                   "options": [
-                    "US Birth Certificate",
-                    "Alien Registration Card including Permanent Resident or Green Card",
-                    "Passport",
-                    "FS-240 (Report of Birth Abroad of a U.S. Citizen)",
-                    "Naturalization Certificate",
-                    "Other"
+                    "মার্কিন জন্ম সনদ",
+                    "স্থায়ী বাসিন্দা বা গ্রিন কার্ড সহ এলিয়েন রেজিস্ট্রেশন কার্ড",
+                    "পাসপোর্ট",
+                    "FS-240 (মার্কিন নাগরিকের বিদেশে জন্মের প্রতিবেদন)",
+                    "নাগরিকত্ব সার্টিফিকেট",
+                    "অন্যান্য"
                   ]
                 }
               },
               {
-                "id": "citizenship_doc_file",
-                "label": "Upload Citizenship/Immigration Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "নাগরিকত্ব_ডক_ফাইল",
+                "label": "নাগরিকত্ব/অভিবাসন নথি আপলোড করুন",
+                "description": "আপনার অ্যাপ্লিকেশনে একটি ডকুমেন্ট যোগ করতে, আপনি আপনার ফোন বা ডিভাইস থেকে একটি ছবি বা স্ক্যান করা ফাইল আপলোড করতে পারেন। গ্রহণযোগ্য ফর্ম্যাটগুলির মধ্যে রয়েছে .pdf, .gif, .jpeg, .jpg এবং .png যা 25 MB পর্যন্ত আকারের। এই টিউটোরিয়াল ভিডিওটি ব্যবহার করে আপনার ফাইলগুলি কীভাবে আপলোড করবেন তা শিখুন।",
+                "type": "ফাইল",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "আবেদন/পিডিএফ",
+                    "ছবি/জেপিইজি",
+                    "ছবি/jpg",
+                    "ছবি/পিএনজি",
+                    "ছবি/জিআইএফ"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Citizenship/Immigration Status",
+                  "proofCategory": "নাগরিকত্ব/অভিবাসন অবস্থা",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "child_relationship",
-            "title": "Child’s Relationship to Parent/Applicant",
-            "description": "These documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them or not. If you are a legal guardian with financial responsibility, you must upload a Court order OR a letter of guardianship.",
+            "id": "সন্তানের_সম্পর্ক",
+            "title": "পিতামাতা/আবেদনকারীর সাথে সন্তানের সম্পর্ক",
+            "description": "এই নথিগুলি আপনার পরিবারের ১৮ বছরের কম বয়সী শিশুদের সাথে আপনার সম্পর্ক নিশ্চিত করে। ১৮ বছরের কম বয়সী পরিবারের প্রতিটি শিশুর জন্য অনুগ্রহ করে নিম্নলিখিত নথিগুলির মধ্যে একটি আপলোড করুন, তাদের জন্য শিশু যত্নের প্রয়োজন কিনা তা নির্বিশেষে। আপনি যদি আর্থিক দায়িত্বের সাথে একজন আইনী অভিভাবক হন, তাহলে আপনাকে অবশ্যই আদালতের আদেশ বা অভিভাবকত্বের একটি চিঠি আপলোড করতে হবে।",
             "fields": [
               {
-                "id": "relationship_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "সম্পর্ক_ডক_টাইপ",
+                "label": "নিম্নলিখিতগুলির মধ্যে একটি নির্বাচন করুন:",
+                "type": "রেডিও",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Passport with parent's signature",
-                    "Court order for legal guardian with financial responsibility",
-                    "Letter of Guardianship",
-                    "Other - CFWB-058 Caretaker Attestation"
+                    "জন্ম সনদ",
+                    "দত্তক গ্রহণের রেকর্ড",
+                    "বাপ্তিস্মের রেকর্ড",
+                    "পিতামাতার স্বাক্ষর সহ পাসপোর্ট",
+                    "আর্থিক দায়িত্ব সহ আইনী অভিভাবকের জন্য আদালতের আদেশ",
+                    "অভিভাবকত্বের চিঠি",
+                    "অন্যান্য - CFWB-058 তত্ত্বাবধায়ক প্রত্যয়ন"
                   ]
                 }
               },
               {
-                "id": "relationship_doc_file",
-                "label": "Upload Relationship Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "সম্পর্ক_ডক_ফাইল",
+                "label": "সম্পর্কের নথি আপলোড করুন",
+                "description": "আপনার অ্যাপ্লিকেশনে একটি ডকুমেন্ট যোগ করতে, আপনি আপনার ফোন বা ডিভাইস থেকে একটি ছবি বা স্ক্যান করা ফাইল আপলোড করতে পারেন। গ্রহণযোগ্য ফর্ম্যাটগুলির মধ্যে রয়েছে .pdf, .gif, .jpeg, .jpg এবং .png যা 25 MB পর্যন্ত আকারের। এই টিউটোরিয়াল ভিডিওটি ব্যবহার করে আপনার ফাইলগুলি কীভাবে আপলোড করবেন তা শিখুন।",
+                "type": "ফাইল",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "আবেদন/পিডিএফ",
+                    "ছবি/জেপিইজি",
+                    "ছবি/jpg",
+                    "ছবি/পিএনজি",
+                    "ছবি/জিআইএফ"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Relationship",
+                  "proofCategory": "সন্তানের সম্পর্ক",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "age_proof",
-            "title": "Age",
-            "description": "These documents confirm the age of the children in your household. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:",
+            "id": "বয়স_প্রমাণ",
+            "title": "বয়স",
+            "description": "এই নথিগুলি আপনার পরিবারের শিশুদের বয়স নিশ্চিত করে। ১৮ বছরের কম বয়সী পরিবারের প্রতিটি শিশুর জন্য নিম্নলিখিত নথিগুলির মধ্যে একটি আপলোড করুন, তাদের জন্য শিশু যত্নের প্রয়োজন কিনা তা নির্বিশেষে:",
             "fields": [
               {
-                "id": "age_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "বয়স_ডক_টাইপ",
+                "label": "নিম্নলিখিতগুলির মধ্যে একটি নির্বাচন করুন:",
+                "type": "রেডিও",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Alien Registration Card",
-                    "Passport",
-                    "Official hospital documentation of the child’s birth"
+                    "জন্ম সনদ",
+                    "দত্তক গ্রহণের রেকর্ড",
+                    "বাপ্তিস্মের রেকর্ড",
+                    "বিদেশী নিবন্ধন কার্ড",
+                    "পাসপোর্ট",
+                    "শিশুর জন্মের সরকারি হাসপাতালের নথিপত্র"
                   ]
                 }
               },
               {
-                "id": "age_doc_file",
-                "label": "Upload Age Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "বয়স_ডক_ফাইল",
+                "label": "বয়স প্রমাণের নথি আপলোড করুন",
+                "description": "আপনার অ্যাপ্লিকেশনে একটি ডকুমেন্ট যোগ করতে, আপনি আপনার ফোন বা ডিভাইস থেকে একটি ছবি বা স্ক্যান করা ফাইল আপলোড করতে পারেন। গ্রহণযোগ্য ফর্ম্যাটগুলির মধ্যে রয়েছে .pdf, .gif, .jpeg, .jpg এবং .png যা 25 MB পর্যন্ত আকারের। এই টিউটোরিয়াল ভিডিওটি ব্যবহার করে আপনার ফাইলগুলি কীভাবে আপলোড করবেন তা শিখুন।",
+                "type": "ফাইল",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "আবেদন/পিডিএফ",
+                    "ছবি/জেপিইজি",
+                    "ছবি/jpg",
+                    "ছবি/পিএনজি",
+                    "ছবি/জিআইএফ"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Age",
+                  "proofCategory": "শিশু বয়স",
                   "multiple": false
                 }
               }
@@ -2277,9 +2293,9 @@
         ]
       },
       {
-        "id": "review",
-        "title": "Review & Submit",
-        "type": "review",
+        "id": "পর্যালোচনা",
+        "title": "পর্যালোচনা করুন এবং জমা দিন",
+        "type": "পর্যালোচনা",
         "sections": []
       }
     ]

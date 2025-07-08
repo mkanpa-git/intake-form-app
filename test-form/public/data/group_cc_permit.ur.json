@@ -1,192 +1,201 @@
 {
   "form": {
-    "title": "Group Child Care Permit Application",
-    "description": "Multi-step application for obtaining a permit to operate group child care programs.",
+    "title": "گروپ چائلڈ کیئر پرمٹ کی درخواست",
+    "description": "گروپ چائلڈ کیئر پروگرام چلانے کے لیے پرمٹ حاصل کرنے کے لیے ملٹی سٹیپ درخواست۔",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "چھوڑ دیا"
     },
     "steps": [
       {
-        "id": "establishment_information",
-        "title": "Establishment Information",
+        "id": "اسٹیبلشمنٹ_معلومات",
+        "title": "اسٹیبلشمنٹ کی معلومات",
         "sections": [
           {
-            "id": "establishment_address",
-            "title": "Establishment Address",
-            "description": "Enter the physical address where business will operate. If you are applying for a Tattoo License, enter your mailing or home address.",
+            "id": "اسٹیبلشمنٹ_ایڈریس",
+            "title": "اسٹیبلشمنٹ کا پتہ",
+            "description": "وہ جسمانی پتہ درج کریں جہاں کاروبار چلے گا۔ اگر آپ ٹیٹو لائسنس کے لیے درخواست دے رہے ہیں، تو اپنا میلنگ یا گھر کا پتہ درج کریں۔",
             "ui": {
-              "autocomplete": "street_1",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "گلی_1",
+              "placeholder": "اپنے گلی کا پتہ ٹائپ کرنا شروع کریں۔",
+              "overrideComponent": "پتہ خود بخود مکمل"
             },
             "metadata": {
               "integration": {
-                "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "provider": "گوگل",
+                "feature": "پتہ خود بخود مکمل"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "شہر",
+                  "source": "علاقہ",
                   "fallbackSources": [
-                    "postal_town",
+                    "پوسٹل ٹاؤن",
                     "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "انتظامی_علاقہ_سطح_2"
                   ]
                 },
                 {
-                  "fieldId": "borough",
+                  "fieldId": "بورو",
                   "source": "sublocality_level_1",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "انتظامی_علاقہ_سطح_2"
                   ],
                   "mapping": "boroughMap"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "building_number", "source": "street_number" },
-                { "fieldId": "house_number", "source": "street_number" }
+                {
+                  "fieldId": "ریاست",
+                  "source": "انتظامی_علاقہ_سطح_1"
+                },
+                {
+                  "fieldId": "عمارت_نمبر",
+                  "source": "گلی کا_نمبر"
+                },
+                {
+                  "fieldId": "گھر کا_نمبر",
+                  "source": "گلی کا_نمبر"
+                }
               ]
             },
             "fields": [
               {
-                "id": "address_type",
-                "label": "Address Type",
-                "type": "select",
+                "id": "ایڈریس_قسم",
+                "label": "ایڈریس کی قسم",
+                "type": "منتخب کریں",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Select",
-                    "Complete Address",
-                    "Cross Street (Intersection)",
-                    "Place (Landmark)"
+                    "منتخب کریں۔",
+                    "مکمل پتہ",
+                    "کراس سٹریٹ (چوراہے)",
+                    "جگہ (لینڈ مارک)"
                   ]
                 }
               },
               {
-                "id": "street_1",
-                "label": "Street 1",
-                "type": "text",
+                "id": "گلی_1",
+                "label": "گلی 1",
+                "type": "متن",
                 "required": true
               },
               {
-                "id": "building_number",
-                "label": "Building #",
-                "type": "text",
+                "id": "عمارت_نمبر",
+                "label": "عمارت #",
+                "type": "متن",
                 "required": true
               },
               {
-                "id": "street_2",
-                "label": "Street 2",
-                "type": "text",
+                "id": "گلی_2",
+                "label": "گلی 2",
+                "type": "متن",
                 "required": false
               },
               {
-                "id": "unit_type",
-                "label": "Unit Type",
-                "type": "select",
+                "id": "یونٹ_قسم",
+                "label": "یونٹ کی قسم",
+                "type": "منتخب کریں",
                 "required": false,
                 "ui": {
                   "options": [
                     "LBBY",
-                    "APT",
-                    "BLDG",
-                    "STE",
-                    "FL",
-                    "BSMT",
-                    "FRNT",
-                    "SIDE",
-                    "REAR",
-                    "UPPR",
-                    "LOWR",
+                    "اے پی ٹی",
+                    "بی ایل ڈی جی",
+                    "آپ",
+                    "میں",
+                    "بی ایس ایم ٹی",
+                    "ایف آر این ٹی",
+                    "سائیڈ",
+                    "پیچھے",
+                    "یو پی پی آر",
+                    "نیچے",
                     "PIER"
                   ]
                 }
               },
               {
-                "id": "unit",
-                "label": "Unit",
-                "type": "text",
+                "id": "یونٹ",
+                "label": "یونٹ",
+                "type": "متن",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "شہر",
+                "label": "شہر",
+                "type": "متن",
                 "required": true
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "ریاست",
+                "label": "ریاست",
+                "type": "متن",
                 "required": true
               },
               {
-                "id": "borough",
-                "label": "Borough",
-                "type": "select",
+                "id": "بورو",
+                "label": "بورو",
+                "type": "منتخب کریں",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
-                    "Staten Island"
+                    "برونکس",
+                    "بروکلین",
+                    "مین ہٹن",
+                    "ملکہ",
+                    "اسٹیٹن جزیرہ"
                   ]
                 }
               },
               {
-                "id": "bin",
-                "label": "Bin",
-                "type": "text",
+                "id": "بن",
+                "label": "بن",
+                "type": "متن",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "جیوکلائنٹ API"
                 }
               },
               {
-                "id": "bbl",
-                "label": "Bbl",
-                "type": "text",
+                "id": "بی بی ایل",
+                "label": "بی بی ایل",
+                "type": "متن",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "جیوکلائنٹ API"
                 }
               },
               {
-                "id": "community_district",
-                "label": "Community District",
-                "type": "text",
+                "id": "کمیونٹی_ضلع",
+                "label": "کمیونٹی ڈسٹرکٹ",
+                "type": "متن",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "جیوکلائنٹ API"
                 }
               },
               {
-                "id": "council_district",
-                "label": "Council District",
-                "type": "text",
+                "id": "کونسل_ضلع",
+                "label": "کونسل ڈسٹرکٹ",
+                "type": "متن",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "جیوکلائنٹ API"
                 }
               },
               {
-                "id": "police_precinct",
-                "label": "Police Precinct",
-                "type": "text",
+                "id": "پولیس_پریسنکٹ",
+                "label": "پولیس چوکی۔",
+                "type": "متن",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "جیوکلائنٹ API"
                 }
               },
               {
-                "id": "house_number",
-                "label": "House Number",
-                "type": "text",
+                "id": "گھر کا_نمبر",
+                "label": "گھر کا نمبر",
+                "type": "متن",
                 "required": false,
                 "metadata": {
-                  "source": "Geoclient API"
+                  "source": "جیوکلائنٹ API"
                 }
               }
             ]
@@ -194,177 +203,213 @@
         ]
       },
       {
-        "id": "contact_information",
-        "title": "Contact Information – Applicant and Other Contacts",
+        "id": "رابطہ_معلومات",
+        "title": "رابطہ کی معلومات - درخواست دہندہ اور دیگر رابطے",
         "sections": [
           {
-            "id": "contact_info_guidance",
-            "title": "Contact Type Guidance",
-            "type": "info",
+            "id": "رابطہ_معلومات_گائیڈنس",
+            "title": "رابطہ کی قسم رہنمائی",
+            "type": "معلومات",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "### Applying as a Corporation, Partnership, or Not-for-Profit?\n\nSelect **\"Business Information\"** as your Type of Contact and complete the required fields.  \nBusinesses also have the opportunity to provide a complete list of the responsible individuals within their organization. To add each individual's information to your application, please select **\"Other Contact\"** as the Type of Contact and complete the required fields that appear.\n\n---\n\n### Applying as an Individual or Sole Proprietorship?\n\nSelect **\"Individual Owner\"** as your Type of Contact and complete the required fields that appear.\n\n---\n\n### Emergency Contact?\n\nUnless a **\"Designated Emergency Contact\"** is specified, the applicant will be assumed to be the Emergency Contact.  \nTo identify someone other than the applicant to be contacted in the event of an emergency, please select **\"Designated Emergency Contact\"** as the Type of Contact and complete the required fields that appear."
+            "content": "### کارپوریشن، شراکت داری، یا غیر منافع بخش کے طور پر درخواست دینا؟\n\n**\"کاروباری معلومات\"** کو اپنے رابطے کی قسم کے طور پر منتخب کریں اور مطلوبہ فیلڈز کو مکمل کریں۔  \nکاروباری اداروں کو اپنی تنظیم میں ذمہ دار افراد کی مکمل فہرست فراہم کرنے کا موقع بھی ملتا ہے۔ اپنی درخواست میں ہر فرد کی معلومات شامل کرنے کے لیے، براہ کرم **\"دیگر رابطہ\"** کو رابطے کی قسم کے طور پر منتخب کریں اور ظاہر ہونے والے مطلوبہ فیلڈز کو مکمل کریں۔\n\n---\n\n### انفرادی یا واحد ملکیت کے طور پر درخواست دے رہے ہیں؟\n\nاپنے رابطے کی قسم کے طور پر **\"انفرادی مالک\"** کو منتخب کریں اور ظاہر ہونے والے مطلوبہ فیلڈز کو مکمل کریں۔\n\n---\n\n### ہنگامی رابطہ؟\n\nجب تک کہ **\"نامزد ہنگامی رابطہ\"** کی وضاحت نہ کی جائے، درخواست دہندہ کو ہنگامی رابطہ سمجھا جائے گا۔  \nہنگامی صورت حال میں رابطہ کرنے کے لیے درخواست دہندہ کے علاوہ کسی اور کی شناخت کرنے کے لیے، براہ کرم **\"نامزد ہنگامی رابطہ\"** کو رابطے کی قسم کے طور پر منتخب کریں اور ظاہر ہونے والے مطلوبہ فیلڈز کو مکمل کریں۔"
           },
           {
             "id": "contact_list",
-            "title": "Contact List",
+            "title": "رابطے کی فہرست",
             "fields": [
               {
-                "id": "contacts",
-                "label": "Contacts",
-                "type": "group",
+                "id": "رابطے",
+                "label": "رابطے",
+                "type": "گروپ",
                 "metadata": {
                   "multiple": true,
-                  "tableColumns": ["contact_type", "first_name", "last_name", "establishment_name", "email"]
+                  "tableColumns": [
+                    "contact_type",
+                    "پہلا_نام",
+                    "آخری_نام",
+                    "اسٹیبلشمنٹ_نام",
+                    "ای میل"
+                  ]
                 },
                 "fields": [
                   {
                     "id": "contact_type",
-                    "label": "Type of Contact",
-                    "type": "select",
+                    "label": "رابطے کی قسم",
+                    "type": "منتخب کریں",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Business Information",
-                        "Individual Owner",
-                        "Other Contact",
-                        "Designated Emergency Contact"
+                        "کاروباری معلومات",
+                        "انفرادی مالک",
+                        "دوسرے رابطہ",
+                        "نامزد ہنگامی رابطہ"
                       ]
                     }
                   },
                   {
-                    "id": "establishment_name",
-                    "label": "Establishment Name",
-                    "type": "text",
+                    "id": "اسٹیبلشمنٹ_نام",
+                    "label": "اسٹیبلشمنٹ کا نام",
+                    "type": "متن",
                     "requiredCondition": {
                       "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "operator": "برابر",
+                      "value": "کاروباری معلومات"
                     }
                   },
                   {
                     "id": "dba_name",
-                    "label": "DBA / Trade Name",
-                    "type": "text",
+                    "label": "ڈی بی اے / تجارتی نام",
+                    "type": "متن",
                     "requiredCondition": {
                       "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "operator": "برابر",
+                      "value": "کاروباری معلومات"
                     }
                   },
                   {
-                    "id": "legal_structure",
-                    "label": "Legal Structure",
-                    "type": "select",
+                    "id": "قانونی_سٹرکچر",
+                    "label": "قانونی ڈھانچہ",
+                    "type": "منتخب کریں",
                     "requiredCondition": {
                       "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "operator": "برابر",
+                      "value": "کاروباری معلومات"
                     },
                     "ui": {
                       "options": [
-                        "Corporation",
-                        "Partnership",
-                        "Limited Partnership",
-                        "Limited Liability",
-                        "Not-for-Profit"
+                        "کارپوریشن",
+                        "شراکت داری",
+                        "محدود شراکت داری",
+                        "محدود ذمہ داری",
+                        "غیر منافع بخش"
                       ]
                     }
                   },
                   {
                     "id": "nys_sales_tax_id",
-                    "label": "NYS Sales Tax ID #",
-                    "type": "text",
+                    "label": "NYS سیلز ٹیکس ID #",
+                    "type": "متن",
                     "requiredCondition": {
                       "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "operator": "برابر",
+                      "value": "کاروباری معلومات"
                     }
                   },
                   {
                     "id": "is_out_of_state_corp",
-                    "label": "Are you a corporation formed outside of New York State?",
-                    "type": "radio",
+                    "label": "کیا آپ نیویارک اسٹیٹ سے باہر ایک کارپوریشن تشکیل دی گئی ہیں؟",
+                    "type": "ریڈیو",
                     "requiredCondition": {
                       "field": "contact_type",
-                      "operator": "equals",
-                      "value": "Business Information"
+                      "operator": "برابر",
+                      "value": "کاروباری معلومات"
                     },
                     "ui": {
-                      "options": ["Yes", "No"]
-                    }
-                  },
-                  {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
-                    "requiredCondition": {
-                      "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                      "options": [
+                        "جی ہاں",
+                        "نہیں"
                       ]
                     }
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "پہلا_نام",
+                    "label": "پہلا نام",
+                    "type": "متن",
                     "requiredCondition": {
                       "anyOf": [
-                        { "field": "contact_type", "operator": "equals", "value": "Individual Owner" },
-                        { "field": "contact_type", "operator": "equals", "value": "Other Contact" },
-                        { "field": "contact_type", "operator": "equals", "value": "Designated Emergency Contact" }
+                        {
+                          "field": "contact_type",
+                          "operator": "برابر",
+                          "value": "انفرادی مالک"
+                        },
+                        {
+                          "field": "contact_type",
+                          "operator": "برابر",
+                          "value": "دوسرے رابطہ"
+                        },
+                        {
+                          "field": "contact_type",
+                          "operator": "برابر",
+                          "value": "نامزد ہنگامی رابطہ"
+                        }
                       ]
                     }
                   },
                   {
-                    "id": "title",
-                    "label": "Title",
-                    "type": "text",
+                    "id": "آخری_نام",
+                    "label": "آخری نام",
+                    "type": "متن",
+                    "requiredCondition": {
+                      "anyOf": [
+                        {
+                          "field": "contact_type",
+                          "operator": "برابر",
+                          "value": "انفرادی مالک"
+                        },
+                        {
+                          "field": "contact_type",
+                          "operator": "برابر",
+                          "value": "دوسرے رابطہ"
+                        },
+                        {
+                          "field": "contact_type",
+                          "operator": "برابر",
+                          "value": "نامزد ہنگامی رابطہ"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "عنوان",
+                    "label": "عنوان",
+                    "type": "متن",
                     "required": false
                   },
                   {
-                    "id": "email",
-                    "label": "E-mail Address",
-                    "type": "email",
+                    "id": "ای میل",
+                    "label": "ای میل ایڈریس",
+                    "type": "ای میل",
                     "required": true
                   },
                   {
                     "id": "ssn_itin",
-                    "label": "SSN / ITIN",
-                    "type": "text",
+                    "label": "SSN/ITIN",
+                    "type": "متن",
                     "required": false,
                     "constraints": {
                       "pattern": "^(\\d{3}-\\d{2}-\\d{4}|\\d{9})$"
                     },
                     "ui": {
-                      "placeholder": "XXX-XX-XXXX or 9-digit ITIN"
+                      "placeholder": "XXX-XXX-XXXX یا 9 ہندسوں کا ITIN"
                     }
                   },
                   {
                     "id": "ssn_itin_type",
-                    "label": "Did you enter SSN or ITIN?",
-                    "type": "radio",
+                    "label": "کیا آپ نے SSN یا ITIN درج کیا ہے؟",
+                    "type": "ریڈیو",
                     "requiredCondition": {
                       "field": "ssn_itin",
-                      "operator": "notEquals",
+                      "operator": "نوٹ برابر",
                       "value": ""
                     },
                     "ui": {
-                      "options": ["SSN", "ITIN"]
+                      "options": [
+                        "SSN",
+                        "ITIN"
+                      ]
                     }
                   },
                   {
-                    "id": "phone",
-                    "label": "Phone Number",
-                    "type": "tel",
+                    "id": "فون",
+                    "label": "فون نمبر",
+                    "type": "ٹیلی فون",
                     "required": true,
                     "constraints": {
-                      "pattern": "^\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
+                      "pattern": "^\\(?[0-9]{3}\\)؟[-۔ ]؟[0-9]{3}[-۔ ]؟[0-9]{4}$"
                     },
                     "ui": {
                       "placeholder": "(123) 456-7890"
@@ -372,23 +417,26 @@
                   },
                   {
                     "id": "tty_phone",
-                    "label": "TTY Phone",
-                    "type": "tel",
+                    "label": "TTY فون",
+                    "type": "ٹیلی فون",
                     "required": false
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "پیدائش_کی_تاریخ",
+                    "label": "تاریخ پیدائش",
+                    "type": "تاریخ",
                     "required": false
                   },
                   {
-                    "id": "gender",
-                    "label": "Gender",
-                    "type": "radio",
+                    "id": "جنس",
+                    "label": "جنس",
+                    "type": "ریڈیو",
                     "required": false,
                     "ui": {
-                      "options": ["Female", "Male"]
+                      "options": [
+                        "خاتون",
+                        "مرد"
+                      ]
                     }
                   }
                 ]
@@ -397,212 +445,211 @@
           }
         ]
       },
-
       {
-        "id": "application_info_1",
-        "title": "Application Specific Information 1",
+        "id": "درخواست_معلومات_1",
+        "title": "درخواست کی مخصوص معلومات 1",
         "sections": [
           {
-            "id": "program_details",
-            "title": "Program Details",
+            "id": "پروگرام_تفصیلات",
+            "title": "پروگرام کی تفصیلات",
             "fields": [
               {
-                "id": "program_type",
-                "label": "Program Type",
-                "type": "select",
+                "id": "پروگرام_قسم",
+                "label": "پروگرام کی قسم",
+                "type": "منتخب کریں",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Infant Toddler",
-                    "Preschool"
+                    "شیرخوار چھوٹا بچہ",
+                    "پری اسکول"
                   ]
                 }
               },
               {
                 "id": "orientation_cert_number",
-                "label": "Pre Permit Orientation Cert #",
-                "type": "text",
+                "label": "پری پرمٹ اورینٹیشن سرٹیفکیٹ #",
+                "type": "متن",
                 "required": true
               },
               {
                 "id": "permittee_name",
-                "label": "Permittee (Sponsor Name)",
-                "type": "text",
+                "label": "اجازت دینے والا (اسپانسر کا نام)",
+                "type": "متن",
                 "required": true
               },
               {
                 "id": "is_applicant_same_as_permittee",
-                "label": "Applicant same as Permittee?",
-                "type": "checkbox",
+                "label": "پرمٹی کی طرح درخواست دہندہ؟",
+                "type": "چیک باکس",
                 "ui": {
                   "defaultChecked": true
                 }
               },
               {
-                "id": "permit_expiration_date",
-                "label": "Expiration Date",
-                "type": "date",
+                "id": "پرمٹ_میعاد ختم ہونے کی_تاریخ",
+                "label": "میعاد ختم ہونے کی تاریخ",
+                "type": "تاریخ",
                 "required": false
               },
               {
-                "id": "permit_number",
-                "label": "Permit #",
-                "type": "text",
+                "id": "پرمٹ_نمبر",
+                "label": "اجازت #",
+                "type": "متن",
                 "required": false
               }
             ]
           },
           {
-            "id": "program_contact",
-            "title": "Program Contact",
+            "id": "پروگرام_رابطہ",
+            "title": "پروگرام رابطہ",
             "fields": [
               {
-                "id": "program_phone",
-                "label": "Phone",
-                "type": "tel"
+                "id": "پروگرام_فون",
+                "label": "فون",
+                "type": "ٹیلی فون"
               },
               {
-                "id": "program_fax",
-                "label": "Fax",
-                "type": "tel"
+                "id": "فیکس_پروگرام",
+                "label": "فیکس",
+                "type": "ٹیلی فون"
               },
               {
-                "id": "program_email",
-                "label": "Email",
-                "type": "email",
+                "id": "پروگرام_ای میل",
+                "label": "ای میل",
+                "type": "ای میل",
                 "required": true
               },
               {
-                "id": "program_website",
-                "label": "Website",
-                "type": "text"
+                "id": "پروگرام_ویب سائٹ",
+                "label": "ویب سائٹ",
+                "type": "متن"
               }
             ]
           },
           {
-            "id": "program_days_hours",
-            "title": "Days Open (Hours)",
+            "id": "پروگرام_دن_گھنٹے",
+            "title": "کھلے دن (گھنٹے)",
             "fields": [
               {
-                "id": "open_days",
-                "label": "Open Days",
-                "type": "checkbox",
+                "id": "کھلے_دن",
+                "label": "کھلے دن",
+                "type": "چیک باکس",
                 "ui": {
                   "options": [
-                    "Sunday",
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
+                    "اتوار",
+                    "پیر",
+                    "منگل",
+                    "بدھ",
+                    "جمعرات",
+                    "جمعہ",
+                    "ہفتہ"
                   ]
                 }
               },
               {
-                "id": "nightcare",
-                "label": "Nightcare",
-                "type": "checkbox"
+                "id": "رات کی دیکھ بھال",
+                "label": "رات کی دیکھ بھال",
+                "type": "چیک باکس"
               },
               {
-                "id": "open_from",
-                "label": "Open From",
-                "type": "time",
+                "id": "سے کھولیں",
+                "label": "سے کھولیں۔",
+                "type": "وقت",
                 "required": true
               },
               {
-                "id": "close_at",
-                "label": "Close At",
-                "type": "time",
+                "id": "بند_پر",
+                "label": "پر بند کریں۔",
+                "type": "وقت",
                 "required": true
               },
               {
-                "id": "inspection_delivery_method",
-                "label": "Inspection Report Delivery Method",
-                "type": "select",
+                "id": "معائنہ_ڈیلیوری_طریقہ",
+                "label": "معائنہ رپورٹ کی ترسیل کا طریقہ",
+                "type": "منتخب کریں",
                 "ui": {
                   "options": [
-                    "Email",
-                    "Fax",
-                    "Regular Mail"
+                    "ای میل",
+                    "فیکس",
+                    "باقاعدہ میل"
                   ]
                 }
               },
               {
-                "id": "inspection_language",
-                "label": "Inspection Language",
-                "type": "select",
+                "id": "معائنہ_زبان",
+                "label": "معائنہ کی زبان",
+                "type": "منتخب کریں",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish"
+                    "انگریزی",
+                    "ہسپانوی"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "school_year_dates",
-            "title": "School Year Dates",
+            "id": "اسکول_سال_تاریخیں",
+            "title": "تعلیمی سال کی تاریخیں۔",
             "fields": [
               {
-                "id": "school_year_from",
-                "label": "Regular School Year From",
-                "type": "date"
+                "id": "اسکول_سال_سے",
+                "label": "باقاعدہ تعلیمی سال سے",
+                "type": "تاریخ"
               },
               {
-                "id": "school_year_to",
-                "label": "Regular School Year To",
-                "type": "date"
+                "id": "اسکول_سال_سے",
+                "label": "باقاعدہ تعلیمی سال",
+                "type": "تاریخ"
               },
               {
-                "id": "has_summer_program",
-                "label": "Summer Program",
-                "type": "checkbox"
+                "id": "ہے_گرمیوں کا_پروگرام",
+                "label": "سمر پروگرام",
+                "type": "چیک باکس"
               }
             ]
           },
           {
-            "id": "school_breaks",
-            "title": "School Breaks",
+            "id": "اسکول_بریک",
+            "title": "سکول بریک",
             "fields": [
               {
-                "id": "school_breaks",
-                "label": "School Breaks",
-                "type": "group",
+                "id": "اسکول_بریک",
+                "label": "سکول بریک",
+                "type": "گروپ",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "term",
-                    "from",
-                    "to"
+                    "مدت",
+                    "سے",
+                    "کو"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "term",
-                    "label": "Term",
-                    "type": "select",
+                    "id": "مدت",
+                    "label": "مدت",
+                    "type": "منتخب کریں",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Fall",
-                        "Spring",
-                        "Summer",
-                        "Winter"
+                        "گرنا",
+                        "بہار",
+                        "موسم گرما",
+                        "موسم سرما"
                       ]
                     }
                   },
                   {
-                    "id": "from",
-                    "label": "From",
-                    "type": "date",
+                    "id": "سے",
+                    "label": "سے",
+                    "type": "تاریخ",
                     "required": true
                   },
                   {
-                    "id": "to",
-                    "label": "To",
-                    "type": "date",
+                    "id": "کو",
+                    "label": "کو",
+                    "type": "تاریخ",
                     "required": true
                   }
                 ]
@@ -610,24 +657,24 @@
             ]
           },
           {
-            "id": "holidays",
-            "title": "Holidays",
+            "id": "چھٹیاں",
+            "title": "چھٹیاں",
             "fields": [
               {
-                "id": "holidays",
-                "label": "Holiday List",
-                "type": "group",
+                "id": "چھٹیاں",
+                "label": "چھٹیوں کی فہرست",
+                "type": "گروپ",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "holiday_name"
+                    "چھٹی_نام"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "holiday_name",
-                    "label": "Holiday Name",
-                    "type": "text",
+                    "id": "چھٹی_نام",
+                    "label": "چھٹیوں کا نام",
+                    "type": "متن",
                     "required": true
                   }
                 ]
@@ -635,110 +682,110 @@
             ]
           },
           {
-            "id": "food_services_info",
-            "title": "Food Services Information",
+            "id": "کھانے کی_سروسز_معلومات",
+            "title": "فوڈ سروسز کی معلومات",
             "fields": [
               {
-                "id": "food_provided",
-                "label": "Is food provided for children in care?",
-                "type": "radio",
+                "id": "کھانا فراہم کیا گیا",
+                "label": "کیا دیکھ بھال میں بچوں کے لیے کھانا فراہم کیا جاتا ہے؟",
+                "type": "ریڈیو",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "جی ہاں",
+                    "نہیں"
                   ]
                 }
               },
               {
-                "id": "food_prepared_on_site",
-                "label": "Is food prepared on site?",
-                "type": "radio",
+                "id": "کھانا_تیار_پر_سائٹ",
+                "label": "کیا سائٹ پر کھانا تیار کیا جاتا ہے؟",
+                "type": "ریڈیو",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "جی ہاں",
+                    "نہیں"
                   ]
                 }
               },
               {
-                "id": "food_preparation_location",
-                "label": "Where is food prepared?",
-                "type": "text"
+                "id": "کھانے کی_تیاری_مقام",
+                "label": "کھانا کہاں تیار کیا جاتا ہے؟",
+                "type": "متن"
               },
               {
                 "id": "dohmh_food_service_permit",
-                "label": "DOHMH Food Service Permit #",
-                "type": "text"
+                "label": "DOHMH فوڈ سروس پرمٹ #",
+                "type": "متن"
               },
               {
-                "id": "person_on_certificate",
-                "label": "Person Name on Certificate",
-                "type": "text"
+                "id": "شخص_پر_سرٹیفکیٹ",
+                "label": "سرٹیفکیٹ پر شخص کا نام",
+                "type": "متن"
               },
               {
-                "id": "food_protection_cert_number",
-                "label": "Food Protection Certificate #",
-                "type": "text"
+                "id": "خوراک_تحفظ_سرٹیفکیٹ_نمبر",
+                "label": "فوڈ پروٹیکشن سرٹیفکیٹ #",
+                "type": "متن"
               }
             ]
           }
         ]
       },
       {
-        "id": "application_info_2",
-        "title": "Application Specific Information 2"
+        "id": "درخواست_معلومات_2",
+        "title": "درخواست کی مخصوص معلومات 2"
       },
       {
-        "id": "document_upload",
-        "title": "Upload Documents",
-        "description": "REQUIRED DOCUMENTS\nIn order for your application to be processed, based on information provided, you are required to upload the following documents:",
+        "id": "دستاویز_اپ لوڈ کریں۔",
+        "title": "دستاویزات اپ لوڈ کریں۔",
+        "description": "مطلوبہ دستاویزات\nفراہم کردہ معلومات کی بنیاد پر آپ کی درخواست پر کارروائی کرنے کے لیے، آپ کو درج ذیل دستاویزات اپ لوڈ کرنے کی ضرورت ہے:",
         "sections": [
           {
-            "id": "initial_site_survey",
-            "title": "Initial Site Survey Form",
+            "id": "ابتدائی_سائٹ_سروے",
+            "title": "ابتدائی سائٹ سروے فارم",
             "fields": [
               {
                 "id": "site_survey_file",
-                "label": "Upload Initial Site Survey Form",
-                "type": "file",
+                "label": "ابتدائی سائٹ سروے فارم اپ لوڈ کریں۔",
+                "type": "فائل",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
+                    "درخواست/پی ڈی ایف",
                     "image/jpeg",
                     "image/jpg",
                     "image/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Initial Site Survey",
+                  "proofCategory": "ابتدائی سائٹ سروے",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "personal_id_proof",
-            "title": "Proof of Personal Identification",
+            "id": "ذاتی_آئی ڈی_پروف",
+            "title": "ذاتی شناخت کا ثبوت",
             "fields": [
               {
-                "id": "personal_id_file",
-                "label": "Upload Proof of Personal Identification",
-                "type": "file",
+                "id": "ذاتی_آئی ڈی_فائل",
+                "label": "ذاتی شناخت کا ثبوت اپ لوڈ کریں۔",
+                "type": "فائل",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
+                    "درخواست/پی ڈی ایف",
                     "image/jpeg",
                     "image/jpg",
                     "image/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Personal ID",
+                  "proofCategory": "ذاتی شناخت",
                   "multiple": false
                 }
               }
@@ -746,24 +793,24 @@
           },
           {
             "id": "fee_exemption_proof",
-            "title": "Proof of Fee Exemption",
+            "title": "فیس چھوٹ کا ثبوت",
             "fields": [
               {
                 "id": "fee_exemption_file",
-                "label": "Upload Proof of Fee Exemption (ACS Affiliation or Municipal Exemption)",
-                "type": "file",
+                "label": "فیس چھوٹ کا ثبوت اپ لوڈ کریں (ACS سے وابستگی یا میونسپل استثنیٰ)",
+                "type": "فائل",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
+                    "درخواست/پی ڈی ایف",
                     "image/jpeg",
                     "image/jpg",
                     "image/png"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Fee Exemption",
+                  "proofCategory": "فیس کی چھوٹ",
                   "multiple": false
                 }
               }
@@ -773,16 +820,15 @@
       },
       {
         "id": "step_6_placeholder",
-        "title": "To be defined"
+        "title": "تعریف کی جائے۔"
       },
       {
         "id": "step_7_placeholder",
-        "title": "To be defined"
+        "title": "تعریف کی جائے۔"
       },
       {
         "id": "step_8_placeholder",
-        "title": "To be defined"
+        "title": "تعریف کی جائے۔"
       }
     ]
-  }
-}
+  }}
