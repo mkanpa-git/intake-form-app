@@ -68,13 +68,45 @@ function mergeSection(baseSec, locSec = {}) {
   return merged;
 }
 
+function mergeOptions(baseOpts = [], locOpts = []) {
+  if (!Array.isArray(baseOpts)) return locOpts;
+  if (!Array.isArray(locOpts)) return baseOpts;
+
+  return baseOpts.map((opt, idx) => {
+    const baseValue = typeof opt === 'string' ? opt : opt.value;
+    const baseLabel = typeof opt === 'string' ? opt : opt.label;
+    const loc = locOpts[idx];
+
+    let label = baseLabel;
+    if (typeof loc === 'string') {
+      label = loc;
+    } else if (loc && typeof loc === 'object') {
+      label = loc.label || loc.value || baseLabel;
+    }
+
+    if (typeof opt === 'string') {
+      return { value: baseValue, label };
+    }
+
+    return { ...opt, value: baseValue, label };
+  });
+}
+
 function mergeField(baseField, locField = {}) {
   const merged = { ...baseField };
   if (locField.label) merged.label = locField.label;
   if (locField.tooltip) merged.tooltip = locField.tooltip;
-  if (locField.options) merged.options = locField.options;
+
+  if (locField.options) {
+    merged.options = mergeOptions(baseField.options, locField.options);
+  }
+
   if (locField.ui) {
-    merged.ui = { ...baseField.ui, ...filterUi(locField.ui) };
+    const filtered = filterUi(locField.ui);
+    if (filtered.options) {
+      filtered.options = mergeOptions(baseField.ui?.options, filtered.options);
+    }
+    merged.ui = { ...baseField.ui, ...filtered };
   }
   if (baseField.type === 'group' && Array.isArray(baseField.fields)) {
     merged.fields = baseField.fields.map((sf, idx) =>
