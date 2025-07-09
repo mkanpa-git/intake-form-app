@@ -54,3 +54,19 @@ describe('loadMergedFormSpec option merging', () => {
     ]);
   });
 });
+
+describe('loadMergedFormSpec path resolution', () => {
+  test('uses no _form suffix for group_cc_permit service', async () => {
+    const base = { form: {} };
+    global.fetch = jest.fn((url) => {
+      if (url === '/data/group_cc_permit.json') {
+        return Promise.resolve({ ok: true, json: () => Promise.resolve(base) });
+      }
+      return Promise.reject(new Error(`Unexpected url ${url}`));
+    });
+
+    await loadMergedFormSpec('group_cc_permit', 'en');
+
+    expect(global.fetch).toHaveBeenCalledWith('/data/group_cc_permit.json');
+  });
+});
