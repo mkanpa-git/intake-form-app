@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const fetch = require('node-fetch');
+const HttpsProxyAgent = require('https-proxy-agent');
+
+const proxy = process.env.HTTPS_PROXY || process.env.https_proxy;
+const agent = proxy ? new HttpsProxyAgent(proxy) : undefined;
 
 const API_KEY = process.env.GOOGLE_API_KEY;
 if (!API_KEY) {
@@ -11,16 +15,17 @@ if (!API_KEY) {
 const languages = ['ar','bn','zh','fr','ht','ko','pl','ru','es','ur'];
 const dataDir = path.join(__dirname, '..', 'public', 'data');
 
-async function translateText(text, target) {
+async function translateBatch(texts, target) {
   const url = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}`;
   const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ q: text, target, format: 'text' })
+    body: JSON.stringify({ q: texts, target, format: 'text' }),
+    agent,
   });
   if (!res.ok) throw new Error(`Translate failed: ${res.status}`);
   const json = await res.json();
-  return json.data.translations[0].translatedText;
+  return json.data.translations.map(t => t.translatedText);
 }
 
 async function translateFile(file) {
@@ -41,7 +46,12 @@ async function translateFile(file) {
       }
     };
     walk(copy);
-    const translated = await Promise.all(vals.map((v) => translateText(v, lang)));
+    const translated = [];
+    for (let i = 0; i < vals.length; i += 50) {
+      const slice = vals.slice(i, i + 50);
+      const res = await translateBatch(slice, lang);
+      translated.push(...res);
+    }
     translated.forEach((t, i) => {
       const [o, k] = keys[i];
       o[k] = t;

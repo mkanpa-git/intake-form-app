@@ -1,52 +1,52 @@
 {
   "form": {
-    "title": "DYCD Youth Services Intake – Ages 13 and Younger",
-    "description": "Form to collect youth and guardian information for DYCD programs",
+    "title": "Прием в молодежную службу DYCD – 13 лет и младше",
+    "description": "Форма для сбора информации о молодежи и опекунах для программ DYCD",
     "steps": [
       {
-        "id": "demographics",
-        "title": "Youth Information",
+        "id": "демография",
+        "title": "Информация для молодежи",
         "sections": [
           {
-            "id": "youth_info",
-            "title": "Basic Information",
+            "id": "информация_о_молодежи",
+            "title": "Основная информация",
             "fields": [
               {
-                "id": "first_name",
-                "label": "First Name",
-                "type": "text",
+                "id": "имя",
+                "label": "Имя",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "last_name",
-                "label": "Last Name",
-                "type": "text",
+                "id": "фамилия",
+                "label": "Фамилия",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "dob",
-                "label": "Date of Birth",
-                "type": "date",
+                "id": "дата рождения",
+                "label": "Дата рождения",
+                "type": "дата",
                 "required": true
               },
               {
-                "id": "gender",
-                "label": "Gender",
-                "type": "select",
+                "id": "пол",
+                "label": "Пол",
+                "type": "выбирать",
                 "ui": {
                   "options": [
-                    "Male",
-                    "Female",
-                    "Non-binary",
-                    "Other"
+                    "Мужской",
+                    "Женский",
+                    "Небинарный",
+                    "Другой"
                   ]
                 },
                 "required": true
               },
               {
-                "id": "ethnicity",
-                "label": "Ethnicity",
-                "type": "text"
+                "id": "этническая принадлежность",
+                "label": "Этническая принадлежность",
+                "type": "текст"
               }
             ]
           }
@@ -54,33 +54,33 @@
       },
       {
         "id": "guardian_info",
-        "title": "Parent/Guardian Info",
+        "title": "Информация о родителе/опекуне",
         "sections": [
           {
-            "id": "guardian_contact",
-            "title": "Contact Details",
+            "id": "контакт_хранителя",
+            "title": "Контактная информация",
             "fields": [
               {
-                "id": "guardian_name",
-                "label": "Name of Parent/Guardian",
-                "type": "text",
+                "id": "имя_опекуна",
+                "label": "Имя родителя/опекуна",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "phone",
-                "label": "Phone Number",
-                "type": "tel",
+                "id": "телефон",
+                "label": "Номер телефона",
+                "type": "тел",
                 "required": true
               },
               {
-                "id": "email",
-                "label": "Email Address",
-                "type": "email"
+                "id": "электронная почта",
+                "label": "Адрес электронной почты",
+                "type": "электронная почта"
               },
               {
-                "id": "relationship",
-                "label": "Relationship to Youth",
-                "type": "text",
+                "id": "отношение",
+                "label": "Отношение к молодежи",
+                "type": "текст",
                 "required": true
               }
             ]
@@ -89,32 +89,32 @@
       },
       {
         "id": "school_info",
-        "title": "School Information",
+        "title": "Информация о школе",
         "sections": [
           {
-            "id": "school",
-            "title": "Current School Details",
+            "id": "школа",
+            "title": "Текущие данные школы",
             "fields": [
               {
-                "id": "school_name",
-                "label": "School Name",
-                "type": "text"
+                "id": "название_школы",
+                "label": "Название школы",
+                "type": "текст"
               },
               {
-                "id": "grade",
-                "label": "Current Grade",
-                "type": "text"
+                "id": "оценка",
+                "label": "Текущая оценка",
+                "type": "текст"
               },
               {
-                "id": "school_type",
-                "label": "School Type",
-                "type": "select",
+                "id": "тип_школы",
+                "label": "Тип школы",
+                "type": "выбирать",
                 "ui": {
                   "options": [
-                    "Public",
-                    "Private",
-                    "Charter",
-                    "Home School"
+                    "Публичный",
+                    "Частный",
+                    "Устав",
+                    "Домашнее обучение"
                   ]
                 }
               }
@@ -123,273 +123,273 @@
         ]
       },
       {
-        "id": "education_work_status",
-        "title": "Part III: Applicant’s Education/Work Status",
+        "id": "образование_работа_статус",
+        "title": "Часть III: Образование/Статус занятости заявителя",
         "sections": [
           {
-            "id": "education_status",
-            "title": "Education Status",
+            "id": "статус_образования",
+            "title": "Статус образования",
             "fields": [
               {
-                "id": "education_status",
-                "label": "Applicant’s Education Status",
-                "type": "select",
+                "id": "статус_образования",
+                "label": "Образовательный статус заявителя",
+                "type": "выбирать",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Full-Time Student",
-                    "Part-Time Student",
-                    "Not in School"
+                    "Студент очной формы обучения",
+                    "Студент-заочник",
+                    "Не в школе"
                   ]
                 }
               },
               {
-                "id": "grade_level_category",
-                "label": "Select Grade Level Category",
-                "type": "radio",
+                "id": "категория_уровня_класса",
+                "label": "Выберите категорию уровня обучения",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Elementary School",
-                    "Middle School",
-                    "High School",
-                    "Community College",
-                    "College/University",
-                    "Other"
+                    "Начальная школа",
+                    "Средняя школа",
+                    "Средняя школа",
+                    "Общественный колледж",
+                    "Колледж/Университет",
+                    "Другой"
                   ]
                 }
               },
               {
-                "id": "grade_elem",
-                "label": "Select Specific Grade (Elementary School)",
-                "type": "select",
+                "id": "класс_элемент",
+                "label": "Выберите определенный класс (начальная школа)",
+                "type": "выбирать",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Elementary School"
+                  "field": "категория_уровня_класса",
+                  "operator": "равно",
+                  "value": "Начальная школа"
                 },
                 "ui": {
                   "options": [
-                    "Pre-K",
-                    "K",
-                    "1st",
-                    "2nd",
-                    "3rd",
-                    "4th",
-                    "5th"
+                    "Дошкольное образование",
+                    "К",
+                    "1-й",
+                    "2-й",
+                    "3-й",
+                    "4-й",
+                    "5-й"
                   ]
                 }
               },
               {
-                "id": "grade_middle",
-                "label": "Select Specific Grade (Middle School)",
-                "type": "select",
+                "id": "оценка_средний",
+                "label": "Выберите определенный класс (средняя школа)",
+                "type": "выбирать",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Middle School"
+                  "field": "категория_уровня_класса",
+                  "operator": "равно",
+                  "value": "Средняя школа"
                 },
                 "ui": {
                   "options": [
-                    "6th",
-                    "7th",
-                    "8th"
+                    "6-й",
+                    "7-й",
+                    "8-й"
                   ]
                 }
               },
               {
-                "id": "grade_high",
-                "label": "Select Specific Grade (High School)",
-                "type": "select",
+                "id": "оценка_высокая",
+                "label": "Выберите определенный класс (средняя школа)",
+                "type": "выбирать",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "High School"
+                  "field": "категория_уровня_класса",
+                  "operator": "равно",
+                  "value": "Средняя школа"
                 },
                 "ui": {
                   "options": [
-                    "9th",
-                    "10th",
-                    "11th",
-                    "12th",
-                    "High School Diploma",
-                    "High School Equivalency"
+                    "9-й",
+                    "10-й",
+                    "11-й",
+                    "12-й",
+                    "Диплом средней школы",
+                    "Эквивалент средней школы"
                   ]
                 }
               },
               {
-                "id": "grade_cc",
-                "label": "Select Specific Grade (Community College)",
-                "type": "select",
+                "id": "оценка_cc",
+                "label": "Выберите определенный класс (общественный колледж)",
+                "type": "выбирать",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Community College"
+                  "field": "категория_уровня_класса",
+                  "operator": "равно",
+                  "value": "Общественный колледж"
                 },
                 "ui": {
                   "options": [
-                    "1st Year",
-                    "2nd Year",
-                    "3rd Year",
-                    "Associate’s Degree"
+                    "1-й год",
+                    "2-й год",
+                    "3-й год",
+                    "Степень младшего специалиста"
                   ]
                 }
               },
               {
-                "id": "grade_university",
-                "label": "Select Specific Grade (College/University)",
-                "type": "select",
+                "id": "класс_университет",
+                "label": "Выберите конкретную категорию (колледж/университет)",
+                "type": "выбирать",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "College/University"
+                  "field": "категория_уровня_класса",
+                  "operator": "равно",
+                  "value": "Колледж/Университет"
                 },
                 "ui": {
                   "options": [
-                    "Freshman",
-                    "Sophomore",
-                    "Junior",
-                    "Senior",
-                    "Bachelor’s Degree",
-                    "Some Master’s",
-                    "Master’s Degree",
-                    "Some Doctorate",
-                    "Doctorate Degree"
+                    "Первокурсник",
+                    "Второкурсник",
+                    "Младший",
+                    "Старший",
+                    "Степень бакалавра",
+                    "Некоторые мастера",
+                    "Степень магистра",
+                    "Некоторые доктора наук",
+                    "Докторская степень"
                   ]
                 }
               },
               {
-                "id": "grade_other",
-                "label": "Select Specific Grade (Other)",
-                "type": "select",
+                "id": "сорт_другой",
+                "label": "Выберите конкретную оценку (другую)",
+                "type": "выбирать",
                 "requiredCondition": {
-                  "field": "grade_level_category",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "категория_уровня_класса",
+                  "operator": "равно",
+                  "value": "Другой"
                 },
                 "ui": {
                   "options": [
-                    "Foreign Degree",
-                    "No Formal Schooling"
+                    "Иностранная степень",
+                    "Нет формального образования"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "work_status",
-            "title": "Work Status",
+            "id": "рабочий_статус",
+            "title": "Статус работы",
             "fields": [
               {
-                "id": "work_status",
-                "label": "Applicant’s Current Work Status",
-                "type": "select",
+                "id": "рабочий_статус",
+                "label": "Текущий статус занятости заявителя",
+                "type": "выбирать",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Employed Full-Time",
-                    "Employed Part-Time",
-                    "Retired",
-                    "Unemployed (Short-Term ≤ 6 mo)",
-                    "Unemployed (Long-Term > 6 mo)",
-                    "Unemployed (Not in labor force)",
-                    "Migrant Seasonal Farm Worker",
-                    "Not applicable (under 14)"
+                    "Работаю полный рабочий день",
+                    "Работа неполный рабочий день",
+                    "Ушедший на пенсию",
+                    "Безработный (краткосрочный ≤ 6 мес.)",
+                    "Безработный (длительно > 6 мес.)",
+                    "Безработный (не в составе рабочей силы)",
+                    "Мигрант, сезонный сельскохозяйственный рабочий",
+                    "Не применимо (до 14 лет)"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "ft_student_info",
-            "title": "Full-Time Student Info",
+            "id": "ft_студент_информация",
+            "title": "Информация для студентов очной формы обучения",
             "fields": [
               {
-                "id": "student_id",
-                "label": "Student ID / OSIS",
-                "type": "text",
+                "id": "идентификатор_студента",
+                "label": "Студенческий билет / OSIS",
+                "type": "текст",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "статус_образования",
+                  "operator": "равно",
+                  "value": "Студент очной формы обучения"
                 }
               },
               {
-                "id": "student_school_type",
-                "label": "School Type",
-                "type": "select",
+                "id": "тип_школы_студента",
+                "label": "Тип школы",
+                "type": "выбирать",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "статус_образования",
+                  "operator": "равно",
+                  "value": "Студент очной формы обучения"
                 },
                 "ui": {
                   "options": [
-                    "Public",
-                    "Charter",
-                    "Private",
-                    "Other"
+                    "Публичный",
+                    "Устав",
+                    "Частный",
+                    "Другой"
                   ]
                 }
               },
               {
-                "id": "student_school_type_other",
-                "label": "If Other, please specify school type",
-                "type": "text",
+                "id": "тип_школы_студента_другой",
+                "label": "Если «Другое», укажите тип школы.",
+                "type": "текст",
                 "requiredCondition": {
-                  "field": "student_school_type",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "тип_школы_студента",
+                  "operator": "равно",
+                  "value": "Другой"
                 }
               },
               {
-                "id": "student_school_name",
-                "label": "School Name",
-                "type": "text",
+                "id": "имя_школы_студента",
+                "label": "Название школы",
+                "type": "текст",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "статус_образования",
+                  "operator": "равно",
+                  "value": "Студент очной формы обучения"
                 }
               },
               {
-                "id": "student_school_address",
-                "label": "School Address",
-                "type": "text",
+                "id": "адрес_школы_студента",
+                "label": "Адрес школы",
+                "type": "текст",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "статус_образования",
+                  "operator": "равно",
+                  "value": "Студент очной формы обучения"
                 }
               },
               {
-                "id": "student_school_city",
-                "label": "School City",
-                "type": "text",
+                "id": "город_студенческой_школы",
+                "label": "Школьный город",
+                "type": "текст",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "статус_образования",
+                  "operator": "равно",
+                  "value": "Студент очной формы обучения"
                 }
               },
               {
-                "id": "student_school_state",
-                "label": "School State",
-                "type": "text",
+                "id": "студент_школа_государство",
+                "label": "Школа Государства",
+                "type": "текст",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "статус_образования",
+                  "operator": "равно",
+                  "value": "Студент очной формы обучения"
                 }
               },
               {
-                "id": "student_school_zip",
-                "label": "School Zip Code",
-                "type": "text",
+                "id": "студент_школа_zip",
+                "label": "Почтовый индекс школы",
+                "type": "текст",
                 "requiredCondition": {
-                  "field": "education_status",
-                  "operator": "equals",
-                  "value": "Full-Time Student"
+                  "field": "статус_образования",
+                  "operator": "равно",
+                  "value": "Студент очной формы обучения"
                 }
               }
             ]
@@ -397,91 +397,91 @@
         ]
       },
       {
-        "id": "household_info",
-        "title": "Part VI: Household Information",
+        "id": "информация_о_домашнем хозяйстве",
+        "title": "Часть VI: Информация о домохозяйстве",
         "sections": [
           {
-            "id": "household_composition",
-            "title": "Household Composition",
+            "id": "состав_домохозяйства",
+            "title": "Состав домохозяйства",
             "fields": [
               {
-                "id": "head_of_household",
-                "label": "Is the parent/guardian the head of household?",
-                "type": "radio",
+                "id": "глава_домохозяйства",
+                "label": "Является ли родитель/опекун главой семьи?",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
-                "id": "household_income_source",
-                "label": "Primary Source of Household Income",
-                "type": "radio",
+                "id": "источник_дохода_домашнего_хозяйства",
+                "label": "Основной источник дохода домохозяйства",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Employment",
-                    "Public Assistance",
-                    "Social Security",
-                    "Pension",
-                    "No Income",
-                    "Other"
+                    "Работа",
+                    "Государственная помощь",
+                    "Социальное обеспечение",
+                    "Пенсия",
+                    "Нет дохода",
+                    "Другой"
                   ]
                 }
               },
               {
-                "id": "household_income_source_other",
-                "label": "Specify Other Income Source",
-                "type": "text",
+                "id": "источник_дохода_домохозяйства_другой",
+                "label": "Укажите другой источник дохода",
+                "type": "текст",
                 "requiredCondition": {
-                  "field": "household_income_source",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "источник_дохода_домашнего_хозяйства",
+                  "operator": "равно",
+                  "value": "Другой"
                 },
                 "visibleCondition": {
-                  "field": "household_income_source",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "источник_дохода_домашнего_хозяйства",
+                  "operator": "равно",
+                  "value": "Другой"
                 }
               },
               {
-                "id": "housing_type",
-                "label": "Type of Housing",
-                "type": "radio",
+                "id": "тип_жилья",
+                "label": "Тип жилья",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
                     "NYCHA",
-                    "Shelter",
-                    "Own Home",
-                    "Rental",
-                    "Supportive Housing",
-                    "Other"
+                    "Приют",
+                    "Собственный дом",
+                    "Аренда",
+                    "Поддерживающее жилье",
+                    "Другой"
                   ]
                 }
               },
               {
-                "id": "housing_type_other",
-                "label": "Specify Other Housing Type",
-                "type": "text",
+                "id": "тип_жилья_другой",
+                "label": "Укажите другой тип жилья",
+                "type": "текст",
                 "requiredCondition": {
-                  "field": "housing_type",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "тип_жилья",
+                  "operator": "равно",
+                  "value": "Другой"
                 },
                 "visibleCondition": {
-                  "field": "housing_type",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "тип_жилья",
+                  "operator": "равно",
+                  "value": "Другой"
                 }
               },
               {
-                "id": "household_size",
-                "label": "Number of People in Household",
-                "type": "number",
+                "id": "размер_домохозяйства",
+                "label": "Количество человек в домохозяйстве",
+                "type": "число",
                 "required": true,
                 "ui": {
                   "min": 1
@@ -492,71 +492,71 @@
         ]
       },
       {
-        "id": "medical_info",
-        "title": "Medical & Emergency",
+        "id": "медицинская_информация",
+        "title": "Медицинская и скорая помощь",
         "sections": [
           {
-            "id": "emergency",
-            "title": "Emergency Contact",
+            "id": "чрезвычайная ситуация",
+            "title": "Экстренный контакт",
             "fields": [
               {
                 "id": "emergency_name",
-                "label": "Emergency Contact Name",
-                "type": "text"
+                "label": "Имя контакта для экстренной связи",
+                "type": "текст"
               },
               {
-                "id": "emergency_phone",
-                "label": "Emergency Contact Phone",
-                "type": "tel"
+                "id": "экстренный_телефон",
+                "label": "Телефон для экстренной связи",
+                "type": "тел"
               }
             ]
           },
           {
-            "id": "medical",
-            "title": "Medical Info",
+            "id": "медицинский",
+            "title": "Медицинская информация",
             "fields": [
               {
-                "id": "medical_conditions",
-                "label": "Medical Conditions",
-                "type": "text"
+                "id": "медицинские_состояния",
+                "label": "Медицинские состояния",
+                "type": "текст"
               },
               {
-                "id": "medications",
-                "label": "Medications",
-                "type": "text"
+                "id": "лекарства",
+                "label": "Лекарства",
+                "type": "текст"
               },
               {
-                "id": "allergies",
-                "label": "Allergies",
-                "type": "text"
+                "id": "аллергии",
+                "label": "Аллергии",
+                "type": "текст"
               }
             ]
           }
         ]
       },
       {
-        "id": "consent",
-        "title": "Consent & Signature",
+        "id": "согласие",
+        "title": "Согласие и подпись",
         "sections": [
           {
-            "id": "consent_info",
-            "title": "Authorization",
+            "id": "информация_о_согласии",
+            "title": "Авторизация",
             "fields": [
               {
-                "id": "media_consent",
-                "label": "Media Release Consent",
-                "type": "checkbox"
+                "id": "медиа_согласие",
+                "label": "Согласие на распространение медиа-материалов",
+                "type": "флажок"
               },
               {
-                "id": "signature",
-                "label": "Parent/Guardian Signature",
-                "type": "text",
+                "id": "подпись",
+                "label": "Подпись родителя/опекуна",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "date_signed",
-                "label": "Date Signed",
-                "type": "date",
+                "id": "дата_подписания",
+                "label": "Дата подписания",
+                "type": "дата",
                 "required": true
               }
             ]
@@ -564,9 +564,9 @@
         ]
       },
       {
-        "id": "review",
-        "title": "Review & Submit",
-        "type": "review",
+        "id": "обзор",
+        "title": "Просмотреть и отправить",
+        "type": "обзор",
         "sections": []
       }
     ]

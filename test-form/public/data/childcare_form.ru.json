@@ -1,172 +1,172 @@
 {
   "form": {
-    "title": "Childcare Voucher Application",
-    "description": "Step-by-step form for applying for Childcare Assistance",
+    "title": "Заявление на получение ваучера на уход за детьми",
+    "description": "Пошаговая форма подачи заявления на получение помощи по уходу за детьми",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "левый"
     },
     "steps": [
       {
-        "id": "consent_step",
-        "title": "Consent",
+        "id": "согласие_шаг",
+        "title": "Согласие",
         "sections": [
           {
             "id": "mycity_consent_info",
-            "title": "ModelCity Consent",
-            "type": "info",
+            "title": "МодельГородСогласие",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "In connection with this application for child care services, **ModelCity**:\\n\\n- Collects, processes, stores, and shares the information you submit to screen you when you apply for child care services;\\n- Receives, processes, and stores the information the City already knows about you to screen you when you apply for child care services;\\n- Uses your information to improve ModelCity; and\\n- Communicates with you about your ModelCity account.\\n\\n---\\n\\nIf you consent, the following information may be shared between child care services agencies:\\n\\n- Demographic and background information, including address, phone number, household composition.\\n- Housing information, including benefits awarded/received, current housing/shelter status.\\n- Benefits information, including public assistance awarded/received, child care program participation.\\n\\n---\\n\\nIf you choose not to consent, **you will not be denied** any benefits or services you are receiving or any benefits for which you are eligible.\\n\\nThe [ModelCity Privacy Policy](https://www.nyc.gov/privacy) details how ModelCity handles the information you submit through ModelCity."
+            "content": "В связи с этим заявлением на получение услуг по уходу за детьми **ModelCity**:\\n\\n- Собирает, обрабатывает, хранит и передает информацию, которую вы предоставляете, для проверки вас при подаче заявления на получение услуг по уходу за детьми;\\n- Получает, обрабатывает и хранит информацию, которую город уже знает о вас, для проверки вас при подаче заявления на получение услуг по уходу за детьми;\\n- Использует вашу информацию для улучшения ModelCity; и\\n- Общается с вами по поводу вашей учетной записи ModelCity.\\n\\n---\\n\\nЕсли вы даете согласие, следующая информация может быть передана между агентствами по уходу за детьми:\\n\\n- Демографическая и биография, включая адрес, номер телефона, состав семьи.\\n- Информация о жилье, включая предоставленные/полученные пособия, текущий статус жилья/приюта.\\n- Информация о пособиях, включая предоставленную/полученную государственную помощь, участие в программе ухода за детьми.\\n\\n---\\n\\nЕсли вы решите не давать согласия, **вам не будет отказано** в любых пособиях или услугах, которые вы получаете, или в любых пособиях, на которые вы имеете право.\\n\\n[Политика конфиденциальности ModelCity](https://www.nyc.gov/privacy) подробно описывает, как ModelCity обрабатывает информацию, которую вы отправляете через ModelCity."
           }
         ]
       },
       {
-        "id": "instructions_step",
-        "title": "Instructions",
+        "id": "инструкции_шаг",
+        "title": "Инструкции",
         "sections": [
           {
-            "id": "application_instructions",
-            "title": "Application Instructions",
-            "type": "info",
+            "id": "инструкции_приложения",
+            "title": "Инструкции по применению",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**Let’s get started on your application!**\\n\\nTo complete this application, you will be asked for information about:\\n\\n- Yourself\\n- Your household\\n- Your employment or reason for care\\n- Your income\\n\\nAll required fields are marked and must be filled out to move forward with the application. The pages of the application are shown on the right-hand side of the screen and will be highlighted as you move through the application.\\n\\nYour application will be saved automatically as you progress to each page.  \\nIf you need to pause at any time, click the **“Save for later”** button at the bottom of each page to save your application.  \\nYou can log back in to resume your application.\\n\\nWhen you’re ready to begin, click **“Next”** below.\\n\\n---\\n\\n⚠️ **Important:**  \\nTo keep your information current and safe, applications in draft status that you have not edited for **30 days** will be deleted.  \\nIf your draft application is deleted, you can still create and submit a new application when you're ready to apply."
+            "content": "**Давайте начнем с вашего заявления!**\\n\\nЧтобы заполнить это заявление, вам будет предложено предоставить информацию о:\\n\\n- О себе\\n- Вашем домохозяйстве\\n- Вашем трудоустройстве или причине ухода\\n- Вашем доходе\\n\\nВсе обязательные поля отмечены и должны быть заполнены для продвижения по заявлению. Страницы заявления отображаются в правой части экрана и будут подсвечиваться по мере продвижения по заявлению.\\n\\nВаше заявление будет автоматически сохраняться по мере перехода к каждой странице. \\nЕсли вам нужно сделать паузу в любой момент, нажмите кнопку **«Сохранить на потом»** внизу каждой страницы, чтобы сохранить свое заявление. \\nВы можете снова войти в систему, чтобы возобновить подачу заявки.\\n\\nКогда вы будете готовы начать, нажмите **«Далее»** ниже.\\n\\n---\\n\\n⚠️ **Важно:** \\nЧтобы сохранить актуальность и безопасность вашей информации, заявки в статусе черновика, которые вы не редактировали в течение **30 дней**, будут удалены. \\nЕсли черновик вашей заявки удален, вы все равно сможете создать и подать новую заявку, когда будете готовы подать заявку."
           },
           {
-            "id": "new_york_city_residency",
-            "title": "New York City Residency",
-            "type": "info",
+            "id": "резиденция_в_нью_йорке",
+            "title": "Резиденция в Нью-Йорке",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "You will need to upload **ONE** of the following documents to confirm your NYC residency:\\n\\n- IDNYC\\n- Driver’s License\\n- Utility Bill (dated within the last 60 days, with your address)\\n- Current lease, rent, or mortgage statement (dated within the last 60 days, with your address)\\n- Section 8 Award Letter\\n- NYCHA Certificate\\n- CFWB-027 Housing Attestation with address listed\\n- Shelter Residency Letter with address listed\\n\\nIf you do not have any of those documents, you must submit a **CFWB-067 Residency Attestation**."
+            "content": "Вам нужно будет загрузить **ОДИН** из следующих документов, чтобы подтвердить свое место жительства в Нью-Йорке:\\n\\n- Удостоверение личностиNYC\\n- Водительские права\\n- Счет за коммунальные услуги (выданный в течение последних 60 дней, с вашим адресом)\\n- Текущая выписка по аренде, договору аренды или ипотеке (выданный в течение последних 60 дней, с вашим адресом)\\n- Письмо о присуждении жилья в соответствии с разделом 8\\n- Сертификат NYCHA\\n- Подтверждение о жилье CFWB-027 с указанным адресом\\n- Письмо о проживании в приюте с указанным адресом\\n\\nЕсли у вас нет ни одного из этих документов, вы должны предоставить **Подтверждение о проживании CFWB-067**."
           },
           {
-            "id": "children_documents",
-            "title": "Children Documents",
-            "type": "info",
+            "id": "дети_документы",
+            "title": "Документы для детей",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Citizenship or Immigration Status\\nThese documents confirm the citizenship or immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for each child needing care. *Do not upload these documents for children who do not need care.*\\n\\n- Birth Certificate from US state or territory\\n- Alien Registration Card including Permanent Resident or Green Card\\n- Passport\\n- FS-240 (Consular Report of Birth Abroad)\\n- Naturalization Certificate\\n- Other documentation that proves child’s immigration status\\n\\n### Child's Relationship to Applicant\\nThese documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether they need child care.\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Passport with parent's signature\\n- Court order for legal guardian with financial responsibility\\n- Letter of guardianship\\n- Other - CFWB-058 Caretaker Attestation\\n\\nIf you are not the child's parent or stepparent, you must submit a **CFWB-058 Caretaker Attestation Form**.\\n\\n### Age of Children\\nYou will need to upload **ONE** of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Alien Registration Card\\n- Passport\\n- Official hospital documentation of the child’s birth"
+            "content": "### Гражданство или иммиграционный статус\\nЭти документы подтверждают гражданство или иммиграционный статус детей в вашей семье, для которых вы подаете заявление на помощь по уходу за детьми. Пожалуйста, загрузите один из следующих документов для каждого ребенка, нуждающегося в уходе. *Не загружайте эти документы для детей, которым не нужна забота.*\\n\\n- Свидетельство о рождении из штата или территории США\\n- Регистрационная карта иностранца, включая вид на жительство или грин-карту\\n- Паспорт\\n- FS-240 (консульское заключение о рождении за границей)\\n- Свидетельство о натурализации\\n- Другие документы, подтверждающие иммиграционный статус ребенка\\n\\n### Связь ребенка с заявителем\\nЭти документы подтверждают вашу связь с детьми в вашей семье в возрасте до 18 лет. Пожалуйста, загрузите один из следующих документов для каждого ребенка в семье в возрасте до 18 лет, независимо от того, нуждаются ли они в уходе за детьми.\\n\\n- Свидетельство о рождении\\n- Запись об усыновлении\\n- Запись о крещении\\n- Паспорт с подписью родителя\\n- Постановление суда о назначении законного опекуна с финансовой ответственностью\\n- Письмо об опеке\\n- Другое - CFWB-058 Подтверждение опекуна\\n\\nЕсли вы не являетесь родителем или отчимом ребенка, вы должны отправьте **Форму подтверждения опекуна CFWB-058**.\\n\\n### Возраст детей\\nВам необходимо загрузить **ОДИН** из следующих документов на каждого ребенка в семье в возрасте до 18 лет, независимо от того, требуется ли им уход за детьми:\\n\\n- Свидетельство о рождении\\n- Запись об усыновлении\\n- Запись о крещении\\n- Регистрационная карта иностранца\\n- Паспорт\\n- Официальная больничная документация о рождении ребенка"
           },
           {
-            "id": "employment_income",
-            "title": "Employment & Income",
-            "type": "info",
+            "id": "трудовой_доход",
+            "title": "Занятость и доход",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Income\\nThese documents confirm your family’s income.\\n\\n---\\n\\n### If You Are Employed\\nIf you are employed and receive paystubs, you must submit them to confirm your income. The number of paystubs you must submit varies by how often you get paid and whether your payment amount is the same or different each time you are paid – see the table below for details. Submit the most recent paystub you have received, followed by others in consecutive order.\\n\\n**Income Information**\\n\\n| How Often Do You Get Paid? | Always the SAME Amount | DIFFERENT Amounts Each Time |\\n|----------------------------|-------------------------|------------------------------|\\n| Weekly (Every Week) | 4 most recent, consecutive pay stubs | 12 most recent, consecutive pay stubs |\\n| Bi-Weekly (Every Two Weeks) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Semi-Monthly (Two Times Per Month) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Monthly (One Time Per Month) | 3 most recent, consecutive pay stubs | 3 most recent, consecutive pay stubs |\\n\\nIf you do not have any paystubs, you must submit a **CFWB-015 Referral to Employer for Employee Income Information Form**.\\n\\n---\\n\\n### If You Are Self-Employed\\nIf you have been self-employed for **one year or more**, you must submit a current, complete and signed income tax package (e.g., 1040, 1065, Schedule C, SE for partnership, K-1, etc.).\\n\\nIf you have been self-employed for **less than one year**, you must submit a **CFWB-031 Self-Employment Income Information Attestation Form**.\\n\\n---\\n\\n### Other Income\\nIf you receive other types of income outside or instead of employment income, you must submit your most recent check, pay stub, or current award letter that indicates the amount you receive. If your other income fluctuates, **3 months of documentation is required**.\\n\\nThis includes, but is not limited to:\\n- Income from SSI, SSD\\n- Unemployment benefits\\n- Rental income\\n- Pensions\\n- Annuities\\n- Worker’s compensation\\n- Alimony\\n- Child support"
+            "content": "### Доход\\nЭти документы подтверждают доход вашей семьи.\\n\\n---\\n\\n### Если вы работаете\\nЕсли вы работаете и получаете расчетные листки, вы должны предоставить их для подтверждения своего дохода. Количество расчетных листков, которые вы должны предоставить, зависит от того, как часто вы получаете зарплату, и является ли сумма вашего платежа одинаковой или разной каждый раз, когда вам платят — подробности см. в таблице ниже. Отправьте самый последний расчетный листок, который вы получили, а затем другие в последовательном порядке.\\n\\n**Информация о доходе**\\n\\n| Как часто вы получаете зарплату? | Всегда ОДИНАКОВАЯ сумма | Каждый раз РАЗНЫЕ суммы |\\n|----------------------------|--------------------------|------------------------------|\\n| Еженедельно (каждую неделю) | 4 последних, последовательных расчетных листка | 12 последних, последовательных расчетных листков |\\n| Раз в две недели (каждые две недели) | 2 последних последовательных платежных квитанции | 6 последних последовательных платежных квитанций |\\n| Раз в полгода (два раза в месяц) | 2 последних последовательных платежных квитанции | 6 последних последовательных платежных квитанций |\\n| Ежемесячно (один раз в месяц) | 3 последних последовательных платежных квитанции | 3 последних последовательных расчетных листка |\\n\\nЕсли у вас нет расчетных листков, вы должны предоставить **Форму направления работодателю на получение информации о доходе сотрудника CFWB-015**.\\n\\n---\\n\\n### Если вы работаете на себя\\nЕсли вы работаете на себя в течение **одного года или более**, вы должны предоставить актуальный, полный и подписанный пакет налоговой декларации (например, 1040, 1065, Приложение C, SE для партнерства, K-1 и т. д.).\\n\\nЕсли вы работаете на себя **менее одного года**, вы должны предоставить **Форму подтверждения информации о доходе от самозанятости CFWB-031**.\\n\\n---\\n\\n### Другой доход\\nЕсли вы получаете другие виды дохода помимо или вместо дохода от трудовой деятельности, вы должны предоставить последний чек, расчетный листок или текущее письмо о вознаграждении, в котором указана получаемая вами сумма. Если ваш другой доход колеблется, **требуется документация за 3 месяца**.\\n\\nСюда входит, но не ограничивается:\\n- Доход от SSI, SSD\\n- Пособия по безработице\\n- Доход от аренды\\n- Пенсии\\n- Аннуитеты\\n- Компенсация за несчастные случаи на производстве\\n- Алименты\\n- Алименты на ребенка"
           },
           {
-            "id": "reason_for_care",
-            "title": "Reason for Care",
-            "type": "info",
+            "id": "причина_заботы",
+            "title": "Причина для беспокойства",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Reason for Care\\nThese documents confirm your reason for care. Every applicant must have a qualified reason for care; in a two-parent household, parents or caretakers can have the same or different reasons for care. Only the documents related to your stated reasons for care need to be uploaded, and documentation must be uploaded for all parent or caretakers in the household.\\n\\n---\\n\\n### Working 10+ Hours Per Week\\nYour employment or self-employment income documents will cover this reason for care. You do not need to submit additional documentation.\\n\\n---\\n\\n### Participating in an Educational or Vocational Training Program\\nYou will need to upload **ONE** of the following documents to confirm your participation in vocational school, two-year college, or four-year college.\\n\\n- CFWB-005 Vocational, Education and Training Verification Form\\n- A letter from the educational or vocational training program on their official letterhead; this letter must contain all the information required in the CFWB-005 Vocational, Education and Training Verification Form.\\n\\n---\\n\\n### Looking for Work\\nYou will need to upload **ONE** of the following documents to confirm that you are looking for work.\\n\\n- CFWB-026 Work Search Record Form\\n- Approved work search plan from the NYS Dept. of Labor\\n- Proof of receipt of unemployment insurance\\n\\n---\\n\\n### Experiencing Homelessness\\nYou will need to upload **ONE** of the following documents to confirm that you are experiencing homelessness. This includes families who may be living in shelter or sharing the housing of others due to loss of housing, economic hardship, or similar reason.\\n\\n- Shelter Residency Letter (If living in Shelter, including Humanitarian Emergency Relief Centers)\\n- CFWB-027 Housing Attestation (If living doubled-up, in a place not meant for human habitation, in a hotel/motel, or in another living situation)\\n\\n---\\n\\n### Attending Services for Domestic Violence\\nYou will need to upload a referral for services from a domestic violence service provider to confirm that you are attending services for domestic violence.\\n\\n---\\n\\n### Attending Services for Substance Abuse Treatment\\nYou will need to upload a referral for a substance abuse treatment service provider to confirm that you are attending services for substance abuse treatment."
+            "content": "### Причина ухода\\nЭти документы подтверждают причину ухода. У каждого заявителя должна быть обоснованная причина ухода; в семье с двумя родителями родители или опекуны могут иметь одинаковые или разные причины ухода. Необходимо загрузить только документы, связанные с указанными вами причинами ухода, и документация должна быть загружена на всех родителей или опекунов в семье.\\n\\n---\\n\\n### Работа 10+ часов в неделю\\nВаши документы о доходе от трудоустройства или самозанятости будут покрывать эту причину ухода. Вам не нужно предоставлять дополнительную документацию.\\n\\n---\\n\\n### Участие в программе образовательной или профессиональной подготовки\\nВам необходимо загрузить **ОДИН** из следующих документов, чтобы подтвердить свое участие в профессиональном училище, двухгодичном колледже или четырехгодичном колледже.\\n\\n- Форма подтверждения профессионального, образовательного и обучающего образования CFWB-005\\n- Письмо от образовательной или профессиональной обучающей программы на официальном бланке; это письмо должно содержать всю информацию, требуемую в форме подтверждения профессионального образования, обучения и подготовки CFWB-005.\\n\\n---\\n\\n### Ищете работу\\nВам нужно будет загрузить **ОДИН** из следующих документов, чтобы подтвердить, что вы ищете работу.\\n\\n- Форма записи поиска работы CFWB-026\\n- Утвержденный план поиска работы от Департамента труда штата Нью-Йорк\\n- Подтверждение получения страхования по безработице\\n\\n---\\n\\n### Испытываете бездомность\\nВам нужно будет загрузить **ОДИН** из следующих документов, чтобы подтвердить, что вы испытываете бездомность. Сюда входят семьи, которые могут жить в приюте или делить жилье с другими людьми из-за потери жилья, экономических трудностей или по аналогичной причине.\\n\\n- Письмо о проживании в приюте (если вы живете в приюте, включая центры гуманитарной помощи)\\n- Подтверждение наличия жилья CFWB-027 (если вы живете в двух комнатах, в месте, не предназначенном для проживания людей, в гостинице/мотеле или в другой жизненной ситуации)\\n\\n---\\n\\n### Посещение служб по борьбе с домашним насилием\\nВам необходимо загрузить направление на услуги от поставщика услуг по борьбе с домашним насилием, чтобы подтвердить, что вы посещаете службы по борьбе с домашним насилием.\\n\\n---\\n\\n### Посещение служб по лечению наркотической зависимости\\nВам необходимо загрузить направление от поставщика услуг по лечению наркотической зависимости, чтобы подтвердить, что вы посещаете службы по лечению наркотической зависимости."
           },
           {
-            "id": "additional_details",
-            "title": "Additional Details",
-            "type": "info",
+            "id": "дополнительные_подробности",
+            "title": "Дополнительные подробности",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Application Scope\\nThis application is used to apply **only** for **Category 2 or 3 child care assistance** (for families not in receipt of cash assistance). To apply for **Cash Assistance** or other benefits, including **Category 1 Child Care Assistance** (for families in receipt of cash assistance), you must use the **New York State Application for Certain Benefits and Services (LDSS-2921)**.\\n\\n---\\n\\n### Exempt Applicants\\nThe following applicants may be eligible for child care assistance **without regard to income** and do not need to complete this application:\\n\\n- Foster parents who need child care assistance to allow them to work and are only applying for assistance for the foster children;\\n- Families in receipt of protective or preventive services.\\n\\n---\\n\\n### Application Completion\\nAll sections of this form must be filled out to be considered complete **unless the section is identified as optional**. If you do not complete all required sections of this form, you may not be considered for Child Care Assistance.\\n\\n---\\n\\n### Rights and Responsibilities\\nYou may obtain information about your rights and responsibilities [here](https://otda.ny.gov/programs/applications/). If you do not have access to the internet, you can call the **Administration for Children’s Services at 212-835-7610** to request that physical copies of the booklets which highlight your rights and responsibilities be mailed to you, including:\\n\\n- **LDSS-4148A**: What You Should Know About Your Rights and Responsibilities\\n- **LDSS-4148B**: What You Should Know About Social Services Programs\\n- **LDSS-4148C**: What You Should Know If You Have an Emergency"
+            "content": "### Область применения\\nДанное заявление используется для подачи заявления **только** на **помощь по уходу за ребенком категории 2 или 3** (для семей, не получающих денежную помощь). Чтобы подать заявку на **денежную помощь** или другие льготы, включая **помощь по уходу за детьми категории 1** (для семей, получающих денежную помощь), вы должны использовать **Заявление штата Нью-Йорк на определенные льготы и услуги (LDSS-2921)**.\\n\\n---\\n\\n### Освобожденные заявители\\nСледующие заявители могут иметь право на помощь по уходу за детьми **независимо от дохода** и не обязаны заполнять это заявление:\\n\\n- Приемные родители, которым нужна помощь по уходу за детьми, чтобы они могли работать, и которые подают заявку только на помощь для приемных детей;\\n- Семьи, получающие защитные или профилактические услуги.\\n\\n---\\n\\n### Заполнение заявления\\nВсе разделы этой формы должны быть заполнены, чтобы считаться заполненными, **если только раздел не указан как необязательный**. Если вы не заполните все обязательные разделы этой формы, вас могут не рассмотреть для получения помощи по уходу за детьми.\\n\\n---\\n\\n### Права и обязанности\\nВы можете получить информацию о своих правах и обязанностях [здесь](https://otda.ny.gov/programs/applications/). Если у вас нет доступа к Интернету, вы можете позвонить в **Администрацию детских служб по телефону 212-835-7610** и попросить отправить вам по почте физические копии брошюр, в которых излагаются ваши права и обязанности, в том числе:\\n\\n- **LDSS-4148A**: Что вам следует знать о своих правах и обязанностях\\n- **LDSS-4148B**: Что вам следует знать о программах социальных услуг\\n- **LDSS-4148C**: Что вам следует знать, если у вас чрезвычайная ситуация"
           }
         ]
       },
       {
-        "id": "applicant",
-        "title": "Applicant",
+        "id": "заявитель",
+        "title": "Заявитель",
         "sections": [
           {
-            "id": "personal_info",
-            "title": "Personal Information",
+            "id": "личная_информация",
+            "title": "Персональная информация",
             "fields": [
               {
-                "id": "first_name",
-                "label": "First Name",
-                "type": "text",
+                "id": "имя",
+                "label": "Имя",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "last_name",
-                "label": "Last Name",
-                "type": "text",
+                "id": "фамилия",
+                "label": "Фамилия",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "mi",
-                "label": "Middle Initial",
-                "type": "text",
+                "id": "мне",
+                "label": "Второй инициал",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "date_of_birth",
-                "label": "Date of Birth",
-                "type": "date",
+                "id": "Дата рождения",
+                "label": "Дата рождения",
+                "type": "дата",
                 "required": true,
-                "tooltip": "To edit Date of Birth click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "Чтобы изменить дату рождения, нажмите NYC ModelCity в верхнем левом углу, затем нажмите Настройки учетной записи."
               },
               {
-                "id": "sex",
-                "label": "Sex",
-                "type": "radio",
+                "id": "секс",
+                "label": "секс",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Male",
-                    "Female"
+                    "Мужской",
+                    "Женский"
                   ]
                 }
               },
               {
-                "id": "marital_status",
-                "label": "Marital Status",
-                "type": "select",
+                "id": "семейное положение",
+                "label": "Семейное положение",
+                "type": "выбирать",
                 "required": true,
-                "tooltip": "Indicate your marital status (single, married, divorced, separated or widowed).",
+                "tooltip": "Укажите Ваше семейное положение (холост, женат, разведен, живет раздельно или вдовец).",
                 "ui": {
                   "options": [
                     "",
-                    "Single",
-                    "Married",
-                    "Divorced",
-                    "Widowed",
-                    "Separated"
+                    "Одинокий",
+                    "Женатый",
+                    "В разводе",
+                    "Вдова",
+                    "Раздельный"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "contact_info",
-            "title": "Contact Information",
+            "id": "контактная_информация",
+            "title": "Контактная информация",
             "fields": [
               {
-                "id": "telephone_home",
-                "label": "Home Phone",
-                "type": "tel",
+                "id": "телефон_домашний",
+                "label": "Домашний телефон",
+                "type": "тел",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -176,9 +176,9 @@
                 }
               },
               {
-                "id": "telephone_work",
-                "label": "Work Phone",
-                "type": "tel",
+                "id": "телефон_работа",
+                "label": "Рабочий телефон",
+                "type": "тел",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -188,11 +188,11 @@
                 }
               },
               {
-                "id": "telephone_mobile_or_other",
-                "label": "Mobile or Other Phone",
-                "type": "tel",
+                "id": "телефон_мобильный_или_другой",
+                "label": "Мобильный или другой телефон",
+                "type": "тел",
                 "required": false,
-                "tooltip": "To edit Telephone (Cell or Other) click on NYC ModelCity in the top-left corner then click on Account Settings and then click on Contact.",
+                "tooltip": "Чтобы изменить телефон (сотовый или другой), нажмите NYC ModelCity в верхнем левом углу, затем нажмите Настройки учетной записи, а затем нажмите Контакты.",
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
                 },
@@ -201,196 +201,208 @@
                 }
               },
               {
-                "id": "email",
-                "label": "Email",
-                "type": "email",
+                "id": "электронная почта",
+                "label": "Электронная почта",
+                "type": "электронная почта",
                 "required": true,
-                "tooltip": "To edit email, go to NYC ID Profile tab by clicking your name at the top right corner"
+                "tooltip": "Чтобы изменить адрес электронной почты, перейдите на вкладку «Профиль удостоверения личности NYC», нажав на свое имя в правом верхнем углу."
               }
             ]
           },
           {
-            "id": "address_info",
-            "title": "Address",
-            "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings.",
+            "id": "адрес_информация",
+            "title": "Адрес",
+            "tooltip": "Чтобы изменить домашний адрес, нажмите NYC ModelCity в верхнем левом углу, затем нажмите Настройки учетной записи.",
             "ui": {
-              "autocomplete": "street",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "улица",
+              "placeholder": "Начните вводить свой почтовый адрес",
+              "overrideComponent": "АдресАвтозаполнение"
             },
             "metadata": {
               "integration": {
                 "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "feature": "АдресАвтозаполнение"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "город",
+                  "source": "местность",
                   "fallbackSources": [
-                    "postal_town",
-                    "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "почтовый_город",
+                    "уровень_подлокальности_1",
+                    "административная_область_уровень_2"
                   ]
                 },
                 {
-                  "fieldId": "borough",
-                  "source": "sublocality_level_1",
+                  "fieldId": "городок",
+                  "source": "уровень_подлокальности_1",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "административная_область_уровень_2"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "районКарта"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "zip_code", "source": "postal_code" },
-                { "fieldId": "latitude", "source": "location.latitude" },
-                { "fieldId": "longitude", "source": "location.longitude" }
+                {
+                  "fieldId": "состояние",
+                  "source": "административный_уровень_области_1"
+                },
+                {
+                  "fieldId": "почтовый индекс",
+                  "source": "Почтовый индекс"
+                },
+                {
+                  "fieldId": "широта",
+                  "source": "местоположение.широта"
+                },
+                {
+                  "fieldId": "долгота",
+                  "source": "местоположение.долгота"
+                }
               ]
             },
             "fields": [
               {
-                "id": "street",
-                "label": "Street Address",
-                "type": "text",
+                "id": "улица",
+                "label": "Адрес улицы",
+                "type": "текст",
                 "required": true,
-                "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "Чтобы изменить домашний адрес, нажмите NYC ModelCity в верхнем левом углу, затем нажмите Настройки учетной записи."
               },
               {
-                "id": "apt",
-                "label": "Apt #",
-                "type": "text",
+                "id": "уместно",
+                "label": "Кв. №",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "город",
+                "label": "Город",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "borough",
-                "label": "Borough",
-                "type": "select",
+                "id": "городок",
+                "label": "Городок",
+                "type": "выбирать",
                 "required": true,
                 "ui": {
                   "options": [
                     "",
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
-                    "Staten Island"
+                    "Бронкс",
+                    "Бруклин",
+                    "Манхэттен",
+                    "Квинс",
+                    "Статен-Айленд"
                   ]
                 }
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "состояние",
+                "label": "Состояние",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "zip_code",
-                "label": "Zip Code",
-                "type": "text",
+                "id": "почтовый индекс",
+                "label": "Почтовый индекс",
+                "type": "текст",
                 "required": true
               },
               {
-                "id": "latitude",
-                "label": "Latitude",
-                "type": "number",
+                "id": "широта",
+                "label": "Широта",
+                "type": "число",
                 "required": false
               },
               {
-                "id": "longitude",
-                "label": "Longitude",
-                "type": "number",
+                "id": "долгота",
+                "label": "Долгота",
+                "type": "число",
                 "required": false
               },
               {
                 "id": "is_temporary_address",
-                "label": "Is Temporary Address",
-                "type": "radio",
+                "label": "Временный адрес",
+                "type": "радио",
                 "required": true,
-                "tooltip": "Check YES if you are currently living in a homeless shelter, doubled-up with another family, in a hotel/motel, in a car/ bus/ train, in a park/campsite, or other temporary accomodation.",
+                "tooltip": "Отметьте «ДА», если в настоящее время вы живете в приюте для бездомных, вместе с другой семьей, в отеле/мотеле, в машине/автобусе/поезде, в парке/кемпинге или другом временном месте проживания.",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
-                "id": "currently_living_in",
-                "label": "Currently Living In",
-                "type": "select",
+                "id": "в настоящее время_живу_в",
+                "label": "В настоящее время проживает в",
+                "type": "выбирать",
                 "required": false,
                 "requiredCondition": {
                   "field": "is_temporary_address",
-                  "operator": "equals",
-                  "value": "Yes"
+                  "operator": "равно",
+                  "value": "Да"
                 },
                 "ui": {
                   "options": [
                     "",
-                    "Homeless Shelter",
-                    "Doubled-up with another Family",
-                    "Hotel/Motel",
-                    "Car, Bus, Train",
-                    "Park",
-                    "Campsite",
-                    "Other"
+                    "Приют для бездомных",
+                    "Совместно с другой семьей",
+                    "Гостиница/Мотель",
+                    "Автомобиль, Автобус, Поезд",
+                    "Парк",
+                    "Кемпинг",
+                    "Другой"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "demographics",
-            "title": "Demographics",
+            "id": "демография",
+            "title": "Демография",
             "fields": [
               {
-                "id": "ethnicity",
-                "label": "Ethnicity",
-                "type": "select",
+                "id": "этническая принадлежность",
+                "label": "Этническая принадлежность",
+                "type": "выбирать",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Hispanic",
-                    "Latino",
-                    "No",
-                    "Prefer not to answer"
+                    "испаноязычный",
+                    "латиноамериканец",
+                    "Нет",
+                    "Предпочитаю не отвечать"
                   ]
                 }
               },
               {
-                "id": "race",
-                "label": "Race",
-                "type": "checkbox",
+                "id": "раса",
+                "label": "Раса",
+                "type": "флажок",
                 "required": false,
-                "tooltip": "You may choose multiple race categories. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                "tooltip": "Вы можете выбрать несколько категорий рас. Предоставление информации о расе является добровольным и не повлияет на ваше право на получение помощи по уходу за детьми или на размер помощи, которую вам предоставит это агентство.",
                 "ui": {
                   "options": [
                     {
-                      "value": "AI",
-                      "label": "American Indian or Alaska Native"
+                      "value": "ИИ",
+                      "label": "Американский индеец или коренной житель Аляски"
                     },
                     {
-                      "value": "AS",
-                      "label": "Asian"
+                      "value": "КАК",
+                      "label": "азиатский"
                     },
                     {
-                      "value": "BL",
-                      "label": "Black or African American"
+                      "value": "БЛ",
+                      "label": "Черный или афроамериканец"
                     },
                     {
-                      "value": "HP",
-                      "label": "Native Hawaiian or Pacific Islander"
+                      "value": "л.с.",
+                      "label": "Коренной житель Гавайев или островов Тихого океана"
                     },
                     {
-                      "value": "WH",
-                      "label": "White"
+                      "value": "ВК",
+                      "label": "Белый"
                     }
                   ]
                 },
@@ -399,10 +411,10 @@
                 }
               },
               {
-                "id": "ssn",
-                "label": "Social Security Number",
-                "type": "text",
-                "tooltip": "To edit social security number click on NYC ModelCity in the top-left corner then click on Account Settings.",
+                "id": "ссн",
+                "label": "Номер социального страхования",
+                "type": "текст",
+                "tooltip": "Чтобы изменить номер социального страхования, нажмите NYC ModelCity в верхнем левом углу, затем нажмите Настройки учетной записи.",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
@@ -414,87 +426,87 @@
             ]
           },
           {
-            "id": "language_info",
-            "title": "Language Preferences",
+            "id": "информация_о_языке",
+            "title": "Языковые предпочтения",
             "fields": [
               {
-                "id": "primary_language",
-                "label": "Primary Language",
-                "type": "radio",
+                "id": "основной_язык",
+                "label": "Основной язык",
+                "type": "радио",
                 "required": true,
-                "tooltip": "Select the language that is spoken most often in your household. If “other”, provide the name of the language.",
+                "tooltip": "Выберите язык, на котором чаще всего говорят в вашей семье. Если «другой», укажите название языка.",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "Английский",
+                    "испанский",
+                    "Другой"
                   ]
                 }
               },
               {
-                "id": "preferred_language",
-                "label": "Preferred Language",
-                "type": "radio",
+                "id": "предпочитаемый_язык",
+                "label": "Предпочтительный язык",
+                "type": "радио",
                 "required": true,
-                "tooltip": "Select the language you prefer to communicate in. If “other”, provide the name of the language.",
+                "tooltip": "Выберите язык, на котором вы предпочитаете общаться. Если «другой», укажите название языка.",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "Английский",
+                    "испанский",
+                    "Другой"
                   ]
                 }
               },
               {
-                "id": "other_primary_language",
-                "label": "Other Primary Language",
-                "type": "text",
+                "id": "другой_основной_язык",
+                "label": "Другой основной язык",
+                "type": "текст",
                 "required": false,
                 "requiredCondition": {
-                  "field": "primary_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "основной_язык",
+                  "operator": "равно",
+                  "value": "Другой"
                 }
               },
               {
-                "id": "other_preferred_language",
-                "label": "Other Preferred Language",
-                "type": "text",
+                "id": "другой_предпочитаемый_язык",
+                "label": "Другой предпочитаемый язык",
+                "type": "текст",
                 "required": false,
                 "requiredCondition": {
-                  "field": "preferred_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "предпочитаемый_язык",
+                  "operator": "равно",
+                  "value": "Другой"
                 }
               }
             ]
           },
           {
-            "id": "cash_assistance",
-            "title": "Cash Assistance",
+            "id": "денежная_помощь",
+            "title": "Денежная помощь",
             "fields": [
               {
-                "id": "has_cash_assistance",
-                "label": "Do you receive Cash Assistance?",
-                "type": "radio",
+                "id": "имеет_денежную_помощь",
+                "label": "Получаете ли вы денежную помощь?",
+                "type": "радио",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
                 "id": "ca_number",
-                "label": "Cash Assistance Number",
-                "type": "text",
+                "label": "Номер денежной помощи",
+                "type": "текст",
                 "required": false,
                 "requiredCondition": {
                   "condition": {
-                    "field": "has_cash_assistance",
-                    "operator": "equals",
-                    "value": "Yes"
+                    "field": "имеет_денежную_помощь",
+                    "operator": "равно",
+                    "value": "Да"
                   }
                 }
               }
@@ -503,124 +515,124 @@
         ]
       },
       {
-        "id": "children_needing_care",
-        "title": "Children Needing Care",
+        "id": "дети_нуждающиеся_в_уходе",
+        "title": "Дети, нуждающиеся в уходе",
         "sections": [
           {
             "id": "child_details",
-            "title": "Child Details",
+            "title": "Детали ребенка",
             "required": true,
             "fields": [
               {
-                "id": "children",
-                "label": "Children Needing Care",
-                "type": "group",
+                "id": "дети",
+                "label": "Дети, нуждающиеся в уходе",
+                "type": "группа",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                  "first_name",
-                  "last_name",
-                  "date_of_birth",
-                  "relationship_to_applicant"
+                    "имя",
+                    "фамилия",
+                    "Дата рождения",
+                    "отношение_к_заявителю"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "имя",
+                    "label": "Имя",
+                    "type": "текст",
                     "required": true,
-                    "tooltip": "Provide the first name, last name, and middle initial of each child you are applying for child care assistance for."
+                    "tooltip": "Укажите имя, фамилию и инициал отчества каждого ребенка, на получение помощи по уходу за ребенком для которого вы подаете заявление."
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "фамилия",
+                    "label": "Фамилия",
+                    "type": "текст",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "мне",
+                    "label": "Второй инициал",
+                    "type": "текст",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "отношение_к_заявителю",
+                    "label": "Отношение к заявителю",
+                    "type": "выбирать",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "Child",
-                        "Grandchild",
-                        "Foster Child",
-                        "Other"
+                        "Ребенок",
+                        "Внук",
+                        "Приемный ребенок",
+                        "Другой"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "Дата рождения",
+                    "label": "Дата рождения",
+                    "type": "дата",
                     "required": true,
-                    "tooltip": "Provide the date of birth."
+                    "tooltip": "Укажите дату рождения."
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
-                    "type": "radio",
+                    "id": "секс",
+                    "label": "секс",
+                    "type": "радио",
                     "required": true,
-                    "tooltip": "Select to indicate the sex.",
+                    "tooltip": "Выберите, чтобы указать пол.",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "Мужской",
+                        "Женский"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "этническая принадлежность",
+                    "label": "Этническая принадлежность Испаноязычный или латиноамериканец",
+                    "type": "выбирать",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each child in need of child care is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for child care assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Отметьте «ДА» или «НЕТ», чтобы указать, является ли каждый ребенок, нуждающийся в уходе за ребенком, испаноговорящим или латиноамериканцем или нет. Предоставление информации об этнической принадлежности является добровольным и не повлияет на ваше право на помощь по уходу за ребенком или на объем помощи, которую вам предоставит это агентство.",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "Да",
+                        "Нет",
+                        "Предпочитаю не отвечать"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "раса",
+                    "label": "Раса",
+                    "type": "флажок",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single child. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Вы можете выбрать несколько расовых категорий для одного ребенка. Предоставление информации о расе является добровольным и не повлияет на ваше право на получение помощи по уходу за детьми или на размер помощи, которую вам предоставит это агентство.",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "ИИ",
+                          "label": "Американский индеец или коренной житель Аляски"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "КАК",
+                          "label": "азиатский"
                         },
                         {
-                          "value": "BL",
-                          "label": "Black or African American"
+                          "value": "БЛ",
+                          "label": "Черный или афроамериканец"
                         },
                         {
-                          "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "value": "л.с.",
+                          "label": "Коренной житель Гавайев или островов Тихого океана"
                         },
                         {
-                          "value": "WH",
-                          "label": "White"
+                          "value": "ВК",
+                          "label": "Белый"
                         }
                       ]
                     },
@@ -629,11 +641,11 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "ссн",
+                    "label": "Номер социального страхования",
+                    "type": "текст",
                     "required": false,
-                    "tooltip": "Provide each child’s Social Security Number (SSN). You are not required to provide SSNs. They may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "Укажите номер социального страхования (SSN) каждого ребенка. Вы не обязаны предоставлять номера SSN. Они могут использоваться федеральными, государственными и местными агентствами для предотвращения дублирования услуг и мошенничества, а также для федеральной отчетности.",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
@@ -642,41 +654,41 @@
                     }
                   },
                   {
-                    "id": "do_both_parents_reside_in_home",
-                    "label": "Do both parents reside in the home?",
-                    "type": "radio",
+                    "id": "оба_родителя_проживают_дома",
+                    "label": "Проживают ли оба родителя в доме?",
+                    "type": "радио",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether both of the child’s parents live in the home.",
+                    "tooltip": "Отметьте «ДА» или «НЕТ», чтобы указать, проживают ли в доме оба родителя ребенка.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Да",
+                        "Нет"
                       ]
                     }
                   },
                   {
-                    "id": "has_disability",
-                    "label": "Does the child have a disability?",
-                    "type": "radio",
+                    "id": "имеет_инвалидность",
+                    "label": "Имеет ли ребенок инвалидность?",
+                    "type": "радио",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether the child needing child care has a disability.",
+                    "tooltip": "Отметьте «ДА» или «НЕТ», чтобы указать, имеет ли ребенок, нуждающийся в уходе, инвалидность.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Да",
+                        "Нет"
                       ]
                     }
                   },
                   {
-                    "id": "is_immigration_status_satisfactory",
-                    "label": "Is child U.S. Citizen, U.S. National, or person with satisfactory immigration status?",
-                    "type": "radio",
+                    "id": "удовлетворительный_иммиграционный_статус",
+                    "label": "Является ли ребенок гражданином США, подданным США или лицом с удовлетворительным иммиграционным статусом?",
+                    "type": "радио",
                     "required": true,
-                    "tooltip": "You will only be asked about the immigration status of the children in need of care. Other members of the family will not need to state or prove their immigration status. Your child will be eligible for care if they are a U.S. citizen, a legal permanent resident (green card holder), a refugee, or an asylee; have a T-visa; or hold another qualified immigration status. Please select “Yes” if your child holds one of these statuses.",
+                    "tooltip": "Вас спросят об иммиграционном статусе только тех детей, которым нужна забота. Другим членам семьи не нужно будет указывать или доказывать свой иммиграционный статус. Ваш ребенок будет иметь право на заботу, если он является гражданином США, законным постоянным жителем (обладателем грин-карты), беженцем или лицом, получившим убежище; имеет визу T; или имеет другой квалифицированный иммиграционный статус. Выберите «Да», если у вашего ребенка есть один из этих статусов.",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Да",
+                        "Нет"
                       ]
                     }
                   }
@@ -687,142 +699,146 @@
         ]
       },
       {
-        "id": "family_members",
-        "title": "Family Members",
+        "id": "члены_семьи",
+        "title": "Члены семьи",
         "sections": [
           {
-            "id": "household_members_info",
-            "title": "Household Members Information",
-            "type": "info",
+            "id": "информация_о_членах_домохозяйства",
+            "title": "Информация о членах семьи",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**List the household members who do _not_ need child care.**\\n\\nIf applicable, list:\\n\\n- Your **spouse**, your child’s **second parent**, **caretaker**, or **step-parent**\\n- Any other **adult with whom you share a child**, if they live in your home\\n\\nThen, if applicable, list:\\n\\n- Any **siblings under the age of 18** who live in your home\\n\\n> **Only list other household members** — such as **aunts, uncles, cousins, grandparents, or friends** — _if they have financial responsibility_ for the child.\\n\\nA household member with financial responsibility, other than a parent or step-parent, is one who has a **letter or order of guardianship**.\\n\\n**Otherwise, do not include them.**"
+            "content": "**Перечислите членов семьи, которые _не_ нуждаются в уходе за детьми.**\\n\\nЕсли применимо, перечислите:\\n\\n- Ваш **супруг**, **второй родитель** вашего ребенка, **опекун** или **отчим**\\n- Любой другой **взрослый, с которым вы делите ребенка**, если они живут в вашем доме\\n\\nЗатем, если применимо, перечислите:\\n\\n- Любые **братья и сестры в возрасте до 18 лет**, которые живут в вашем доме\\n\\n> **Перечислите только других членов семьи** — таких как **тети, дяди, кузены, бабушки и дедушки или друзья** — _если они несут финансовую ответственность_ за ребенка.\\n\\nЧлен семьи с финансовой ответственностью, кроме родителя или отчима, — это тот, у кого есть **письмо или постановление об опеке**.\\n\\n**В противном случае не включайте их.**"
           },
           {
-            "id": "family_member_details",
-            "title": "Household Member Details",
-            "description": "Include household members who do not need child care assistance (e.g., spouse, partner, other children).",
+            "id": "сведения_о_члене_семьи",
+            "title": "Сведения о членах семьи",
+            "description": "Включите членов домохозяйства, которым не нужна помощь по уходу за детьми (например, супруг(а), партнер, другие дети).",
             "fields": [
               {
-                "id": "familymember",
-                "label": "Family Members",
-                "type": "group",
+                "id": "член семьи",
+                "label": "Члены семьи",
+                "type": "группа",
                 "requiredCondition": {
-                  "repeatingGroup": "children",
-                  "operator": "ANY",
-                  "condition": { "field": "do_both_parents_reside_in_home", "operator": "equals", "value": "Yes" }
-                },  
+                  "repeatingGroup": "дети",
+                  "operator": "ЛЮБОЙ",
+                  "condition": {
+                    "field": "оба_родителя_проживают_дома",
+                    "operator": "равно",
+                    "value": "Да"
+                  }
+                },
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "first_name",
-                    "last_name",
-                    "relationship_to_applicant",
-                    "date_of_birth"
+                    "имя",
+                    "фамилия",
+                    "отношение_к_заявителю",
+                    "Дата рождения"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "имя",
+                    "label": "Имя",
+                    "type": "текст",
                     "required": true,
-                    "tooltip": "Provide last and first name, and middle initial if applicable."
+                    "tooltip": "Укажите фамилию и имя, а также инициал отчества, если применимо."
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "фамилия",
+                    "label": "Фамилия",
+                    "type": "текст",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "мне",
+                    "label": "Второй инициал",
+                    "type": "текст",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "отношение_к_заявителю",
+                    "label": "Отношение к заявителю",
+                    "type": "выбирать",
                     "required": true,
-                    "tooltip": "Provide each person’s relationship to you (e.g. spouse, partner, child, foster parent, other).",
+                    "tooltip": "Укажите, кем приходится вам каждый человек (например, супруг, партнер, ребенок, приемный родитель и т. д.).",
                     "ui": {
                       "options": [
                         "",
-                        "Spouse",
-                        "Partner",
-                        "Foster Parent",
-                        "Child",
-                        "Other"
+                        "Супруг",
+                        "Партнер",
+                        "Приемный родитель",
+                        "Ребенок",
+                        "Другой"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "Дата рождения",
+                    "label": "Дата рождения",
+                    "type": "дата",
                     "required": true,
-                    "tooltip": "Provide the family member's date of birth."
+                    "tooltip": "Укажите дату рождения члена семьи."
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
-                    "type": "radio",
+                    "id": "секс",
+                    "label": "секс",
+                    "type": "радио",
                     "required": true,
-                    "tooltip": "Indicate the sex for each family member listed.",
+                    "tooltip": "Укажите пол каждого перечисленного члена семьи.",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "Мужской",
+                        "Женский"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "этническая принадлежность",
+                    "label": "Этническая принадлежность Испаноязычный или латиноамериканец",
+                    "type": "выбирать",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each member in the household is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Отметьте «ДА» или «НЕТ», чтобы указать, является ли каждый член семьи испаноговорящим или латиноамериканцем или нет. Предоставление информации об этнической принадлежности является добровольным и не повлияет на ваше право на получение помощи по уходу за детьми или на размер помощи, которую вам предоставит это агентство.",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "Да",
+                        "Нет",
+                        "Предпочитаю не отвечать"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "раса",
+                    "label": "Раса",
+                    "type": "флажок",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single person. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "Вы можете выбрать несколько категорий расы для одного человека. Предоставление информации о расе является добровольным и не повлияет на ваше право на получение помощи по уходу за детьми или на размер помощи, которую вам предоставит это агентство.",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "ИИ",
+                          "label": "Американский индеец или коренной житель Аляски"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "КАК",
+                          "label": "азиатский"
                         },
                         {
-                          "value": "BL",
-                          "label": "Black or African American"
+                          "value": "БЛ",
+                          "label": "Черный или афроамериканец"
                         },
                         {
-                          "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "value": "л.с.",
+                          "label": "Коренной житель Гавайев или островов Тихого океана"
                         },
                         {
-                          "value": "WH",
-                          "label": "White"
+                          "value": "ВК",
+                          "label": "Белый"
                         }
                       ]
                     },
@@ -831,11 +847,11 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "ссн",
+                    "label": "Номер социального страхования",
+                    "type": "текст",
                     "required": false,
-                    "tooltip": "Fill in the Social Security Number (SSN) for your family members. SSN is optional. SSN may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "Введите номер социального страхования (SSN) для членов вашей семьи. SSN необязателен. SSN может использоваться федеральными, государственными и местными агентствами для предотвращения дублирования услуг и мошенничества, а также для федеральной отчетности.",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
@@ -850,28 +866,28 @@
         ]
       },
       {
-        "id": "child_family_needs",
-        "title": "Child / Family Needs",
+        "id": "потребности_семьи_ребенка",
+        "title": "Потребности ребенка/семьи",
         "sections": [
           {
-            "id": "assistance_reason",
-            "title": "Reason for Child Care Assistance",
-            "description": "Select one or two reasons you are requesting Child Care Assistance.",
-            "tooltip": "Select one reason. In a two-parent household, parents/caretakers can have the same or different reasons for needing child care. Both parents/caretakers will be required to submit documentation in support of their own reason. If you are living in temporary housing, please select Homelessness even if you have another reason that applies to you.",
+            "id": "помощь_причина",
+            "title": "Причина предоставления помощи по уходу за ребенком",
+            "description": "Выберите одну или две причины, по которым вы запрашиваете помощь по уходу за ребенком.",
+            "tooltip": "Выберите одну причину. В семье с двумя родителями родители/опекуны могут иметь одинаковые или разные причины для необходимости ухода за детьми. Оба родителя/опекуна должны будут предоставить документацию в поддержку своей причины. Если вы живете во временном жилье, выберите Бездомность, даже если у вас есть другая причина, которая относится к вам.",
             "fields": [
               {
-                "id": "assistance_reason",
-                "label": "Reason(s) for Assistance",
-                "type": "select",
+                "id": "помощь_причина",
+                "label": "Причина(ы) для помощи",
+                "type": "выбирать",
                 "required": true,
                 "ui": {
                   "options": [
                     "",
-                    "Employment",
-                    "Looking for Work",
-                    "Vocational Training/Educational Activities",
-                    "Receiving Domestic Violence Services",
-                    "Homelessness"
+                    "Работа",
+                    "Ищу работу",
+                    "Профессиональное обучение/образовательная деятельность",
+                    "Получение услуг по борьбе с домашним насилием",
+                    "Бездомность"
                   ]
                 },
                 "constraints": {
@@ -885,72 +901,72 @@
             ]
           },
           {
-            "id": "military_status",
-            "title": "Military and Parental Availability",
-            "description": "Provide information about parental military status and availability for child care.",
+            "id": "военный_статус",
+            "title": "Военная и родительская доступность",
+            "description": "Предоставьте информацию о статусе военнослужащих родителей и возможности ухода за детьми.",
             "fields": [
               {
-                "id": "is_parent_currently_active_in_military",
-                "label": "Is a Parent Currently Active Full-Time in the U.S. Military?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently active full-time in the U.S. Military.",
-                "type": "radio",
+                "id": "является_родителем_в_настоящее_время_в_войске",
+                "label": "Является ли родитель в настоящее время действующим постоянным членом вооруженных сил США?",
+                "tooltip": "Отметьте «ДА» или «НЕТ», чтобы указать, служит ли родитель в настоящее время на постоянной основе в Вооруженных силах США.",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
-                "id": "is_parent_mem_of_guard_or_mru",
-                "label": "Is a Parent a Member of National Guard or Military Reserve Unit?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently a member of a National Guard or Military Reserve Unit.",
-                "type": "radio",
+                "id": "является_родителем_членом_охранника_или_мру",
+                "label": "Является ли родитель членом Национальной гвардии или резервного подразделения?",
+                "tooltip": "Отметьте «ДА» или «НЕТ», чтобы указать, является ли родитель в настоящее время членом Национальной гвардии или резервного подразделения.",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
-                "id": "is_non_custodial_parent_available",
-                "label": "Is the Non-Custodial Parent Available to Provide Care?",
-                "tooltip": "Check “YES” or “NO” to indicate whether there is a non-custodial parent available to provide child care.",
-                "type": "radio",
+                "id": "доступен_родитель_не_опекун",
+                "label": "Может ли родитель, не являющийся опекуном, обеспечить уход?",
+                "tooltip": "Отметьте «ДА» или «НЕТ», чтобы указать, есть ли родитель, не являющийся опекуном, который может обеспечить уход за ребенком.",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "duplicate_application",
-            "title": "Other Applications",
-            "description": "Indicate if you are also applying for or receiving child care from other agencies.",
-            "tooltip": "Indicate whether you are currently receiving or have applied for child care assistance with one of the agencies or organizations listed below. Note: If you are receiving Cash Assistance and are interested in child care assistance, you must apply through the Human Resources Administration. Reach out to your Benefits Access Center or visit the Human Resources Administration webpage.",
+            "id": "дубликат_приложения",
+            "title": "Другие приложения",
+            "description": "Укажите, подаете ли вы заявку на получение услуг по уходу за детьми или получаете их от других агентств.",
+            "tooltip": "Укажите, получаете ли вы в настоящее время или подавали ли заявку на получение помощи по уходу за ребенком в одном из агентств или организаций, перечисленных ниже. Примечание: если вы получаете денежную помощь и заинтересованы в помощи по уходу за ребенком, вы должны подать заявку через Управление кадров. Обратитесь в свой Центр доступа к пособиям или посетите веб-страницу Управления кадров.",
             "fields": [
               {
-                "id": "duplicate_app",
-                "label": "Are You Receiving or Applying for Child Care Through Another Agency?",
-                "type": "select",
+                "id": "дубликат_приложения",
+                "label": "Получаете ли вы услуги по уходу за ребенком или подаете ли вы заявку на них через другое агентство?",
+                "type": "выбирать",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Not Applicable",
-                    "Department of Education (DOE)",
-                    "Human Resources Administration (HRA)",
-                    "Department of Youth and Community Development (DYCD)",
-                    "Department of Homeless Services (DHS)",
-                    "Consortium for Worker Education (CWE)",
-                    "Administration for Children's Services (ACS)"
+                    "Непригодный",
+                    "Департамент образования (ДО)",
+                    "Управление кадровых ресурсов (HRA)",
+                    "Департамент по делам молодежи и общественного развития (DYCD)",
+                    "Департамент по делам бездомных (DHS)",
+                    "Консорциум по образованию работников (CWE)",
+                    "Администрация детских служб (ACS)"
                   ]
                 }
               }
@@ -959,370 +975,370 @@
         ]
       },
       {
-        "id": "employment",
-        "title": "Employment",
+        "id": "работа",
+        "title": "Работа",
         "sections": [
           {
-            "id": "employment_precheck",
-            "title": "Tell us about your employment",
-            "description": "Tell us about your employment",
+            "id": "предварительная_проверка_занятости",
+            "title": "Расскажите нам о своей работе",
+            "description": "Расскажите нам о своей работе",
             "fields": [
               {
-                "id": "applicant_emp_income_indicator",
-                "label": "Does applicant earn any income/ wages from employment? ",
-                "type": "radio",
+                "id": "индикатор_дохода_заявителя_emp",
+                "label": "Получает ли заявитель какой-либо доход/заработную плату от трудоустройства?",
+                "type": "радио",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
                 "id": "coparent_emp_income_indicator",
-                "label": "Does Coparent/2nd Guardian earn any income/ wages from employment? ",
-                "type": "radio",
+                "label": "Получает ли сородитель/второй опекун какой-либо доход/заработную плату от трудоустройства?",
+                "type": "радио",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "applicant_jobs",
-            "title": "Applicant Employment Information",
-            "description": "Enter details for up to two jobs held by the applicant.",
+            "id": "соискатель_вакансии",
+            "title": "Информация о трудоустройстве соискателя",
+            "description": "Введите данные о двух должностях, занимаемых заявителем.",
             "visibilityCondition": {
-              "field": "applicant_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "field": "индикатор_дохода_заявителя_emp",
+              "operator": "равно",
+              "value": "Да"
             },
             "fields": [
               {
-                "id": "applicant_1st_job_start_date",
-                "label": "1st Job - Start Date",
-                "type": "date",
+                "id": "дата_начала_работы_1-го_заявителя",
+                "label": "1-я работа - дата начала",
+                "type": "дата",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1-я работа"
                 }
               },
               {
-                "id": "applicant_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "заявитель_1st_job_rotating_shift",
+                "label": "1-я работа — сменный график?",
+                "type": "радио",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ],
-                  "group": "1st Job"
+                  "group": "1-я работа"
                 }
               },
               {
-                "id": "applicant_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
-                "type": "radio",
+                "id": "заявитель_1st_job_requires_overtime",
+                "label": "1-я работа — требуются сверхурочные?",
+                "type": "радио",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ],
-                  "group": "1st Job"
+                  "group": "1-я работа"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "имя_работодателя_1-й_вакансии",
+                "label": "1-я работа - Имя работодателя",
+                "type": "текст",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1-я работа"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "телефон_работодателя_для_первой_работы",
+                "label": "1-я работа - телефон работодателя",
+                "type": "тел",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1-я работа"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "улица_работодателя_1-го_предложения_работы",
+                "label": "1-я работа - почтовый адрес работодателя",
+                "type": "текст",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1-я работа"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "город_работодателя_1-го_вакансии",
+                "label": "1-я работа - Работодатель Город",
+                "type": "текст",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1-я работа"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "заявитель_1st_job_employer_state",
+                "label": "1-я работа - Работодатель Штат",
+                "type": "текст",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1-я работа"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "почтовый индекс_работодателя_1-го_заявителя_на_вакансию",
+                "label": "1-я работа - почтовый индекс работодателя",
+                "type": "текст",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "1-я работа"
                 }
               },
               {
-                "id": "applicant_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
-                "type": "date",
+                "id": "дата_начала_второй_работы_заявителя",
+                "label": "2-я работа - дата начала",
+                "type": "дата",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2-я работа"
                 }
               },
               {
-                "id": "applicant_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "соискатель_второй_работы_ротационная_смена",
+                "label": "2-я работа — сменный график?",
+                "type": "радио",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ],
-                  "group": "2nd Job"
+                  "group": "2-я работа"
                 }
               },
               {
-                "id": "applicant_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
-                "type": "radio",
+                "id": "соискатель_2nd_job_requires_overtime",
+                "label": "2-я работа — требуются сверхурочные?",
+                "type": "радио",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ],
-                  "group": "2nd Job"
+                  "group": "2-я работа"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "имя_работодателя_на_вторую_должность",
+                "label": "2-я работа - Имя работодателя",
+                "type": "текст",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2-я работа"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "телефон_работодателя_второй_работы",
+                "label": "2-я работа - телефон работодателя",
+                "type": "тел",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2-я работа"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "улица_работодателя_второй_работы",
+                "label": "2-я работа - почтовый адрес работодателя",
+                "type": "текст",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2-я работа"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "город_работодателя_второй_работы_заявителя",
+                "label": "2-я работа - Работодатель Город",
+                "type": "текст",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2-я работа"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "заявитель_2nd_job_employer_state",
+                "label": "2-я работа - Работодатель Государство",
+                "type": "текст",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2-я работа"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "почтовый индекс_работодателя_второй_работы",
+                "label": "2-я работа - почтовый индекс работодателя",
+                "type": "текст",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "2-я работа"
                 }
               }
             ]
           },
           {
-            "id": "second_parent_jobs",
-            "title": "Second Parent Employment Information",
-            "description": "Enter details for up to two jobs held by the second parent (if applicable).",
+            "id": "вторые_родительские_работы",
+            "title": "Информация о трудоустройстве второго родителя",
+            "description": "Введите данные о двух должностях, занимаемых вторым родителем (если применимо).",
             "visibilityCondition": {
               "field": "coparent_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "operator": "равно",
+              "value": "Да"
             },
             "fields": [
               {
-                "id": "second_parent_1st_job_start_date",
-                "label": "1st Job - Start Date",
-                "type": "date",
+                "id": "дата_начала_работы_второго_родителя_1st",
+                "label": "1-я работа - дата начала",
+                "type": "дата",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "вторая_родительская_первая_работа_ротационная_смена",
+                "label": "1-я работа — сменный график?",
+                "type": "радио",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
-                "type": "radio",
+                "id": "вторая_родительская_первая_работа_требует_сверхурочной_работы",
+                "label": "1-я работа — требуются сверхурочные?",
+                "type": "радио",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "имя_работодателя_второго_родителя_первого_задания",
+                "label": "1-я работа - Имя работодателя",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "телефон_работодателя_второго_родителя_первого_занятия",
+                "label": "1-я работа - телефон работодателя",
+                "type": "тел",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "вторая_родительская_первая_работа_работодатель_улица",
+                "label": "1-я работа - почтовый адрес работодателя",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "второй_родитель_первый_город_работодателя_работы",
+                "label": "1-я работа - Работодатель Город",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "второй_родитель_первый_работодатель_государство",
+                "label": "1-я работа - Работодатель Штат",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "индекс_работодателя_второго_родителя_1-го_предложения_работодателя",
+                "label": "1-я работа - почтовый индекс работодателя",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
-                "type": "date",
+                "id": "дата_начала_второй_работы_второго_родителя",
+                "label": "2-я работа - дата начала",
+                "type": "дата",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "второй_родитель_вторая_работа_ротационная_смена",
+                "label": "2-я работа — сменный график?",
+                "type": "радио",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
-                "type": "radio",
+                "id": "второй_родитель_вторая_работа_требует_сверхурочной_работы",
+                "label": "2-я работа — требуются сверхурочные?",
+                "type": "радио",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "имя_работодателя_второго_родителя_второй_работы",
+                "label": "2-я работа - Имя работодателя",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "телефон_работодателя_второго_родителя_второй_работы",
+                "label": "2-я работа - телефон работодателя",
+                "type": "тел",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "улица_работодателя_второго_родителя_второй_работы",
+                "label": "2-я работа - почтовый адрес работодателя",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "второй_родитель_город_работодателя_второй_работы",
+                "label": "2-я работа - Работодатель Город",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "второй_родитель_второй_работодатель_государство",
+                "label": "2-я работа - Работодатель Государство",
+                "type": "текст",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "индекс_работодателя_второго_родителя_второй_работы",
+                "label": "2-я работа - почтовый индекс работодателя",
+                "type": "текст",
                 "required": false
               }
             ]
@@ -1330,29 +1346,29 @@
         ]
       },
       {
-        "id": "schedule",
-        "title": "Work/Activity/Travel Time Schedule",
+        "id": "расписание",
+        "title": "График работы/деятельности/путешествий",
         "sections": [
           {
-            "id": "schedule_section_info",
-            "title": "Schedule Information",
-            "type": "info",
+            "id": "информация_о_разделе_расписания",
+            "title": "Информация о расписании",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please indicate what days and hours you will need child care for based on your reason for care.\\n\\n- **Employed**: Indicate the hours you attend work\\n- **Educational or Vocational Program**: Indicate the hours you attend school or your program\\n- **Looking for Work**: Indicate the hours you spend looking for work\\n- **Homeless**: Indicate the hours you spend looking for housing\\n- **Attending Services for Domestic Violence**: Indicate the hours you attend services.\\n- **Attending Services for Substance Abuse Treatment**: Indicate the hours you attend services."
+            "content": "Укажите, в какие дни и часы вам понадобится уход за ребенком, исходя из причины вашего ухода.\\n\\n- **Работаю**: Укажите часы, которые вы посещаете на работе.\\n- **Образовательная или профессиональная программа**: Укажите часы, которые вы посещаете школу или свою программу.\\n- **Ищу работу**: Укажите часы, которые вы тратите на поиск работы.\\n- **Бездомный**: Укажите часы, которые вы тратите на поиск жилья.\\n- **Посещаю службы помощи жертвам домашнего насилия**: Укажите часы, которые вы посещаете службы.\\n- **Посещаю службы лечения наркотической зависимости**: Укажите часы, которые вы посещаете службы."
           },
           {
-            "id": "first_parent_activity_schedule",
-            "title": "First Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the first parent's activities.",
+            "id": "расписание_активностей_первого_родителя",
+            "title": "Расписание мероприятий для родителей",
+            "description": "Введите время начала и окончания для каждого дня недели для мероприятий первого родителя.",
             "ui": {
-              "layout": "table",
+              "layout": "стол",
               "columns": [
-                "Start Time",
-                "End Time"
+                "Время начала",
+                "Время окончания"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
@@ -1362,162 +1378,162 @@
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "Понедельник",
+                  "Вторник",
+                  "Среда",
+                  "Четверг",
+                  "Пятница"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "Применить выбранное расписание к другим будням",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "Понедельник",
+                  "Вторник",
+                  "Среда",
+                  "Четверг",
+                  "Пятница",
+                  "Суббота",
+                  "Воскресенье"
                 ]
               }
             },
             "fields": [
               {
                 "id": "fp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "label": "Понедельник С",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Понедельник",
                   "column": 1
                 }
               },
               {
                 "id": "fp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "label": "С понедельника по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Понедельник",
                   "column": 2
                 }
               },
               {
                 "id": "fp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "label": "Вторник От",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Вторник",
                   "column": 1
                 }
               },
               {
                 "id": "fp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "label": "Вторник по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Вторник",
                   "column": 2
                 }
               },
               {
                 "id": "fp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "label": "Среда С",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Среда",
                   "column": 1
                 }
               },
               {
                 "id": "fp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "label": "Среда по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Среда",
                   "column": 2
                 }
               },
               {
                 "id": "fp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "label": "Четверг С",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Четверг",
                   "column": 1
                 }
               },
               {
                 "id": "fp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "label": "Четверг",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Четверг",
                   "column": 2
                 }
               },
               {
-                "id": "fp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "id": "fp_пятница_от",
+                "label": "Пятница От",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Пятница",
                   "column": 1
                 }
               },
               {
                 "id": "fp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "label": "Пятница по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Пятница",
                   "column": 2
                 }
               },
               {
                 "id": "fp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "label": "Суббота От",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Суббота",
                   "column": 1
                 }
               },
               {
                 "id": "fp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "label": "Суббота по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Суббота",
                   "column": 2
                 }
               },
               {
                 "id": "fp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "label": "Воскресенье С",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Воскресенье",
                   "column": 1
                 }
               },
               {
                 "id": "fp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "label": "Воскресенье по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Воскресенье",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "second_parent_activity_schedule",
-            "title": "Second Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the second parent's activities.",
+            "id": "расписание_активности_второго_родителя",
+            "title": "Расписание мероприятий для второго родителя",
+            "description": "Введите время начала и окончания занятий второго родителя для каждого дня недели.",
             "ui": {
-              "layout": "table",
+              "layout": "стол",
               "columns": [
-                "Start Time",
-                "End Time"
+                "Время начала",
+                "Время окончания"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
@@ -1527,310 +1543,310 @@
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "Понедельник",
+                  "Вторник",
+                  "Среда",
+                  "Четверг",
+                  "Пятница"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "Применить выбранное расписание к другим будням",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "Понедельник",
+                  "Вторник",
+                  "Среда",
+                  "Четверг",
+                  "Пятница",
+                  "Суббота",
+                  "Воскресенье"
                 ]
               }
             },
             "fields": [
               {
                 "id": "sp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "label": "Понедельник С",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Понедельник",
                   "column": 1
                 }
               },
               {
                 "id": "sp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "label": "С понедельника по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "Понедельник",
                   "column": 2
                 }
               },
               {
                 "id": "sp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "label": "Вторник От",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Вторник",
                   "column": 1
                 }
               },
               {
                 "id": "sp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "label": "Вторник по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "Вторник",
                   "column": 2
                 }
               },
               {
                 "id": "sp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "label": "Среда С",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Среда",
                   "column": 1
                 }
               },
               {
                 "id": "sp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "label": "Среда по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "Среда",
                   "column": 2
                 }
               },
               {
                 "id": "sp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "label": "Четверг С",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Четверг",
                   "column": 1
                 }
               },
               {
                 "id": "sp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "label": "Четверг",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "Четверг",
                   "column": 2
                 }
               },
               {
-                "id": "sp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "id": "sp_пятница_от",
+                "label": "Пятница От",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Пятница",
                   "column": 1
                 }
               },
               {
                 "id": "sp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "label": "Пятница по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "Пятница",
                   "column": 2
                 }
               },
               {
                 "id": "sp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "label": "Суббота От",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Суббота",
                   "column": 1
                 }
               },
               {
                 "id": "sp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "label": "Суббота по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "Суббота",
                   "column": 2
                 }
               },
               {
                 "id": "sp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "label": "Воскресенье С",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Воскресенье",
                   "column": 1
                 }
               },
               {
                 "id": "sp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "label": "Воскресенье по",
+                "type": "время",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "Воскресенье",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "first_parent_travel_time",
-            "title": "First Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the first parent.",
+            "id": "время_путешествия_первого_родителя",
+            "title": "Время в пути для первого родителя",
+            "description": "Введите время в пути и способ передвижения для первого родителя.",
             "fields": [
               {
                 "id": "fp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "label": "Время в пути до пункта высадки",
+                "type": "выбирать",
+                "tooltip": "Укажите типичное время в пути от работы/места проведения мероприятий до места ведения домашнего хозяйства.",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 мин.",
+                    "30 мин.",
+                    "45 мин.",
+                    "1 час",
+                    "Более 1 часа"
                   ]
                 }
               },
               {
                 "id": "fp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "label": "Время возврата (если > 1 часа)",
+                "type": "текст",
                 "requiredCondition": {
                   "field": "fp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "равно",
+                  "value": "Более 1 часа"
                 }
               },
               {
                 "id": "fp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "label": "Время в пути",
+                "type": "выбирать",
+                "tooltip": "Укажите типичное время в пути от работы/места проведения мероприятий до места ведения домашнего хозяйства.",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 мин.",
+                    "30 мин.",
+                    "45 мин.",
+                    "1 час",
+                    "Более 1 часа"
                   ]
                 }
               },
               {
                 "id": "fp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "label": "Время получения (если > 1 часа)",
+                "type": "текст",
                 "requiredCondition": {
                   "field": "fp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "равно",
+                  "value": "Более 1 часа"
                 }
               },
               {
                 "id": "fp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
-                "type": "radio",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
+                "label": "Общественный транспорт для высадки?",
+                "type": "радио",
+                "tooltip": "Укажите, пользуется ли заявитель общественным транспортом для поездок на работу/на мероприятие и обратно к поставщику услуг.",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
                 "id": "fp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
-                "type": "radio",
+                "label": "Общественный транспорт для трансфера?",
+                "tooltip": "Укажите, пользуется ли заявитель общественным транспортом для поездок на работу/на мероприятие и обратно к поставщику услуг.",
+                "type": "радио",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "second_parent_travel_time",
-            "title": "Second Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the second parent.",
+            "id": "второе_родительское_время_путешествия",
+            "title": "Время в пути для второго родителя",
+            "description": "Введите время в пути и способ передвижения для второго родителя.",
             "fields": [
               {
                 "id": "sp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
+                "label": "Время в пути до места высадки",
+                "type": "выбирать",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 мин.",
+                    "30 мин.",
+                    "45 мин.",
+                    "1 час",
+                    "Более 1 часа"
                   ]
                 }
               },
               {
                 "id": "sp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
+                "label": "Время в пути",
+                "type": "выбирать",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15 мин.",
+                    "30 мин.",
+                    "45 мин.",
+                    "1 час",
+                    "Более 1 часа"
                   ]
                 }
               },
               {
                 "id": "sp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "label": "Время возврата (если > 1 часа)",
+                "type": "текст",
                 "requiredCondition": {
                   "field": "sp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "равно",
+                  "value": "Более 1 часа"
                 }
               },
               {
                 "id": "sp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "label": "Время получения (если > 1 часа)",
+                "type": "текст",
                 "requiredCondition": {
                   "field": "sp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "равно",
+                  "value": "Более 1 часа"
                 }
               },
               {
                 "id": "sp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
-                "type": "radio",
+                "label": "Общественный транспорт для высадки?",
+                "type": "радио",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               },
               {
                 "id": "sp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
-                "type": "radio",
+                "label": "Общественный транспорт для трансфера?",
+                "type": "радио",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "Да",
+                    "Нет"
                   ]
                 }
               }
@@ -1839,122 +1855,122 @@
         ]
       },
       {
-        "id": "income",
-        "title": "Income Information",
+        "id": "доход",
+        "title": "Информация о доходах",
         "sections": [
           {
-            "id": "income_step_info",
-            "title": "Instructions",
-            "type": "info",
+            "id": "информация о_шаге_дохода",
+            "title": "Инструкции",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please include income/benefits information for yourself and, if applicable, your spouse, your child’s second caretaker, and/or any other adult with whom you share a child, if they live in your home.\\n\\nIndicate if you receive money from the following sources by selecting “Yes” or “No.” If you select “Yes,” you will be asked for additional information.\\n\\nIf the second caretaker in the household also receives the same income source, add a separate line for their income."
+            "content": "Пожалуйста, включите информацию о доходах/льготах для себя и, если применимо, вашего супруга, второго опекуна вашего ребенка и/или любого другого взрослого, с которым вы делите ребенка, если они живут в вашем доме.\\n\\nУкажите, получаете ли вы деньги из следующих источников, выбрав «Да» или «Нет». Если вы выберете «Да», вас попросят предоставить дополнительную информацию.\\n\\nЕсли второй опекун в домохозяйстве также получает тот же источник дохода, добавьте отдельную строку для его дохода."
           },
           {
-            "id": "income_sources",
-            "title": "Income Sources",
-            "description": "Provide details about all income sources applicable to the applicant or household.",
+            "id": "источники_дохода",
+            "title": "Источники дохода",
+            "description": "Предоставьте сведения обо всех источниках дохода, применимых к заявителю или домохозяйству.",
             "fields": [
               {
-                "id": "income_sources",
-                "label": "List of Income Sources",
-                "type": "group",
+                "id": "источники_дохода",
+                "label": "Список источников дохода",
+                "type": "группа",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "name_ref",
-                    "how_often",
-                    "recipient",
-                    "monthly_amount"
+                    "имя_реф",
+                    "как часто",
+                    "получатель",
+                    "ежемесячная_сумма"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "name_ref",
-                    "label": "Income Source Type",
-                    "type": "select",
+                    "id": "имя_реф",
+                    "label": "Тип источника дохода",
+                    "type": "выбирать",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "ApplicantWages",
+                        "Заработная плата заявителя",
                         "SecondParentWages",
-                        "SelfEmployment",
-                        "ChildSupport",
-                        "Alimony",
-                        "Unemployment",
-                        "SocialSecurity",
-                        "Disability",
-                        "Rental",
-                        "Dividends",
-                        "Retirement",
+                        "Самозанятость",
+                        "Поддержка детей",
+                        "Алименты",
+                        "Безработица",
+                        "Социальное обеспечение",
+                        "Инвалидность",
+                        "Аренда",
+                        "Дивиденды",
+                        "Выход на пенсию",
                         "CashAssistance",
-                        "Other"
+                        "Другой"
                       ]
                     }
                   },
                   {
-                    "id": "other_source_text",
-                    "label": "Other Source (If applicable)",
-                    "type": "text",
+                    "id": "другой_исходный_текст",
+                    "label": "Другой источник (если применимо)",
+                    "type": "текст",
                     "visibilityCondition": {
-                      "field": "name_ref",
-                      "operator": "equals",
-                      "value": "Other"
+                      "field": "имя_реф",
+                      "operator": "равно",
+                      "value": "Другой"
                     },
                     "requiredCondition": {
                       "condition": {
-                        "field": "name_ref",
-                        "operator": "equals",
-                        "value": "Other"
+                        "field": "имя_реф",
+                        "operator": "равно",
+                        "value": "Другой"
                       }
                     }
                   },
                   {
-                    "id": "is_source_applicable",
-                    "label": "Is this Source Applicable?",
-                    "type": "radio",
+                    "id": "применимо_источником",
+                    "label": "Применим ли этот источник?",
+                    "type": "радио",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "Да",
+                        "Нет"
                       ]
                     }
                   },
                   {
-                    "id": "gross_amount",
-                    "label": "Gross Amount ($)",
-                    "type": "number",
+                    "id": "общая_сумма",
+                    "label": "Общая сумма ($)",
+                    "type": "число",
                     "required": true
                   },
                   {
-                    "id": "how_often",
-                    "label": "Frequency of Income",
-                    "type": "radio",
+                    "id": "как часто",
+                    "label": "Частота дохода",
+                    "type": "радио",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Weekly",
-                        "Bi-weekly",
-                        "Monthly",
-                        "Other"
+                        "Еженедельно",
+                        "Два раза в неделю",
+                        "Ежемесячно",
+                        "Другой"
                       ]
                     }
                   },
                   {
-                    "id": "recipient",
-                    "label": "Recipient of Income",
-                    "type": "text",
+                    "id": "получатель",
+                    "label": "Получатель дохода",
+                    "type": "текст",
                     "required": true
                   },
                   {
-                    "id": "monthly_amount",
-                    "label": "Monthly Amount ($)",
-                    "type": "number",
+                    "id": "ежемесячная_сумма",
+                    "label": "Ежемесячная сумма ($)",
+                    "type": "число",
                     "required": true
                   }
                 ]
@@ -1962,38 +1978,38 @@
             ]
           },
           {
-            "id": "total_income",
-            "title": "Total Household Income",
-            "description": "Sum of all monthly income across sources.",
+            "id": "общий_доход",
+            "title": "Общий доход домохозяйства",
+            "description": "Сумма всех ежемесячных доходов из разных источников.",
             "fields": [
               {
-                "id": "total_income",
-                "label": "Total Monthly Income ($)",
-                "type": "number",
+                "id": "общий_доход",
+                "label": "Общий ежемесячный доход ($)",
+                "type": "число",
                 "required": true
               }
             ]
           },
           {
-            "id": "income_proof_section",
-            "title": "Income Proof",
+            "id": "раздел_доказательства_дохода",
+            "title": "Подтверждение дохода",
             "fields": [
               {
-                "id": "income_proof",
-                "label": "Upload Income Proof",
-                "type": "file",
+                "id": "доход_доказательство",
+                "label": "Загрузить подтверждение дохода",
+                "type": "файл",
                 "requiredCondition": {
                   "condition": {
-                    "field": "assistance_reason",
-                    "operator": "includes",
-                    "value": "Employment"
+                    "field": "помощь_причина",
+                    "operator": "включает в себя",
+                    "value": "Работа"
                   }
                 },
                 "constraints": {
                   "maxFileSizeMB": 5,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg"
+                    "приложение/pdf",
+                    "изображение/jpeg"
                   ],
                   "imageResolution": {
                     "minWidth": 800,
@@ -2001,10 +2017,10 @@
                   }
                 },
                 "metadata": {
-                  "proofCategory": "Income Verification",
+                  "proofCategory": "Подтверждение дохода",
                   "examples": [
-                    "Pay Stub",
-                    "W-2"
+                    "Платежный талон",
+                    "В-2"
                   ],
                   "multiple": true
                 }
@@ -2014,72 +2030,72 @@
         ]
       },
       {
-        "id": "provider",
-        "title": "Provider",
+        "id": "поставщик",
+        "title": "Провайдер",
         "sections": [
           {
-            "id": "provider_step_info",
-            "title": "Instructions",
-            "type": "info",
+            "id": "Информация о_шаге_провайдера",
+            "title": "Инструкции",
+            "type": "информация",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "If you are found eligible for child care assistance, you can choose center-based or home-based care from a licensed, registered, or legally exempt provider. If you choose a provider that is not licensed or registered, the provider must be enrolled as a legally exempt provider.\\n\\nIf you know which child care providers you would like your child to attend, provide the names and addresses of your choice of providers. You can leave this section blank if you do not know (it will not impact your eligibility and you will have an opportunity to select a provider if determined eligible)."
+            "content": "Если вы имеете право на помощь по уходу за ребенком, вы можете выбрать уход в центре или на дому у лицензированного, зарегистрированного или юридически освобожденного поставщика. Если вы выбираете поставщика, который не имеет лицензии или регистрации, поставщик должен быть зарегистрирован как юридически освобожденный поставщик.\\n\\nЕсли вы знаете, каких поставщиков услуг по уходу за ребенком вы хотели бы, чтобы посещал ваш ребенок, укажите имена и адреса выбранных вами поставщиков. Вы можете оставить этот раздел пустым, если вы не знаете (это не повлияет на ваше право, и у вас будет возможность выбрать поставщика, если будет установлено, что он имеет право)."
           },
           {
-            "id": "provider_choices",
-            "title": "Provider Choices",
-            "description": "Specify details of the provider where you intend to enroll the child(ren).",
+            "id": "выбор_провайдера",
+            "title": "Выбор поставщика",
+            "description": "Укажите данные поставщика услуг, куда вы собираетесь записать ребенка (детей).",
             "fields": [
               {
-                "id": "provider_choices",
-                "label": "List of Providers",
-                "type": "group",
+                "id": "выбор_провайдера",
+                "label": "Список поставщиков",
+                "type": "группа",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "provider_name",
-                    "program_number",
-                    "provider_zip_code"
+                    "имя_провайдера",
+                    "номер_программы",
+                    "почтовый_код_провайдера"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "provider_name",
-                    "label": "Provider Name",
-                    "type": "text",
+                    "id": "имя_провайдера",
+                    "label": "Имя поставщика",
+                    "type": "текст",
                     "required": true
                   },
                   {
-                    "id": "program_number",
-                    "label": "Program Number (If Applicable)",
-                    "type": "text",
+                    "id": "номер_программы",
+                    "label": "Номер программы (если применимо)",
+                    "type": "текст",
                     "required": false
                   },
                   {
-                    "id": "provider_street",
-                    "label": "Street Address",
-                    "type": "text",
+                    "id": "улица_провайдера",
+                    "label": "Адрес улицы",
+                    "type": "текст",
                     "required": true
                   },
                   {
-                    "id": "provider_city",
-                    "label": "City",
-                    "type": "text",
+                    "id": "город_провайдера",
+                    "label": "Город",
+                    "type": "текст",
                     "required": true
                   },
                   {
-                    "id": "provider_state",
-                    "label": "State",
-                    "type": "text",
+                    "id": "провайдер_государство",
+                    "label": "Состояние",
+                    "type": "текст",
                     "required": true
                   },
                   {
-                    "id": "provider_zip_code",
-                    "label": "Zip Code",
-                    "type": "text",
+                    "id": "почтовый_код_провайдера",
+                    "label": "Почтовый индекс",
+                    "type": "текст",
                     "required": true
                   }
                 ]
@@ -2089,97 +2105,97 @@
         ]
       },
       {
-        "id": "document_upload_step",
-        "title": "Document Upload",
-        "description": "The Application for Child Care Assistance (CFWB-012) must include supporting documentation. Check to ensure that documentation is provided for each requirement of subsidy eligibility.",
+        "id": "шаг_загрузки_документа",
+        "title": "Загрузка документа",
+        "description": "Заявление на получение помощи по уходу за детьми (CFWB-012) должно включать подтверждающую документацию. Убедитесь, что предоставлена документация для каждого требования права на субсидию.",
         "sections": [
           {
             "id": "nyc_residency",
-            "title": "New York City Residency",
-            "description": "These documents confirm that you live in New York City. Please upload one of the following documents.",
+            "title": "Резиденция в Нью-Йорке",
+            "description": "Эти документы подтверждают, что вы живете в Нью-Йорке. Пожалуйста, загрузите один из следующих документов.",
             "fields": [
               {
-                "id": "nyc_residency_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "тип_резиденции_nyc",
+                "label": "Выберите один из следующих вариантов:",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
                     "IDNYC",
-                    "Utility Bill",
-                    "Section 8 Award Letter",
-                    "Driver’s License",
-                    "Rent Receipt",
-                    "NYCHA Certificate",
-                    "CFWB-067 Residency Attestation",
-                    "CFWB-027 Housing Attestation with address listed",
-                    "Shelter Residency Letter with address listed",
-                    "Other"
+                    "Счет за коммунальные услуги",
+                    "Письмо о награждении по разделу 8",
+                    "Водительское удостоверение",
+                    "Квитанция об аренде",
+                    "Сертификат NYCHA",
+                    "CFWB-067 Подтверждение резидентства",
+                    "CFWB-027 Подтверждение права собственности на жилье с указанием адреса",
+                    "Письмо о проживании в приюте с указанием адреса",
+                    "Другой"
                   ]
                 }
               },
               {
-                "id": "nyc_residency_file",
-                "label": "Upload Residency Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
-                "required": true, 
+                "id": "файл_резиденции_nyc",
+                "label": "Загрузить документ, подтверждающий место жительства",
+                "description": "Чтобы добавить документ в приложение, вы можете загрузить изображение или отсканированный файл с телефона или устройства. Принимаются следующие форматы: .pdf, .gif, .jpeg, .jpg и .png размером до 25 МБ. Узнайте, как загружать файлы, посмотрев это обучающее видео.",
+                "type": "файл",
+                "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "приложение/pdf",
+                    "изображение/jpeg",
+                    "изображение/jpg",
+                    "изображение/png",
+                    "изображение/гифка"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "NYC Residency",
+                  "proofCategory": "Резиденция в Нью-Йорке",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "citizenship_status",
-            "title": "Citizenship or Immigration Status",
-            "description": "These documents confirm the citizenship/immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for ONLY each child needing care.",
+            "id": "гражданство_статус",
+            "title": "Гражданство или иммиграционный статус",
+            "description": "Эти документы подтверждают гражданство/иммиграционный статус детей в вашей семье, для которых вы подаете заявление на получение помощи по уходу за детьми. Пожалуйста, загрузите один из следующих документов ТОЛЬКО для каждого ребенка, нуждающегося в уходе.",
             "fields": [
               {
-                "id": "citizenship_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "гражданство_doc_type",
+                "label": "Выберите один из следующих вариантов:",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
-                    "US Birth Certificate",
-                    "Alien Registration Card including Permanent Resident or Green Card",
-                    "Passport",
-                    "FS-240 (Report of Birth Abroad of a U.S. Citizen)",
-                    "Naturalization Certificate",
-                    "Other"
+                    "Свидетельство о рождении в США",
+                    "Регистрационная карта иностранца, включая вид на жительство или грин-карту",
+                    "Паспорт",
+                    "FS-240 (Отчет о рождении гражданина США за границей)",
+                    "Сертификат о натурализации",
+                    "Другой"
                   ]
                 }
               },
               {
-                "id": "citizenship_doc_file",
-                "label": "Upload Citizenship/Immigration Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "гражданство_doc_file",
+                "label": "Загрузить документ о гражданстве/иммиграции",
+                "description": "Чтобы добавить документ в приложение, вы можете загрузить изображение или отсканированный файл с телефона или устройства. Принимаются следующие форматы: .pdf, .gif, .jpeg, .jpg и .png размером до 25 МБ. Узнайте, как загружать файлы, посмотрев это обучающее видео.",
+                "type": "файл",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "приложение/pdf",
+                    "изображение/jpeg",
+                    "изображение/jpg",
+                    "изображение/png",
+                    "изображение/гифка"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Citizenship/Immigration Status",
+                  "proofCategory": "Гражданство/Иммиграционный статус",
                   "multiple": false
                 }
               }
@@ -2187,44 +2203,44 @@
           },
           {
             "id": "child_relationship",
-            "title": "Child’s Relationship to Parent/Applicant",
-            "description": "These documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them or not. If you are a legal guardian with financial responsibility, you must upload a Court order OR a letter of guardianship.",
+            "title": "Отношения ребенка с родителем/заявителем",
+            "description": "Эти документы подтверждают ваши отношения с детьми в вашем домохозяйстве в возрасте до 18 лет. Пожалуйста, загрузите один из следующих документов для каждого ребенка в домохозяйстве в возрасте до 18 лет, независимо от того, требуется ли им уход за детьми или нет. Если вы являетесь законным опекуном с финансовой ответственностью, вы должны загрузить постановление суда ИЛИ письмо об опеке.",
             "fields": [
               {
-                "id": "relationship_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "тип_документа_отношений",
+                "label": "Выберите один из следующих вариантов:",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Passport with parent's signature",
-                    "Court order for legal guardian with financial responsibility",
-                    "Letter of Guardianship",
-                    "Other - CFWB-058 Caretaker Attestation"
+                    "Свидетельство о рождении",
+                    "Запись об усыновлении",
+                    "Запись о крещении",
+                    "Паспорт с подписью родителя",
+                    "Постановление суда о назначении законного опекуна с финансовой ответственностью",
+                    "Письмо об опеке",
+                    "Другое - CFWB-058 Удостоверение смотрителя"
                   ]
                 }
               },
               {
-                "id": "relationship_doc_file",
-                "label": "Upload Relationship Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "файл_документа_отношений",
+                "label": "Загрузить документ о взаимоотношениях",
+                "description": "Чтобы добавить документ в приложение, вы можете загрузить изображение или отсканированный файл с телефона или устройства. Принимаются следующие форматы: .pdf, .gif, .jpeg, .jpg и .png размером до 25 МБ. Узнайте, как загружать файлы, посмотрев это обучающее видео.",
+                "type": "файл",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "приложение/pdf",
+                    "изображение/jpeg",
+                    "изображение/jpg",
+                    "изображение/png",
+                    "изображение/гифка"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Relationship",
+                  "proofCategory": "Отношения с детьми",
                   "multiple": false
                 }
               }
@@ -2232,43 +2248,43 @@
           },
           {
             "id": "age_proof",
-            "title": "Age",
-            "description": "These documents confirm the age of the children in your household. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:",
+            "title": "Возраст",
+            "description": "Эти документы подтверждают возраст детей в вашей семье. Пожалуйста, загрузите один из следующих документов для каждого ребенка в семье в возрасте до 18 лет, независимо от того, требуется ли им уход за детьми:",
             "fields": [
               {
-                "id": "age_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "возраст_тип_документа",
+                "label": "Выберите один из следующих вариантов:",
+                "type": "радио",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Alien Registration Card",
-                    "Passport",
-                    "Official hospital documentation of the child’s birth"
+                    "Свидетельство о рождении",
+                    "Запись об усыновлении",
+                    "Запись о крещении",
+                    "Регистрационная карточка иностранца",
+                    "Паспорт",
+                    "Официальная больничная документация о рождении ребенка"
                   ]
                 }
               },
               {
                 "id": "age_doc_file",
-                "label": "Upload Age Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "label": "Загрузить документ, подтверждающий возраст",
+                "description": "Чтобы добавить документ в приложение, вы можете загрузить изображение или отсканированный файл с телефона или устройства. Принимаются следующие форматы: .pdf, .gif, .jpeg, .jpg и .png размером до 25 МБ. Узнайте, как загружать файлы, посмотрев это обучающее видео.",
+                "type": "файл",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "приложение/pdf",
+                    "изображение/jpeg",
+                    "изображение/jpg",
+                    "изображение/png",
+                    "изображение/гифка"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Age",
+                  "proofCategory": "Возраст ребенка",
                   "multiple": false
                 }
               }
@@ -2277,9 +2293,9 @@
         ]
       },
       {
-        "id": "review",
-        "title": "Review & Submit",
-        "type": "review",
+        "id": "обзор",
+        "title": "Просмотреть и отправить",
+        "type": "обзор",
         "sections": []
       }
     ]

@@ -20,12 +20,21 @@ export default function LanguageSelect() {
   const { t } = useTranslation();
 
   return (
-    <select value={language} onChange={(e) => setLanguage(e.target.value)} aria-label={t('language')}>
-      {languages.map((lang) => (
-        <option key={lang.code} value={lang.code}>
-          {lang.label}
-        </option>
-      ))}
-    </select>
+    <div className="jules-form-field">
+      <div className="jules-input-wrapper jules-select-wrapper">
+        <select
+          className="jules-input"
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
+          aria-label={t('language')}
+        >
+          {languages.map((lang) => (
+            <option key={lang.code} value={lang.code}>
+              {lang.label}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
   );
 }
