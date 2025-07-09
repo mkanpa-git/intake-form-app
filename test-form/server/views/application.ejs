@@ -5,6 +5,24 @@
   <title>Application <%= app.id %></title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Fallback tab logic in case the Bootstrap script fails to load.
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof bootstrap === 'undefined') {
+        const navLinks = document.querySelectorAll('.nav-link[data-bs-toggle="tab"]');
+        const panes = document.querySelectorAll('.tab-pane');
+        navLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            const target = document.querySelector(link.getAttribute('data-bs-target'));
+            navLinks.forEach((l) => l.classList.remove('active'));
+            panes.forEach((p) => p.classList.remove('show', 'active'));
+            link.classList.add('active');
+            if (target) target.classList.add('show', 'active');
+          });
+        });
+      }
+    });
+  </script>
 </head>
 <body class="container py-4">
   <h1>Application <%= app.id %></h1>
