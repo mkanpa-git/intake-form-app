@@ -24,10 +24,11 @@ export default function FormRenderer({
   applicationId,
   onExit,
   formSpecPath = '/data/childcare_form.json',
+  formSpec: providedSpec,
 }) {
   const { showToast } = useToast();
   const { t } = useTranslation();
-  const [formSpec, setFormSpec] = useState(null);
+  const [formSpec, setFormSpec] = useState(providedSpec || null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -54,11 +55,16 @@ export default function FormRenderer({
   const [chatOpen, setChatOpen] = useState(false);
 
   useEffect(() => {
+    if (providedSpec) {
+      setIsLoading(false);
+      setFormSpec(providedSpec);
+      return;
+    }
+
     const fetchFormSpec = async () => {
       setIsLoading(true);
       setError(null);
       try {
-        // Load form specification from the provided path
         const response = await fetch(formSpecPath);
 
         if (!response.ok) {
@@ -77,7 +83,7 @@ export default function FormRenderer({
     };
 
     fetchFormSpec();
-  }, [formSpecPath]);
+  }, [formSpecPath, providedSpec]);
 
   useEffect(() => {
     if (formSpec) {
