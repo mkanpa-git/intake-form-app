@@ -1,6 +1,13 @@
+const FORM_PREFIX = {
+  childcare: 'childcare_form',
+  dycd: 'dycd_form',
+  group_cc_permit: 'group_cc_permit',
+};
+
 export async function loadMergedFormSpec(service, language) {
-  const basePath = `/data/${service}_form.json`;
-  const localizedPath = `/data/${service}_form.${language}.json`;
+  const prefix = FORM_PREFIX[service] || `${service}_form`;
+  const basePath = `/data/${prefix}.json`;
+  const localizedPath = `/data/${prefix}.${language}.json`;
 
   const baseResp = await fetch(basePath);
   if (!baseResp.ok) {
