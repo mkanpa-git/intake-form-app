@@ -14,5 +14,28 @@
   "middleInitial": "Inicial del segundo nombre",
   "save": "Ahorrar",
   "pleaseLogIn": "Por favor inicia sesión",
-  "language": "Idioma"
-}
+  "language": "Idioma",
+  "steps": "Pasos",
+  "stepOf": "Paso {{current}} de {{total}}",
+  "requiredDocuments": "Documentos requeridos",
+  "back": "Atrás",
+  "next": "Siguiente",
+  "saveDraft": "Guardar borrador",
+  "submit": "Enviar",
+  "continue": "Continuar",
+  "delete": "Eliminar",
+  "idLabel": "ID",
+  "savedLabel": "Guardado",
+  "startApplication": "Iniciar solicitud →",
+  "pleaseCorrectErrors": "Corrija los siguientes errores:",
+  "requiredField": "Se requiere {{field}}."
+  ,"serviceChildcareName": "Asistencia para el cuidado infantil"
+  ,"serviceChildcareInteraction": "Solicitud de asistencia para el cuidado infantil"
+  ,"serviceChildcareDescription": "Formulario paso a paso para solicitar asistencia de cuidado infantil"
+  ,"serviceDycdName": "Ingreso a servicios juveniles DYCD – 13 años o menos"
+  ,"serviceDycdInteraction": "Ingreso a servicios juveniles"
+  ,"serviceDycdDescription": "Formulario para recopilar información de jóvenes y tutores para programas DYCD"
+  ,"serviceDohmhName": "Permiso de cuidado infantil grupal"
+  ,"serviceDohmhInteraction": "Solicitud de permiso de cuidado infantil grupal"
+  ,"serviceDohmhDescription": "Solicitud para permiso de cuidado infantil grupal"
+  ,"sectionRequired": "{{section}} es obligatorio. Agregue al menos un registro."}

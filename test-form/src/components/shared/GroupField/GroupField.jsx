@@ -6,6 +6,7 @@ import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import FileInput from '../FileInput/FileInput';
 import MaskedInput from '../MaskedInput/MaskedInput';
 import AddressAutocomplete from '../AddressAutocomplete';
+import { useTranslation } from 'react-i18next';
 import Button from '../Button/Button'; // Import the new Button component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -34,6 +35,7 @@ const getByPath = (obj, path) =>
   path.split('.').reduce((acc, part) => (acc ? acc[part] : undefined), obj);
 
 export default function GroupField({ field, value = [], onChange, fullData = {} }) {
+  const { t } = useTranslation();
   const [entries, setEntries] = useState(value);
   const [currentEntry, setCurrentEntry] = useState({});
   const [editingIndex, setEditingIndex] = useState(null);
@@ -118,7 +120,7 @@ export default function GroupField({ field, value = [], onChange, fullData = {} 
           (typeof val === 'string' && val.trim() === '') ||
           (Array.isArray(val) && val.length === 0))
       ) {
-        errors[subField.id] = `${subField.label} is required.`;
+        errors[subField.id] = t('requiredField', { field: subField.label });
       }
     });
     return errors;

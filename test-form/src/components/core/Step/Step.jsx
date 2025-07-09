@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   validateStep,
   validateField,
@@ -66,6 +67,7 @@ export default function Step({
   validationAttempt, // Added new prop
   onValidationFail,
 }) {
+  const { t } = useTranslation();
   const [collapsedSections, setCollapsedSections] = useState({});
   const [formData, setFormData] = useState(initialData);
   const [errors, setErrors] = useState({});
@@ -572,7 +574,7 @@ export default function Step({
             onClick={handleBackClick}
             iconLeft={<FontAwesomeIcon icon={faArrowLeft} aria-hidden="true" />}
           >
-            Back
+            {t('back')}
           </Button>
         )}
         <Button
@@ -581,7 +583,7 @@ export default function Step({
           iconLeft={<FontAwesomeIcon icon={faFloppyDisk} aria-hidden="true" />}
           isLoading={isSavingDraft}
         >
-          Save Draft
+          {t('saveDraft')}
         </Button>
         {!isLast && (
           <Button
@@ -589,7 +591,7 @@ export default function Step({
             onClick={handleNextClick}
             iconRight={<FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />}
           >
-            Next
+            {t('next')}
           </Button>
         )}
         {/* Assuming onNext handles final submission if isLast is true, or a dedicated submit handler would be passed. */}
@@ -599,7 +601,7 @@ export default function Step({
             onClick={handleNextClick}
             iconRight={<FontAwesomeIcon icon={faCheck} aria-hidden="true" />}
           >
-            Submit
+            {t('submit')}
           </Button>
         )}
       </div>

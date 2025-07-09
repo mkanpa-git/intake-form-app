@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function ServiceCard({ name, interaction, description, onStart }) {
+  const { t } = useTranslation();
   return (
     <a
       href="#"
@@ -20,7 +22,7 @@ export default function ServiceCard({ name, interaction, description, onStart })
         </div>
       </div>
       <p className="jules-card-description">{description}</p>
-      <span className="jules-card-action-link">Start Application &rarr;</span>
+      <span className="jules-card-action-link">{t('startApplication')}</span>
     </a>
   );
 }
