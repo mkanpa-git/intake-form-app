@@ -68,6 +68,15 @@
   color: var(--jules-text-color-link-hover);
 }
 
+.form-header .language-select {
+  margin-left: var(--jules-space-lg);
+}
+
+.form-header .language-select select {
+  font-size: var(--jules-font-size-base);
+  width: auto;
+}
+
 .theme-toggle:focus-visible {
   outline: var(--jules-focus-ring-width) solid var(--jules-focus-ring-color);
   outline-offset: var(--jules-focus-ring-offset);

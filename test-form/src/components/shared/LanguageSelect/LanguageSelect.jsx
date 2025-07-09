@@ -20,7 +20,7 @@ export default function LanguageSelect() {
   const { t } = useTranslation();
 
   return (
-    <div className="jules-form-field">
+    <div className="jules-form-field language-select">
       <div className="jules-input-wrapper jules-select-wrapper">
         <select
           className="jules-input"
