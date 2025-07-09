@@ -1,172 +1,172 @@
 {
   "form": {
-    "title": "Childcare Voucher Application",
-    "description": "Step-by-step form for applying for Childcare Assistance",
+    "title": "儿童保育券申请",
+    "description": "申请儿童保育援助的分步表格",
     "layout": {
-      "stepperPosition": "left"
+      "stepperPosition": "左边"
     },
     "steps": [
       {
-        "id": "consent_step",
-        "title": "Consent",
+        "id": "同意步骤",
+        "title": "同意",
         "sections": [
           {
             "id": "mycity_consent_info",
-            "title": "ModelCity Consent",
-            "type": "info",
+            "title": "模范城市同意书",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "In connection with this application for child care services, **ModelCity**:\\n\\n- Collects, processes, stores, and shares the information you submit to screen you when you apply for child care services;\\n- Receives, processes, and stores the information the City already knows about you to screen you when you apply for child care services;\\n- Uses your information to improve ModelCity; and\\n- Communicates with you about your ModelCity account.\\n\\n---\\n\\nIf you consent, the following information may be shared between child care services agencies:\\n\\n- Demographic and background information, including address, phone number, household composition.\\n- Housing information, including benefits awarded/received, current housing/shelter status.\\n- Benefits information, including public assistance awarded/received, child care program participation.\\n\\n---\\n\\nIf you choose not to consent, **you will not be denied** any benefits or services you are receiving or any benefits for which you are eligible.\\n\\nThe [ModelCity Privacy Policy](https://www.nyc.gov/privacy) details how ModelCity handles the information you submit through ModelCity."
+            "content": "就本次儿童保育服务申请而言，**ModelCity**:\\n\\n- 收集、处理、存储和共享您提交的信息，以便在您申请儿童保育服务时对您进行筛选；\\n- 接收、处理和存储市政府已经掌握的关于您的信息，以便在您申请儿童保育服务时对您进行筛选；\\n- 使用您的信息改进 ModelCity；并且\\n- 与您沟通有关您的 ModelCity 帐户的信息。\\n\\n---\\n\\n如果您同意，以下信息可能会在儿童保育服务机构之间共享：\\n\\n- 人口统计和背景信息，包括地址、电话号码、家庭构成。\\n- 住房信息，包括授予/收到的福利、当前住房/庇护所状态。\\n- 福利信息，包括授予/收到的公共援助、儿童保育计划参与情况。\\n\\n---\\n\\n如果您选择不同意，**您将不会被拒绝**您正在接受的任何福利或服务，或者您有资格获得的任何福利。\\n\\n[ModelCity 隐私政策](https://www.nyc.gov/privacy) 详细说明了 ModelCity 如何处理您通过 ModelCity 提交的信息。"
           }
         ]
       },
       {
-        "id": "instructions_step",
-        "title": "Instructions",
+        "id": "说明_步骤",
+        "title": "指示",
         "sections": [
           {
-            "id": "application_instructions",
-            "title": "Application Instructions",
-            "type": "info",
+            "id": "应用程序指令",
+            "title": "申请说明",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**Let’s get started on your application!**\\n\\nTo complete this application, you will be asked for information about:\\n\\n- Yourself\\n- Your household\\n- Your employment or reason for care\\n- Your income\\n\\nAll required fields are marked and must be filled out to move forward with the application. The pages of the application are shown on the right-hand side of the screen and will be highlighted as you move through the application.\\n\\nYour application will be saved automatically as you progress to each page.  \\nIf you need to pause at any time, click the **“Save for later”** button at the bottom of each page to save your application.  \\nYou can log back in to resume your application.\\n\\nWhen you’re ready to begin, click **“Next”** below.\\n\\n---\\n\\n⚠️ **Important:**  \\nTo keep your information current and safe, applications in draft status that you have not edited for **30 days** will be deleted.  \\nIf your draft application is deleted, you can still create and submit a new application when you're ready to apply."
+            "content": "**让我们开始您的申请吧！**\\n\\n要完成此申请，您需要提供以下信息：\\n\\n- 您自己\\n- 您的家庭\\n- 您的工作或需要护理的原因\\n- 您的收入\\n\\n所有必填字段均已标记，必须填写才能继续进行申请。申请页面显示在屏幕右侧，并将在您浏览申请时突出显示。\\n\\n当您翻到每一页时，您的申请都会自动保存。\\n如果您需要暂停，请点击每页底部的**“稍后保存”**按钮保存您的申请。\\n您可以重新登录以继续您的申请。\\n\\n当您准备好开始时，请点击下面的**“下一步”**。\\n\\n---\\n\\n⚠️ **重要提示：** \\n为确保您的信息保持最新和安全，如果您已超过**30天**未编辑，处于草稿状态的申请将被删除。 \\n如果您的申请草稿被删除，您仍然可以在准备好申请时创建并提交新的申请。"
           },
           {
-            "id": "new_york_city_residency",
-            "title": "New York City Residency",
-            "type": "info",
+            "id": "纽约市居住权",
+            "title": "纽约市居住权",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "You will need to upload **ONE** of the following documents to confirm your NYC residency:\\n\\n- IDNYC\\n- Driver’s License\\n- Utility Bill (dated within the last 60 days, with your address)\\n- Current lease, rent, or mortgage statement (dated within the last 60 days, with your address)\\n- Section 8 Award Letter\\n- NYCHA Certificate\\n- CFWB-027 Housing Attestation with address listed\\n- Shelter Residency Letter with address listed\\n\\nIf you do not have any of those documents, you must submit a **CFWB-067 Residency Attestation**."
+            "content": "您需要上传以下文件中的**一份**来确认您的纽约市居住权：\\n\\n- IDNYC\\n- 驾驶执照\\n- 水电费账单（日期为最近 60 天内，需有您的地址）\\n- 当前租约、租金或抵押贷款结算单（日期为最近 60 天内，需有您的地址）\\n- 第 8 部分授予信\\n- NYCHA 证书\\n- 列出地址的 CFWB-027 住房证明\\n- 列出地址的庇护所居住证明信\\n\\n如果您没有任何上述文件，则必须提交**CFWB-067 居住证明**。"
           },
           {
-            "id": "children_documents",
-            "title": "Children Documents",
-            "type": "info",
+            "id": "儿童文件",
+            "title": "儿童文件",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Citizenship or Immigration Status\\nThese documents confirm the citizenship or immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for each child needing care. *Do not upload these documents for children who do not need care.*\\n\\n- Birth Certificate from US state or territory\\n- Alien Registration Card including Permanent Resident or Green Card\\n- Passport\\n- FS-240 (Consular Report of Birth Abroad)\\n- Naturalization Certificate\\n- Other documentation that proves child’s immigration status\\n\\n### Child's Relationship to Applicant\\nThese documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether they need child care.\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Passport with parent's signature\\n- Court order for legal guardian with financial responsibility\\n- Letter of guardianship\\n- Other - CFWB-058 Caretaker Attestation\\n\\nIf you are not the child's parent or stepparent, you must submit a **CFWB-058 Caretaker Attestation Form**.\\n\\n### Age of Children\\nYou will need to upload **ONE** of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:\\n\\n- Birth certificate\\n- Adoption record\\n- Baptismal record\\n- Alien Registration Card\\n- Passport\\n- Official hospital documentation of the child’s birth"
+            "content": "### 公民身份或移民身份\\n这些文件用于确认您家庭中申请儿童保育援助的儿童的公民身份或移民身份。请为每位需要照顾的儿童上传以下文件之一。 *请勿为不需要照顾的儿童上传这些文件。*\\n\\n- 美国州或领地出具的出生证明\\n- 外国人登记卡，包括永久居民卡或绿卡\\n- 护照\\n- FS-240（海外出生领事报告）\\n- 入籍证明\\n- 其他证明儿童移民身份的文件\\n\\n### 儿童与申请人的关系\\n这些文件确认了您与家中 18 岁以下儿童的关系。请为家中每个 18 岁以下儿童上传以下文件之一，无论他们是否需要儿童照顾。\\n\\n- 出生证明\\n- 收养记录\\n- 洗礼记录\\n- 带有父母签名的护照\\n- 具有经济责任的法定监护人的法院命令\\n- 监护权委托书\\n- 其他 - CFWB-058 看护人证明\\n\\n如果您不是孩子的父母或继父母，则必须提交**CFWB-058 看护人证明表**。\\n\\n### 儿童年龄\\n您需要为家庭中每个 18 岁以下的孩子上传以下**一份**文件，无论他们是否需要照顾：\\n\\n- 出生证明\\n- 收养记录\\n- 洗礼记录\\n- 外国人登记卡\\n- 护照\\n- 孩子出生的官方医院证明"
           },
           {
-            "id": "employment_income",
-            "title": "Employment & Income",
-            "type": "info",
+            "id": "就业收入",
+            "title": "就业与收入",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Income\\nThese documents confirm your family’s income.\\n\\n---\\n\\n### If You Are Employed\\nIf you are employed and receive paystubs, you must submit them to confirm your income. The number of paystubs you must submit varies by how often you get paid and whether your payment amount is the same or different each time you are paid – see the table below for details. Submit the most recent paystub you have received, followed by others in consecutive order.\\n\\n**Income Information**\\n\\n| How Often Do You Get Paid? | Always the SAME Amount | DIFFERENT Amounts Each Time |\\n|----------------------------|-------------------------|------------------------------|\\n| Weekly (Every Week) | 4 most recent, consecutive pay stubs | 12 most recent, consecutive pay stubs |\\n| Bi-Weekly (Every Two Weeks) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Semi-Monthly (Two Times Per Month) | 2 most recent, consecutive pay stubs | 6 most recent, consecutive pay stubs |\\n| Monthly (One Time Per Month) | 3 most recent, consecutive pay stubs | 3 most recent, consecutive pay stubs |\\n\\nIf you do not have any paystubs, you must submit a **CFWB-015 Referral to Employer for Employee Income Information Form**.\\n\\n---\\n\\n### If You Are Self-Employed\\nIf you have been self-employed for **one year or more**, you must submit a current, complete and signed income tax package (e.g., 1040, 1065, Schedule C, SE for partnership, K-1, etc.).\\n\\nIf you have been self-employed for **less than one year**, you must submit a **CFWB-031 Self-Employment Income Information Attestation Form**.\\n\\n---\\n\\n### Other Income\\nIf you receive other types of income outside or instead of employment income, you must submit your most recent check, pay stub, or current award letter that indicates the amount you receive. If your other income fluctuates, **3 months of documentation is required**.\\n\\nThis includes, but is not limited to:\\n- Income from SSI, SSD\\n- Unemployment benefits\\n- Rental income\\n- Pensions\\n- Annuities\\n- Worker’s compensation\\n- Alimony\\n- Child support"
+            "content": "### 收入\\n这些文件可确认您家庭的收入。\\n\\n---\\n\\n### 如果您有工作\\n如果您有工作并收到工资单，则必须提交工资单以确认您的收入。您必须提交的工资单数量取决于您的领薪频率以及每次领薪的金额是否相同 - 详情请参阅下表。请提交您收到的最近的工资单，然后按连续顺序提交其他工资单。\\n\\n**收入信息**\\n\\n| 您多久领一次薪资？| 金额始终相同 | 每次金额不同 |\\n|----------------------------|-------------------------|------------------------------|\\n| 每周（每周）| 4 张最近的连续工资单 | 12 张最近的连续工资单 |\\n| 每两周（每两周）| 2 张最近的连续工资单 | 6 张最近连续的工资单 |\\n| 半月一次（每月两次）| 2 张最近连续的工资单 | 6 张最近连续的工资单 |\\n| 每月一次（每月一次）| 3 张最近连续的工资单 | 3 张最近连续的工资单 |\\n\\n如果您没有任何工资单，则必须提交 **CFWB-015 雇主推荐员工收入信息表**。\\n\\n---\\n\\n### 如果您是自雇人士\\n如果您自雇**一年或一年以上**，则必须提交最新、完整且签名的所得税申报表（如 1040、1065、附表 C、合伙企业 SE、K-1 等）。\\n\\n如果您自雇**不满一年**，则必须提交 **CFWB-031 自雇收入信息证明表**。\\n\\n---\\n\\n### 其他收入\\n如果您收到除就业收入以外的其他类型收入，则必须提交最近的支票、工资单或最新奖励信，其中注明您收到的金额。如果您的其他收入有波动，**需要提供 3 个月的证明文件**。\\n\\n这包括但不限于：\\n- SSI、SSD 收入\\n- 失业救济金\\n- 租金收入\\n- 养老金\\n- 年金\\n- 工伤赔偿\\n- 赡养费\\n- 子女抚养费"
           },
           {
-            "id": "reason_for_care",
-            "title": "Reason for Care",
-            "type": "info",
+            "id": "护理原因",
+            "title": "护理原因",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Reason for Care\\nThese documents confirm your reason for care. Every applicant must have a qualified reason for care; in a two-parent household, parents or caretakers can have the same or different reasons for care. Only the documents related to your stated reasons for care need to be uploaded, and documentation must be uploaded for all parent or caretakers in the household.\\n\\n---\\n\\n### Working 10+ Hours Per Week\\nYour employment or self-employment income documents will cover this reason for care. You do not need to submit additional documentation.\\n\\n---\\n\\n### Participating in an Educational or Vocational Training Program\\nYou will need to upload **ONE** of the following documents to confirm your participation in vocational school, two-year college, or four-year college.\\n\\n- CFWB-005 Vocational, Education and Training Verification Form\\n- A letter from the educational or vocational training program on their official letterhead; this letter must contain all the information required in the CFWB-005 Vocational, Education and Training Verification Form.\\n\\n---\\n\\n### Looking for Work\\nYou will need to upload **ONE** of the following documents to confirm that you are looking for work.\\n\\n- CFWB-026 Work Search Record Form\\n- Approved work search plan from the NYS Dept. of Labor\\n- Proof of receipt of unemployment insurance\\n\\n---\\n\\n### Experiencing Homelessness\\nYou will need to upload **ONE** of the following documents to confirm that you are experiencing homelessness. This includes families who may be living in shelter or sharing the housing of others due to loss of housing, economic hardship, or similar reason.\\n\\n- Shelter Residency Letter (If living in Shelter, including Humanitarian Emergency Relief Centers)\\n- CFWB-027 Housing Attestation (If living doubled-up, in a place not meant for human habitation, in a hotel/motel, or in another living situation)\\n\\n---\\n\\n### Attending Services for Domestic Violence\\nYou will need to upload a referral for services from a domestic violence service provider to confirm that you are attending services for domestic violence.\\n\\n---\\n\\n### Attending Services for Substance Abuse Treatment\\nYou will need to upload a referral for a substance abuse treatment service provider to confirm that you are attending services for substance abuse treatment."
+            "content": "### 照顾原因\\n这些文件用于确认您的照顾原因。每位申请人都必须提供合理的照顾原因；在双亲家庭中，父母或看护人的照顾原因可以相同或不同。您只需上传与您所述照顾原因相关的文件，并且必须上传家庭中所有父母或看护人的文件。\\n\\n---\\n\\n### 每周工作 10 小时以上\\n您的就业或自雇收入文件将涵盖此照顾原因。您无需提交其他文件。\\n\\n---\\n\\n### 参加教育或职业培训计划\\n您需要上传以下**一份**文件，以确认您就读于职业学校、两年制大学或四年制大学。\\n\\n- CFWB-005 职业、教育和培训核实表\\n- 教育或职业培训计划出具的正式信笺信函；此信函必须包含 CFWB-005 职业、教育和培训验证表中所需的所有信息。\\n\\n---\\n\\n### 寻找工作\\n您需要上传以下文件中的**一份**来确认您正在寻找工作。\\n\\n- CFWB-026 求职记录表\\n- 纽约州劳工部批准的求职计划\\n- 失业保险收据证明\\n\\n---\\n\\n### 经历无家可归\\n您需要上传以下文件中的**一份**来确认您正经历无家可归状态。这包括可能居住在庇护所或由于失去住房、经济困难或类似原因而与他人合住的家庭。\\n\\n- 庇护所居住证明（如果居住在庇护所，包括人道主义紧急救济中心）\\n- CFWB-027 住房证明（如果居住在双人间、非人类居住的地方、酒店/汽车旅馆或其他居住环境中）\\n\\n---\\n\\n### 参加家庭暴力服务\\n您需要上传家庭暴力服务提供者的服务推荐信，以确认您正在参加家庭暴力服务。\\n\\n---\\n\\n### 参加药物滥用治疗服务\\n您需要上传药物滥用治疗服务提供者的推荐信，以确认您正在参加药物滥用治疗服务。"
           },
           {
-            "id": "additional_details",
-            "title": "Additional Details",
-            "type": "info",
+            "id": "附加详细信息",
+            "title": "更多详细信息",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": true,
               "defaultCollapsed": true
             },
-            "content": "### Application Scope\\nThis application is used to apply **only** for **Category 2 or 3 child care assistance** (for families not in receipt of cash assistance). To apply for **Cash Assistance** or other benefits, including **Category 1 Child Care Assistance** (for families in receipt of cash assistance), you must use the **New York State Application for Certain Benefits and Services (LDSS-2921)**.\\n\\n---\\n\\n### Exempt Applicants\\nThe following applicants may be eligible for child care assistance **without regard to income** and do not need to complete this application:\\n\\n- Foster parents who need child care assistance to allow them to work and are only applying for assistance for the foster children;\\n- Families in receipt of protective or preventive services.\\n\\n---\\n\\n### Application Completion\\nAll sections of this form must be filled out to be considered complete **unless the section is identified as optional**. If you do not complete all required sections of this form, you may not be considered for Child Care Assistance.\\n\\n---\\n\\n### Rights and Responsibilities\\nYou may obtain information about your rights and responsibilities [here](https://otda.ny.gov/programs/applications/). If you do not have access to the internet, you can call the **Administration for Children’s Services at 212-835-7610** to request that physical copies of the booklets which highlight your rights and responsibilities be mailed to you, including:\\n\\n- **LDSS-4148A**: What You Should Know About Your Rights and Responsibilities\\n- **LDSS-4148B**: What You Should Know About Social Services Programs\\n- **LDSS-4148C**: What You Should Know If You Have an Emergency"
+            "content": "### 申请范围\\n此申请**仅**用于申请**第 2 类或第 3 类儿童保育援助**（适用于未接受现金援助的家庭）。要申请**现金援助**或其他福利，包括**第 1 类儿童保育援助**（适用于接受现金援助的家庭），您必须使用**纽约州特定福利和服务申请表 (LDSS-2921)**。\\n\\n---\\n\\n### 豁免申请人\\n以下申请人可能有资格获得儿童保育援助**，无论收入如何**，无需填写此申请：\\n\\n- 需要儿童保育援助以使其能够工作，并且仅为寄养儿童申请援助的寄养父母；\\n- 接受保护性或预防性服务的家庭。\\n\\n---\\n\\n### 申请完成\\n此表的所有部分都必须填写完整**，除非该部分被标识为选填**。如果您未填写此表所有必填部分，您可能无法获得儿童保育援助。\\n\\n---\\n\\n### 权利与责任\\n您可以[在此处](https://otda.ny.gov/programs/applications/)获取有关您的权利与责任的信息。如果您无法访问互联网，可以致电**儿童服务管理局 (Administration for Children’s Services)，电话：212-835-7610**，要求我们将重点介绍您的权利与责任的小册子的纸质副本邮寄给您，其中包括：\\n\\n- **LDSS-4148A**：您应该了解的权利与责任\\n- **LDSS-4148B**：您应该了解的社会服务项目\\n- **LDSS-4148C**：紧急情况下您应该了解的情况"
           }
         ]
       },
       {
-        "id": "applicant",
-        "title": "Applicant",
+        "id": "申请人",
+        "title": "申请人",
         "sections": [
           {
-            "id": "personal_info",
-            "title": "Personal Information",
+            "id": "个人信息",
+            "title": "个人信息",
             "fields": [
               {
-                "id": "first_name",
-                "label": "First Name",
-                "type": "text",
+                "id": "名",
+                "label": "名",
+                "type": "文本",
                 "required": true
               },
               {
-                "id": "last_name",
-                "label": "Last Name",
-                "type": "text",
+                "id": "姓",
+                "label": "姓",
+                "type": "文本",
                 "required": true
               },
               {
-                "id": "mi",
-                "label": "Middle Initial",
-                "type": "text",
+                "id": "我",
+                "label": "中间初始",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "date_of_birth",
-                "label": "Date of Birth",
-                "type": "date",
+                "id": "出生日期",
+                "label": "出生日期",
+                "type": "日期",
                 "required": true,
-                "tooltip": "To edit Date of Birth click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "要编辑出生日期，请单击左上角的 NYC ModelCity，然后单击“帐户设置”。"
               },
               {
-                "id": "sex",
-                "label": "Sex",
-                "type": "radio",
+                "id": "性别",
+                "label": "性别",
+                "type": "收音机",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Male",
-                    "Female"
+                    "男性",
+                    "女性"
                   ]
                 }
               },
               {
-                "id": "marital_status",
-                "label": "Marital Status",
-                "type": "select",
+                "id": "婚姻状况",
+                "label": "婚姻状况",
+                "type": "选择",
                 "required": true,
-                "tooltip": "Indicate your marital status (single, married, divorced, separated or widowed).",
+                "tooltip": "请注明您的婚姻状况（单身、已婚、离婚、分居或丧偶）。",
                 "ui": {
                   "options": [
                     "",
-                    "Single",
-                    "Married",
-                    "Divorced",
-                    "Widowed",
-                    "Separated"
+                    "单身的",
+                    "已婚",
+                    "离婚",
+                    "寡",
+                    "分离"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "contact_info",
-            "title": "Contact Information",
+            "id": "联系方式",
+            "title": "联系信息",
             "fields": [
               {
-                "id": "telephone_home",
-                "label": "Home Phone",
-                "type": "tel",
+                "id": "电话_家",
+                "label": "住宅电话",
+                "type": "电话",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -176,9 +176,9 @@
                 }
               },
               {
-                "id": "telephone_work",
-                "label": "Work Phone",
-                "type": "tel",
+                "id": "电话工作",
+                "label": "工作电话",
+                "type": "电话",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
@@ -189,10 +189,10 @@
               },
               {
                 "id": "telephone_mobile_or_other",
-                "label": "Mobile or Other Phone",
-                "type": "tel",
+                "label": "手机或其他电话",
+                "type": "电话",
                 "required": false,
-                "tooltip": "To edit Telephone (Cell or Other) click on NYC ModelCity in the top-left corner then click on Account Settings and then click on Contact.",
+                "tooltip": "要编辑电话（手机或其他），请单击左上角的 NYC ModelCity，然后单击帐户设置，然后单击联系人。",
                 "constraints": {
                   "pattern": "^\\\\(?[0-9]{3}\\\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
                 },
@@ -201,196 +201,208 @@
                 }
               },
               {
-                "id": "email",
-                "label": "Email",
-                "type": "email",
+                "id": "电子邮件",
+                "label": "电子邮件",
+                "type": "电子邮件",
                 "required": true,
-                "tooltip": "To edit email, go to NYC ID Profile tab by clicking your name at the top right corner"
+                "tooltip": "要编辑电子邮件，请点击右上角的姓名，进入“NYC ID 个人资料”选项卡"
               }
             ]
           },
           {
-            "id": "address_info",
-            "title": "Address",
-            "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings.",
+            "id": "地址信息",
+            "title": "地址",
+            "tooltip": "要编辑家庭住址，请单击左上角的 NYC ModelCity，然后单击“帐户设置”。",
             "ui": {
-              "autocomplete": "street",
-              "placeholder": "Start typing your street address",
-              "overrideComponent": "AddressAutocomplete"
+              "autocomplete": "街道",
+              "placeholder": "开始输入您的街道地址",
+              "overrideComponent": "地址自动完成"
             },
             "metadata": {
               "integration": {
-                "provider": "Google",
-                "feature": "AddressAutocomplete"
+                "provider": "谷歌",
+                "feature": "地址自动完成"
               },
               "autofillTargets": [
                 {
-                  "fieldId": "city",
-                  "source": "locality",
+                  "fieldId": "城市",
+                  "source": "地方性",
                   "fallbackSources": [
-                    "postal_town",
+                    "邮政城镇",
                     "sublocality_level_1",
-                    "administrative_area_level_2"
+                    "行政区域级别2"
                   ]
                 },
                 {
-                  "fieldId": "borough",
+                  "fieldId": "自治市镇",
                   "source": "sublocality_level_1",
                   "fallbackSources": [
-                    "administrative_area_level_2"
+                    "行政区域级别2"
                   ],
-                  "mapping": "boroughMap"
+                  "mapping": "行政区地图"
                 },
-                { "fieldId": "state", "source": "administrative_area_level_1" },
-                { "fieldId": "zip_code", "source": "postal_code" },
-                { "fieldId": "latitude", "source": "location.latitude" },
-                { "fieldId": "longitude", "source": "location.longitude" }
+                {
+                  "fieldId": "状态",
+                  "source": "行政区域级别1"
+                },
+                {
+                  "fieldId": "邮政编码",
+                  "source": "邮政编码"
+                },
+                {
+                  "fieldId": "纬度",
+                  "source": "位置.纬度"
+                },
+                {
+                  "fieldId": "经度",
+                  "source": "位置.经度"
+                }
               ]
             },
             "fields": [
               {
-                "id": "street",
-                "label": "Street Address",
-                "type": "text",
+                "id": "街道",
+                "label": "街道地址",
+                "type": "文本",
                 "required": true,
-                "tooltip": "To edit home address click on NYC ModelCity in the top-left corner then click on Account Settings."
+                "tooltip": "要编辑家庭住址，请单击左上角的 NYC ModelCity，然后单击“帐户设置”。"
               },
               {
-                "id": "apt",
-                "label": "Apt #",
-                "type": "text",
+                "id": "易于",
+                "label": "公寓号",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "city",
-                "label": "City",
-                "type": "text",
+                "id": "城市",
+                "label": "城市",
+                "type": "文本",
                 "required": true
               },
               {
-                "id": "borough",
-                "label": "Borough",
-                "type": "select",
+                "id": "自治市镇",
+                "label": "自治市镇",
+                "type": "选择",
                 "required": true,
                 "ui": {
                   "options": [
                     "",
-                    "Bronx",
-                    "Brooklyn",
-                    "Manhattan",
-                    "Queens",
-                    "Staten Island"
+                    "布朗克斯",
+                    "布鲁克林",
+                    "曼哈顿",
+                    "皇后区",
+                    "史泰登岛"
                   ]
                 }
               },
               {
-                "id": "state",
-                "label": "State",
-                "type": "text",
+                "id": "状态",
+                "label": "状态",
+                "type": "文本",
                 "required": true
               },
               {
-                "id": "zip_code",
-                "label": "Zip Code",
-                "type": "text",
+                "id": "邮政编码",
+                "label": "邮政编码",
+                "type": "文本",
                 "required": true
               },
               {
-                "id": "latitude",
-                "label": "Latitude",
-                "type": "number",
+                "id": "纬度",
+                "label": "纬度",
+                "type": "数字",
                 "required": false
               },
               {
-                "id": "longitude",
-                "label": "Longitude",
-                "type": "number",
+                "id": "经度",
+                "label": "经度",
+                "type": "数字",
                 "required": false
               },
               {
-                "id": "is_temporary_address",
-                "label": "Is Temporary Address",
-                "type": "radio",
+                "id": "是临时地址",
+                "label": "是临时地址",
+                "type": "收音机",
                 "required": true,
-                "tooltip": "Check YES if you are currently living in a homeless shelter, doubled-up with another family, in a hotel/motel, in a car/ bus/ train, in a park/campsite, or other temporary accomodation.",
+                "tooltip": "如果您目前居住在无家可归者收容所、与另一个家庭合住、酒店/汽车旅馆、汽车/公共汽车/火车、公园/露营地或其他临时住所，请勾选“是”。",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
-                "id": "currently_living_in",
-                "label": "Currently Living In",
-                "type": "select",
+                "id": "目前居住于",
+                "label": "目前居住于",
+                "type": "选择",
                 "required": false,
                 "requiredCondition": {
-                  "field": "is_temporary_address",
-                  "operator": "equals",
-                  "value": "Yes"
+                  "field": "是临时地址",
+                  "operator": "等于",
+                  "value": "是的"
                 },
                 "ui": {
                   "options": [
                     "",
-                    "Homeless Shelter",
-                    "Doubled-up with another Family",
-                    "Hotel/Motel",
-                    "Car, Bus, Train",
-                    "Park",
-                    "Campsite",
-                    "Other"
+                    "无家可归者收容所",
+                    "与另一个家庭同住",
+                    "酒店/汽车旅馆",
+                    "汽车、公共汽车、火车",
+                    "公园",
+                    "营地",
+                    "其他"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "demographics",
-            "title": "Demographics",
+            "id": "人口统计",
+            "title": "人口统计",
             "fields": [
               {
-                "id": "ethnicity",
-                "label": "Ethnicity",
-                "type": "select",
+                "id": "种族",
+                "label": "种族",
+                "type": "选择",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Hispanic",
-                    "Latino",
-                    "No",
-                    "Prefer not to answer"
+                    "西班牙裔",
+                    "拉丁裔",
+                    "不",
+                    "不想回答"
                   ]
                 }
               },
               {
-                "id": "race",
-                "label": "Race",
-                "type": "checkbox",
+                "id": "种族",
+                "label": "种族",
+                "type": "复选框",
                 "required": false,
-                "tooltip": "You may choose multiple race categories. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                "tooltip": "您可以选择多个种族类别。提供种族信息纯属自愿，不会影响您获得儿童保育援助的资格或本机构提供的援助金额。",
                 "ui": {
                   "options": [
                     {
-                      "value": "AI",
-                      "label": "American Indian or Alaska Native"
+                      "value": "人工智能",
+                      "label": "美国印第安人或阿拉斯加原住民"
                     },
                     {
-                      "value": "AS",
-                      "label": "Asian"
+                      "value": "作为",
+                      "label": "亚洲"
                     },
                     {
-                      "value": "BL",
-                      "label": "Black or African American"
+                      "value": "基本法",
+                      "label": "黑人或非裔美国人"
                     },
                     {
-                      "value": "HP",
-                      "label": "Native Hawaiian or Pacific Islander"
+                      "value": "惠普",
+                      "label": "夏威夷原住民或太平洋岛民"
                     },
                     {
-                      "value": "WH",
-                      "label": "White"
+                      "value": "白宫",
+                      "label": "白色的"
                     }
                   ]
                 },
@@ -399,10 +411,10 @@
                 }
               },
               {
-                "id": "ssn",
-                "label": "Social Security Number",
-                "type": "text",
-                "tooltip": "To edit social security number click on NYC ModelCity in the top-left corner then click on Account Settings.",
+                "id": "社会安全号码",
+                "label": "社会安全号码",
+                "type": "文本",
+                "tooltip": "要编辑社会安全号码，请单击左上角的 NYC ModelCity，然后单击“帐户设置”。",
                 "required": false,
                 "constraints": {
                   "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
@@ -414,87 +426,87 @@
             ]
           },
           {
-            "id": "language_info",
-            "title": "Language Preferences",
+            "id": "语言信息",
+            "title": "语言偏好",
             "fields": [
               {
-                "id": "primary_language",
-                "label": "Primary Language",
-                "type": "radio",
+                "id": "主要语言",
+                "label": "主要语言",
+                "type": "收音机",
                 "required": true,
-                "tooltip": "Select the language that is spoken most often in your household. If “other”, provide the name of the language.",
+                "tooltip": "选择您家中最常用的语言。如果选择“其他”，请提供该语言的名称。",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "英语",
+                    "西班牙语",
+                    "其他"
                   ]
                 }
               },
               {
-                "id": "preferred_language",
-                "label": "Preferred Language",
-                "type": "radio",
+                "id": "首选语言",
+                "label": "首选语言",
+                "type": "收音机",
                 "required": true,
-                "tooltip": "Select the language you prefer to communicate in. If “other”, provide the name of the language.",
+                "tooltip": "选择您喜欢使用的交流语言。如果选择“其他”，请提供语言名称。",
                 "ui": {
                   "options": [
-                    "English",
-                    "Spanish",
-                    "Other"
+                    "英语",
+                    "西班牙语",
+                    "其他"
                   ]
                 }
               },
               {
-                "id": "other_primary_language",
-                "label": "Other Primary Language",
-                "type": "text",
+                "id": "其他主要语言",
+                "label": "其他主要语言",
+                "type": "文本",
                 "required": false,
                 "requiredCondition": {
-                  "field": "primary_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "主要语言",
+                  "operator": "等于",
+                  "value": "其他"
                 }
               },
               {
-                "id": "other_preferred_language",
-                "label": "Other Preferred Language",
-                "type": "text",
+                "id": "其他首选语言",
+                "label": "其他首选语言",
+                "type": "文本",
                 "required": false,
                 "requiredCondition": {
-                  "field": "preferred_language",
-                  "operator": "equals",
-                  "value": "Other"
+                  "field": "首选语言",
+                  "operator": "等于",
+                  "value": "其他"
                 }
               }
             ]
           },
           {
-            "id": "cash_assistance",
-            "title": "Cash Assistance",
+            "id": "现金援助",
+            "title": "现金援助",
             "fields": [
               {
-                "id": "has_cash_assistance",
-                "label": "Do you receive Cash Assistance?",
-                "type": "radio",
+                "id": "有现金援助",
+                "label": "您接受现金援助吗？",
+                "type": "收音机",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
-                "id": "ca_number",
-                "label": "Cash Assistance Number",
-                "type": "text",
+                "id": "加州号码",
+                "label": "现金援助号码",
+                "type": "文本",
                 "required": false,
                 "requiredCondition": {
                   "condition": {
-                    "field": "has_cash_assistance",
-                    "operator": "equals",
-                    "value": "Yes"
+                    "field": "有现金援助",
+                    "operator": "等于",
+                    "value": "是的"
                   }
                 }
               }
@@ -503,124 +515,124 @@
         ]
       },
       {
-        "id": "children_needing_care",
-        "title": "Children Needing Care",
+        "id": "需要照顾的儿童",
+        "title": "需要照顾的儿童",
         "sections": [
           {
             "id": "child_details",
-            "title": "Child Details",
+            "title": "儿童详情",
             "required": true,
             "fields": [
               {
-                "id": "children",
-                "label": "Children Needing Care",
-                "type": "group",
+                "id": "孩子们",
+                "label": "需要照顾的儿童",
+                "type": "团体",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                  "first_name",
-                  "last_name",
-                  "date_of_birth",
-                  "relationship_to_applicant"
+                    "名",
+                    "姓",
+                    "出生日期",
+                    "与申请人的关系"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "名",
+                    "label": "名",
+                    "type": "文本",
                     "required": true,
-                    "tooltip": "Provide the first name, last name, and middle initial of each child you are applying for child care assistance for."
+                    "tooltip": "提供您要为其申请儿童保育援助的每个孩子的名字、姓氏和中间名首字母。"
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "姓",
+                    "label": "姓",
+                    "type": "文本",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "我",
+                    "label": "中间初始",
+                    "type": "文本",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "与申请人的关系",
+                    "label": "与申请人的关系",
+                    "type": "选择",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "Child",
-                        "Grandchild",
-                        "Foster Child",
-                        "Other"
+                        "孩子",
+                        "孙子",
+                        "寄养儿童",
+                        "其他"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "出生日期",
+                    "label": "出生日期",
+                    "type": "日期",
                     "required": true,
-                    "tooltip": "Provide the date of birth."
+                    "tooltip": "提供出生日期。"
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
-                    "type": "radio",
+                    "id": "性别",
+                    "label": "性别",
+                    "type": "收音机",
                     "required": true,
-                    "tooltip": "Select to indicate the sex.",
+                    "tooltip": "选择以表明性别。",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "男性",
+                        "女性"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "种族",
+                    "label": "种族：西班牙裔或拉丁裔",
+                    "type": "选择",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each child in need of child care is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for child care assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "请勾选“是”或“否”，以表明每位需要托儿服务的儿童是否为西班牙裔或拉丁裔。提供种族信息是自愿的，不会影响您获得托儿援助的资格或本机构提供的援助金额。",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "是的",
+                        "不",
+                        "不想回答"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "种族",
+                    "label": "种族",
+                    "type": "复选框",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single child. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "您可以为同一个孩子选择多个种族类别。提供种族信息纯属自愿，不会影响您获得儿童保育援助的资格或本机构提供的援助金额。",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "人工智能",
+                          "label": "美国印第安人或阿拉斯加原住民"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "作为",
+                          "label": "亚洲"
                         },
                         {
-                          "value": "BL",
-                          "label": "Black or African American"
+                          "value": "基本法",
+                          "label": "黑人或非裔美国人"
                         },
                         {
-                          "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "value": "惠普",
+                          "label": "夏威夷原住民或太平洋岛民"
                         },
                         {
-                          "value": "WH",
-                          "label": "White"
+                          "value": "白宫",
+                          "label": "白色的"
                         }
                       ]
                     },
@@ -629,11 +641,11 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "社会安全号码",
+                    "label": "社会安全号码",
+                    "type": "文本",
                     "required": false,
-                    "tooltip": "Provide each child’s Social Security Number (SSN). You are not required to provide SSNs. They may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "请提供每个孩子的社会安全号码 (SSN)。您无需提供 SSN。联邦、州和地方机构可能会使用 SSN 来防止重复服务和欺诈，并用于联邦申报。",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
@@ -642,41 +654,41 @@
                     }
                   },
                   {
-                    "id": "do_both_parents_reside_in_home",
-                    "label": "Do both parents reside in the home?",
-                    "type": "radio",
+                    "id": "父母双方都住在家里",
+                    "label": "父母双方都住在家里吗？",
+                    "type": "收音机",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether both of the child’s parents live in the home.",
+                    "tooltip": "勾选“是”或“否”以表明孩子的父母双方是否都住在家里。",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "是的",
+                        "不"
                       ]
                     }
                   },
                   {
-                    "id": "has_disability",
-                    "label": "Does the child have a disability?",
-                    "type": "radio",
+                    "id": "有残疾",
+                    "label": "孩子有残疾吗？",
+                    "type": "收音机",
                     "required": true,
-                    "tooltip": "Check “YES” or “NO” to indicate whether the child needing child care has a disability.",
+                    "tooltip": "勾选“是”或“否”以表明需要托儿服务的儿童是否有残疾。",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "是的",
+                        "不"
                       ]
                     }
                   },
                   {
-                    "id": "is_immigration_status_satisfactory",
-                    "label": "Is child U.S. Citizen, U.S. National, or person with satisfactory immigration status?",
-                    "type": "radio",
+                    "id": "移民状态是否令人满意",
+                    "label": "孩子是美国公民、美国国民或具有令人满意的移民身份的人吗？",
+                    "type": "收音机",
                     "required": true,
-                    "tooltip": "You will only be asked about the immigration status of the children in need of care. Other members of the family will not need to state or prove their immigration status. Your child will be eligible for care if they are a U.S. citizen, a legal permanent resident (green card holder), a refugee, or an asylee; have a T-visa; or hold another qualified immigration status. Please select “Yes” if your child holds one of these statuses.",
+                    "tooltip": "您只会被询问需要照顾的儿童的移民身份。其他家庭成员无需陈述或证明其移民身份。如果您的孩子是美国公民、合法永久居民（绿卡持有人）、难民或寻求庇护者；持有T签证；或持有其他符合条件的移民身份，则符合接受照顾的资格。如果您的孩子持有上述任何一种身份，请选择“是”。",
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "是的",
+                        "不"
                       ]
                     }
                   }
@@ -687,142 +699,146 @@
         ]
       },
       {
-        "id": "family_members",
-        "title": "Family Members",
+        "id": "家庭成员",
+        "title": "家庭成员",
         "sections": [
           {
-            "id": "household_members_info",
-            "title": "Household Members Information",
-            "type": "info",
+            "id": "家庭成员信息",
+            "title": "家庭成员信息",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "**List the household members who do _not_ need child care.**\\n\\nIf applicable, list:\\n\\n- Your **spouse**, your child’s **second parent**, **caretaker**, or **step-parent**\\n- Any other **adult with whom you share a child**, if they live in your home\\n\\nThen, if applicable, list:\\n\\n- Any **siblings under the age of 18** who live in your home\\n\\n> **Only list other household members** — such as **aunts, uncles, cousins, grandparents, or friends** — _if they have financial responsibility_ for the child.\\n\\nA household member with financial responsibility, other than a parent or step-parent, is one who has a **letter or order of guardianship**.\\n\\n**Otherwise, do not include them.**"
+            "content": "**列出不需要儿童保育的家庭成员。**\\n\\n如适用，请列出：\\n\\n- 您的**配偶**、您孩子的**第二任父母**、**看护人**或**继父母**\\n- 任何其他**与您共同抚养孩子的成年人**（如果他们与您同住）\\n\\n然后，如适用，请列出：\\n\\n- 任何与您同住的**18 岁以下兄弟姐妹**\\n\\n> **仅列出其他家庭成员** — 例如**阿姨、叔叔、堂兄弟姐妹、祖父母或朋友** — _如果他们对孩子负有经济责任_。\\n\\n除父母或继父母外，负有经济责任的家庭成员是指拥有**监护权书或监护令**的人。\\n\\n**否则，请勿将其包括在内。**"
           },
           {
-            "id": "family_member_details",
-            "title": "Household Member Details",
-            "description": "Include household members who do not need child care assistance (e.g., spouse, partner, other children).",
+            "id": "家庭成员详情",
+            "title": "家庭成员详情",
+            "description": "包括不需要儿童保育援助的家庭成员（例如配偶、伴侣、其他孩子）。",
             "fields": [
               {
-                "id": "familymember",
-                "label": "Family Members",
-                "type": "group",
+                "id": "家庭成员",
+                "label": "家庭成员",
+                "type": "团体",
                 "requiredCondition": {
-                  "repeatingGroup": "children",
-                  "operator": "ANY",
-                  "condition": { "field": "do_both_parents_reside_in_home", "operator": "equals", "value": "Yes" }
-                },  
+                  "repeatingGroup": "孩子们",
+                  "operator": "任何",
+                  "condition": {
+                    "field": "父母双方都住在家里",
+                    "operator": "等于",
+                    "value": "是的"
+                  }
+                },
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "first_name",
-                    "last_name",
-                    "relationship_to_applicant",
-                    "date_of_birth"
+                    "名",
+                    "姓",
+                    "与申请人的关系",
+                    "出生日期"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "first_name",
-                    "label": "First Name",
-                    "type": "text",
+                    "id": "名",
+                    "label": "名",
+                    "type": "文本",
                     "required": true,
-                    "tooltip": "Provide last and first name, and middle initial if applicable."
+                    "tooltip": "提供姓氏和名字，以及中间名首字母（如果适用）。"
                   },
                   {
-                    "id": "last_name",
-                    "label": "Last Name",
-                    "type": "text",
+                    "id": "姓",
+                    "label": "姓",
+                    "type": "文本",
                     "required": true
                   },
                   {
-                    "id": "mi",
-                    "label": "Middle Initial",
-                    "type": "text",
+                    "id": "我",
+                    "label": "中间初始",
+                    "type": "文本",
                     "required": false
                   },
                   {
-                    "id": "relationship_to_applicant",
-                    "label": "Relationship to Applicant",
-                    "type": "select",
+                    "id": "与申请人的关系",
+                    "label": "与申请人的关系",
+                    "type": "选择",
                     "required": true,
-                    "tooltip": "Provide each person’s relationship to you (e.g. spouse, partner, child, foster parent, other).",
+                    "tooltip": "提供每个人与您的关系（例如配偶、伴侣、子女、养父母、其他）。",
                     "ui": {
                       "options": [
                         "",
-                        "Spouse",
-                        "Partner",
-                        "Foster Parent",
-                        "Child",
-                        "Other"
+                        "配偶",
+                        "伙伴",
+                        "寄养父母",
+                        "孩子",
+                        "其他"
                       ]
                     }
                   },
                   {
-                    "id": "date_of_birth",
-                    "label": "Date of Birth",
-                    "type": "date",
+                    "id": "出生日期",
+                    "label": "出生日期",
+                    "type": "日期",
                     "required": true,
-                    "tooltip": "Provide the family member's date of birth."
+                    "tooltip": "提供家庭成员的出生日期。"
                   },
                   {
-                    "id": "sex",
-                    "label": "Sex",
-                    "type": "radio",
+                    "id": "性别",
+                    "label": "性别",
+                    "type": "收音机",
                     "required": true,
-                    "tooltip": "Indicate the sex for each family member listed.",
+                    "tooltip": "标明列出的每个家庭成员的性别。",
                     "ui": {
                       "options": [
-                        "Male",
-                        "Female"
+                        "男性",
+                        "女性"
                       ]
                     }
                   },
                   {
-                    "id": "ethnicity",
-                    "label": "Ethnicity Hispanic or Latino",
-                    "type": "select",
+                    "id": "种族",
+                    "label": "种族：西班牙裔或拉丁裔",
+                    "type": "选择",
                     "required": false,
-                    "tooltip": "Check “YES” or “NO” to indicate if each member in the household is Hispanic or Latino or not. Providing ethnicity information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "请勾选“是”或“否”，以表明您的家庭成员是否均为西班牙裔或拉丁裔。提供种族信息是自愿的，不会影响您获得儿童保育援助的资格或本机构提供的援助金额。",
                     "ui": {
                       "options": [
                         "",
-                        "Yes",
-                        "No",
-                        "Prefer not to answer"
+                        "是的",
+                        "不",
+                        "不想回答"
                       ]
                     }
                   },
                   {
-                    "id": "race",
-                    "label": "Race",
-                    "type": "checkbox",
+                    "id": "种族",
+                    "label": "种族",
+                    "type": "复选框",
                     "required": false,
-                    "tooltip": "You may choose multiple race categories for a single person. Providing race information is voluntary and will not affect your eligibility for Child Care Assistance or the amount of assistance that you will be given by this agency.",
+                    "tooltip": "您可以为同一人选择多个种族类别。提供种族信息纯属自愿，不会影响您获得儿童保育援助的资格或本机构提供的援助金额。",
                     "ui": {
                       "options": [
                         {
-                          "value": "AI",
-                          "label": "American Indian or Alaska Native"
+                          "value": "人工智能",
+                          "label": "美国印第安人或阿拉斯加原住民"
                         },
                         {
-                          "value": "AS",
-                          "label": "Asian"
+                          "value": "作为",
+                          "label": "亚洲"
                         },
                         {
-                          "value": "BL",
-                          "label": "Black or African American"
+                          "value": "基本法",
+                          "label": "黑人或非裔美国人"
                         },
                         {
-                          "value": "HP",
-                          "label": "Native Hawaiian or Pacific Islander"
+                          "value": "惠普",
+                          "label": "夏威夷原住民或太平洋岛民"
                         },
                         {
-                          "value": "WH",
-                          "label": "White"
+                          "value": "白宫",
+                          "label": "白色的"
                         }
                       ]
                     },
@@ -831,11 +847,11 @@
                     }
                   },
                   {
-                    "id": "ssn",
-                    "label": "Social Security Number",
-                    "type": "text",
+                    "id": "社会安全号码",
+                    "label": "社会安全号码",
+                    "type": "文本",
                     "required": false,
-                    "tooltip": "Fill in the Social Security Number (SSN) for your family members. SSN is optional. SSN may be used by federal, state, and local agencies to prevent duplication of services and fraud, and for Federal Reporting.",
+                    "tooltip": "填写您家庭成员的社会安全号码 (SSN)。SSN 为选填项。联邦、州和地方机构可能会使用 SSN 来防止重复服务和欺诈，并用于联邦申报。",
                     "constraints": {
                       "pattern": "^\\\\d{3}-\\\\d{2}-\\\\d{4}$"
                     },
@@ -850,28 +866,28 @@
         ]
       },
       {
-        "id": "child_family_needs",
-        "title": "Child / Family Needs",
+        "id": "儿童家庭需求",
+        "title": "儿童/家庭需求",
         "sections": [
           {
-            "id": "assistance_reason",
-            "title": "Reason for Child Care Assistance",
-            "description": "Select one or two reasons you are requesting Child Care Assistance.",
-            "tooltip": "Select one reason. In a two-parent household, parents/caretakers can have the same or different reasons for needing child care. Both parents/caretakers will be required to submit documentation in support of their own reason. If you are living in temporary housing, please select Homelessness even if you have another reason that applies to you.",
+            "id": "援助原因",
+            "title": "寻求儿童保育援助的原因",
+            "description": "选择您申请儿童保育援助的一个或两个原因。",
+            "tooltip": "选择一个原因。在双亲家庭中，父母/监护人需要托儿服务的原因可以相同或不同。父母/监护人双方都需要提交证明文件来支持各自的原因。如果您居住在临时住所，即使您有其他适用原因，也请选择“无家可归”。",
             "fields": [
               {
-                "id": "assistance_reason",
-                "label": "Reason(s) for Assistance",
-                "type": "select",
+                "id": "援助原因",
+                "label": "援助原因",
+                "type": "选择",
                 "required": true,
                 "ui": {
                   "options": [
                     "",
-                    "Employment",
-                    "Looking for Work",
-                    "Vocational Training/Educational Activities",
-                    "Receiving Domestic Violence Services",
-                    "Homelessness"
+                    "就业",
+                    "找工作",
+                    "职业培训/教育活动",
+                    "接受家庭暴力服务",
+                    "无家可归"
                   ]
                 },
                 "constraints": {
@@ -885,72 +901,72 @@
             ]
           },
           {
-            "id": "military_status",
-            "title": "Military and Parental Availability",
-            "description": "Provide information about parental military status and availability for child care.",
+            "id": "军事地位",
+            "title": "军人和父母的可用性",
+            "description": "提供有关父母军人身份和儿童保育可用性的信息。",
             "fields": [
               {
-                "id": "is_parent_currently_active_in_military",
-                "label": "Is a Parent Currently Active Full-Time in the U.S. Military?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently active full-time in the U.S. Military.",
-                "type": "radio",
+                "id": "父母目前是否在军队服役",
+                "label": "父母目前是否在美国军队全职服役？",
+                "tooltip": "勾选“是”或“否”以表明父母目前是否全职在美国军队服役。",
+                "type": "收音机",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
-                "id": "is_parent_mem_of_guard_or_mru",
-                "label": "Is a Parent a Member of National Guard or Military Reserve Unit?",
-                "tooltip": "Check “YES” or “NO” to indicate whether a parent is currently a member of a National Guard or Military Reserve Unit.",
-                "type": "radio",
+                "id": "父内存是保护内存还是mru内存",
+                "label": "父母是国民警卫队或军事预备役部队的成员吗？",
+                "tooltip": "勾选“是”或“否”以表明父母目前是否是国民警卫队或军事预备役部队的成员。",
+                "type": "收音机",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
-                "id": "is_non_custodial_parent_available",
-                "label": "Is the Non-Custodial Parent Available to Provide Care?",
-                "tooltip": "Check “YES” or “NO” to indicate whether there is a non-custodial parent available to provide child care.",
-                "type": "radio",
+                "id": "是否为非监护父母",
+                "label": "非监护父母可以提供照顾吗？",
+                "tooltip": "勾选“是”或“否”以表明是否有非监护父母可以提供儿童保育。",
+                "type": "收音机",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "duplicate_application",
-            "title": "Other Applications",
-            "description": "Indicate if you are also applying for or receiving child care from other agencies.",
-            "tooltip": "Indicate whether you are currently receiving or have applied for child care assistance with one of the agencies or organizations listed below. Note: If you are receiving Cash Assistance and are interested in child care assistance, you must apply through the Human Resources Administration. Reach out to your Benefits Access Center or visit the Human Resources Administration webpage.",
+            "id": "重复应用程序",
+            "title": "其他应用",
+            "description": "请注明您是否还申请或接受其他机构的儿童保育服务。",
+            "tooltip": "请注明您是否正在领取或已向以下列出的机构或组织申请儿童保育援助。注意：如果您正在领取现金援助并有意申请儿童保育援助，则必须通过人力资源管理局申请。请联系您的福利获取中心或访问人力资源管理局网页。",
             "fields": [
               {
-                "id": "duplicate_app",
-                "label": "Are You Receiving or Applying for Child Care Through Another Agency?",
-                "type": "select",
+                "id": "重复应用",
+                "label": "您是否正在通过其他机构接受或申请儿童保育？",
+                "type": "选择",
                 "required": false,
                 "ui": {
                   "options": [
                     "",
-                    "Not Applicable",
-                    "Department of Education (DOE)",
-                    "Human Resources Administration (HRA)",
-                    "Department of Youth and Community Development (DYCD)",
-                    "Department of Homeless Services (DHS)",
-                    "Consortium for Worker Education (CWE)",
-                    "Administration for Children's Services (ACS)"
+                    "不适用",
+                    "教育部（DOE）",
+                    "人力资源管理（HRA）",
+                    "青年和社区发展部（DYCD）",
+                    "无家可归者服务部（DHS）",
+                    "工人教育联盟（CWE）",
+                    "儿童服务管理局（ACS）"
                   ]
                 }
               }
@@ -959,370 +975,370 @@
         ]
       },
       {
-        "id": "employment",
-        "title": "Employment",
+        "id": "就业",
+        "title": "就业",
         "sections": [
           {
             "id": "employment_precheck",
-            "title": "Tell us about your employment",
-            "description": "Tell us about your employment",
+            "title": "告诉我们您的工作情况",
+            "description": "告诉我们您的工作情况",
             "fields": [
               {
-                "id": "applicant_emp_income_indicator",
-                "label": "Does applicant earn any income/ wages from employment? ",
-                "type": "radio",
+                "id": "申请人工资收入指标",
+                "label": "申请人是否有任何工作收入/工资？",
+                "type": "收音机",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
-                "id": "coparent_emp_income_indicator",
-                "label": "Does Coparent/2nd Guardian earn any income/ wages from employment? ",
-                "type": "radio",
+                "id": "共同雇主收入指标",
+                "label": "共同监护人/第二监护人是否从工作中获得任何收入/工资？",
+                "type": "收音机",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "applicant_jobs",
-            "title": "Applicant Employment Information",
-            "description": "Enter details for up to two jobs held by the applicant.",
+            "id": "申请人职位",
+            "title": "申请人就业信息",
+            "description": "输入申请人最多两个职位的详细信息。",
             "visibilityCondition": {
-              "field": "applicant_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "field": "申请人工资收入指标",
+              "operator": "等于",
+              "value": "是的"
             },
             "fields": [
               {
-                "id": "applicant_1st_job_start_date",
-                "label": "1st Job - Start Date",
-                "type": "date",
+                "id": "申请人第一份工作开始日期",
+                "label": "第一份工作 - 开始日期",
+                "type": "日期",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "第一份工作"
                 }
               },
               {
-                "id": "applicant_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "申请人第一工作轮班",
+                "label": "第一份工作 - 有轮班吗？",
+                "type": "收音机",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ],
-                  "group": "1st Job"
+                  "group": "第一份工作"
                 }
               },
               {
-                "id": "applicant_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
-                "type": "radio",
+                "id": "申请人第一份工作需要加班",
+                "label": "第一份工作 - 需要加班吗？",
+                "type": "收音机",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ],
-                  "group": "1st Job"
+                  "group": "第一份工作"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "申请人第一份工作雇主名称",
+                "label": "第一份工作 - 雇主名称",
+                "type": "文本",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "第一份工作"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "申请人第一工作雇主电话",
+                "label": "第一份工作 - 雇主电话",
+                "type": "电话",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "第一份工作"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "申请人第一工作雇主街",
+                "label": "第一份工作 - 雇主街道地址",
+                "type": "文本",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "第一份工作"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "申请人第一工作雇主城市",
+                "label": "第一份工作 - 雇主城市",
+                "type": "文本",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "第一份工作"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "申请人第一工作雇主所在州",
+                "label": "第一份工作 - 雇主所在州",
+                "type": "文本",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "第一份工作"
                 }
               },
               {
-                "id": "applicant_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "申请人第一工作雇主邮政编码",
+                "label": "第一份工作 - 雇主邮政编码",
+                "type": "文本",
                 "required": false,
                 "ui": {
-                  "group": "1st Job"
+                  "group": "第一份工作"
                 }
               },
               {
-                "id": "applicant_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
-                "type": "date",
+                "id": "申请人第二份工作开始日期",
+                "label": "第二份工作 - 开始日期",
+                "type": "日期",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "第二份工作"
                 }
               },
               {
-                "id": "applicant_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "申请人第二份工作轮班",
+                "label": "第二份工作——有轮班吗？",
+                "type": "收音机",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ],
-                  "group": "2nd Job"
+                  "group": "第二份工作"
                 }
               },
               {
-                "id": "applicant_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
-                "type": "radio",
+                "id": "申请人第二份工作需要加班",
+                "label": "第二份工作——需要加班吗？",
+                "type": "收音机",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ],
-                  "group": "2nd Job"
+                  "group": "第二份工作"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "申请人第二份工作雇主名称",
+                "label": "第二份工作 - 雇主名称",
+                "type": "文本",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "第二份工作"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "申请人第二份工作雇主电话",
+                "label": "第二份工作 - 雇主电话",
+                "type": "电话",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "第二份工作"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "申请人第二份工作雇主街道",
+                "label": "第二份工作 - 雇主街道地址",
+                "type": "文本",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "第二份工作"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "申请人第二份工作雇主城市",
+                "label": "第二份工作 - 雇主城市",
+                "type": "文本",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "第二份工作"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "申请人第二份工作雇主所在州",
+                "label": "第二份工作 - 雇主所在州",
+                "type": "文本",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "第二份工作"
                 }
               },
               {
-                "id": "applicant_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "申请人第二份工作雇主邮政编码",
+                "label": "第二份工作 - 雇主邮政编码",
+                "type": "文本",
                 "required": false,
                 "ui": {
-                  "group": "2nd Job"
+                  "group": "第二份工作"
                 }
               }
             ]
           },
           {
-            "id": "second_parent_jobs",
-            "title": "Second Parent Employment Information",
-            "description": "Enter details for up to two jobs held by the second parent (if applicable).",
+            "id": "第二位家长的工作",
+            "title": "第二位家长就业信息",
+            "description": "输入第二位家长所从事的最多两份工作的详细信息（如果适用）。",
             "visibilityCondition": {
-              "field": "coparent_emp_income_indicator",
-              "operator": "equals",
-              "value": "Yes"
+              "field": "共同雇主收入指标",
+              "operator": "等于",
+              "value": "是的"
             },
             "fields": [
               {
-                "id": "second_parent_1st_job_start_date",
-                "label": "1st Job - Start Date",
-                "type": "date",
+                "id": "第二位家长的第一份工作开始日期",
+                "label": "第一份工作 - 开始日期",
+                "type": "日期",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_rotating_shift",
-                "label": "1st Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "第二位家长的第一份工作轮班",
+                "label": "第一份工作 - 有轮班吗？",
+                "type": "收音机",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_requires_overtime",
-                "label": "1st Job - Requires Overtime?",
-                "type": "radio",
+                "id": "第二任父母的第一份工作需要加班",
+                "label": "第一份工作 - 需要加班吗？",
+                "type": "收音机",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
-                "id": "second_parent_1st_job_employer_name",
-                "label": "1st Job - Employer Name",
-                "type": "text",
+                "id": "第二任父母第一份工作雇主名称",
+                "label": "第一份工作 - 雇主名称",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_phone",
-                "label": "1st Job - Employer Phone",
-                "type": "tel",
+                "id": "第二位家长第一份工作雇主电话",
+                "label": "第一份工作 - 雇主电话",
+                "type": "电话",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_street",
-                "label": "1st Job - Employer Street Address",
-                "type": "text",
+                "id": "第二父母第一工作雇主街",
+                "label": "第一份工作 - 雇主街道地址",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_city",
-                "label": "1st Job - Employer City",
-                "type": "text",
+                "id": "第二位父母的第一份工作雇主所在城市",
+                "label": "第一份工作 - 雇主城市",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_state",
-                "label": "1st Job - Employer State",
-                "type": "text",
+                "id": "第二父母第一工作雇主所在州",
+                "label": "第一份工作 - 雇主所在州",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "second_parent_1st_job_employer_zipcode",
-                "label": "1st Job - Employer ZIP Code",
-                "type": "text",
+                "id": "第二位父母第一份工作雇主邮政编码",
+                "label": "第一份工作 - 雇主邮政编码",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_start_date",
-                "label": "2nd Job - Start Date",
-                "type": "date",
+                "id": "第二位家长的第二份工作开始日期",
+                "label": "第二份工作 - 开始日期",
+                "type": "日期",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_rotating_shift",
-                "label": "2nd Job - Has Rotating Shift?",
-                "type": "radio",
+                "id": "第二位家长轮班",
+                "label": "第二份工作——有轮班吗？",
+                "type": "收音机",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_requires_overtime",
-                "label": "2nd Job - Requires Overtime?",
-                "type": "radio",
+                "id": "第二位家长的第二份工作需要加班",
+                "label": "第二份工作——需要加班吗？",
+                "type": "收音机",
                 "required": false,
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
-                "id": "second_parent_2nd_job_employer_name",
-                "label": "2nd Job - Employer Name",
-                "type": "text",
+                "id": "第二位父母的第二份工作雇主名称",
+                "label": "第二份工作 - 雇主名称",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_phone",
-                "label": "2nd Job - Employer Phone",
-                "type": "tel",
+                "id": "第二父母第二工作雇主电话",
+                "label": "第二份工作 - 雇主电话",
+                "type": "电话",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_street",
-                "label": "2nd Job - Employer Street Address",
-                "type": "text",
+                "id": "第二父母第二工作雇主街",
+                "label": "第二份工作 - 雇主街道地址",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_city",
-                "label": "2nd Job - Employer City",
-                "type": "text",
+                "id": "第二位父母/第二份工作/雇主所在城市",
+                "label": "第二份工作 - 雇主城市",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_state",
-                "label": "2nd Job - Employer State",
-                "type": "text",
+                "id": "第二父母第二工作雇主所在州",
+                "label": "第二份工作 - 雇主所在州",
+                "type": "文本",
                 "required": false
               },
               {
-                "id": "second_parent_2nd_job_employer_zipcode",
-                "label": "2nd Job - Employer ZIP Code",
-                "type": "text",
+                "id": "第二位父母/第二份工作/雇主邮政编码",
+                "label": "第二份工作 - 雇主邮政编码",
+                "type": "文本",
                 "required": false
               }
             ]
@@ -1330,29 +1346,29 @@
         ]
       },
       {
-        "id": "schedule",
-        "title": "Work/Activity/Travel Time Schedule",
+        "id": "日程",
+        "title": "工作/活动/旅行时间表",
         "sections": [
           {
-            "id": "schedule_section_info",
-            "title": "Schedule Information",
-            "type": "info",
+            "id": "时间表部分信息",
+            "title": "日程信息",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please indicate what days and hours you will need child care for based on your reason for care.\\n\\n- **Employed**: Indicate the hours you attend work\\n- **Educational or Vocational Program**: Indicate the hours you attend school or your program\\n- **Looking for Work**: Indicate the hours you spend looking for work\\n- **Homeless**: Indicate the hours you spend looking for housing\\n- **Attending Services for Domestic Violence**: Indicate the hours you attend services.\\n- **Attending Services for Substance Abuse Treatment**: Indicate the hours you attend services."
+            "content": "请根据您的需要，注明您需要托儿服务的日期和时间。\\n\\n- **就业**：请注明您上班的时间\\n- **教育或职业课程**：请注明您上学或参加课程的时间\\n- **找工作**：请注明您找工作的时间\\n- **无家可归**：请注明您找住处的时间\\n- **参加家庭暴力服务**：请注明您参加服务的时间。\\n- **参加药物滥用治疗服务**：请注明您参加服务的时间。"
           },
           {
             "id": "first_parent_activity_schedule",
-            "title": "First Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the first parent's activities.",
+            "title": "第一个家长活动时间表",
+            "description": "输入第一位家长每周每天活动的开始和结束时间。",
             "ui": {
-              "layout": "table",
+              "layout": "桌子",
               "columns": [
-                "Start Time",
-                "End Time"
+                "开始时间",
+                "结束时间"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
@@ -1362,162 +1378,162 @@
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "周一",
+                  "周二",
+                  "周三",
+                  "周四",
+                  "星期五"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "将选定的时间表应用于其他工作日",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "周一",
+                  "周二",
+                  "周三",
+                  "周四",
+                  "星期五",
+                  "周六",
+                  "星期日"
                 ]
               }
             },
             "fields": [
               {
                 "id": "fp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "label": "星期一从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "周一",
                   "column": 1
                 }
               },
               {
                 "id": "fp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "label": "星期一至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "周一",
                   "column": 2
                 }
               },
               {
                 "id": "fp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "label": "星期二从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "周二",
                   "column": 1
                 }
               },
               {
                 "id": "fp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "label": "星期二至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "周二",
                   "column": 2
                 }
               },
               {
                 "id": "fp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "label": "星期三从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "周三",
                   "column": 1
                 }
               },
               {
                 "id": "fp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "label": "星期三至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "周三",
                   "column": 2
                 }
               },
               {
                 "id": "fp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "label": "星期四从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "周四",
                   "column": 1
                 }
               },
               {
                 "id": "fp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "label": "星期四至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "周四",
                   "column": 2
                 }
               },
               {
                 "id": "fp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "label": "星期五从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "星期五",
                   "column": 1
                 }
               },
               {
                 "id": "fp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "label": "星期五至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "星期五",
                   "column": 2
                 }
               },
               {
                 "id": "fp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "label": "星期六 从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "周六",
                   "column": 1
                 }
               },
               {
                 "id": "fp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "label": "星期六至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "周六",
                   "column": 2
                 }
               },
               {
                 "id": "fp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "label": "周日从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "星期日",
                   "column": 1
                 }
               },
               {
                 "id": "fp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "label": "周日至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "星期日",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "second_parent_activity_schedule",
-            "title": "Second Parent Activity Schedule",
-            "description": "Enter the start and end times for each day of the week for the second parent's activities.",
+            "id": "第二父母活动时间表",
+            "title": "第二家长活动安排",
+            "description": "输入第二位家长每周每天活动的开始和结束时间。",
             "ui": {
-              "layout": "table",
+              "layout": "桌子",
               "columns": [
-                "Start Time",
-                "End Time"
+                "开始时间",
+                "结束时间"
               ],
               "rowCopy": {
                 "enableUserPickSource": true,
@@ -1527,310 +1543,310 @@
                   2
                 ],
                 "targetRowValues": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "周一",
+                  "周二",
+                  "周三",
+                  "周四",
+                  "星期五"
                 ],
-                "copyControlLabel": "Apply selected schedule to other weekdays",
+                "copyControlLabel": "将选定的时间表应用于其他工作日",
                 "sourceOptions": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
+                  "周一",
+                  "周二",
+                  "周三",
+                  "周四",
+                  "星期五",
+                  "周六",
+                  "星期日"
                 ]
               }
             },
             "fields": [
               {
                 "id": "sp_monday_from",
-                "label": "Monday From",
-                "type": "time",
+                "label": "星期一从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "周一",
                   "column": 1
                 }
               },
               {
                 "id": "sp_monday_to",
-                "label": "Monday To",
-                "type": "time",
+                "label": "星期一至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Monday",
+                  "rowGroup": "周一",
                   "column": 2
                 }
               },
               {
                 "id": "sp_tuesday_from",
-                "label": "Tuesday From",
-                "type": "time",
+                "label": "星期二从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "周二",
                   "column": 1
                 }
               },
               {
                 "id": "sp_tuesday_to",
-                "label": "Tuesday To",
-                "type": "time",
+                "label": "星期二至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Tuesday",
+                  "rowGroup": "周二",
                   "column": 2
                 }
               },
               {
                 "id": "sp_wednesday_from",
-                "label": "Wednesday From",
-                "type": "time",
+                "label": "星期三从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "周三",
                   "column": 1
                 }
               },
               {
                 "id": "sp_wednesday_to",
-                "label": "Wednesday To",
-                "type": "time",
+                "label": "星期三至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Wednesday",
+                  "rowGroup": "周三",
                   "column": 2
                 }
               },
               {
                 "id": "sp_thursday_from",
-                "label": "Thursday From",
-                "type": "time",
+                "label": "星期四从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "周四",
                   "column": 1
                 }
               },
               {
                 "id": "sp_thursday_to",
-                "label": "Thursday To",
-                "type": "time",
+                "label": "星期四至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Thursday",
+                  "rowGroup": "周四",
                   "column": 2
                 }
               },
               {
                 "id": "sp_friday_from",
-                "label": "Friday From",
-                "type": "time",
+                "label": "星期五从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "星期五",
                   "column": 1
                 }
               },
               {
                 "id": "sp_friday_to",
-                "label": "Friday To",
-                "type": "time",
+                "label": "星期五至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Friday",
+                  "rowGroup": "星期五",
                   "column": 2
                 }
               },
               {
                 "id": "sp_saturday_from",
-                "label": "Saturday From",
-                "type": "time",
+                "label": "星期六 从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "周六",
                   "column": 1
                 }
               },
               {
-                "id": "sp_saturday_to",
-                "label": "Saturday To",
-                "type": "time",
+                "id": "sp_星期六_到",
+                "label": "星期六至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Saturday",
+                  "rowGroup": "周六",
                   "column": 2
                 }
               },
               {
                 "id": "sp_sunday_from",
-                "label": "Sunday From",
-                "type": "time",
+                "label": "周日从",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "星期日",
                   "column": 1
                 }
               },
               {
                 "id": "sp_sunday_to",
-                "label": "Sunday To",
-                "type": "time",
+                "label": "周日至",
+                "type": "时间",
                 "ui": {
-                  "rowGroup": "Sunday",
+                  "rowGroup": "星期日",
                   "column": 2
                 }
               }
             ]
           },
           {
-            "id": "first_parent_travel_time",
-            "title": "First Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the first parent.",
+            "id": "首次父母出行时间",
+            "title": "第一父母的旅行时间",
+            "description": "输入第一位家长的出行时间和交通方式。",
             "fields": [
               {
                 "id": "fp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "label": "下车行程时间",
+                "type": "选择",
+                "tooltip": "选择您从工作地点/活动地点到托儿所的典型旅行时间",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15分钟",
+                    "30分钟",
+                    "45分钟",
+                    "1小时",
+                    "超过1小时"
                   ]
                 }
               },
               {
                 "id": "fp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "label": "送达时间（如果> 1 小时）",
+                "type": "文本",
                 "requiredCondition": {
                   "field": "fp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "等于",
+                  "value": "超过1小时"
                 }
               },
               {
                 "id": "fp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
-                "tooltip": "Select your typical travel time from work/activity to your child care provider",
+                "label": "接送行程时间",
+                "type": "选择",
+                "tooltip": "选择您从工作地点/活动地点到托儿所的典型旅行时间",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15分钟",
+                    "30分钟",
+                    "45分钟",
+                    "1小时",
+                    "超过1小时"
                   ]
                 }
               },
               {
                 "id": "fp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "label": "接送时间（如果> 1小时）",
+                "type": "文本",
                 "requiredCondition": {
                   "field": "fp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "等于",
+                  "value": "超过1小时"
                 }
               },
               {
                 "id": "fp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
-                "type": "radio",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
+                "label": "乘坐公共交通工具下车吗？",
+                "type": "收音机",
+                "tooltip": "请注明申请人是否使用公共交通工具往返于工作地点/活动地点和提供者之间。",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
                 "id": "fp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
-                "tooltip": "Indicate if the applicant uses public transportation to travel to and from work/activity to provider.",
-                "type": "radio",
+                "label": "乘坐公共交通工具来接您吗？",
+                "tooltip": "请注明申请人是否使用公共交通工具往返于工作地点/活动地点和提供者之间。",
+                "type": "收音机",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               }
             ]
           },
           {
-            "id": "second_parent_travel_time",
-            "title": "Second Parent Travel Time",
-            "description": "Enter the travel times and method of transport for the second parent.",
+            "id": "第二位父母的出行时间",
+            "title": "第二位家长的旅行时间",
+            "description": "输入第二位家长的出行时间和交通方式。",
             "fields": [
               {
                 "id": "sp_dropoff_travel_time",
-                "label": "Drop-off Travel Time",
-                "type": "select",
+                "label": "下车行程时间",
+                "type": "选择",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15分钟",
+                    "30分钟",
+                    "45分钟",
+                    "1小时",
+                    "超过1小时"
                   ]
                 }
               },
               {
                 "id": "sp_pickup_travel_time",
-                "label": "Pick-up Travel Time",
-                "type": "select",
+                "label": "接送行程时间",
+                "type": "选择",
                 "ui": {
                   "options": [
                     "",
-                    "15 min",
-                    "30 min",
-                    "45 min",
-                    "1 hour",
-                    "More than 1 hour"
+                    "15分钟",
+                    "30分钟",
+                    "45分钟",
+                    "1小时",
+                    "超过1小时"
                   ]
                 }
               },
               {
                 "id": "sp_dropoff_time_gt_1hr",
-                "label": "Drop-off Time (if > 1 hour)",
-                "type": "text",
+                "label": "送达时间（如果> 1 小时）",
+                "type": "文本",
                 "requiredCondition": {
                   "field": "sp_dropoff_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "等于",
+                  "value": "超过1小时"
                 }
               },
               {
                 "id": "sp_pickup_time_gt_1hr",
-                "label": "Pick-up Time (if > 1 hour)",
-                "type": "text",
+                "label": "接送时间（如果> 1小时）",
+                "type": "文本",
                 "requiredCondition": {
                   "field": "sp_pickup_travel_time",
-                  "operator": "equals",
-                  "value": "More than 1 hour"
+                  "operator": "等于",
+                  "value": "超过1小时"
                 }
               },
               {
                 "id": "sp_public_transport_dropoff",
-                "label": "Public Transport for Drop-off?",
-                "type": "radio",
+                "label": "乘坐公共交通工具下车吗？",
+                "type": "收音机",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               },
               {
                 "id": "sp_public_transport_pickup",
-                "label": "Public Transport for Pick-up?",
-                "type": "radio",
+                "label": "乘坐公共交通工具来接您吗？",
+                "type": "收音机",
                 "ui": {
                   "options": [
-                    "Yes",
-                    "No"
+                    "是的",
+                    "不"
                   ]
                 }
               }
@@ -1839,122 +1855,122 @@
         ]
       },
       {
-        "id": "income",
-        "title": "Income Information",
+        "id": "收入",
+        "title": "收入信息",
         "sections": [
           {
             "id": "income_step_info",
-            "title": "Instructions",
-            "type": "info",
+            "title": "指示",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "Please include income/benefits information for yourself and, if applicable, your spouse, your child’s second caretaker, and/or any other adult with whom you share a child, if they live in your home.\\n\\nIndicate if you receive money from the following sources by selecting “Yes” or “No.” If you select “Yes,” you will be asked for additional information.\\n\\nIf the second caretaker in the household also receives the same income source, add a separate line for their income."
+            "content": "请提供您本人以及（如适用）您的配偶、您孩子的第二个看护人和/或与您共同抚养孩子的任何其他成年人（如果他们与您同住）的收入/福利信息。\\n\\n请选择“是”或“否”，以表明您是否从以下来源获得收入。如果您选择“是”，系统会要求您提供更多信息。\\n\\n如果家庭中的第二个看护人也从相同的来源获得收入，请为其收入添加单独的一行。"
           },
           {
-            "id": "income_sources",
-            "title": "Income Sources",
-            "description": "Provide details about all income sources applicable to the applicant or household.",
+            "id": "收入来源",
+            "title": "收入来源",
+            "description": "提供适用于申请人或家庭的所有收入来源的详细信息。",
             "fields": [
               {
-                "id": "income_sources",
-                "label": "List of Income Sources",
-                "type": "group",
+                "id": "收入来源",
+                "label": "收入来源清单",
+                "type": "团体",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "name_ref",
-                    "how_often",
-                    "recipient",
-                    "monthly_amount"
+                    "名称引用",
+                    "多常",
+                    "接受者",
+                    "每月金额"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "name_ref",
-                    "label": "Income Source Type",
-                    "type": "select",
+                    "id": "名称引用",
+                    "label": "收入来源类型",
+                    "type": "选择",
                     "required": true,
                     "ui": {
                       "options": [
                         "",
-                        "ApplicantWages",
-                        "SecondParentWages",
-                        "SelfEmployment",
-                        "ChildSupport",
-                        "Alimony",
-                        "Unemployment",
-                        "SocialSecurity",
-                        "Disability",
-                        "Rental",
-                        "Dividends",
-                        "Retirement",
-                        "CashAssistance",
-                        "Other"
+                        "申请人工资",
+                        "第二父母工资",
+                        "自雇",
+                        "子女抚养费",
+                        "赡养费",
+                        "失业",
+                        "社会保障",
+                        "残疾",
+                        "租赁",
+                        "股息",
+                        "退休",
+                        "现金援助",
+                        "其他"
                       ]
                     }
                   },
                   {
-                    "id": "other_source_text",
-                    "label": "Other Source (If applicable)",
-                    "type": "text",
+                    "id": "其他源文本",
+                    "label": "其他来源（如适用）",
+                    "type": "文本",
                     "visibilityCondition": {
-                      "field": "name_ref",
-                      "operator": "equals",
-                      "value": "Other"
+                      "field": "名称引用",
+                      "operator": "等于",
+                      "value": "其他"
                     },
                     "requiredCondition": {
                       "condition": {
-                        "field": "name_ref",
-                        "operator": "equals",
-                        "value": "Other"
+                        "field": "名称引用",
+                        "operator": "等于",
+                        "value": "其他"
                       }
                     }
                   },
                   {
-                    "id": "is_source_applicable",
-                    "label": "Is this Source Applicable?",
-                    "type": "radio",
+                    "id": "来源是否适用",
+                    "label": "此来源适用吗？",
+                    "type": "收音机",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Yes",
-                        "No"
+                        "是的",
+                        "不"
                       ]
                     }
                   },
                   {
-                    "id": "gross_amount",
-                    "label": "Gross Amount ($)",
-                    "type": "number",
+                    "id": "总金额",
+                    "label": "总金额（美元）",
+                    "type": "数字",
                     "required": true
                   },
                   {
-                    "id": "how_often",
-                    "label": "Frequency of Income",
-                    "type": "radio",
+                    "id": "多常",
+                    "label": "收入频率",
+                    "type": "收音机",
                     "required": true,
                     "ui": {
                       "options": [
-                        "Weekly",
-                        "Bi-weekly",
-                        "Monthly",
-                        "Other"
+                        "每周",
+                        "每两周",
+                        "每月",
+                        "其他"
                       ]
                     }
                   },
                   {
-                    "id": "recipient",
-                    "label": "Recipient of Income",
-                    "type": "text",
+                    "id": "接受者",
+                    "label": "收入接收者",
+                    "type": "文本",
                     "required": true
                   },
                   {
-                    "id": "monthly_amount",
-                    "label": "Monthly Amount ($)",
-                    "type": "number",
+                    "id": "每月金额",
+                    "label": "每月金额（$）",
+                    "type": "数字",
                     "required": true
                   }
                 ]
@@ -1962,38 +1978,38 @@
             ]
           },
           {
-            "id": "total_income",
-            "title": "Total Household Income",
-            "description": "Sum of all monthly income across sources.",
+            "id": "总收入",
+            "title": "家庭总收入",
+            "description": "所有来源的月收入总和。",
             "fields": [
               {
-                "id": "total_income",
-                "label": "Total Monthly Income ($)",
-                "type": "number",
+                "id": "总收入",
+                "label": "每月总收入（美元）",
+                "type": "数字",
                 "required": true
               }
             ]
           },
           {
-            "id": "income_proof_section",
-            "title": "Income Proof",
+            "id": "收入证明部分",
+            "title": "收入证明",
             "fields": [
               {
-                "id": "income_proof",
-                "label": "Upload Income Proof",
-                "type": "file",
+                "id": "收入证明",
+                "label": "上传收入证明",
+                "type": "文件",
                 "requiredCondition": {
                   "condition": {
-                    "field": "assistance_reason",
-                    "operator": "includes",
-                    "value": "Employment"
+                    "field": "援助原因",
+                    "operator": "包括",
+                    "value": "就业"
                   }
                 },
                 "constraints": {
                   "maxFileSizeMB": 5,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg"
+                    "应用程序/pdf",
+                    "图片/jpeg"
                   ],
                   "imageResolution": {
                     "minWidth": 800,
@@ -2001,9 +2017,9 @@
                   }
                 },
                 "metadata": {
-                  "proofCategory": "Income Verification",
+                  "proofCategory": "收入验证",
                   "examples": [
-                    "Pay Stub",
+                    "工资单",
                     "W-2"
                   ],
                   "multiple": true
@@ -2014,72 +2030,72 @@
         ]
       },
       {
-        "id": "provider",
-        "title": "Provider",
+        "id": "提供者",
+        "title": "提供者",
         "sections": [
           {
-            "id": "provider_step_info",
-            "title": "Instructions",
-            "type": "info",
+            "id": "提供者步骤信息",
+            "title": "指示",
+            "type": "信息",
             "ui": {
               "markdown": true,
               "collapsible": false,
               "defaultCollapsed": false
             },
-            "content": "If you are found eligible for child care assistance, you can choose center-based or home-based care from a licensed, registered, or legally exempt provider. If you choose a provider that is not licensed or registered, the provider must be enrolled as a legally exempt provider.\\n\\nIf you know which child care providers you would like your child to attend, provide the names and addresses of your choice of providers. You can leave this section blank if you do not know (it will not impact your eligibility and you will have an opportunity to select a provider if determined eligible)."
+            "content": "如果您符合儿童保育援助的资格，您可以选择持有执照、注册或获得法律豁免的机构提供的中心式或居家式托管服务。如果您选择未持有执照或注册的机构，则该机构必须注册为获得法律豁免的机构。\\n\\n如果您知道您希望孩子去哪些儿童保育机构，请提供您选择的机构的名称和地址。如果您不知道，可以将此部分留空（这不会影响您的资格，并且如果确定您符合资格，您将有机会选择一家机构）。"
           },
           {
-            "id": "provider_choices",
-            "title": "Provider Choices",
-            "description": "Specify details of the provider where you intend to enroll the child(ren).",
+            "id": "提供者选择",
+            "title": "提供商选择",
+            "description": "请指定您打算为孩子报名的提供商的详细信息。",
             "fields": [
               {
-                "id": "provider_choices",
-                "label": "List of Providers",
-                "type": "group",
+                "id": "提供者选择",
+                "label": "提供商列表",
+                "type": "团体",
                 "metadata": {
                   "multiple": true,
                   "tableColumns": [
-                    "provider_name",
-                    "program_number",
-                    "provider_zip_code"
+                    "提供商名称",
+                    "程序编号",
+                    "提供商邮政编码"
                   ]
                 },
                 "fields": [
                   {
-                    "id": "provider_name",
-                    "label": "Provider Name",
-                    "type": "text",
+                    "id": "提供商名称",
+                    "label": "提供商名称",
+                    "type": "文本",
                     "required": true
                   },
                   {
-                    "id": "program_number",
-                    "label": "Program Number (If Applicable)",
-                    "type": "text",
+                    "id": "程序编号",
+                    "label": "项目编号（如适用）",
+                    "type": "文本",
                     "required": false
                   },
                   {
-                    "id": "provider_street",
-                    "label": "Street Address",
-                    "type": "text",
+                    "id": "提供商街道",
+                    "label": "街道地址",
+                    "type": "文本",
                     "required": true
                   },
                   {
-                    "id": "provider_city",
-                    "label": "City",
-                    "type": "text",
+                    "id": "提供商城市",
+                    "label": "城市",
+                    "type": "文本",
                     "required": true
                   },
                   {
-                    "id": "provider_state",
-                    "label": "State",
-                    "type": "text",
+                    "id": "提供者状态",
+                    "label": "状态",
+                    "type": "文本",
                     "required": true
                   },
                   {
-                    "id": "provider_zip_code",
-                    "label": "Zip Code",
-                    "type": "text",
+                    "id": "提供商邮政编码",
+                    "label": "邮政编码",
+                    "type": "文本",
                     "required": true
                   }
                 ]
@@ -2090,185 +2106,185 @@
       },
       {
         "id": "document_upload_step",
-        "title": "Document Upload",
-        "description": "The Application for Child Care Assistance (CFWB-012) must include supporting documentation. Check to ensure that documentation is provided for each requirement of subsidy eligibility.",
+        "title": "文件上传",
+        "description": "儿童保育援助申请表 (CFWB-012) 必须包含证明文件。请勾选，确保已提供符合每项补贴资格要求的证明文件。",
         "sections": [
           {
-            "id": "nyc_residency",
-            "title": "New York City Residency",
-            "description": "These documents confirm that you live in New York City. Please upload one of the following documents.",
+            "id": "纽约居住地",
+            "title": "纽约市居住权",
+            "description": "这些文件证明您居住在纽约市。请上传以下文件之一。",
             "fields": [
               {
                 "id": "nyc_residency_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "label": "选择下列选项之一：",
+                "type": "收音机",
                 "required": true,
                 "ui": {
                   "options": [
-                    "IDNYC",
-                    "Utility Bill",
-                    "Section 8 Award Letter",
-                    "Driver’s License",
-                    "Rent Receipt",
-                    "NYCHA Certificate",
-                    "CFWB-067 Residency Attestation",
-                    "CFWB-027 Housing Attestation with address listed",
-                    "Shelter Residency Letter with address listed",
-                    "Other"
+                    "纽约市身份证",
+                    "公共事业费",
+                    "第 8 部分 奖励函",
+                    "驾照",
+                    "租金收据",
+                    "纽约市房屋管理局证书",
+                    "CFWB-067 居住证明",
+                    "CFWB-027 列有地址的住房证明",
+                    "列出地址的庇护所居住证明信",
+                    "其他"
                   ]
                 }
               },
               {
                 "id": "nyc_residency_file",
-                "label": "Upload Residency Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
-                "required": true, 
+                "label": "上传居住证明文件",
+                "description": "要将文件添加到您的申请中，您可以从手机或设备上传图片或扫描文件。接受的格式包括 .pdf、.gif、.jpeg、.jpg 和 .png，最大 25 MB。观看此教程视频，了解如何上传文件。",
+                "type": "文件",
+                "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "应用程序/pdf",
+                    "图片/jpeg",
+                    "图片/jpg",
+                    "图片/png",
+                    "图片/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "NYC Residency",
+                  "proofCategory": "纽约市居住权",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "citizenship_status",
-            "title": "Citizenship or Immigration Status",
-            "description": "These documents confirm the citizenship/immigration status of the children in your family for whom you’re applying for child care assistance. Please upload one of the following documents for ONLY each child needing care.",
+            "id": "公民身份",
+            "title": "公民或移民身份",
+            "description": "这些文件用于确认您家庭中申请儿童保育援助的儿童的公民/移民身份。请仅为每位需要照顾的儿童上传以下其中一份文件。",
             "fields": [
               {
-                "id": "citizenship_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "公民身份文件类型",
+                "label": "选择下列选项之一：",
+                "type": "收音机",
                 "required": true,
                 "ui": {
                   "options": [
-                    "US Birth Certificate",
-                    "Alien Registration Card including Permanent Resident or Green Card",
-                    "Passport",
-                    "FS-240 (Report of Birth Abroad of a U.S. Citizen)",
-                    "Naturalization Certificate",
-                    "Other"
+                    "美国出生证明",
+                    "外国人登记卡，包括永久居民卡或绿卡",
+                    "护照",
+                    "FS-240（美国公民海外出生报告）",
+                    "入籍证明书",
+                    "其他"
                   ]
                 }
               },
               {
-                "id": "citizenship_doc_file",
-                "label": "Upload Citizenship/Immigration Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "公民身份文档文件",
+                "label": "上传公民/移民文件",
+                "description": "要将文件添加到您的申请中，您可以从手机或设备上传图片或扫描文件。接受的格式包括 .pdf、.gif、.jpeg、.jpg 和 .png，最大 25 MB。观看此教程视频，了解如何上传文件。",
+                "type": "文件",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "应用程序/pdf",
+                    "图片/jpeg",
+                    "图片/jpg",
+                    "图片/png",
+                    "图片/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Citizenship/Immigration Status",
+                  "proofCategory": "公民/移民身份",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "child_relationship",
-            "title": "Child’s Relationship to Parent/Applicant",
-            "description": "These documents confirm your relationship to the children in your household under age 18. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them or not. If you are a legal guardian with financial responsibility, you must upload a Court order OR a letter of guardianship.",
+            "id": "子关系",
+            "title": "孩子与父母/申请人的关系",
+            "description": "这些文件确认您与家中 18 岁以下儿童的关系。请为家中每位 18 岁以下儿童上传以下其中一份文件，无论他们是否需要托儿服务。如果您是承担经济责任的法定监护人，则必须上传法院命令或监护权委托书。",
             "fields": [
               {
-                "id": "relationship_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "id": "关系文档类型",
+                "label": "选择下列选项之一：",
+                "type": "收音机",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Passport with parent's signature",
-                    "Court order for legal guardian with financial responsibility",
-                    "Letter of Guardianship",
-                    "Other - CFWB-058 Caretaker Attestation"
+                    "出生证明",
+                    "领养记录",
+                    "洗礼记录",
+                    "有父母签名的护照",
+                    "法院命令法定监护人承担经济责任",
+                    "监护书",
+                    "其他 - CFWB-058 看护人证明"
                   ]
                 }
               },
               {
-                "id": "relationship_doc_file",
-                "label": "Upload Relationship Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "关系_doc_文件",
+                "label": "上传关系文件",
+                "description": "要将文件添加到您的申请中，您可以从手机或设备上传图片或扫描文件。接受的格式包括 .pdf、.gif、.jpeg、.jpg 和 .png，最大 25 MB。观看此教程视频，了解如何上传文件。",
+                "type": "文件",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "应用程序/pdf",
+                    "图片/jpeg",
+                    "图片/jpg",
+                    "图片/png",
+                    "图片/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Relationship",
+                  "proofCategory": "子女关系",
                   "multiple": false
                 }
               }
             ]
           },
           {
-            "id": "age_proof",
-            "title": "Age",
-            "description": "These documents confirm the age of the children in your household. Please upload one of the following documents for every child in the household under age 18, regardless of whether child care is needed for them:",
+            "id": "防老化",
+            "title": "年龄",
+            "description": "这些文件可确认您家中儿童的年龄。请为家中每位18岁以下的儿童上传以下文件之一，无论他们是否需要托儿服务：",
             "fields": [
               {
                 "id": "age_doc_type",
-                "label": "Select one of the following:",
-                "type": "radio",
+                "label": "选择下列选项之一：",
+                "type": "收音机",
                 "required": true,
                 "ui": {
                   "options": [
-                    "Birth Certificate",
-                    "Adoption record",
-                    "Baptismal record",
-                    "Alien Registration Card",
-                    "Passport",
-                    "Official hospital documentation of the child’s birth"
+                    "出生证明",
+                    "领养记录",
+                    "洗礼记录",
+                    "外国人登录证",
+                    "护照",
+                    "孩子出生的官方医院证明"
                   ]
                 }
               },
               {
-                "id": "age_doc_file",
-                "label": "Upload Age Proof Document",
-                "description": "To add a document to your application, you can upload an image or scanned file from your phone or device. Accepted formats include .pdf, .gif, .jpeg, .jpg and .png up to 25 MB. Learn how to upload your files with this Tutorial Video.",
-                "type": "file",
+                "id": "age_doc_文件",
+                "label": "上传年龄证明文件",
+                "description": "要将文件添加到您的申请中，您可以从手机或设备上传图片或扫描文件。接受的格式包括 .pdf、.gif、.jpeg、.jpg 和 .png，最大 25 MB。观看此教程视频，了解如何上传文件。",
+                "type": "文件",
                 "required": true,
                 "constraints": {
                   "maxFileSizeMB": 25,
                   "allowedTypes": [
-                    "application/pdf",
-                    "image/jpeg",
-                    "image/jpg",
-                    "image/png",
-                    "image/gif"
+                    "应用程序/pdf",
+                    "图片/jpeg",
+                    "图片/jpg",
+                    "图片/png",
+                    "图片/gif"
                   ]
                 },
                 "metadata": {
-                  "proofCategory": "Child Age",
+                  "proofCategory": "儿童年龄",
                   "multiple": false
                 }
               }
@@ -2277,9 +2293,9 @@
         ]
       },
       {
-        "id": "review",
-        "title": "Review & Submit",
-        "type": "review",
+        "id": "审查",
+        "title": "审核并提交",
+        "type": "审查",
         "sections": []
       }
     ]
