@@ -85,7 +85,7 @@ function mergeField(baseField, locField = {}) {
 }
 
 function filterUi(ui) {
-  const allowed = ['placeholder', 'title'];
+  const allowed = ['placeholder', 'title', 'options'];
   const out = {};
   allowed.forEach((k) => {
     if (ui && ui[k] !== undefined) out[k] = ui[k];
