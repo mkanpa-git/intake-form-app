@@ -7,16 +7,19 @@ import { useTranslation } from 'react-i18next';
 
 const SERVICE_INFO = {
   childcare: {
-    name: 'Child Care Assistance',
-    interaction: 'Child Care Assistance Application',
+    nameKey: 'serviceChildcareName',
+    interactionKey: 'serviceChildcareInteraction',
+    descriptionKey: 'serviceChildcareDescription',
   },
   dycd: {
-    name: 'DYCD Youth Services Intake – Ages 13 and Younger',
-    interaction: 'Youth Services Intake',
+    nameKey: 'serviceDycdName',
+    interactionKey: 'serviceDycdInteraction',
+    descriptionKey: 'serviceDycdDescription',
   },
   DOHMH: {
-    name: 'Group Child Care Permit',
-    interaction: 'Group Child Care Permit Application',
+    nameKey: 'serviceDohmhName',
+    interactionKey: 'serviceDohmhInteraction',
+    descriptionKey: 'serviceDohmhDescription',
   },
 };
 
@@ -67,21 +70,21 @@ export default function Dashboard({ onStart }) {
       {/* A generic grid class, could be styled with CSS Grid or Flexbox in jules_layout.css or jules_misc.css */}
       <div className="jules-grid-container jules-service-catalog-grid">
         <ServiceCard
-          name="Child Care Assistance"
-          interaction="Child Care Assistance Application"
-          description="Step-by-step form for applying for Childcare Assistance"
+          name={t('serviceChildcareName')}
+          interaction={t('serviceChildcareInteraction')}
+          description={t('serviceChildcareDescription')}
           onStart={() => createNew('childcare')}
         />
         <ServiceCard
-          name="DYCD Youth Services Intake – Ages 13 and Younger"
-          interaction="Youth Services Intake"
-          description="Form to collect youth and guardian information for DYCD programs"
+          name={t('serviceDycdName')}
+          interaction={t('serviceDycdInteraction')}
+          description={t('serviceDycdDescription')}
           onStart={() => createNew('dycd')}
         />
         <ServiceCard
-          name="Group Child Care Permit"
-          interaction="Group Child Care Permit Application"
-          description="Application for Group Child Care Permit"
+          name={t('serviceDohmhName')}
+          interaction={t('serviceDohmhInteraction')}
+          description={t('serviceDohmhDescription')}
           onStart={() => createNew('DOHMH')}
         />
       </div>
@@ -99,8 +102,8 @@ export default function Dashboard({ onStart }) {
                 <ApplicationCard
                   key={app.id}
                   id={app.id}
-                  serviceName={info.name}
-                  interactionName={info.interaction}
+                  serviceName={t(info.nameKey)}
+                  interactionName={t(info.interactionKey)}
                   savedAt={savedAt}
                   onContinue={handleContinue}
                   onDelete={handleDelete}

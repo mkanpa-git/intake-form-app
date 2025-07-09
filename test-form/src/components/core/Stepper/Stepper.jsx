@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 // import styles from './Stepper.module.css'; // Removed CSS Module import
 
 export default function Stepper({
@@ -10,6 +11,7 @@ export default function Stepper({
   canNavigate,
 }) {
   const isHorizontal = orientation === 'horizontal';
+  const { t } = useTranslation();
 
   const containerClass = `jules-stepper ${isHorizontal ? 'jules-stepper-horizontal' : 'jules-stepper-vertical'}`;
   // The list itself might not need a specific class if .jules-stepper directly styles its child ol or if the items are direct children.
@@ -45,13 +47,13 @@ export default function Stepper({
           : 'jules-stepper-container-vertical'
       }
     >
-      <h4>Steps</h4>{' '}
+      <h4>{t('steps')}</h4>{' '}
       {/* This h4 might need jules styling or be removed if stepper design incorporates title */}
       <div
         className="jules-stepper-progress"
-        aria-label={`Step ${currentStep + 1} of ${steps.length}`}
+        aria-label={t('stepOf', { current: currentStep + 1, total: steps.length })}
       >
-        Step {currentStep + 1} of {steps.length}
+        {t('stepOf', { current: currentStep + 1, total: steps.length })}
       </div>
       <nav aria-label="Stepper Navigation">
         <ol className={containerClass} aria-orientation={orientation}> {/* Applied jules-stepper and orientation class to OL */}
@@ -109,7 +111,7 @@ export default function Stepper({
       {requiredDocs.length > 0 && (
         <div className="jules-stepper-required-docs">
           {/* The h5 should pick up styles from jules_base.css or could be jules-text-color-headings */}
-          <h5>Required Documents</h5>
+          <h5>{t('requiredDocuments')}</h5>
           <ul> {/* ul/li should pick up styles from jules_base.css */}
             {requiredDocs.map((doc) => (
               <li key={doc}>{doc}</li>

@@ -1,3 +1,5 @@
+import i18n from '../i18n';
+
 export function evaluateCondition(condition, data) {
   if (!condition) return true;
   if (condition.condition && !condition.field && !('value' in condition) && !condition.repeatingGroup) {
@@ -130,7 +132,7 @@ export function validateField(field, value, data = {}) {
       (typeof val === "string" && val === "") ||
       (Array.isArray(val) && val.length === 0))
   ) {
-    error = `${label} is required.`;
+    error = i18n.t('requiredField', { field: label });
   } else if (constraints.pattern && typeof val === "string" && val.trim() !== "") {
     const raw = constraints.pattern;
     const safePattern = raw.replace(/\\\\/g, "\\");
@@ -198,7 +200,7 @@ export function validateStep(
 
       if (!hasGroupWithData) {
         valid = false;
-        updatedErrors[section.id] = `${section.title} is required. Please add at least one record.`;
+        updatedErrors[section.id] = i18n.t('sectionRequired', { section: section.title });
       }
     }
 
@@ -231,7 +233,7 @@ export function validateStep(
               const fieldKey = `${field.id}[${index}].${subField.id}`;
               let error = "";
               if (isRequired && (!subValue || subValue.trim() === "")) {
-                error = `${label} is required.`;
+                error = i18n.t('requiredField', { field: label });
               } else if (type === "email") {
                 const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
                 if (!emailRegex.test(subValue)) {
@@ -277,7 +279,7 @@ export function validateStep(
               (typeof val === "string" && val === "") ||
               (Array.isArray(val) && val.length === 0))
           ) {
-            error = `${label} is required.`;
+            error = i18n.t('requiredField', { field: label });
           } else if (constraints.pattern && typeof val === "string" && val.trim() !== "") {
             const raw = constraints.pattern;
             const safePattern = raw.replace(/\\\\/g, "\\");

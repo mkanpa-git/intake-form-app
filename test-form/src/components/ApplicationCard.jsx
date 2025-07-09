@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from './shared/Button/Button'; // Import the new Button component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +13,7 @@ export default function ApplicationCard({
   onDelete,
 }) {
   const formatted = savedAt ? new Date(savedAt).toLocaleString() : '';
+  const { t } = useTranslation();
 
   // Make the whole card clickable if onContinue is primary action
   const handleCardClick = (e) => {
@@ -46,8 +48,10 @@ export default function ApplicationCard({
         </div>
       </div>
       {/* Rest of the card content */}
-      <p className="jules-card-app-id">ID: {id}</p>
-      {formatted && <p className="jules-card-saved-date">Saved: {formatted}</p>}
+      <p className="jules-card-app-id">{t('idLabel')}: {id}</p>
+      {formatted && (
+        <p className="jules-card-saved-date">{t('savedLabel')}: {formatted}</p>
+      )}
 
       <div className="jules-card-actions">
         <Button
@@ -56,7 +60,7 @@ export default function ApplicationCard({
           onClick={() => onContinue && onContinue(id)}
           iconRight={<FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />}
         >
-          Continue
+          {t('continue')}
         </Button>
         <Button
           variant="secondary"
@@ -64,7 +68,7 @@ export default function ApplicationCard({
           onClick={() => onDelete && onDelete(id)}
           iconLeft={<FontAwesomeIcon icon={faTrash} aria-hidden="true" />}
         >
-          Delete
+          {t('delete')}
         </Button>
       </div>
     </div>

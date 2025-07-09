@@ -326,7 +326,7 @@ export default function FormRenderer({
             ref={errorSummaryRef}
           >
             <div className="jules-alert-title">
-              Please correct the following errors:
+              {t('pleaseCorrectErrors')}
             </div>
             <ul>
               {errorSummary.map((err) => (
