@@ -60,6 +60,7 @@ function mergeSection(baseSec, locSec = {}) {
   const merged = { ...baseSec };
   if (locSec.title) merged.title = locSec.title;
   if (locSec.description) merged.description = locSec.description;
+  if (locSec.content) merged.content = locSec.content;
   if (Array.isArray(baseSec.fields)) {
     merged.fields = baseSec.fields.map((f, idx) =>
       mergeField(f, locSec.fields ? locSec.fields[idx] : undefined),
