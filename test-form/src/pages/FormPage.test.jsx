@@ -12,7 +12,7 @@ beforeEach(() => {
 test('uses FormRenderer for dycd service', () => {
   render(<FormPage service="dycd" />);
   expect(FormRenderer).toHaveBeenCalledWith(
-    expect.objectContaining({ formSpecPath: '/data/dycd_form.json' }),
+    expect.objectContaining({ formSpecPath: '/data/dycd_form.en.json' }),
     undefined,
   );
 });
@@ -20,7 +20,7 @@ test('uses FormRenderer for dycd service', () => {
 test('uses FormRenderer for childcare service', () => {
   render(<FormPage service="childcare" />);
   expect(FormRenderer).toHaveBeenCalledWith(
-    expect.objectContaining({ formSpecPath: '/data/childcare_form.json' }),
+    expect.objectContaining({ formSpecPath: '/data/childcare_form.en.json' }),
     undefined,
   );
 });
@@ -28,7 +28,7 @@ test('uses FormRenderer for childcare service', () => {
 test('uses FormRenderer for DOHMH service', () => {
   render(<FormPage service="DOHMH" />);
   expect(FormRenderer).toHaveBeenCalledWith(
-    expect.objectContaining({ formSpecPath: '/data/group_cc_permit.json' }),
+    expect.objectContaining({ formSpecPath: '/data/group_cc_permit.en.json' }),
     undefined,
   );
 });
