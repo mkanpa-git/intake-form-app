@@ -14,6 +14,7 @@ const pool = require('./db');
 const authRoutes = require('./routes/auth');
 const applicationsRoutes = require('./routes/applications');
 const placesRoutes = require('./routes/places');
+const businessProfileRoutes = require('./routes/businessProfile');
 const autofillRoutes = require('./routes/autofill');
 const { getApplications, getApplication } = applicationsRoutes;
 
@@ -128,6 +129,7 @@ app.post('/api/applications/:appId/upload', upload, async (req, res) => {
 
 app.use(placesRoutes);
 app.use(applicationsRoutes);
+app.use(businessProfileRoutes);
 app.use(autofillRoutes);
 
 // --- Help Chat ---
