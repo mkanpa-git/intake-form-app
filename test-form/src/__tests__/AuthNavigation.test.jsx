@@ -22,10 +22,11 @@ test('shows Login when unauthenticated', () => {
   expect(screen.getByRole('link', { name: /login/i })).toBeInTheDocument();
 });
 
-test('shows Profile and Logout when authenticated', async () => {
+test('shows Profile, Business Profile, and Logout when authenticated', async () => {
   const user = userEvent.setup();
-  renderWithUser({ first_name: 'Jane' });
+  renderWithUser({ first_name: 'Jane', id: 'u1' });
   await user.click(screen.getByRole('button', { name: /user menu/i }));
   expect(screen.getByRole('link', { name: /profile/i })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /business profile/i })).toBeInTheDocument();
   expect(screen.getByRole('link', { name: /logout/i })).toBeInTheDocument();
 });
