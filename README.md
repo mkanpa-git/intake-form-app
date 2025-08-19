@@ -132,3 +132,21 @@ Sections using the table layout automatically adapt on smaller screens. Set `ui.
 ```
 
 In desktop view all columns appear in a single row. On mobile, only the first two columns show in the table while the "Notes" field appears below each row with its label displayed above the value.
+
+## Autofill configuration registration
+
+To publish the sample autofill configuration to the local API, run:
+
+```bash
+node scripts/registerAutofill.js
+```
+
+This script posts the contents of `config/autofill/sample_agency_form.json` to `http://localhost:3000/api/common-intake/autofill/register`.
+
+You can also call the API directly with curl:
+
+```bash
+curl -X POST http://localhost:3000/api/common-intake/autofill/register \
+  -H "Content-Type: application/json" \
+  --data-binary @config/autofill/sample_agency_form.json
+```

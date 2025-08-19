@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "owner": "Sample Agency Intake Team",
+  "contact": "intake-team@samplecity.gov",
+  "id": "sample-agency-form",
+  "fields": [
+    {
+      "id": "firstName",
+      "dataGovGroup": "core",
+      "allowAutofill": true,
+      "allowSave": true,
+      "writerPolicy": "single",
+      "mapToTargetFormDataElementId": "applicant_first_name"
+    },
+    {
+      "id": "lastName",
+      "dataGovGroup": "core",
+      "allowAutofill": true,
+      "allowSave": true,
+      "writerPolicy": "single",
+      "mapToTargetFormDataElementId": "applicant_last_name"
+    }
+  ]
+}

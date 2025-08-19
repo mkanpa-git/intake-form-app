@@ -14,6 +14,7 @@ const pool = require('./db');
 const authRoutes = require('./routes/auth');
 const applicationsRoutes = require('./routes/applications');
 const placesRoutes = require('./routes/places');
+const autofillRoutes = require('./routes/autofill');
 const { getApplications, getApplication } = applicationsRoutes;
 
 const app = express();
@@ -50,6 +51,7 @@ if ((process.env.FILE_STORAGE || 'LOCAL').toUpperCase() !== 'GCP') {
   app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 }
 app.use(express.urlencoded({ extended: true }));
+app.use(autofillRoutes);
 app.use(csurf());
 app.use((req, res, next) => {
   res.cookie('XSRF-TOKEN', req.csrfToken());
