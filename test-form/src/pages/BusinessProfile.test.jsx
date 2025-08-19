@@ -25,7 +25,10 @@ test('submits form data to server', async () => {
     </AuthContext.Provider>
   );
 
-  await user.type(screen.getByLabelText(/legalName/i), 'Acme');
+  await user.type(screen.getByLabelText(/Legal Name/i), 'Acme');
+  await user.type(screen.getByLabelText(/Primary Contact Name/i), 'John Doe');
+  await user.type(screen.getByLabelText(/Primary Contact Phone/i), '1234567890');
+  await user.type(screen.getByLabelText(/Primary Contact Email/i), 'john@example.com');
   await user.click(screen.getByRole('button', { name: /save/i }));
 
   expect(global.fetch).toHaveBeenNthCalledWith(
@@ -42,5 +45,8 @@ test('submits form data to server', async () => {
 
   const body = JSON.parse(global.fetch.mock.calls[1][1].body);
   expect(body.legal_name).toBe('Acme');
+  expect(body.primary_contact_name).toBe('John Doe');
+  expect(body.primary_contact_phone).toBe('1234567890');
+  expect(body.primary_contact_email).toBe('john@example.com');
 });
 

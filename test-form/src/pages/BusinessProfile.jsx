@@ -19,9 +19,12 @@ export default function BusinessProfile() {
     address_line2: '',
     city: '',
     state: '',
-    zip: '',
+    zip_code: '',
     phone: '',
-    email: ''
+    email: '',
+    primary_contact_name: '',
+    primary_contact_phone: '',
+    primary_contact_email: ''
   });
   const [status, setStatus] = useState('');
   const { t } = useTranslation();
@@ -42,9 +45,12 @@ export default function BusinessProfile() {
             address_line2: data.address_line2 || '',
             city: data.city || '',
             state: data.state || '',
-            zip: data.zip || '',
+            zip_code: data.zip_code || '',
             phone: data.phone || '',
-            email: data.email || ''
+            email: data.email || '',
+            primary_contact_name: data.primary_contact_name || '',
+            primary_contact_phone: data.primary_contact_phone || '',
+            primary_contact_email: data.primary_contact_email || ''
           });
         }
       });
@@ -142,10 +148,10 @@ export default function BusinessProfile() {
         onChange={handleChange}
       />
       <TextInput
-        id="zip"
-        name="zip"
-        label={t('zip')}
-        value={form.zip}
+        id="zip_code"
+        name="zip_code"
+        label={t('zipCode')}
+        value={form.zip_code}
         onChange={handleChange}
       />
       <TextInput
@@ -160,6 +166,27 @@ export default function BusinessProfile() {
         name="email"
         label={t('email')}
         value={form.email}
+        onChange={handleChange}
+      />
+      <TextInput
+        id="primary_contact_name"
+        name="primary_contact_name"
+        label={t('primaryContactName')}
+        value={form.primary_contact_name}
+        onChange={handleChange}
+      />
+      <TextInput
+        id="primary_contact_phone"
+        name="primary_contact_phone"
+        label={t('primaryContactPhone')}
+        value={form.primary_contact_phone}
+        onChange={handleChange}
+      />
+      <TextInput
+        id="primary_contact_email"
+        name="primary_contact_email"
+        label={t('primaryContactEmail')}
+        value={form.primary_contact_email}
         onChange={handleChange}
       />
       <Button type="submit" variant="primary">{t('save')}</Button>
