@@ -119,6 +119,12 @@ function App() {
                   <Link to="/profile" onClick={() => setUserMenuOpen(false)}>
                     {t('profile')}
                   </Link>
+                  <Link
+                    to={`/business/${user.business_id || user.id}`}
+                    onClick={() => setUserMenuOpen(false)}
+                  >
+                    {t('businessProfile')}
+                  </Link>
                   <a href={`${server}/auth/logout`}>{t('logout')}</a>
                 </div>
               )}

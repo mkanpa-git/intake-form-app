@@ -4,6 +4,7 @@
   "login": "Login",
   "logout": "Logout",
   "profile": "Profile",
+  "businessProfile": "Business Profile",
   "serviceCatalog": "Service Catalog",
   "savedApplications": "Saved Applications",
   "privacyPolicy": "Privacy Policy",
