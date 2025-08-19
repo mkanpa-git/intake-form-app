@@ -39,4 +39,18 @@
   "serviceDohmhInteraction": "طلب تصريح رعاية أطفال جماعي",
   "serviceDohmhDescription": "طلب للحصول على تصريح رعاية أطفال جماعي",
   "sectionRequired": "{{section}} مطلوب. الرجاء إضافة سجل واحد على الأقل."
+  ,"editBusinessProfile": "تحرير ملف العمل"
+  ,"legalName": "الاسم القانوني"
+  ,"structure": "الهيكل"
+  ,"ein": "رقم تعريف صاحب العمل"
+  ,"industry": "الصناعة"
+  ,"sector": "القطاع"
+  ,"addressLine1": "عنوان السطر 1"
+  ,"addressLine2": "عنوان السطر 2"
+  ,"city": "المدينة"
+  ,"state": "الولاية"
+  ,"zipCode": "الرمز البريدي"
+  ,"primaryContactName": "اسم جهة الاتصال الرئيسية"
+  ,"primaryContactPhone": "هاتف جهة الاتصال الرئيسية"
+  ,"primaryContactEmail": "البريد الإلكتروني لجهة الاتصال الرئيسية"
 }

@@ -39,4 +39,18 @@
   "serviceDohmhInteraction": "Заявка на разрешение на групповую заботу о детях",
   "serviceDohmhDescription": "Заявление на получение разрешения на групповую заботу о детях",
   "sectionRequired": "{{section}} требуется. Пожалуйста, добавьте хотя бы одну запись."
+  ,"editBusinessProfile": "Редактировать профиль бизнеса"
+  ,"legalName": "Юридическое название"
+  ,"structure": "Структура"
+  ,"ein": "EIN"
+  ,"industry": "Отрасль"
+  ,"sector": "Сектор"
+  ,"addressLine1": "Адрес строка 1"
+  ,"addressLine2": "Адрес строка 2"
+  ,"city": "Город"
+  ,"state": "Штат"
+  ,"zipCode": "Почтовый индекс"
+  ,"primaryContactName": "Имя основного контакта"
+  ,"primaryContactPhone": "Телефон основного контакта"
+  ,"primaryContactEmail": "Электронная почта основного контакта"
 }

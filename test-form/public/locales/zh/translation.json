@@ -39,4 +39,18 @@
   "serviceDohmhInteraction": "集体托儿许可证申请",
   "serviceDohmhDescription": "申请集体托儿许可证",
   "sectionRequired": "{{section}} 为必填项。请至少添加一条记录。"
+  ,"editBusinessProfile": "编辑商业资料"
+  ,"legalName": "法定名称"
+  ,"structure": "结构"
+  ,"ein": "EIN"
+  ,"industry": "行业"
+  ,"sector": "部门"
+  ,"addressLine1": "地址行1"
+  ,"addressLine2": "地址行2"
+  ,"city": "城市"
+  ,"state": "州"
+  ,"zipCode": "邮政编码"
+  ,"primaryContactName": "主要联系人姓名"
+  ,"primaryContactPhone": "主要联系人电话"
+  ,"primaryContactEmail": "主要联系人电子邮件"
 }

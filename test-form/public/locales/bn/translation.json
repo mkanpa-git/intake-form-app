@@ -39,4 +39,18 @@
   "serviceDohmhInteraction": "গ্রুপ চাইল্ড কেয়ার পারমিট আবেদন",
   "serviceDohmhDescription": "গ্রুপ চাইল্ড কেয়ার পারমিটের জন্য আবেদন",
   "sectionRequired": "{{section}} প্রয়োজন। কমপক্ষে একটি রেকর্ড যোগ করুন."
+  ,"editBusinessProfile": "ব্যবসা প্রোফাইল সম্পাদনা করুন"
+  ,"legalName": "আইনি নাম"
+  ,"structure": "গঠন"
+  ,"ein": "EIN"
+  ,"industry": "শিল্প"
+  ,"sector": "খাত"
+  ,"addressLine1": "ঠিকানার লাইন ১"
+  ,"addressLine2": "ঠিকানার লাইন ২"
+  ,"city": "শহর"
+  ,"state": "রাজ্য"
+  ,"zipCode": "জিপ কোড"
+  ,"primaryContactName": "প্রধান যোগাযোগের নাম"
+  ,"primaryContactPhone": "প্রধান যোগাযোগের ফোন"
+  ,"primaryContactEmail": "প্রধান যোগাযোগের ইমেল"
 }

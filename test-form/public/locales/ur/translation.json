@@ -39,4 +39,18 @@
   "serviceDohmhInteraction": "گروپ چائلڈ کیئر پرمٹ کی درخواست",
   "serviceDohmhDescription": "گروپ چائلڈ کیئر پرمٹ کے لیے درخواست",
   "sectionRequired": "{{section}} درکار ہے۔ براہ کرم کم از کم ایک ریکارڈ شامل کریں۔"
+  ,"editBusinessProfile": "کاروباری پروفائل میں ترمیم کریں"
+  ,"legalName": "قانونی نام"
+  ,"structure": "ساخت"
+  ,"ein": "EIN"
+  ,"industry": "صنعت"
+  ,"sector": "سیکٹر"
+  ,"addressLine1": "پتہ لائن 1"
+  ,"addressLine2": "پتہ لائن 2"
+  ,"city": "شہر"
+  ,"state": "ریاست"
+  ,"zipCode": "زپ کوڈ"
+  ,"primaryContactName": "بنیادی رابطہ نام"
+  ,"primaryContactPhone": "بنیادی رابطہ فون"
+  ,"primaryContactEmail": "بنیادی رابطہ ای میل"
 }

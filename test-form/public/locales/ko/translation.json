@@ -39,4 +39,18 @@
   "serviceDohmhInteraction": "단체 보육 허가 신청",
   "serviceDohmhDescription": "단체 보육 허가 신청서",
   "sectionRequired": "{{section}}(이/가) 필요합니다. 최소한 하나의 항목을 추가하세요."
+  ,"editBusinessProfile": "비즈니스 프로필 수정"
+  ,"legalName": "법적 이름"
+  ,"structure": "구조"
+  ,"ein": "EIN"
+  ,"industry": "산업"
+  ,"sector": "부문"
+  ,"addressLine1": "주소 1"
+  ,"addressLine2": "주소 2"
+  ,"city": "도시"
+  ,"state": "주"
+  ,"zipCode": "우편 번호"
+  ,"primaryContactName": "주요 연락처 이름"
+  ,"primaryContactPhone": "주요 연락처 전화"
+  ,"primaryContactEmail": "주요 연락처 이메일"
 }

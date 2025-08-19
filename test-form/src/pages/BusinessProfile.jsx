@@ -20,8 +20,6 @@ export default function BusinessProfile() {
     city: '',
     state: '',
     zip_code: '',
-    phone: '',
-    email: '',
     primary_contact_name: '',
     primary_contact_phone: '',
     primary_contact_email: ''
@@ -46,8 +44,6 @@ export default function BusinessProfile() {
             city: data.city || '',
             state: data.state || '',
             zip_code: data.zip_code || '',
-            phone: data.phone || '',
-            email: data.email || '',
             primary_contact_name: data.primary_contact_name || '',
             primary_contact_phone: data.primary_contact_phone || '',
             primary_contact_email: data.primary_contact_email || ''
@@ -152,20 +148,6 @@ export default function BusinessProfile() {
         name="zip_code"
         label={t('zipCode')}
         value={form.zip_code}
-        onChange={handleChange}
-      />
-      <TextInput
-        id="phone"
-        name="phone"
-        label={t('phone')}
-        value={form.phone}
-        onChange={handleChange}
-      />
-      <TextInput
-        id="email"
-        name="email"
-        label={t('email')}
-        value={form.email}
         onChange={handleChange}
       />
       <TextInput

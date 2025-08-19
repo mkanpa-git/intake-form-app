@@ -51,8 +51,6 @@
   ,"city": "City"
   ,"state": "State"
   ,"zipCode": "Zip Code"
-  ,"phone": "Phone"
-  ,"email": "Email"
   ,"primaryContactName": "Primary Contact Name"
   ,"primaryContactPhone": "Primary Contact Phone"
   ,"primaryContactEmail": "Primary Contact Email"
