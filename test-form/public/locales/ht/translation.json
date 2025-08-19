@@ -39,4 +39,18 @@
   "serviceDohmhInteraction": "Aplikasyon pou Pèmi Gadri Gwoup",
   "serviceDohmhDescription": "Aplikasyon pou Pèmi Gadri Gwoup",
   "sectionRequired": "{{section}} obligatwa. Tanpri ajoute omwen yon dosye."
+  ,"editBusinessProfile": "Edit pwofil biznis"
+  ,"legalName": "Non legal"
+  ,"structure": "Estrikti"
+  ,"ein": "EIN"
+  ,"industry": "Endistri"
+  ,"sector": "Sektè"
+  ,"addressLine1": "Adrès liy 1"
+  ,"addressLine2": "Adrès liy 2"
+  ,"city": "Vil"
+  ,"state": "Eta"
+  ,"zipCode": "Kòd postal"
+  ,"primaryContactName": "Non kontak prensipal"
+  ,"primaryContactPhone": "Telefòn kontak prensipal"
+  ,"primaryContactEmail": "Imèl kontak prensipal"
 }

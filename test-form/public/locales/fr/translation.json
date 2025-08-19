@@ -39,4 +39,18 @@
   "serviceDohmhInteraction": "Demande de permis de garde d'enfants en groupe",
   "serviceDohmhDescription": "Demande pour un permis de garde d'enfants en groupe",
   "sectionRequired": "{{section}} est requis. Veuillez ajouter au moins un enregistrement."
+  ,"editBusinessProfile": "Modifier le profil d'entreprise"
+  ,"legalName": "Raison sociale"
+  ,"structure": "Structure"
+  ,"ein": "EIN"
+  ,"industry": "Industrie"
+  ,"sector": "Secteur"
+  ,"addressLine1": "Adresse ligne 1"
+  ,"addressLine2": "Adresse ligne 2"
+  ,"city": "Ville"
+  ,"state": "État"
+  ,"zipCode": "Code postal"
+  ,"primaryContactName": "Nom du contact principal"
+  ,"primaryContactPhone": "Téléphone du contact principal"
+  ,"primaryContactEmail": "E-mail du contact principal"
 }

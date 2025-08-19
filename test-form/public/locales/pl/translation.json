@@ -39,4 +39,18 @@
   "serviceDohmhInteraction": "Wniosek o zezwolenie na grupową opiekę nad dziećmi",
   "serviceDohmhDescription": "Wniosek o zezwolenie na grupową opiekę nad dziećmi",
   "sectionRequired": "{{section}} jest wymagany. Dodaj co najmniej jeden wpis."
+  ,"editBusinessProfile": "Edytuj profil firmy"
+  ,"legalName": "Nazwa prawna"
+  ,"structure": "Struktura"
+  ,"ein": "EIN"
+  ,"industry": "Branża"
+  ,"sector": "Sektor"
+  ,"addressLine1": "Adres linia 1"
+  ,"addressLine2": "Adres linia 2"
+  ,"city": "Miasto"
+  ,"state": "Stan"
+  ,"zipCode": "Kod pocztowy"
+  ,"primaryContactName": "Imię głównego kontaktu"
+  ,"primaryContactPhone": "Telefon głównego kontaktu"
+  ,"primaryContactEmail": "E-mail głównego kontaktu"
 }
