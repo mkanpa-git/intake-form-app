@@ -64,4 +64,38 @@ describe('Business Profile API', () => {
     expect(res.statusCode).toBe(403);
     expect(res.body).toEqual({ error: 'Forbidden' });
   });
+
+  test('GET returns 401 when unauthenticated', async () => {
+    const unauthApp = express();
+    unauthApp.use(express.json());
+    unauthApp.use((req, res, next) => {
+      req.isAuthenticated = () => false;
+      next();
+    });
+    unauthApp.use(router);
+
+    const res = await request(unauthApp).get('/api/profile/business/b1');
+
+    expect(res.statusCode).toBe(401);
+    expect(res.body).toEqual({ error: 'Not authenticated' });
+    expect(pool.query).not.toHaveBeenCalled();
+  });
+
+  test('PUT returns 401 when unauthenticated', async () => {
+    const unauthApp = express();
+    unauthApp.use(express.json());
+    unauthApp.use((req, res, next) => {
+      req.isAuthenticated = () => false;
+      next();
+    });
+    unauthApp.use(router);
+
+    const res = await request(unauthApp)
+      .put('/api/profile/business/b1')
+      .send({ legal_name: 'New' });
+
+    expect(res.statusCode).toBe(401);
+    expect(res.body).toEqual({ error: 'Not authenticated' });
+    expect(pool.query).not.toHaveBeenCalled();
+  });
 });
