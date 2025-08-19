@@ -42,3 +42,25 @@ CREATE TABLE application_files (
   uploaded_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
+CREATE TABLE businesses (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES users(id),
+  legal_name TEXT,
+  structure TEXT,
+  ein TEXT,
+  industry TEXT,
+  sector TEXT,
+  address_line1 TEXT,
+  address_line2 TEXT,
+  city TEXT,
+  state TEXT,
+  zip_code TEXT,
+  primary_contact_name TEXT,
+  primary_contact_email TEXT,
+  primary_contact_phone TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+CREATE INDEX businesses_user_id_idx ON businesses (user_id);
+
