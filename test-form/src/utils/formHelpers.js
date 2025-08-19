@@ -48,13 +48,13 @@ export function evaluateRepeatingGroupCondition(condition, data) {
   }
 }
 
-export function cleanupHiddenFields(step, formData) {
+export function cleanupHiddenFields(step, formData, evaluationData = formData) {
   const cleaned = { ...formData };
   if (!step || !Array.isArray(step.sections)) return cleaned;
 
   step.sections.forEach((section) => {
     const sectionVisible = section.visibilityCondition
-      ? evaluateCondition(section.visibilityCondition, formData)
+      ? evaluateCondition(section.visibilityCondition, evaluationData)
       : true;
 
     if (Array.isArray(section.fields)) {
@@ -74,10 +74,10 @@ export function cleanupHiddenFields(step, formData) {
         }
         const isVisible =
           (field.visibilityCondition
-            ? evaluateCondition(field.visibilityCondition, formData)
+            ? evaluateCondition(field.visibilityCondition, evaluationData)
             : true) &&
           (field.requiredCondition
-            ? evaluateCondition(field.requiredCondition, formData)
+            ? evaluateCondition(field.requiredCondition, evaluationData)
             : true);
 
         if (!isVisible && cleaned[field.id] !== undefined) {
@@ -88,10 +88,10 @@ export function cleanupHiddenFields(step, formData) {
           field.fields.forEach((subField) => {
             const isSubVisible =
               (subField.visibilityCondition
-                ? evaluateCondition(subField.visibilityCondition, formData)
+                ? evaluateCondition(subField.visibilityCondition, evaluationData)
                 : true) &&
               (subField.requiredCondition
-                ? evaluateCondition(subField.requiredCondition, formData)
+                ? evaluateCondition(subField.requiredCondition, evaluationData)
                 : true);
 
             if (!isSubVisible && cleaned[subField.id] !== undefined) {

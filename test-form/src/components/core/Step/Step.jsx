@@ -408,7 +408,11 @@ export default function Step({
       onValidationFail?.(summary);
       return;
     }
-    const cleaned = cleanupHiddenFields({ sections }, formData);
+    const cleaned = cleanupHiddenFields(
+      { sections },
+      formData,
+      { ...fullData, ...formData }
+    );
     setFormData(cleaned);
     onDataChange && onDataChange(cleaned);
     onNext && onNext(cleaned);
@@ -445,7 +449,11 @@ export default function Step({
       return;       // prevent navigation if step is invalid
     }
 
-    const cleaned = cleanupHiddenFields({ sections }, formData);
+    const cleaned = cleanupHiddenFields(
+      { sections },
+      formData,
+      { ...fullData, ...formData }
+    );
     setFormData(cleaned);
     onDataChange && onDataChange(cleaned);
     onBackToReview && onBackToReview(cleaned);
