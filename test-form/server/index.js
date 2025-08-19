@@ -108,6 +108,9 @@ passport.deserializeUser(async (id, done) => {
 
 app.use(authRoutes);
 
+// Routes requiring session and CSRF protection
+app.use(businessProfileRoutes);
+
 const upload = storage.multerMiddleware();
 
 // --- File Upload ---
@@ -129,7 +132,6 @@ app.post('/api/applications/:appId/upload', upload, async (req, res) => {
 
 app.use(placesRoutes);
 app.use(applicationsRoutes);
-app.use(businessProfileRoutes);
 app.use(autofillRoutes);
 
 // --- Help Chat ---
