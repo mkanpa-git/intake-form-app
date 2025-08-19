@@ -51,7 +51,6 @@ if ((process.env.FILE_STORAGE || 'LOCAL').toUpperCase() !== 'GCP') {
   app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 }
 app.use(express.urlencoded({ extended: true }));
-app.use(autofillRoutes);
 app.use(csurf());
 app.use((req, res, next) => {
   res.cookie('XSRF-TOKEN', req.csrfToken());
@@ -129,6 +128,7 @@ app.post('/api/applications/:appId/upload', upload, async (req, res) => {
 
 app.use(placesRoutes);
 app.use(applicationsRoutes);
+app.use(autofillRoutes);
 
 // --- Help Chat ---
 const chatLimiter = rateLimit({ windowMs: 60 * 1000, max: 5 });
