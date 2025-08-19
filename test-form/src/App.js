@@ -7,6 +7,7 @@ import Profile from './pages/Profile';
 // import "./form.css"; // Old theme - commented out
 import FormPage from "./pages/FormPage";
 import Dashboard from "./pages/Dashboard";
+import BusinessProfile from "./pages/BusinessProfile";
 import ThemeToggle from './components/shared/ThemeToggle';
 import './App.css'; // App specific styles, kept for now
 
@@ -132,6 +133,7 @@ function App() {
       <main className="form-main">
         <Routes>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/business/:businessId" element={<BusinessProfile />} />
           <Route
             path="*"
             element={
